@@ -50,6 +50,22 @@ bin/pebr version
 
 CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) runs `bin/pebr validate` on relevant pushes.
 
+
+
+## Electoral Stats (Option B)
+
+Python package [`models/`](models/) implements the v1 aggregate (√N trailing ~14d, anti-flood, midpoint dating, no house effects). Methodology: [`docs/methodology-aggregate-option-b.md`](docs/methodology-aggregate-option-b.md).
+
+```bash
+.venv/bin/pip install -e 'models/[dev]'
+.venv/bin/pytest models/tests -q
+.venv/bin/python -m pebr_models.cli \
+  --polls fixtures/national/example_polls_synthetic.json \
+  --out site/data/chart.json
+```
+
+Synthetic fixtures (`example_*` / `EXAMPLE_*`) are **not** real polls.
+
 ## Status
 
 Greenfield. Corpus real de pesquisas só após auditoria de proveniência do source map. Fixtures e `chart.json` com `example: true` / `EXAMPLE_*` **não são pesquisas reais** — o banner EXAMPLE na UI deixa isso explícito. Não commitar dumps legados (`_quarantine/`, `data/polls.json`).

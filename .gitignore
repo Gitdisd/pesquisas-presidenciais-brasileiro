@@ -9,3 +9,6 @@ node_modules/
 .bundle/
 vendor/bundle/
 _quarantine/
+*.egg-info/
+.pytest_cache/
+models/*.egg-info/
