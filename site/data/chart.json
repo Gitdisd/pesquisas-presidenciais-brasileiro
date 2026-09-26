@@ -2,8 +2,5015 @@
   "schema_version": 1,
   "model_id": "option_b_sqrt_n_trailing",
   "unit": "fraction",
-  "params": {"k_days": 14, "flood_W_days": 14, "n_cap": 4000, "unit": "fraction"},
+  "params": {
+    "k_days": 14,
+    "flood_W_days": 14,
+    "n_cap": 4000,
+    "unit": "fraction"
+  },
   "band_meaning": "Option B in-window dispersion (not classical CI, not win probability)",
-  "series": [],
-  "note": "Placeholder until Option B runs on Pipeline EXAMPLE/canonical fixtures only."
+  "election_cycle": 2026,
+  "geography": "national",
+  "scenario": "stimulated_1st_round",
+  "example": true,
+  "note": "EXAMPLE / dados de exemplo — sintético. Não são pesquisas reais. Pipeline/Stats substituirá este arquivo.",
+  "candidates": [
+    {
+      "id": "example_candidate_a",
+      "label": "Candidato A",
+      "color": "#5B8CFF"
+    },
+    {
+      "id": "example_candidate_b",
+      "label": "Candidato B",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": "example_candidate_c",
+      "label": "Candidato C",
+      "color": "#4ECDC4"
+    },
+    {
+      "id": "example_candidate_d",
+      "label": "Candidato D",
+      "color": "#F7B731"
+    }
+  ],
+  "institutes": [
+    {
+      "id": "example_institute_alpha",
+      "label": "Instituto Alpha (exemplo)"
+    },
+    {
+      "id": "example_institute_beta",
+      "label": "Instituto Beta (exemplo)"
+    },
+    {
+      "id": "example_institute_gamma",
+      "label": "Instituto Gamma (exemplo)"
+    }
+  ],
+  "generated_at": "2026-09-26T20:30:00-03:00",
+  "date_range": {
+    "start": "2026-07-23",
+    "end": "2026-09-20"
+  },
+  "series": [
+    {
+      "series_kind": "poll",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3459,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0001",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2618,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0001",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1717,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0001",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1305,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0001",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3358,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0002",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_b",
+      "value": 0.273,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0002",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1759,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0002",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1253,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0002",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3351,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0003",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2922,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0003",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_c",
+      "value": 0.167,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0003",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1158,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0003",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3304,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0004",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2969,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0004",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1487,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0004",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_d",
+      "value": 0.134,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0004",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_a",
+      "value": 0.334,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0005",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_b",
+      "value": 0.3099,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0005",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_c",
+      "value": 0.16,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0005",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1061,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0005",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3547,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0006",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2661,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0006",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_c",
+      "value": 0.16,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0006",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1292,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0006",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3338,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0007",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.276,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0007",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1808,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0007",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1193,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0007",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3476,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0008",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2752,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0008",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1746,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0008",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1126,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0008",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3439,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0009",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2805,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0009",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1584,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0009",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1272,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0009",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3302,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0010",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2767,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0010",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1858,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0010",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1173,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0010",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3578,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0011",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2879,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0011",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1636,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0011",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1008,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0011",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3242,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0012",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2858,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0012",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1595,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0012",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1406,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0012",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3756,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0013",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2611,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0013",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1478,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0013",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1255,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0013",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_a",
+      "value": 0.336,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0014",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2784,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0014",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1793,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0014",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1164,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0014",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3597,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0015",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_b",
+      "value": 0.3032,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0015",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1513,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0015",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0958,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0015",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3368,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0016",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_b",
+      "value": 0.3066,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0016",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_c",
+      "value": 0.151,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0016",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1156,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0016",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3391,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0017",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_b",
+      "value": 0.26,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0017",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1513,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0017",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1596,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0017",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3662,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0018",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_b",
+      "value": 0.284,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0018",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1635,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0018",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0963,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0018",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3162,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0019",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_b",
+      "value": 0.306,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0019",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1509,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0019",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1369,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0019",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3528,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0020",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2847,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0020",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1433,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0020",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1292,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0020",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3667,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0021",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2769,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0021",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_c",
+      "value": 0.15,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0021",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1164,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0021",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3399,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0022",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_b",
+      "value": 0.3031,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0022",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1549,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0022",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1121,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0022",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3428,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0023",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2746,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0023",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1718,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0023",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1208,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0023",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3333,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0024",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2778,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0024",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1653,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0024",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1336,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0024",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3102,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0025",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2948,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0025",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1877,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0025",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1172,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0025",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3606,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0026",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2893,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0026",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1542,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0026",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1058,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0026",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3562,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0027",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2786,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0027",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_c",
+      "value": 0.16,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0027",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1152,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0027",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3573,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0028",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2698,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0028",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1567,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0028",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1262,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0028",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_a",
+      "value": 0.342,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0029",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2961,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0029",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_c",
+      "value": 0.14,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0029",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1319,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0029",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3612,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0030",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2805,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0030",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1633,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0030",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.105,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0030",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3191,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0031",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2958,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0031",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1819,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0031",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1133,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0031",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.344,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0032",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2454,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0032",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1839,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0032",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1367,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0032",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3471,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0033",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2768,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0033",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1466,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0033",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1395,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0033",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3466,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0034",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2682,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0034",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1894,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0034",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1058,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0034",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3396,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0035",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2843,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0035",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1633,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0035",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1228,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0035",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3331,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0036",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.297,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0036",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1646,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0036",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1153,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0036",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.337,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0037",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2835,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0037",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1528,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0037",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1366,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0037",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3622,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0038",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2699,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0038",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1713,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0038",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1066,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0038",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.341,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0039",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2819,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0039",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1871,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0039",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1001,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0039",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3735,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0040",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2925,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0040",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1478,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0040",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0963,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0040",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3298,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0041",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2816,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0041",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1914,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0041",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1071,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0041",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3709,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0042",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_b",
+      "value": 0.271,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0042",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1884,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0042",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0797,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0042",
+      "n": 1500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3491,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0043",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2833,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0043",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1763,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0043",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1013,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0043",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3295,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0044",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_b",
+      "value": 0.271,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0044",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1541,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0044",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1555,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0044",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3538,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0045",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2732,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0045",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1517,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0045",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1313,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0045",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3614,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0046",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2571,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0046",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1506,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0046",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1409,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0046",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3451,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0047",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_b",
+      "value": 0.3229,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0047",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1523,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0047",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0897,
+      "institute_id": "example_institute_alpha",
+      "poll_id": "example_national_2026_stimulated_1st_round_0047",
+      "n": 3000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3671,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0048",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2849,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0048",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1641,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0048",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0939,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0048",
+      "n": 3500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3519,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0049",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2603,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0049",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_c",
+      "value": 0.152,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0049",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1458,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0049",
+      "n": 2500
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_a",
+      "value": 0.363,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0050",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_b",
+      "value": 0.279,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0050",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1698,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0050",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_d",
+      "value": 0.0981,
+      "institute_id": "example_institute_beta",
+      "poll_id": "example_national_2026_stimulated_1st_round_0050",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3305,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0051",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2638,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0051",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1875,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0051",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1282,
+      "institute_id": "example_institute_gamma",
+      "poll_id": "example_national_2026_stimulated_1st_round_0051",
+      "n": 2000
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_a",
+      "value": 0.34
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_b",
+      "value": 0.29
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_c",
+      "value": 0.16
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_d",
+      "value": 0.12
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3404
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2898
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1602
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_d",
+      "value": 0.12
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3459
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2618
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1717
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1305
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3459
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2618
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1717
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1305
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3366
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2816
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1648
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1271
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3366
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2816
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1647
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1271
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3365
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2817
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1647
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_d",
+      "value": 0.127
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3397
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2848
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1627
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1229
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3397
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2849
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1626
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1228
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3402
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1672
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1205
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3403
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1672
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1204
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3403
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2822
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1673
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1202
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3403
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2822
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1674
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_d",
+      "value": 0.12
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3425
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2822
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1679
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1173
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3427
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_b",
+      "value": 0.282
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1681
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1172
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3428
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2818
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1682
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1172
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3442
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2796
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_c",
+      "value": 0.165
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1213
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3441
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2795
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1649
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1215
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3461
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_b",
+      "value": 0.286
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1611
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1168
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3462
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2862
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1608
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1168
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3473
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2826
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1597
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1205
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3475
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1596
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1208
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3458
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2848
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_c",
+      "value": 0.156
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1234
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_a",
+      "value": 0.346
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2854
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1545
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_d",
+      "value": 0.124
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_a",
+      "value": 0.346
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2855
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1544
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1241
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3439
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2855
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1572
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1235
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3438
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2855
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1573
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1234
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_a",
+      "value": 0.342
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2872
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1596
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1212
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3419
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_b",
+      "value": 0.287
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1598
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1213
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3419
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2869
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_c",
+      "value": 0.16
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1212
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3412
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2888
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1601
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1199
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3457
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2855
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1578
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_d",
+      "value": 0.121
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3457
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2838
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1584
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1221
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3448
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2807
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1636
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1209
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3445
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2813
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1639
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1203
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3446
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2812
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1638
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1204
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3449
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2788
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1659
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1204
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3448
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2787
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1659
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1205
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3447
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2787
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_c",
+      "value": 0.166
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1205
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3452
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2781
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1664
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1202
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3419
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1641
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1219
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3419
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2815
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1636
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_d",
+      "value": 0.123
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3418
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2817
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1634
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1231
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3419
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2819
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1629
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1232
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3448
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2802
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1686
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1164
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3437
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2802
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_c",
+      "value": 0.171
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1151
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3497
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2826
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1666
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1111
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_a",
+      "value": 0.351
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2838
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1653
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1098
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3495
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2819
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1741
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1046
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3496
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2817
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1742
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1044
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3503
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1753
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1022
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3503
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2821
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1754
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1021
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2754
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1648
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1205
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3491
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2754
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1645
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1211
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3501
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2739
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1646
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1214
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_a",
+      "value": 0.352
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_b",
+      "value": 0.28
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1613
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1167
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3519
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_b",
+      "value": 0.28
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1612
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1169
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_a",
+      "value": 0.352
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_b",
+      "value": 0.28
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_c",
+      "value": 0.161
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_d",
+      "value": 0.117
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_a",
+      "value": 0.3523
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2805
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_c",
+      "value": 0.159
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1182
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_a",
+      "value": 0.351
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_b",
+      "value": 0.2783
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_c",
+      "value": 0.1639
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_d",
+      "value": 0.1167
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.315,
+      "band_high": 0.365
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.265,
+      "band_high": 0.315
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.135,
+      "band_high": 0.185
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-23",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.095,
+      "band_high": 0.145
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3154,
+      "band_high": 0.3654
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2647,
+      "band_high": 0.3148
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1352,
+      "band_high": 0.1852
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-24",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.095,
+      "band_high": 0.1449
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3334,
+      "band_high": 0.3584
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2493,
+      "band_high": 0.2743
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1592,
+      "band_high": 0.1842
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-25",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.118,
+      "band_high": 0.143
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3334,
+      "band_high": 0.3584
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2493,
+      "band_high": 0.2743
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1592,
+      "band_high": 0.1842
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-26",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.118,
+      "band_high": 0.143
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3246,
+      "band_high": 0.3486
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2634,
+      "band_high": 0.2997
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1512,
+      "band_high": 0.1783
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-27",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1151,
+      "band_high": 0.1391
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3246,
+      "band_high": 0.3486
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2635,
+      "band_high": 0.2998
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1512,
+      "band_high": 0.1783
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-28",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1151,
+      "band_high": 0.1391
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3245,
+      "band_high": 0.3485
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2636,
+      "band_high": 0.2998
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1511,
+      "band_high": 0.1783
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-29",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.115,
+      "band_high": 0.139
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3277,
+      "band_high": 0.3517
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2619,
+      "band_high": 0.3077
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1507,
+      "band_high": 0.1747
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-30",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1099,
+      "band_high": 0.1358
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3277,
+      "band_high": 0.3517
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.262,
+      "band_high": 0.3078
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1506,
+      "band_high": 0.1746
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-07-31",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1098,
+      "band_high": 0.1358
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3282,
+      "band_high": 0.3522
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2622,
+      "band_high": 0.302
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1547,
+      "band_high": 0.1796
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-01",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1085,
+      "band_high": 0.1325
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3283,
+      "band_high": 0.3523
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2623,
+      "band_high": 0.302
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1547,
+      "band_high": 0.1797
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-02",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1084,
+      "band_high": 0.1324
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3283,
+      "band_high": 0.3523
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2624,
+      "band_high": 0.302
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1548,
+      "band_high": 0.1798
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-03",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1082,
+      "band_high": 0.1322
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3283,
+      "band_high": 0.3523
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2625,
+      "band_high": 0.302
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1549,
+      "band_high": 0.1798
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-04",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.108,
+      "band_high": 0.132
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3299,
+      "band_high": 0.3551
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2664,
+      "band_high": 0.2981
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1548,
+      "band_high": 0.1811
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-05",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.104,
+      "band_high": 0.1306
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3301,
+      "band_high": 0.3553
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2663,
+      "band_high": 0.2977
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.155,
+      "band_high": 0.1812
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-06",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1039,
+      "band_high": 0.1305
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3302,
+      "band_high": 0.3554
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2663,
+      "band_high": 0.2974
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1551,
+      "band_high": 0.1813
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-07",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1039,
+      "band_high": 0.1305
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3233,
+      "band_high": 0.3651
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2646,
+      "band_high": 0.2946
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1499,
+      "band_high": 0.1802
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-08",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1066,
+      "band_high": 0.1359
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3231,
+      "band_high": 0.3652
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2647,
+      "band_high": 0.2943
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1497,
+      "band_high": 0.1802
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-09",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1068,
+      "band_high": 0.1361
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3261,
+      "band_high": 0.3662
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2666,
+      "band_high": 0.3054
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.146,
+      "band_high": 0.1762
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-10",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1002,
+      "band_high": 0.1334
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3261,
+      "band_high": 0.3663
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2667,
+      "band_high": 0.3058
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1458,
+      "band_high": 0.1758
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-11",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1001,
+      "band_high": 0.1335
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3278,
+      "band_high": 0.3668
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.262,
+      "band_high": 0.3031
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.146,
+      "band_high": 0.1733
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-12",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.095,
+      "band_high": 0.146
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3277,
+      "band_high": 0.3673
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2621,
+      "band_high": 0.302
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1455,
+      "band_high": 0.1738
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-13",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0946,
+      "band_high": 0.147
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3235,
+      "band_high": 0.3682
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2654,
+      "band_high": 0.3042
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1422,
+      "band_high": 0.1697
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-14",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1004,
+      "band_high": 0.1464
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3231,
+      "band_high": 0.369
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2656,
+      "band_high": 0.3053
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1422,
+      "band_high": 0.1668
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-15",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1004,
+      "band_high": 0.1476
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3231,
+      "band_high": 0.3689
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2657,
+      "band_high": 0.3053
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1422,
+      "band_high": 0.1666
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-16",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1005,
+      "band_high": 0.1477
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.324,
+      "band_high": 0.3638
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2668,
+      "band_high": 0.3042
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1446,
+      "band_high": 0.1697
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-17",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1027,
+      "band_high": 0.1443
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3241,
+      "band_high": 0.3634
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.267,
+      "band_high": 0.3041
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1447,
+      "band_high": 0.1699
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-18",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1027,
+      "band_high": 0.1442
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3186,
+      "band_high": 0.3655
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2701,
+      "band_high": 0.3042
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1435,
+      "band_high": 0.1757
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-19",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1015,
+      "band_high": 0.1409
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3183,
+      "band_high": 0.3656
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2701,
+      "band_high": 0.3039
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1436,
+      "band_high": 0.176
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-20",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1019,
+      "band_high": 0.1406
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3181,
+      "band_high": 0.3656
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2701,
+      "band_high": 0.3038
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1437,
+      "band_high": 0.1763
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-21",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1022,
+      "band_high": 0.1402
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3182,
+      "band_high": 0.3642
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2728,
+      "band_high": 0.3048
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1436,
+      "band_high": 0.1765
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-22",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1009,
+      "band_high": 0.1389
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3255,
+      "band_high": 0.3658
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2696,
+      "band_high": 0.3014
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1429,
+      "band_high": 0.1727
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-23",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1049,
+      "band_high": 0.1371
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3254,
+      "band_high": 0.366
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2688,
+      "band_high": 0.2988
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1431,
+      "band_high": 0.1736
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-24",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1063,
+      "band_high": 0.1378
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.324,
+      "band_high": 0.3656
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2609,
+      "band_high": 0.3005
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1462,
+      "band_high": 0.1811
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-25",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1043,
+      "band_high": 0.1374
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3235,
+      "band_high": 0.3655
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2614,
+      "band_high": 0.3012
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1461,
+      "band_high": 0.1818
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-26",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1066,
+      "band_high": 0.1339
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3236,
+      "band_high": 0.3657
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2612,
+      "band_high": 0.3012
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1459,
+      "band_high": 0.1817
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-27",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1067,
+      "band_high": 0.134
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3278,
+      "band_high": 0.3619
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2612,
+      "band_high": 0.2965
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1471,
+      "band_high": 0.1848
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-28",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1056,
+      "band_high": 0.1352
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3281,
+      "band_high": 0.3616
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2611,
+      "band_high": 0.2963
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1471,
+      "band_high": 0.1848
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-29",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1057,
+      "band_high": 0.1353
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3281,
+      "band_high": 0.3613
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2611,
+      "band_high": 0.2963
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1472,
+      "band_high": 0.1848
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-30",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1057,
+      "band_high": 0.1354
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3278,
+      "band_high": 0.3627
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2606,
+      "band_high": 0.2957
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1468,
+      "band_high": 0.186
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-08-31",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.105,
+      "band_high": 0.1355
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3261,
+      "band_high": 0.3577
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2654,
+      "band_high": 0.2988
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1467,
+      "band_high": 0.1815
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-01",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1068,
+      "band_high": 0.1371
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3286,
+      "band_high": 0.3553
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2646,
+      "band_high": 0.2983
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1467,
+      "band_high": 0.1805
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-02",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1079,
+      "band_high": 0.1381
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3287,
+      "band_high": 0.3549
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.265,
+      "band_high": 0.2983
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1467,
+      "band_high": 0.1802
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.108,
+      "band_high": 0.1381
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.329,
+      "band_high": 0.3549
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2656,
+      "band_high": 0.2982
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1463,
+      "band_high": 0.1795
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.1084,
+      "band_high": 0.1381
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3309,
+      "band_high": 0.3587
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.266,
+      "band_high": 0.2944
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1507,
+      "band_high": 0.1865
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0992,
+      "band_high": 0.1335
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3295,
+      "band_high": 0.3578
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2655,
+      "band_high": 0.2949
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.154,
+      "band_high": 0.1881
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0975,
+      "band_high": 0.1327
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3299,
+      "band_high": 0.3694
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2678,
+      "band_high": 0.2974
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1476,
+      "band_high": 0.1857
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0929,
+      "band_high": 0.1294
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3319,
+      "band_high": 0.3701
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2718,
+      "band_high": 0.2958
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1459,
+      "band_high": 0.1848
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0918,
+      "band_high": 0.1278
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3299,
+      "band_high": 0.3691
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2699,
+      "band_high": 0.2939
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1542,
+      "band_high": 0.1939
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0869,
+      "band_high": 0.1223
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.33,
+      "band_high": 0.3692
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2697,
+      "band_high": 0.2937
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1544,
+      "band_high": 0.1941
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0868,
+      "band_high": 0.1221
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3299,
+      "band_high": 0.3707
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2701,
+      "band_high": 0.2941
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.156,
+      "band_high": 0.1947
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0866,
+      "band_high": 0.1179
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3299,
+      "band_high": 0.3708
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2701,
+      "band_high": 0.2941
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1561,
+      "band_high": 0.1948
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0866,
+      "band_high": 0.1177
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3302,
+      "band_high": 0.3683
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2622,
+      "band_high": 0.2887
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1445,
+      "band_high": 0.1852
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0917,
+      "band_high": 0.1494
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3301,
+      "band_high": 0.3681
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.262,
+      "band_high": 0.2887
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1443,
+      "band_high": 0.1847
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0922,
+      "band_high": 0.15
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3311,
+      "band_high": 0.3691
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2614,
+      "band_high": 0.2864
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1439,
+      "band_high": 0.1853
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0916,
+      "band_high": 0.1512
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3351,
+      "band_high": 0.3688
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2559,
+      "band_high": 0.304
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1439,
+      "band_high": 0.1788
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0853,
+      "band_high": 0.1481
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3352,
+      "band_high": 0.3686
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2557,
+      "band_high": 0.3042
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.144,
+      "band_high": 0.1785
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0855,
+      "band_high": 0.1483
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3354,
+      "band_high": 0.3685
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2556,
+      "band_high": 0.3045
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.144,
+      "band_high": 0.1781
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0856,
+      "band_high": 0.1484
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3356,
+      "band_high": 0.369
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2549,
+      "band_high": 0.3061
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1435,
+      "band_high": 0.1744
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-19",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0859,
+      "band_high": 0.1505
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_a",
+      "band_low": 0.3331,
+      "band_high": 0.369
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_b",
+      "band_low": 0.2551,
+      "band_high": 0.3016
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_c",
+      "band_low": 0.1459,
+      "band_high": 0.1819
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-20",
+      "candidate_id": "example_candidate_d",
+      "band_low": 0.0872,
+      "band_high": 0.1462
+    }
+  ]
 }
