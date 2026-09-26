@@ -1,0 +1,111 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "json"
+require "pathname"
+
+ROOT = File.expand_path("..", __dir__)
+$LOAD_PATH.unshift(File.join(ROOT, "lib"))
+
+begin
+  require "bundler/setup"
+rescue LoadError
+  warn "bundler/setup missing — run: bundle install"
+  exit 1
+end
+
+require "json_schemer"
+require "pebr"
+
+module Pebr
+  module CLI
+    module_function
+
+    def usage
+      <<~USAGE
+        pebr #{Pebr::VERSION} — PEBR pipeline CLI
+
+        Usage:
+          bin/pebr validate   Validate fixtures/national/EXAMPLE_*.json against schemas/
+          bin/pebr discover   Stub (not yet implemented)
+          bin/pebr normalize  Stub (not yet implemented)
+          bin/pebr version    Print version
+          bin/pebr help       This message
+      USAGE
+    end
+
+    def main(argv)
+      cmd = argv[0] || "help"
+      case cmd
+      when "validate" then validate!
+      when "discover" then stub!("discover", "Discover/intake from docs/source-map comes later.")
+      when "normalize" then stub!("normalize", "Normalize/identity merge comes later.")
+      when "version", "-v", "--version"
+        puts Pebr::VERSION
+      when "help", "-h", "--help"
+        puts usage
+      else
+        warn "Unknown command: #{cmd}\n\n#{usage}"
+        exit 1
+      end
+    end
+
+    def stub!(name, message)
+      puts "pebr #{name}: no-op — #{message}"
+      exit 0
+    end
+
+    def validate!
+      schema_dir = Pathname.new(Pebr::SCHEMA_DIR)
+      fixture_dir = Pathname.new(Pebr::FIXTURE_DIR)
+      errors = []
+      checked = 0
+
+      Pebr::FIXTURE_SCHEMA_MAP.each do |fixture_name, schema_name|
+        fixture_path = fixture_dir.join(fixture_name)
+        schema_path = schema_dir.join(schema_name)
+
+        unless fixture_path.file?
+          errors << "#{fixture_name}: missing fixture at #{fixture_path}"
+          next
+        end
+        unless schema_path.file?
+          errors << "#{fixture_name}: missing schema at #{schema_path}"
+          next
+        end
+
+        schema = JSON.parse(schema_path.read)
+        data = JSON.parse(fixture_path.read)
+        schemer = JSONSchemer.schema(schema)
+        failures = schemer.validate(data).to_a
+        checked += 1
+
+        if failures.empty?
+          puts "OK  #{fixture_name}  ←  #{schema_name}"
+        else
+          failures.each do |err|
+            pointer = err["data_pointer"] || err["schema_pointer"] || "?"
+            type = err["type"] || "error"
+            detail = err["error"] || err["details"] || err.inspect
+            errors << "#{fixture_name}: #{type} at #{pointer} — #{detail}"
+          end
+        end
+      end
+
+      extras = Dir.glob(fixture_dir.join("EXAMPLE_*.json").to_s).map { |p| File.basename(p) } -
+               Pebr::FIXTURE_SCHEMA_MAP.keys
+      extras.each { |name| errors << "#{name}: no schema mapping in Pebr::FIXTURE_SCHEMA_MAP" }
+
+      if errors.empty?
+        puts "validate: #{checked} fixture(s) passed"
+        exit 0
+      else
+        warn "validate: FAILED"
+        errors.each { |e| warn "  - #{e}" }
+        exit 1
+      end
+    end
+  end
+end
+
+Pebr::CLI.main(ARGV)

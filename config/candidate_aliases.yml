@@ -1,0 +1,18 @@
+# Candidate id ↔ display-name / alias map (structure only).
+# Do not invent real 2026 candidate registries here — seed when intake is audited.
+#
+# Example keys below match synthetic fixtures only.
+
+aliases:
+  example_candidate_a:
+    display_name: "Example Candidate A"
+    aliases: ["Cand A"]
+    notes: "SYNTHETIC — fixtures only"
+  example_candidate_b:
+    display_name: "Example Candidate B"
+    aliases: ["Cand B"]
+    notes: "SYNTHETIC — fixtures only"
+  example_candidate_c:
+    display_name: "Example Candidate C"
+    aliases: ["Cand C"]
+    notes: "SYNTHETIC — fixtures only"

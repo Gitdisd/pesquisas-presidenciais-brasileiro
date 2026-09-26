@@ -1,0 +1,44 @@
+# PEBR pipeline refresh (skeleton)
+# Future: discover → normalize → validate → (optional) Stats handoff.
+# Pages: site/ is served by GitHub Pages (Lead owns UI). This workflow does not deploy Pages yet.
+
+name: pebr-refresh
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "schemas/**"
+      - "fixtures/**"
+      - "lib/**"
+      - "bin/**"
+      - "Gemfile*"
+      - "config/**"
+      - ".github/workflows/refresh.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Bundle install
+        run: bundle install --jobs 4
+
+      - name: Validate EXAMPLE fixtures against schemas
+        run: bin/pebr validate
+
+      # TODO: bin/pebr discover  — intake from docs/source-map (later)
+      # TODO: bin/pebr normalize — identity merge / canonical polls (later)
+      # Note: GitHub Pages for site/ is owned by Lead; do not regenerate bulk chart data here.

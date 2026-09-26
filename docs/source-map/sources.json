@@ -1,0 +1,1268 @@
+{
+  "meta": {
+    "project": "PEBR 2026 / pesquisas-presidenciais-brasileiro",
+    "repo": "https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro",
+    "research_date_local": "2026-09-26",
+    "timezone": "America/Sao_Paulo",
+    "scope": "Full source map BEFORE shortlist; national v1; TSE=provenance not truth",
+    "disclaimer": "No poll percentages, candidates, or dates were invented as PEBR facts. verification=True means URL was search-backed and/or fetched; does not mean every subpage was exhaustively crawled.",
+    "counts": {
+      "tse": 5,
+      "archive": 5,
+      "institute": 20,
+      "media": 11,
+      "aggregator": 12
+    },
+    "total_sources": 53
+  },
+  "sources": [
+    {
+      "id": "tse-pesqele-divulgacao",
+      "name": "TSE PesqEle — Consulta pública (divulgação)",
+      "type": "tse",
+      "urls": [
+        "https://pesqele-divulgacao.tse.jus.br/",
+        "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas"
+      ],
+      "content_formats": [
+        "JS app",
+        "registration record",
+        "PDF attachments"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary_provenance",
+      "verified": true,
+      "update_cadence": "near_real_time for new registrations; public listing historically time-limited on portal",
+      "access_notes": "JS-heavy; intermittent WAF 'Acesso Rejeitado' for automated clients; use browser. Filter Eleições Gerais + UF=Brasil for national.",
+      "license_terms": "Public judicial information; reuse subject to TSE site terms",
+      "notes": "Lookup by election year/cycle, UF, and registration number. Fields include sample, MoE, methodology, contractor; PDFs for questionnaire/NF/geography. Does NOT publish horse-race candidate % as official results.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://pesqele-divulgacao.tse.jus.br/",
+        "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas"
+      ]
+    },
+    {
+      "id": "tse-pesqele-empresa",
+      "name": "TSE PesqEle — Registro de empresas/pesquisas (empresa)",
+      "type": "tse",
+      "urls": [
+        "https://pesqele-empresa.tse.jus.br/",
+        "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/registro-de-empresas-e-entidades-de-pesquisas-e-cadastro-de-pesquisas"
+      ],
+      "content_formats": [
+        "authenticated JS app"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary_provenance",
+      "verified": true,
+      "update_cadence": "on institute submission",
+      "access_notes": "Login required for institutes; not an intake source for PEBR scrapers",
+      "license_terms": "unknown",
+      "notes": "Registration entry point for pollsters.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://pesqele-empresa.tse.jus.br/",
+        "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/registro-de-empresas-e-entidades-de-pesquisas-e-cadastro-de-pesquisas"
+      ]
+    },
+    {
+      "id": "tse-hub-pesquisas",
+      "name": "TSE — Pesquisas eleitorais (hub legal)",
+      "type": "tse",
+      "urls": [
+        "https://www.tse.jus.br/eleicoes/pesquisas-eleitorais"
+      ],
+      "content_formats": [
+        "HTML"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "as regulations update",
+      "access_notes": "Static portal HTML",
+      "license_terms": "TSE site terms",
+      "notes": "Explains legal duty to register from 1 Jan of election year until 5 days before disclosure; points to PesqEle. States JE does not pre-control results.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.tse.jus.br/eleicoes/pesquisas-eleitorais"
+      ]
+    },
+    {
+      "id": "tse-res-23747-2026",
+      "name": "TSE Resolução 23.747/2026 (regras de registro)",
+      "type": "tse",
+      "urls": [
+        "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-747-de-26-de-fevereiro-de-2026"
+      ],
+      "content_formats": [
+        "HTML legislation"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "legislative",
+      "access_notes": "Public",
+      "license_terms": "Public domain / official text",
+      "notes": "Lists required registration fields (payer CPF/CNPJ, statistician CONRE, UF/cargos, PDF uploads, 5-day rule).",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-747-de-26-de-fevereiro-de-2026"
+      ]
+    },
+    {
+      "id": "tse-dados-abertos-2026",
+      "name": "TSE Dados Abertos — Pesquisas Eleitorais 2026",
+      "type": "tse",
+      "urls": [
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/769a663e-12c5-489e-a9c8-04633c2d57a3",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/5675d403-63ce-4a39-bd00-fc110ef999a7",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/32fc58de-8369-4b9f-9c97-1647f8de49cb"
+      ],
+      "content_formats": [
+        "CSV zip",
+        "PDF bundles"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary_provenance",
+      "verified": true,
+      "update_cadence": "daily (portal metadata)",
+      "access_notes": "Portal HTML fetchable; CKAN API returned Access Denied from research box (Akamai). Large CSVs; Excel row limits warned on portal.",
+      "license_terms": "Creative Commons Attribution (resource metadata)",
+      "notes": "Resources: pesquisas CSV, contratantes, pagantes, NF PDFs, questionários PDFs, detalhamento bairro/município. Registration metadata — NOT candidate results table.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/769a663e-12c5-489e-a9c8-04633c2d57a3",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/5675d403-63ce-4a39-bd00-fc110ef999a7",
+        "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/32fc58de-8369-4b9f-9c97-1647f8de49cb"
+      ]
+    },
+    {
+      "id": "tse-dados-abertos-group",
+      "name": "TSE Dados Abertos — grupo Pesquisas Eleitorais (2012–2026)",
+      "type": "archive",
+      "urls": [
+        "https://dadosabertos.tse.jus.br/pt_BR/group/pesquisas-eleitorais"
+      ],
+      "content_formats": [
+        "CSV",
+        "PDF"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary_provenance",
+      "verified": true,
+      "update_cadence": "per election package",
+      "access_notes": "Same WAF risks as 2026 package",
+      "license_terms": "CC Attribution family (verify per resource)",
+      "notes": "Historical packages: 2012,2014,2016,2018,2020,2022,2024,2026.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://dadosabertos.tse.jus.br/pt_BR/group/pesquisas-eleitorais"
+      ]
+    },
+    {
+      "id": "quaest",
+      "name": "Quaest (incl. Genial/Quaest)",
+      "type": "institute",
+      "urls": [
+        "https://quaest.com.br/",
+        "https://quaest.com.br/lps/lp-pesquisa-eleicoes-2026-julho/",
+        "https://quaest.com.br/wp-content/uploads/2026/09/QUAEST3PRESIDENCIAL0709.pdf"
+      ],
+      "content_formats": [
+        "HTML",
+        "PDF"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "high (often weekly in campaign)",
+      "access_notes": "Public site; PDF path pattern under /wp-content/uploads/",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "National face-to-face series; Globo/O Globo commissions in 2026. Normalize Genial/Quaest → Quaest.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://quaest.com.br/",
+        "https://quaest.com.br/lps/lp-pesquisa-eleicoes-2026-julho/",
+        "https://quaest.com.br/wp-content/uploads/2026/09/QUAEST3PRESIDENCIAL0709.pdf"
+      ]
+    },
+    {
+      "id": "datafolha",
+      "name": "Datafolha",
+      "type": "institute",
+      "urls": [
+        "https://datafolha.folha.uol.com.br/",
+        "https://www1.folha.uol.com.br/poder/",
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/Datafolha/"
+      ],
+      "content_formats": [
+        "HTML",
+        "charts",
+        "sometimes PDF via partners"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "high in campaign",
+      "access_notes": "Datafolha site public; Folha may soft-paywall; G1 especial JS-heavy",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Often commissioned by Folha + TV Globo. Publishes national and state-cut articles — separate state cuts from national poll identity.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://datafolha.folha.uol.com.br/",
+        "https://www1.folha.uol.com.br/poder/",
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/Datafolha/"
+      ]
+    },
+    {
+      "id": "atlasintel",
+      "name": "AtlasIntel (Atlas/Bloomberg)",
+      "type": "institute",
+      "urls": [
+        "https://atlasintel.org/",
+        "https://atlasintel.org/poll/brazil-national-2026-09-23",
+        "https://atlasintel.org/poll/brazil-national-2026-08-31"
+      ],
+      "content_formats": [
+        "HTML poll pages",
+        "charts"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "high-frequency tracking",
+      "access_notes": "Public poll pages; English UI",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Proprietary online/data-collection methodology. Press often labels Atlas/Bloomberg.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://atlasintel.org/",
+        "https://atlasintel.org/poll/brazil-national-2026-09-23",
+        "https://atlasintel.org/poll/brazil-national-2026-08-31"
+      ]
+    },
+    {
+      "id": "poderdata",
+      "name": "PoderData / Aya",
+      "type": "institute",
+      "urls": [
+        "https://www.poder360.com.br/",
+        "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-23set26.pdf"
+      ],
+      "content_formats": [
+        "PDF",
+        "HTML articles"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "~weekly",
+      "access_notes": "PDF often on Poder360 CDN (public); site articles may push subscription",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Institute arm related to Poder360. Prefer PDF artifact as primary; article as witness.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.poder360.com.br/",
+        "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-23set26.pdf"
+      ]
+    },
+    {
+      "id": "parana-pesquisas",
+      "name": "Paraná Pesquisas",
+      "type": "institute",
+      "urls": [
+        "https://paranapesquisas.com.br/",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26.pdf",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/01/Nacional_Jan26-4.pdf"
+      ],
+      "content_formats": [
+        "HTML posts",
+        "PDF"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "irregular national; frequent state",
+      "access_notes": "Public WordPress; homepage dominated by STATE polls",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "CRITICAL: heavy state output (CE,ES,BA,RJ,SC,SP,AL, municipal). National PDFs named Nacional_*. Filter BR- only.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://paranapesquisas.com.br/",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26.pdf",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/01/Nacional_Jan26-4.pdf"
+      ]
+    },
+    {
+      "id": "realtime-bigdata",
+      "name": "Real Time Big Data",
+      "type": "institute",
+      "urls": [
+        "https://realtimebigdata.com.br/",
+        "https://realtimebigdata.com.br/pesquisas/",
+        "https://static.poder360.com.br/uploads/2026/09/Pesquisa-presidencial-Real-Time-Big-Data-24-set-2026.pdf"
+      ],
+      "content_formats": [
+        "HTML",
+        "PDF (often mirrored)"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "campaign-frequent",
+      "access_notes": "Institute /pesquisas page thin/JS; full reports frequently on media CDNs",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Also publishes state PDFs on same CDN pattern — keep national separate.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://realtimebigdata.com.br/",
+        "https://realtimebigdata.com.br/pesquisas/",
+        "https://static.poder360.com.br/uploads/2026/09/Pesquisa-presidencial-Real-Time-Big-Data-24-set-2026.pdf"
+      ]
+    },
+    {
+      "id": "ideia",
+      "name": "Ideia (Meio/Ideia, Ideia/Canal Meio)",
+      "type": "institute",
+      "urls": [
+        "https://ideiausa.com.br/",
+        "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro-IMPRENSA.pdf"
+      ],
+      "content_formats": [
+        "corporate HTML",
+        "PDF via media"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "~monthly / campaign",
+      "access_notes": "Corporate site; poll PDFs often via Poder360/Gazeta/CNN",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Normalize Meio/Ideia and Ideia/Canal Meio to Ideia institute identity.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://ideiausa.com.br/",
+        "https://static.poder360.com.br/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro-IMPRENSA.pdf"
+      ]
+    },
+    {
+      "id": "cnt-mda",
+      "name": "CNT/MDA (Pesquisa CNT de Opinião)",
+      "type": "institute",
+      "urls": [
+        "https://static.poder360.com.br/uploads/2026/09/Relatorio-Pesquisa-CNT-de-Opiniao-R170-SETEMBRO26.pdf",
+        "https://www.cartacapital.com.br/wp-content/uploads/2026/09/CNTMDA.pdf"
+      ],
+      "content_formats": [
+        "PDF"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "periodic numbered rounds",
+      "access_notes": "PDFs mirrored by media (Poder360, CartaCapital); official CNT page URL varies",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "CNT commissions; MDA fields. Dual brand. Official cnt.org.br landing not fully verified this pass — PDF artifacts verified via mirrors.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://static.poder360.com.br/uploads/2026/09/Relatorio-Pesquisa-CNT-de-Opiniao-R170-SETEMBRO26.pdf",
+        "https://www.cartacapital.com.br/wp-content/uploads/2026/09/CNTMDA.pdf"
+      ]
+    },
+    {
+      "id": "ipsos-ipec",
+      "name": "Ipsos-Ipec",
+      "type": "institute",
+      "urls": [
+        "https://www.ipsos.com/pt-br/",
+        "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026",
+        "https://www.ipsos.com/sites/default/files/ct/publication/documents/2025-12/Elei%C3%A7%C3%A3o%202026%20-%20Pesquisa%20Ipsos-Ipec.pdf"
+      ],
+      "content_formats": [
+        "HTML",
+        "PDF"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "lower frequency than weekly trackers (observed)",
+      "access_notes": "Public Ipsos.com PDFs",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Also publishes STATE studies (e.g. CE) — quarantine from national. Historical Ibope→Ipec lineage in jargon.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.ipsos.com/pt-br/",
+        "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026",
+        "https://www.ipsos.com/sites/default/files/ct/publication/documents/2025-12/Elei%C3%A7%C3%A3o%202026%20-%20Pesquisa%20Ipsos-Ipec.pdf"
+      ]
+    },
+    {
+      "id": "futura",
+      "name": "Futura Inteligência (Futura/Apex)",
+      "type": "institute",
+      "urls": [
+        "https://www.futurainteligencia.com.br/pesquisas"
+      ],
+      "content_formats": [
+        "HTML library (JS)",
+        "PDF via media"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "campaign-frequent",
+      "access_notes": "Library page JS-heavy / sparse when fetched without JS",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Normalize Futura/Apex → Futura.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.futurainteligencia.com.br/pesquisas"
+      ]
+    },
+    {
+      "id": "nexus",
+      "name": "Nexus (BTG/Nexus)",
+      "type": "institute",
+      "urls": [
+        "https://www.nexus.fsb.com.br/",
+        "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-21-de-setembro-de-2026/",
+        "https://static.poder360.com.br/uploads/2026/09/BTG-Nexus-Eleicoes-2026-Rodada-15.pdf"
+      ],
+      "content_formats": [
+        "HTML release",
+        "PDF"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "frequent",
+      "access_notes": "Public estudos pages",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Commissioned with BTG Pactual. CATI phone national samples documented on release pages.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.nexus.fsb.com.br/",
+        "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-21-de-setembro-de-2026/",
+        "https://static.poder360.com.br/uploads/2026/09/BTG-Nexus-Eleicoes-2026-Rodada-15.pdf"
+      ]
+    },
+    {
+      "id": "indexa",
+      "name": "Indexa Pesquisas (Indexa Broadcast)",
+      "type": "institute",
+      "urls": [
+        "https://indexapesquisas.com.br/"
+      ],
+      "content_formats": [
+        "corporate HTML",
+        "results via JOTA/CNN/Estadão"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "regular",
+      "access_notes": "Corporate site; full poll PDFs often via press partners",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Press: Indexa / Indexa Broadcast. Bios claim succession from Instituto Opinião — treat as naming alias risk.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://indexapesquisas.com.br/"
+      ]
+    },
+    {
+      "id": "palver",
+      "name": "Palver",
+      "type": "institute",
+      "urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/",
+        "https://www.correiobraziliense.com.br/politica/2026/09/7503914-palver-divulga-nova-pesquisa-presidencial-neste-domingo-20-9.html"
+      ],
+      "content_formats": [
+        "press HTML",
+        "PDF/Google Docs (occasional)"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "primary",
+      "verified": true,
+      "update_cadence": "campaign waves",
+      "access_notes": "Primary hub URL not firmly established this pass; discovery via CNN/JOTA",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Institute exists in national aggregator lists; prefer finding institute-issued PDF before treating media text as primary.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/",
+        "https://www.correiobraziliense.com.br/politica/2026/09/7503914-palver-divulga-nova-pesquisa-presidencial-neste-domingo-20-9.html"
+      ]
+    },
+    {
+      "id": "gerp",
+      "name": "Gerp Opinião",
+      "type": "institute",
+      "urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/"
+      ],
+      "content_formats": [
+        "press HTML",
+        "PDF via media"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "irregular",
+      "access_notes": "Official hub URL unknown this pass",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Appears in Wikipedia/UOL national lists. Official site needs confirmation.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/"
+      ]
+    },
+    {
+      "id": "vox-brasil",
+      "name": "Instituto Vox Brasil",
+      "type": "institute",
+      "urls": [
+        "https://www.poder360.com.br/"
+      ],
+      "content_formats": [
+        "press HTML",
+        "PDF via media"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "irregular",
+      "access_notes": "Results typically via Poder360/Metrópoles",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "National rounds cited on Wikipedia 2026 page. Official hub unknown this pass.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.poder360.com.br/"
+      ]
+    },
+    {
+      "id": "verita",
+      "name": "Instituto Veritá",
+      "type": "institute",
+      "urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ],
+      "content_formats": [
+        "unknown primary",
+        "press"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "Listed in UOL origem dos dados",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Primary URL not verified this pass.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ]
+    },
+    {
+      "id": "alfa-inteligencia",
+      "name": "Alfa Inteligência",
+      "type": "institute",
+      "urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ],
+      "content_formats": [
+        "unknown"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "Cited in UOL aggregator source list only",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Hub not verified — do not invent URLs.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ]
+    },
+    {
+      "id": "american-analytics",
+      "name": "American Analytics",
+      "type": "institute",
+      "urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ],
+      "content_formats": [
+        "unknown"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "Cited in UOL aggregator source list only",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Hub not verified.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ]
+    },
+    {
+      "id": "datatrends",
+      "name": "DataTrends / Datatrends",
+      "type": "institute",
+      "urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ],
+      "content_formats": [
+        "unknown"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "Cited in UOL list; also appears in Índice CNN institute roster",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Hub not verified.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ]
+    },
+    {
+      "id": "neokemp",
+      "name": "Neokemp Pesquisa",
+      "type": "institute",
+      "urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ],
+      "content_formats": [
+        "press citations"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "sparse",
+      "access_notes": "Discovery via Wikipedia citations",
+      "license_terms": "institute copyright; fair use / citation for archival unclear — check each site",
+      "notes": "Sparse national presence in tables; primary hub unknown.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ]
+    },
+    {
+      "id": "g1-pesquisas",
+      "name": "G1 — Pesquisas eleitorais 2026",
+      "type": "media",
+      "urls": [
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/",
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/"
+      ],
+      "content_formats": [
+        "HTML articles + interactive especial (Quaest/Datafolha focus)"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high during campaign",
+      "access_notes": "JS-heavy especial; free",
+      "license_terms": "publisher copyright",
+      "notes": "Strong witness for Globo-commissioned Quaest/Datafolha; not full-universe aggregator",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+        "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/",
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/"
+      ]
+    },
+    {
+      "id": "folha-poder",
+      "name": "Folha de S.Paulo — Poder / Datafolha channel",
+      "type": "media",
+      "urls": [
+        "https://www1.folha.uol.com.br/poder/"
+      ],
+      "content_formats": [
+        "HTML"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "possible soft paywall",
+      "license_terms": "publisher copyright",
+      "notes": "Primary narrative channel for Datafolha; witness for others",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www1.folha.uol.com.br/poder/"
+      ]
+    },
+    {
+      "id": "poder360-media",
+      "name": "Poder360 — news + PDF CDN",
+      "type": "media",
+      "urls": [
+        "https://www.poder360.com.br/",
+        "https://static.poder360.com.br/uploads/"
+      ],
+      "content_formats": [
+        "HTML + PDF mirrors"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "many PDFs public on CDN; some features gated",
+      "license_terms": "publisher copyright",
+      "notes": "Dual role: owns PoderData + hosts many other institutes' PDFs. Treat CDN PDF as witness artifact unless institute original.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.poder360.com.br/",
+        "https://static.poder360.com.br/uploads/"
+      ]
+    },
+    {
+      "id": "cnn-brasil",
+      "name": "CNN Brasil — Eleições",
+      "type": "media",
+      "urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/",
+        "https://www.cnnbrasil.com.br/eleicoes/indice-cnn-saiba-como-funciona-o-agregador-de-pesquisas-das-eleicoes-2026/"
+      ],
+      "content_formats": [
+        "HTML articles"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "free articles",
+      "license_terms": "publisher copyright",
+      "notes": "Witness for many institutes; hosts Índice CNN explainer",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/",
+        "https://www.cnnbrasil.com.br/eleicoes/indice-cnn-saiba-como-funciona-o-agregador-de-pesquisas-das-eleicoes-2026/"
+      ]
+    },
+    {
+      "id": "estadao",
+      "name": "Estadão — Eleições 2026 pesquisas",
+      "type": "media",
+      "urls": [
+        "https://www.estadao.com.br/tudo-sobre/eleicoes-2026-pesquisa-eleitoral/"
+      ],
+      "content_formats": [
+        "HTML"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "paywall common",
+      "license_terms": "publisher copyright",
+      "notes": "Witness; Broadcast/Indexa ecosystem",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.estadao.com.br/tudo-sobre/eleicoes-2026-pesquisa-eleitoral/"
+      ]
+    },
+    {
+      "id": "gazeta-povo",
+      "name": "Gazeta do Povo — arquivo pesquisas 2026",
+      "type": "media",
+      "urls": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/"
+      ],
+      "content_formats": [
+        "HTML recaps"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "mostly free",
+      "license_terms": "publisher copyright",
+      "notes": "Excellent discovery hub across institutes",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/"
+      ]
+    },
+    {
+      "id": "oglobo",
+      "name": "O Globo",
+      "type": "media",
+      "urls": [
+        "https://oglobo.globo.com/"
+      ],
+      "content_formats": [
+        "HTML / blogs"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "paywall",
+      "license_terms": "publisher copyright",
+      "notes": "Witness for Quaest-Globo series; Rali/Locomotiva aggregation mentioned in coverage",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://oglobo.globo.com/"
+      ]
+    },
+    {
+      "id": "cartacapital",
+      "name": "CartaCapital",
+      "type": "media",
+      "urls": [
+        "https://www.cartacapital.com.br/"
+      ],
+      "content_formats": [
+        "HTML + occasional PDF hosts"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "medium",
+      "access_notes": "free for many articles",
+      "license_terms": "publisher copyright",
+      "notes": "Known host of CNT/MDA PDF mirrors",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.cartacapital.com.br/"
+      ]
+    },
+    {
+      "id": "jota",
+      "name": "JOTA",
+      "type": "media",
+      "urls": [
+        "https://www.jota.info/"
+      ],
+      "content_formats": [
+        "HTML + PDFs"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "medium-high",
+      "access_notes": "mixed",
+      "license_terms": "publisher copyright",
+      "notes": "Strong discovery for Indexa/Palver",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.jota.info/"
+      ]
+    },
+    {
+      "id": "exame",
+      "name": "Exame",
+      "type": "media",
+      "urls": [
+        "https://exame.com/"
+      ],
+      "content_formats": [
+        "HTML"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "medium",
+      "access_notes": "mixed",
+      "license_terms": "publisher copyright",
+      "notes": "Secondary witness",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://exame.com/"
+      ]
+    },
+    {
+      "id": "uol-noticias",
+      "name": "UOL Notícias (non-aggregator pages)",
+      "type": "media",
+      "urls": [
+        "https://noticias.uol.com.br/"
+      ],
+      "content_formats": [
+        "HTML"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "high",
+      "access_notes": "free",
+      "license_terms": "publisher copyright",
+      "notes": "Witness articles beyond the aggregator product",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/"
+      ]
+    },
+    {
+      "id": "uol-agregador",
+      "name": "UOL Agregador de pesquisas eleitorais",
+      "type": "aggregator",
+      "urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ],
+      "content_formats": [
+        "interactive weighted average + institute list"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "updates as new polls",
+      "access_notes": "free; JS",
+      "license_terms": "publisher copyright",
+      "notes": "national; stimulated; n≥1000; TSE-registered; weights recency/sample/method/cost/history. Lists institutes used — discovery gold. NOT primary for raw %.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+      ]
+    },
+    {
+      "id": "indice-cnn",
+      "name": "Índice CNN (Ipespe Analítica)",
+      "type": "aggregator",
+      "urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/indice-cnn-saiba-como-funciona-o-agregador-de-pesquisas-das-eleicoes-2026/"
+      ],
+      "content_formats": [
+        "aggregator product (president + 27 governors)"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "on new TSE-registered polls",
+      "access_notes": "site free for explainer; product URL via CNN",
+      "license_terms": "publisher copyright",
+      "notes": "Bayesian/ML; TSE-only; long institute roster includes many STATE pollsters — filter national carefully.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/indice-cnn-saiba-como-funciona-o-agregador-de-pesquisas-das-eleicoes-2026/"
+      ]
+    },
+    {
+      "id": "pollingdata",
+      "name": "PollingData",
+      "type": "aggregator",
+      "urls": [
+        "https://flex.pollingdata.com.br/",
+        "https://flex.pollingdata.com.br/pdvoto/2026"
+      ],
+      "content_formats": [
+        "aggregator UI"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "frequent",
+      "access_notes": "JS app",
+      "license_terms": "publisher copyright",
+      "notes": "Used by BBC Brasil tracker. Secondary.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://flex.pollingdata.com.br/",
+        "https://flex.pollingdata.com.br/pdvoto/2026"
+      ]
+    },
+    {
+      "id": "economist-tracker",
+      "name": "The Economist — Brazil election poll tracker",
+      "type": "aggregator",
+      "urls": [
+        "https://www.economist.com/interactive/2026-brazil-election-tracker"
+      ],
+      "content_formats": [
+        "interactive"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "frequent",
+      "access_notes": "paywall",
+      "license_terms": "publisher copyright",
+      "notes": "International aggregator; secondary.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.economist.com/interactive/2026-brazil-election-tracker"
+      ]
+    },
+    {
+      "id": "poder360-agregador",
+      "name": "Poder360 Agregador de Pesquisas",
+      "type": "aggregator",
+      "urls": [
+        "https://www.poder360.com.br/agregador-de-pesquisas/",
+        "https://www.poder360.com.br/poder360/poder360-abre-acesso-ao-agregador-de-pesquisas-mais-completo-da-midia/"
+      ],
+      "content_formats": [
+        "subscriber aggregator"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "frequent",
+      "access_notes": "subscription / Poder Monitor paywall verified",
+      "license_terms": "publisher copyright",
+      "notes": "Do not depend on as free primary intake.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://www.poder360.com.br/agregador-de-pesquisas/",
+        "https://www.poder360.com.br/poder360/poder360-abre-acesso-ao-agregador-de-pesquisas-mais-completo-da-midia/"
+      ]
+    },
+    {
+      "id": "g1-especial-agg",
+      "name": "G1 Especial — pesquisas Quaest/Datafolha",
+      "type": "aggregator",
+      "urls": [
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/"
+      ],
+      "content_formats": [
+        "interactive charts"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "with new Quaest/Datafolha",
+      "access_notes": "JS-heavy free",
+      "license_terms": "publisher copyright",
+      "notes": "Not full multi-institute aggregator.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/"
+      ]
+    },
+    {
+      "id": "wikipedia-en-2026",
+      "name": "Wikipedia — Opinion polling for the 2026 Brazilian presidential election",
+      "type": "aggregator",
+      "urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ],
+      "content_formats": [
+        "HTML tables + citations"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "community-edited",
+      "access_notes": "free",
+      "license_terms": "publisher copyright",
+      "notes": "Best open discovery index for institutes and article links. Not primary.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ]
+    },
+    {
+      "id": "trademap-agg",
+      "name": "TradeMap — Agregador Corrida Presidencial 2026",
+      "type": "aggregator",
+      "urls": [
+        "https://tm.trademap.com.br/agencia/agregador-de-pesquisas-corrida-presidencial-2026-6"
+      ],
+      "content_formats": [
+        "commercial aggregator"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "unknown",
+      "license_terms": "publisher copyright",
+      "notes": "Secondary commercial product.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://tm.trademap.com.br/agencia/agregador-de-pesquisas-corrida-presidencial-2026-6"
+      ]
+    },
+    {
+      "id": "plano-politico",
+      "name": "Plano Político — Agregador 2026",
+      "type": "aggregator",
+      "urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ],
+      "content_formats": [
+        "aggregator (cited)"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "unknown",
+      "license_terms": "publisher copyright",
+      "notes": "URL cited via Wikipedia; verify live before intake.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ]
+    },
+    {
+      "id": "abc-dados",
+      "name": "ABC Dados — Agregador",
+      "type": "aggregator",
+      "urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ],
+      "content_formats": [
+        "aggregator (cited)"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "unknown",
+      "license_terms": "publisher copyright",
+      "notes": "Cited on Wikipedia aggregator table.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ]
+    },
+    {
+      "id": "poll-plus-trend",
+      "name": "Poll+Trend",
+      "type": "aggregator",
+      "urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ],
+      "content_formats": [
+        "aggregator (cited)"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "unknown",
+      "license_terms": "publisher copyright",
+      "notes": "Cited on Wikipedia.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+      ]
+    },
+    {
+      "id": "datapolicy-agg",
+      "name": "DataPolicy — Agregador 2026",
+      "type": "aggregator",
+      "urls": [
+        "https://noticias.datapolicy.co/agregador-de-pesquisas-eleitorais-2026/"
+      ],
+      "content_formats": [
+        "aggregator pages"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "unknown",
+      "license_terms": "publisher copyright",
+      "notes": "Secondary.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://noticias.datapolicy.co/agregador-de-pesquisas-eleitorais-2026/"
+      ]
+    },
+    {
+      "id": "afos-hf",
+      "name": "AFOS Analytics — brazil-2026-electoral-divergence (Hugging Face)",
+      "type": "archive",
+      "urls": [
+        "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence",
+        "https://github.com/AFOS-Analytics/afos-analitica-2026"
+      ],
+      "content_formats": [
+        "CSV",
+        "JSON",
+        "Parquet"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "daily (claimed append-only)",
+      "access_notes": "Public HF dataset; CC BY 4.0 data",
+      "license_terms": "CC BY 4.0 (data); Apache 2.0 (code)",
+      "notes": "Parses TSE registry + published national results + Polymarket divergence. Useful bootstrap BUT: some rows have null register_tse; must re-verify against TSE + institute PDFs. Not a substitute for primary intake.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence",
+        "https://github.com/AFOS-Analytics/afos-analitica-2026"
+      ]
+    },
+    {
+      "id": "afos-dataverse",
+      "name": "AFOS — Harvard Dataverse deposit",
+      "type": "archive",
+      "urls": [
+        "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence"
+      ],
+      "content_formats": [
+        "dataset deposit"
+      ],
+      "geographic_scope": "national",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "unknown",
+      "access_notes": "DOI 10.7910/DVN/2D0UK7 claimed on HF card — DOI landing not fetched this pass",
+      "license_terms": "CC BY 4.0 (claimed)",
+      "notes": "Permanent archive claim; verify DOI independently.",
+      "national_vs_state": "national",
+      "evidence_urls": [
+        "https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence"
+      ]
+    },
+    {
+      "id": "poder360-cdn-archive",
+      "name": "Poder360 static uploads CDN (PDF mirror network)",
+      "type": "archive",
+      "urls": [
+        "https://static.poder360.com.br/uploads/"
+      ],
+      "content_formats": [
+        "PDF"
+      ],
+      "geographic_scope": "national_and_state",
+      "primary_or_witness": "secondary",
+      "verified": true,
+      "update_cadence": "continuous",
+      "access_notes": "Direct PDF URLs often publicly fetchable; no directory listing assumed",
+      "license_terms": "mixed — institute + publisher",
+      "notes": "De facto scrapable PDF archive for many institutes. National and state mixed — filter by filename/registration.",
+      "national_vs_state": "national_and_state",
+      "evidence_urls": [
+        "https://static.poder360.com.br/uploads/"
+      ]
+    },
+    {
+      "id": "sapienslabs-api",
+      "name": "Sapiens Labs — API pública Eleições 2026 (unverified)",
+      "type": "archive",
+      "urls": [
+        "https://eleicoes2026.sapienslabs.com.br/api"
+      ],
+      "content_formats": [
+        "claimed REST/JSON"
+      ],
+      "geographic_scope": "unknown",
+      "primary_or_witness": "secondary",
+      "verified": false,
+      "update_cadence": "unknown",
+      "access_notes": "Search hit only; schema not audited this pass",
+      "license_terms": "unknown",
+      "notes": "Mark UNKNOWN until fetched and schema reviewed. Do not treat as trusted.",
+      "national_vs_state": "unknown",
+      "evidence_urls": [
+        "https://eleicoes2026.sapienslabs.com.br/api"
+      ]
+    }
+  ]
+}

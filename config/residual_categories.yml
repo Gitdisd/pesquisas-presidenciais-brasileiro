@@ -1,0 +1,16 @@
+# Residual category keys for poll.residuals (fractions [0,1]).
+# Keys used in fixtures/national/EXAMPLE_poll.json are listed first.
+
+categories:
+  branco_nulo:
+    display_name: "Branco / Nulo"
+    aliases: ["branco/nulo", "brancos e nulos"]
+    notes: "Combined blank+null as published; split when institute reports separately."
+  ns_nr:
+    display_name: "NS/NR"
+    aliases: ["não sabe / não respondeu", "nsnr", "NS/NR"]
+    notes: "Don't know / no answer."
+  # Optional future splits (inactive until normalize needs them):
+  # branco: { display_name: "Branco", aliases: [], notes: "unused until intake" }
+  # nulo: { display_name: "Nulo", aliases: [], notes: "unused until intake" }
+  # outros: { display_name: "Outros", aliases: ["others"], notes: "unused until intake" }

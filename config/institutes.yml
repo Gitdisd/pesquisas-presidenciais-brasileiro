@@ -1,0 +1,115 @@
+# PEBR institute registry (structure + stubs).
+# Active intake registry is NOT complete — do not treat this as verified.
+#
+# - example_institute: synthetic fixture only (fixtures/national/EXAMPLE_*).
+# - Other ids: seeded from docs/source-map (sources.json type=institute).
+#   Status: inactive stubs — from docs/source-map — not yet verified for intake.
+
+institutes:
+  - institute_id: example_institute
+    display_name: "Example Institute (synthetic)"
+    aliases: ["Example Inst."]
+    active: false
+    notes: "SYNTHETIC — matches fixtures/national/EXAMPLE_institute.json. Not a real institute."
+
+  # --- from docs/source-map — not yet verified for intake ---
+  - institute_id: quaest
+    display_name: "Quaest"
+    aliases: ["Genial/Quaest", "Quaest Consultoria"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: datafolha
+    display_name: "Datafolha"
+    aliases: []
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: atlasintel
+    display_name: "AtlasIntel"
+    aliases: ["Atlas/Bloomberg", "Atlas Intel"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: poderdata
+    display_name: "PoderData"
+    aliases: ["PoderData / Aya", "Aya"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: parana_pesquisas
+    display_name: "Paraná Pesquisas"
+    aliases: ["Parana Pesquisas", "parana-pesquisas"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: parana-pesquisas)"
+  - institute_id: realtime_bigdata
+    display_name: "Real Time Big Data"
+    aliases: ["RTBD", "realtime-bigdata"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: realtime-bigdata)"
+  - institute_id: ideia
+    display_name: "Ideia"
+    aliases: ["Meio/Ideia", "Ideia/Canal Meio"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: cnt_mda
+    display_name: "CNT/MDA"
+    aliases: ["Pesquisa CNT de Opinião", "cnt-mda"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: cnt-mda)"
+  - institute_id: ipsos_ipec
+    display_name: "Ipsos-Ipec"
+    aliases: ["Ipec", "Ipsos", "ipsos-ipec"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: ipsos-ipec)"
+  - institute_id: futura
+    display_name: "Futura Inteligência"
+    aliases: ["Futura/Apex", "Futura"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: nexus
+    display_name: "Nexus"
+    aliases: ["BTG/Nexus"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: indexa
+    display_name: "Indexa Pesquisas"
+    aliases: ["Indexa Broadcast"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: palver
+    display_name: "Palver"
+    aliases: []
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: gerp
+    display_name: "Gerp Opinião"
+    aliases: ["Gerp"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: vox_brasil
+    display_name: "Instituto Vox Brasil"
+    aliases: ["Vox Brasil", "vox-brasil"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: vox-brasil)"
+  - institute_id: verita
+    display_name: "Instituto Veritá"
+    aliases: ["Veritá", "Verita"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: alfa_inteligencia
+    display_name: "Alfa Inteligência"
+    aliases: ["Alfa", "alfa-inteligencia"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: alfa-inteligencia)"
+  - institute_id: american_analytics
+    display_name: "American Analytics"
+    aliases: ["american-analytics"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake (source id: american-analytics)"
+  - institute_id: datatrends
+    display_name: "DataTrends"
+    aliases: ["Datatrends"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
+  - institute_id: neokemp
+    display_name: "Neokemp Pesquisa"
+    aliases: ["Neokemp"]
+    active: false
+    notes: "from docs/source-map — not yet verified for intake"
