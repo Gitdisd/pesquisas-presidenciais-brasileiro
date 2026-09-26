@@ -1,0 +1,36 @@
+{
+  "poll_id": "datafolha_2026-07-24_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-07-22",
+  "fieldwork_end": "2026-07-24",
+  "fieldwork_mid": "2026-07-23",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.32,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.03,
+    "renan_santos": 0.03,
+    "augusto_cury": 0.02,
+    "samara_martins": 0.01,
+    "cabo_daciolo": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "hertz_dias": 0.0,
+    "edmilson_costa": 0.0,
+    "leonardo_avalanche": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-01166/2026",
+  "witness_ids": [
+    "w_datafolha_2026-07-24_g1"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "G1. Fieldwork 22–24 Jul per article (TSE BR-01166/2026)."
+}

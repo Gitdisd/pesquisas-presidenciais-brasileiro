@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_cnt_mda_2026-08-09_cartacapital",
+  "poll_id": "cnt_mda_2026-08-09_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cartacapital.com.br/politica/cnt-mda-lula-tem-13-pontos-de-vantagem-sobre-flavio-bolsonaro-no-1o-turno/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:a4d1e535c9043551c32f9cedb340f0d202b626ca5958e08da8b5593c8f6d48f7",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2002,
+    "moe_pp": 2.2,
+    "tse": "BR-06935/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-06935/2026",
+  "notes": "Fetched HTML. PDF also retrieved but stimulated table not text-extractable; press used for results."
+}

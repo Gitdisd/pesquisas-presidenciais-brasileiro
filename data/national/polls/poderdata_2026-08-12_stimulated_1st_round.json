@@ -1,0 +1,37 @@
+{
+  "poll_id": "poderdata_2026-08-12_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-08-09",
+  "fieldwork_end": "2026-08-12",
+  "fieldwork_mid": "2026-08-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.41,
+    "flavio_bolsonaro": 0.35,
+    "augusto_cury": 0.03,
+    "renan_santos": 0.04,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.03,
+    "leonardo_avalanche": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "clariana_barao": 0.01,
+    "samara_martins": 0.0,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-06868/2026",
+  "witness_ids": [
+    "w_poderdata_2026-08-12_pdf"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "PoderData PDF fieldwork 9–12 Aug. Totals from institute crosstab Total column."
+}

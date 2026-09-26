@@ -1,0 +1,36 @@
+{
+  "poll_id": "quaest_2026-09-01_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-08-30",
+  "fieldwork_end": "2026-09-01",
+  "fieldwork_mid": "2026-08-31",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.29,
+    "augusto_cury": 0.1,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.01,
+    "romeu_zema": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "wilson_grassi": 0.0,
+    "clariana_barao": 0.0,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0
+  },
+  "residuals": {
+    "ns_nr": 0.11,
+    "branco_nulo": 0.07
+  },
+  "tse_registration_id": "BR-07065/2026",
+  "witness_ids": [
+    "w_quaest_2026-09-01_g1"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "Verified from G1 (Globo/O Globo). Principal stimulated slate WITHOUT Pablo Marçal. Residual branco_nulo maps Branco/nulo/não vai votar; ns_nr maps Indecisos."
+}

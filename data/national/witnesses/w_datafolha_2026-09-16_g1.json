@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-09-16_g1",
+  "poll_id": "datafolha_2026-09-16_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/17/datafolha-presidente-17-setembro.ghtml",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:f059f8941b9f358fd9264e57fedc0973406fc70e160ebf2fd93a0ce2ac5a1c94",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2002,
+    "moe_pp": 2.0,
+    "tse": "BR-04029/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-04029/2026",
+  "notes": "Fetched HTML."
+}

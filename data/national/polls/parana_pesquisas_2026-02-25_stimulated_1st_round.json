@@ -1,0 +1,30 @@
+{
+  "poll_id": "parana_pesquisas_2026-02-25_stimulated_1st_round",
+  "institute_id": "parana_pesquisas",
+  "fieldwork_start": "2026-02-22",
+  "fieldwork_end": "2026-02-25",
+  "fieldwork_mid": "2026-02-23",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2080,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.405,
+    "flavio_bolsonaro": 0.366,
+    "romeu_zema": 0.043,
+    "ronaldo_caiado": 0.037,
+    "renan_santos": 0.015,
+    "aldo_rebelo": 0.004
+  },
+  "residuals": {
+    "branco_nulo": 0.078,
+    "ns_nr": 0.052
+  },
+  "tse_registration_id": "BR-07974/2026",
+  "witness_ids": [
+    "w_parana_2026-02-25_pdf"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "Institute PDF ESTIMULADA Cenário 2 (Caiado slate). Alternate Cenário 1 with Ratinho Junior also published — not dual-entered."
+}

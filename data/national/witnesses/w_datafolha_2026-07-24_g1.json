@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-07-24_g1",
+  "poll_id": "datafolha_2026-07-24_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/07/24/datafolha-primeiro-turno-julho.ghtml",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:0de70a1844fc422d5cc61acaf302c380a49e2466ff36f92cea5214a9f4a99ebd",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2.0,
+    "tse": "BR-01166/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-01166/2026",
+  "notes": "Fetched HTML."
+}

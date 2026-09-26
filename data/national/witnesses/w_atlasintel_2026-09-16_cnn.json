@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_atlasintel_2026-09-16_cnn",
+  "poll_id": "atlasintel_2026-09-16_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/lula-tem-441-no-1o-turno-flavio-417-diz-atlas/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:3ca856d063e925f6f2c5f099f145473fa63ce02343b322054cddaba6ee8d066f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 5018,
+    "moe_pp": 1.0,
+    "tse": "BR-06221/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-06221/2026",
+  "notes": "Fetched HTML. Source states grupo outros nomes 0.8% — documented in notes; not forced into residual key without clear bucket label match."
+}

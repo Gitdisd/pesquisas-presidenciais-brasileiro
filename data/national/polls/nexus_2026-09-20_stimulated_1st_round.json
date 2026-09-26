@@ -1,0 +1,36 @@
+{
+  "poll_id": "nexus_2026-09-20_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-09-18",
+  "fieldwork_end": "2026-09-20",
+  "fieldwork_mid": "2026-09-19",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2006,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.37,
+    "augusto_cury": 0.06,
+    "ronaldo_caiado": 0.05,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "hertz_dias": 0.0,
+    "edmilson_costa": 0.0,
+    "wilson_grassi": 0.0,
+    "clariana_barao": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-00485/2026",
+  "witness_ids": [
+    "w_nexus_2026-09-20_cnn"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "CNN Brasil (BTG/Nexus). Residual branco_nulo maps branco/nulo/nenhum; ns_nr maps não saber/não responder."
+}

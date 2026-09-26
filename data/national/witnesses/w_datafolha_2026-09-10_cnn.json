@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-09-10_cnn",
+  "poll_id": "datafolha_2026-09-10_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/datafolha-lula-tem-39-e-flavio-35-no-1-turno/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:b74d054a1c1b161f90ea32938db000d6439f008459401f72975d9a7cb1641eb3",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2002,
+    "moe_pp": 2.0,
+    "tse": "BR-01833/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-01833/2026",
+  "notes": "Fetched HTML."
+}

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_parana_2026-02-25_pdf",
+  "poll_id": "parana_pesquisas_2026-02-25_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/02/Nacional_Fev261.pdf",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:c3d3e72884cb3ee7686f1a61e5d31b6c5fda77667e81eeec9b86afeeed010fe4",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2080,
+    "moe_pp": 2.2,
+    "tse": "BR-07974/2026"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-07974/2026",
+  "notes": "Primary PDF; Gazeta HTML lists both stimulated scenarios."
+}

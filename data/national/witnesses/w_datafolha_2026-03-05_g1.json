@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-03-05_g1",
+  "poll_id": "datafolha_2026-03-05_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/03/07/datafolha-1o-turno.ghtml",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:1d829701f2bd697952fbdaa0735ef244f85680addde7654d387bf99913b306b9",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2.0,
+    "tse": null
+  },
+  "confidence": 0.85,
+  "tse_registration_id": null,
+  "notes": "Fetched HTML. TSE registration id absent from article text — null."
+}

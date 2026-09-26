@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_parana_2026-03-28_pdf",
+  "poll_id": "parana_pesquisas_2026-03-28_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:86796ad1c00e9187d8cd61e213991f2d76c7f1495001d0f3d6206a0409c50fdd",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2080,
+    "moe_pp": 2.2,
+    "tse": "BR-00873/2026"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-00873/2026",
+  "notes": "Primary PDF; Gazeta HTML also fetched as lead cross-check."
+}

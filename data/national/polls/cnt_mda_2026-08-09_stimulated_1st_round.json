@@ -1,0 +1,33 @@
+{
+  "poll_id": "cnt_mda_2026-08-09_stimulated_1st_round",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-08-05",
+  "fieldwork_end": "2026-08-09",
+  "fieldwork_mid": "2026-08-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2002,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.424,
+    "flavio_bolsonaro": 0.287,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.033,
+    "renan_santos": 0.028,
+    "samara_martins": 0.016,
+    "augusto_cury": 0.012,
+    "rui_costa_pimenta": 0.009
+  },
+  "residuals": {
+    "outros": 0.009,
+    "branco_nulo": 0.068,
+    "ns_nr": 0.072
+  },
+  "tse_registration_id": "BR-06935/2026",
+  "witness_ids": [
+    "w_cnt_mda_2026-08-09_cartacapital"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "CartaCapital press table for 169ª rodada. Institute PDF charts remain image-heavy — numbers from press table only (not OCR)."
+}

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_poderdata_2026-09-16_html",
+  "poll_id": "poderdata_2026-09-16_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.poder360.com.br/poderdata/poderdata-aya-lula-tem-37-contra-36-de-flavio-no-1o-turno/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:cd14950fbd7a2afc1b827edd8a9e0e9e8721a1350f7f98bbd74d6796eca2de71",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 3000,
+    "moe_pp": 1.8,
+    "tse": "BR-00360/2026"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-00360/2026",
+  "notes": "Fetched HTML; PDF 16set also retrieved for cross-check."
+}

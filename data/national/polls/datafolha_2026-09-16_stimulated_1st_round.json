@@ -1,0 +1,36 @@
+{
+  "poll_id": "datafolha_2026-09-16_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-15",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-15",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2002,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.36,
+    "augusto_cury": 0.06,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.02,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "edmilson_costa": 0.0,
+    "clariana_barao": 0.0,
+    "hertz_dias": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-04029/2026",
+  "witness_ids": [
+    "w_datafolha_2026-09-16_g1"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "G1. Residual branco_nulo maps Em branco/nulo/nenhum; ns_nr maps Indecisos."
+}

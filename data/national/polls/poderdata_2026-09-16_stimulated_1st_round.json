@@ -1,0 +1,37 @@
+{
+  "poll_id": "poderdata_2026-09-16_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-09-13",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-14",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 3000,
+  "moe": 0.018,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.36,
+    "augusto_cury": 0.08,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.03,
+    "hertz_dias": 0.02,
+    "romeu_zema": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "samara_martins": 0.01,
+    "clariana_barao": 0.01,
+    "pablo_marcal": 0.01,
+    "edmilson_costa": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-00360/2026",
+  "witness_ids": [
+    "w_poderdata_2026-09-16_html"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "Poder360 article (votos totais) + PDF Relatorio-PoderData-Eleitoral-16set26 / evolution 17.set. Includes Marçal (registered before TSE rejection)."
+}

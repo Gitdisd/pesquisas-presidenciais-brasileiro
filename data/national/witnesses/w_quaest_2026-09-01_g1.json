@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_quaest_2026-09-01_g1",
+  "poll_id": "quaest_2026-09-01_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/02/quaest-presidente-2-setembro.ghtml",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:c3bee02fc0e9f20f45e514fd0ca02749ee58cea3b384b3d326dbf6eb0d331b8b",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2.0,
+    "tse": "BR-07065/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-07065/2026",
+  "notes": "Fetched HTML; preferred no-Marçal slate as principal (Marçal alternate also published)."
+}

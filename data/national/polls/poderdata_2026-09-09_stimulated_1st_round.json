@@ -1,0 +1,37 @@
+{
+  "poll_id": "poderdata_2026-09-09_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-09-06",
+  "fieldwork_end": "2026-09-09",
+  "fieldwork_mid": "2026-09-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 3000,
+  "moe": 0.018,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.36,
+    "augusto_cury": 0.1,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.02,
+    "pablo_marcal": 0.02,
+    "hertz_dias": 0.01,
+    "romeu_zema": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "edmilson_costa": 0.01,
+    "clariana_barao": 0.0,
+    "samara_martins": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.03,
+    "ns_nr": 0.01
+  },
+  "tse_registration_id": "BR-04914/2026",
+  "witness_ids": [
+    "w_poderdata_2026-09-09_pdf"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "PoderData PDF 10.set column / fieldwork 6–9 Sep. Cross-checked Poder360 article."
+}

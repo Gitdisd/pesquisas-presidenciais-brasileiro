@@ -76,3 +76,23 @@ aliases:
     display_name: "Cabo Daciolo"
     aliases: ["Cabo Daciolo (Mobiliza)"]
     notes: "intake-cohort-001 (Ideia stimulated slate)"
+  aldo_rebelo:
+    display_name: "Aldo Rebelo"
+    aliases: ["Aldo Rebelo (DC)"]
+    notes: "intake-cohort-002"
+  ratinho_junior:
+    display_name: "Ratinho Junior"
+    aliases: ["Ratinho Júnior", "Ratinho Junior (PSD)", "Ratinho Jr."]
+    notes: "intake-cohort-002 — early-2026 stimulated slates"
+  joaquim_barbosa:
+    display_name: "Joaquim Barbosa"
+    aliases: ["Joaquim Barbosa (DC)"]
+    notes: "intake-cohort-002"
+  aecio_neves:
+    display_name: "Aécio Neves"
+    aliases: ["Aecio Neves", "Aécio Neves (PSDB)"]
+    notes: "intake-cohort-002"
+  hero_bezerra:
+    display_name: "Heró Bezerra"
+    aliases: ["Hero Bezerra", "Heró Bezerra (PRTB)"]
+    notes: "intake-cohort-002 — Quaest Jul PRTB name"

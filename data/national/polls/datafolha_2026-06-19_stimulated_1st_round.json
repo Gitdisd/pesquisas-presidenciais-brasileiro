@@ -1,0 +1,37 @@
+{
+  "poll_id": "datafolha_2026-06-19_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-06-17",
+  "fieldwork_end": "2026-06-19",
+  "fieldwork_mid": "2026-06-18",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.41,
+    "flavio_bolsonaro": 0.31,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.03,
+    "aecio_neves": 0.02,
+    "augusto_cury": 0.02,
+    "romeu_zema": 0.02,
+    "samara_martins": 0.02,
+    "cabo_daciolo": 0.01,
+    "joaquim_barbosa": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "hertz_dias": 0.0,
+    "edmilson_costa": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.04
+  },
+  "tse_registration_id": "BR-09956/2026",
+  "witness_ids": [
+    "w_datafolha_2026-06-19_g1"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "G1. Includes Aécio Neves (PSDB) and Joaquim Barbosa (DC) on stimulated slate."
+}

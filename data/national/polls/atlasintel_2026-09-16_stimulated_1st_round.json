@@ -1,0 +1,32 @@
+{
+  "poll_id": "atlasintel_2026-09-16_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-11",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-13",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5018,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.441,
+    "flavio_bolsonaro": 0.417,
+    "renan_santos": 0.051,
+    "augusto_cury": 0.035,
+    "ronaldo_caiado": 0.017,
+    "romeu_zema": 0.011,
+    "samara_martins": 0.007
+  },
+  "residuals": {
+    "branco_nulo": 0.016,
+    "ns_nr": 0.005,
+    "outros": 0.008
+  },
+  "tse_registration_id": "BR-06221/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-09-16_cnn"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "CNN Brasil. Residual outros maps 'grupo que afirma votar em outros nomes' 0.8%."
+}

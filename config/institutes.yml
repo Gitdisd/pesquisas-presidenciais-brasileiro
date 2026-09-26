@@ -36,8 +36,8 @@ institutes:
   - institute_id: parana_pesquisas
     display_name: "Paraná Pesquisas"
     aliases: ["Parana Pesquisas", "parana-pesquisas"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake (source id: parana-pesquisas)"
+    active: true
+    notes: "Activated for intake-cohort-002 (verified national stimulated 1st-round polls)."
   - institute_id: realtime_bigdata
     display_name: "Real Time Big Data"
     aliases: ["RTBD", "realtime-bigdata"]
@@ -51,8 +51,8 @@ institutes:
   - institute_id: cnt_mda
     display_name: "CNT/MDA"
     aliases: ["Pesquisa CNT de Opinião", "cnt-mda"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake (source id: cnt-mda)"
+    active: true
+    notes: "Activated for intake-cohort-002 (CartaCapital press table; PDF charts image-heavy)."
   - institute_id: ipsos_ipec
     display_name: "Ipsos-Ipec"
     aliases: ["Ipec", "Ipsos", "ipsos-ipec"]
@@ -76,8 +76,8 @@ institutes:
   - institute_id: palver
     display_name: "Palver"
     aliases: []
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-002 (verified national stimulated 1st-round polls)."
   - institute_id: gerp
     display_name: "Gerp Opinião"
     aliases: ["Gerp"]

@@ -1,0 +1,34 @@
+{
+  "poll_id": "atlasintel_2026-08-30_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-08-25",
+  "fieldwork_end": "2026-08-30",
+  "fieldwork_mid": "2026-08-27",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5014,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.434,
+    "flavio_bolsonaro": 0.337,
+    "augusto_cury": 0.078,
+    "renan_santos": 0.076,
+    "ronaldo_caiado": 0.033,
+    "pablo_marcal": 0.019,
+    "romeu_zema": 0.01,
+    "samara_martins": 0.009,
+    "rui_costa_pimenta": 0.001,
+    "wilson_grassi": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.001,
+    "ns_nr": 0.002
+  },
+  "tse_registration_id": "BR-07972/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-08-30_poder360"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "Poder360 article with full stimulated 1º turno decimals. Includes Marçal. N=5.014."
+}

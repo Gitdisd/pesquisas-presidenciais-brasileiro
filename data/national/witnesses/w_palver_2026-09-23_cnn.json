@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_palver_2026-09-23_cnn",
+  "poll_id": "palver_2026-09-23_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/palver-flavio-e-lula-empatam-no-1o-turno-em-43/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:1c0289f5c34d279a27d739fc5cfd58bcedbfaba90dc6e656c49bb36799c2d66f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 5000,
+    "moe_pp": 3.0,
+    "tse": "BR-09587/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-09587/2026",
+  "notes": "Fetched HTML. Institute PDF not separately fetched this pass."
+}

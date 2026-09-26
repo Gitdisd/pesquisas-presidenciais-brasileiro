@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_atlasintel_2026-08-30_poder360",
+  "poll_id": "atlasintel_2026-08-30_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-tem-471-contra-426-de-flavio-no-2o-turno-diz-pesquisa/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:8c4e3f3856667217a2b35b0ee841c9143cab88352f5058ec7e5abf4a2f69d1e5",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 5014,
+    "moe_pp": 1.0,
+    "tse": "BR-07972/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-07972/2026",
+  "notes": "Fetched HTML; Atlas poll page is JS charts — numbers from Poder360 text table."
+}

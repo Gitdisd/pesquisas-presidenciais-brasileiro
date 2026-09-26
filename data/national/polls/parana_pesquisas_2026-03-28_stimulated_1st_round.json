@@ -1,0 +1,30 @@
+{
+  "poll_id": "parana_pesquisas_2026-03-28_stimulated_1st_round",
+  "institute_id": "parana_pesquisas",
+  "fieldwork_start": "2026-03-25",
+  "fieldwork_end": "2026-03-28",
+  "fieldwork_mid": "2026-03-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2080,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.413,
+    "flavio_bolsonaro": 0.378,
+    "ronaldo_caiado": 0.036,
+    "romeu_zema": 0.03,
+    "renan_santos": 0.012,
+    "aldo_rebelo": 0.011
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.005
+  },
+  "tse_registration_id": "BR-00873/2026",
+  "witness_ids": [
+    "w_parana_2026-03-28_pdf"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "Institute PDF ESTIMULADA Cenário 1 (post-Ratinho withdrawal). Cross-checked Gazeta do Povo article."
+}

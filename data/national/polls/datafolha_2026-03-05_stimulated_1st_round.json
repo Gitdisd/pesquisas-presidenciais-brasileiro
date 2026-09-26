@@ -1,0 +1,30 @@
+{
+  "poll_id": "datafolha_2026-03-05_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-03-03",
+  "fieldwork_end": "2026-03-05",
+  "fieldwork_mid": "2026-03-04",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.33,
+    "romeu_zema": 0.05,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.03,
+    "aldo_rebelo": 0.02
+  },
+  "residuals": {
+    "branco_nulo": 0.12,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": null,
+  "witness_ids": [
+    "w_datafolha_2026-03-05_g1"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "G1 Cenário 3 (Flávio + Caiado slate) chosen as principal comparable slate. TSE id not printed in fetched article body — left null (not invented). Multiple alternate slates on same page not dual-entered."
+}

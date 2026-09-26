@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_rtbd_2026-09-23_gazeta",
+  "poll_id": "realtime_bigdata_2026-09-23_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-setembro-2026-2/",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:a339b6c1103e67cf72a7aa35d6d827ad5a45dad6f1d5f6f75291a615ab980a5c",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2.0,
+    "tse": "BR-04202/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-04202/2026",
+  "notes": "Fetched HTML; outros residual from source footnote aggregating minor candidates."
+}

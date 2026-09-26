@@ -1,0 +1,37 @@
+{
+  "poll_id": "poderdata_2026-08-26_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-08-23",
+  "fieldwork_end": "2026-08-26",
+  "fieldwork_mid": "2026-08-24",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.35,
+    "augusto_cury": 0.04,
+    "renan_santos": 0.04,
+    "ronaldo_caiado": 0.04,
+    "pablo_marcal": 0.03,
+    "hertz_dias": 0.02,
+    "romeu_zema": 0.02,
+    "edmilson_costa": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "clariana_barao": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-04974/2026",
+  "witness_ids": [
+    "w_poderdata_2026-08-26_pdf"
+  ],
+  "dataset_version": "intake-cohort-002",
+  "notes": "PoderData PDF fieldwork 23–26 Aug. Candidate shares from institute PDF tables (incl. Marçal)."
+}

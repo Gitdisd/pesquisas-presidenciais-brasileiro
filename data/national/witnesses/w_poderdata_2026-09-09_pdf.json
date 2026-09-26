@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_poderdata_2026-09-09_pdf",
+  "poll_id": "poderdata_2026-09-09_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-9set26-1.pdf",
+  "retrieved_at": "2026-09-27T00:30:00Z",
+  "content_hash": "sha256:d75c2f8cc01fb158cd043c633a70002627c47169a0d8b3fa15c77f43afa88470",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_002_v1",
+  "extractions": {
+    "n": 3000,
+    "moe_pp": 1.8,
+    "tse": "BR-04914/2026"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-04914/2026",
+  "notes": "Primary PDF."
+}
