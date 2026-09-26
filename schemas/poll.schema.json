@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro/schemas/poll.schema.json",
+  "title": "PEBR canonical national poll",
+  "description": "Stable identity for one national fieldwork+scenario. Shares are fractions in [0,1]. geography is national-only in v1. TSE registration is provenance, not truth. fieldwork_end is the trend date; fieldwork_mid is the optional computed midpoint for Stats Option B dating.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poll_id",
+    "institute_id",
+    "fieldwork_start",
+    "fieldwork_end",
+    "geography",
+    "election_cycle",
+    "scenario",
+    "sample_size",
+    "results",
+    "residuals",
+    "witness_ids",
+    "dataset_version"
+  ],
+  "properties": {
+    "poll_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable canonical id after witness merge (see schemas/README.md)."
+    },
+    "institute_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Key into config/institutes.yml (not display name)."
+    },
+    "fieldwork_start": {
+      "$ref": "#/$defs/dateYMD"
+    },
+    "fieldwork_end": {
+      "$ref": "#/$defs/dateYMD",
+      "description": "Required for trend ordering; primary fieldwork date."
+    },
+    "fieldwork_mid": {
+      "type": ["string", "null"],
+      "description": "Nullable computed midpoint of fieldwork_start..fieldwork_end (YYYY-MM-DD). Stats Option B dates polls here; pipeline may leave null until normalize computes it.",
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "#/$defs/dateYMD" }
+      ]
+    },
+    "geography": {
+      "type": "string",
+      "const": "national",
+      "description": "v1 lock: national only. Never mix state into national aggregates."
+    },
+    "election_cycle": {
+      "type": "integer",
+      "minimum": 2026,
+      "description": "e.g. 2026"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable scenario key, e.g. stimulated_1st_round, unstimulated, runoff_A_vs_B. Never mix scenarios in one aggregate."
+    },
+    "sample_size": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "description": "N (sample size)."
+    },
+    "moe": {
+      "type": ["number", "null"],
+      "description": "Margin of error as fraction of the share scale (e.g. 0.02 for ±2pp). Null if not published. Not a percent integer.",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "results": {
+      "type": "object",
+      "description": "Map candidate_id → share as fraction in [0,1]. Do not use 0–100 percent here.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "residuals": {
+      "type": "object",
+      "description": "Residual category shares as fractions [0,1]. Keys from config/residual_categories.yml (e.g. branco, nulo, nsnr, outros).",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "tse_registration_id": {
+      "type": ["string", "null"],
+      "description": "Optional TSE protocol/registration id for provenance only. Never treat as sole truth for identity or results."
+    },
+    "witness_ids": {
+      "type": "array",
+      "description": "Coverage/publication witnesses merged into this poll.",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "dataset_version": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Pipeline/dataset version stamp for this record."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes; empty string allowed."
+    }
+  },
+  "$defs": {
+    "dateYMD": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Calendar date YYYY-MM-DD"
+    }
+  }
+}

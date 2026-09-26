@@ -1,0 +1,7 @@
+{
+  "institute_id": "example_institute",
+  "display_name": "Example Institute (synthetic)",
+  "aliases": ["Example Inst."],
+  "active": false,
+  "notes": "SYNTHETIC — not a real Brazilian polling institute."
+}

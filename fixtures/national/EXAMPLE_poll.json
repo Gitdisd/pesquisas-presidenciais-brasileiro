@@ -1,0 +1,25 @@
+{
+  "poll_id": "example_national_2026_stimulated_1st_round_0001",
+  "institute_id": "example_institute",
+  "fieldwork_start": "2026-01-10",
+  "fieldwork_end": "2026-01-12",
+  "fieldwork_mid": "2026-01-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1000,
+  "moe": 0.03,
+  "results": {
+    "example_candidate_a": 0.34,
+    "example_candidate_b": 0.28,
+    "example_candidate_c": 0.15
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.15
+  },
+  "tse_registration_id": null,
+  "witness_ids": ["example_witness_0001"],
+  "dataset_version": "0.0.0-example",
+  "notes": "SYNTHETIC EXAMPLE FIXTURE — not a real poll. For schema/Stats wiring only."
+}

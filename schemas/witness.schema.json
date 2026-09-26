@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro/schemas/witness.schema.json",
+  "title": "PEBR poll witness (coverage/publication)",
+  "description": "One retrieval/coverage of a poll. Multiple witnesses may merge into one canonical poll. poll_id may be null until identity linking runs. parser_id is config-driven (never self-modifying).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "witness_id",
+    "source_type",
+    "source_url",
+    "retrieved_at",
+    "content_hash",
+    "parser_id"
+  ],
+  "properties": {
+    "witness_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "poll_id": {
+      "type": ["string", "null"],
+      "description": "Linked canonical poll after identity merge; null until linked."
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "institute_release",
+        "press",
+        "tse_registry",
+        "pdf",
+        "html",
+        "api",
+        "manual_overlay",
+        "other"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL of this coverage (http/https or stable archive URI)."
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 retrieval timestamp."
+    },
+    "content_hash": {
+      "type": "string",
+      "minLength": 8,
+      "description": "Hash of retrieved bytes (e.g. sha256 hex)."
+    },
+    "raw_path": {
+      "type": ["string", "null"],
+      "description": "Repo-relative path to stored raw artifact, if any."
+    },
+    "parser_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Config-driven parser key from reproducible mappings — never a self-modifying parser."
+    },
+    "extractions": {
+      "type": "object",
+      "description": "Parser output blob; structure evolves under parser_id versioning. Prefer empty object over invented fields.",
+      "additionalProperties": true
+    },
+    "confidence": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Optional linking/extraction confidence in [0,1]."
+    },
+    "tse_registration_id": {
+      "type": ["string", "null"],
+      "description": "If this witness is/carries a TSE registration reference — provenance only."
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

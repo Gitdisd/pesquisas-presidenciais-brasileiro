@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro/schemas/institute.schema.json",
+  "title": "PEBR institute",
+  "description": "Polling institute registry entry. Display names and aliases live in config; this schema is the stable id contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["institute_id", "display_name"],
+  "properties": {
+    "institute_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "description": "Stable slug key used by poll.institute_id."
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true,
+      "description": "Alternate spellings/brands that normalize to this institute_id."
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

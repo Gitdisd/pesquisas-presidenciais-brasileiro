@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "model_id": "option_b_sqrt_n_trailing",
+  "unit": "fraction",
+  "params": {"k_days": 14, "flood_W_days": 14, "n_cap": 4000, "unit": "fraction"},
+  "band_meaning": "Option B in-window dispersion (not classical CI, not win probability)",
+  "series": [],
+  "note": "Placeholder until Option B runs on Pipeline EXAMPLE/canonical fixtures only."
+}
