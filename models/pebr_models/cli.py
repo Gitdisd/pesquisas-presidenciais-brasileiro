@@ -3,17 +3,37 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from .aggregate import OptionBParams
 from .export import build_chart_export, write_chart_json
-from .types import load_fixture_envelope
+from .types import load_fixture_envelope, poll_from_dict
 
 
 def _repo_root() -> Path:
     # models/pebr_models/cli.py → repo root is parents[2]
     return Path(__file__).resolve().parents[2]
+
+
+def _load_polls_input(path: Path) -> tuple[list, dict[str, Any]]:
+    """Load polls from a fixture file, canonical-points array, or a directory of *.json polls."""
+    if path.is_dir():
+        polls = []
+        for fp in sorted(path.glob("*.json")):
+            raw = json.loads(fp.read_text(encoding="utf-8"))
+            if isinstance(raw, dict) and "poll_id" in raw:
+                polls.append(poll_from_dict(raw))
+            elif isinstance(raw, list):
+                polls.extend(poll_from_dict(item) for item in raw)
+            elif isinstance(raw, dict) and "polls" in raw:
+                polls.extend(poll_from_dict(item) for item in raw["polls"])
+            else:
+                print(f"warning: skip {fp} (not a poll object)", file=sys.stderr)
+        return polls, {}
+    return load_fixture_envelope(str(path))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -25,7 +45,10 @@ def main(argv: list[str] | None = None) -> int:
         "--polls",
         type=Path,
         default=root / "fixtures" / "national" / "example_polls_synthetic.json",
-        help="Path to poll fixture JSON (array or {polls, candidates, institutes})",
+        help=(
+            "Path to poll fixture JSON (array or {polls, candidates, institutes}), "
+            "canonical-points.json, or a directory of poll *.json files"
+        ),
     )
     parser.add_argument(
         "--out",
@@ -41,9 +64,15 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="Clear example:true (only for verified real corpora — not for fixtures)",
     )
+    parser.add_argument(
+        "--note",
+        type=str,
+        default=None,
+        help="Override chart note metadata (e.g. verified cohort description)",
+    )
     args = parser.parse_args(argv)
 
-    polls, meta = load_fixture_envelope(str(args.polls))
+    polls, meta = _load_polls_input(args.polls)
     if not polls:
         print(f"error: no polls in {args.polls}", file=sys.stderr)
         return 1
@@ -57,7 +86,11 @@ def main(argv: list[str] | None = None) -> int:
     if "example" in meta:
         example = bool(meta["example"]) and example
 
-    doc = build_chart_export(polls, params, example=example, meta=meta)
+    note = args.note
+    if note is not None:
+        meta = {**meta, "note": note}
+
+    doc = build_chart_export(polls, params, example=example, note=note, meta=meta)
     written = write_chart_json(doc, args.out)
     n_poll = sum(1 for s in doc["series"] if s["series_kind"] == "poll")
     n_agg = sum(1 for s in doc["series"] if s["series_kind"] == "aggregate")
