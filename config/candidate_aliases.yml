@@ -1,7 +1,6 @@
-# Candidate id ↔ display-name / alias map (structure only).
-# Do not invent real 2026 candidate registries here — seed when intake is audited.
-#
-# Example keys below match synthetic fixtures only.
+# Candidate id ↔ display-name / alias map.
+# Synthetic example_* keys retained for fixtures only.
+# Real 2026 aliases below seeded from intake-cohort-001 verified sources only.
 
 aliases:
   example_candidate_a:
@@ -16,3 +15,64 @@ aliases:
     display_name: "Example Candidate C"
     aliases: ["Cand C"]
     notes: "SYNTHETIC — fixtures only"
+
+  lula:
+    display_name: "Luiz Inácio Lula da Silva"
+    aliases: ["Lula", "Lula (PT)", "Luiz Inácio Lula da Silva (PT)"]
+    notes: "intake-cohort-001"
+  flavio_bolsonaro:
+    display_name: "Flávio Bolsonaro"
+    aliases: ["Flavio Bolsonaro", "Flávio Bolsonaro (PL)", "Flavio Bolsonaro (PL)"]
+    notes: "intake-cohort-001"
+  augusto_cury:
+    display_name: "Augusto Cury"
+    aliases: ["Escritor Augusto Cury", "Augusto Cury (Avante)", "Escritor Augusto Cury (Avante)"]
+    notes: "intake-cohort-001"
+  ronaldo_caiado:
+    display_name: "Ronaldo Caiado"
+    aliases: ["Ronaldo Caiado (PSD)", "Caiado"]
+    notes: "intake-cohort-001"
+  renan_santos:
+    display_name: "Renan Santos"
+    aliases: ["Renan Santos (Missão)", "Santos"]
+    notes: "intake-cohort-001"
+  romeu_zema:
+    display_name: "Romeu Zema"
+    aliases: ["Romeu Zema (Novo)", "Zema", "Zema (Novo)"]
+    notes: "intake-cohort-001"
+  samara_martins:
+    display_name: "Samara Martins"
+    aliases: ["Samara Martins (UP)", "Samara (UP)", "Samara"]
+    notes: "intake-cohort-001"
+  edmilson_costa:
+    display_name: "Edmilson Costa"
+    aliases: ["Edmilson Costa (PCB)"]
+    notes: "intake-cohort-001"
+  rui_costa_pimenta:
+    display_name: "Rui Costa Pimenta"
+    aliases: ["Rui Costa Pimenta (PCO)"]
+    notes: "intake-cohort-001"
+  wilson_grassi:
+    display_name: "Wilson Grassi"
+    aliases: ["Veterinário Wilson Grassi", "Veterinário Wilson Grassi (Democrata)", "Wilson Grassi (Democrata)"]
+    notes: "intake-cohort-001"
+  leonardo_avalanche:
+    display_name: "Leonardo Avalanche"
+    aliases: ["Leonardo Avalanche (PRTB)"]
+    notes: "intake-cohort-001"
+  clariana_barao:
+    display_name: "Clariana Barão"
+    aliases: ["Clariana Barão (DC)", "Clariana Barão (Democracia Cristã)"]
+    notes: "intake-cohort-001"
+  hertz_dias:
+    display_name: "Hertz Dias"
+    aliases: ["Hertz Dias (PSTU)"]
+    notes: "intake-cohort-001"
+  pablo_marcal:
+    display_name: "Pablo Marçal"
+    aliases: ["Pablo Marçal (PRTB)", "Pablo Marcal"]
+    notes: "intake-cohort-001 — appears on some stimulated lists despite ineligibility disputes"
+  cabo_daciolo:
+    display_name: "Cabo Daciolo"
+    aliases: ["Cabo Daciolo (Mobiliza)"]
+    notes: "intake-cohort-001 (Ideia stimulated slate)"

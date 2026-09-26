@@ -1,0 +1,36 @@
+{
+  "poll_id": "gerp_2026-08-25_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-08-21",
+  "fieldwork_end": "2026-08-25",
+  "fieldwork_mid": "2026-08-23",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "flavio_bolsonaro": 0.38,
+    "lula": 0.37,
+    "pablo_marcal": 0.04,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.03,
+    "augusto_cury": 0.01,
+    "romeu_zema": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "wilson_grassi": 0.0,
+    "clariana_barao": 0.0,
+    "samara_martins": 0.0,
+    "edmilson_costa": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.08
+  },
+  "tse_registration_id": "BR-03547/2026",
+  "witness_ids": [
+    "w_gerp_2026-08-25_gazeta"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "Gazeta do Povo. Stimulated scenario; source residual Nenhum deles→branco_nulo, Não sabe→ns_nr. confidence=press-high."
+}

@@ -1,0 +1,32 @@
+{
+  "poll_id": "atlasintel_2026-09-22_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-17",
+  "fieldwork_end": "2026-09-22",
+  "fieldwork_mid": "2026-09-19",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5015,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.458,
+    "flavio_bolsonaro": 0.434,
+    "renan_santos": 0.045,
+    "augusto_cury": 0.021,
+    "ronaldo_caiado": 0.013,
+    "romeu_zema": 0.009
+  },
+  "residuals": {
+    "outros": 0.008,
+    "branco_nulo": 0.007,
+    "ns_nr": 0.005
+  },
+  "tse_registration_id": "BR-04739/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-09-22_cnn",
+    "w_atlasintel_2026-09-22_pdf"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "Bloomberg-commissioned AtlasIntel. Numbers from CNN Brasil article; PDF witness confirms TSE/meta but charts are image-based. confidence=high-press."
+}

@@ -1,0 +1,17 @@
+{
+  "witness_id": "w_quaest_2026-09-13_g1",
+  "poll_id": "quaest_2026-09-13_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/14/quaest-pesquisa-presidente-primeiro-turno-14-setembro.ghtml",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:7b10ba11ae8b48cf3b9306876887c4c02401ec66032a99f2265aba5e15d0cc75",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2004,
+    "tse": "BR-03607/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-03607/2026",
+  "notes": ""
+}

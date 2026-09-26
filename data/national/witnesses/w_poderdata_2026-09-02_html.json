@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_poderdata_2026-09-02_html",
+  "poll_id": "poderdata_2026-09-02_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.poder360.com.br/poderdata/poderdata-aya-augusto-cury-vai-de-4-para-10-no-1o-turno/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:b1b4915dc4e0886d6cf4d30c2ab58df0707d19eee40442cac181e8785295409e",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 3000,
+    "moe_pp": 1.8,
+    "tse": "BR-07561/2026"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-07561/2026",
+  "notes": "Poder360 article with full stimulated slate."
+}

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_futura_2026-09-01_html",
+  "poll_id": "futura_2026-09-01_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-tem-387-das-intencoes-de-voto-contra-336-de-flavio/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:263c2cf98f7f45aa97a7194769b2640873c67b51838cc26f574a255a21ac9415",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-02793/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02793/2026",
+  "notes": ""
+}

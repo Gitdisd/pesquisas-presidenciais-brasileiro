@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_rtbd_2026-08-31_gzh",
+  "poll_id": "realtime_bigdata_2026-08-31_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/real-time-big-data-divulga-nova-pesquisa-para-presidente-veja-os-numeros-cmtiihl5a00gp011jsm3hy1kq.html",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:ffb1822bfd500bd6886bd3054962da372142191f37c0f5d64e947dd15cf9735b",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-03490/2026",
+    "scenario_label": "Cenário sem Pablo Marçal"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-03490/2026",
+  "notes": ""
+}

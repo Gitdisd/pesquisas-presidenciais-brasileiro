@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_indexa_2026-08-23_broadcast",
+  "poll_id": "indexa_2026-08-23_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.broadcast.com.br/news/lula-tem-39-e-flavio-34-no-primeiro-turno-mostra-pesquisa-indexa-broadcast/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:67af18e79cc0a69ae9889cec35442bfe06e74dda318ab76f2846b62532435ba6",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-06366/2026",
+    "nao_iriam_votar_pp": 4
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-06366/2026",
+  "notes": "4pp não iriam votar omitted from residuals map; documented in extractions."
+}

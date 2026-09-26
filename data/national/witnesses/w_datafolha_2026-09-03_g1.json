@@ -1,0 +1,17 @@
+{
+  "witness_id": "w_datafolha_2026-09-03_g1",
+  "poll_id": "datafolha_2026-09-03_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/03/datafolha-presidente-3-setembro.ghtml",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:4a5bcd18b022013ea54d81eb98522f095ec109664d20b2383bfd9cebc7d9e702",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2002,
+    "tse": "BR-03669/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-03669/2026",
+  "notes": ""
+}

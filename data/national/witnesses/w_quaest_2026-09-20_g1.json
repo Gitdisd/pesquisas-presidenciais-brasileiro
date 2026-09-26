@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_quaest_2026-09-20_g1",
+  "poll_id": "quaest_2026-09-20_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/quaest-presidente-1o-turno-21-setembro.ghtml",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:966c523f12d163345dfcc259c1693847834adb8faeab8e272bf5bb0aece20a2a",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-06004/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-06004/2026",
+  "notes": "Fetched HTML; institute PDF at quaest.com.br was image-heavy (no reliable text extract) — not used for numbers."
+}

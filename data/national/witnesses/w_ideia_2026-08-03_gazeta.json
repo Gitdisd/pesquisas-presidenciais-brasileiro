@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_ideia_2026-08-03_gazeta",
+  "poll_id": "ideia_2026-08-03_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/meio-ideia-presidente-agosto-2026/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:8014630d39fd26f96b2b98cafa8256bb23b41225ccfaafc6ddcb1cc22aa13c1b",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-04579/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-04579/2026",
+  "notes": ""
+}

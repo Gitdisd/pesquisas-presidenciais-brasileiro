@@ -1,0 +1,31 @@
+{
+  "poll_id": "realtime_bigdata_2026-08-31_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-08-27",
+  "fieldwork_end": "2026-08-31",
+  "fieldwork_mid": "2026-08-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.3,
+    "augusto_cury": 0.11,
+    "renan_santos": 0.07,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.02
+  },
+  "residuals": {
+    "outros": 0.02,
+    "branco_nulo": 0.03,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-03490/2026",
+  "witness_ids": [
+    "w_rtbd_2026-08-31_gzh"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "GZH article. Used Cenário sem Pablo Marçal. confidence=press-high."
+}

@@ -12,3 +12,4 @@ _quarantine/
 *.egg-info/
 .pytest_cache/
 models/*.egg-info/
+_intake_raw/

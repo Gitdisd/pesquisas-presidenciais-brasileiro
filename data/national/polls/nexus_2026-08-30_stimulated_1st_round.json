@@ -1,0 +1,27 @@
+{
+  "poll_id": "nexus_2026-08-30_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-08-28",
+  "fieldwork_end": "2026-08-30",
+  "fieldwork_mid": "2026-08-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2005,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.33,
+    "augusto_cury": 0.11,
+    "ronaldo_caiado": 0.05,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.01
+  },
+  "residuals": {},
+  "tse_registration_id": "BR-08900/2026",
+  "witness_ids": [
+    "w_nexus_2026-08-30_html"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "BTG/Nexus 12ª rodada from institute HTML. Residuals (branco/NS) not published on page — left empty (not invented). Shares sum ~0.92. confidence=high-primary."
+}

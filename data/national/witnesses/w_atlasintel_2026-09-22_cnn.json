@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_atlasintel_2026-09-22_cnn",
+  "poll_id": "atlasintel_2026-09-22_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-bloomberg-lula-tem-458-no-1o-turno-flavio-434/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:6aa617531a64b5846eeb5ee0c799e81cf399352704d8b2b05cac6559cdabc147",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 5015,
+    "moe_pp": 1,
+    "tse": "BR-04739/2026",
+    "shares_pp": {
+      "lula": 45.8,
+      "flavio": 43.4
+    }
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-04739/2026",
+  "notes": "Primary result extraction from CNN article; atlasintel.org poll page is JS charts without scrapeable %. "
+}

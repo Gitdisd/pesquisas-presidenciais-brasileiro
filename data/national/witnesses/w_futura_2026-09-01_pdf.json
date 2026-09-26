@@ -1,0 +1,17 @@
+{
+  "witness_id": "w_futura_2026-09-01_pdf",
+  "poll_id": "futura_2026-09-01_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/09/pesquisaFutura-nacional-presidente-3set2026.pdf",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:221f7afd1774dc87dd5c1f1fab08f6814f2791c5d8bb4001e1aeb6b91767c089",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "scenario": "Estimulada · Cenário 1",
+    "tse": "BR-02793/2026"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-02793/2026",
+  "notes": "Primary PDF for stimulated Cenário 1 shares."
+}

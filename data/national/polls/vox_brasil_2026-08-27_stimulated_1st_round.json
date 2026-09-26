@@ -1,0 +1,30 @@
+{
+  "poll_id": "vox_brasil_2026-08-27_stimulated_1st_round",
+  "institute_id": "vox_brasil",
+  "fieldwork_start": "2026-08-25",
+  "fieldwork_end": "2026-08-27",
+  "fieldwork_mid": "2026-08-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2100,
+  "moe": 0.0215,
+  "results": {
+    "lula": 0.371,
+    "flavio_bolsonaro": 0.348,
+    "ronaldo_caiado": 0.05,
+    "renan_santos": 0.033,
+    "romeu_zema": 0.028,
+    "augusto_cury": 0.026
+  },
+  "residuals": {
+    "branco_nulo": 0.035,
+    "ns_nr": 0.068
+  },
+  "tse_registration_id": "BR-05519/2026",
+  "witness_ids": [
+    "w_vox_brasil_2026-08-27_pdf"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "Institute PDF Relatório Vox Brasil Nacional. Stimulated respostas. confidence=high-pdf. Other named candidates appear in crosstabs but national headline row lists these six + residuals."
+}

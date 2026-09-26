@@ -8,6 +8,8 @@ require_relative "pebr/discover"
 module Pebr
   SCHEMA_DIR = File.expand_path("../schemas", __dir__)
   FIXTURE_DIR = File.expand_path("../fixtures/national", __dir__)
+  NATIONAL_POLL_DIR = File.expand_path("../data/national/polls", __dir__)
+  NATIONAL_WITNESS_DIR = File.expand_path("../data/national/witnesses", __dir__)
 
   FIXTURE_SCHEMA_MAP = {
     "EXAMPLE_poll.json" => "poll.schema.json",

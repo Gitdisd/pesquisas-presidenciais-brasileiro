@@ -1,0 +1,36 @@
+{
+  "poll_id": "futura_2026-09-01_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-08-27",
+  "fieldwork_end": "2026-09-01",
+  "fieldwork_mid": "2026-08-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.387,
+    "flavio_bolsonaro": 0.336,
+    "augusto_cury": 0.099,
+    "ronaldo_caiado": 0.035,
+    "renan_santos": 0.028,
+    "pablo_marcal": 0.027,
+    "romeu_zema": 0.016,
+    "samara_martins": 0.004,
+    "rui_costa_pimenta": 0.003,
+    "wilson_grassi": 0.003,
+    "hertz_dias": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.02,
+    "ns_nr": 0.041
+  },
+  "tse_registration_id": "BR-02793/2026",
+  "witness_ids": [
+    "w_futura_2026-09-01_html",
+    "w_futura_2026-09-01_pdf"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "Futura/100% Cidades. Stimulated Cenário 1 from institute PDF. confidence=high."
+}

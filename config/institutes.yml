@@ -16,23 +16,23 @@ institutes:
   - institute_id: quaest
     display_name: "Quaest"
     aliases: ["Genial/Quaest", "Quaest Consultoria"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: datafolha
     display_name: "Datafolha"
     aliases: []
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: atlasintel
     display_name: "AtlasIntel"
     aliases: ["Atlas/Bloomberg", "Atlas Intel"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: poderdata
     display_name: "PoderData"
     aliases: ["PoderData / Aya", "Aya"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: parana_pesquisas
     display_name: "Paraná Pesquisas"
     aliases: ["Parana Pesquisas", "parana-pesquisas"]
@@ -41,13 +41,13 @@ institutes:
   - institute_id: realtime_bigdata
     display_name: "Real Time Big Data"
     aliases: ["RTBD", "realtime-bigdata"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake (source id: realtime-bigdata)"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: ideia
     display_name: "Ideia"
     aliases: ["Meio/Ideia", "Ideia/Canal Meio"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: cnt_mda
     display_name: "CNT/MDA"
     aliases: ["Pesquisa CNT de Opinião", "cnt-mda"]
@@ -61,18 +61,18 @@ institutes:
   - institute_id: futura
     display_name: "Futura Inteligência"
     aliases: ["Futura/Apex", "Futura"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: nexus
     display_name: "Nexus"
     aliases: ["BTG/Nexus"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: indexa
     display_name: "Indexa Pesquisas"
     aliases: ["Indexa Broadcast"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: palver
     display_name: "Palver"
     aliases: []
@@ -81,13 +81,13 @@ institutes:
   - institute_id: gerp
     display_name: "Gerp Opinião"
     aliases: ["Gerp"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: vox_brasil
     display_name: "Instituto Vox Brasil"
     aliases: ["Vox Brasil", "vox-brasil"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake (source id: vox-brasil)"
+    active: true
+    notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
   - institute_id: verita
     display_name: "Instituto Veritá"
     aliases: ["Veritá", "Verita"]

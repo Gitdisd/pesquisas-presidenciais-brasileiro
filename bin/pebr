@@ -26,7 +26,7 @@ module Pebr
         pebr #{Pebr::VERSION} — PEBR pipeline CLI
 
         Usage:
-          bin/pebr validate   Validate fixtures/national/EXAMPLE_*.json against schemas/
+          bin/pebr validate   Validate fixtures + data/national/** against schemas/
           bin/pebr discover   Stub (not yet implemented)
           bin/pebr normalize  Stub (not yet implemented)
           bin/pebr version    Print version
@@ -56,9 +56,25 @@ module Pebr
     end
 
     def validate!
+      errors = []
+      checked = 0
+
+      checked += validate_fixtures!(errors)
+      checked += validate_national_tree!(errors)
+
+      if errors.empty?
+        puts "validate: #{checked} file(s) passed"
+        exit 0
+      else
+        warn "validate: FAILED"
+        errors.each { |e| warn "  - #{e}" }
+        exit 1
+      end
+    end
+
+    def validate_fixtures!(errors)
       schema_dir = Pathname.new(Pebr::SCHEMA_DIR)
       fixture_dir = Pathname.new(Pebr::FIXTURE_DIR)
-      errors = []
       checked = 0
 
       Pebr::FIXTURE_SCHEMA_MAP.each do |fixture_name, schema_name|
@@ -74,35 +90,102 @@ module Pebr
           next
         end
 
-        schema = JSON.parse(schema_path.read)
-        data = JSON.parse(fixture_path.read)
-        schemer = JSONSchemer.schema(schema)
-        failures = schemer.validate(data).to_a
+        failures = validate_file(fixture_path, schema_path)
         checked += 1
-
         if failures.empty?
-          puts "OK  #{fixture_name}  ←  #{schema_name}"
+          puts "OK  fixtures/national/#{fixture_name}  ←  #{schema_name}"
         else
-          failures.each do |err|
-            pointer = err["data_pointer"] || err["schema_pointer"] || "?"
-            type = err["type"] || "error"
-            detail = err["error"] || err["details"] || err.inspect
-            errors << "#{fixture_name}: #{type} at #{pointer} — #{detail}"
-          end
+          failures.each { |msg| errors << "fixtures/national/#{fixture_name}: #{msg}" }
         end
       end
 
       extras = Dir.glob(fixture_dir.join("EXAMPLE_*.json").to_s).map { |p| File.basename(p) } -
                Pebr::FIXTURE_SCHEMA_MAP.keys
       extras.each { |name| errors << "#{name}: no schema mapping in Pebr::FIXTURE_SCHEMA_MAP" }
+      checked
+    end
 
-      if errors.empty?
-        puts "validate: #{checked} fixture(s) passed"
-        exit 0
-      else
-        warn "validate: FAILED"
-        errors.each { |e| warn "  - #{e}" }
-        exit 1
+    def validate_national_tree!(errors)
+      checked = 0
+      poll_dir = Pathname.new(Pebr::NATIONAL_POLL_DIR)
+      wit_dir = Pathname.new(Pebr::NATIONAL_WITNESS_DIR)
+      schema_dir = Pathname.new(Pebr::SCHEMA_DIR)
+      poll_schema = schema_dir.join("poll.schema.json")
+      wit_schema = schema_dir.join("witness.schema.json")
+
+      poll_files = Dir.glob(poll_dir.join("*.json").to_s).sort
+      wit_files = Dir.glob(wit_dir.join("*.json").to_s).sort
+
+      if poll_files.empty? && wit_files.empty?
+        puts "OK  data/national/** (empty — no intake files yet)"
+        return checked
+      end
+
+      poll_ids = {}
+      wit_ids = {}
+
+      poll_files.each do |path|
+        pn = Pathname.new(path)
+        rel = pn.relative_path_from(Pathname.new(ROOT)).to_s
+        failures = validate_file(pn, poll_schema)
+        checked += 1
+        if failures.empty?
+          data = JSON.parse(pn.read)
+          poll_ids[data["poll_id"]] = data
+          puts "OK  #{rel}  ←  poll.schema.json"
+          if File.basename(path, ".json") != data["poll_id"]
+            errors << "#{rel}: filename stem must match poll_id #{data['poll_id'].inspect}"
+          end
+        else
+          failures.each { |msg| errors << "#{rel}: #{msg}" }
+        end
+      end
+
+      wit_files.each do |path|
+        pn = Pathname.new(path)
+        rel = pn.relative_path_from(Pathname.new(ROOT)).to_s
+        failures = validate_file(pn, wit_schema)
+        checked += 1
+        if failures.empty?
+          data = JSON.parse(pn.read)
+          wit_ids[data["witness_id"]] = data
+          puts "OK  #{rel}  ←  witness.schema.json"
+          if File.basename(path, ".json") != data["witness_id"]
+            errors << "#{rel}: filename stem must match witness_id #{data['witness_id'].inspect}"
+          end
+        else
+          failures.each { |msg| errors << "#{rel}: #{msg}" }
+        end
+      end
+
+      # Cross-link checks (soft identity integrity for intake)
+      poll_ids.each do |pid, poll|
+        Array(poll["witness_ids"]).each do |wid|
+          unless wit_ids.key?(wid)
+            errors << "poll #{pid}: witness_ids references missing witness #{wid.inspect}"
+          end
+        end
+      end
+      wit_ids.each do |wid, wit|
+        pid = wit["poll_id"]
+        next if pid.nil? || pid == ""
+        unless poll_ids.key?(pid)
+          errors << "witness #{wid}: poll_id references missing poll #{pid.inspect}"
+        end
+      end
+
+      checked
+    end
+
+    def validate_file(data_path, schema_path)
+      schema = JSON.parse(schema_path.read)
+      data = JSON.parse(data_path.read)
+      schemer = JSONSchemer.schema(schema)
+      schemer.validate(data).map do |err|
+        pointer = err["data_pointer"] || err["schema_pointer"] || "?"
+        type = err["type"] || "error"
+        detail = err["error"] || err["details"] || err.inspect
+        "#{type} at #{pointer} — #{detail}"
       end
     end
   end

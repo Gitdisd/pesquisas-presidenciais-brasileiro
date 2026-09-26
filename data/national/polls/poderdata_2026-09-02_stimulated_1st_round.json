@@ -1,0 +1,38 @@
+{
+  "poll_id": "poderdata_2026-09-02_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-08-30",
+  "fieldwork_end": "2026-09-02",
+  "fieldwork_mid": "2026-08-31",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 3000,
+  "moe": 0.018,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.34,
+    "augusto_cury": 0.1,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.02,
+    "pablo_marcal": 0.02,
+    "hertz_dias": 0.02,
+    "romeu_zema": 0.01,
+    "edmilson_costa": 0.01,
+    "samara_martins": 0.01,
+    "clariana_barao": 0.01,
+    "rui_costa_pimenta": 0.01,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-07561/2026",
+  "witness_ids": [
+    "w_poderdata_2026-09-02_html",
+    "w_poderdata_2026-09-02_pdf"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "PoderData/Aya. Article + institute PDF on Poder360 CDN. confidence=high."
+}

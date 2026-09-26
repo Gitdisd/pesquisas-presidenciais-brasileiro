@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_gerp_2026-08-25_gazeta",
+  "poll_id": "gerp_2026-08-25_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-agosto-2026-2/",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:f3e20883166b933b5a8b2756eab95298bf47843b2885da188db536c2e6d461af",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2400,
+    "tse": "BR-03547/2026",
+    "campo": "21-25/08/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-03547/2026",
+  "notes": ""
+}

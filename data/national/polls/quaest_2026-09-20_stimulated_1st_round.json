@@ -1,0 +1,37 @@
+{
+  "poll_id": "quaest_2026-09-20_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-09-17",
+  "fieldwork_end": "2026-09-20",
+  "fieldwork_mid": "2026-09-18",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.33,
+    "augusto_cury": 0.06,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.01,
+    "samara_martins": 0.01,
+    "clariana_barao": 0.0,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0,
+    "rui_costa_pimenta": 0.0,
+    "wilson_grassi": 0.0,
+    "leonardo_avalanche": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.08
+  },
+  "tse_registration_id": "BR-06004/2026",
+  "witness_ids": [
+    "w_quaest_2026-09-20_g1"
+  ],
+  "dataset_version": "intake-cohort-001",
+  "notes": "Verified from G1 (Globo/O Globo commission). Residual branco_nulo maps source label Branco/nulo/não vai votar. confidence=high."
+}

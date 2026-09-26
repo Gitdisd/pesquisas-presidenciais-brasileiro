@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_quaest_2026-09-06_g1",
+  "poll_id": "quaest_2026-09-06_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/07/quaest-presidente-7-setembro.ghtml",
+  "retrieved_at": "2026-09-26T23:40:00Z",
+  "content_hash": "sha256:662aa91afd4fe0b3dcf7d03c695b753f52354d950f6f16ca1eecdff00cc92a08",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_001_v1",
+  "extractions": {
+    "n": 2004,
+    "tse": "BR-01720/2026",
+    "fieldwork": "2026-09-03..2026-09-06"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-01720/2026",
+  "notes": "Used first stimulated unordered-list (no Marçal)."
+}
