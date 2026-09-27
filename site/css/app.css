@@ -672,3 +672,126 @@ code {
 .prompt-note {
   font-size: 0.78rem;
 }
+
+/* —— P0 polish: matchups, method prose, toast, share (old-site clarity) —— */
+.filter-matchups {
+  align-items: flex-start;
+}
+
+.filter-matchups .chip-row {
+  flex: 1 1 100%;
+}
+
+.matchup-hint {
+  flex: 1 1 100%;
+  margin: 0.15rem 0 0;
+  padding-left: 0.1rem;
+}
+
+.matchup-chip {
+  gap: 0.4rem;
+}
+
+.matchup-chip .matchup-name {
+  font-weight: 600;
+}
+
+.matchup-chip .matchup-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--stroke);
+}
+
+.matchup-chip.on .matchup-count {
+  color: #dbe4ff;
+  border-color: rgba(124, 156, 255, 0.45);
+  background: rgba(124, 156, 255, 0.18);
+}
+
+.matchup-chip.primary-matchup:not(.on) {
+  border-color: rgba(124, 156, 255, 0.35);
+}
+
+.matchup-chip.primary-matchup.on {
+  box-shadow: 0 0 0 1px rgba(124, 156, 255, 0.35);
+}
+
+.method-prose {
+  margin-top: 0.55rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.method-prose p {
+  margin: 0 0 0.55rem;
+}
+
+.method-prose ul {
+  margin: 0 0 0.65rem;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.method-prose li strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.method-panel h2 {
+  letter-spacing: -0.01em;
+}
+
+.toast {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  max-width: min(92vw, 28rem);
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(24, 34, 51, 0.96);
+  border: 1px solid rgba(124, 156, 255, 0.45);
+  color: var(--text);
+  font-size: 0.88rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.toast[hidden] {
+  display: none !important;
+}
+
+.toolbar-actions .btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .toolbar-actions {
+    width: 100%;
+  }
+  .toolbar-actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}
+
+/* Slightly denser card surface — closer to old dark panel without scoreboard chrome */
+.card {
+  background: linear-gradient(180deg, rgba(26, 36, 52, 0.96), rgba(16, 22, 34, 0.98));
+}
+
+.filter-bar {
+  background: rgba(255, 255, 255, 0.025);
+}

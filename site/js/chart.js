@@ -6,8 +6,9 @@
  *   Y stays on data domain (no isotropic lock). NO bottom range brush/slider.
  * Period chips 30d/90d/tudo = optional X domain presets only (not a brush).
  * Filters: round, período, institutes (solo), candidatos, matchups 2º.
- * Borrowed from old site: período presets, denser filter bar, CSV of visible polls. Not borrowed:
- * Focar, projection models, multi-hover scoreboard, bottom brush, média-window knobs (pipeline). */
+ * Borrowed from old site: período presets, denser filter bar, CSV/JSON, shareable URL, Option B PT copy.
+ * Client Option B when institute-filtered (same √N + anti-flood rules). Not borrowed:
+ * Focar, projection models, multi-hover scoreboard, bottom brush, média-window knobs, party themes. */
 (function () {
   "use strict";
 
@@ -44,6 +45,10 @@
     resetBtn: document.getElementById("btn-reset-zoom"),
     showAllBtn: document.getElementById("btn-show-all"),
     exportBtn: document.getElementById("btn-export-csv"),
+    exportJsonBtn: document.getElementById("btn-export-json"),
+    shareBtn: document.getElementById("btn-share"),
+    toast: document.getElementById("toast"),
+    matchupHint: document.getElementById("matchup-hint"),
     exampleBanner: document.querySelector(".example-banner"),
     instituteFilters: document.getElementById("institute-filters"),
     candidateFilters: document.getElementById("candidate-filters"),
@@ -84,6 +89,9 @@
     lastTapAt: 0,
     lastTapX: 0,
     lastTapY: 0,
+    clientAgg: null, // {aggregates, uncertainty} when institutes filtered
+    clientAggKey: null,
+    skipUrlWrite: false,
   };
 
   function pctDisplay(frac) {
@@ -224,6 +232,7 @@
     if (next != null && !Number.isFinite(next)) return;
     state.rangeDays = next;
     syncRangeControls();
+    writeUrlState();
     if (state.data) {
       // Re-render with same visibility / institutes
       const keepShowAll = state.showAll;
@@ -284,26 +293,104 @@
     };
   }
 
+  function matchupPollCount(block) {
+    if (!block || !Array.isArray(block.series)) return 0;
+    const ids = new Set();
+    for (const row of block.series) {
+      if (row.series_kind === "poll" && row.poll_id) ids.add(row.poll_id);
+    }
+    return ids.size;
+  }
+
+  function shortMatchupLabel(block) {
+    const raw = block.label || scenarioDisplayLabel({ scenario: block.scenario });
+    return String(raw)
+      .replace(/Flavio Bolsonaro/gi, "Flávio")
+      .replace(/Flávio Bolsonaro/gi, "Flávio")
+      .replace(/Augusto Cury/gi, "Cury")
+      .replace(/Ronaldo Caiado/gi, "Caiado")
+      .replace(/Romeu Zema/gi, "Zema")
+      .replace(/Renan Santos/gi, "Renan")
+      .replace(/\s*×\s*/g, " × ");
+  }
+
+  function isPrimaryMatchup(scenario) {
+    const s = String(scenario || "");
+    return (
+      s.includes("flavio_bolsonaro_vs_lula") ||
+      s.includes("lula_vs_flavio_bolsonaro")
+    );
+  }
+
+  function sortedMatchupBlocks() {
+    const blocks = (state.chart2nd?.scenarios || []).slice();
+    blocks.sort((a, b) => {
+      const pa = isPrimaryMatchup(a.scenario) ? 0 : 1;
+      const pb = isPrimaryMatchup(b.scenario) ? 0 : 1;
+      if (pa !== pb) return pa - pb;
+      return matchupPollCount(b) - matchupPollCount(a);
+    });
+    return blocks;
+  }
+
+  function preferDefault2ndScenario() {
+    const blocks = state.chart2nd?.scenarios || [];
+    if (!blocks.length) return null;
+    const primary = blocks.find((b) => isPrimaryMatchup(b.scenario));
+    if (primary) return primary.scenario;
+    return sortedMatchupBlocks()[0].scenario;
+  }
+
   function buildMatchupFilters() {
     if (!el.matchupFilters || !state.chart2nd) return;
-    const blocks = state.chart2nd.scenarios || [];
+    const blocks = sortedMatchupBlocks();
     el.matchupFilters.innerHTML = "";
     blocks.forEach((block) => {
       const btn = document.createElement("button");
       btn.type = "button";
+      const on = state.activeScenario === block.scenario;
+      const primary = isPrimaryMatchup(block.scenario);
       btn.className =
-        "chip-btn" + (state.activeScenario === block.scenario ? " on" : "");
-      btn.textContent = block.label || scenarioDisplayLabel({ scenario: block.scenario });
+        "chip-btn matchup-chip" +
+        (on ? " on" : "") +
+        (primary ? " primary-matchup" : "");
+      const nPolls = matchupPollCount(block);
+      const label = shortMatchupLabel(block);
+      btn.innerHTML =
+        `<span class="matchup-name">${label}</span>` +
+        (nPolls
+          ? `<span class="matchup-count" title="Pesquisas distintas neste confronto">${nPolls}</span>`
+          : "");
       btn.dataset.scenario = block.scenario;
-      btn.title = block.scenario;
+      btn.title = `${block.label || block.scenario}${nPolls ? ` · ${nPolls} pesquisas` : ""}`;
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
       btn.addEventListener("click", () => {
         if (state.activeScenario === block.scenario) return;
         state.activeScenario = block.scenario;
+        writeUrlState();
         const doc = docFrom2nd(state.chart2nd, state.activeScenario);
         renderChart(doc);
       });
       el.matchupFilters.appendChild(btn);
     });
+    if (el.matchupHint) {
+      const cur = blocks.find((b) => b.scenario === state.activeScenario);
+      if (cur) {
+        el.matchupHint.hidden = false;
+        const n = matchupPollCount(cur);
+        el.matchupHint.textContent = primaryHint(cur, n);
+      } else {
+        el.matchupHint.hidden = true;
+      }
+    }
+  }
+
+  function primaryHint(block, nPolls) {
+    const name = shortMatchupLabel(block);
+    const primary = isPrimaryMatchup(block.scenario)
+      ? "Confronto principal do painel. "
+      : "";
+    return `${primary}${name} · ${nPolls} pesquisa${nPolls === 1 ? "" : "s"} · só este par no gráfico.`;
   }
 
   async function switchRound(round) {
@@ -311,13 +398,17 @@
     if (round === 2 && !state.has2nd) return;
     state.round = round;
     state.showAll = false;
+    state.clientAgg = null;
+    state.clientAggKey = null;
     if (round === 1) {
       state.activeScenario = null;
+      writeUrlState();
       renderChart(state.chart1st);
     } else {
       if (!state.activeScenario && state.chart2nd?.scenarios?.length) {
-        state.activeScenario = state.chart2nd.scenarios[0].scenario;
+        state.activeScenario = preferDefault2ndScenario();
       }
+      writeUrlState();
       renderChart(docFrom2nd(state.chart2nd, state.activeScenario));
     }
   }
@@ -403,8 +494,8 @@
           )
         : null;
     el.filterNote.textContent = soloName
-      ? `Só ${soloName}: pontos desse instituto. Linha/faixa Option B ocultas (agregado usa todos — clique Todos para ver).`
-      : "Filtro de institutos ativo: pontos filtrados. Linha/faixa Option B ocultas (agregado pré-computado usa todos os institutos — selecione Todos para ver).";
+      ? `Só ${soloName}: pontos desse instituto. Linha/faixa = Option B recalculada no navegador (mesmas regras √N + anti-flood) sobre esses pontos.`
+      : "Filtro de institutos ativo: pontos filtrados. Linha/faixa = Option B recalculada no navegador sobre o subconjunto (não usa o agregado pré-computado de todos).";
   }
 
   function applyDefaultVisibility() {
@@ -439,6 +530,7 @@
       : "Mostrar todos os institutos (e linhas agregadas)";
     allBtn.addEventListener("click", () => {
       state.institutesOn = new Set(state.allInstituteIds);
+      invalidateClientAgg();
       buildInstituteFilters();
       syncFilterNote();
       redrawSeries();
@@ -470,6 +562,7 @@
         // Already-solo chip stays on (no empty selection).
         if (state.institutesOn.size === 1 && state.institutesOn.has(id)) return;
         state.institutesOn = new Set([id]);
+        invalidateClientAgg();
         buildInstituteFilters();
         syncFilterNote();
         redrawSeries();
@@ -658,6 +751,7 @@
 
   function renderChart(data) {
     state.data = data;
+    invalidateClientAgg();
     state.candById = new Map(data.candidates.map((c) => [c.id, c]));
     state.instById = new Map((data.institutes || []).map((i) => [i.id, i]));
     setHeader(data);
@@ -829,6 +923,7 @@
         buildLegend();
         redrawSeries();
         clearHover();
+        writeUrlState();
       };
     }
 
@@ -863,10 +958,48 @@
     );
   }
 
+  function invalidateClientAgg() {
+    state.clientAgg = null;
+    state.clientAggKey = null;
+  }
+
+  function clientAggKey() {
+    const ids = [...state.institutesOn].sort().join(",");
+    const cids = [...state.visible].sort().join(",");
+    const scen = state.data?.scenario || "";
+    return `${scen}|${ids}|${cids}`;
+  }
+
+  function ensureClientOptionB() {
+    if (institutesAllOn()) {
+      invalidateClientAgg();
+      return null;
+    }
+    const api = typeof window !== "undefined" ? window.PEBR_OPTION_B : null;
+    if (!api || typeof api.aggregateFromFlatPolls !== "function") return null;
+    const key = clientAggKey();
+    if (state.clientAgg && state.clientAggKey === key) return state.clientAgg;
+    const polls = (state.payload?.polls || []).filter((d) =>
+      pollPassesInstitute(d)
+    );
+    const params = Object.assign({}, api.DEFAULTS, state.data?.params || {});
+    const candIds = (state.data?.candidates || [])
+      .filter((c) => state.visible.has(c.id))
+      .map((c) => c.id);
+    const result = api.aggregateFromFlatPolls(polls, params, candIds);
+    state.clientAgg = result;
+    state.clientAggKey = key;
+    return result;
+  }
+
   function redrawSeries() {
     const { polls, aggregates, uncertainty } = state.payload;
     const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
-    const showAgg = institutesAllOn();
+    const usePipeline = institutesAllOn();
+    const client = usePipeline ? null : ensureClientOptionB();
+    const aggSrc = usePipeline ? aggregates : client ? client.aggregates : [];
+    const uncSrc = usePipeline ? uncertainty : client ? client.uncertainty : [];
+    const showAgg = usePipeline || (client && client.aggregates.length > 0);
 
     const area = d3
       .area()
@@ -879,7 +1012,7 @@
       ? candidates.map((c) => ({
           id: c.id,
           color: c.color,
-          values: uncertainty
+          values: uncSrc
             .filter((d) => d.candidate_id === c.id)
             .sort((a, b) => a.date - b.date),
         }))
@@ -906,7 +1039,7 @@
       ? candidates.map((c) => ({
           id: c.id,
           color: c.color,
-          values: aggregates
+          values: aggSrc
             .filter((d) => d.candidate_id === c.id)
             .sort((a, b) => a.date - b.date),
         }))
@@ -959,6 +1092,195 @@
       rows = rows.filter((d) => d.date >= xMin && d.date <= xMax);
     }
     return rows;
+  }
+
+  function showToast(msg) {
+    if (!el.toast) {
+      try {
+        console.info(msg);
+      } catch (_) {}
+      return;
+    }
+    el.toast.hidden = false;
+    el.toast.textContent = msg;
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => {
+      el.toast.hidden = true;
+      el.toast.textContent = "";
+    }, 2400);
+  }
+
+  function buildShareUrl() {
+    const url = new URL(location.href);
+    const params = new URLSearchParams();
+    params.set("round", String(state.round || 1));
+    if (state.rangeDays == null) params.set("range", "all");
+    else params.set("range", String(state.rangeDays));
+    if (state.round === 2 && state.activeScenario) {
+      params.set("scenario", state.activeScenario);
+    }
+    if (state.showAll) params.set("show", "all");
+    if (!institutesAllOn() && state.institutesOn.size === 1) {
+      params.set("institute", [...state.institutesOn][0]);
+    }
+    url.search = params.toString();
+    url.hash = "";
+    return url.toString();
+  }
+
+  function writeUrlState() {
+    if (state.skipUrlWrite) return;
+    try {
+      const next = buildShareUrl();
+      if (next !== location.href) {
+        history.replaceState(null, "", next);
+      }
+    } catch (_) {}
+  }
+
+  function readUrlState() {
+    const params = new URLSearchParams(location.search);
+    const round = Number(params.get("round"));
+    if (round === 1 || round === 2) state.round = round;
+    const range = params.get("range");
+    if (range === "all") state.rangeDays = null;
+    else if (/^\d+$/.test(range || "")) {
+      const n = Number(range);
+      if (n === 30 || n === 90) state.rangeDays = n;
+    }
+    const scenario = params.get("scenario");
+    if (scenario) state.activeScenario = scenario;
+    if (params.get("show") === "all") state.showAll = true;
+    const institute = params.get("institute");
+    return { institute };
+  }
+
+  async function shareView() {
+    const url = buildShareUrl();
+    writeUrlState();
+    const payload = {
+      title: document.title,
+      text: "Pesquisas presidenciais brasileiro — PEBR 2026",
+      url,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(payload);
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+        showToast("Link copiado");
+        return;
+      }
+      showToast("Copie o endereço da barra do navegador");
+    } catch (err) {
+      if (err && err.name === "AbortError") return;
+      showToast("Não foi possível compartilhar");
+    }
+  }
+
+  function exportVisibleJson() {
+    const rows = visiblePollRows();
+    if (!rows.length) {
+      alert("Nenhum ponto visível para exportar com os filtros atuais.");
+      return;
+    }
+    const usePipeline = institutesAllOn();
+    const client = usePipeline ? null : ensureClientOptionB();
+    const fmt = d3.utcFormat("%Y-%m-%d");
+    const polls = rows
+      .slice()
+      .sort(
+        (a, b) =>
+          a.date - b.date ||
+          String(a.candidate_id).localeCompare(String(b.candidate_id))
+      )
+      .map((d) => ({
+        series_kind: "poll",
+        date: fmt(d.date),
+        candidate_id: d.candidate_id,
+        candidate: prettyCandidateLabel(
+          state.candById.get(d.candidate_id) || { id: d.candidate_id }
+        ),
+        institute_id: d.institute_id,
+        institute: prettyInstituteLabel(
+          state.instById.get(d.institute_id) || { id: d.institute_id }
+        ),
+        value: d.value,
+        value_pct:
+          d.value != null ? Number((d.value * 100).toFixed(4)) : null,
+        n: d.n != null ? d.n : null,
+        poll_id: d.poll_id || null,
+      }));
+    let aggregate = [];
+    let uncertainty = [];
+    const srcAgg = usePipeline
+      ? state.payload?.aggregates || []
+      : client?.aggregates || [];
+    const srcUnc = usePipeline
+      ? state.payload?.uncertainty || []
+      : client?.uncertainty || [];
+    const visibleCands = state.visible;
+    const domain =
+      state.rangeDays && state.x0 ? state.x0.domain() : null;
+    const inRange = (d) =>
+      !domain || (d.date >= domain[0] && d.date <= domain[1]);
+    aggregate = srcAgg
+      .filter((d) => visibleCands.has(d.candidate_id) && inRange(d))
+      .map((d) => ({
+        series_kind: "aggregate",
+        date: d.date_iso || fmt(d.date),
+        candidate_id: d.candidate_id,
+        value: d.value,
+        value_pct:
+          d.value != null ? Number((d.value * 100).toFixed(4)) : null,
+        client_option_b: !!d.client_option_b,
+      }));
+    uncertainty = srcUnc
+      .filter((d) => visibleCands.has(d.candidate_id) && inRange(d))
+      .map((d) => ({
+        series_kind: "uncertainty",
+        date: d.date_iso || fmt(d.date),
+        candidate_id: d.candidate_id,
+        band_low: d.band_low,
+        band_high: d.band_high,
+        client_option_b: !!d.client_option_b,
+      }));
+    const payload = {
+      schema_version: 1,
+      exported_at: new Date().toISOString(),
+      source: "pebr-site",
+      model_id: state.data?.model_id || "option_b_sqrt_n_trailing",
+      unit: "fraction",
+      view: {
+        round: state.round,
+        range_days: state.rangeDays,
+        scenario: state.data?.scenario || null,
+        show_all: state.showAll,
+        institutes: [...state.institutesOn],
+        candidates: [...state.visible],
+        aggregate_source: usePipeline ? "pipeline" : "client_option_b",
+      },
+      record_count: polls.length,
+      polls,
+      aggregate,
+      uncertainty,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json;charset=utf-8",
+    });
+    const a = document.createElement("a");
+    const stamp = new Date().toISOString().slice(0, 10);
+    a.href = URL.createObjectURL(blob);
+    a.download = `pebr-visivel-${stamp}-r${state.round}.json`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      URL.revokeObjectURL(a.href);
+      a.remove();
+    }, 0);
+    showToast("JSON exportado");
   }
 
   function exportVisibleCsv() {
@@ -1069,7 +1391,8 @@
           if (data2 && Array.isArray(data2.scenarios) && data2.scenarios.length) {
             state.chart2nd = data2;
             state.has2nd = true;
-            state.activeScenario = data2.scenarios[0].scenario;
+            // Prefer Lula × Flávio; URL may override after readUrlState()
+            state.activeScenario = null;
           }
         }
       } catch (err2) {
@@ -1091,11 +1414,72 @@
       if (el.exportBtn) {
         el.exportBtn.addEventListener("click", exportVisibleCsv);
       }
+      if (el.exportJsonBtn) {
+        el.exportJsonBtn.addEventListener("click", exportVisibleJson);
+      }
+      if (el.shareBtn) {
+        el.shareBtn.addEventListener("click", () => {
+          shareView();
+        });
+      }
+
+      const urlBits = readUrlState();
+      state.skipUrlWrite = true;
+
+      // Resolve 2º default / URL scenario before first paint
+      if (state.has2nd) {
+        const blocks = state.chart2nd.scenarios || [];
+        const wanted = state.activeScenario;
+        const ok = wanted && blocks.some((b) => b.scenario === wanted);
+        if (!ok) state.activeScenario = preferDefault2ndScenario();
+      }
 
       syncRoundControls();
       syncRangeControls();
-      renderChart(state.chart1st);
+
+      if (state.round === 2 && state.has2nd) {
+        renderChart(docFrom2nd(state.chart2nd, state.activeScenario));
+      } else {
+        state.round = 1;
+        renderChart(state.chart1st);
+      }
+
+      // Optional solo institute from URL (after institutes built by renderChart)
+      if (urlBits.institute && state.allInstituteIds.includes(urlBits.institute)) {
+        state.institutesOn = new Set([urlBits.institute]);
+        invalidateClientAgg();
+        buildInstituteFilters();
+        syncFilterNote();
+        redrawSeries();
+      }
+      if (state.showAll) {
+        syncShowAllBtn();
+        applyDefaultVisibility();
+        buildLegend();
+        redrawSeries();
+      }
+
+      state.skipUrlWrite = false;
+      writeUrlState();
       window.addEventListener("resize", debounce(onResize, 180));
+      window.addEventListener("popstate", () => {
+        state.skipUrlWrite = true;
+        const bits = readUrlState();
+        if (state.round === 2 && state.has2nd) {
+          renderChart(docFrom2nd(state.chart2nd, state.activeScenario));
+        } else {
+          state.round = 1;
+          renderChart(state.chart1st);
+        }
+        if (bits.institute && state.allInstituteIds.includes(bits.institute)) {
+          state.institutesOn = new Set([bits.institute]);
+          invalidateClientAgg();
+          buildInstituteFilters();
+          syncFilterNote();
+          redrawSeries();
+        }
+        state.skipUrlWrite = false;
+      });
     } catch (err) {
       console.error(err);
       if (el.placeholder) {
