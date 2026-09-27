@@ -140,6 +140,33 @@
     "source_path": "data/national/polls/parana_pesquisas_2026-01-28_stimulated_1st_round.json"
   },
   {
+    "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-01-28",
+    "fieldwork_end": "2026-02-02",
+    "fieldwork_mid": "2026-01-30",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2000,
+    "moe": 0.0224,
+    "results": {
+      "lula": 0.39,
+      "flavio_bolsonaro": 0.35,
+      "ratinho_junior": 0.05,
+      "ciro_gomes": 0.04,
+      "romeu_zema": 0.02,
+      "ronaldo_caiado": 0.02
+    },
+    "residuals": {
+      "branco_nulo": 0.04,
+      "ns_nr": 0.07
+    },
+    "tse_registration_id": "BR-04519/2026",
+    "dataset_version": "intake-cohort-008",
+    "source_path": "data/national/polls/gerp_2026-02-02_stimulated_1st_round.json"
+  },
+  {
     "poll_id": "ideia_2026-02-02_stimulated_1st_round",
     "institute_id": "ideia",
     "fieldwork_start": "2026-01-30",
@@ -435,6 +462,35 @@
     "tse_registration_id": "BR-04227/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-03-23_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-03-20",
+    "fieldwork_end": "2026-03-25",
+    "fieldwork_mid": "2026-03-22",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2000,
+    "moe": 0.0224,
+    "results": {
+      "lula": 0.38,
+      "flavio_bolsonaro": 0.36,
+      "ciro_gomes": 0.07,
+      "ratinho_junior": 0.04,
+      "romeu_zema": 0.03,
+      "ronaldo_caiado": 0.03,
+      "renan_santos": 0.01,
+      "aldo_rebelo": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.03,
+      "ns_nr": 0.06
+    },
+    "tse_registration_id": "BR-02846/2026",
+    "dataset_version": "intake-cohort-008",
+    "source_path": "data/national/polls/gerp_2026-03-25_stimulated_1st_round.json"
   },
   {
     "poll_id": "parana_pesquisas_2026-03-28_stimulated_1st_round",

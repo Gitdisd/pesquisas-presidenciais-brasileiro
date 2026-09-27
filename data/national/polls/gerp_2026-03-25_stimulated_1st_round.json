@@ -1,0 +1,32 @@
+{
+  "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-03-20",
+  "fieldwork_end": "2026-03-25",
+  "sample_size": 2000,
+  "moe": 0.0224,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.36,
+    "ciro_gomes": 0.07,
+    "ratinho_junior": 0.04,
+    "romeu_zema": 0.03,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.01,
+    "aldo_rebelo": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.03,
+    "ns_nr": 0.06
+  },
+  "tse_registration_id": "BR-02846/2026",
+  "notes": "Gazeta first stimulated Flávio slate (cenário 1). Maps to old-site BBC Mar window (21–27) with corrected Gazeta fieldwork 20–25/03. AESP contractor. Nenhum→branco_nulo, Não sabe→ns_nr. Published sum ~101 (as printed). confidence=press-high.",
+  "dataset_version": "intake-cohort-008",
+  "witness_ids": [
+    "w_gerp_2026-03-25_gazeta"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-03-22"
+}

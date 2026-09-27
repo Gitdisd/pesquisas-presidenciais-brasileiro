@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_gerp_2026-02-02_gazeta",
+  "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/pesquisa-instituto-gerp-presidente-da-republica-fevereiro-2026/",
+  "confidence": 0.88,
+  "tse_registration_id": "BR-04519/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-04519/2026",
+    "campo": "2026-01-28..2026-02-02"
+  },
+  "notes": "Gazeta do Povo full stimulated list; sole primary witness (not BBC).",
+  "content_hash": "sha256:63b205aade410ebb91e2511eaf11469e49023bfdd2cadf08e37bf24ba5545e7f",
+  "retrieved_at": "2026-09-27T00:45:00Z",
+  "parser_id": "manual_intake_cohort_008_v1",
+  "raw_path": null
+}

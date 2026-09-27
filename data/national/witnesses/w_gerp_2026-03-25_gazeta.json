@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_gerp_2026-03-25_gazeta",
+  "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-marco-2026/",
+  "confidence": 0.88,
+  "tse_registration_id": "BR-02846/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-02846/2026",
+    "campo": "2026-03-20..2026-03-25"
+  },
+  "notes": "Gazeta do Povo full stimulated cenário 1; sole primary witness (not BBC).",
+  "content_hash": "sha256:df3336fb85d8d6f184321f9839fbcadd416883d177ef314dfc6c5aa8d85b0816",
+  "retrieved_at": "2026-09-27T00:45:00Z",
+  "parser_id": "manual_intake_cohort_008_v1",
+  "raw_path": null
+}

@@ -1,0 +1,30 @@
+{
+  "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-01-28",
+  "fieldwork_end": "2026-02-02",
+  "sample_size": 2000,
+  "moe": 0.0224,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.35,
+    "ratinho_junior": 0.05,
+    "ciro_gomes": 0.04,
+    "romeu_zema": 0.02,
+    "ronaldo_caiado": 0.02
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.07
+  },
+  "tse_registration_id": "BR-04519/2026",
+  "notes": "Gazeta named press full stimulated table (publicado 04/02). Maps to old-site BBC Jan window (26–30) with corrected Gazeta fieldwork 28/01–02/02. Nenhum→branco_nulo, Não sabe→ns_nr. Published sum ~98. confidence=press-high.",
+  "dataset_version": "intake-cohort-008",
+  "witness_ids": [
+    "w_gerp_2026-02-02_gazeta"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-01-30"
+}
