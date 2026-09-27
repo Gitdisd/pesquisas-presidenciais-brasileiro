@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_alfa_inteligencia_2026-09-23_cartacapital",
+  "poll_id": "alfa_inteligencia_2026-09-23_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cartacapital.com.br/politica/lula-lidera-em-1o-turno-e-empata-com-flavio-bolsonaro-no-2o-indica-pesquisa-alfa/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:8f36712a8eb1af2ec8b749bf644ba4ef5de7a5af4aa479e989d31e7c8ec76075",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-18..2026-09-23",
+    "n": 2700,
+    "moe_pp": 1.8,
+    "tse": "BR-02512/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02512/2026",
+  "notes": "Fetched CartaCapital HTML; full stimulated list sums 100."
+}

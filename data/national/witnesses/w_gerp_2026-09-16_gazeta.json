@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_gerp_2026-09-16_gazeta",
+  "poll_id": "gerp_2026-09-16_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-setembro-2026-2/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:ed4c78df4f66d184ca6262ef05cc6b9f06981ba3db007dc6c5834aa1e07492bc",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-14..2026-09-16",
+    "n": 2400,
+    "moe_pp": 2,
+    "tse": "BR-00535/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-00535/2026",
+  "notes": "Fetched Gazeta HTML; used votos totais stimulated block."
+}

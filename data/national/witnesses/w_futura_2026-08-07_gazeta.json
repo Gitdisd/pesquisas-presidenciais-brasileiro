@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_futura_2026-08-07_gazeta",
+  "poll_id": "futura_2026-08-07_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/futura-inteligencia-presidente-agosto-2026/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:418e1ff92250423f70001a41c12735f1189f340d0f28ff5d2157192aa9dd9cd3",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-08-03..2026-08-07",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-08109/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-08109/2026",
+  "notes": "Fetched Gazeta; first stimulated scenario."
+}

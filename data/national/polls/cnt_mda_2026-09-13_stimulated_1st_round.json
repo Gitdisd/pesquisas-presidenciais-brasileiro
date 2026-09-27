@@ -1,0 +1,32 @@
+{
+  "poll_id": "cnt_mda_2026-09-13_stimulated_1st_round",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-09-09",
+  "fieldwork_end": "2026-09-13",
+  "fieldwork_mid": "2026-09-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2002,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.405,
+    "flavio_bolsonaro": 0.304,
+    "augusto_cury": 0.06,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.027,
+    "pablo_marcal": 0.018,
+    "romeu_zema": 0.01
+  },
+  "residuals": {
+    "outros": 0.011,
+    "branco_nulo": 0.06,
+    "ns_nr": 0.075
+  },
+  "tse_registration_id": "BR-06902/2026",
+  "witness_ids": [
+    "w_cnt_mda_2026-09-13_otempo"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "170ª rodada. O Tempo full stimulated table (sums 100); CartaCapital corroborates. Marçal-in is the published principal slate (no Marçal-out dual published). confidence=press-high."
+}

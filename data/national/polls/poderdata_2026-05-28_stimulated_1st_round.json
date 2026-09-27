@@ -1,0 +1,31 @@
+{
+  "poll_id": "poderdata_2026-05-28_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-05-25",
+  "fieldwork_end": "2026-05-28",
+  "fieldwork_mid": "2026-05-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.35,
+    "romeu_zema": 0.04,
+    "renan_santos": 0.03,
+    "joaquim_barbosa": 0.03,
+    "augusto_cury": 0.03,
+    "ronaldo_caiado": 0.03
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-04882/2026",
+  "witness_ids": [
+    "w_poderdata_2026-05-28_pdf"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "PoderData/Aya PDF (IVR). Totals from institute chart (sums 100). TSE from Poder360 article matching PDF. confidence=pdf-high."
+}

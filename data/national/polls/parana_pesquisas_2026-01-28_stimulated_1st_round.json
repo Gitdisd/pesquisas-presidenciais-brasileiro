@@ -1,0 +1,31 @@
+{
+  "poll_id": "parana_pesquisas_2026-01-28_stimulated_1st_round",
+  "institute_id": "parana_pesquisas",
+  "fieldwork_start": "2026-01-25",
+  "fieldwork_end": "2026-01-28",
+  "fieldwork_mid": "2026-01-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2080,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.398,
+    "flavio_bolsonaro": 0.331,
+    "ratinho_junior": 0.065,
+    "ronaldo_caiado": 0.037,
+    "romeu_zema": 0.028,
+    "renan_santos": 0.015,
+    "aldo_rebelo": 0.011
+  },
+  "residuals": {
+    "branco_nulo": 0.068,
+    "ns_nr": 0.047
+  },
+  "tse_registration_id": "BR-08254/2026",
+  "witness_ids": [
+    "w_parana_pesquisas_2026-01-28_gazeta"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Gazeta first stimulated (Flávio + Ratinho + Caiado). Tarcísio dual not dual-entered. confidence=press-high."
+}

@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_ideia_2026-03-10_gazeta",
+  "poll_id": "ideia_2026-03-10_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/meio-ideia-presidente-marco-2026/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:d7a679c24f9113ff6c6c3f7a35646a408a452317d7045a8ba91819a100513a5f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-03-06..2026-03-10",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-00386/2026",
+    "slate": "caiado"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-00386/2026",
+  "notes": "Fetched Gazeta; entered Caiado stimulated block only."
+}

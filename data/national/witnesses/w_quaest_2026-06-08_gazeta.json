@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-06-08_gazeta",
+  "poll_id": "quaest_2026-06-08_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/genial-quaest-presidente-junho-2026/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:d8ec3b41ca80ce42033d037bf49b048f4e31f525824e07b2bd23b3d05aa18dae",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-06-05..2026-06-08",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-07661/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-07661/2026",
+  "notes": "Fetched Gazeta HTML."
+}

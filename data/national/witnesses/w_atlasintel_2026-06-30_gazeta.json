@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_atlasintel_2026-06-30_gazeta",
+  "poll_id": "atlasintel_2026-06-30_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-julho-2026/",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:42daf255e24bba99e73dbcb07e99fa6f0a37c8c213d1fc6ab06d86bee7504b7e",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-06-26..2026-06-30",
+    "n": 4999,
+    "moe_pp": 1,
+    "tse": "BR-04582/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-04582/2026",
+  "notes": "Fetched Gazeta; principal Flávio stimulated slate."
+}

@@ -1,0 +1,30 @@
+{
+  "poll_id": "poderdata_2026-07-15_stimulated_1st_round",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-07-12",
+  "fieldwork_end": "2026-07-15",
+  "fieldwork_mid": "2026-07-13",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.34,
+    "renan_santos": 0.06,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.04,
+    "augusto_cury": 0.03
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.05
+  },
+  "tse_registration_id": "BR-00059/2026",
+  "witness_ids": [
+    "w_poderdata_2026-07-15_pdf"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "PoderData/Aya PDF Sex Total column + matching Poder360 article. Joaquim Barbosa dropped this wave (press note). Rounding may sum ~101 as institute disclaimer. confidence=pdf-high."
+}

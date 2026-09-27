@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_poderdata_2026-07-15_pdf",
+  "poll_id": "poderdata_2026-07-15_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/07/Relatorio-PoderData-Eleitoral-16jul26-final.pdf",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:db1874eebc5f95b2c6b45eff115fb3f5a3272d7354743baac281132f3efb6e09",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-07-12..2026-07-15",
+    "n": 2400,
+    "moe_pp": 2.0,
+    "tse": "BR-00059/2026"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-00059/2026",
+  "notes": "Primary PDF; Sex Total column used for residuals."
+}

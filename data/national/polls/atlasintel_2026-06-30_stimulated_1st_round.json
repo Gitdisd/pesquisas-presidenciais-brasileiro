@@ -1,0 +1,37 @@
+{
+  "poll_id": "atlasintel_2026-06-30_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-06-26",
+  "fieldwork_end": "2026-06-30",
+  "fieldwork_mid": "2026-06-28",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 4999,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.463,
+    "flavio_bolsonaro": 0.366,
+    "renan_santos": 0.078,
+    "ronaldo_caiado": 0.029,
+    "romeu_zema": 0.02,
+    "joaquim_barbosa": 0.01,
+    "aecio_neves": 0.007,
+    "samara_martins": 0.006,
+    "augusto_cury": 0.005,
+    "cabo_daciolo": 0.003,
+    "rui_costa_pimenta": 0.001,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.011,
+    "ns_nr": 0.001
+  },
+  "tse_registration_id": "BR-04582/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-06-30_gazeta"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Gazeta first (fuller Flávio) stimulated scenario; Michelle/Haddad duals not dual-entered. Fieldwork 26–30 Jun (article slug says julho). confidence=press-high."
+}

@@ -1,0 +1,30 @@
+{
+  "poll_id": "ideia_2026-03-10_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-03-06",
+  "fieldwork_end": "2026-03-10",
+  "fieldwork_mid": "2026-03-08",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1500,
+  "moe": 0.025,
+  "results": {
+    "lula": 0.403,
+    "flavio_bolsonaro": 0.35,
+    "ronaldo_caiado": 0.055,
+    "romeu_zema": 0.05,
+    "renan_santos": 0.016,
+    "aldo_rebelo": 0.008
+  },
+  "residuals": {
+    "branco_nulo": 0.047,
+    "ns_nr": 0.072
+  },
+  "tse_registration_id": "BR-00386/2026",
+  "witness_ids": [
+    "w_ideia_2026-03-10_gazeta"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Gazeta Meio/Ideia. Preferred Caiado stimulated slate (comparable to later PSD-Caiado series); Ratinho/Leite/Tarcísio duals not dual-entered. confidence=press-high."
+}

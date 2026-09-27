@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_poderdata_2026-06-24_pdf",
+  "poll_id": "poderdata_2026-06-24_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.ndmais.com.br/2026/06/Relatorio-PoderData-Eleitoral-25jun26.pdf",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:9d678c49aa2cc8686e24406101ae389314d42a96b20f88a588b775224f73e04f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-06-21..2026-06-24",
+    "n": 2400,
+    "moe_pp": 2.0,
+    "tse": "BR-05722/2026"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-05722/2026",
+  "notes": "Primary PDF with TSE on cover."
+}

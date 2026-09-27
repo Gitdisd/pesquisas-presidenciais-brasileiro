@@ -1,0 +1,35 @@
+{
+  "poll_id": "gerp_2026-09-16_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-09-14",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-15",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2400,
+  "moe": 0.02,
+  "results": {
+    "flavio_bolsonaro": 0.4,
+    "lula": 0.37,
+    "augusto_cury": 0.07,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.02,
+    "romeu_zema": 0.01,
+    "pablo_marcal": 0.01,
+    "wilson_grassi": 0.0,
+    "rui_costa_pimenta": 0.0,
+    "samara_martins": 0.0,
+    "hertz_dias": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.04
+  },
+  "tse_registration_id": "BR-00535/2026",
+  "witness_ids": [
+    "w_gerp_2026-09-16_gazeta"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Gazeta votos totais stimulated (not válidos). Nenhum deles→branco_nulo. Marçal still listed (Avalanche not tested). confidence=press-high."
+}

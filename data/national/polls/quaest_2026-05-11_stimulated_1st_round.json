@@ -1,0 +1,34 @@
+{
+  "poll_id": "quaest_2026-05-11_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-05-08",
+  "fieldwork_end": "2026-05-11",
+  "fieldwork_mid": "2026-05-09",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.33,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.04,
+    "renan_santos": 0.02,
+    "augusto_cury": 0.01,
+    "cabo_daciolo": 0.01,
+    "samara_martins": 0.01,
+    "aldo_rebelo": 0.0,
+    "hertz_dias": 0.0
+  },
+  "residuals": {
+    "ns_nr": 0.05,
+    "branco_nulo": 0.1
+  },
+  "tse_registration_id": "BR-03598/2026",
+  "witness_ids": [
+    "w_quaest_2026-05-11_g1"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "G1 full stimulated list (sums 100). Genial/Quaest. confidence=press-high."
+}

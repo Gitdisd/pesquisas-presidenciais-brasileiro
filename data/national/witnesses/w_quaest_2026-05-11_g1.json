@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-05-11_g1",
+  "poll_id": "quaest_2026-05-11_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/05/13/quaest-presidencial-primeiro-turno.ghtml",
+  "retrieved_at": "2026-09-27T00:13:00Z",
+  "content_hash": "sha256:3c84e013ea7869ee1adbaa813ca4d40ee971239b1d5d2f0d701e62bfc8956536",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_004_v1",
+  "extractions": {
+    "fieldwork": "2026-05-08..2026-05-11",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-03598/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-03598/2026",
+  "notes": "Fetched G1 HTML; stimulated block + methodology."
+}

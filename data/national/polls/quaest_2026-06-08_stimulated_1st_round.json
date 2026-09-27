@@ -1,0 +1,36 @@
+{
+  "poll_id": "quaest_2026-06-08_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-06-05",
+  "fieldwork_end": "2026-06-08",
+  "fieldwork_mid": "2026-06-06",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.29,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.03,
+    "aecio_neves": 0.02,
+    "romeu_zema": 0.02,
+    "augusto_cury": 0.01,
+    "joaquim_barbosa": 0.01,
+    "samara_martins": 0.01,
+    "cabo_daciolo": 0.0,
+    "edmilson_costa": 0.0,
+    "hero_bezerra": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.1
+  },
+  "tse_registration_id": "BR-07661/2026",
+  "witness_ids": [
+    "w_quaest_2026-06-08_gazeta"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Gazeta do Povo full stimulated table (sums 100). confidence=press-high."
+}

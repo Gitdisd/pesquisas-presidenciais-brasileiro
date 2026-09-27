@@ -1,0 +1,31 @@
+{
+  "poll_id": "datafolha_2026-04-09_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-04-07",
+  "fieldwork_end": "2026-04-09",
+  "fieldwork_mid": "2026-04-08",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.35,
+    "ronaldo_caiado": 0.05,
+    "romeu_zema": 0.04,
+    "renan_santos": 0.02,
+    "aldo_rebelo": 0.01,
+    "cabo_daciolo": 0.01
+  },
+  "residuals": {
+    "branco_nulo": 0.1,
+    "ns_nr": 0.04
+  },
+  "tse_registration_id": "BR-03770/2026",
+  "witness_ids": [
+    "w_datafolha_2026-04-09_pdf"
+  ],
+  "dataset_version": "intake-cohort-004",
+  "notes": "Single stimulated slate (first with Caiado as PSD). Verified from institute PDF hosted on Poder360 CDN + G1/Datafolha pages. confidence=pdf-high."
+}

@@ -95,9 +95,9 @@ institutes:
     notes: "from docs/source-map — not yet verified for intake"
   - institute_id: alfa_inteligencia
     display_name: "Alfa Inteligência"
-    aliases: ["Alfa", "alfa-inteligencia"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake (source id: alfa-inteligencia)"
+    aliases: ["Alfa", "Alfa/TMC", "alfa-inteligencia"]
+    active: true
+    notes: "Activated for intake-cohort-004 (verified national stimulated 1st-round poll)."
   - institute_id: american_analytics
     display_name: "American Analytics"
     aliases: ["american-analytics"]
