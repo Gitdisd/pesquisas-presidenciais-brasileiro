@@ -38,6 +38,7 @@
           <p class="muted" id="scenario-label">Cenário: —</p>
         </div>
         <div class="toolbar-actions">
+          <button type="button" class="btn" id="btn-show-all" aria-pressed="false" title="Mostrar também candidatos inativos / fora da disputa">mostrar todos</button>
           <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom">Redefinir zoom</button>
         </div>
       </div>
@@ -50,14 +51,14 @@
         <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
       </div>
       <div class="legend" id="legend" aria-label="Legenda de candidatos"></div>
-      <p class="hint muted">Arraste para panorâmica · scroll para zoom · passe o mouse nos pontos para detalhes. Faixas = dispersão na janela (não IC clássico).</p>
+      <p class="hint muted">Arraste para panorâmica · scroll para zoom · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”.</p>
     </section>
 
     <aside class="side-col">
       <section class="card detail-panel" id="detail-panel" aria-live="polite">
         <h2>Detalhe</h2>
         <div id="detail-body" class="detail-body">
-          <p class="muted">Passe o mouse sobre um ponto de pesquisa ou a linha agregada.</p>
+          <p class="muted">Passe o mouse sobre um ponto de pesquisa.</p>
         </div>
       </section>
 
@@ -78,6 +79,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/candidates-config.js" defer></script>
   <script src="js/chart.js" defer></script>
 </body>
 </html>

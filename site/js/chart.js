@@ -1,16 +1,23 @@
 /* PEBR Research UI — D3@7 chart (vanilla JS, no bundler).
  * Consumes data/chart.json: series_kind poll | aggregate | uncertainty.
- * Data unit: fraction 0–1; display ×100 (pp). EXAMPLE series labeled in HTML. */
+ * Data unit: fraction 0–1; display ×100 (pp).
+ * Hover: single poll point only (no multi-candidate scoreboard). Zoom/pan kept; no range slider. */
 (function () {
   "use strict";
 
   const DATA_URL = "data/chart.json";
   const MARGIN = { top: 24, right: 20, bottom: 40, left: 48 };
+  const POLL_HIT_PX2 = 16 * 16;
   const SCENARIO_LABELS = {
     stimulated_1st_round: "Estimulada · 1º turno",
     spontaneous_1st_round: "Espontânea · 1º turno",
     stimulated_2nd_round: "Estimulada · 2º turno",
   };
+
+  const candCfg =
+    (typeof window !== "undefined" && window.PEBR_CANDIDATES_CONFIG) || {
+      isCandidateActive: () => true,
+    };
 
   const fmtPct = (v) =>
     (v * 100).toLocaleString("pt-BR", {
@@ -28,6 +35,8 @@
     headerMeta: document.getElementById("header-meta"),
     scenario: document.getElementById("scenario-label"),
     resetBtn: document.getElementById("btn-reset-zoom"),
+    showAllBtn: document.getElementById("btn-show-all"),
+    exampleBanner: document.querySelector(".example-banner"),
   };
 
   let state = {
@@ -35,6 +44,7 @@
     candById: new Map(),
     instById: new Map(),
     visible: new Set(),
+    showAll: false,
     xScale: null,
     yScale: null,
     x0: null,
@@ -45,7 +55,17 @@
 
   function pctDisplay(frac) {
     if (frac == null || Number.isNaN(frac)) return "—";
-    return fmtPct(frac) + " pp";
+    return fmtPct(frac) + "%";
+  }
+
+  function isActive(c) {
+    return candCfg.isCandidateActive(c);
+  }
+
+  function candidatesForLegend() {
+    const all = state.data?.candidates || [];
+    if (state.showAll) return all;
+    return all.filter(isActive);
   }
 
   function setHeader(meta) {
@@ -54,7 +74,9 @@
       chips.push('<span class="chip accent">EXAMPLE</span>');
     }
     chips.push(`<span class="chip">ciclo ${meta.election_cycle || "—"}</span>`);
-    chips.push(`<span class="chip">${meta.geography === "national" ? "nacional" : meta.geography || "—"}</span>`);
+    chips.push(
+      `<span class="chip">${meta.geography === "national" ? "nacional" : meta.geography || "—"}</span>`
+    );
     chips.push(`<span class="chip">${meta.model_id || "modelo"}</span>`);
     if (meta.generated_at) {
       const d = new Date(meta.generated_at);
@@ -65,45 +87,59 @@
     el.headerMeta.innerHTML = chips.join("");
     const scen = SCENARIO_LABELS[meta.scenario] || meta.scenario || "—";
     el.scenario.textContent = `Cenário: ${scen}`;
+    if (el.exampleBanner) {
+      el.exampleBanner.hidden = !meta.example;
+    }
   }
 
   function clearDetail() {
     el.detail.innerHTML =
-      '<p class="muted">Passe o mouse sobre um ponto de pesquisa ou a linha agregada.</p>';
+      '<p class="muted">Passe o mouse sobre um ponto de pesquisa.</p>';
   }
 
+  /** Lean hover card: candidate, %, institute, N, date only. */
   function showPollDetail(d, cand, inst) {
+    const name = cand?.label || d.candidate_id || "—";
+    const color = cand?.color || "#94a3b8";
     el.detail.innerHTML = `
-      <p class="cand-name" style="color:${cand.color}">${cand.label}</p>
+      <p class="cand-name" style="color:${color}">${name}</p>
       <p class="value-big">${pctDisplay(d.value)}</p>
       <dl>
-        <dt>Data</dt><dd>${fmtDate(d.date)}</dd>
         <dt>Instituto</dt><dd>${inst ? inst.label : d.institute_id || "—"}</dd>
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
-        <dt>poll_id</dt><dd><code>${d.poll_id || "—"}</code></dd>
-        <dt>Tipo</dt><dd>pesquisa (ponto)</dd>
-      </dl>`;
-  }
-
-  function showAggDetail(d, cand) {
-    el.detail.innerHTML = `
-      <p class="cand-name" style="color:${cand.color}">${cand.label}</p>
-      <p class="value-big">${pctDisplay(d.value)}</p>
-      <dl>
         <dt>Data</dt><dd>${fmtDate(d.date)}</dd>
-        <dt>Tipo</dt><dd>agregado Option B</dd>
-        <dt>Nota</dt><dd>média ponderada √N · janela ~14d</dd>
       </dl>`;
   }
 
-  function buildLegend(candidates) {
+  function syncShowAllBtn() {
+    if (!el.showAllBtn) return;
+    el.showAllBtn.setAttribute("aria-pressed", state.showAll ? "true" : "false");
+    el.showAllBtn.classList.toggle("is-on", state.showAll);
+    el.showAllBtn.textContent = state.showAll ? "só em disputa" : "mostrar todos";
+    el.showAllBtn.title = state.showAll
+      ? "Ocultar candidatos inativos / fora da disputa"
+      : "Mostrar também candidatos inativos / fora da disputa";
+  }
+
+  function applyDefaultVisibility() {
+    state.visible = new Set();
+    const list = candidatesForLegend();
+    list.forEach((c) => state.visible.add(c.id));
+    // If filter emptied the set (bad metadata), fall back to all
+    if (!state.visible.size && state.data?.candidates?.length) {
+      state.data.candidates.forEach((c) => state.visible.add(c.id));
+    }
+  }
+
+  function buildLegend() {
     el.legend.innerHTML = "";
+    const candidates = candidatesForLegend();
     candidates.forEach((c) => {
-      state.visible.add(c.id);
       const item = document.createElement("button");
       item.type = "button";
-      item.className = "legend-item";
+      item.className = "legend-item" + (state.visible.has(c.id) ? "" : " off");
       item.dataset.candidateId = c.id;
+      if (!isActive(c)) item.classList.add("is-inactive");
       item.innerHTML = `<span class="legend-swatch" style="background:${c.color}"></span>${c.label}`;
       item.addEventListener("click", () => {
         if (state.visible.has(c.id)) {
@@ -124,7 +160,12 @@
     const rect = el.svg.getBoundingClientRect();
     const width = Math.max(320, rect.width || el.svg.parentElement.clientWidth || 640);
     const height = Math.max(360, rect.height || 480);
-    return { width, height, innerW: width - MARGIN.left - MARGIN.right, innerH: height - MARGIN.top - MARGIN.bottom };
+    return {
+      width,
+      height,
+      innerW: width - MARGIN.left - MARGIN.right,
+      innerH: height - MARGIN.top - MARGIN.bottom,
+    };
   }
 
   function prepareSeries(raw) {
@@ -175,12 +216,54 @@
     return [parseDate(data.date_range.start), parseDate(data.date_range.end)];
   }
 
+  function highlightPoll(d) {
+    const cand = state.candById.get(d.candidate_id);
+    const inst = state.instById.get(d.institute_id);
+    showPollDetail(d, cand, inst);
+    state.layers.crosshair
+      .attr("x1", state.xScale(d.date))
+      .attr("x2", state.xScale(d.date))
+      .style("opacity", 1);
+    state.layers.focus
+      .attr("cx", state.xScale(d.date))
+      .attr("cy", state.yScale(d.value))
+      .attr("stroke", cand?.color || "#fff")
+      .style("opacity", 1);
+    state.layers.points.selectAll(".poll-point").classed("is-active", (p) => p === d);
+  }
+
+  function clearHover() {
+    state.layers.crosshair.style("opacity", 0);
+    state.layers.focus.style("opacity", 0);
+    state.layers.points.selectAll(".poll-point").classed("is-active", false).attr("r", 4);
+    clearDetail();
+  }
+
+  function nearestVisiblePoll(mx, my, polls) {
+    const visiblePolls = polls.filter((d) => state.visible.has(d.candidate_id));
+    let best = null;
+    let bestDist = Infinity;
+    for (const d of visiblePolls) {
+      const dx = state.xScale(d.date) - mx;
+      const dy = state.yScale(d.value) - my;
+      const dist = dx * dx + dy * dy;
+      if (dist < bestDist) {
+        bestDist = dist;
+        best = d;
+      }
+    }
+    if (best && bestDist <= POLL_HIT_PX2) return best;
+    return null;
+  }
+
   function renderChart(data) {
     state.data = data;
     state.candById = new Map(data.candidates.map((c) => [c.id, c]));
     state.instById = new Map((data.institutes || []).map((i) => [i.id, i]));
     setHeader(data);
-    buildLegend(data.candidates);
+    applyDefaultVisibility();
+    syncShowAllBtn();
+    buildLegend();
 
     const payload = prepareSeries(data);
     state.payload = payload;
@@ -203,7 +286,6 @@
 
     initScales(payload, dims);
 
-    // grid + axes (under plot)
     state.layers.xGrid = root.append("g").attr("class", "grid grid-x").attr("transform", `translate(0,${dims.innerH})`);
     state.layers.yGrid = root.append("g").attr("class", "grid grid-y");
     state.layers.xAxis = root.append("g").attr("class", "axis axis-x").attr("transform", `translate(0,${dims.innerH})`);
@@ -214,7 +296,6 @@
     state.layers.lines = plot.append("g").attr("class", "lines");
     state.layers.points = plot.append("g").attr("class", "points");
 
-    // hover helpers
     state.layers.crosshair = plot
       .append("line")
       .attr("class", "crosshair")
@@ -229,7 +310,6 @@
       .attr("stroke-width", 1.5)
       .style("opacity", 0);
 
-    // y-axis label
     root
       .append("text")
       .attr("x", -dims.innerH / 2)
@@ -238,9 +318,9 @@
       .attr("text-anchor", "middle")
       .attr("fill", "#94a3b8")
       .attr("font-size", 11)
-      .text("Intenção de voto (pp)");
+      .text("Intenção de voto (%)");
 
-    // zoom surface
+    // Zoom/pan surface only — no bottom brush / range slider
     const zoomRect = plot
       .append("rect")
       .attr("class", "zoom-rect")
@@ -274,82 +354,30 @@
       .on("pointerdown", () => zoomRect.style("cursor", "grabbing"))
       .on("pointerup pointerleave", () => zoomRect.style("cursor", "grab"));
 
-    // nearest-point hover on move over plot
+    // Single nearest poll point only — never a multi-candidate ranking overlay
     zoomRect.on("mousemove", function (event) {
       const [mx, my] = d3.pointer(event, this);
-      const visiblePolls = payload.polls.filter((d) => state.visible.has(d.candidate_id));
-      if (!visiblePolls.length) return;
-      let best = null;
-      let bestDist = Infinity;
-      for (const d of visiblePolls) {
-        const dx = state.xScale(d.date) - mx;
-        const dy = state.yScale(d.value) - my;
-        const dist = dx * dx + dy * dy;
-        if (dist < bestDist) {
-          bestDist = dist;
-          best = d;
-        }
-      }
-      // also consider aggregate lines if closer in x
-      let bestAgg = null;
-      let bestAggDx = Infinity;
-      for (const cid of state.visible) {
-        const pts = payload.aggregates.filter((d) => d.candidate_id === cid);
-        if (!pts.length) continue;
-        const bisect = d3.bisector((d) => d.date).left;
-        const xDate = state.xScale.invert(mx);
-        const i = Math.min(pts.length - 1, Math.max(0, bisect(pts, xDate)));
-        const candidates = [pts[i], pts[i - 1], pts[i + 1]].filter(Boolean);
-        for (const p of candidates) {
-          const dx = Math.abs(state.xScale(p.date) - mx);
-          if (dx < bestAggDx) {
-            bestAggDx = dx;
-            bestAgg = p;
-          }
-        }
-      }
-
-      const pollHit = best && bestDist < 18 * 18;
-      if (pollHit) {
-        const cand = state.candById.get(best.candidate_id);
-        const inst = state.instById.get(best.institute_id);
-        showPollDetail(best, cand, inst);
-        state.layers.crosshair
-          .attr("x1", state.xScale(best.date))
-          .attr("x2", state.xScale(best.date))
-          .style("opacity", 1);
-        state.layers.focus
-          .attr("cx", state.xScale(best.date))
-          .attr("cy", state.yScale(best.value))
-          .attr("stroke", cand.color)
-          .style("opacity", 1);
-        state.layers.points.selectAll(".poll-point").classed("is-active", (d) => d === best);
-      } else if (bestAgg && bestAggDx < 40) {
-        const cand = state.candById.get(bestAgg.candidate_id);
-        showAggDetail(bestAgg, cand);
-        state.layers.crosshair
-          .attr("x1", state.xScale(bestAgg.date))
-          .attr("x2", state.xScale(bestAgg.date))
-          .style("opacity", 1);
-        state.layers.focus
-          .attr("cx", state.xScale(bestAgg.date))
-          .attr("cy", state.yScale(bestAgg.value))
-          .attr("stroke", cand.color)
-          .style("opacity", 1);
-        state.layers.points.selectAll(".poll-point").classed("is-active", false);
-      }
+      const hit = nearestVisiblePoll(mx, my, payload.polls);
+      if (hit) highlightPoll(hit);
+      else clearHover();
     });
 
-    zoomRect.on("mouseleave", () => {
-      state.layers.crosshair.style("opacity", 0);
-      state.layers.focus.style("opacity", 0);
-      state.layers.points.selectAll(".poll-point").classed("is-active", false);
-      clearDetail();
-    });
+    zoomRect.on("mouseleave", clearHover);
 
     el.resetBtn.onclick = () => {
       zoomRect.transition().duration(250).call(state.zoomBehavior.transform, d3.zoomIdentity);
     };
+
+    if (el.showAllBtn) {
+      el.showAllBtn.onclick = () => {
+        state.showAll = !state.showAll;
+        applyDefaultVisibility();
+        syncShowAllBtn();
+        buildLegend();
+        redrawSeries();
+        clearHover();
+      };
+    }
 
     drawAxes(dims);
     redrawSeries();
@@ -384,9 +412,8 @@
 
   function redrawSeries() {
     const { polls, aggregates, uncertainty } = state.payload;
-    const candidates = state.data.candidates.filter((c) => state.visible.has(c.id));
+    const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
 
-    // uncertainty ribbons (area between band_low and band_high)
     const area = d3
       .area()
       .x((d) => state.xScale(d.date))
@@ -412,7 +439,6 @@
       .attr("fill", (d) => d.color)
       .attr("d", (d) => (d.values.length ? area(d.values) : null));
 
-    // aggregate lines
     const line = d3
       .line()
       .x((d) => state.xScale(d.date))
@@ -438,9 +464,10 @@
       .attr("stroke", (d) => d.color)
       .attr("d", (d) => (d.values.length ? line(d.values) : null));
 
-    // poll scatter
     const visPolls = polls.filter((d) => state.visible.has(d.candidate_id));
-    const pts = state.layers.points.selectAll("circle.poll-point").data(visPolls, (d) => d.poll_id + ":" + d.candidate_id);
+    const pts = state.layers.points
+      .selectAll("circle.poll-point")
+      .data(visPolls, (d) => d.poll_id + ":" + d.candidate_id);
     pts.exit().remove();
     pts
       .enter()
@@ -452,28 +479,29 @@
       .attr("cy", (d) => state.yScale(d.value))
       .attr("fill", (d) => state.candById.get(d.candidate_id)?.color || "#94a3b8")
       .on("mouseenter", function (event, d) {
-        const cand = state.candById.get(d.candidate_id);
-        const inst = state.instById.get(d.institute_id);
-        showPollDetail(d, cand, inst);
-        d3.select(this).attr("r", 6).classed("is-active", true);
-        state.layers.crosshair
-          .attr("x1", state.xScale(d.date))
-          .attr("x2", state.xScale(d.date))
-          .style("opacity", 1);
-        state.layers.focus
-          .attr("cx", state.xScale(d.date))
-          .attr("cy", state.yScale(d.value))
-          .attr("stroke", cand.color)
-          .style("opacity", 1);
+        d3.select(this).attr("r", 6);
+        highlightPoll(d);
       })
       .on("mouseleave", function () {
-        d3.select(this).attr("r", 4).classed("is-active", false);
+        d3.select(this).attr("r", 4);
       });
   }
 
   function onResize() {
     if (!state.data) return;
+    const keepShowAll = state.showAll;
+    const keepVisible = new Set(state.visible);
     renderChart(state.data);
+    state.showAll = keepShowAll;
+    // Re-apply visibility after render's defaults if user had customized
+    if (keepVisible.size) {
+      const allowed = new Set(candidatesForLegend().map((c) => c.id));
+      state.visible = new Set([...keepVisible].filter((id) => allowed.has(id)));
+      if (!state.visible.size) applyDefaultVisibility();
+      syncShowAllBtn();
+      buildLegend();
+      redrawSeries();
+    }
   }
 
   async function boot() {

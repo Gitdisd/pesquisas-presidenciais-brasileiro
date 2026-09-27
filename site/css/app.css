@@ -420,3 +420,29 @@ code {
   fill: var(--text);
   pointer-events: none;
 }
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn.is-on {
+  background: rgba(124, 156, 255, 0.18);
+  border-color: rgba(124, 156, 255, 0.55);
+  color: #dbe4ff;
+}
+
+.legend-item.is-inactive .legend-swatch {
+  opacity: 0.55;
+}
+.legend-item.is-inactive:not(.off)::after {
+  content: "fora";
+  margin-left: 0.35rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
