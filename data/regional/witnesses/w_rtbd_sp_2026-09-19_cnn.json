@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_sp_2026-09-19_cnn",
+  "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-em-sp/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:8f1a60790eecde9ee4bdf808af3f440727a91f955ddb3f4d1fb6bbfbd7afe440",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2.0,
+    "campo": "2026-09-16..2026-09-19",
+    "uf": "SP",
+    "tse": "BR-09702/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-09702/2026",
+  "notes": "CNN press corroboration. Lede mislabels 2º (51/45) as 1º; dual-enter from PDF primary tables."
+}

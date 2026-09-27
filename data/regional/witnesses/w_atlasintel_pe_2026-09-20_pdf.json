@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_atlasintel_pe_2026-09-20_pdf",
+  "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Pesquisa-Atlas-Eleicoes-Pernambuco-2026-260922.pdf",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:908ec6482f0f3a9daca3d19ce85d907439e2ee2cf46701f236f4cca2b77093ed",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1836,
+    "moe_pp": 2,
+    "campo": "2026-09-15..2026-09-20",
+    "uf": "PE",
+    "tse": "BR-09256/2026"
+  },
+  "confidence": 0.85,
+  "tse_registration_id": "BR-09256/2026",
+  "notes": "Institute PDF hosted on CNN CDN. Methodology/N/TSE readable; presidential share charts largely image — shares dual-entered from CNN labeled HTML, not invented from images."
+}

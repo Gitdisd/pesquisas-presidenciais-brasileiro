@@ -123,4 +123,4 @@ Michelle out; Quaest Jun 08; Meio/Ideia; image-PDF inventing; Ipec 2026 national
 
 Target `old-site-regional-leads` (`kind: lead_list`, fixture `fixtures/discovery/old-site-regional-leads.json`) queues URL/title metadata from old-site `polls-regional.json` as **leads only**. Dual-enter under `data/regional/` only with an extractable primary. **Never** copy shares; **never** merge into national Option B (`canonical-points.json` / `chart.json`). See [`regional.md`](regional.md) and [`cross-reference.md`](cross-reference.md).
 
-Acquisition hardening (Playwright out): public RSS/GNews/Wiki/sitemap `lastmod` / archive.org listing fallback / human inbox drops / TSE BR-id signal feeds. Watch may boost PDF + freshness metadata scores; it still never extracts poll cells.
+Acquisition hardening (Playwright out): public RSS/GNews/Wiki/sitemap `lastmod` / archive.org listing+RSS fallback for dead primary URLs / RSS `<enclosure type=pdf>` + description PDF-link resolution / human inbox drops / TSE BR-id signal feeds. Watch may boost PDF + freshness metadata scores; it still never extracts poll cells.

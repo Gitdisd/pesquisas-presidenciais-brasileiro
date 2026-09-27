@@ -44,11 +44,13 @@ Same rules as national ([`schemas/README.md`](../schemas/README.md), [`cross-ref
 
 `site/js/regional-chart.js` + `#regional-panel` (“Pesquisas regionais (UF)”) ships empty-state plumbing. Prefers `site/data/chart-regional.json` when it has poll series; else raw `canonical-points-regional.json` points. Empty message: *Nenhuma pesquisa regional verificada ainda*. Lights up when Pipeline/Lead fill those files — no national Option B merge.
 
-## Intake status (this foundation)
+## Intake status (intake-regional-001)
 
-- `data/regional/polls/`: **empty** (no clean dual-entered primary yet).
-- `site/data/canonical-points-regional.json`: `[]`.
-- Press/CNN/G1 URLs from old-site are queued as **leads**; do not copy `%`.
+- Prefer UF fill: **SP / MG / DF / PE** (other UFs still leads).
+- `data/regional/polls/` + `witnesses/`: dual-entered from extractable CNN/g1/TMC HTML and institute PDFs (Atlas PE / RTBD SP / Futura SP / Instituto Ver MG).
+- `site/data/canonical-points-regional.json`: non-empty after `bin/pebr assemble` — **flag Lead Chart #2 Option B export**.
+- Holds: RTBD MG institute PDF missing on CNN page (HTML used); Atlas PE share charts image-heavy in PDF (CNN prose used); Quaest RJ + non-prefer UFs not dual-entered this pass; image-only / 404 → do not invent.
+- National Option B inputs unchanged (`canonical-points.json` / `chart.json` not touched by regional assemble).
 
 ## CLI
 

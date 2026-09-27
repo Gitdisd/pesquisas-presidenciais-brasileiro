@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_pe_2026-09-14_tmc",
+  "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://tmc.com.br/politica/lula-lidera-corrida-em-pernambuco-com-59-dos-votos-contra-36-de-flavio-no-2o-turno-diz-real-time-big-data/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:626e9f76096fd52f46a64de019522ab667cb0b6ccdf9e6307859eeb38a7e50e5",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1600,
+    "moe_pp": 2,
+    "campo": "2026-09-10..2026-09-14",
+    "uf": "PE",
+    "tse": "BR-00283/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-00283/2026",
+  "notes": "TMC HTML with labeled PE presidential 1º+2º text tables. PDF not on page."
+}

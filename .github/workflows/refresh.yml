@@ -130,6 +130,8 @@ jobs:
 
       - name: Watch unit tests (minitest)
         run: bundle exec ruby -Ilib:test test/watch_test.rb
+      - name: Normalize/assemble anti-replicate unit tests (minitest)
+        run: bundle exec ruby -Ilib:test test/normalize_assemble_test.rb
 
       - name: Job summary
         if: always()

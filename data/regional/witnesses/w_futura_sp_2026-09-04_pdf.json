@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_futura_sp_2026-09-04_pdf",
+  "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Futura-eleicoes-setembro-2026.pdf",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:6ba2887a252c107053c4fad026fadb7e2d5073f663068298b2d91ceff05bcbe4",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1600,
+    "moe_pp": 2.4,
+    "campo": "2026-09-02..2026-09-04",
+    "uf": "SP",
+    "tse": "BR-06720/2026",
+    "tse_uf": "SP-00152/2026"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-06720/2026",
+  "notes": "Futura/100% Cidades PDF (CNN CDN). Text-extractable presidential 1º+2º."
+}

@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_instituto_ver_mg_2026-09-19_cnn_2t",
+  "poll_id": "instituto_ver_mg_2026-09-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/itatiaia-ver-flavio-tem-458-e-lula-41-no-2o-turno-em-mg/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:47acb3428ee9db735fd6115028701a530948fe4e4a68e0ae01ab6e82a2b05efd",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1197,
+    "moe_pp": 2.8,
+    "campo": "2026-09-17..2026-09-19",
+    "uf": "MG",
+    "tse": "MG-07337/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "MG-07337/2026",
+  "notes": "CNN 2º article corroboration (Cenário 2 / Lula×Flávio)."
+}

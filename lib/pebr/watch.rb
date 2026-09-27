@@ -562,8 +562,10 @@ module Pebr
       body, err = http_get(target["url"], ua: ua, timeout: timeout, max_redirects: max_redirects)
       return [body, :network, nil] if err.nil?
 
-      # Optional archive.org fallback for listing_html (public snapshots only — no paywall bypass).
-      if target["archive_fallback"] == true && (target["kind"] || "listing_html").to_s == "listing_html"
+      # Optional archive.org fallback for listing_html / rss when the live primary URL is dead
+      # (public Wayback snapshots only — no paywall / login / CAPTCHA bypass).
+      kind = (target["kind"] || "listing_html").to_s
+      if target["archive_fallback"] == true && %w[listing_html rss].include?(kind)
         snap = wayback_snapshot_url(target["url"], ua: ua, timeout: timeout)
         if snap
           body2, err2 = http_get(snap, ua: ua, timeout: timeout, max_redirects: max_redirects)
@@ -671,6 +673,9 @@ module Pebr
       results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
     end
 
+    # RSS/Atom items plus cheap primary acquisition: enclosure PDF URL and PDF hrefs
+    # inside description/content. Article link is kept; PDF siblings are queued as
+    # separate candidates (score boost via primary-pdf-hint). Never extracts shares.
     def extract_rss_items(xml)
       results = []
       xml.scan(/<item\b.*?<\/item>/im) do |block|
@@ -681,12 +686,27 @@ module Pebr
         next if link.nil? || link.strip.empty?
 
         pub = block[/<pubDate[^>]*>(.*?)<\/pubDate>/im, 1]
+        published_at = strip_tags(pub.to_s).strip.empty? ? nil : strip_tags(pub.to_s).strip
+        title_s = strip_cdata(strip_tags(title.to_s)).strip
+        snippet_s = strip_cdata(strip_tags(desc.to_s)).strip
+        article_url = strip_tags(link).strip
         results << {
-          url: strip_tags(link).strip,
-          title: strip_cdata(strip_tags(title.to_s)).strip,
-          snippet: strip_cdata(strip_tags(desc.to_s)).strip,
-          published_at: strip_tags(pub.to_s).strip.empty? ? nil : strip_tags(pub.to_s).strip
+          url: article_url,
+          title: title_s,
+          snippet: snippet_s,
+          published_at: published_at
         }
+        pdf_urls_from_rss_block(block, desc.to_s).each do |pdf_url|
+          next if normalize_url(WatchPolicy.canonicalize_url(pdf_url)) ==
+                  normalize_url(WatchPolicy.canonicalize_url(article_url))
+
+          results << {
+            url: pdf_url,
+            title: title_s.empty? ? pdf_url.split("/").last.to_s : "#{title_s} (PDF)",
+            snippet: snippet_s,
+            published_at: published_at
+          }
+        end
       end
       xml.scan(/<entry\b.*?<\/entry>/im) do |block|
         title = block[/<title[^>]*>(.*?)<\/title>/im, 1]
@@ -698,14 +718,48 @@ module Pebr
                   block[/<published[^>]*>(.*?)<\/published>/im, 1]
         next if link.nil? || link.strip.empty?
 
+        published_at = strip_tags(updated.to_s).strip.empty? ? nil : strip_tags(updated.to_s).strip
+        title_s = strip_cdata(strip_tags(title.to_s)).strip
+        snippet_s = strip_cdata(strip_tags(summary.to_s)).strip
+        article_url = strip_tags(link).strip
         results << {
-          url: strip_tags(link).strip,
-          title: strip_cdata(strip_tags(title.to_s)).strip,
-          snippet: strip_cdata(strip_tags(summary.to_s)).strip,
-          published_at: strip_tags(updated.to_s).strip.empty? ? nil : strip_tags(updated.to_s).strip
+          url: article_url,
+          title: title_s,
+          snippet: snippet_s,
+          published_at: published_at
         }
+        pdf_urls_from_rss_block(block, summary.to_s).each do |pdf_url|
+          next if normalize_url(WatchPolicy.canonicalize_url(pdf_url)) ==
+                  normalize_url(WatchPolicy.canonicalize_url(article_url))
+
+          results << {
+            url: pdf_url,
+            title: title_s.empty? ? pdf_url.split("/").last.to_s : "#{title_s} (PDF)",
+            snippet: snippet_s,
+            published_at: published_at
+          }
+        end
       end
       results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
+    end
+
+    # Resolve institute-style RSS primary PDFs from <enclosure type=pdf> and href=.pdf in body.
+    def pdf_urls_from_rss_block(block, htmlish)
+      urls = []
+      block.to_s.scan(/<enclosure\b[^>]*>/im) do |enc|
+        url = enc[/url\s*=\s*["']([^"']+)["']/im, 1]
+        type = enc[/type\s*=\s*["']([^"']+)["']/im, 1].to_s
+        next if url.nil? || url.strip.empty?
+
+        urls << url.strip if type.downcase.include?("pdf") || /\.pdf(?:\?|$)/i.match?(url)
+      end
+      htmlish.to_s.scan(%r{https?://[^\s<"']+\.pdf(?:\?[^\s<"']*)?}i) do |u|
+        urls << u.to_s.strip
+      end
+      htmlish.to_s.scan(/href\s*=\s*["']([^"']+\.pdf(?:\?[^"']*)?)["']/i) do |href,|
+        urls << href.strip
+      end
+      urls.uniq
     end
 
     def extract_sitemap_locs(xml)

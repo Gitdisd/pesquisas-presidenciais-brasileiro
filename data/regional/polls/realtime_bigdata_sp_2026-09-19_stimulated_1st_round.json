@@ -1,0 +1,33 @@
+{
+  "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-09-16",
+  "fieldwork_end": "2026-09-19",
+  "fieldwork_mid": "2026-09-17",
+  "geography": "state",
+  "uf": "SP",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.02,
+  "results": {
+    "flavio_bolsonaro": 0.41,
+    "lula": 0.35,
+    "renan_santos": 0.06,
+    "augusto_cury": 0.04,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.03
+  },
+  "residuals": {
+    "outros": 0.01,
+    "branco_nulo": 0.03,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-09702/2026",
+  "witness_ids": [
+    "w_rtbd_sp_2026-09-19_pdf",
+    "w_rtbd_sp_2026-09-19_cnn"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional SP. Dual-entered from RTBD PDF text tables (ESTIMULADA PRESIDENTE CENÁRIO 01). Outros=aggregated minor candidates 1%. Never merge into national Option B."
+}
