@@ -39,17 +39,26 @@
         </div>
         <div class="toolbar-actions">
           <button type="button" class="btn" id="btn-show-all" aria-pressed="false" title="Mostrar também candidatos inativos / fora da disputa">mostrar todos</button>
+          <button type="button" class="btn" id="btn-export-csv" title="Baixar CSV dos pontos de pesquisa visíveis (filtros atuais)">Exportar CSV</button>
           <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom">Redefinir zoom</button>
         </div>
       </div>
 
       <div class="filter-bar" id="filter-bar" aria-label="Filtros do gráfico">
-        <div class="filter-row">
+        <div class="filter-row filter-row-primary">
           <span class="filter-label">Turno</span>
           <div class="seg" role="group" aria-label="Turno">
             <button type="button" class="seg-btn active" id="round-1" aria-pressed="true" data-round="1">1º turno</button>
             <button type="button" class="seg-btn" id="round-2" aria-pressed="false" data-round="2" disabled title="Carregando série de 2º turno…">2º turno</button>
           </div>
+          <span class="filter-label">Período</span>
+          <div class="seg range-seg" role="group" aria-label="Período visível">
+            <button type="button" class="seg-btn" id="range-30" data-range="30" aria-pressed="false">30d</button>
+            <button type="button" class="seg-btn" id="range-90" data-range="90" aria-pressed="false">90d</button>
+            <button type="button" class="seg-btn active" id="range-all" data-range="all" aria-pressed="true">tudo</button>
+          </div>
+          <span class="filter-label">Prompt</span>
+          <span class="chip accent" id="prompt-chip" title="Série canônica PEBR: estimulada (espontânea não entra neste gráfico)">Estimulada</span>
           <span class="filter-label geo-label">Geografia</span>
           <span class="chip accent" id="geo-chip" title="v1: apenas pesquisas nacionais">Nacional</span>
         </div>
@@ -60,6 +69,10 @@
         <div class="filter-row filter-institutes">
           <span class="filter-label">Institutos</span>
           <div class="chip-row" id="institute-filters" role="group" aria-label="Filtrar por instituto"></div>
+        </div>
+        <div class="filter-row filter-candidates" id="candidate-filter-row">
+          <span class="filter-label">Candidatos</span>
+          <div class="chip-row" id="candidate-filters" role="group" aria-label="Alternar candidatos no gráfico"></div>
         </div>
         <div class="filter-row filter-method">
           <span class="filter-label">Modelo</span>
@@ -77,8 +90,8 @@
         </div>
         <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
       </div>
-      <div class="legend" id="legend" aria-label="Legenda de candidatos"></div>
-      <p class="hint muted">Arraste para panorâmica · scroll para zoom · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”.</p>
+      <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
+      <p class="hint muted">Arraste para panorâmica · scroll para zoom · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d só corta a vista (sem slider). CSV = pontos visíveis com os filtros atuais.</p>
     </section>
 
     <aside class="side-col">
@@ -97,7 +110,7 @@
           <li><span class="swatch ribbon"></span> Faixa = dispersão na janela (não IC / não probabilidade de vitória)</li>
         </ul>
         <p class="muted small">Unidade de dados: fração 0–1 · exibição em pontos percentuais (×100).</p>
-        <p class="muted small" id="method-side-note">Sem correção de viés de casa. Não é previsão eleitoral.</p>
+        <p class="muted small" id="method-side-note">Sem correção de viés de casa. Não é previsão eleitoral. Prompt: estimulada.</p>
       </section>
     </aside>
   </main>

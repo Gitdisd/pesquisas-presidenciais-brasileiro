@@ -151,16 +151,21 @@ code {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+  grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem clamp(1rem, 3vw, 2rem) 2rem;
   align-items: start;
 }
 
-@media (max-width: 960px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+.chart-panel {
+  width: 100%;
+  min-width: 0;
+}
+
+.side-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
 .card {
@@ -212,7 +217,7 @@ code {
 .chart-shell {
   position: relative;
   width: 100%;
-  min-height: 420px;
+  min-height: 560px;
   border-radius: 12px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%),
@@ -224,8 +229,17 @@ code {
 #chart {
   display: block;
   width: 100%;
-  height: 480px;
+  height: clamp(560px, 62vh, 640px);
+  min-height: 560px;
   touch-action: none;
+}
+
+@media (max-width: 700px) {
+  .chart-shell { min-height: 420px; }
+  #chart {
+    height: clamp(420px, 52vh, 520px);
+    min-height: 420px;
+  }
 }
 
 .chart-placeholder {
@@ -289,10 +303,6 @@ code {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-.side-col {
-  display: grid;
-  gap: 1rem;
-}
 
 .detail-body {
   margin-top: 0.55rem;
@@ -603,4 +613,51 @@ code {
   .geo-label { margin-left: 0; }
   .seg-btn { padding: 0.35rem 0.7rem; font-size: 0.78rem; min-height: 34px; }
   .chip-btn { min-height: 32px; font-size: 0.74rem; }
+}
+
+/* —— Chart enlarge + denser filters (borrowed from old PEBR UX) —— */
+.filter-bar {
+  gap: 0.4rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.filter-row-primary {
+  row-gap: 0.4rem;
+}
+
+.filter-row-primary .seg {
+  flex: 0 0 auto;
+}
+
+.range-seg .seg-btn {
+  min-width: 3.1rem;
+}
+
+.filter-candidates .chip-btn {
+  gap: 0.35rem;
+}
+
+.filter-candidates .cand-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  flex: 0 0 auto;
+}
+
+.filter-candidates .chip-btn.is-inactive:not(.off)::after {
+  content: "fora";
+  margin-left: 0.2rem;
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-candidates .chip-btn.off {
+  opacity: 0.4;
+}
+
+.prompt-note {
+  font-size: 0.78rem;
 }
