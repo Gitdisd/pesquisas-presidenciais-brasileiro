@@ -4,8 +4,9 @@ Arquivo e agregador de pesquisas presidenciais nacionais — GitHub Pages.
 
 ## GitHub Pages
 
-- **Source folder:** `/site` (Settings → Pages → Deploy from a branch → `/site`, or equivalent “folder” source).
-- Site root on Pages maps to this repo’s `site/` directory.
+- **Deploy:** GitHub Actions workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) uploads `site/` (branch path `/site` is not allowed by GitHub; only `/` or `/docs`).
+- Settings → Pages → **Source: GitHub Actions**.
+- Public URL (after first successful run): https://gitdisd.github.io/pesquisas-presidenciais-brasileiro/
 - UI entry: [`site/index.html`](site/index.html) · stylesheet [`site/css/app.css`](site/css/app.css) · chart [`site/js/chart.js`](site/js/chart.js) (D3@7 via CDN).
 - Chart data path (relative to the site root): `data/chart.json` → [`site/data/chart.json`](site/data/chart.json).
 
