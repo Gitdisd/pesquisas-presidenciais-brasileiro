@@ -40,7 +40,7 @@
         <div class="toolbar-actions">
           <button type="button" class="btn" id="btn-show-all" aria-pressed="false" title="Mostrar também candidatos inativos / fora da disputa">mostrar todos</button>
           <button type="button" class="btn" id="btn-export-csv" title="Baixar CSV dos pontos de pesquisa visíveis (filtros atuais)">Exportar CSV</button>
-          <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom">Redefinir zoom</button>
+          <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom / panorâmica (também: duplo clique no gráfico)">Redefinir zoom</button>
         </div>
       </div>
 
@@ -91,7 +91,7 @@
         <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
       </div>
       <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
-      <p class="hint muted">Arraste para panorâmica · scroll para zoom · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d só corta a vista (sem slider). CSV = pontos visíveis com os filtros atuais.</p>
+      <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). CSV = pontos visíveis com os filtros atuais.</p>
     </section>
 
     <aside class="side-col">

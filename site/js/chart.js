@@ -1,8 +1,11 @@
 /* PEBR Research UI — D3@7 chart (vanilla JS, no bundler).
  * Consumes data/chart.json (1º) and data/chart-2nd-round.json (2º pairwise scenarios[]).
  * series_kind poll | aggregate | uncertainty. Data unit: fraction 0–1; display ×100 (pp).
- * Hover: single poll point only (no multi-candidate scoreboard). Zoom/pan kept; no range/brush slider.
- * Filters: round, período (30d/90d/tudo view cut), institutes (solo), candidatos, matchups 2º.
+ * Hover: single poll point only (no multi-candidate scoreboard).
+ * Interaction: TradingView/Polymarket-style drag-pan + wheel/pinch zoom on time (X);
+ *   Y stays on data domain (no isotropic lock). NO bottom range brush/slider.
+ * Period chips 30d/90d/tudo = optional X domain presets only (not a brush).
+ * Filters: round, período, institutes (solo), candidatos, matchups 2º.
  * Borrowed from old site: período presets, denser filter bar, CSV of visible polls. Not borrowed:
  * Focar, projection models, multi-hover scoreboard, bottom brush, média-window knobs (pipeline). */
 (function () {
@@ -68,7 +71,9 @@
     yScale: null,
     x0: null,
     y0: null,
+    dims: null,
     zoomBehavior: null,
+    zoomRect: null,
     layers: {},
     round: 1,
     chart1st: null,
@@ -76,6 +81,9 @@
     activeScenario: null,
     has2nd: false,
     rangeDays: null, // null = tudo; 30 | 90 (view cut only — not a brush slider)
+    lastTapAt: 0,
+    lastTapX: 0,
+    lastTapY: 0,
   };
 
   function pctDisplay(frac) {
@@ -620,6 +628,34 @@
     return null;
   }
 
+
+  /** TradingView/Polymarket: transform drives time (X) only; Y stays on data domain. */
+  function applyTimeZoom(transform) {
+    state.xScale = transform.rescaleX(state.x0);
+    state.yScale = state.y0.copy();
+    const dims = state.dims || size();
+    redrawSeries();
+    drawAxes(dims);
+  }
+
+  function resetZoom() {
+    if (!state.zoomRect || !state.zoomBehavior) return;
+    clearHover();
+    state.zoomRect
+      .transition()
+      .duration(280)
+      .ease(d3.easeCubicOut)
+      .call(state.zoomBehavior.transform, d3.zoomIdentity);
+  }
+
+  function setPanning(on) {
+    if (!el.svg) return;
+    el.svg.classList.toggle("is-panning", !!on);
+    if (state.zoomRect) {
+      state.zoomRect.style("cursor", on ? "grabbing" : "grab");
+    }
+  }
+
   function renderChart(data) {
     state.data = data;
     state.candById = new Map(data.candidates.map((c) => [c.id, c]));
@@ -688,18 +724,22 @@
       .attr("font-size", 11)
       .text("Intenção de voto (%)");
 
-    // Zoom/pan surface only — no bottom brush / range slider
+    // Zoom/pan surface only — no bottom brush / range slider.
+    // Time-axis (X) zoom+pan like TradingView/Polymarket; Y stays on data domain.
+    state.dims = dims;
     const zoomRect = plot
       .append("rect")
       .attr("class", "zoom-rect")
       .attr("width", dims.innerW)
       .attr("height", dims.innerH)
       .attr("fill", "transparent")
-      .style("cursor", "grab");
+      .style("cursor", "grab")
+      .attr("aria-hidden", "true");
+    state.zoomRect = zoomRect;
 
     state.zoomBehavior = d3
       .zoom()
-      .scaleExtent([1, 24])
+      .scaleExtent([1, 32])
       .extent([
         [0, 0],
         [dims.innerW, dims.innerH],
@@ -708,33 +748,78 @@
         [0, 0],
         [dims.innerW, dims.innerH],
       ])
+      // Let toolbar chips/buttons receive clicks; ignore non-primary mouse.
+      // Wheel always zooms (ctrl+wheel left to browser page-zoom).
+      .filter((event) => {
+        if (event.type === "wheel") return !event.ctrlKey;
+        if (event.button && event.button !== 0) return false;
+        const t = event.target;
+        if (t && t.closest && t.closest("button, a, input, select, textarea, label")) {
+          return false;
+        }
+        return true;
+      })
+      // Slightly gentler than d3 default — TradingView-ish steps toward cursor.
+      .wheelDelta((event) => {
+        const unit =
+          event.deltaMode === 1 ? 0.05 : event.deltaMode ? 1 : 0.00155;
+        return -event.deltaY * unit;
+      })
+      .on("start", (event) => {
+        if (event.sourceEvent && event.sourceEvent.type !== "wheel") {
+          setPanning(true);
+          clearHover();
+        }
+      })
       .on("zoom", (event) => {
-        const t = event.transform;
-        state.xScale = t.rescaleX(state.x0);
-        state.yScale = t.rescaleY(state.y0);
-        redrawSeries();
-        drawAxes(dims);
+        applyTimeZoom(event.transform);
+      })
+      .on("end", () => {
+        setPanning(false);
       });
 
     zoomRect.call(state.zoomBehavior);
-    zoomRect
-      .on("dblclick.zoom", null)
-      .on("pointerdown", () => zoomRect.style("cursor", "grabbing"))
-      .on("pointerup pointerleave", () => zoomRect.style("cursor", "grab"));
+    // Replace d3 dblclick zoom-in with reset (also keeps Redefinir zoom button).
+    zoomRect.on("dblclick.zoom", null);
+    zoomRect.on("dblclick.reset", (event) => {
+      event.preventDefault();
+      resetZoom();
+    });
+
+    // Double-tap reset on touch (pinch/pan still handled by d3.zoom).
+    zoomRect.on("pointerup.dbltap", (event) => {
+      if (event.pointerType !== "touch") return;
+      const now = performance.now();
+      const dt = now - state.lastTapAt;
+      const dx = event.clientX - state.lastTapX;
+      const dy = event.clientY - state.lastTapY;
+      if (dt > 0 && dt < 300 && dx * dx + dy * dy < 576) {
+        resetZoom();
+        state.lastTapAt = 0;
+      } else {
+        state.lastTapAt = now;
+        state.lastTapX = event.clientX;
+        state.lastTapY = event.clientY;
+      }
+    });
 
     // Single nearest poll point only — never a multi-candidate ranking overlay
     zoomRect.on("mousemove", function (event) {
+      if (el.svg && el.svg.classList.contains("is-panning")) return;
       const [mx, my] = d3.pointer(event, this);
       const hit = nearestVisiblePoll(mx, my, payload.polls);
       if (hit) highlightPoll(hit);
       else clearHover();
     });
 
-    zoomRect.on("mouseleave", clearHover);
+    zoomRect.on("mouseleave", () => {
+      setPanning(false);
+      clearHover();
+    });
 
-    el.resetBtn.onclick = () => {
-      zoomRect.transition().duration(250).call(state.zoomBehavior.transform, d3.zoomIdentity);
-    };
+    if (el.resetBtn) {
+      el.resetBtn.onclick = () => resetZoom();
+    }
 
     if (el.showAllBtn) {
       el.showAllBtn.onclick = () => {

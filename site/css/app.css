@@ -224,6 +224,7 @@ code {
     var(--bg-elev);
   border: 1px solid var(--stroke);
   overflow: hidden;
+  touch-action: none;
 }
 
 #chart {
@@ -231,7 +232,17 @@ code {
   width: 100%;
   height: clamp(560px, 62vh, 640px);
   min-height: 560px;
+  /* Pan/pinch stay on chart — do not steal page scroll outside #chart */
   touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+#chart .zoom-rect {
+  cursor: grab;
+}
+#chart.is-panning,
+#chart.is-panning .zoom-rect {
+  cursor: grabbing;
 }
 
 @media (max-width: 700px) {
