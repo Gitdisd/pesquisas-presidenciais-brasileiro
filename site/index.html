@@ -134,6 +134,24 @@
       <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
       <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). Link compartilhável guarda turno, período, confronto e máscara de institutos. Atalhos: <kbd>1</kbd>/<kbd>2</kbd> turno · <kbd>3</kbd>/<kbd>9</kbd>/<kbd>0</kbd> período 30d/90d/tudo · <kbd>G</kbd> focar gráfico · <kbd>F</kbd> tela cheia · <kbd>T</kbd> tema · <kbd>Esc</kbd> limpar hover.</p>
 
+      <section class="companion-panel" id="companion-panel" aria-label="Capítulo 2 — gráfico companheiro (outro turno)">
+        <p class="chapter-kicker">Capítulo 2</p>
+        <div class="companion-head">
+          <div>
+            <h2 id="companion-heading">Companheiro — outro turno</h2>
+            <p class="muted small" id="companion-scenario">—</p>
+          </div>
+          <p class="muted small companion-note" id="companion-note">Mesmo período e institutos do gráfico de cima. Option&nbsp;B nacional — não é painel de UF.</p>
+        </div>
+        <div class="chart-shell companion-shell" id="companion-shell">
+          <div class="chart-placeholder" id="companion-placeholder">
+            <p class="muted">Aguardando dados do gráfico principal…</p>
+          </div>
+          <svg id="companion-chart" role="img" aria-label="Gráfico companheiro Option B do outro turno"></svg>
+        </div>
+        <div class="companion-legend" id="companion-legend" aria-label="Legenda do companheiro"></div>
+      </section>
+
       <section class="polls-panel" id="polls-panel" aria-label="Tabela de pesquisas nacionais">
         <div class="polls-head">
           <div class="polls-head-main">
@@ -187,6 +205,7 @@
           </ul>
           <p class="muted small"><strong>Não é</strong> previsão de urna, probabilidade de vitória, nem correção de house effects. Unidade nos dados: fração 0–1 · exibição em pontos percentuais (×100). Prompt canônico: estimulada.</p>
         </div>
+        <p class="muted small">Capítulo 2 (abaixo do gráfico) mostra o <strong>outro turno</strong> nacional (1º ↔ Lula×Flávio) com o mesmo Option&nbsp;B — não é painel estadual.</p>
         <p class="muted small" id="method-side-note">Modelo <code>option_b_sqrt_n_trailing</code> · docs no repositório.</p>
       </section>
     </aside>
@@ -203,5 +222,6 @@
   <script src="js/candidates-config.js" defer></script>
   <script src="js/option-b.js" defer></script>
   <script src="js/chart.js" defer></script>
+  <script src="js/companion-chart.js" defer></script>
 </body>
 </html>

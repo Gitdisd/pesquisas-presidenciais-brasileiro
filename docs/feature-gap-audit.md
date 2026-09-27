@@ -71,6 +71,8 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 
 ## Remaining after this ship
 
+- **Companion Capítulo 2 (alternate-round / primary matchup)** — see [`old-site-deep-port.md`](old-site-deep-port.md); foundation on current stack (not regional UF).
+
 - P1 shipped: summary cards + Δ30d, overview metrics, dark/light theme, national poll table (+ pagination/search), focar/scroll-top, keyboard shortcuts
 - P1 “Verificar agora” refresh stamp shipped: in-page chart JSON check with PT timestamp and failure-safe status
 - P2 shipped this pass: institute bitmask in share URL (`inst`), fullscreen chart toggle, poll-table pagination + search

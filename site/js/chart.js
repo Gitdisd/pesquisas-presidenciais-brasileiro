@@ -10,7 +10,8 @@
  * summary cards + Δ30d, overview metrics, poll table (+ pagination/search), dark/light theme,
  * focar / scroll-top / fullscreen, cheap shortcuts, institute bitmask in share URL.
  * Client Option B when institute-filtered (same √N + anti-flood rules). Not borrowed:
- * projection models, multi-hover scoreboard, bottom brush, média-window knobs, party/CRT themes. */
+ * projection models, multi-hover scoreboard, bottom brush, média-window knobs, party/CRT themes.
+ * Publishes window.__pebrView + pebr-view-change for companion Capítulo 2 (alternate round). */
 (function () {
   "use strict";
 
@@ -1523,10 +1524,32 @@
       .replace(/Clariana Barao/gi, "Clariana");
   }
 
+  /** Shared view snapshot for companion-chart.js (old-site __pebr pattern, no refetch). */
+  function publishViewBus() {
+    const view = {
+      version: 1,
+      round: state.round,
+      rangeDays: state.rangeDays,
+      institutesOn: new Set(state.institutesOn),
+      activeScenario: state.activeScenario,
+      has2nd: state.has2nd,
+      chart1st: state.chart1st,
+      chart2nd: state.chart2nd,
+      showAll: state.showAll,
+    };
+    window.__pebrView = view;
+    try {
+      document.dispatchEvent(
+        new CustomEvent("pebr-view-change", { detail: view })
+      );
+    } catch (_) {}
+  }
+
   function refreshExtras() {
     renderSummaryCards();
     renderOverviewMetrics();
     renderPollTable();
+    publishViewBus();
   }
 
   function currentTheme() {
@@ -2103,6 +2126,7 @@
       state.skipUrlWrite = false;
       writeUrlState();
       markDataLoaded("initial");
+      publishViewBus();
       applyTheme(currentTheme());
       if (el.themeBtn) {
         el.themeBtn.addEventListener("click", toggleTheme);
