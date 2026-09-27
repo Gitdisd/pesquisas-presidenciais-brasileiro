@@ -1118,7 +1118,56 @@
   }
 
   const THEME_KEY = "pebr-theme";
+  const FILTER_COLLAPSE_KEY_PREFIX = "pebr-collapse-";
   const SUMMARY_CARD_CAP = 8;
+
+  function readFilterCollapseState(key) {
+    try {
+      const saved = localStorage.getItem(FILTER_COLLAPSE_KEY_PREFIX + key);
+      if (saved === "closed" || saved === "false") return false;
+      if (saved === "open" || saved === "true") return true;
+    } catch (error) {
+      // localStorage may be unavailable in private/restricted browsing modes.
+    }
+    return true;
+  }
+
+  function writeFilterCollapseState(key, open) {
+    try {
+      localStorage.setItem(
+        FILTER_COLLAPSE_KEY_PREFIX + key,
+        open ? "open" : "closed"
+      );
+    } catch (error) {
+      // Keep the control usable when persistence is unavailable.
+    }
+  }
+
+  function setFilterSectionOpen(section, open, persist) {
+    const toggle = section.querySelector(".filter-toggle");
+    if (!toggle) return;
+    const contentId = toggle.getAttribute("aria-controls");
+    const content = contentId ? document.getElementById(contentId) : null;
+    section.classList.toggle("is-collapsed", !open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    if (content) content.hidden = !open;
+    if (persist) {
+      writeFilterCollapseState(section.dataset.collapseSection, open);
+    }
+  }
+
+  function installFilterCollapsibles() {
+    document.querySelectorAll("[data-collapse-section]").forEach((section) => {
+      const key = section.dataset.collapseSection;
+      const toggle = section.querySelector(".filter-toggle");
+      if (!key || !toggle) return;
+      setFilterSectionOpen(section, readFilterCollapseState(key), false);
+      toggle.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") !== "true";
+        setFilterSectionOpen(section, open, true);
+      });
+    });
+  }
 
   function fmtDeltaPp(fracDelta) {
     if (fracDelta == null || Number.isNaN(fracDelta)) {
@@ -1938,6 +1987,7 @@
   }
 
   async function boot() {
+    installFilterCollapsibles();
     try {
       const bundle = await fetchChartBundle();
       state.chart1st = bundle.chart1st;
