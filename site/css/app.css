@@ -552,19 +552,35 @@ code {
   font-weight: 650;
 }
 
-.chip-btn.method {
-  cursor: default;
-  min-height: 30px;
-  padding: 0.25rem 0.65rem;
-  font-size: 0.74rem;
-  color: var(--muted);
+/* Methodology badges — informational only, not interactive */
+.chip-static {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid rgba(78, 205, 196, 0.28);
   background: rgba(78, 205, 196, 0.06);
-  border-color: rgba(78, 205, 196, 0.28);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font: inherit;
+  font-size: 0.74rem;
+  min-height: 30px;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
 }
 
-.chip-btn.method strong {
+.chip-static strong {
   color: var(--accent-2);
   font-weight: 650;
+}
+
+.chip-btn.solo {
+  background: rgba(78, 205, 196, 0.18);
+  border-color: rgba(78, 205, 196, 0.55);
+  color: #c8fff8;
+  font-weight: 650;
+  box-shadow: 0 0 0 1px rgba(78, 205, 196, 0.2);
 }
 
 .method-disclaimer,

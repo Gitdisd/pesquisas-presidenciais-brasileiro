@@ -257,7 +257,7 @@
       { html: "não é previsão" },
     ];
     el.methodChips.innerHTML = chips
-      .map((c) => `<span class="chip-btn method">${c.html}</span>`)
+      .map((c) => `<span class="chip-static">${c.html}</span>`)
       .join("");
     if (el.methodDisclaimer) {
       const band =
@@ -313,8 +313,18 @@
       return;
     }
     el.filterNote.hidden = false;
-    el.filterNote.textContent =
-      "Filtro de institutos ativo: pontos filtrados. Linha/faixa Option B ocultas (agregado pré-computado usa todos os institutos — selecione Todos para ver).";
+    const n = state.institutesOn.size;
+    const soloName =
+      n === 1
+        ? prettyInstituteLabel(
+            state.instById.get([...state.institutesOn][0]) || {
+              id: [...state.institutesOn][0],
+            }
+          )
+        : null;
+    el.filterNote.textContent = soloName
+      ? `Só ${soloName}: pontos desse instituto. Linha/faixa Option B ocultas (agregado usa todos — clique Todos para ver).`
+      : "Filtro de institutos ativo: pontos filtrados. Linha/faixa Option B ocultas (agregado pré-computado usa todos os institutos — selecione Todos para ver).";
   }
 
   function applyDefaultVisibility() {
@@ -344,6 +354,9 @@
     allBtn.type = "button";
     allBtn.className = "chip-btn all" + (institutesAllOn() ? " on" : "");
     allBtn.textContent = "Todos";
+    allBtn.title = institutesAllOn()
+      ? "Todos os institutos visíveis"
+      : "Mostrar todos os institutos (e linhas agregadas)";
     allBtn.addEventListener("click", () => {
       state.institutesOn = new Set(state.allInstituteIds);
       buildInstituteFilters();
@@ -363,16 +376,20 @@
       const id = inst.id;
       const btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "chip-btn" + (state.institutesOn.has(id) ? " on" : "");
+      const solo =
+        state.institutesOn.size === 1 && state.institutesOn.has(id);
+      btn.className =
+        "chip-btn" + (state.institutesOn.has(id) ? " on" : "") + (solo ? " solo" : "");
       btn.textContent = prettyInstituteLabel(inst);
       btn.dataset.instituteId = id;
+      btn.title = solo
+        ? "Só este instituto (clique em Todos para ver todos)"
+        : "Mostrar só este instituto";
       btn.addEventListener("click", () => {
-        if (state.institutesOn.has(id)) {
-          if (state.institutesOn.size <= 1) return;
-          state.institutesOn.delete(id);
-        } else {
-          state.institutesOn.add(id);
-        }
+        // Exclusive solo: one click isolates that institute.
+        // Already-solo chip stays on (no empty selection).
+        if (state.institutesOn.size === 1 && state.institutesOn.has(id)) return;
+        state.institutesOn = new Set([id]);
         buildInstituteFilters();
         syncFilterNote();
         redrawSeries();
