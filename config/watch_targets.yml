@@ -363,6 +363,48 @@ targets:
     notes: "News leads that may include BR-#####/2026. TSE ID and article are provenance signals; human-check primary report."
     fixture: fixtures/discovery/gnews-tse-registration.rss.xml
 
+
+  # --- Working public TSE / institute mirrors verified 2026-09-27 (provenance leads only) ---
+  - id: tse-cdn-zip-wayback
+    source_id: tse-dados-abertos-2026
+    label: "Wayback memento — TSE pesquisa_eleitoral_2026.zip (CDN mirror)"
+    kind: listing_html
+    url: "https://web.archive.org/web/20260909223204/https://cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral/pesquisa_eleitoral_2026.zip"
+    enabled: true
+    national_hint: true
+    notes: "Live CDN/dadosabertos still 403 from this egress. Wayback snapshot 2026-09-09 returns application/zip (≈3.7MB). Provenance-only lagging mirror — does NOT replace ops egress/secret for fresh daily dumps. Never horse-race shares."
+    fixture: fixtures/discovery/tse-provenance.html
+
+  - id: canalmeio-ideia-setembro-pdf
+    source_id: ideia
+    label: "Canal Meio — Meio/Ideia Setembro 2026 PDF (institute primary)"
+    kind: listing_html
+    url: "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro.pdf"
+    enabled: true
+    national_hint: true
+    notes: "Direct institute PDF (200). Human dual-enter only; watcher queues URL/hash metadata, never extracts shares."
+    fixture: fixtures/discovery/gazeta-pesquisas-listing.html
+
+  - id: palver-survey-index
+    source_id: palver-research-github
+    label: "Palver — public survey index"
+    kind: listing_html
+    url: "https://www.palver.com.br/survey"
+    enabled: true
+    national_hint: true
+    notes: "Live 200 institute survey hub; links to /api/surveys/.../report PDFs. Leads only."
+    fixture: fixtures/discovery/palver-github.html
+
+  - id: palver-september-w4-report
+    source_id: palver-research-github
+    label: "Palver — voting-intention 2026 September W4 report PDF"
+    kind: listing_html
+    url: "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/report"
+    enabled: true
+    national_hint: true
+    notes: "Direct report PDF (200). TSE BR-09587/2026 provenance on cover; shares only via human dual-enter."
+    fixture: fixtures/discovery/palver-github.html
+
   # --- Sitemap (fixture-only example; lastmod used as queue metadata) ---
   - id: example-sitemap
     source_id: g1-pesquisas

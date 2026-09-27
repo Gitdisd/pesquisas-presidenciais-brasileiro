@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_ideia_2026-09-07_pdf",
+  "poll_id": "ideia_2026-09-07_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro.pdf",
+  "retrieved_at": "2026-09-27T04:45:00Z",
+  "content_hash": "sha256:639beda07cc30b856627bbcca8f9e9726a97f14309d9477cd966b6d72edc9d33",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_008_v1",
+  "extractions": {
+    "fieldwork": "2026-09-04..2026-09-07",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-07935/2026",
+    "matchups_1st": 1,
+    "matchups_2nd": 5
+  },
+  "confidence": 0.97,
+  "tse_registration_id": "BR-07935/2026",
+  "notes": "Primary Meio/Ideia PDF. 1º estimulada p.8 labeled bars; 2º F×L/Cury/Caiado/Zema/Renan labeled residual bars (pages 18/25/26/28/30). Chart-image pages OCR+visual dual-read; Exame press corroborates F×L/Caiado/Zema candidate+residual prose."
+}

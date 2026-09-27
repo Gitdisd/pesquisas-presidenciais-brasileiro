@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_palver_2026-09-23_pdf_2t",
+  "poll_id": "palver_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "pdf",
+  "source_url": "https://www.palver.com.br/api/surveys/voting-intention-2026-september-w4/report",
+  "retrieved_at": "2026-09-27T04:45:00Z",
+  "content_hash": "sha256:76b5574d039219a6b746d7f17f294f619cab5432834a83bc43a78779bdf8bf5a",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_008_v1",
+  "extractions": {
+    "fieldwork": "2026-09-23",
+    "n": 5000,
+    "moe_pp": 3.0,
+    "tse": "BR-09587/2026",
+    "onda": 4,
+    "matchups_extracted": 5
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-09587/2026",
+  "notes": "Primary Palver Onda 4 PDF (BR-09587/2026; campo 23/09/26). 2º stimulated pages with labeled bn+indecisos. Sibling 1º already in cohort-002 via CNN."
+}

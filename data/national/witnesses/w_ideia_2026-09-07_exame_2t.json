@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_ideia_2026-09-07_exame_2t",
+  "poll_id": "ideia_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://exame.com/brasil/pesquisa-meio-ideia-lula-cai-flavio-bolsonaro-cresce-e-os-dois-empatam-em-46-no-2o-turno/",
+  "retrieved_at": "2026-09-27T04:45:00Z",
+  "content_hash": "sha256:927256bd37438e64ae299c9b4073e84097fe6c19371785e29fb7df0c3032562d",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_008_v1",
+  "extractions": {
+    "fieldwork": "2026-09-04..2026-09-07",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-07935/2026",
+    "matchups_with_residuals_in_prose": [
+      "flavio",
+      "caiado",
+      "zema"
+    ],
+    "matchups_candidate_only_in_prose": [
+      "cury",
+      "renan"
+    ]
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-07935/2026",
+  "notes": "Gzip-decoded HTML. F×L 46–46 bn 3.5 ns 4.5; Caiado 46–42 bn 6.1 ns 5.9; Zema 46–38 bn 8.4 ns 7.6. Cury/Renan candidate % only in prose — residuals taken from institute PDF labeled bars."
+}

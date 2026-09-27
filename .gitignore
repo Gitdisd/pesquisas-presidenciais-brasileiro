@@ -13,3 +13,8 @@ _quarantine/
 .pytest_cache/
 models/*.egg-info/
 _intake_raw/
+
+# Human drop binaries (keep *.json sidecars; hashes live on witnesses)
+data/national/discovery/inbox/*
+!data/national/discovery/inbox/README.md
+!data/national/discovery/inbox/*.json

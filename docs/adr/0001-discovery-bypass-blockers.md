@@ -70,7 +70,7 @@ Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Aber
 | 5 | Wrong-office always wins over hub slug false positives | **Shipped** |
 | 6 | Queue review UX docs (status meanings, sort, artifact path) | **Shipped** |
 | 7 | Fixture-backed offline CI (no live invent) | **Already + extended** |
-| 8 | TSE zip via ops egress / secret mirror URL | **Blocked — needs human** |
+| 8 | TSE zip via ops egress / secret mirror URL | **Still needed for freshness** — live CDN 403; Wayback 2026-09-09 memento wired as lagging public lead (`tse-cdn-zip-wayback`) |
 | 9 | Optional `POLL_SOURCE_URL` dump of pre-fetched HTML | **Needs Lead secret** |
 | 10 | Institute JSON APIs (if any appear) | None confirmed; revisit |
 | 11 | Alternate TSE provenance: PesqEle pointers + TSE-ID news/aggregator/repository leads | **Shipped** (queue-only) |

@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_ideia_2026-09-07_exame_1t",
+  "poll_id": "ideia_2026-09-07_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://exame.com/brasil/pesquisa-meio-ideia-lula-tem-384-e-flavio-bolsonaro-373-no-1o-turno/",
+  "retrieved_at": "2026-09-27T04:45:00Z",
+  "content_hash": "sha256:8c5c2ef2e2ddacacfa956dc4bd657908fe7eeecf46a0629394e9b5828db1ccb9",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_008_v1",
+  "extractions": {
+    "fieldwork": "2026-09-04..2026-09-07",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-07935/2026"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-07935/2026",
+  "notes": "Exame 1º estimulada prose matches PDF p.8 labeled bars (incl. bn 2.5 / ns 2.8)."
+}

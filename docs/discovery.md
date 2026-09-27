@@ -100,7 +100,7 @@ For a human-saved HTML/PDF, use `bin/pebr drop ...`, then `bin/pebr watch --offl
 
 | Blocker | Mitigation now | Still needs human / secrets |
 |---------|----------------|-----------------------------|
-| TSE Dados Abertos / CDN **403** (Akamai) | TSE portal/PesqEle pointers, TSE-registration GNews, TradeMap, institute PDFs, Palver/GitHub, Wikipedia citations; fixture + `archive_fallback` | Ops egress or mirrored zip URL secret; all alternate IDs still need human primary/TSE verification |
+| TSE Dados Abertos / CDN **403** (Akamai) | Portal/PesqEle pointers, TSE-registration GNews, TradeMap (often timeout), institute PDFs, Palver/GitHub, Wikipedia citations; **Wayback memento of `pesquisa_eleitoral_2026.zip` (2026-09-09) works as lagging public mirror** (`tse-cdn-zip-wayback`); fixture + `archive_fallback` | **Yes — mirror/egress secret still needed** for fresh daily dumps (Wayback is dated snapshot only; live CDN/dadosabertos/PesqEle still 403 from datacenter egress). Alternate BR-IDs still need human primary verification |
 | JS/WAF/PesqEle listings (including TSE 403) | Queue only; use RSS/GNews/Wikipedia/Wayback/fixtures for safe signals | Human/manual listing review and primary witness capture |
 | JS-thin institute homes (Atlas, Futura) | Prefer GNews + outlet RSS mirrors | Occasional manual PDF grab |
 | Paywalls (Estadão, Economist, soft Folha) | Do **not** bypass; use open mirrors (G1, Poder360, Wikipedia citations) | Human witness upload |

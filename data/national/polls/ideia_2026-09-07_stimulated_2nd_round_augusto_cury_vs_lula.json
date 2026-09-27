@@ -1,0 +1,27 @@
+{
+  "poll_id": "ideia_2026-09-07_stimulated_2nd_round_augusto_cury_vs_lula",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-09-04",
+  "fieldwork_end": "2026-09-07",
+  "fieldwork_mid": "2026-09-05",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 1500,
+  "moe": 0.025,
+  "tse_registration_id": "BR-07935/2026",
+  "dataset_version": "intake-cohort-2t-008",
+  "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+  "results": {
+    "augusto_cury": 0.409,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.075,
+    "ns_nr": 0.056
+  },
+  "witness_ids": [
+    "w_ideia_2026-09-07_pdf",
+    "w_ideia_2026-09-07_exame_2t"
+  ],
+  "notes": "Meio/Ideia primary PDF labeled residual bars + Exame press where prose includes residuals. Branco/Nulo→branco_nulo; Não sabe→ns_nr. Holds mop: Meio/Ideia national 2º."
+}
