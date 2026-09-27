@@ -14,6 +14,10 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 | Export CSV (visible polls) | Filters applied |
 | Bigger chart + pan/pinch zoom | ~6a5f30f |
 | Point-only hover detail panel | No scoreboard overlay |
+| Summary cards + overview metrics | P1 |
+| Dark/light theme toggle | P1 · localStorage |
+| National poll table | P1 · filter-aware |
+| Focar / scroll-top + shortcuts | P1 |
 
 ## Intentionally skip (hated / incompatible)
 
@@ -45,13 +49,13 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 
 | Gap | Notes |
 |-----|--------|
-| Summary cards (latest aggregate + Δ vs 30d) | Old overview cards; needs careful non-scoreboard design |
-| Overview metrics (n pesquisas, n institutos, campo recente) | Informational only |
-| Dark/light theme toggle | NEW is dark-only; old toggles |
-| Focus / scroll-to-chart + scroll-top | Minor UX |
-| Poll data table under chart | Large; needs schema + pagination |
-| Keyboard shortcuts (round / period) | Nice-to-have |
-| “Verificar agora” refresh stamp | Old live check |
+| Summary cards (latest aggregate + Δ vs 30d) | **Shipped** — top visible set (cap 8), Option B latest + Δ≈30d; filter/round/scenario aware |
+| Overview metrics (n pesquisas, n institutos, campo recente) | **Shipped** — current-view counts above chart |
+| Dark/light theme toggle | **Shipped** — `data-theme` + `localStorage pebr-theme` |
+| Focus / scroll-to-chart + scroll-top | **Shipped** — Focar gráfico + ↑ button |
+| Poll data table under chart | **Shipped** — lean national table, filter-aware (no pagination yet) |
+| Keyboard shortcuts (round / period) | **Shipped** — 1/2, 3/9/0, G, T, Esc (hint in UI) |
+| “Verificar agora” refresh stamp | Old live check — still open |
 
 ### P2 — low / niche
 
@@ -64,7 +68,7 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 
 ## Remaining after this ship
 
-- P1 summary cards / overview metrics
-- Light theme toggle
-- National poll table
+- P1 shipped: summary cards + Δ30d, overview metrics, dark/light theme, national poll table, focar/scroll-top, keyboard shortcuts
+- Still open from P1 list: “Verificar agora” refresh stamp (deferred)
+- P2 items unchanged (institutes in share URL bitmasks, fullscreen, EN locale, WASM badge)
 - Any further visual tuning from live QA

@@ -7,6 +7,20 @@
   <title>Pesquisas presidenciais brasileiro</title>
   <link rel="stylesheet" href="css/app.css" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("pebr-theme");
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
@@ -19,8 +33,11 @@
         <p class="tagline">Painel nacional · ciclo 2026 · PEBR</p>
       </div>
     </div>
-    <div class="header-meta" id="header-meta">
-      <span class="chip">Carregando…</span>
+    <div class="header-actions">
+      <button type="button" class="btn theme-toggle" id="btn-theme" title="Alternar tema claro/escuro (atalho: T)" aria-label="Alternar tema">Claro</button>
+      <div class="header-meta" id="header-meta">
+        <span class="chip">Carregando…</span>
+      </div>
     </div>
   </header>
 
@@ -32,12 +49,19 @@
 
   <main class="layout">
     <section class="chart-panel card" aria-label="Gráfico de tendência">
+      <div class="overview-metrics" id="overview-metrics" aria-label="Métricas da vista atual" aria-live="polite">
+        <div class="metric"><span class="metric-label">Pesquisas</span><span class="metric-value" id="metric-polls">—</span><span class="metric-sub">visíveis nos filtros</span></div>
+        <div class="metric"><span class="metric-label">Institutos</span><span class="metric-value" id="metric-institutes">—</span><span class="metric-sub">na vista atual</span></div>
+        <div class="metric"><span class="metric-label">Campo recente</span><span class="metric-value" id="metric-campo">—</span><span class="metric-sub" id="metric-campo-sub">janela dos filtros</span></div>
+      </div>
+
       <div class="panel-toolbar">
         <div>
-          <h2>Tendência nacional</h2>
+          <h2 id="chart-heading">Tendência nacional</h2>
           <p class="muted" id="scenario-label">Cenário: —</p>
         </div>
         <div class="toolbar-actions">
+          <button type="button" class="btn" id="btn-focus-chart" title="Rolar até o gráfico (atalho: G)">Focar gráfico</button>
           <button type="button" class="btn" id="btn-show-all" aria-pressed="false" title="Mostrar também candidatos inativos / fora da disputa">mostrar todos</button>
           <button type="button" class="btn" id="btn-share" title="Copiar link com turno, período e confronto atuais">Compartilhar</button>
           <button type="button" class="btn" id="btn-export-csv" title="Baixar CSV dos pontos de pesquisa visíveis (filtros atuais)">Exportar CSV</button>
@@ -45,6 +69,9 @@
           <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom / panorâmica (também: duplo clique no gráfico)">Redefinir zoom</button>
         </div>
       </div>
+
+      <section class="summary-cards" id="summary-cards" aria-label="Resumo do agregado" aria-live="polite"></section>
+      <p class="cards-note muted small" id="cards-note" hidden></p>
 
       <div class="filter-bar" id="filter-bar" aria-label="Filtros do gráfico">
         <div class="filter-row filter-row-primary">
@@ -93,7 +120,20 @@
         <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
       </div>
       <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
-      <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). CSV/JSON = pontos visíveis com os filtros atuais. Link compartilhável guarda turno, período e confronto.</p>
+      <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). CSV/JSON = pontos visíveis com os filtros atuais. Link compartilhável guarda turno, período e confronto. Atalhos: <kbd>1</kbd>/<kbd>2</kbd> turno · <kbd>3</kbd>/<kbd>9</kbd>/<kbd>0</kbd> período 30d/90d/tudo · <kbd>G</kbd> focar gráfico · <kbd>T</kbd> tema · <kbd>Esc</kbd> limpar hover.</p>
+
+      <section class="polls-panel" id="polls-panel" aria-label="Tabela de pesquisas nacionais">
+        <div class="polls-head">
+          <h2>Pesquisas nacionais</h2>
+          <p class="muted small" id="polls-count">—</p>
+        </div>
+        <div class="table-scroll">
+          <table class="polls" id="polls-table">
+            <thead id="polls-thead"></thead>
+            <tbody id="polls-tbody"></tbody>
+          </table>
+        </div>
+      </section>
     </section>
 
     <aside class="side-col">
@@ -131,6 +171,7 @@
     <p>PEBR · <a href="https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro">GitHub</a> · UI HTML/CSS + D3 · fonte de Pages: <code>/site</code></p>
   </footer>
 
+  <button type="button" class="scroll-top" id="btn-scroll-top" title="Voltar ao topo" aria-label="Voltar ao topo" hidden>↑</button>
   <div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>

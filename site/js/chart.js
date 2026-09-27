@@ -6,9 +6,10 @@
  *   Y stays on data domain (no isotropic lock). NO bottom range brush/slider.
  * Period chips 30d/90d/tudo = optional X domain presets only (not a brush).
  * Filters: round, período, institutes (solo), candidatos, matchups 2º.
- * Borrowed from old site: período presets, denser filter bar, CSV/JSON, shareable URL, Option B PT copy.
+ * Borrowed from old site: período presets, denser filter bar, CSV/JSON, shareable URL, Option B PT copy,
+ * summary cards + Δ30d, overview metrics, poll table, dark/light theme, focar / scroll-top, cheap shortcuts.
  * Client Option B when institute-filtered (same √N + anti-flood rules). Not borrowed:
- * Focar, projection models, multi-hover scoreboard, bottom brush, média-window knobs, party themes. */
+ * projection models, multi-hover scoreboard, bottom brush, média-window knobs, party/CRT themes. */
 (function () {
   "use strict";
 
@@ -62,6 +63,19 @@
     matchupRow: document.getElementById("matchup-row"),
     matchupFilters: document.getElementById("matchup-filters"),
     rangeBtns: document.querySelectorAll("[data-range]"),
+    summaryCards: document.getElementById("summary-cards"),
+    cardsNote: document.getElementById("cards-note"),
+    metricPolls: document.getElementById("metric-polls"),
+    metricInstitutes: document.getElementById("metric-institutes"),
+    metricCampo: document.getElementById("metric-campo"),
+    metricCampoSub: document.getElementById("metric-campo-sub"),
+    pollsThead: document.getElementById("polls-thead"),
+    pollsTbody: document.getElementById("polls-tbody"),
+    pollsCount: document.getElementById("polls-count"),
+    themeBtn: document.getElementById("btn-theme"),
+    focusBtn: document.getElementById("btn-focus-chart"),
+    scrollTopBtn: document.getElementById("btn-scroll-top"),
+    chartShell: document.getElementById("chart-shell"),
   };
 
   let state = {
@@ -257,6 +271,7 @@
         buildLegend();
         redrawSeries();
       }
+      refreshExtras();
     }
   }
 
@@ -534,6 +549,7 @@
       buildInstituteFilters();
       syncFilterNote();
       redrawSeries();
+      refreshExtras();
       clearHover();
     });
     el.instituteFilters.appendChild(allBtn);
@@ -566,6 +582,7 @@
         buildInstituteFilters();
         syncFilterNote();
         redrawSeries();
+        refreshExtras();
         clearHover();
       });
       el.instituteFilters.appendChild(btn);
@@ -601,6 +618,7 @@
         }
         buildLegend();
         redrawSeries();
+        refreshExtras();
         clearHover();
       });
       host.appendChild(item);
@@ -922,6 +940,7 @@
         syncShowAllBtn();
         buildLegend();
         redrawSeries();
+        refreshExtras();
         clearHover();
         writeUrlState();
       };
@@ -929,6 +948,7 @@
 
     drawAxes(dims);
     redrawSeries();
+    refreshExtras();
 
     if (el.placeholder) el.placeholder.classList.add("hidden");
   }
@@ -1092,6 +1112,391 @@
       rows = rows.filter((d) => d.date >= xMin && d.date <= xMax);
     }
     return rows;
+  }
+
+  const THEME_KEY = "pebr-theme";
+  const SUMMARY_CARD_CAP = 8;
+
+  function fmtDeltaPp(fracDelta) {
+    if (fracDelta == null || Number.isNaN(fracDelta)) {
+      return { text: "—", cls: "flat" };
+    }
+    const pp = fracDelta * 100;
+    const r = Math.round(pp * 100) / 100;
+    if (Math.abs(r) < 0.005) {
+      return { text: "0,00 pp vs 30d", cls: "flat" };
+    }
+    const sign = r > 0 ? "+" : "";
+    return {
+      text:
+        sign +
+        r.toLocaleString("pt-BR", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }) +
+        " pp vs 30d",
+      cls: r > 0 ? "up" : "down",
+    };
+  }
+
+  function currentAggSource() {
+    const usePipeline = institutesAllOn();
+    const client = usePipeline ? null : ensureClientOptionB();
+    return {
+      usePipeline,
+      aggregates: usePipeline
+        ? state.payload?.aggregates || []
+        : client?.aggregates || [],
+    };
+  }
+
+  function latestAggPair(candidateId, aggregates) {
+    const rows = aggregates
+      .filter((d) => d.candidate_id === candidateId && d.value != null)
+      .slice()
+      .sort((a, b) => a.date - b.date);
+    if (!rows.length) return { cur: null, then: null };
+    const last = rows[rows.length - 1];
+    const ago = new Date(last.date.getTime() - 30 * 86400000);
+    let then = null;
+    for (let i = rows.length - 1; i >= 0; i--) {
+      if (rows[i].date <= ago) {
+        then = rows[i].value;
+        break;
+      }
+    }
+    return { cur: last.value, then };
+  }
+
+  function visibleCandidatesOrdered() {
+    const { aggregates } = currentAggSource();
+    const list = (state.data?.candidates || []).filter((c) =>
+      state.visible.has(c.id)
+    );
+    return list
+      .map((c) => {
+        const pair = latestAggPair(c.id, aggregates);
+        return { cand: c, cur: pair.cur, then: pair.then };
+      })
+      .sort((a, b) => {
+        const av = a.cur == null ? -1 : a.cur;
+        const bv = b.cur == null ? -1 : b.cur;
+        return bv - av;
+      });
+  }
+
+  function renderSummaryCards() {
+    if (!el.summaryCards) return;
+    if (!state.payload) {
+      el.summaryCards.innerHTML = "";
+      if (el.cardsNote) {
+        el.cardsNote.hidden = true;
+        el.cardsNote.textContent = "";
+      }
+      return;
+    }
+    const ordered = visibleCandidatesOrdered();
+    const shown = ordered.slice(0, SUMMARY_CARD_CAP);
+    el.summaryCards.innerHTML = shown
+      .map(({ cand, cur, then }) => {
+        const d = fmtDeltaPp(
+          cur != null && then != null ? cur - then : null
+        );
+        const name = prettyCandidateLabel(cand);
+        return (
+          `<article class="summary-card" data-c="${escapeHtml(cand.id)}" style="--card-accent:${cand.color || "var(--accent)"}">` +
+          `<div class="name" title="${escapeHtml(name)}">${escapeHtml(name)}</div>` +
+          `<div class="val">${pctDisplay(cur)}</div>` +
+          `<div class="delta ${d.cls}">${d.text}</div>` +
+          `</article>`
+        );
+      })
+      .join("");
+    if (el.cardsNote) {
+      if (ordered.length > SUMMARY_CARD_CAP) {
+        el.cardsNote.hidden = false;
+        el.cardsNote.textContent = `Mostrando top ${SUMMARY_CARD_CAP} de ${ordered.length} candidatos visíveis (por agregado mais recente). Δ = variação vs ~30 dias no agregado Option B.`;
+      } else if (shown.length) {
+        el.cardsNote.hidden = false;
+        el.cardsNote.textContent =
+          "Agregado Option B mais recente · Δ vs ~30 dias (mesmos filtros de turno / instituto / candidatos).";
+      } else {
+        el.cardsNote.hidden = true;
+        el.cardsNote.textContent = "";
+      }
+    }
+  }
+
+  function daysSince(date) {
+    if (!date) return null;
+    const ms = Date.now() - date.getTime();
+    return Math.max(0, Math.floor(ms / 86400000));
+  }
+
+  function freshnessClass(age) {
+    if (age == null) return "";
+    if (age <= 7) return "fresh";
+    if (age <= 30) return "stale";
+    return "old";
+  }
+
+  function renderOverviewMetrics() {
+    if (!el.metricPolls) return;
+    const rows = visiblePollRows();
+    const pollIds = new Set();
+    const institutes = new Set();
+    let latest = null;
+    for (const d of rows) {
+      if (d.poll_id) pollIds.add(d.poll_id);
+      else
+        pollIds.add(
+          `${d.institute_id || "?"}|${d.date ? d.date.toISOString().slice(0, 10) : "?"}`
+        );
+      if (d.institute_id) institutes.add(d.institute_id);
+      if (d.date && (!latest || d.date > latest)) latest = d.date;
+    }
+    // Prefer distinct polls; fall back to row count / candidate count heuristic
+    const nPolls = pollIds.size || 0;
+    el.metricPolls.textContent = nPolls
+      ? nPolls.toLocaleString("pt-BR")
+      : "0";
+    el.metricInstitutes.textContent = institutes.size
+      ? institutes.size.toLocaleString("pt-BR")
+      : "0";
+    if (el.metricCampo) {
+      el.metricCampo.textContent = latest ? fmtDate(latest) : "—";
+      el.metricCampo.className =
+        "metric-value " + freshnessClass(daysSince(latest));
+    }
+    if (el.metricCampoSub) {
+      const age = daysSince(latest);
+      if (age == null) el.metricCampoSub.textContent = "sem data na vista";
+      else if (age === 0) el.metricCampoSub.textContent = "campo hoje";
+      else
+        el.metricCampoSub.textContent = `há ${age} dia${age === 1 ? "" : "s"}`;
+    }
+  }
+
+  function groupedVisiblePolls() {
+    const rows = visiblePollRows();
+    const byPoll = new Map();
+    for (const d of rows) {
+      const id =
+        d.poll_id ||
+        `${d.institute_id || "inst"}|${d.date ? d3.utcFormat("%Y-%m-%d")(d.date) : "?"}`;
+      let g = byPoll.get(id);
+      if (!g) {
+        g = {
+          poll_id: id,
+          date: d.date,
+          institute_id: d.institute_id,
+          n: d.n != null ? d.n : null,
+          shares: {},
+        };
+        byPoll.set(id, g);
+      }
+      g.shares[d.candidate_id] = d.value;
+      if (d.n != null) g.n = d.n;
+      if (d.date && (!g.date || d.date > g.date)) g.date = d.date;
+      if (d.institute_id) g.institute_id = d.institute_id;
+    }
+    return [...byPoll.values()].sort((a, b) => {
+      const ad = a.date ? a.date.getTime() : 0;
+      const bd = b.date ? b.date.getTime() : 0;
+      return bd - ad;
+    });
+  }
+
+  function renderPollTable() {
+    if (!el.pollsThead || !el.pollsTbody) return;
+    const candCols = visibleCandidatesOrdered().map((x) => x.cand);
+    // Cap candidate columns for readability when many are visible
+    const cols = candCols.slice(0, 10);
+    const groups = groupedVisiblePolls();
+
+    el.pollsThead.innerHTML =
+      "<tr>" +
+      '<th class="sticky-col">Data</th>' +
+      "<th>Instituto</th>" +
+      '<th class="num">N</th>' +
+      cols
+        .map(
+          (c) =>
+            `<th class="num" title="${escapeHtml(prettyCandidateLabel(c))}">${escapeHtml(
+              shortCandLabel(c)
+            )}</th>`
+        )
+        .join("") +
+      (candCols.length > cols.length
+        ? `<th title="Demais candidatos ocultos na tabela">+${candCols.length - cols.length}</th>`
+        : "") +
+      "</tr>";
+
+    if (!groups.length) {
+      el.pollsTbody.innerHTML =
+        '<tr><td colspan="' +
+        (3 + cols.length + (candCols.length > cols.length ? 1 : 0)) +
+        '" class="muted">Nenhuma pesquisa visível com os filtros atuais.</td></tr>';
+    } else {
+      el.pollsTbody.innerHTML = groups
+        .map((g) => {
+          const inst = prettyInstituteLabel(
+            state.instById.get(g.institute_id) || { id: g.institute_id }
+          );
+          const cells = cols
+            .map((c) => {
+              const v = g.shares[c.id];
+              return `<td class="num">${v == null ? "—" : pctDisplay(v)}</td>`;
+            })
+            .join("");
+          const extra =
+            candCols.length > cols.length ? "<td class=\"muted\">…</td>" : "";
+          return (
+            "<tr>" +
+            `<td class="sticky-col">${g.date ? fmtDate(g.date) : "—"}</td>` +
+            `<td>${escapeHtml(inst)}</td>` +
+            `<td class="num">${g.n != null ? g.n.toLocaleString("pt-BR") : "—"}</td>` +
+            cells +
+            extra +
+            "</tr>"
+          );
+        })
+        .join("");
+    }
+    if (el.pollsCount) {
+      el.pollsCount.textContent = groups.length
+        ? `${groups.length.toLocaleString("pt-BR")} pesquisa${
+            groups.length === 1 ? "" : "s"
+          } · filtros atuais`
+        : "0 pesquisas · filtros atuais";
+    }
+  }
+
+  function shortCandLabel(cand) {
+    const raw = prettyCandidateLabel(cand);
+    return String(raw)
+      .replace(/Flávio Bolsonaro/gi, "Flávio")
+      .replace(/Flavio Bolsonaro/gi, "Flávio")
+      .replace(/Ronaldo Caiado/gi, "Caiado")
+      .replace(/Romeu Zema/gi, "Zema")
+      .replace(/Augusto Cury/gi, "Cury")
+      .replace(/Renan Santos/gi, "Renan")
+      .replace(/Tarcísio de Freitas/gi, "Tarcísio")
+      .replace(/Tarcisio de Freitas/gi, "Tarcísio")
+      .replace(/Ciro Gomes/gi, "Ciro")
+      .replace(/Michel Temer/gi, "Temer")
+      .replace(/Leonardo Avalanche/gi, "Avalanche")
+      .replace(/Clariana Barão/gi, "Clariana")
+      .replace(/Clariana Barao/gi, "Clariana");
+  }
+
+  function refreshExtras() {
+    renderSummaryCards();
+    renderOverviewMetrics();
+    renderPollTable();
+  }
+
+  function currentTheme() {
+    const t = document.documentElement.getAttribute("data-theme");
+    return t === "light" ? "light" : "dark";
+  }
+
+  function applyTheme(theme) {
+    const t = theme === "light" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", t);
+    try {
+      localStorage.setItem(THEME_KEY, t);
+    } catch (_) {}
+    if (el.themeBtn) {
+      el.themeBtn.textContent = t === "dark" ? "Claro" : "Escuro";
+      el.themeBtn.setAttribute(
+        "aria-label",
+        t === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro"
+      );
+      el.themeBtn.title =
+        (t === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro") +
+        " (atalho: T)";
+    }
+  }
+
+  function toggleTheme() {
+    applyTheme(currentTheme() === "dark" ? "light" : "dark");
+  }
+
+  function focusChart() {
+    const target = el.chartShell || document.getElementById("chart-heading");
+    if (target && target.scrollIntoView) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function installScrollTop() {
+    const btn = el.scrollTopBtn;
+    if (!btn) return;
+    btn.hidden = false;
+    const update = () => {
+      btn.classList.toggle("show", window.scrollY > 480);
+    };
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  function isTypingTarget(t) {
+    if (!t) return false;
+    const tag = (t.tagName || "").toLowerCase();
+    if (tag === "input" || tag === "textarea" || tag === "select") return true;
+    if (t.isContentEditable) return true;
+    return false;
+  }
+
+  function installKeyboardShortcuts() {
+    document.addEventListener("keydown", (event) => {
+      if (event.defaultPrevented) return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (isTypingTarget(event.target)) return;
+      const k = event.key;
+      if (k === "Escape") {
+        clearHover();
+        return;
+      }
+      if (k === "1") {
+        event.preventDefault();
+        switchRound(1);
+        return;
+      }
+      if (k === "2") {
+        event.preventDefault();
+        switchRound(2);
+        return;
+      }
+      if (k === "3") {
+        event.preventDefault();
+        setRangeDays(30);
+        return;
+      }
+      if (k === "9") {
+        event.preventDefault();
+        setRangeDays(90);
+        return;
+      }
+      if (k === "0") {
+        event.preventDefault();
+        setRangeDays("all");
+        return;
+      }
+      if (k === "g" || k === "G") {
+        event.preventDefault();
+        focusChart();
+        return;
+      }
+      if (k === "t" || k === "T") {
+        event.preventDefault();
+        toggleTheme();
+      }
+    });
   }
 
   function showToast(msg) {
@@ -1371,6 +1776,7 @@
       buildLegend();
       redrawSeries();
     }
+    refreshExtras();
   }
 
   async function boot() {
@@ -1451,16 +1857,27 @@
         buildInstituteFilters();
         syncFilterNote();
         redrawSeries();
+        refreshExtras();
       }
       if (state.showAll) {
         syncShowAllBtn();
         applyDefaultVisibility();
         buildLegend();
         redrawSeries();
+        refreshExtras();
       }
 
       state.skipUrlWrite = false;
       writeUrlState();
+      applyTheme(currentTheme());
+      if (el.themeBtn) {
+        el.themeBtn.addEventListener("click", toggleTheme);
+      }
+      if (el.focusBtn) {
+        el.focusBtn.addEventListener("click", focusChart);
+      }
+      installScrollTop();
+      installKeyboardShortcuts();
       window.addEventListener("resize", debounce(onResize, 180));
       window.addEventListener("popstate", () => {
         state.skipUrlWrite = true;
@@ -1477,6 +1894,9 @@
           buildInstituteFilters();
           syncFilterNote();
           redrawSeries();
+          refreshExtras();
+        } else {
+          refreshExtras();
         }
         state.skipUrlWrite = false;
       });
