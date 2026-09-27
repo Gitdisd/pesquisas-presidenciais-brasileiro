@@ -588,6 +588,15 @@ code {
   transform: rotate(-90deg) translateX(1px);
 }
 
+/* .chip-row { display:flex } overrides UA [hidden]{display:none}, so collapsed
+   Institutos/Candidatos stayed visually open despite aria/hidden/is-collapsed. */
+.chip-row[hidden],
+.filter-section-body[hidden],
+.filter-collapsible.is-collapsed > .chip-row,
+.filter-collapsible.is-collapsed > .filter-section-body {
+  display: none !important;
+}
+
 .filter-collapsible > .chip-row,
 .filter-section-body {
   flex: 1 1 12rem;
