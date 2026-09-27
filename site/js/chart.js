@@ -11,7 +11,7 @@
  * focar / scroll-top / fullscreen, cheap shortcuts, institute bitmask in share URL.
  * Client Option B when institute-filtered (same √N + anti-flood rules). Not borrowed:
  * projection models, multi-hover scoreboard, bottom brush, média-window knobs, party/CRT themes.
- * Publishes window.__pebrView + pebr-view-change for companion Capítulo 2 (alternate round). */
+ * Publishes window.__pebrView + pebr-view-change for alternate-round companion (not old UF Chart #2). */
 (function () {
   "use strict";
 

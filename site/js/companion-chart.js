@@ -1,4 +1,5 @@
-/* PEBR companion Capítulo 2 — alternate-round / primary matchup Option B chart.
+/* PEBR alternate-round companion — national Option B (1º ↔ primary Lula×Flávio).
+ * NOT a port of old Chart #2 (that was NATIONAL+REGIONAL UF inspect).
  * Consumes window.__pebrView + pebr-view-change from chart.js (no independent refetch).
  * Stack: vanilla JS + D3 SVG. No brush, no multi-candidate scoreboard, no regional UF. */
 (function () {
@@ -318,7 +319,7 @@
       " · " +
       fmtDate(d.date) +
       "</p>" +
-      "<p class=\"muted small\">Capítulo 2 · " +
+      "<p class=\"muted small\">Companheiro · " +
       escapeHtml(local.doc?.matchup_label || local.doc?.scenario || "") +
       "</p>";
   }
@@ -521,7 +522,7 @@
       render(doc, view);
     } catch (err) {
       console.warn("companion-chart failed", err);
-      hide("Falha ao montar o Capítulo 2.");
+      hide("Falha ao montar o gráfico companheiro.");
     }
   }
 
