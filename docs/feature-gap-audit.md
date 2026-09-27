@@ -55,7 +55,7 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 | Focus / scroll-to-chart + scroll-top | **Shipped** — Focar gráfico + ↑ button |
 | Poll data table under chart | **Shipped** — lean national table, filter-aware (no pagination yet) |
 | Keyboard shortcuts (round / period) | **Shipped** — 1/2, 3/9/0, G, T, Esc (hint in UI) |
-| “Verificar agora” refresh stamp | Old live check — still open |
+| “Verificar agora” refresh stamp | **Shipped** — in-page no-store chart JSON refresh, PT timestamp, and failure-safe toast/status |
 
 ### P2 — low / niche
 
@@ -69,6 +69,6 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 ## Remaining after this ship
 
 - P1 shipped: summary cards + Δ30d, overview metrics, dark/light theme, national poll table, focar/scroll-top, keyboard shortcuts
-- Still open from P1 list: “Verificar agora” refresh stamp (deferred)
+- P1 “Verificar agora” refresh stamp shipped: in-page chart JSON check with PT timestamp and failure-safe status
 - P2 items unchanged (institutes in share URL bitmasks, fullscreen, EN locale, WASM badge)
 - Any further visual tuning from live QA

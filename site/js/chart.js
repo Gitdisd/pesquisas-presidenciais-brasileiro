@@ -43,6 +43,8 @@
     detail: document.getElementById("detail-body"),
     headerMeta: document.getElementById("header-meta"),
     scenario: document.getElementById("scenario-label"),
+    dataStatus: document.getElementById("data-status"),
+    refreshBtn: document.getElementById("btn-refresh-data"),
     resetBtn: document.getElementById("btn-reset-zoom"),
     showAllBtn: document.getElementById("btn-show-all"),
     exportBtn: document.getElementById("btn-export-csv"),
@@ -106,6 +108,7 @@
     clientAgg: null, // {aggregates, uncertainty} when institutes filtered
     clientAggKey: null,
     skipUrlWrite: false,
+    refreshing: false,
   };
 
   function pctDisplay(frac) {
@@ -1779,32 +1782,168 @@
     refreshExtras();
   }
 
+  function formatPtTimestamp(date) {
+    return date.toLocaleString("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  function setDataStatus(kind, message) {
+    if (!el.dataStatus) return;
+    el.dataStatus.classList.remove("error", "checking");
+    if (kind === "error" || kind === "checking") {
+      el.dataStatus.classList.add(kind);
+    }
+    el.dataStatus.textContent = message;
+  }
+
+  function markDataLoaded(source) {
+    const label = source === "refresh" ? "Última verificação" : "Dados carregados";
+    setDataStatus(
+      "loaded",
+      `${label}: ${formatPtTimestamp(new Date())} (horário de Brasília)`
+    );
+  }
+
+  function markDataError(error) {
+    const detail = error && error.message ? `: ${error.message}` : ".";
+    setDataStatus("error", `Falha ao verificar os dados${detail}`);
+  }
+
+  async function fetchChartBundle() {
+    const bust = `?v=${Date.now()}`;
+    const res1 = await fetch(`${DATA_URL_1ST}${bust}`, { cache: "no-store" });
+    if (!res1.ok) throw new Error(`HTTP ${res1.status} ao carregar ${DATA_URL_1ST}`);
+    const data1 = await res1.json();
+    if (
+      !data1 ||
+      !Array.isArray(data1.series) ||
+      !Array.isArray(data1.candidates)
+    ) {
+      throw new Error("chart.json sem candidates[]/series[] válidos");
+    }
+
+    let data2 = null;
+    try {
+      const res2 = await fetch(`${DATA_URL_2ND}${bust}`, { cache: "no-store" });
+      if (res2.ok) {
+        const candidate = await res2.json();
+        const validScenarios =
+          candidate &&
+          Array.isArray(candidate.scenarios) &&
+          candidate.scenarios.length &&
+          candidate.scenarios.every(
+            (scenario) =>
+              scenario &&
+              Array.isArray(scenario.series) &&
+              Array.isArray(scenario.candidates)
+          );
+        if (validScenarios) {
+          data2 = candidate;
+        } else if (state.has2nd) {
+          throw new Error(`${DATA_URL_2ND} sem scenarios[] válidos`);
+        }
+      } else if (state.has2nd) {
+        throw new Error(`HTTP ${res2.status} ao carregar ${DATA_URL_2ND}`);
+      }
+    } catch (err2) {
+      // The second-turn file is optional on first load. Once it is in use,
+      // a failed refresh aborts the whole swap so the visible state is safe.
+      if (state.has2nd) throw err2;
+      console.warn("2º turno indisponível:", err2);
+    }
+    return { chart1st: data1, chart2nd: data2, has2nd: !!data2 };
+  }
+
+  function captureViewState() {
+    return {
+      showAll: state.showAll,
+      visible: new Set(state.visible),
+      institutesOn: new Set(state.institutesOn),
+      allInstituteIds: new Set(state.allInstituteIds),
+    };
+  }
+
+  function restoreViewState(view) {
+    const allowedCandidates = new Set(candidatesForLegend().map((c) => c.id));
+    if (view.visible.size) {
+      state.visible = new Set([...view.visible].filter((id) => allowedCandidates.has(id)));
+      if (!state.visible.size) applyDefaultVisibility();
+    }
+    const hadAllInstitutes =
+      view.allInstituteIds.size > 0 &&
+      view.institutesOn.size === view.allInstituteIds.size;
+    if (!hadAllInstitutes && view.institutesOn.size) {
+      const allowedInstitutes = new Set(state.allInstituteIds);
+      state.institutesOn = new Set(
+        [...view.institutesOn].filter((id) => allowedInstitutes.has(id))
+      );
+      if (!state.institutesOn.size) applyDefaultInstitutes();
+    }
+    syncShowAllBtn();
+    buildLegend();
+    buildInstituteFilters();
+    syncFilterNote();
+    redrawSeries();
+    refreshExtras();
+  }
+
+  async function refreshData() {
+    if (state.refreshing) return;
+    state.refreshing = true;
+    const view = captureViewState();
+    if (el.refreshBtn) {
+      el.refreshBtn.disabled = true;
+      el.refreshBtn.textContent = "Verificando…";
+    }
+    setDataStatus("checking", "Verificando os arquivos de dados…");
+    try {
+      const bundle = await fetchChartBundle();
+      // Do not mutate the live bundle until every requested file is valid.
+      state.chart1st = bundle.chart1st;
+      state.chart2nd = bundle.chart2nd;
+      state.has2nd = bundle.has2nd;
+      state.showAll = view.showAll;
+
+      if (state.round === 2 && state.has2nd) {
+        const scenarios = state.chart2nd.scenarios || [];
+        if (!scenarios.some((b) => b.scenario === state.activeScenario)) {
+          state.activeScenario = preferDefault2ndScenario();
+        }
+        renderChart(docFrom2nd(state.chart2nd, state.activeScenario));
+      } else {
+        state.round = 1;
+        state.activeScenario = null;
+        renderChart(state.chart1st);
+      }
+      restoreViewState(view);
+      writeUrlState();
+      markDataLoaded("refresh");
+    } catch (error) {
+      console.error("Verificar agora falhou:", error);
+      markDataError(error);
+      showToast("Não foi possível verificar agora. A vista atual foi mantida.");
+    } finally {
+      state.refreshing = false;
+      if (el.refreshBtn) {
+        el.refreshBtn.disabled = false;
+        el.refreshBtn.textContent = "Verificar agora";
+      }
+    }
+  }
+
   async function boot() {
     try {
-      const res1 = await fetch(DATA_URL_1ST, { cache: "no-cache" });
-      if (!res1.ok) throw new Error(`HTTP ${res1.status} ao carregar ${DATA_URL_1ST}`);
-      const data1 = await res1.json();
-      if (!data1 || !Array.isArray(data1.series)) {
-        throw new Error("chart.json sem series[]");
-      }
-      state.chart1st = data1;
+      const bundle = await fetchChartBundle();
+      state.chart1st = bundle.chart1st;
+      state.chart2nd = bundle.chart2nd;
+      state.has2nd = bundle.has2nd;
       state.round = 1;
-
-      try {
-        const res2 = await fetch(DATA_URL_2ND, { cache: "no-cache" });
-        if (res2.ok) {
-          const data2 = await res2.json();
-          if (data2 && Array.isArray(data2.scenarios) && data2.scenarios.length) {
-            state.chart2nd = data2;
-            state.has2nd = true;
-            // Prefer Lula × Flávio; URL may override after readUrlState()
-            state.activeScenario = null;
-          }
-        }
-      } catch (err2) {
-        console.warn("2º turno indisponível:", err2);
-        state.has2nd = false;
-      }
 
       if (el.round1) {
         el.round1.addEventListener("click", () => switchRound(1));
@@ -1816,6 +1955,9 @@
         el.rangeBtns.forEach((btn) => {
           btn.addEventListener("click", () => setRangeDays(btn.dataset.range));
         });
+      }
+      if (el.refreshBtn) {
+        el.refreshBtn.addEventListener("click", refreshData);
       }
       if (el.exportBtn) {
         el.exportBtn.addEventListener("click", exportVisibleCsv);
@@ -1869,6 +2011,7 @@
 
       state.skipUrlWrite = false;
       writeUrlState();
+      markDataLoaded("initial");
       applyTheme(currentTheme());
       if (el.themeBtn) {
         el.themeBtn.addEventListener("click", toggleTheme);
@@ -1902,6 +2045,7 @@
       });
     } catch (err) {
       console.error(err);
+      markDataError(err);
       if (el.placeholder) {
         el.placeholder.classList.remove("hidden");
         el.placeholder.innerHTML = `<p class="muted">Falha ao carregar <code>data/chart.json</code>: ${String(err.message || err)}</p>`;
