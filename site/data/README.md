@@ -6,3 +6,7 @@
 - `chart-2nd-round.json` — **Lead** Option B **per matchup** (`--multi-scenario`). Wrapper with `scenarios[]` (each block = same flat series contract as `chart.json`). Never merges distinct 2º confrontos. UI loads this when the user selects 2º turno.
 - Series: `poll` | `aggregate` | `uncertainty`; `unit: fraction`; `band_low`/`band_high` = in-window dispersion.
 - Do not commit unverified bulk poll corpora here. EXAMPLE / `example: true` files are synthetic only.
+
+- `canonical-points-regional.json` — **Pipeline assemble** for `data/regional/polls` only (`geography: state` + `uf`). Parallel to national; **never** merged into national Option B / `chart.json`.
+- `chart-regional.json` — **Lead** Option B regional export when available (same flat series contract, may carry `uf` on poll rows). Empty stub until regional intake + Lead re-export. UI Chart #2 lights up from this file or falls back to raw `canonical-points-regional.json` points (no invented aggregate).
+

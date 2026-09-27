@@ -100,16 +100,19 @@ See `feature-gap-audit.md`: 1º/2º + Confrontos, institute solo, period chips (
 
 Round/matchup on Chart 2 stays independent (same as old), still Option B per scenario when a single geo is selected.
 
-**Until Pipeline unlocks regional — interim dual-panel (shipped, labeled honestly):**
+**Chart #2 UI shell (shipped 2026-09-27) — regional/UF, awaits data:**
 
-A **new-only** alternate-round companion (`site/js/companion-chart.js`) shows the other **national** notebook (1º ↔ primary Lula×Flávio 2º) using existing `chart.json` / `chart-2nd-round.json`. This reuses the **dual-panel layout habit** and existing Option B artifacts; it does **not** claim to be a port of old Chart #2’s geo job. UI copy must not call it “Capítulo 2 / estados”.
+Panel `#regional-panel` / `site/js/regional-chart.js` is labeled **“Pesquisas regionais (UF)”** (Capítulo 2 / geo isolation). Loads `chart-regional.json` when it has poll series; otherwise raw `canonical-points-regional.json` points only. Empty PT state when both empty: *Nenhuma pesquisa regional verificada ainda*. UF chips when data exists; pan/zoom + point-only hover; **no** multi-UF blended mean; **never** writes into national Option B. National geography stays locked (ADR 0002).
 
-| Main panel | Interim companion (national, other round) |
-|------------|-------------------------------------------|
-| 1º `chart.json` | Primary 2º `stimulated_2nd_round_flavio_bolsonaro_vs_lula` |
-| 2º (Confrontos) | 1º `chart.json` |
+**Interim national companion (demoted):** `companion-chart.js` still shows the other **national** notebook (1º ↔ Lula×Flávio) but is **relabeled/demoted** so it is not confused with Chart #2. Copy must not call it Capítulo 2 / estados.
 
-**Lead decision still required for the true Chart #2 port:** whether/when to intake UF presidential polls and which assemble path/Stats rules apply (see §7). Series for the **interim** companion are already published — no Lead fork needed for that slice.
+| Panel | Role | Data |
+|-------|------|------|
+| Main | National Option B | `chart.json` / `chart-2nd-round.json` |
+| **Chart #2** | Regional UF inspect | `chart-regional.json` and/or `canonical-points-regional.json` (empty → empty state) |
+| Companheiro (extra) | Alternate national round | same national files |
+
+**Lead still owns** regional Option B export into `chart-regional.json` when verified UF primaries exist. Pipeline foundation (`data/regional/`, assemble → canonical-points-regional) already shipped (a72251e).
 
 ### 2.4 Explicitly not the (old) second chart
 
@@ -128,7 +131,8 @@ Behaviors onto **existing** Ruby → Option B → static D3 stack. Features, not
 
 | Item | Notes |
 |------|--------|
-| **Interim alternate-round companion** | Dual panel on **national** Option B only (1º ↔ Lula×Flávio). **Not** a geo/UF port of old Chart #2. **This memo’s first code slice.** |
+| **Interim alternate-round companion** | Dual panel on **national** Option B only (1º ↔ Lula×Flávio). **Not** Chart #2; demoted under regional panel. |
+| **Chart #2 UI shell (regional/UF)** | `#regional-panel` + `regional-chart.js` + empty `chart-regional.json` stub. Empty-state until Pipeline/Lead fill regional data. |
 | View bus `window.__pebrView` + `pebr-view-change` | Mirror old `__pebr` so companion (and future regional panel) do not refetch blindly. |
 | Honest methodology copy | Side panel: companion = other **national** turno; true Capítulo 2 (UF) deferred. |
 
@@ -147,7 +151,7 @@ Behaviors onto **existing** Ruby → Option B → static D3 stack. Features, not
 
 | Item | Notes |
 |------|--------|
-| **True Chart #2 port — NATIONAL+REGIONAL UF inspect** | **Real** old second-chart job. After Pipeline geography unlock + regional assemble/Option B path. Multi-geo **no blended mean**; never contaminate `chart.json`. |
+| **Chart #2 data fill + Option B regional** | UI shell shipped; awaits verified UF polls in `data/regional/` → assemble → Lead `chart-regional.json`. Multi-geo **no blended mean**; never contaminate `chart.json`. |
 | 2º small-multiples strip | All matchups at once; still Option B per scenario. |
 | Overlay SMA/EMA as **non-model** doodles | Old overlays; must not change cards/Option B line. Low priority. |
 | WASM parity badge | Old rust path; NEW has no WASM estimator — skip unless Lead adds. |
@@ -184,18 +188,22 @@ These did **not** exist on the old site (or only as stubs) and use pieces NEW al
 
 ---
 
-## 6. First slice (implemented with this memo)
+## 6. Slices implemented
 
-**Interim alternate-round companion** (national only — **not** old Chart #2 geo port):
+**A. Interim alternate-round companion** (national only — **not** Chart #2):
 
-- DOM: `#companion-panel` + `#companion-chart` under the main chart, before the national table.
+- DOM: `#companion-panel` (demoted, after national table) + `#companion-chart`.
 - JS: `site/js/companion-chart.js` consumes `pebr-view-change` / `window.__pebrView`.
-- Data: existing `chart.json` + primary scenario inside `chart-2nd-round.json` (round split ≠ geo split).
-- Behavior: Option B poll/aggregate/uncertainty; period + institute sync; point-only hover; no brush; no visual makeover.
-- Main `chart.js`: publishes view bus only (no architecture change).
+- Data: `chart.json` + primary 2º in `chart-2nd-round.json`.
 - Copy: must not imply UF / “Todas as fontes”.
 
-**True** NATIONAL+REGIONAL Capítulo 2 remains **memo-deferred** pending Pipeline tasks below + Lead greenlight on regional intake.
+**B. Chart #2 UI shell — regional/UF (2026-09-27):**
+
+- DOM: `#regional-panel` labeled **Pesquisas regionais (UF)** under the main national chart.
+- JS: `site/js/regional-chart.js` — loads `data/chart-regional.json` (poll series) or falls back to raw `data/canonical-points-regional.json`; empty PT state when both empty; UF chips when data exists; pan/zoom; point-only hover; aggregate only if chart export present **and** ≤1 UF selected.
+- Stub: `site/data/chart-regional.json` empty series (honest plumbing).
+- **Awaits data:** Pipeline intake into `data/regional/polls` + assemble → `canonical-points-regional.json`; Lead re-export → `chart-regional.json`. UI will light up without further shell work.
+- Never invents shares; never merges into national Option B.
 
 ## 7. Pipeline tasks (data/schema/intake only — not UI)
 
@@ -204,7 +212,7 @@ Delegate to **Poll Data Pipeline**:
 1. **Keep chart poll series provenance rich** — ensure every `series_kind=poll` row retains `poll_id`, `institute_id`, `n`, and (if available) stable link keys so UI can deep-link witnesses without scraping.
 2. **Optional `site/data/pipeline-status.json`** from `assemble`/`watch` — `last_run_at`, queue counts (`needs_human_review`), holds; **no shares**; byte-stable when unchanged.
 3. **Do not** widen `geography` enum yet; continue rejecting state rows in national assemble.
-4. **True old Chart #2 data foundation (Pipeline):** **Shipped stub 2026-09-27** — ADR [`0002`](adr/0002-regional-geography-parallel-tree.md) keeps national `geography` enum locked; parallel `data/regional/` + `poll-regional.schema.json`; separate `canonical-points-regional.json`; multi-geo no-blend documented in [`regional.md`](regional.md). Intake empty until clean UF primaries. UI Capítulo 2 geo port remains Lead-gated.
+4. **True old Chart #2 data foundation (Pipeline):** **Shipped stub 2026-09-27** — ADR [`0002`](adr/0002-regional-geography-parallel-tree.md) keeps national `geography` enum locked; parallel `data/regional/` + `poll-regional.schema.json`; separate `canonical-points-regional.json`; multi-geo no-blend documented in [`regional.md`](regional.md). Intake empty until clean UF primaries. **UI Chart #2 shell shipped** (awaits these files / Lead `chart-regional.json`).
 5. **Witness index (optional)** — `site/data/poll-witness-index.json` map `poll_id → [source_url]` from witnesses/ for detail panel (deterministic, no invention).
 6. **Continue demoting** Michelle / Ipec hard-stop / regional-breakout in `watch_policy` as today.
 7. **2º assemble hygiene** — fail loud on unknown scenario keys; keep pairwise lex-sorted ids (already in scenario-convention).
@@ -217,8 +225,9 @@ Delegate to **Poll Data Pipeline**:
 |----------|--------|
 | Old Chart #2 job? | **Geo isolation** (national vs national+UF) — keep Chart 1 pure |
 | Same as `chart.json` vs `chart-2nd-round.json`? | **No** — those are national round/scenario files |
-| True Chart #2 port now? | **No** — needs Pipeline regional intake; Lead decision on when |
-| Interim dual panel? | **Yes** — alternate-round national companion (new-only feature) |
+| True Chart #2 port now? | **UI shell yes** (empty-state); **data no** until UF intake + Lead export |
+| Interim dual panel? | **Yes** — alternate-round national companion, **demoted** so Chart #2 = regional |
 | Interim series? | `chart.json` ↔ `stimulated_2nd_round_flavio_bolsonaro_vs_lula` |
 | New stack/framework? | **No** |
 | First code slice? | Interim companion + view bus (honest labeling) |
+| Chart #2 UI shell? | **Shipped** — `regional-chart.js` + empty stub; awaits Pipeline/Lead data |

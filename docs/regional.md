@@ -40,6 +40,10 @@ Same rules as national ([`schemas/README.md`](../schemas/README.md), [`cross-ref
 - Queue: `data/regional/discovery/queue.json` (stub until watch writes regional out — national queue may still surface `regional_breakout` demotions for operator awareness).
 - Inbox: `data/regional/discovery/inbox/` (same drop contract as national; confirm UF presidential scope before dual-enter).
 
+## UI Chart #2 shell
+
+`site/js/regional-chart.js` + `#regional-panel` (“Pesquisas regionais (UF)”) ships empty-state plumbing. Prefers `site/data/chart-regional.json` when it has poll series; else raw `canonical-points-regional.json` points. Empty message: *Nenhuma pesquisa regional verificada ainda*. Lights up when Pipeline/Lead fill those files — no national Option B merge.
+
 ## Intake status (this foundation)
 
 - `data/regional/polls/`: **empty** (no clean dual-entered primary yet).

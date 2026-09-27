@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "geography": "state",
+  "scenario": "stimulated_1st_round",
+  "model_id": null,
+  "unit": "fraction",
+  "params": null,
+  "band_meaning": null,
+  "election_cycle": 2026,
+  "example": false,
+  "note": "Empty stub for UI Chart #2 (regional/UF). Lead Option B regional export not yet available. Never merge into national chart.json. UI also reads canonical-points-regional.json for raw points until this file has series.",
+  "candidates": [],
+  "institutes": [],
+  "generated_at": null,
+  "date_range": null,
+  "series": []
+}

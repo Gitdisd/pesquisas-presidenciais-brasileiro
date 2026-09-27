@@ -1,5 +1,5 @@
 /* PEBR alternate-round companion — national Option B (1º ↔ primary Lula×Flávio).
- * NOT a port of old Chart #2 (that was NATIONAL+REGIONAL UF inspect).
+ * Demoted under Chart #2 (regional/UF). NOT a port of old Capítulo 2 geo job.
  * Consumes window.__pebrView + pebr-view-change from chart.js (no independent refetch).
  * Stack: vanilla JS + D3 SVG. No brush, no multi-candidate scoreboard, no regional UF. */
 (function () {
