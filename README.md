@@ -2,6 +2,8 @@
 
 Arquivo e agregador de pesquisas presidenciais nacionais — GitHub Pages.
 
+> **AI / agent cold start:** read [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md) (mission, locked architecture, data counts, Option B recipes, pause/resume). Product work is paused until the user explicitly says resume.
+
 ## GitHub Pages
 
 - **Deploy:** GitHub Actions workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml) uploads `site/` (branch path `/site` is not allowed by GitHub; only `/` or `/docs`).

@@ -6,6 +6,8 @@
 
 This is the durable pause snapshot for the Lead lane. It records the state and decisions known at the user-ordered pause; it is not an authorization to resume work or to reinterpret pending work as complete.
 
+> **Correction (2026-09-27):** PR #1 is **MERGED**; regional **24** points are on main (`bf4ee83` → `59f9f03`). Treat conflicting/WAITING-on-merge wording below as outdated — see [`docs/AI-HANDOFF.md`](AI-HANDOFF.md) for the cold-start source of truth.
+
 ## Pause notice
 
 Work paused per user on **2026-09-27**. Do not continue features, intake, exports, merges, or coordination intake until the user explicitly says to resume.
