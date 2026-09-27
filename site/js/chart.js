@@ -1148,8 +1148,14 @@
     if (!toggle) return;
     const contentId = toggle.getAttribute("aria-controls");
     const content = contentId ? document.getElementById(contentId) : null;
+    const labelEl = toggle.querySelector(".filter-label");
+    const label = (labelEl && labelEl.textContent.trim()) || "Filtros";
     section.classList.toggle("is-collapsed", !open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute(
+      "aria-label",
+      open ? `${label} — recolher` : `${label} — expandir`
+    );
     if (content) content.hidden = !open;
     if (persist) {
       writeFilterCollapseState(section.dataset.collapseSection, open);
