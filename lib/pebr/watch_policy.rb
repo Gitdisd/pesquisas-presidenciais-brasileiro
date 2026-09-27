@@ -12,7 +12,11 @@ module Pebr
     SOCIAL_HOSTS = /(?:whatsapp\.com|facebook\.com|twitter\.com|x\.com|t\.me|instagram\.com|linkedin\.com)/i
     TRACKING_KEYS = %w[utm_source utm_medium utm_campaign utm_content utm_term fbclid gclid ref referrer].to_set
     EXCLUDED_PATHS = %r{(?:/tag/|/tags/|/autor/|/author/|/categoria/|/category/|/search/|/busca/|/feed/?$|/rss/?$)}i
-    NON_PRESIDENTIAL = /(?:governador|governadora|prefeito|prefeita|senado|senador|senadora|deputad[oa]|vereador|vereadora|assembleia|estadual|municipal|capital)/i
+    NON_PRESIDENTIAL = /(?:governador|governadora|prefeito|prefeita|senado|senador|senadora|deputad[oa]|vereador|vereadora|assembleia|estadual|municipal|capital|\bgoverno\s+de\b|\bpara\s+governo\b|\bpelo\s+governo\b|\bdisputa\s+pelo\s+governo\b|\bgovernos?\s+dos?\s+estados?\b)/i
+    REGIONAL_BREAKOUT = /\b(?:no|em)\s+(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO)\b/i
+    MICHELLE_HOLD = /\bmichelle\b/i
+    IPEC_HOLD = /\b(?:ipsos[- ]?ipec|ipec)\b/i
+    NAV_NOISE = %r{(?:github\.com/(?:login|notifications|settings|signup|session)|/(?:login|signin|signup|notifications|cart|conta)/?$)}i
     PRESIDENTIAL_SIGNAL = /(?:president(?:e|ial)|presid[eê]ncia|primeiro[-_ ]turno|1[ºo°]?[-_ ]?turno|segundo[-_ ]turno|2[ºo°]?[-_ ]?turno|inten[cç][aã]o[-_ ]de[-_ ]voto|pesquisa[-_ ]eleitoral)/i
     INSTITUTE_SIGNAL = /(?:datafolha|quaest|atlas\s*intel|poder\s*data|poder360|nexus|ideia|futura|gerp|palver|verit[aá]|paran[aá]|indexa|vox\s*brasil|alfa\s*intelig|cnt|mda|realtime|real\s*time\s*big\s*data|ipsos|ipec)/i
     TSE_REGISTRATION_SIGNAL = /\bBR[- ]?\d{4,6}\/2026\b|registro\s+(?:do\s+)?TSE|pesqele/i
@@ -62,6 +66,18 @@ module Pebr
         reasons << "wrong-office"
       end
 
+      # GitHub chrome / account noise often surfaces from institute release indexes.
+      if NAV_NOISE.match?(hay) || /\b(?:sign in|notifications|sign up)\b/i.match?(title.to_s)
+        rejected = true
+        reasons << "nav-noise"
+      end
+
+      # Holds: Michelle permanently out; Ipec national stimulated 1º hard-stop (still queueable as demoted lead only when not rejected elsewhere).
+      if MICHELLE_HOLD.match?(hay)
+        rejected = true
+        reasons << "hold-michelle-out"
+      end
+
       if PRESIDENTIAL_SIGNAL.match?(hay)
         score += 40
         reasons << "presidential-signal"
@@ -86,6 +102,19 @@ module Pebr
       if /news\.google|wikipedia\.org/i.match?(canonical)
         score -= 15
         reasons << "aggregator-signal"
+      end
+
+      if REGIONAL_BREAKOUT.match?(hay) && !/nacional|brasil|presidente|1[ºo].?turno|2[ºo].?turno/i.match?(title.to_s)
+        score -= 25
+        reasons << "regional-breakout"
+      elsif REGIONAL_BREAKOUT.match?(hay)
+        score -= 12
+        reasons << "regional-cut"
+      end
+
+      if IPEC_HOLD.match?(hay)
+        score -= 50
+        reasons << "hold-ipec-hard-stop"
       end
 
       { url: canonical, score: score, rejected: rejected, reasons: reasons }

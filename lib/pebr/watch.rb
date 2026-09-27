@@ -107,6 +107,10 @@ module Pebr
           )
           score = policy[:score]
           score_reasons = policy[:reasons].dup
+          if (target["kind"] || "").to_s == "lead_list"
+            score_reasons << "old-site-lead"
+            score = [score, 40].max
+          end
           if prev.nil?
             score += 4
             score_reasons << "new-signal"
@@ -135,7 +139,7 @@ module Pebr
             "score_reasons" => score_reasons.uniq,
             "listing_url" => target["url"],
             "listing_content_hash" => listing_hash,
-            "listing_via" => source_kind.to_s,
+            "listing_via" => ((target["kind"] || "").to_s == "lead_list" ? "old_site_harvest" : source_kind.to_s),
             "national_hint" => target["national_hint"] == true,
             "status" => status,
             "kind" => target["kind"],
@@ -163,12 +167,15 @@ module Pebr
         inbox_rel,
         detected_at: detected_at,
         existing: existing,
+        witnessed: witnessed,
         now: now
       )
       items.concat(drop_items)
       errors.concat(drop_errors)
 
       merged = merge_items(existing.values, items)
+      merged = scrub_queue_items(merged)
+      merged.each { |it| it["review_bucket"] = review_bucket_for(it) }
       merged.sort_by! do |it|
         status_rank =
           case it["status"]
@@ -176,8 +183,20 @@ module Pebr
           when "inbox_low_score" then 1
           else 2
           end
+        bucket_rank =
+          case it["review_bucket"]
+          when "human_drop_new" then 0
+          when "primary_document" then 1
+          when "national_press" then 2
+          when "old_site_lead" then 3
+          when "provenance" then 4
+          when "regional_breakout" then 5
+          when "aggregator" then 6
+          else 7
+          end
         [
           status_rank,
+          bucket_rank,
           -(it["score"] || 0).to_i,
           -(Time.parse(it["last_seen_at"] || it["detected_at"] || detected_at).to_i),
           it["url"].to_s
@@ -192,9 +211,12 @@ module Pebr
         "needs_human_review" => merged.count { |i| i["status"] == "needs_human_review" },
         "already_witnessed" => merged.count { |i| i["status"] == "already_witnessed" },
         "inbox_low_score" => merged.count { |i| i["status"] == "inbox_low_score" },
-        "human_drop_files" => merged.count { |i| i["kind"] == "human_drop" },
-        "rejected_links" => rejected_count
+        "human_drop_files" => merged.count { |i| i["kind"] == "human_drop" || i["listing_via"] == "human_drop" },
+        "rejected_links" => rejected_count,
+        "by_review_bucket" => merged.each_with_object({}) { |i, h| k = i["review_bucket"]; h[k] = h.fetch(k, 0) + 1 }
       }
+
+      operator_summary = build_operator_summary(merged)
 
       doc = {
         "meta" => {
@@ -206,7 +228,14 @@ module Pebr
           "disclaimer" => QUEUE_SCHEMA_NOTE,
           "heritage" => "Patterns adapted from Gitdisd/pesquisas-eleitorais-br discover-polls (listings/RSS/policy) + archive.org fallback. PEBR does not auto-extract shares.",
           "watermark_fieldwork_end" => watermark,
-          "counts" => counts
+          "counts" => counts,
+          "operator_summary" => operator_summary,
+          "holds" => [
+            "Michelle out",
+            "Ipec 2026 national stimulated 1º hard-stop",
+            "Quaest Jun 08 dirty residuals",
+            "no image-PDF inventing"
+          ]
         },
         "items" => merged
       }
@@ -286,7 +315,7 @@ module Pebr
 
     # Index human-saved evidence without parsing HTML/PDF bodies. A sidecar named
     # <document>.<ext>.json may provide source_url, title, and source_id.
-    def load_inbox_items(root, inbox_rel, detected_at:, existing:, now:)
+    def load_inbox_items(root, inbox_rel, detected_at:, existing:, witnessed: Set.new, now:)
       inbox = root.join(inbox_rel)
       return [[], []] unless inbox.directory?
 
@@ -339,7 +368,7 @@ module Pebr
           "listing_content_hash" => digest,
           "listing_via" => "human_drop",
           "national_hint" => true,
-          "status" => "needs_human_review",
+          "status" => (witnessed.include?(normalize_url(queue_url)) ? "already_witnessed" : "needs_human_review"),
           "kind" => "human_drop",
           "local_path" => relative,
           "content_hash" => digest,
@@ -354,6 +383,112 @@ module Pebr
         errors << "human drop #{path_str}: #{e.class}: #{e.message}"
       end
       [items, errors]
+    end
+
+
+    # JSON lead lists (e.g. old-site harvest). URLs/titles/metadata only — never shares.
+    def extract_lead_list(body)
+      data = JSON.parse(body)
+      rows =
+        if data.is_a?(Hash)
+          Array(data["items"] || data["leads"] || data["urls"])
+        elsif data.is_a?(Array)
+          data
+        else
+          []
+        end
+      results = []
+      rows.each do |row|
+        next unless row.is_a?(Hash)
+        url = row["url"].to_s.strip
+        next if url.empty?
+        results << {
+          url: url,
+          title: row["title"].to_s,
+          snippet: row["snippet"].to_s,
+          published_at: row["published_at"] || row["published_date"],
+          lastmod: row["lastmod"]
+        }.compact
+      end
+      results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
+    rescue JSON::ParserError
+      []
+    end
+
+
+    # Drop or demote persisted queue rows that current policy rejects (stale governo/Michelle/nav).
+    def scrub_queue_items(items)
+      kept = []
+      items.each do |it|
+        policy = WatchPolicy.classify_poll_link(it["url"], "#{it['title']} #{it['snippet']}")
+        if policy[:rejected]
+          next if %w[wrong-office hold-michelle-out nav-noise social generic-route].intersect?(policy[:reasons].map(&:to_s))
+
+          it = it.dup
+          it["score"] = [policy[:score], 0].min
+          it["score_reasons"] = (Array(it["score_reasons"]) + policy[:reasons] + ["policy-rescored"]).uniq
+          it["status"] = "inbox_low_score" unless it["status"] == "already_witnessed"
+        elsif policy[:reasons].map(&:to_s).include?("hold-ipec-hard-stop") || policy[:reasons].map(&:to_s).include?("regional-breakout")
+          it = it.dup
+          it["score"] = policy[:score]
+          it["score_reasons"] = (Array(it["score_reasons"]) + policy[:reasons] + ["policy-rescored"]).uniq
+          if it["status"] == "needs_human_review" && policy[:score] < 35
+            it["status"] = "inbox_low_score"
+          end
+        end
+        kept << it
+      end
+      kept
+    end
+
+    def review_bucket_for(item)
+      reasons = Array(item["score_reasons"]).map(&:to_s)
+      via = item["listing_via"].to_s
+      kind = item["kind"].to_s
+      url = item["url"].to_s
+      title = item["title"].to_s
+      if kind == "human_drop" && item["status"] != "already_witnessed"
+        "human_drop_new"
+      elsif kind == "human_drop"
+        "human_drop_done"
+      elsif via == "old_site_harvest" || item["target_id"].to_s.include?("old-site") || reasons.include?("old-site-lead")
+        "old_site_lead"
+      elsif reasons.include?("regional-breakout") || reasons.include?("regional-cut")
+        "regional_breakout"
+      elsif /news\.google|wikipedia\.org/i.match?(url) || reasons.include?("aggregator-signal")
+        "aggregator"
+      elsif /tse|pesqele|trademap|wayback|dadosabertos/i.match?(url) || reasons.include?("tse-registration-signal")
+        "provenance"
+      elsif /\.pdf(?:\?|$)/i.match?(url) || reasons.include?("document")
+        "primary_document"
+      elsif item["national_hint"] == true && item["status"] == "needs_human_review"
+        "national_press"
+      else
+        "other"
+      end
+    end
+
+    def build_operator_summary(items)
+      needs = items.select { |i| i["status"] == "needs_human_review" }
+      {
+        "work_top_down" => true,
+        "next_actions" => [
+          "Open human_drop_new / primary_document first",
+          "Confirm national presidential + extractable primary before dual-enter",
+          "Skip already_witnessed, regional_breakout, aggregator-only, and hold-tagged items",
+          "Never copy old-site shares into canonical — leads only"
+        ],
+        "needs_human_review_top" => needs.first(12).map { |i|
+          {
+            "review_bucket" => i["review_bucket"],
+            "score" => i["score"],
+            "title" => i["title"] || i["url"],
+            "url" => i["url"],
+            "source_id" => i["source_id"]
+          }
+        },
+        "bucket_counts_needs_review" => needs.each_with_object({}) { |i, h| k = i["review_bucket"]; h[k] = h.fetch(k, 0) + 1 }
+      }
     end
 
     def metadata_diff(previous, current)
@@ -502,6 +637,7 @@ module Pebr
       when "listing_html" then extract_html_links(body, base)
       when "rss" then extract_rss_items(body)
       when "sitemap" then extract_sitemap_locs(body)
+      when "lead_list" then extract_lead_list(body)
       else
         []
       end
@@ -608,10 +744,11 @@ module Pebr
         key = normalize_url(it["url"])
         if by_url.key?(key)
           prev = by_url[key]
-          # Prefer earlier target_id (first detection source); accumulate all target_ids.
-          merged = it.merge(prev)
+          # Base on previous detection, then layer the newest sighting.
+          merged = prev.merge(it)
           merged["last_seen_at"] = it["last_seen_at"] || prev["last_seen_at"]
           merged["detected_at"] = prev["detected_at"] if prev["detected_at"]
+          # Keep the earliest target_id as the primary detection source.
           merged["target_id"] = prev["target_id"] || it["target_id"]
           tids = []
           tids.concat(Array(prev["target_ids"]))
@@ -619,7 +756,6 @@ module Pebr
           tids.concat(Array(it["target_ids"]))
           tids << it["target_id"] if it["target_id"]
           merged["target_ids"] = tids.compact.uniq
-          # Keep richer metadata
           merged["published_at"] = it["published_at"] || prev["published_at"]
           merged["lastmod"] = it["lastmod"] || prev["lastmod"]
           merged["metadata_changed"] = it["metadata_changed"] if it.key?("metadata_changed")
@@ -627,6 +763,15 @@ module Pebr
           merged["score"] = [prev["score"].to_i, it["score"].to_i].max
           merged["score_reasons"] = (Array(prev["score_reasons"]) + Array(it["score_reasons"])).uniq
           merged["scenario_hints"] = (Array(prev["scenario_hints"]) + Array(it["scenario_hints"])).uniq
+          # Human-drop evidence fields must survive merges with listing hits.
+          if it["kind"] == "human_drop" || prev["kind"] == "human_drop"
+            drop = it["kind"] == "human_drop" ? it : prev
+            merged["kind"] = "human_drop"
+            merged["listing_via"] = "human_drop"
+            merged["local_path"] = drop["local_path"] || merged["local_path"]
+            merged["content_hash"] = drop["content_hash"] || merged["content_hash"]
+            merged["source_type"] = drop["source_type"] || merged["source_type"]
+          end
           statuses = [prev["status"], it["status"]]
           merged["status"] =
             if statuses.include?("already_witnessed")

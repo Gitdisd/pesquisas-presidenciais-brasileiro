@@ -49,6 +49,44 @@ class WatchPolicyTest < Minitest::Test
     assert_includes c[:reasons], "institute"
   end
 
+
+  def test_rejects_governo_de_state_race
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/quaest-ms.ghtml",
+      "2ª pesquisa Quaest: intenção de voto para governo de MS"
+    )
+    assert c[:rejected]
+    assert_includes c[:reasons], "wrong-office"
+  end
+
+  def test_rejects_michelle_hold
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://example.org/pesquisa-presidente",
+      "2º turno Lula x Michelle Bolsonaro"
+    )
+    assert c[:rejected]
+    assert_includes c[:reasons], "hold-michelle-out"
+  end
+
+  def test_demotes_ipec_hard_stop
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://example.org/pesquisa-ipec-presidente",
+      "Ipsos-Ipec intenção de voto presidente 1º turno"
+    )
+    refute c[:rejected]
+    assert_includes c[:reasons], "hold-ipec-hard-stop"
+    assert c[:score] < 35
+  end
+
+  def test_rejects_nav_noise
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://github.com/login",
+      "Sign in"
+    )
+    assert c[:rejected]
+    assert_includes c[:reasons], "nav-noise"
+  end
+
   def test_wrong_office_wins_over_hub_slug
     c = Pebr::WatchPolicy.classify_poll_link(
       "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/pesquisa-governador-pr/",
@@ -211,6 +249,53 @@ class WatchTest < Minitest::Test
     refute out.exist?
     run_watch(dry_run: true)
     refute out.exist?
+  end
+
+
+  def test_lead_list_old_site_harvest_has_no_shares
+    result = run_watch
+    leads = result[:doc]["items"].select { |i| i["listing_via"] == "old_site_harvest" || i["target_id"] == "old-site-national-leads" }
+    assert leads.any?, "expected old-site lead_list items"
+    leads.each do |item|
+      refute item.key?("shares")
+      refute item.key?("results")
+      refute item.key?("candidates")
+      refute item.key?("poll_id")
+      assert_includes item["score_reasons"], "old-site-lead"
+    end
+    summary = result[:doc]["meta"]["operator_summary"]
+    assert summary.is_a?(Hash)
+    assert summary["work_top_down"]
+    assert result[:doc]["meta"]["holds"].any? { |h| h.include?("Michelle") }
+  end
+
+  def test_human_drop_already_witnessed_when_url_known
+    source = @root.join("saved-report.pdf")
+    source.write("already ingested bytes")
+    Pebr::Intake.drop(
+      source,
+      root: @root,
+      source_url: "https://example.org/already.pdf",
+      title: "Already in",
+      source_id: "manual-source"
+    )
+    wit = {
+      "witness_id" => "w_already",
+      "poll_id" => "test_poll",
+      "source_type" => "pdf",
+      "source_url" => "https://example.org/already.pdf",
+      "retrieved_at" => "2026-09-27T00:00:00Z",
+      "content_hash" => "sha256:abc",
+      "parser_id" => "test",
+      "extractions" => {},
+      "confidence" => 1.0
+    }
+    @root.join("data/national/witnesses/w_already.json").write(JSON.pretty_generate(wit))
+
+    item = run_watch[:doc]["items"].find { |candidate| candidate["url"] == "https://example.org/already.pdf" }
+    assert item, "expected drop URL in queue"
+    assert_equal "already_witnessed", item["status"]
+    assert_equal "human_drop_done", item["review_bucket"]
   end
 
   def test_human_drop_is_indexed_by_hash_without_parsing

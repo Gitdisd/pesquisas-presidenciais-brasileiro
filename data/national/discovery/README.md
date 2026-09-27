@@ -18,6 +18,10 @@ Human-gated **candidates** from `bin/pebr watch` (patterns adapted from `pesquis
 
 ## Review UX
 
+Sort: status → `review_bucket` → score → recency. Prefer `meta.operator_summary`.
+Buckets: `human_drop_new`, `primary_document`, `national_press`, `old_site_lead`, `provenance`, `regional_breakout`, `aggregator`, …
+Old-site harvest items are **leads only** (`listing_via: old_site_harvest`) — never unverified shares.
+
 1. Open `queue.json` (or CI artifact `pebr-discovery-queue`).
 2. Work top-down (`needs_human_review`, high score first).
 3. Prefer items from `g1-pesquisas-rss`, institute-specific `gnews-*`, `poder360-feed`.

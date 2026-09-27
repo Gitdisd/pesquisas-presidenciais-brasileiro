@@ -93,7 +93,8 @@ bin/pebr normalize                # fingerprint duplicate report (no rewrite)
 bin/pebr discover                 # read-only inventory of sources.json + institutes.yml
 bin/pebr watch --offline          # discovery queue from fixtures (no network)
 bin/pebr watch --fetch            # live listings/RSS/archive-fallback → review queue (no share inventing)
-# See docs/discovery.md + docs/adr/0001-discovery-bypass-blockers.md
+bin/pebr drop FILE                 # human HTML/PDF evidence → discovery inbox (hash only)
+# See docs/discovery.md + docs/manual-intake.md + docs/adr/0001-discovery-bypass-blockers.md
 bin/pebr version
 ```
 

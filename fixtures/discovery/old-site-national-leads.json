@@ -1,0 +1,855 @@
+{
+  "meta": {
+    "disclaimer": "LEADS ONLY from pesquisas-eleitorais-br. No poll shares. Never ingest unverified old-site cells into PEBR canonical.",
+    "source_repo": "https://github.com/Gitdisd/pesquisas-eleitorais-br",
+    "generated_for": "PEBR bin/pebr watch kind=lead_list",
+    "holds": [
+      "Michelle out",
+      "Ipec 2026 national stimulated 1º hard-stop",
+      "BBC aggregate citation farm excluded"
+    ],
+    "count": 70
+  },
+  "items": [
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/quaest-lula-tem-37-no-1o-turno-flavio-33/",
+      "title": "Genial/Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Genial/Quaest; fieldwork_end=2026-09-20; TSE=BR-06004/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Genial/Quaest",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-06004/2026"
+    },
+    {
+      "url": "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-21-de-setembro-de-2026/",
+      "title": "Nexus/BTG — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-20; TSE=BR-00485/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-00485/2026"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-lula-tem-46-no-2o-turno-flavio-45/",
+      "title": "Nexus/BTG — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-20; TSE=BR-00485/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-00485/2026"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-lula-tem-40-no-1o-turno-flavio-37-e-cury-6/",
+      "title": "Nexus/BTG — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-20; TSE=BR-00485/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-00485/2026"
+    },
+    {
+      "url": "https://www.blogdobgpb.com.br/2026/09/20/pesquisa-verita-votos-validos-flavio-lidera-no-1o-turno-com-4553-seguido-por-lula-com-4176-em-levantamento-com-405-mil-entrevistados-nos-26-estados-e-no-df/",
+      "title": "Veritá — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Veritá; fieldwork_end=2026-09-19; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-20",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Veritá",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://noticias.uol.com.br/eleicoes/2026/09/21/palver-pesquisa-presidencial-setembro.ghtm",
+      "title": "Palver — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Palver; fieldwork_end=2026-09-18; TSE=BR-00860/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Palver",
+      "old_site_fieldwork_end": "2026-09-18",
+      "old_site_tse": "BR-00860/2026"
+    },
+    {
+      "url": "https://www.correiobraziliense.com.br/politica/2026/09/amp/7504821-palver-flavio-e-lula-empatados-na-estimulada-e-na-espontanea-no-1-turno.html",
+      "title": "Palver — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Palver; fieldwork_end=2026-09-18; TSE=BR-00860/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Palver",
+      "old_site_fieldwork_end": "2026-09-18",
+      "old_site_tse": "BR-00860/2026"
+    },
+    {
+      "url": "https://www.metropoles.com/brasil/datafolha-lula-tem-46-no-2-turno-flavio-marca-44",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-17; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-17",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://cbn.globo.com/coberturas/eleicoes-2026/noticia/2026/09/17/datafolha-lula-39percent-flavio-bolsonaro-36percent-cury-6percent-caiado-4percent-renan-3percent-zema-2percent.ghtml",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-17; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-17",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www1.folha.uol.com.br/poder/2026/09/datafolha-flavio-bolsonaro-atrai-mais-eleitores-de-zema-renan-caiado-e-cury-em-2o-turno-contra-lula.shtml",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-17; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-17",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://noticias.uol.com.br/eleicoes/2026/09/17/atlasbloomberg-lula-e-flavio-aparecem-tecnicamente-empatados-no-2-turno.ghtm",
+      "title": "AtlasIntel — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=AtlasIntel; fieldwork_end=2026-09-16; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "AtlasIntel",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-50-no-2o-turno-lula-43/",
+      "title": "Gerp — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Gerp; fieldwork_end=2026-09-16; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Gerp",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-40-e-lula-37-no-1o-turno/",
+      "title": "Gerp — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Gerp; fieldwork_end=2026-09-16; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Gerp",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/poderdata-presidente-setembro-2026-2/",
+      "title": "PoderData — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=PoderData; fieldwork_end=2026-09-16; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "PoderData",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://noticias.uol.com.br/eleicoes/2026/09/17/futura100-cidades-flavio-bolsonaro-aparece-a-frente-de-lula-no-2-turno.ghtm",
+      "title": "Futura/Apex — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Futura/Apex; fieldwork_end=2026-09-15; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Futura/Apex",
+      "old_site_fieldwork_end": "2026-09-15",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.correiobraziliense.com.br/politica/2026/09/7500750-datatrends-divulga-1-pesquisa-sobre-corrida-presidencial-nesta-quarta.html",
+      "title": "DataTrends — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=DataTrends; fieldwork_end=2026-09-14; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-16",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "DataTrends",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/cnt-mda-presidente-setembro-2026/",
+      "title": "CNT/MDA — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=CNT/MDA; fieldwork_end=2026-09-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "CNT/MDA",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.estadao.com.br/politica/indexabroadcast-lula-tem-43-e-flavio-bolsonaro-42-em-empate-tecnico-no-2-turno/",
+      "title": "Indexa/Broadcast — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Indexa/Broadcast; fieldwork_end=2026-09-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Indexa/Broadcast",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/indexa-broadcast-presidente-setembro-2026/",
+      "title": "Indexa/Broadcast — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Indexa/Broadcast; fieldwork_end=2026-09-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Indexa/Broadcast",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-presidente-setembro-2026/",
+      "title": "Nexus/BTG — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-14",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www1.folha.uol.com.br/poder/2026/09/quaest-flavio-marca-42-e-lula-40-no-2o-turno.shtml",
+      "title": "Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Quaest; fieldwork_end=2026-09-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-14",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Quaest",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://noticias.uol.com.br/eleicoes/2026/09/14/pesquisa-eleitoral-quaest-veja-numeros-percentuais-atualizados.ghtm",
+      "title": "Quaest — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Quaest; fieldwork_end=2026-09-13; TSE=BR-03607/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-14",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest",
+      "old_site_fieldwork_end": "2026-09-13",
+      "old_site_tse": "BR-03607/2026"
+    },
+    {
+      "url": "https://revistaoeste.com/politica/verita-flavio-lidera-sobre-lula-em-16-estados-e-tem-4395/",
+      "title": "Veritá — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Veritá; fieldwork_end=2026-09-12; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-13",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Veritá",
+      "old_site_fieldwork_end": "2026-09-12",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/11/datafolha-2o-turno-presidente-11-setembro.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://cbn.globo.com/coberturas/eleicoes-2026/noticia/2026/09/11/datafolha-lula-tem-46percent-e-flavio-bolsonaro-44percent-em-cenario-de-2o-turno.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-setembro-2026-2/",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/11/datafolha-presidente-11-setembro.ghtml",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/futura-flavio-tem-454-contra-45-de-lula-no-2o-turno/",
+      "title": "Futura/Apex — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Futura/Apex; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Futura/Apex",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://exame.com/brasil/pesquisa-futura-lula-tem-392-e-flavio-bolsonaro-336-no-1o-turno/",
+      "title": "Futura/Apex — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Futura/Apex; fieldwork_end=2026-09-10; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-11",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Futura/Apex",
+      "old_site_fieldwork_end": "2026-09-10",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-setembro-2026/",
+      "title": "AtlasIntel — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=AtlasIntel; fieldwork_end=2026-09-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-10",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "AtlasIntel",
+      "old_site_fieldwork_end": "2026-09-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-bloomberg-flavio-tem-464-no-2o-turno-lula-462/",
+      "title": "AtlasIntel — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=AtlasIntel; fieldwork_end=2026-09-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-10",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "AtlasIntel",
+      "old_site_fieldwork_end": "2026-09-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.correiobraziliense.com.br/politica/2026/09/7497900-atlasintel-flavio-tem-464-no-segundo-turno-e-lula-registra-462.html",
+      "title": "AtlasIntel — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=AtlasIntel; fieldwork_end=2026-09-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-10",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "AtlasIntel",
+      "old_site_fieldwork_end": "2026-09-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-47-no-2o-turno-lula-45/",
+      "title": "PoderData — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=PoderData; fieldwork_end=2026-09-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-10",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "PoderData",
+      "old_site_fieldwork_end": "2026-09-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-flavio-bolsonaro-47-x-45-lula-no-2-turno",
+      "title": "PoderData — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=PoderData; fieldwork_end=2026-09-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-10",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "PoderData",
+      "old_site_fieldwork_end": "2026-09-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-47-ante-40-de-lula-no-2o-turno-diz-pesquisa/",
+      "title": "GERP — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=GERP; fieldwork_end=2026-09-08; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-09",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "GERP",
+      "old_site_fieldwork_end": "2026-09-08",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/palver-lula-e-flavio-empatam-em-40-no-1o-turno/",
+      "title": "Palver — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Palver; fieldwork_end=2026-09-08; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-09",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Palver",
+      "old_site_fieldwork_end": "2026-09-08",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/meio-ideia-presidente-setembro-2026/",
+      "title": "Ideia — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Ideia; fieldwork_end=2026-09-07; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-09",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Ideia",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/palver-lula-empata-tecnicamente-com-flavio-caiado-e-zema-no-2o-turno/",
+      "title": "Palver — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Palver; fieldwork_end=2026-09-07; TSE=BR-05420/2026; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-09",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Palver",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": "BR-05420/2026"
+    },
+    {
+      "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-46-contra-45-de-lula-no-2o-turno-diz-btg-nexus/",
+      "title": "Nexus/BTG — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-07; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/nexus-btg-lula-tem-empate-tecnico-com-flavio-caiado-e-cury-no-2o-turno/",
+      "title": "Nexus/BTG — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-07; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://veja.abril.com.br/brasil/o-que-revelam-as-pesquisas-eleitorais-da-semana-sobre-a-disputa-entre-lula-e-flavio/",
+      "title": "Nexus/BTG — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-09-07; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/07/quaest-2-turno-7-de-setembro.ghtml",
+      "title": "Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Quaest; fieldwork_end=2026-09-06; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-07",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Quaest",
+      "old_site_fieldwork_end": "2026-09-06",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/07/quaest-presidente-7-setembro.ghtml",
+      "title": "Quaest — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Quaest; fieldwork_end=2026-09-06; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-07",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest",
+      "old_site_fieldwork_end": "2026-09-06",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-485-no-2o-turno-lula-431/",
+      "title": "Veritá — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Veritá; fieldwork_end=2026-09-04; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-06",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Veritá",
+      "old_site_fieldwork_end": "2026-09-04",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-389-no-1o-turno-lula-384-e-cury-122/",
+      "title": "Veritá — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Veritá; fieldwork_end=2026-09-04; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-06",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Veritá",
+      "old_site_fieldwork_end": "2026-09-04",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/03/datafolha-2o-turno-presidente-3-setembro.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-02; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-03",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-02",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/03/datafolha-presidente-3-setembro.ghtml",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-09-02; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-03",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-09-02",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.poder360.com.br/poderdata/flavio-tem-45-e-lula-registra-44-no-2o-turno-diz-poderdata-aya/",
+      "title": "PoderData — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=PoderData; fieldwork_end=2026-09-02; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-03",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "PoderData",
+      "old_site_fieldwork_end": "2026-09-02",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.poder360.com.br/poderdata/poderdata-aya-augusto-cury-vai-de-4-para-10-no-1o-turno/",
+      "title": "PoderData — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=PoderData; fieldwork_end=2026-09-02; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-03",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "PoderData",
+      "old_site_fieldwork_end": "2026-09-02",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-tem-387-das-intencoes-de-voto-contra-336-de-flavio/",
+      "title": "Futura/Apex — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Futura/Apex; fieldwork_end=2026-09-01; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-03",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Futura/Apex",
+      "old_site_fieldwork_end": "2026-09-01",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/02/quaest-presidente-2-setembro.ghtml",
+      "title": "Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Quaest; fieldwork_end=2026-09-01; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-02",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Quaest",
+      "old_site_fieldwork_end": "2026-09-01",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.infomoney.com.br/politica/real-time-big-data-lula-e-flavio-bolsonaro-empatam-com-44-no-2o-turno/",
+      "title": "Real Time Big Data — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Real Time Big Data; fieldwork_end=2026-08-31; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-01",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data",
+      "old_site_fieldwork_end": "2026-08-31",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/real-time-big-data-divulga-nova-pesquisa-para-presidente-veja-os-numeros-cmtiihl5a00gp011jsm3hy1kq.html",
+      "title": "Real Time Big Data — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Real Time Big Data; fieldwork_end=2026-08-31; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-09-01",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data",
+      "old_site_fieldwork_end": "2026-08-31",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-tem-471-contra-426-de-flavio-no-2o-turno-diz-pesquisa/",
+      "title": "AtlasIntel — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=AtlasIntel; fieldwork_end=2026-08-30; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-31",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "AtlasIntel",
+      "old_site_fieldwork_end": "2026-08-30",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-31-de-agosto-de-2026/",
+      "title": "Nexus/BTG — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Nexus/BTG; fieldwork_end=2026-08-30; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-31",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Nexus/BTG",
+      "old_site_fieldwork_end": "2026-08-30",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://static.poder360.com.br/uploads/2026/08/RELATORIO-VOX-BRASIL-NACIONAL-6-29-08-2026-1.pdf",
+      "title": "Vox Brasil — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Vox Brasil; fieldwork_end=2026-08-27; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-29",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Vox Brasil",
+      "old_site_fieldwork_end": "2026-08-27",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-agosto-2026-2/",
+      "title": "GERP — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=GERP; fieldwork_end=2026-08-25; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-26",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "GERP",
+      "old_site_fieldwork_end": "2026-08-25",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.broadcast.com.br/news/lula-tem-39-e-flavio-34-no-primeiro-turno-mostra-pesquisa-indexa-broadcast/",
+      "title": "Indexa/Broadcast — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Indexa/Broadcast; fieldwork_end=2026-08-23; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-26",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Indexa/Broadcast",
+      "old_site_fieldwork_end": "2026-08-23",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/09/02/quem-esta-na-frente-para-presidente-veja-resultados-das-ultimas-pesquisas.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-08-20; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-08-20",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://revistaforum.com.br/politica/cnt-mda-nova-pesquisa-lula-flavio/",
+      "title": "CNT/MDA — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=CNT/MDA; fieldwork_end=2026-08-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-11",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "CNT/MDA",
+      "old_site_fieldwork_end": "2026-08-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://static.poder360.com.br/uploads/2026/08/Relatorio-Pesquisa-CNT-de-Opiniao-R169-AGOSTO26.pdf",
+      "title": "CNT/MDA — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=CNT/MDA; fieldwork_end=2026-08-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-11",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "CNT/MDA",
+      "old_site_fieldwork_end": "2026-08-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/meio-ideia-presidente-agosto-2026/",
+      "title": "Ideia — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Ideia; fieldwork_end=2026-08-03; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-08-05",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Ideia",
+      "old_site_fieldwork_end": "2026-08-03",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/07/24/datafolha-primeiro-turno-julho.ghtml",
+      "title": "Datafolha — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-07-24; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-07-24",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-07-24",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/07/15/quaest-1o-turno-julho-lula-flavio-bolsonaro.ghtml",
+      "title": "Genial/Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Genial/Quaest; fieldwork_end=2026-07-13; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-07-15",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Genial/Quaest",
+      "old_site_fieldwork_end": "2026-07-13",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/06/20/datafolha-lula-tem-41percent-e-flavio-bolsonaro-31percent-das-intencoes-de-voto-no-1o-turno.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-06-19; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-06-20",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-06-19",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/05/16/datafolha-maio-primeiro-turno.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-05-14; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-05-16",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-05-14",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-presidente-marco-2026/",
+      "title": "Paraná Pesquisas — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Paraná Pesquisas; fieldwork_end=2026-03-28; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-03-30",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Paraná Pesquisas",
+      "old_site_fieldwork_end": "2026-03-28",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.estadao.com.br/politica/lua-de-mel-de-flavio-e-remontada-de-lula-o-que-mostraram-as-pesquisas-eleitorais-do-1-semestre/",
+      "title": "Genial/Quaest — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Genial/Quaest; fieldwork_end=2026-03-09; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-03-10",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Genial/Quaest",
+      "old_site_fieldwork_end": "2026-03-09",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/03/07/datafolha-1o-turno.ghtml",
+      "title": "Datafolha — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Datafolha; fieldwork_end=2026-03-05; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-03-07",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Datafolha",
+      "old_site_fieldwork_end": "2026-03-05",
+      "old_site_tse": null
+    },
+    {
+      "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-presidente-fevereiro-2026-2/",
+      "title": "Paraná Pesquisas — estimulada 1º turno",
+      "snippet": "Old-site lead only (pesquisas-eleitorais-br). Institute=Paraná Pesquisas; fieldwork_end=2026-02-25; TSE=n/a; verified_flag=True. NEVER copy shares — human primary check required.",
+      "published_at": "2026-02-27",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Paraná Pesquisas",
+      "old_site_fieldwork_end": "2026-02-25",
+      "old_site_tse": null
+    }
+  ]
+}

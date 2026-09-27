@@ -6,6 +6,9 @@
 # Operators: run `bin/pebr watch --offline` (fixtures) or `bin/pebr watch --fetch` (live).
 #
 # See docs/adr/0001-discovery-bypass-blockers.md for ranked techniques + legal/grey notes.
+# Holds (do not weaken): Michelle out; Ipec 2026 national stimulated 1º hard-stop;
+#   Quaest Jun 08 dirty; no image-PDF inventing. Watch targets must stay extractable
+#   national-primary oriented — never add Michelle-only or Ipec hard-stop ingest paths.
 
 version: 1
 user_agent: "PEBR-discovery/0.2 (+https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro; research; no automated ingest)"
@@ -404,6 +407,112 @@ targets:
     national_hint: true
     notes: "Direct report PDF (200). TSE BR-09587/2026 provenance on cover; shares only via human dual-enter."
     fixture: fixtures/discovery/palver-github.html
+
+
+  # --- Extractable national primaries (press/institute; Michelle out; Ipec hard-stop) ---
+  - id: gnews-futura
+    source_id: gnews-presidencial
+    label: "Google News RSS — Futura presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Futura+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Institute-specific GNews for Futura/Apex national waves. Lead only until human primary."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: gnews-gerp
+    source_id: gnews-presidencial
+    label: "Google News RSS — GERP presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+GERP+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "GERP national waves often mirrored on Poder360/Gazeta."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: gnews-realtime
+    source_id: gnews-presidencial
+    label: "Google News RSS — Real Time Big Data presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=%22Real+Time+Big+Data%22+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "RTBD national; prefer CNN/InfoMoney open mirrors."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: gnews-verita
+    source_id: gnews-presidencial
+    label: "Google News RSS — Veritá presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Verit%C3%A1+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Veritá still inactive in institutes.yml until a clean primary lands. Queue leads only."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: gnews-palver
+    source_id: gnews-presidencial
+    label: "Google News RSS — Palver presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Palver+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Complements palver.com.br survey/report PDF targets."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: folha-poder
+    source_id: datafolha-folha
+    label: "Folha — Poder (Datafolha mirrors)"
+    kind: listing_html
+    url: "https://www1.folha.uol.com.br/poder/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Datafolha primary/press often lands here; paywall possible — use G1 open mirror when blocked."
+    fixture: fixtures/discovery/g1-pesquisas-listing.html
+
+  - id: exame-brasil
+    source_id: exame
+    label: "Exame — Brasil (poll mirrors)"
+    kind: listing_html
+    url: "https://exame.com/brasil/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Frequently carries Meio/Ideia + Nexus tables with extractable %. Prefer open article over homepage chrome."
+    fixture: fixtures/discovery/gazeta-pesquisas-listing.html
+
+  - id: metropoles-brasil
+    source_id: metropoles
+    label: "Metrópoles — Brasil / eleições"
+    kind: listing_html
+    url: "https://www.metropoles.com/brasil"
+    enabled: true
+    national_hint: true
+    notes: "Occasional Datafolha/Quaest national mirrors."
+    fixture: fixtures/discovery/cnn-eleicoes-listing.html
+
+  - id: infomoney-politica
+    source_id: infomoney
+    label: "InfoMoney — Política"
+    kind: listing_html
+    url: "https://www.infomoney.com.br/politica/"
+    enabled: true
+    national_hint: true
+    notes: "RTBD and market-desk national poll mirrors."
+    fixture: fixtures/discovery/cnn-eleicoes-listing.html
+
+  # Old-site harvest → discovery LEADS ONLY (never unverified shares into canonical).
+  - id: old-site-national-leads
+    source_id: old-site-harvest
+    label: "Old site (pesquisas-eleitorais-br) — national URL leads only"
+    kind: lead_list
+    url: "https://gitdisd.github.io/pesquisas-eleitorais-br/"
+    enabled: true
+    national_hint: true
+    fetch: false
+    notes: "Harvested source_url/witness_urls from old-site polls.json (+extras) as review leads. BBC aggregate citation farm excluded. Michelle/Ipec holds applied at harvest. NEVER copy old-site candidate % into PEBR polls."
+    fixture: fixtures/discovery/old-site-national-leads.json
 
   # --- Sitemap (fixture-only example; lastmod used as queue metadata) ---
   - id: example-sitemap

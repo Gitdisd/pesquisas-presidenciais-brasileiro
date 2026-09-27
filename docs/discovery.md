@@ -43,6 +43,8 @@ Repo: https://github.com/Gitdisd/pesquisas-eleitorais-br
 
 Queue path: **`data/national/discovery/`** (not under `site/`) so Pages does not publish the review inbox.
 
+Old-site harvest: target `old-site-national-leads` (`kind: lead_list`, fixture `fixtures/discovery/old-site-national-leads.json`) queues URL/title metadata from `pesquisas-eleitorais-br` as **`listing_via: old_site_harvest` leads only**. Never copy old-site candidate shares into canonical.
+
 ## Watch targets
 
 [`config/watch_targets.yml`](../config/watch_targets.yml) — high-signal national subset: **G1 pesquisas RSS**, G1/Poder360/CNN/Gazeta/UOL/PollingData/Wikipedia EN+PT polling listings, institute homes, alternate TSE/PesqEle pointers, TradeMap/Palver provenance indexes, a TSE-registration GNews query, TSE dados abertos (often 403), sitemap fixture, **multiple Google News RSS queries**, Poder360 feed, and the human evidence drop folder. Optional `archive_fallback: true` uses archive.org `wayback/available` when a listing fails. Wikipedia, news, aggregators, and TSE IDs are citation/provenance discovery only; every lead needs a human primary check.
@@ -51,15 +53,17 @@ Queue item fields: `url`, `source_id`, `target_id` / `target_ids`, `detected_at`
 
 ### Queue review UX (operator)
 
-Sort is automatic: `needs_human_review` first → higher score → newer `last_seen_at`.
+Sort is automatic: `needs_human_review` first → **review_bucket** (`human_drop_new` → `primary_document` → `national_press` → `old_site_lead` → provenance → regional → aggregator) → higher score → newer `last_seen_at`.
 
 | Status | Meaning | Operator action |
 |--------|---------|-----------------|
-| `needs_human_review` | Score ≥ min (default 35) or keyword hit; not yet witnessed | Open URL → confirm **national** presidential → dual-enter poll + witness |
-| `already_witnessed` | URL matches a witness `source_url` | Skip (or refresh witness if bytes changed) |
+| `needs_human_review` | Score ≥ min (default 35) or keyword hit; not yet witnessed | Open URL → confirm **national** presidential → dual-enter only if primary is extractable |
+| `already_witnessed` | URL matches a witness `source_url` (including human drops of already-ingested PDFs) | Skip (or refresh witness if bytes changed) |
 | `inbox_low_score` | Weak signal | Usually ignore; do not ingest |
 
-CI artifact (opt-in `run_discovery_fetch`): download `pebr-discovery-queue` → inspect `items[]` → **never** copy shares from automation. See also [ADR 0001](adr/0001-discovery-bypass-blockers.md).
+Read `meta.operator_summary` (top actions + `needs_human_review_top`) and `meta.holds` before working the queue. Policy rejects wrong-office (`governo de …`), Michelle holds, and nav chrome; demotes regional UF breakouts and Ipec hard-stop hits.
+
+CI artifact (opt-in `run_discovery_fetch`): download `pebr-discovery-queue` → inspect `items[]` → **never** copy shares from automation. See also [ADR 0001](adr/0001-discovery-bypass-blockers.md) and the [human inbox operator path](manual-intake.md).
 
 ## End-to-end acquisition loop
 
