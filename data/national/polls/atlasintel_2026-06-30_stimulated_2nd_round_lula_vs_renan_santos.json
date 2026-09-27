@@ -1,0 +1,25 @@
+{
+  "poll_id": "atlasintel_2026-06-30_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-06-26",
+  "fieldwork_end": "2026-06-30",
+  "fieldwork_mid": "2026-06-28",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 4999,
+  "moe": 0.01,
+  "tse_registration_id": "BR-04582/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "results": {
+    "lula": 0.492,
+    "renan_santos": 0.289
+  },
+  "residuals": {
+    "branco_nulo": 0.219
+  },
+  "witness_ids": [
+    "w_atlasintel_2026-06-30_blog_2t"
+  ],
+  "notes": "Verified from Blog Radar de Notícias 2º article (press primary with full residuals). Atlas combined residual Branco/nulo/indecisos→branco_nulo (ns not split). Michelle×Lula and Jair×Lula permanently/out of scope. N/TSE/moe from sibling 1º BR-04582/2026. Scenario stimulated_2nd_round_lula_vs_renan_santos."
+}

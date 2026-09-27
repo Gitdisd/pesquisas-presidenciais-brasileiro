@@ -1,0 +1,25 @@
+{
+  "poll_id": "atlasintel_2026-08-30_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-08-25",
+  "fieldwork_end": "2026-08-30",
+  "fieldwork_mid": "2026-08-27",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 5014,
+  "moe": 0.01,
+  "tse_registration_id": "BR-07972/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "results": {
+    "lula": 0.475,
+    "renan_santos": 0.26
+  },
+  "residuals": {
+    "branco_nulo": 0.266
+  },
+  "witness_ids": [
+    "w_atlasintel_2026-08-30_tmc_2t"
+  ],
+  "notes": "Verified from TMC 2º article (press primary). Atlas combined Brancos/nulos/indecisos→branco_nulo. Cury matchup not listed in primary (5 sims may include Michelle — skipped). N/TSE/moe from sibling 1º BR-07972/2026. Scenario stimulated_2nd_round_lula_vs_renan_santos."
+}

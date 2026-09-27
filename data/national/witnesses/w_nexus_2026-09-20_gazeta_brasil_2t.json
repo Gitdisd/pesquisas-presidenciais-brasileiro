@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_nexus_2026-09-20_gazeta_brasil_2t",
+  "poll_id": "nexus_2026-09-20_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "source_type": "press",
+  "source_url": "https://gazetabrasil.com.br/brasil/2026/09/21/confira-os-numeros-da-nova-pesquisa-btg-nexus-para-presidente-desta-segunda-feira-21/",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:127b38e82c0402a7791dbd63cd68084c86f3820a0cd74bc652be68d9bc6ac84d",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-09-18..2026-09-20",
+    "n": 2006,
+    "moe_pp": 2,
+    "tse": "BR-00485/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "note": "Flávio×Lula already entered via Correio in 2T-004; this witness covers mop-up four + corroborates Flávio 46–45"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-00485/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Full 5-matchup residual table; mop-up adds 4 scenarios to existing Sep 20 Nexus wave."
+}

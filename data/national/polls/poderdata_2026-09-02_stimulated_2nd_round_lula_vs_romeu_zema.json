@@ -1,0 +1,26 @@
+{
+  "poll_id": "poderdata_2026-09-02_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-08-30",
+  "fieldwork_end": "2026-09-02",
+  "fieldwork_mid": "2026-08-31",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 3000,
+  "moe": 0.018,
+  "tse_registration_id": "BR-07561/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "results": {
+    "lula": 0.44,
+    "romeu_zema": 0.42
+  },
+  "residuals": {
+    "branco_nulo": 0.12,
+    "ns_nr": 0.02
+  },
+  "witness_ids": [
+    "w_poderdata_2026-09-02_cnn_2t"
+  ],
+  "notes": "Verified from CNN Brasil 2º article (press primary); Poder360 PDF Relatorio-PoderData-Eleitoral-2set26 corroborates. Branco/Nulo→branco_nulo; Não sabe→ns_nr. N/TSE/moe from sibling 1º BR-07561/2026. Scenario stimulated_2nd_round_lula_vs_romeu_zema."
+}

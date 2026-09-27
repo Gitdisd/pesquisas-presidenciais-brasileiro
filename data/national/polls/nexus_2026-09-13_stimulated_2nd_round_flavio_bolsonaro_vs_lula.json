@@ -1,0 +1,26 @@
+{
+  "poll_id": "nexus_2026-09-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-09-11",
+  "fieldwork_end": "2026-09-13",
+  "fieldwork_mid": "2026-09-12",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2003,
+  "moe": 0.02,
+  "tse_registration_id": "BR-04076/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.46,
+    "lula": 0.47
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.01
+  },
+  "witness_ids": [
+    "w_nexus_2026-09-13_estadao_2t"
+  ],
+  "notes": "Verified from Estadão 2º article (press primary). Branco/nulo/nenhum→branco_nulo; NS/NR→ns_nr when split. For Zema/Renan Estadão lumps only 'branco, nulo ou nenhum' (no ns line) — mapped to branco_nulo; row sum left as-found (0.98/0.99). No sibling 1º for BR-04076/2026 yet. N/moe/TSE from article. Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula."
+}

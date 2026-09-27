@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_nexus_2026-09-13_estadao_2t",
+  "poll_id": "nexus_2026-09-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.estadao.com.br/politica/eleicoes/btgnexus-em-cenario-de-2-turno-lula-tem-47-das-intencoes-de-voto-contra-46-de-flavio-bolsonaro/",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:55e0f331f48775cd9a73835601c06e7774311cc7eeb8e718d0553a56b961a340",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-09-11..2026-09-13",
+    "n": 2003,
+    "moe_pp": 2,
+    "tse": "BR-04076/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-04076/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Five 2º matchups; Zema/Renan residual stated as branco/nulo/nenhum only (no ns). New wave BR-04076 without prior 1º in tree."
+}

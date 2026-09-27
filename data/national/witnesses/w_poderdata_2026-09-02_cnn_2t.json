@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_poderdata_2026-09-02_cnn_2t",
+  "poll_id": "poderdata_2026-09-02_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-45-contra-44-de-lula-no-2o-turno/",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:3dc6cd1e28057d1902f3765ac00487bc92cba4b12f77a0735593deb7fc3d592d",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-08-30..2026-09-02",
+    "n": 3000,
+    "moe_pp": 1.8,
+    "tse": "BR-07561/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "pdf_corroboration": "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-2set26.pdf"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-07561/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). CNN prose lists 4 2º matchups with split residuals; PDF time-series rightmost column matches."
+}

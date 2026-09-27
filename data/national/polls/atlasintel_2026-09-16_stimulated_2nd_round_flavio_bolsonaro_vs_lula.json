@@ -1,0 +1,25 @@
+{
+  "poll_id": "atlasintel_2026-09-16_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-11",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-13",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 5018,
+  "moe": 0.01,
+  "tse_registration_id": "BR-06221/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.472,
+    "lula": 0.468
+  },
+  "residuals": {
+    "branco_nulo": 0.06
+  },
+  "witness_ids": [
+    "w_atlasintel_2026-09-16_cef_2t"
+  ],
+  "notes": "Verified from Congresso em Foco (press primary). Only Flávio×Lula publishes residual (6% combined→branco_nulo). Other matchups listed without residuals — not invented; held. N/TSE/moe from sibling 1º BR-06221/2026."
+}

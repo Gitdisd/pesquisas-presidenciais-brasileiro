@@ -1,0 +1,23 @@
+{
+  "witness_id": "w_atlasintel_2026-07-27_180graus_2t",
+  "poll_id": "atlasintel_2026-07-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://180graus.com/analise-politica/atlasintel-lula-tem-492-contra-429-de-flavio-bolsonaro-no-2o-turno/",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:f045b10b0c9ff7d07f6055d687c402b39b8df52a63cdcf7658e80c231a991ef4",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-07-22..2026-07-27",
+    "n": 5021,
+    "moe_pp": 1,
+    "tse": "BR-08602/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "residual_convention": "branco_nulo_lumps_ns",
+    "corroboration": "https://www.congressoemfoco.com.br/noticia/120849/atlasintel-lula-abre-9-pontos-sobre-flavio-e-vence-todos-no-2-turno"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-08602/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). 180graus prose lists residuals for 4 in-scope matchups (sums 1.00); Michelle/Jair skipped. Congresso em Foco corroborates candidate % (residuals omitted there). Institute PDF chart-only for 2º cells."
+}

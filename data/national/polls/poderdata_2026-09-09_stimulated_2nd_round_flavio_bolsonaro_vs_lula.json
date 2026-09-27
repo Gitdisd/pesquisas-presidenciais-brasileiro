@@ -1,0 +1,26 @@
+{
+  "poll_id": "poderdata_2026-09-09_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-09-06",
+  "fieldwork_end": "2026-09-09",
+  "fieldwork_mid": "2026-09-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 3000,
+  "moe": 0.018,
+  "tse_registration_id": "BR-04914/2026",
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.47,
+    "lula": 0.45
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.02
+  },
+  "witness_ids": [
+    "w_poderdata_2026-09-09_pdf_2t"
+  ],
+  "notes": "Verified from PoderData institute PDF Relatorio-PoderData-Eleitoral-9set26-1.pdf (primary). Poder360 article corroborates candidate % (residuals incomplete in HTML). Branco/Nulo→branco_nulo; Não sabe→ns_nr. N/TSE/moe from sibling 1º BR-04914/2026. Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula."
+}

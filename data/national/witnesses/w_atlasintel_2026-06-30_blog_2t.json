@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_atlasintel_2026-06-30_blog_2t",
+  "poll_id": "atlasintel_2026-06-30_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://blogradardenoticias.com.br/pesquisa-atlas-bloomberg-divulga-mais-uma-pesquisa-e-diz-que-lula-tem-488-dos-votos-no-2o-turno-flavio-423/",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:05711e96d0f4bb4386557f9cd253682754ee9a766a5fbeb729fae42acabdddcf",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-06-26..2026-06-30",
+    "n": 4999,
+    "moe_pp": 1,
+    "tse": "BR-04582/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "residual_convention": "branco_nulo_lumps_ns"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-04582/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Prose lists 4 in-scope 2º matchups with combined residual; Michelle/Jair skipped. Candidate % sum+residual=1.00."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-03-05_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-03-03",
+  "fieldwork_end": "2026-03-05",
+  "fieldwork_mid": "2026-03-04",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2004,
+  "moe": 0.02,
+  "tse_registration_id": null,
+  "dataset_version": "intake-cohort-2t-005",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.43,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.1,
+    "ns_nr": 0.01
+  },
+  "witness_ids": [
+    "w_datafolha_2026-03-05_g1_2t"
+  ],
+  "notes": "Verified from G1 2º-turno article (press primary). Shares as fractions. Branco/nulo/nenhum→branco_nulo; Não sabem→ns_nr. Sibling 1º already ingested; TSE null as sibling (not invented). Michelle/Tarcísio/Ratinho/Leite/Haddad matchups out of scope or no alias. Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula."
+}

@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_atlasintel_2026-09-16_cef_2t",
+  "poll_id": "atlasintel_2026-09-16_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.congressoemfoco.com.br/noticia/122343/atlas-bloomberg-flavio-tem-47-2-e-lula-46-8-no-2-turno",
+  "retrieved_at": "2026-09-27T02:40:00Z",
+  "content_hash": "sha256:a712143a7461876b07babfc3e0154a2149f65530b18f77d0e002eb1733904a79",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_005_v1",
+  "extractions": {
+    "fieldwork": "2026-09-11..2026-09-16",
+    "n": 5018,
+    "moe_pp": 1,
+    "tse": "BR-06221/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "residual_convention": "branco_nulo_lumps_ns",
+    "held_matchups": [
+      "zema",
+      "caiado",
+      "cury",
+      "renan"
+    ]
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-06221/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Flávio×Lula residual explicit 6%; other four candidate % without residuals — held (no invent)."
+}
