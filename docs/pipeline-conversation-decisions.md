@@ -11,3 +11,5 @@
 - **Chart meaning:** Regional Chart #2 means the national-versus-state view, not 1º-round-versus-2º-round.
 - **Integrity:** Anti-replication checks and cross-referencing are required before intake/export; same-wave national and regional records must remain distinguishable and traceable to witnesses.
 - **Pause order:** The user pause takes precedence: documentation/status logs only, then idle—no product work, merges, acquisition expansion, or dual-enter activity.
+
+**RAW dump:** [`pipeline-conversation-transcript.md`](pipeline-conversation-transcript.md) (indexed from [`conversation-transcript.md`](conversation-transcript.md)).
