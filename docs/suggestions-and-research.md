@@ -96,7 +96,47 @@ PEBR is tracking the 2026 presidential cycle on a static GitHub Pages site: veri
 
 ---
 
-## Pointers
+## 3. Expert R&D — advanced methods & toggleable models (2026-09-27)
+
+**Status:** Documentation only (product still paused). **No product code. No invented shares.**  
+**Full-depth memo:** [`docs/advanced-polling-rnd.md`](advanced-polling-rnd.md)  
+**Companion findings (#1–21):** [`docs/suggestions-research-findings.md`](suggestions-research-findings.md)
+
+This section is the Lead-facing summary of a deeper R&D pass: Brazilian two-round / TSE / house-effect context; classical aggregation math (√N, recency kernels, anti-flood, house effects, Kalman/state-space, GP/LOESS, bootstrap vs “CI”); projection features PEBR must **not** claim as truth; and a **Modelo toggle catalog** compatible with locked stack (Ruby→Python Option B→static HTML/CSS+vanilla JS+D3; no TS/SPA; no brush/scoreboard; Chart #2 = UF geo; Michelle out; Playwright out).
+
+### Executive takeaways (compressed)
+
+1. Keep **`option_b_sqrt_n_trailing`** as the honest default forever unless the user explicitly asks otherwise — √N, ~14d, anti-flood, mid-campo, raw points, **no silent house effects**.
+2. Separate three uncertainties in product copy: **today’s intention** vs **election-day path** vs **urn outcome**. PEBR ribbons answer a descriptive “today/dispersion” only — never casual “IC” / win-prob labels ([Depois das 17 taxonomy](https://depoisdas17.com.br/2022/metodologia/)).
+3. BR specifics dominate: 1º≠2º matchups; estimulada≠espontânea; quota designs → declared MOE understates design-based SE; TSE ids are provenance not shares; UF ≠ Brasil.
+4. **Modelo UX:** extend existing exclusive-chip / radiogroup pattern — switch one precomputed model at a time; do not rainbow multi-model overlays; prefer Python-exported sibling JSON over browser MCMC.
+5. Safe Wave A toggles: TSE-only filter, MOE whiskers, ribbon on/off, fieldwork-end dating, sensitivity docs for half-life / n_cap. Risky / late / OFF: house-effect overlay, runoff Monte Carlo, state-space, fundamentals hybrid. **Out:** MRP without microdata, synthetic UF borrowing, leaked/proprietary scripts.
+6. Open anchors to study (not ship as default): [538/ABC averages](https://abcnews.com/538/polling-averages-work/story?id=109364028), [Economist model high-level](https://www.economist.com/interactive/us-2024-election/prediction-model/president/how-this-works), [`agregR`](https://rnmag.github.io/agregR/), Depois das 17, Poder360 MA, Estadão 2022 mode-split, TSE Res. 23.747/2026, Folha 2026 method roundup.
+
+### Toggle catalog (short)
+
+| Chip / model id | Default | Effort | Risk | Notes |
+|-----------------|---------|--------|------|-------|
+| `option_b` (√N, 14d, anti-flood) | **ON** | done | Low | Production |
+| `weight_n` / `n_cap_*` / `half_life_*` / `anti_flood_off` | OFF | S–M | Med | Sensitivity / expert compare |
+| `tse_only` / `date_fieldwork_end` / `moe_whiskers` / `ribbon_off` | OFF→A | S | Low | Filters / display |
+| `house_overlay` | OFF | M–L | High | Never silent; relative ≠ urn |
+| `undecided_renorm` / `mode_split` / `espontanea_lane` | OFF | M | Med–High | Needs schema + primaries |
+| `bootstrap_bands` | OFF | M | Med | Label ≠ CI |
+| `runoff_mc` / `state_space` | OFF | L | Very high | Experimental disclaimer only |
+| `fundamentals_hybrid` / `mrp` / `regional_shrink` | OUT / OFF | L+ | Extreme | Docs caution; not v1 product |
+
+Full math cookbook, data-prerequisites matrix, projection “do not claim” table, bibliography URLs, and lock-violation list live in [`advanced-polling-rnd.md`](advanced-polling-rnd.md).
+
+### What this does *not* authorize
+
+Unpausing product work; changing Option B defaults; committing WIP regional chart code; fetching Pastebin/leaked pollster code; inventing shares; adding brush/scoreboard/TS/SPA/Playwright/Michelle.
+
+---
+
+## Pointers (updated)
 
 - Cold pickup: [`docs/AI-HANDOFF.md`](AI-HANDOFF.md)
 - Status logs: [`docs/lead-status-log.md`](lead-status-log.md), [`docs/pipeline-status-log.md`](pipeline-status-log.md)
+- Advanced R&D (this cycle): [`docs/advanced-polling-rnd.md`](advanced-polling-rnd.md)
+- Suggestions research #1–21: [`docs/suggestions-research-findings.md`](suggestions-research-findings.md)

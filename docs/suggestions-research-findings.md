@@ -384,3 +384,42 @@ Do **not**:
 
 - This file is **documentation only**.  
 - Working tree may still contain **uncommitted** Option B regional WIP (`models/pebr_models/*`, `site/data/chart-regional.json`) — out of scope for this research commit; verify on resume before any product commit.
+
+
+---
+
+## Appendix A — Expert R&D deep dive (2026-09-27)
+
+**Lane:** Research / docs only. Expands far beyond suggestion briefs #1–21 into advanced aggregation math, projection features, and toggleable Modelo design under PEBR locks.
+
+**Canonical full memo:** [`advanced-polling-rnd.md`](advanced-polling-rnd.md)  
+**Lead summary also appended in:** [`suggestions-and-research.md`](suggestions-and-research.md) §3
+
+### Why this appendix exists
+
+The #1–21 briefs correctly prioritize Chart #2, Option B stress tests, and CI contracts. Expert users will eventually ask for “538-like” or “Depois das 17-like” controls. This appendix records **what is scientifically real**, **what PEBR can expose as exclusive Modelo chips**, and **what must stay out** — without writing product code or inventing shares.
+
+### Condensed map → full memo sections
+
+| Topic | Where in `advanced-polling-rnd.md` | Tie to #1–21 |
+|-------|-------------------------------------|--------------|
+| BR two-round, estimulada, TSE 23.747/2026, design effect, house effects, aggregator peers | §2 | Background + #8 #10 #11 #12 #13 |
+| √N/N, kernels, anti-flood, house δ, undecided, herding, Kalman/SSM, GP/LOESS, band semantics | §3 Math cookbook | #6 #7 #8 #10 |
+| Toggle catalog (defaults, effort, risk, lock OK) | §4 | #7 #8 #11 #12 |
+| Projection features + “do not claim” | §5 | honesty theme |
+| Data prerequisites matrix | §6 | #12 #18 #19 |
+| Modelo UX radio-chip extension | §7 | conversation-decisions Modelo collapse |
+| Bibliography (538, Economist, agregR, TSE, IBGE, Gelman/MRP, Abramowitz caution) | §8 | citations |
+| Out of scope / unethical / lock violations | §9 | explicit violations list |
+| Follow-on docs/fixtures tasks | §10 | #7 #8 unpause waves |
+
+### Expert recommendations that affect priority (still paused)
+
+1. **Do not** bump Wave-4 house-effect *product* ahead of Wave-1 (#4/#7/#14). Keep house effects as **docs + optional overlay research**.  
+2. After #7 sensitivity memo exists, Wave A Modelo chips (TSE-only, MOE whiskers, ribbon toggle, dating) are the only low-risk UI extensions.  
+3. Treat [`agregR`](https://rnmag.github.io/agregR/) / Depois das 17 as **reference implementations to study**, not as a stack change (CmdStan ≠ Ruby→Python→static D3).  
+4. MRP / fundamentals hybrid / regional shrinkage remain **documented refusals** for v1.
+
+### Source hygiene reminder
+
+All citations in the full memo are public academic papers, official TSE pages, reputable news/method explainers, 538/ABC methodology pages, or clearly licensed open-source projects. **No** Pastebin dumps, leaked proprietary scripts, or cracked paywalled models.

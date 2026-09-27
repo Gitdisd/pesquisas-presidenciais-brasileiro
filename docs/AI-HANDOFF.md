@@ -9,6 +9,16 @@ This file is the **single cold-start brief** for another AI (or human) picking u
 
 For the durable user prompts and the explanations behind the product locks, read [`conversation-decisions.md`](conversation-decisions.md) (curated decisions) and the RAW-style dumps indexed in [`conversation-transcript.md`](conversation-transcript.md) ([`lead-conversation-transcript.md`](lead-conversation-transcript.md), [`pipeline-conversation-transcript.md`](pipeline-conversation-transcript.md)). See [`conversation-transcript-README.md`](conversation-transcript-README.md).
 
+### Expert R&D (docs, 2026-09-27)
+
+Deep advanced-polling / toggleable-Modelo research (no product code):
+
+- [`docs/advanced-polling-rnd.md`](advanced-polling-rnd.md) — full math cookbook, toggle catalog, projection “do not claim”, bibliography
+- Summary: [`docs/suggestions-and-research.md`](suggestions-and-research.md) §3
+- Appendix pointer: [`docs/suggestions-research-findings.md`](suggestions-research-findings.md) Appendix A
+
+
+
 ---
 
 ## 0) Mission (one paragraph)
