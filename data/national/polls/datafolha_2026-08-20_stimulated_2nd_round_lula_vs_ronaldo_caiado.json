@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-08-20_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-08-18",
+  "fieldwork_end": "2026-08-20",
+  "fieldwork_mid": "2026-08-19",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "sample_size": 2058,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.47,
+    "ronaldo_caiado": 0.4
+  },
+  "residuals": {
+    "branco_nulo": 0.11,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-04496/2026",
+  "witness_ids": [
+    "w_datafolha_2026-08-20_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_lula_vs_ronaldo_caiado. Shares as fractions from content-unordered-list. Residuals: branco/nulo(/nenhum)→branco_nulo; Indecisos/Não sabe→ns_nr. Printed sum may be 0.99–1.01 — left as-found."
+}

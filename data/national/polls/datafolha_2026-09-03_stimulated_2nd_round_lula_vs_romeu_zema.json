@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-09-03_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-01",
+  "fieldwork_end": "2026-09-03",
+  "fieldwork_mid": "2026-09-02",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "sample_size": 2002,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.48,
+    "romeu_zema": 0.39
+  },
+  "residuals": {
+    "branco_nulo": 0.12,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-03669/2026",
+  "witness_ids": [
+    "w_datafolha_2026-09-03_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_lula_vs_romeu_zema. Shares as fractions from content-unordered-list. Residuals: branco/nulo(/nenhum)→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found. 2º article text says fieldwork 1º–2 Sep; sibling 1º G1 (same TSE) says 1º–3 Sep — using sibling 1º dates for wave identity."
+}

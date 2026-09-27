@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-09-16_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-15",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-15",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 2002,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.46,
+    "flavio_bolsonaro": 0.44
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.01
+  },
+  "tse_registration_id": "BR-04029/2026",
+  "witness_ids": [
+    "w_datafolha_2026-09-16_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula. Shares as fractions from content-unordered-list. Residuals: branco/nulo(/nenhum)→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found."
+}

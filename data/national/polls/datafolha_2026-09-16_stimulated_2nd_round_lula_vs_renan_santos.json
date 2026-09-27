@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-09-16_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-15",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-15",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "sample_size": 2002,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.47,
+    "renan_santos": 0.38
+  },
+  "residuals": {
+    "branco_nulo": 0.13,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-04029/2026",
+  "witness_ids": [
+    "w_datafolha_2026-09-16_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_lula_vs_renan_santos. Shares as fractions from content-unordered-list. Residuals: branco/nulo(/nenhum)→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found."
+}

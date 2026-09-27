@@ -1,0 +1,26 @@
+{
+  "poll_id": "quaest_2026-09-01_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-08-30",
+  "fieldwork_end": "2026-09-01",
+  "fieldwork_mid": "2026-08-31",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.42,
+    "ronaldo_caiado": 0.37
+  },
+  "residuals": {
+    "branco_nulo": 0.17,
+    "ns_nr": 0.04
+  },
+  "tse_registration_id": "BR-07065/2026",
+  "witness_ids": [
+    "w_quaest_2026-09-01_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_lula_vs_ronaldo_caiado. Shares as fractions from content-unordered-list (or prose table for headline matchup). Residuals: Branco/nulo/não vai votar→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found."
+}

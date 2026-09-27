@@ -1,0 +1,26 @@
+{
+  "poll_id": "quaest_2026-09-13_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-09-10",
+  "fieldwork_end": "2026-09-13",
+  "fieldwork_mid": "2026-09-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.45,
+    "romeu_zema": 0.33
+  },
+  "residuals": {
+    "branco_nulo": 0.18,
+    "ns_nr": 0.04
+  },
+  "tse_registration_id": "BR-03607/2026",
+  "witness_ids": [
+    "w_quaest_2026-09-13_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-002",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_lula_vs_romeu_zema. Shares as fractions from content-unordered-list (or prose table for headline matchup). Residuals: Branco/nulo/não vai votar→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found. Headline Flávio×Lula numbers from article prose (not unordered-list); other four matchups from content-unordered-list."
+}
