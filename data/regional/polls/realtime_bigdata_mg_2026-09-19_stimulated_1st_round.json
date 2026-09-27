@@ -1,0 +1,32 @@
+{
+  "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-09-16",
+  "fieldwork_end": "2026-09-19",
+  "fieldwork_mid": "2026-09-17",
+  "geography": "state",
+  "uf": "MG",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.35,
+    "augusto_cury": 0.08,
+    "romeu_zema": 0.07,
+    "renan_santos": 0.04,
+    "ronaldo_caiado": 0.02
+  },
+  "residuals": {
+    "outros": 0.01,
+    "branco_nulo": 0.02,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-01531/2026",
+  "witness_ids": [
+    "w_rtbd_mg_2026-09-19_cnn"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional MG. CNN labeled HTML (extractable). Outros=seven minor candidates 1%. PDF not on page — held, not invented. Never merge into national Option B."
+}

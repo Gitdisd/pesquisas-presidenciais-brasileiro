@@ -1,0 +1,27 @@
+{
+  "poll_id": "quaest_pe_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-09-04",
+  "fieldwork_end": "2026-09-07",
+  "fieldwork_mid": "2026-09-05",
+  "geography": "state",
+  "uf": "PE",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 1302,
+  "moe": 0.03,
+  "results": {
+    "lula": 0.57,
+    "flavio_bolsonaro": 0.26
+  },
+  "residuals": {
+    "branco_nulo": 0.11,
+    "ns_nr": 0.06
+  },
+  "tse_registration_id": "PE-00285/2026",
+  "witness_ids": [
+    "w_quaest_states_2026-09-07_g1_2t"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional PE Quaest 2º Lula×Flávio from g1 labeled HTML. N/moe/TSE from sibling 1º. Never merge into national Option B."
+}

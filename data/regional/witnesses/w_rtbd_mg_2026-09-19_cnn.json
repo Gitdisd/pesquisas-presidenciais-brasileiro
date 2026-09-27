@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_mg_2026-09-19_cnn",
+  "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-46-no-2o-turno-em-minas-lula-45/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:a61a49bc23888156433c1e95d85ffe74175ba5fd60fd3097711f9e655258be2b",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2,
+    "campo": "2026-09-16..2026-09-19",
+    "uf": "MG",
+    "tse": "BR-01531/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-01531/2026",
+  "notes": "CNN HTML labeled tables for MG presidential 1º+2º. No institute PDF embed on page (held for later PDF)."
+}

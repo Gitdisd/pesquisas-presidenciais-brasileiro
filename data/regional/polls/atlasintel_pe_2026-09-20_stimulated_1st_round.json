@@ -1,0 +1,36 @@
+{
+  "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-15",
+  "fieldwork_end": "2026-09-20",
+  "fieldwork_mid": "2026-09-17",
+  "geography": "state",
+  "uf": "PE",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1836,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.583,
+    "flavio_bolsonaro": 0.299,
+    "augusto_cury": 0.032,
+    "renan_santos": 0.026,
+    "ronaldo_caiado": 0.018,
+    "hertz_dias": 0.006,
+    "romeu_zema": 0.003,
+    "clariana_barao": 0.002,
+    "rui_costa_pimenta": 0.001,
+    "samara_martins": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.023,
+    "ns_nr": 0.007
+  },
+  "tse_registration_id": "BR-09256/2026",
+  "witness_ids": [
+    "w_atlasintel_pe_2026-09-20_cnn",
+    "w_atlasintel_pe_2026-09-20_pdf"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional PE. Dual-entered from CNN labeled HTML (extractable). PDF primary for methodology; share charts image-heavy. Wilson Grassi/Edmilson Costa 0% not entered. Never merge into national Option B."
+}

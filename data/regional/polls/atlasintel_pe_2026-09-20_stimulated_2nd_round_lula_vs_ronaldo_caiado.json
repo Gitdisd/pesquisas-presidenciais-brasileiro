@@ -1,0 +1,26 @@
+{
+  "poll_id": "atlasintel_pe_2026-09-20_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-15",
+  "fieldwork_end": "2026-09-20",
+  "fieldwork_mid": "2026-09-17",
+  "geography": "state",
+  "uf": "PE",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "sample_size": 1836,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.596,
+    "ronaldo_caiado": 0.29
+  },
+  "residuals": {
+    "branco_nulo": 0.114
+  },
+  "tse_registration_id": "BR-09256/2026",
+  "witness_ids": [
+    "w_atlasintel_pe_2026-09-20_cnn"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional PE 2º. CNN labeled HTML. Atlas combined Branco/nulo/não respondeu→branco_nulo. N/TSE/moe from sibling 1º. Never merge into national Option B."
+}

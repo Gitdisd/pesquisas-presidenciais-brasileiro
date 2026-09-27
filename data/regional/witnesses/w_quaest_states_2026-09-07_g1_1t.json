@@ -1,0 +1,23 @@
+{
+  "witness_id": "w_quaest_states_2026-09-07_g1_1t",
+  "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:900c160ef53b0d7a00626657894da8933678371f6fbc27d4e6013f0bef5ac3e3",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "campo": "2026-09-04..2026-09-07",
+    "ufs": [
+      "SP",
+      "MG",
+      "DF",
+      "PE",
+      "RJ"
+    ]
+  },
+  "confidence": 0.92,
+  "tse_registration_id": null,
+  "notes": "g1 multi-UF 1º article. Dual-enter SP/MG/DF/PE only (prefer list). RJ held this pass. Shares from labeled HTML lists, not Arte images."
+}

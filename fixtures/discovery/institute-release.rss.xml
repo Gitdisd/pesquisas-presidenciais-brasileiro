@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Institute release feed (fixture)</title>
+    <item>
+      <title>Meio/Ideia Setembro 2026 — pesquisa presidente</title>
+      <link>https://www.canalmeio.com.br/pesquisa-ideia-setembro-2026-fixture/</link>
+      <description>National presidential release. Full report: &lt;a href="https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro.pdf"&gt;PDF&lt;/a&gt;.</description>
+      <enclosure url="https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro.pdf" type="application/pdf" length="12345"/>
+      <pubDate>Fri, 26 Sep 2026 12:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>Noise sports item</title>
+      <link>https://www.canalmeio.com.br/esportes-fixture/</link>
+      <description>No poll here.</description>
+    </item>
+  </channel>
+</rss>

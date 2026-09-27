@@ -1,0 +1,37 @@
+{
+  "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+  "institute_id": "instituto_ver",
+  "fieldwork_start": "2026-09-17",
+  "fieldwork_end": "2026-09-19",
+  "fieldwork_mid": "2026-09-18",
+  "geography": "state",
+  "uf": "MG",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1197,
+  "moe": 0.028,
+  "results": {
+    "flavio_bolsonaro": 0.346,
+    "lula": 0.346,
+    "augusto_cury": 0.067,
+    "romeu_zema": 0.046,
+    "ronaldo_caiado": 0.034,
+    "renan_santos": 0.007,
+    "edmilson_costa": 0.004,
+    "samara_martins": 0.003,
+    "wilson_grassi": 0.002,
+    "hertz_dias": 0.001,
+    "rui_costa_pimenta": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.061,
+    "ns_nr": 0.081
+  },
+  "tse_registration_id": "MG-07337/2026",
+  "witness_ids": [
+    "w_instituto_ver_mg_2026-09-19_pdf",
+    "w_instituto_ver_mg_2026-09-19_cnn_1t"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional MG. Instituto Ver (Itatiaia commission). Dual-entered from PDF text \"Voto Estimulado – Presidente(a) 1\". Not Veritá. Never merge into national Option B."
+}

@@ -1,0 +1,28 @@
+{
+  "poll_id": "instituto_ver_mg_2026-09-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "instituto_ver",
+  "fieldwork_start": "2026-09-17",
+  "fieldwork_end": "2026-09-19",
+  "fieldwork_mid": "2026-09-18",
+  "geography": "state",
+  "uf": "MG",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 1197,
+  "moe": 0.028,
+  "results": {
+    "flavio_bolsonaro": 0.458,
+    "lula": 0.41
+  },
+  "residuals": {
+    "branco_nulo": 0.096,
+    "ns_nr": 0.036
+  },
+  "tse_registration_id": "MG-07337/2026",
+  "witness_ids": [
+    "w_instituto_ver_mg_2026-09-19_pdf",
+    "w_instituto_ver_mg_2026-09-19_cnn_2t"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional MG 2º from PDF Cenário 2. Never merge into national Option B."
+}

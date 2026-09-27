@@ -341,4 +341,22 @@ class WatchTest < Minitest::Test
     refute_match(/"pct"\s*:/, blob)
     refute_match(/"percent"\s*:/, blob)
   end
+  def test_rss_enclosure_resolves_pdf_sibling
+    xml = File.read(File.join(ROOT, "fixtures/discovery/institute-release.rss.xml"))
+    items = Pebr::Watch.extract_rss_items(xml)
+    urls = items.map { |i| i[:url] }
+    assert urls.any? { |u| u.include?("pesquisa-ideia-setembro-2026-fixture") }, urls.inspect
+    pdfs = urls.select { |u| u.end_with?(".pdf") }
+    assert_equal 1, pdfs.uniq.size, pdfs.inspect
+    assert_includes pdfs.first, "Pesquisa-Meio_Ideia-Setembro.pdf"
+  end
+
+  def test_watch_offline_queues_enclosure_pdf_with_primary_hint
+    result = run_watch
+    pdf_item = result[:doc]["items"].find { |i| i["url"].to_s.include?("Pesquisa-Meio_Ideia-Setembro.pdf") }
+    assert pdf_item, "expected enclosure PDF queued from institute-rss-enclosure-pdf fixture"
+    assert_includes pdf_item["score_reasons"], "primary-pdf-hint"
+    assert_equal "institute-rss-enclosure-pdf", pdf_item["target_id"]
+  end
+
 end

@@ -388,6 +388,18 @@ targets:
     notes: "Direct institute PDF (200). Human dual-enter only; watcher queues URL/hash metadata, never extracts shares."
     fixture: fixtures/discovery/gazeta-pesquisas-listing.html
 
+  # Cheap acquisition harden (2026-09-27): RSS enclosure / description PDF link resolution
+  - id: institute-rss-enclosure-pdf
+    source_id: ideia
+    label: "Institute RSS — enclosure→PDF resolution (fixture)"
+    kind: rss
+    url: "https://www.canalmeio.com.br/feed-fixture-pebr/"
+    fetch: false
+    national_hint: true
+    archive_fallback: true
+    fixture: fixtures/discovery/institute-release.rss.xml
+    notes: "Offline fixture proving enclosure + description PDF URLs queue as primary-pdf-hint siblings. No share extraction."
+
   - id: palver-survey-index
     source_id: palver-research-github
     label: "Palver — public survey index"

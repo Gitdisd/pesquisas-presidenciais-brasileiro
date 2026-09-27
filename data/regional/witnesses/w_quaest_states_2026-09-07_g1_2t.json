@@ -1,0 +1,23 @@
+{
+  "witness_id": "w_quaest_states_2026-09-07_g1_2t",
+  "poll_id": "quaest_sp_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/08/quaest-presidente-segundo-turno-estados.ghtml",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:69675258e102cf7d4dc5aa4e8e5f13504b490cc9024917c34084fd6297bc1e54",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "campo": "2026-09-04..2026-09-07",
+    "ufs": [
+      "SP",
+      "MG",
+      "DF",
+      "PE",
+      "RJ"
+    ]
+  },
+  "confidence": 0.92,
+  "tse_registration_id": null,
+  "notes": "g1 multi-UF 2º Lula×Flávio. Dual-enter SP/MG/DF/PE; RJ held."
+}

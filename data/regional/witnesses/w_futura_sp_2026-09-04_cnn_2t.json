@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_sp_2026-09-04_cnn_2t",
+  "poll_id": "futura_sp_2026-09-04_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/futura-em-sp-flavio-tem-494-no-2o-turno-lula-403/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:333d80c9696e05d9cbdc2c38180bbd5cf74a699821002c4f564e1a25191d95a4",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1600,
+    "moe_pp": 2.4,
+    "campo": "2026-09-02..2026-09-04",
+    "uf": "SP",
+    "tse": "BR-06720/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-06720/2026",
+  "notes": "CNN 2º corroboration."
+}

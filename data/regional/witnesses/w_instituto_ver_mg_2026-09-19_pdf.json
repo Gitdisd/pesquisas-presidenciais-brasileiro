@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_instituto_ver_mg_2026-09-19_pdf",
+  "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/MG_set_26_itatiaia.pdf",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:45dec391ffba2ed76eb18bb66a15c0d6aa1d36bdf7b522f6aee29674ac01c290",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1197,
+    "moe_pp": 2.8,
+    "campo": "2026-09-17..2026-09-19",
+    "uf": "MG",
+    "tse": "MG-07337/2026"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "MG-07337/2026",
+  "notes": "Itatiaia-commissioned Instituto Ver PDF (CNN CDN). Text-extractable stimulated presidente tables."
+}

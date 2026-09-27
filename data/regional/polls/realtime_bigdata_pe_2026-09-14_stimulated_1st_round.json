@@ -1,0 +1,33 @@
+{
+  "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-09-10",
+  "fieldwork_end": "2026-09-14",
+  "fieldwork_mid": "2026-09-12",
+  "geography": "state",
+  "uf": "PE",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1600,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.56,
+    "flavio_bolsonaro": 0.25,
+    "augusto_cury": 0.05,
+    "renan_santos": 0.04,
+    "pablo_marcal": 0.02,
+    "ronaldo_caiado": 0.02,
+    "romeu_zema": 0.01
+  },
+  "residuals": {
+    "outros": 0.01,
+    "branco_nulo": 0.02,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-00283/2026",
+  "witness_ids": [
+    "w_rtbd_pe_2026-09-14_tmc"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional PE. TMC labeled HTML. Outros=six minor candidates 1% combined as published. Never merge into national Option B."
+}

@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_instituto_ver_mg_2026-09-19_cnn_1t",
+  "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/itatiaia-ver-lula-e-flavio-empatam-com-346-no-1o-turno-em-minas/",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:75476880073367c7d82283d6997561fac05da1ad7cc0cf1d5f70b6530d19fa98",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 1197,
+    "moe_pp": 2.8,
+    "campo": "2026-09-17..2026-09-19",
+    "uf": "MG",
+    "tse": "MG-07337/2026"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "MG-07337/2026",
+  "notes": "CNN 1º article corroboration. Fieldwork mid from PDF (17–19), not subtitle 17–20."
+}

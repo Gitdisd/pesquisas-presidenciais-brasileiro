@@ -1,0 +1,39 @@
+{
+  "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-02",
+  "fieldwork_end": "2026-09-04",
+  "fieldwork_mid": "2026-09-03",
+  "geography": "state",
+  "uf": "SP",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1600,
+  "moe": 0.024,
+  "results": {
+    "flavio_bolsonaro": 0.374,
+    "lula": 0.333,
+    "augusto_cury": 0.068,
+    "ronaldo_caiado": 0.046,
+    "renan_santos": 0.042,
+    "romeu_zema": 0.019,
+    "pablo_marcal": 0.017,
+    "samara_martins": 0.005,
+    "wilson_grassi": 0.002,
+    "edmilson_costa": 0.001,
+    "clariana_barao": 0.001,
+    "hertz_dias": 0.001,
+    "rui_costa_pimenta": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.039,
+    "ns_nr": 0.051
+  },
+  "tse_registration_id": "BR-06720/2026",
+  "witness_ids": [
+    "w_futura_sp_2026-09-04_pdf",
+    "w_futura_sp_2026-09-04_cnn_1t"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional SP Futura/100% Cidades. Dual-entered from PDF Estimulada Cenário 1. Also registered SP-00152/2026 (provenance). Never merge into national Option B."
+}

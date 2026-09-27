@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_sp_2026-09-19_pdf",
+  "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/Sao-Paulo-BR-09702-2026-Set26-1-1.pdf",
+  "retrieved_at": "2026-09-27T05:12:00Z",
+  "content_hash": "sha256:2d219a1f6587008850d5969174ae7a3ebf92002590819ef87187cffbc831437b",
+  "raw_path": null,
+  "parser_id": "manual_intake_regional_001_v1",
+  "extractions": {
+    "n": 2000,
+    "moe_pp": 2.0,
+    "campo": "2026-09-16..2026-09-19",
+    "uf": "SP",
+    "tse": "BR-09702/2026"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-09702/2026",
+  "notes": "Institute PDF (CNN CDN). Text-extractable stimulated 1º CENÁRIO 01 + 2º tables."
+}

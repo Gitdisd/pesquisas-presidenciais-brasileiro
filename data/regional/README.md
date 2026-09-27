@@ -18,4 +18,8 @@ Parallel tree to [`data/national/`](../national/). **State presidential** fieldw
 5. Old-site `polls-regional.json` = **URL leads only** — never copy candidate `%`.
 6. Holds: Michelle out; Ipec national stimulated 1º hard-stop still applies to national tree; no inventing; no Playwright.
 
-Empty `polls/` / `witnesses/` until a human dual-enters an extractable primary.
+## Intake status (intake-regional-001)
+
+Prefer UF first-fill: **SP / MG / DF / PE**. Dual-entered only with extractable primary (HTML/PDF text tables). Image-only / missing PDF → hold.
+
+Assemble → `site/data/canonical-points-regional.json` (see count in that file / `bin/pebr assemble` output). National canonical stays untouched (117/203).

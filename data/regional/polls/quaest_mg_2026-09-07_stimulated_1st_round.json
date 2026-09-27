@@ -1,0 +1,31 @@
+{
+  "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-09-04",
+  "fieldwork_end": "2026-09-07",
+  "fieldwork_mid": "2026-09-05",
+  "geography": "state",
+  "uf": "MG",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1506,
+  "moe": 0.03,
+  "results": {
+    "lula": 0.31,
+    "flavio_bolsonaro": 0.27,
+    "augusto_cury": 0.08,
+    "romeu_zema": 0.06,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.02
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.15
+  },
+  "tse_registration_id": "MG-04716/2026",
+  "witness_ids": [
+    "w_quaest_states_2026-09-07_g1_1t"
+  ],
+  "dataset_version": "intake-regional-001",
+  "notes": "Regional MG Quaest (Globo). Dual-entered from g1 labeled HTML lists (not Arte images). DF also cites BR-04442/2026 — UF id preferred. PE g1 wording says \"todo o país\" under PE block (likely copy-paste); TSE PE-00285/2026 + UF section used. Never merge into national Option B."
+}

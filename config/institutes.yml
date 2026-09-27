@@ -88,6 +88,12 @@ institutes:
     aliases: ["Vox Brasil", "vox-brasil"]
     active: true
     notes: "Activated for intake-cohort-001 (verified national stimulated 1st-round polls)."
+
+  - institute_id: instituto_ver
+    display_name: "Instituto Ver"
+    aliases: ["Itatiaia/Ver", "Instituto Ver", "Ver (Itatiaia)"]
+    active: true
+    notes: "Activated for intake-regional-001 (Itatiaia-commissioned MG presidential; PDF dual-entered). Distinct from Instituto Veritá (verita)."
   - institute_id: verita
     display_name: "Instituto Veritá"
     aliases: ["Veritá", "Verita"]
