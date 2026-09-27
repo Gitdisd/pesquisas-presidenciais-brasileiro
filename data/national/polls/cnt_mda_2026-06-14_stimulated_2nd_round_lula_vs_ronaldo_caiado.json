@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-06-10",
+  "fieldwork_end": "2026-06-14",
+  "fieldwork_mid": "2026-06-12",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2002,
+  "moe": 0.022,
+  "tse_registration_id": "BR-04256/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "results": {
+    "lula": 0.484,
+    "ronaldo_caiado": 0.322
+  },
+  "residuals": {
+    "branco_nulo": 0.143,
+    "ns_nr": 0.051
+  },
+  "witness_ids": [
+    "w_cnt_mda_2026-06-14_pdf_2t"
+  ],
+  "notes": "Verified from CNT/MDA PDF labeled bars (Branco/Nulo→branco_nulo; Indeciso→ns_nr). Rodada 168."
+}

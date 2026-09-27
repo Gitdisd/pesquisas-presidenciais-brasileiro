@@ -1,0 +1,26 @@
+{
+  "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-08-27",
+  "fieldwork_end": "2026-08-31",
+  "fieldwork_mid": "2026-08-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.02,
+  "tse_registration_id": "BR-03490/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "results": {
+    "lula": 0.43,
+    "ronaldo_caiado": 0.45
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.04
+  },
+  "witness_ids": [
+    "w_rtbd_2026-08-31_pdf_2t"
+  ],
+  "notes": "Verified from RTBD institute PDF (Nulo/Branco→branco_nulo; Não sabe/Não respondeu→ns_nr). Sibling 1º BR-03490/2026."
+}

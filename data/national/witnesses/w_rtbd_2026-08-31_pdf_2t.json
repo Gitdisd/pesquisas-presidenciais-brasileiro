@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_rtbd_2026-08-31_pdf_2t",
+  "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/09/Pesquisa-presidencial-Brasil-Real-Time-Big-Data-1-set-2026.pdf",
+  "retrieved_at": "2026-09-27T02:49:45Z",
+  "content_hash": "sha256:fbead320462161bf74ef2eeef6b525771e75a2f88d3744139c77f60abc4796f1",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_007_v1",
+  "extractions": {
+    "fieldwork": "2026-08-27..2026-08-31",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-03490/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "skipped": "Pablo Marçal 2º (out of chart set)"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-03490/2026",
+  "notes": "Institute PDF on Poder360 CDN. Four stimulated 2º matchups with split Nulo/Branco + NS/NR. Sibling 1º already ingested. EM press corroborates."
+}

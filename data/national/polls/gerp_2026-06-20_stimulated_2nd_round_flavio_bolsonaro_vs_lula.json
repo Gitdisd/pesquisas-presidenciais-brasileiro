@@ -1,0 +1,26 @@
+{
+  "poll_id": "gerp_2026-06-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-06-15",
+  "fieldwork_end": "2026-06-20",
+  "fieldwork_mid": "2026-06-17",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.0219,
+  "tse_registration_id": "BR-09657/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.42,
+    "lula": 0.4
+  },
+  "residuals": {
+    "branco_nulo": 0.148,
+    "ns_nr": 0.035
+  },
+  "witness_ids": [
+    "w_gerp_2026-06-20_gazeta_2t"
+  ],
+  "notes": "Verified from Gazeta (Nenhum deles→branco_nulo; Não sabe/não respondeu→ns_nr). Sibling 1º BR-09657/2026."
+}

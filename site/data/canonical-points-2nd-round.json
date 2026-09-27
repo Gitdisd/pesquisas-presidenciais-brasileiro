@@ -115,6 +115,98 @@
     "source_path": "data/national/polls/datafolha_2026-04-09_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
+    "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-04-08",
+    "fieldwork_end": "2026-04-12",
+    "fieldwork_mid": "2026-04-10",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "flavio_bolsonaro": 0.402,
+      "lula": 0.449
+    },
+    "residuals": {
+      "branco_nulo": 0.113,
+      "ns_nr": 0.036
+    },
+    "tse_registration_id": "BR-02847/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-04-12_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-04-08",
+    "fieldwork_end": "2026-04-12",
+    "fieldwork_mid": "2026-04-10",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.45,
+      "renan_santos": 0.283
+    },
+    "residuals": {
+      "branco_nulo": 0.177,
+      "ns_nr": 0.09
+    },
+    "tse_registration_id": "BR-02847/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-04-08",
+    "fieldwork_end": "2026-04-12",
+    "fieldwork_mid": "2026-04-10",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.452,
+      "romeu_zema": 0.316
+    },
+    "residuals": {
+      "branco_nulo": 0.159,
+      "ns_nr": 0.073
+    },
+    "tse_registration_id": "BR-02847/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-04-08",
+    "fieldwork_end": "2026-04-12",
+    "fieldwork_mid": "2026-04-10",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.444,
+      "ronaldo_caiado": 0.327
+    },
+    "residuals": {
+      "branco_nulo": 0.152,
+      "ns_nr": 0.077
+    },
+    "tse_registration_id": "BR-02847/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
     "poll_id": "atlasintel_2026-04-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
     "institute_id": "atlasintel",
     "fieldwork_start": "2026-04-22",
@@ -505,6 +597,98 @@
     "source_path": "data/national/polls/quaest_2026-06-08_stimulated_2nd_round_lula_vs_romeu_zema.json"
   },
   {
+    "poll_id": "cnt_mda_2026-06-14_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-06-10",
+    "fieldwork_end": "2026-06-14",
+    "fieldwork_mid": "2026-06-12",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "flavio_bolsonaro": 0.368,
+      "lula": 0.493
+    },
+    "residuals": {
+      "branco_nulo": 0.112,
+      "ns_nr": 0.027
+    },
+    "tse_registration_id": "BR-04256/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-06-14_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-06-10",
+    "fieldwork_end": "2026-06-14",
+    "fieldwork_mid": "2026-06-12",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.493,
+      "renan_santos": 0.28
+    },
+    "residuals": {
+      "branco_nulo": 0.172,
+      "ns_nr": 0.056
+    },
+    "tse_registration_id": "BR-04256/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-06-10",
+    "fieldwork_end": "2026-06-14",
+    "fieldwork_mid": "2026-06-12",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.488,
+      "romeu_zema": 0.316
+    },
+    "residuals": {
+      "branco_nulo": 0.146,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-04256/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-06-10",
+    "fieldwork_end": "2026-06-14",
+    "fieldwork_mid": "2026-06-12",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.484,
+      "ronaldo_caiado": 0.322
+    },
+    "residuals": {
+      "branco_nulo": 0.143,
+      "ns_nr": 0.051
+    },
+    "tse_registration_id": "BR-04256/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-06-14_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
     "poll_id": "datafolha_2026-06-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
     "institute_id": "datafolha",
     "fieldwork_start": "2026-06-17",
@@ -572,6 +756,75 @@
     "tse_registration_id": "BR-09956/2026",
     "dataset_version": "intake-cohort-2t-003",
     "source_path": "data/national/polls/datafolha_2026-06-19_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
+    "poll_id": "gerp_2026-06-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-06-15",
+    "fieldwork_end": "2026-06-20",
+    "fieldwork_mid": "2026-06-17",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.0219,
+    "results": {
+      "flavio_bolsonaro": 0.42,
+      "lula": 0.4
+    },
+    "residuals": {
+      "branco_nulo": 0.148,
+      "ns_nr": 0.035
+    },
+    "tse_registration_id": "BR-09657/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-06-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "gerp_2026-06-20_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-06-15",
+    "fieldwork_end": "2026-06-20",
+    "fieldwork_mid": "2026-06-17",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2000,
+    "moe": 0.0219,
+    "results": {
+      "lula": 0.39,
+      "romeu_zema": 0.36
+    },
+    "residuals": {
+      "branco_nulo": 0.214,
+      "ns_nr": 0.043
+    },
+    "tse_registration_id": "BR-09657/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-06-20_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "gerp_2026-06-20_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-06-15",
+    "fieldwork_end": "2026-06-20",
+    "fieldwork_mid": "2026-06-17",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2000,
+    "moe": 0.0219,
+    "results": {
+      "lula": 0.39,
+      "ronaldo_caiado": 0.38
+    },
+    "residuals": {
+      "branco_nulo": 0.186,
+      "ns_nr": 0.045
+    },
+    "tse_registration_id": "BR-09657/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-06-20_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
     "poll_id": "poderdata_2026-06-24_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
@@ -752,6 +1005,98 @@
     "tse_registration_id": "BR-04582/2026",
     "dataset_version": "intake-cohort-2t-005",
     "source_path": "data/national/polls/atlasintel_2026-06-30_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
+    "poll_id": "gerp_2026-07-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-07-03",
+    "fieldwork_end": "2026-07-07",
+    "fieldwork_mid": "2026-07-05",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "flavio_bolsonaro": 0.45,
+      "lula": 0.42
+    },
+    "residuals": {
+      "branco_nulo": 0.09,
+      "ns_nr": 0.04
+    },
+    "tse_registration_id": "BR-03067/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-07-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "gerp_2026-07-07_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-07-03",
+    "fieldwork_end": "2026-07-07",
+    "fieldwork_mid": "2026-07-05",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.41,
+      "renan_santos": 0.3
+    },
+    "residuals": {
+      "branco_nulo": 0.24,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-03067/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-07-07_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "gerp_2026-07-07_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-07-03",
+    "fieldwork_end": "2026-07-07",
+    "fieldwork_mid": "2026-07-05",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.41,
+      "romeu_zema": 0.36
+    },
+    "residuals": {
+      "branco_nulo": 0.18,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-03067/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-07-07_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "gerp_2026-07-07_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "gerp",
+    "fieldwork_start": "2026-07-03",
+    "fieldwork_end": "2026-07-07",
+    "fieldwork_mid": "2026-07-05",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.4,
+      "ronaldo_caiado": 0.36
+    },
+    "residuals": {
+      "branco_nulo": 0.18,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-03067/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/gerp_2026-07-07_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
     "poll_id": "quaest_2026-07-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
@@ -1279,6 +1624,29 @@
     "source_path": "data/national/polls/quaest_2026-08-03_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
+    "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_augusto_cury_vs_lula",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-08-05",
+    "fieldwork_end": "2026-08-09",
+    "fieldwork_mid": "2026-08-07",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "augusto_cury": 0.324,
+      "lula": 0.486
+    },
+    "residuals": {
+      "branco_nulo": 0.134,
+      "ns_nr": 0.056
+    },
+    "tse_registration_id": "BR-06935/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_2nd_round_augusto_cury_vs_lula.json"
+  },
+  {
     "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
     "institute_id": "cnt_mda",
     "fieldwork_start": "2026-08-05",
@@ -1300,6 +1668,75 @@
     "tse_registration_id": "BR-06935/2026",
     "dataset_version": "intake-cohort-2t-006",
     "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-08-05",
+    "fieldwork_end": "2026-08-09",
+    "fieldwork_mid": "2026-08-07",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.485,
+      "renan_santos": 0.33
+    },
+    "residuals": {
+      "branco_nulo": 0.136,
+      "ns_nr": 0.049
+    },
+    "tse_registration_id": "BR-06935/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-08-05",
+    "fieldwork_end": "2026-08-09",
+    "fieldwork_mid": "2026-08-07",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.491,
+      "romeu_zema": 0.349
+    },
+    "residuals": {
+      "branco_nulo": 0.118,
+      "ns_nr": 0.042
+    },
+    "tse_registration_id": "BR-06935/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "cnt_mda",
+    "fieldwork_start": "2026-08-05",
+    "fieldwork_end": "2026-08-09",
+    "fieldwork_mid": "2026-08-07",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2002,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.479,
+      "ronaldo_caiado": 0.359
+    },
+    "residuals": {
+      "branco_nulo": 0.117,
+      "ns_nr": 0.045
+    },
+    "tse_registration_id": "BR-06935/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
     "poll_id": "poderdata_2026-08-12_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
@@ -1779,6 +2216,190 @@
     "tse_registration_id": "BR-07972/2026",
     "dataset_version": "intake-cohort-2t-005",
     "source_path": "data/national/polls/atlasintel_2026-08-30_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
+    "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "realtime_bigdata",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-08-31",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "flavio_bolsonaro": 0.44,
+      "lula": 0.44
+    },
+    "residuals": {
+      "branco_nulo": 0.09,
+      "ns_nr": 0.03
+    },
+    "tse_registration_id": "BR-03490/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "realtime_bigdata",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-08-31",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.44,
+      "renan_santos": 0.37
+    },
+    "residuals": {
+      "branco_nulo": 0.12,
+      "ns_nr": 0.07
+    },
+    "tse_registration_id": "BR-03490/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "realtime_bigdata",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-08-31",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.43,
+      "romeu_zema": 0.4
+    },
+    "residuals": {
+      "branco_nulo": 0.1,
+      "ns_nr": 0.07
+    },
+    "tse_registration_id": "BR-03490/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "realtime_bigdata",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-08-31",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.43,
+      "ronaldo_caiado": 0.45
+    },
+    "residuals": {
+      "branco_nulo": 0.08,
+      "ns_nr": 0.04
+    },
+    "tse_registration_id": "BR-03490/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
+    "poll_id": "futura_2026-09-01_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "futura",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-09-01",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "flavio_bolsonaro": 0.452,
+      "lula": 0.456
+    },
+    "residuals": {
+      "branco_nulo": 0.072,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-02793/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/futura_2026-09-01_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "futura_2026-09-01_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "futura",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-09-01",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.466,
+      "renan_santos": 0.366
+    },
+    "residuals": {
+      "branco_nulo": 0.138,
+      "ns_nr": 0.03
+    },
+    "tse_registration_id": "BR-02793/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/futura_2026-09-01_stimulated_2nd_round_lula_vs_renan_santos.json"
+  },
+  {
+    "poll_id": "futura_2026-09-01_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "futura",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-09-01",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.467,
+      "romeu_zema": 0.385
+    },
+    "residuals": {
+      "branco_nulo": 0.119,
+      "ns_nr": 0.03
+    },
+    "tse_registration_id": "BR-02793/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/futura_2026-09-01_stimulated_2nd_round_lula_vs_romeu_zema.json"
+  },
+  {
+    "poll_id": "futura_2026-09-01_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "futura",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-09-01",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.444,
+      "ronaldo_caiado": 0.425
+    },
+    "residuals": {
+      "branco_nulo": 0.109,
+      "ns_nr": 0.022
+    },
+    "tse_registration_id": "BR-02793/2026",
+    "dataset_version": "intake-cohort-2t-007",
+    "source_path": "data/national/polls/futura_2026-09-01_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
     "poll_id": "quaest_2026-09-01_stimulated_2nd_round_augusto_cury_vs_lula",

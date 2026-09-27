@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-04-08",
+  "fieldwork_end": "2026-04-12",
+  "fieldwork_mid": "2026-04-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2002,
+  "moe": 0.022,
+  "tse_registration_id": "BR-02847/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.402,
+    "lula": 0.449
+  },
+  "residuals": {
+    "branco_nulo": 0.113,
+    "ns_nr": 0.036
+  },
+  "witness_ids": [
+    "w_cnt_mda_2026-04-12_pdf_2t"
+  ],
+  "notes": "Verified from CNT/MDA PDF labeled bars (Branco/Nulo→branco_nulo; Indeciso→ns_nr). Rodada 167. Sibling 1º BR-02847/2026."
+}

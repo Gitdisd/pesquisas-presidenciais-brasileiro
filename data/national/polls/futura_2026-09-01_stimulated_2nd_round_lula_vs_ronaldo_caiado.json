@@ -1,0 +1,27 @@
+{
+  "poll_id": "futura_2026-09-01_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-08-27",
+  "fieldwork_end": "2026-09-01",
+  "fieldwork_mid": "2026-08-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.022,
+  "tse_registration_id": "BR-02793/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "results": {
+    "lula": 0.444,
+    "ronaldo_caiado": 0.425
+  },
+  "residuals": {
+    "branco_nulo": 0.109,
+    "ns_nr": 0.022
+  },
+  "witness_ids": [
+    "w_futura_2026-09-01_pdf_2t",
+    "w_futura_2026-09-01_gazeta_2t"
+  ],
+  "notes": "Verified from Futura PDF + Gazeta (Ninguém/Branco/Nulo→branco_nulo; NS/NR/Indeciso→ns_nr). Pre–Sep-04 wave; distinct from Sep-10 BR-02322. Sibling 1º BR-02793/2026."
+}

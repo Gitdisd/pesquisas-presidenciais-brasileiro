@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_gerp_2026-06-20_gazeta_2t",
+  "poll_id": "gerp_2026-06-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-junho-2026-2/",
+  "retrieved_at": "2026-09-27T02:49:45Z",
+  "content_hash": "sha256:3cedc388879f04ea06717a3437ef11e1270f38aeaf6bf585b86a4074e3bd3b1b",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_007_v1",
+  "extractions": {
+    "fieldwork": "2026-06-15..2026-06-20",
+    "n": 2000,
+    "moe_pp": 2.19,
+    "tse": "BR-09657/2026",
+    "matchups_extracted": 3
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-09657/2026",
+  "notes": "Gazeta 3 stimulated 2º with Nenhum deles (1dp) + NS/NR. Sibling 1º BR-09657/2026."
+}

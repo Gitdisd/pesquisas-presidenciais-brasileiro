@@ -1,0 +1,26 @@
+{
+  "poll_id": "gerp_2026-07-07_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-07-03",
+  "fieldwork_end": "2026-07-07",
+  "fieldwork_mid": "2026-07-05",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.022,
+  "tse_registration_id": "BR-03067/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+  "results": {
+    "lula": 0.4,
+    "ronaldo_caiado": 0.36
+  },
+  "residuals": {
+    "branco_nulo": 0.18,
+    "ns_nr": 0.05
+  },
+  "witness_ids": [
+    "w_gerp_2026-07-07_gazeta_2t"
+  ],
+  "notes": "Verified from Gazeta (Nenhum deles→branco_nulo; Não sabe/não respondeu→ns_nr). Michelle skipped. Sibling 1º BR-03067/2026."
+}

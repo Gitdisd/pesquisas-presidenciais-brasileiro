@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-04-12_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-04-08",
+  "fieldwork_end": "2026-04-12",
+  "fieldwork_mid": "2026-04-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2002,
+  "moe": 0.022,
+  "tse_registration_id": "BR-02847/2026",
+  "dataset_version": "intake-cohort-2t-007",
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "results": {
+    "lula": 0.452,
+    "romeu_zema": 0.316
+  },
+  "residuals": {
+    "branco_nulo": 0.159,
+    "ns_nr": 0.073
+  },
+  "witness_ids": [
+    "w_cnt_mda_2026-04-12_pdf_2t"
+  ],
+  "notes": "Verified from CNT/MDA PDF labeled bars (Branco/Nulo→branco_nulo; Indeciso→ns_nr). Rodada 167."
+}

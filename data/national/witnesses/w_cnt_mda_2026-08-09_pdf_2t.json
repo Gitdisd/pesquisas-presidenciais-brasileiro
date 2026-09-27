@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_cnt_mda_2026-08-09_pdf_2t",
+  "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_lula_vs_romeu_zema",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/08/Relatorio-Pesquisa-CNT-de-Opiniao-R169-AGOSTO26.pdf",
+  "retrieved_at": "2026-09-27T02:49:45Z",
+  "content_hash": "sha256:8e0f86b545516cd62a19277815f4491aa01f3aee0e6585021a35ced8a22fc877",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_007_v1",
+  "extractions": {
+    "fieldwork": "2026-08-05..2026-08-09",
+    "n": 2002,
+    "moe_pp": 2.2,
+    "tse": "BR-06935/2026",
+    "matchups_extracted": 4,
+    "rodada": "169",
+    "note": "Aug Flávio×Lula already in 2T-006 from CartaCapital; this witness covers non-Flávio mop"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-06935/2026",
+  "notes": "CNT/MDA 169ª PDF: Zema/Caiado/Renan/Cury 2º with Branco/Nulo + Indeciso. F×L page matches prior 2T-006 entry."
+}
