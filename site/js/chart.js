@@ -1,7 +1,8 @@
 /* PEBR Research UI — D3@7 chart (vanilla JS, no bundler).
  * Consumes data/chart.json: series_kind poll | aggregate | uncertainty.
  * Data unit: fraction 0–1; display ×100 (pp).
- * Hover: single poll point only (no multi-candidate scoreboard). Zoom/pan kept; no range slider. */
+ * Hover: single poll point only (no multi-candidate scoreboard). Zoom/pan kept; no range slider.
+ * Filters: institute chips (poll points); round/geo labels from meta; Option B methodology chips. */
 (function () {
   "use strict";
 
@@ -37,6 +38,13 @@
     resetBtn: document.getElementById("btn-reset-zoom"),
     showAllBtn: document.getElementById("btn-show-all"),
     exampleBanner: document.querySelector(".example-banner"),
+    instituteFilters: document.getElementById("institute-filters"),
+    methodChips: document.getElementById("method-chips"),
+    methodDisclaimer: document.getElementById("method-disclaimer"),
+    filterNote: document.getElementById("filter-note"),
+    geoChip: document.getElementById("geo-chip"),
+    round1: document.getElementById("round-1"),
+    round2: document.getElementById("round-2"),
   };
 
   let state = {
@@ -44,6 +52,8 @@
     candById: new Map(),
     instById: new Map(),
     visible: new Set(),
+    institutesOn: new Set(),
+    allInstituteIds: [],
     showAll: false,
     xScale: null,
     yScale: null,
@@ -68,6 +78,21 @@
     return all.filter(isActive);
   }
 
+  /** Display polish only — does not invent poll numbers. */
+  function prettyInstituteLabel(inst) {
+    const raw = (inst && (inst.label || inst.id)) || "—";
+    return String(raw)
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (ch) => ch.toUpperCase());
+  }
+
+  function institutesAllOn() {
+    return (
+      state.allInstituteIds.length > 0 &&
+      state.institutesOn.size === state.allInstituteIds.length
+    );
+  }
+
   function setHeader(meta) {
     const chips = [];
     if (meta.example) {
@@ -78,6 +103,9 @@
       `<span class="chip">${meta.geography === "national" ? "nacional" : meta.geography || "—"}</span>`
     );
     chips.push(`<span class="chip">${meta.model_id || "modelo"}</span>`);
+    if (meta.note) {
+      chips.push(`<span class="chip">${escapeHtml(meta.note)}</span>`);
+    }
     if (meta.generated_at) {
       const d = new Date(meta.generated_at);
       chips.push(
@@ -90,6 +118,68 @@
     if (el.exampleBanner) {
       el.exampleBanner.hidden = !meta.example;
     }
+    if (el.geoChip) {
+      el.geoChip.textContent =
+        meta.geography === "national" ? "Nacional" : meta.geography || "—";
+    }
+    syncRoundControls(meta);
+  }
+
+  function syncRoundControls(meta) {
+    const scenario = meta?.scenario || "";
+    const is1st = /1st_round|1º|primeiro/i.test(scenario) || scenario.indexOf("1st") >= 0;
+    const is2nd = /2nd_round|2º|segundo/i.test(scenario);
+    if (el.round1) {
+      el.round1.classList.toggle("active", !is2nd);
+      el.round1.setAttribute("aria-pressed", !is2nd ? "true" : "false");
+      el.round1.disabled = is2nd;
+      el.round1.title = is2nd
+        ? "chart.json atual é 2º turno"
+        : "Estimulada · 1º turno (série carregada)";
+    }
+    if (el.round2) {
+      el.round2.classList.toggle("active", !!is2nd);
+      el.round2.setAttribute("aria-pressed", is2nd ? "true" : "false");
+      // Only enable if payload is actually 2nd-round; otherwise keep disabled (no invented series).
+      el.round2.disabled = !is2nd;
+      el.round2.title = is2nd
+        ? "Estimulada · 2º turno (série carregada)"
+        : "Série de 2º turno ainda não está no chart.json";
+    }
+  }
+
+  function renderMethodChips(meta) {
+    if (!el.methodChips) return;
+    const params = meta.params || {};
+    const k = params.k_days != null ? params.k_days : "—";
+    const w = params.flood_W_days != null ? params.flood_W_days : "—";
+    const nCap = params.n_cap != null ? params.n_cap : "—";
+    const chips = [
+      { html: "<strong>Option B</strong> · √N trailing" },
+      { html: `janela <strong>${k}d</strong>` },
+      { html: `anti-flood <strong>${w}d</strong>` },
+      { html: `N cap <strong>${nCap}</strong>` },
+      { html: "sem house effects" },
+      { html: "não é previsão" },
+    ];
+    el.methodChips.innerHTML = chips
+      .map((c) => `<span class="chip-btn method">${c.html}</span>`)
+      .join("");
+    if (el.methodDisclaimer) {
+      const band =
+        meta.band_meaning ||
+        "dispersão na janela (não IC clássico, não probabilidade de vitória)";
+      el.methodDisclaimer.textContent =
+        `Agregado Option B: média ponderada por √N nos últimos ~${k} dias, freio anti-enchente por instituto, datada no meio do campo. Faixa = ${band}. Sem correção de viés de casa.`;
+    }
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
 
   function clearDetail() {
@@ -105,7 +195,7 @@
       <p class="cand-name" style="color:${color}">${name}</p>
       <p class="value-big">${pctDisplay(d.value)}</p>
       <dl>
-        <dt>Instituto</dt><dd>${inst ? inst.label : d.institute_id || "—"}</dd>
+        <dt>Instituto</dt><dd>${inst ? prettyInstituteLabel(inst) : d.institute_id || "—"}</dd>
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
         <dt>Data</dt><dd>${fmtDate(d.date)}</dd>
       </dl>`;
@@ -121,6 +211,18 @@
       : "Mostrar também candidatos inativos / fora da disputa";
   }
 
+  function syncFilterNote() {
+    if (!el.filterNote) return;
+    if (institutesAllOn()) {
+      el.filterNote.hidden = true;
+      el.filterNote.textContent = "";
+      return;
+    }
+    el.filterNote.hidden = false;
+    el.filterNote.textContent =
+      "Filtro de institutos ativo: pontos filtrados. Linha/faixa Option B ocultas (agregado pré-computado usa todos os institutos — selecione Todos para ver).";
+  }
+
   function applyDefaultVisibility() {
     state.visible = new Set();
     const list = candidatesForLegend();
@@ -129,6 +231,61 @@
     if (!state.visible.size && state.data?.candidates?.length) {
       state.data.candidates.forEach((c) => state.visible.add(c.id));
     }
+  }
+
+  function applyDefaultInstitutes() {
+    state.allInstituteIds = (state.data?.institutes || []).map((i) => i.id);
+    if (!state.allInstituteIds.length && state.payload?.polls?.length) {
+      state.allInstituteIds = Array.from(
+        new Set(state.payload.polls.map((p) => p.institute_id).filter(Boolean))
+      ).sort();
+    }
+    state.institutesOn = new Set(state.allInstituteIds);
+  }
+
+  function buildInstituteFilters() {
+    if (!el.instituteFilters) return;
+    el.instituteFilters.innerHTML = "";
+    const allBtn = document.createElement("button");
+    allBtn.type = "button";
+    allBtn.className = "chip-btn all" + (institutesAllOn() ? " on" : "");
+    allBtn.textContent = "Todos";
+    allBtn.addEventListener("click", () => {
+      state.institutesOn = new Set(state.allInstituteIds);
+      buildInstituteFilters();
+      syncFilterNote();
+      redrawSeries();
+      clearHover();
+    });
+    el.instituteFilters.appendChild(allBtn);
+
+    const institutes = state.data?.institutes || [];
+    const list =
+      institutes.length > 0
+        ? institutes
+        : state.allInstituteIds.map((id) => ({ id, label: id }));
+
+    list.forEach((inst) => {
+      const id = inst.id;
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip-btn" + (state.institutesOn.has(id) ? " on" : "");
+      btn.textContent = prettyInstituteLabel(inst);
+      btn.dataset.instituteId = id;
+      btn.addEventListener("click", () => {
+        if (state.institutesOn.has(id)) {
+          if (state.institutesOn.size <= 1) return;
+          state.institutesOn.delete(id);
+        } else {
+          state.institutesOn.add(id);
+        }
+        buildInstituteFilters();
+        syncFilterNote();
+        redrawSeries();
+        clearHover();
+      });
+      el.instituteFilters.appendChild(btn);
+    });
   }
 
   function buildLegend() {
@@ -233,14 +390,22 @@
   }
 
   function clearHover() {
+    if (!state.layers.crosshair) return;
     state.layers.crosshair.style("opacity", 0);
     state.layers.focus.style("opacity", 0);
     state.layers.points.selectAll(".poll-point").classed("is-active", false).attr("r", 4);
     clearDetail();
   }
 
+  function pollPassesInstitute(d) {
+    if (!state.institutesOn.size) return true;
+    return state.institutesOn.has(d.institute_id);
+  }
+
   function nearestVisiblePoll(mx, my, polls) {
-    const visiblePolls = polls.filter((d) => state.visible.has(d.candidate_id));
+    const visiblePolls = polls.filter(
+      (d) => state.visible.has(d.candidate_id) && pollPassesInstitute(d)
+    );
     let best = null;
     let bestDist = Infinity;
     for (const d of visiblePolls) {
@@ -261,12 +426,16 @@
     state.candById = new Map(data.candidates.map((c) => [c.id, c]));
     state.instById = new Map((data.institutes || []).map((i) => [i.id, i]));
     setHeader(data);
+    renderMethodChips(data);
     applyDefaultVisibility();
     syncShowAllBtn();
     buildLegend();
 
     const payload = prepareSeries(data);
     state.payload = payload;
+    applyDefaultInstitutes();
+    buildInstituteFilters();
+    syncFilterNote();
 
     const dims = size();
     const svg = d3.select(el.svg);
@@ -413,6 +582,7 @@
   function redrawSeries() {
     const { polls, aggregates, uncertainty } = state.payload;
     const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
+    const showAgg = institutesAllOn();
 
     const area = d3
       .area()
@@ -421,13 +591,15 @@
       .y1((d) => state.yScale(d.band_high))
       .curve(d3.curveMonotoneX);
 
-    const ribbonData = candidates.map((c) => ({
-      id: c.id,
-      color: c.color,
-      values: uncertainty
-        .filter((d) => d.candidate_id === c.id)
-        .sort((a, b) => a.date - b.date),
-    }));
+    const ribbonData = showAgg
+      ? candidates.map((c) => ({
+          id: c.id,
+          color: c.color,
+          values: uncertainty
+            .filter((d) => d.candidate_id === c.id)
+            .sort((a, b) => a.date - b.date),
+        }))
+      : [];
 
     const ribbons = state.layers.ribbons.selectAll("path.unc-ribbon").data(ribbonData, (d) => d.id);
     ribbons.exit().remove();
@@ -446,13 +618,15 @@
       .curve(d3.curveMonotoneX)
       .defined((d) => d.value != null);
 
-    const lineData = candidates.map((c) => ({
-      id: c.id,
-      color: c.color,
-      values: aggregates
-        .filter((d) => d.candidate_id === c.id)
-        .sort((a, b) => a.date - b.date),
-    }));
+    const lineData = showAgg
+      ? candidates.map((c) => ({
+          id: c.id,
+          color: c.color,
+          values: aggregates
+            .filter((d) => d.candidate_id === c.id)
+            .sort((a, b) => a.date - b.date),
+        }))
+      : [];
 
     const lines = state.layers.lines.selectAll("path.agg-line").data(lineData, (d) => d.id);
     lines.exit().remove();
@@ -464,7 +638,9 @@
       .attr("stroke", (d) => d.color)
       .attr("d", (d) => (d.values.length ? line(d.values) : null));
 
-    const visPolls = polls.filter((d) => state.visible.has(d.candidate_id));
+    const visPolls = polls.filter(
+      (d) => state.visible.has(d.candidate_id) && pollPassesInstitute(d)
+    );
     const pts = state.layers.points
       .selectAll("circle.poll-point")
       .data(visPolls, (d) => d.poll_id + ":" + d.candidate_id);
@@ -491,8 +667,16 @@
     if (!state.data) return;
     const keepShowAll = state.showAll;
     const keepVisible = new Set(state.visible);
+    const keepInstitutes = new Set(state.institutesOn);
     renderChart(state.data);
     state.showAll = keepShowAll;
+    if (keepInstitutes.size) {
+      const allowed = new Set(state.allInstituteIds);
+      state.institutesOn = new Set([...keepInstitutes].filter((id) => allowed.has(id)));
+      if (!state.institutesOn.size) applyDefaultInstitutes();
+      buildInstituteFilters();
+      syncFilterNote();
+    }
     // Re-apply visibility after render's defaults if user had customized
     if (keepVisible.size) {
       const allowed = new Set(candidatesForLegend().map((c) => c.id));

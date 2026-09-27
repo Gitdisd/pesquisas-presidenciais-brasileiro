@@ -42,6 +42,29 @@
           <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom">Redefinir zoom</button>
         </div>
       </div>
+
+      <div class="filter-bar" id="filter-bar" aria-label="Filtros do gráfico">
+        <div class="filter-row">
+          <span class="filter-label">Turno</span>
+          <div class="seg" role="group" aria-label="Turno">
+            <button type="button" class="seg-btn active" id="round-1" aria-pressed="true" data-round="1">1º turno</button>
+            <button type="button" class="seg-btn" id="round-2" aria-pressed="false" data-round="2" disabled title="Série de 2º turno ainda não está no chart.json">2º turno</button>
+          </div>
+          <span class="filter-label geo-label">Geografia</span>
+          <span class="chip accent" id="geo-chip" title="v1: apenas pesquisas nacionais">Nacional</span>
+        </div>
+        <div class="filter-row filter-institutes">
+          <span class="filter-label">Institutos</span>
+          <div class="chip-row" id="institute-filters" role="group" aria-label="Filtrar por instituto"></div>
+        </div>
+        <div class="filter-row filter-method">
+          <span class="filter-label">Modelo</span>
+          <div class="chip-row method-chips" id="method-chips" aria-label="Metodologia Option B"></div>
+        </div>
+        <p class="method-disclaimer muted small" id="method-disclaimer"></p>
+        <p class="filter-note muted small" id="filter-note" hidden></p>
+      </div>
+
       <div class="chart-shell" id="chart-shell">
         <!-- Instant shell before D3 paints -->
         <div class="chart-placeholder" id="chart-placeholder">
@@ -70,6 +93,7 @@
           <li><span class="swatch ribbon"></span> Faixa = dispersão na janela (não IC / não probabilidade de vitória)</li>
         </ul>
         <p class="muted small">Unidade de dados: fração 0–1 · exibição em pontos percentuais (×100).</p>
+        <p class="muted small" id="method-side-note">Sem correção de viés de casa. Não é previsão eleitoral.</p>
       </section>
     </aside>
   </main>
