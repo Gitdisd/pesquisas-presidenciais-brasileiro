@@ -29,28 +29,66 @@ Stats (Python) gera `site/data/chart.json` (`series_kind`: `poll` | `aggregate` 
 Mapa de fontes (pesquisa): [`docs/source-map/`](docs/source-map/).  
 Arquitetura: [`docs/architecture.md`](docs/architecture.md).
 
-## Pipeline Ruby (validate)
+## Operator refresh recipe
+
+After verified intake lands under `data/national/polls/` + `witnesses/` (human primary check — see below):
 
 ```bash
 # deps (once)
 sudo apt-get install -y ruby ruby-dev bundler build-essential   # or equivalent
 bundle install
 
-# validate EXAMPLE fixtures against schemas/
+# 1) schema + cross-link check
 bin/pebr validate
+
+# 2) identity fingerprint / duplicate report (no fetch)
+bin/pebr normalize
+
+# 3) rebuild Stats ingest snapshot from polls (deterministic; no invented fields)
+bin/pebr assemble
+# → site/data/canonical-points.json
+
+# 4) optional read-only source inventory
+bin/pebr discover
 ```
 
-Other commands (stubs for now):
+Commit polls/witnesses **and** the refreshed `canonical-points.json` together so CI’s `git diff --exit-code` stays green.
+
+### Lead: re-export Option B after data changes
+
+Actions **does not** regenerate `site/data/chart.json`. When `canonical-points.json` (or `data/national/polls`) changes, Lead re-runs Stats locally:
 
 ```bash
-bin/pebr discover    # no-op until intake
-bin/pebr normalize   # no-op until identity merge
+.venv/bin/pip install -e 'models/[dev]'
+.venv/bin/python -m pebr_models.cli \
+  --polls site/data/canonical-points.json \
+  --out site/data/chart.json \
+  --no-example \
+  --note "verified national stimulated_1st_round"
+```
+
+(Alternatively `--polls data/national/polls`.) Review the chart, then commit `site/data/chart.json` separately. Do not invent series in CI.
+
+### Human primary check (new polls)
+
+`discover` / CI never scrape live pages into cells. Before adding a poll:
+
+1. Fetch a primary/press witness; record `source_url` + `content_hash` (sha256 of retrieved bytes) on a witness JSON.
+2. Dual-enter shares as fractions 0–1 from that witness — **no invented numbers**.
+3. Assign stable `poll_id` / `institute_id` / scenario; link `witness_ids`.
+4. Run `validate` → `normalize` → `assemble`; commit; Lead re-exports Option B when ready.
+
+## Pipeline Ruby CLI
+
+```bash
+bin/pebr validate    # fixtures + data/national/** vs schemas/; witness↔poll links
+bin/pebr assemble    # rebuild site/data/canonical-points.json from polls
+bin/pebr normalize   # fingerprint duplicate report (no rewrite)
+bin/pebr discover    # read-only inventory of sources.json + institutes.yml
 bin/pebr version
 ```
 
-CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) runs `bin/pebr validate` on relevant pushes.
-
-
+CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) runs on `workflow_dispatch`, daily schedule, and pushes touching schemas/fixtures/lib/bin/config/`data/national/**`/canonical-points. Steps: `validate` → `normalize` → `assemble` → `git diff --exit-code` on `canonical-points.json` (fail on drift; no auto-push; no chart regenerate).
 
 ## Electoral Stats (Option B)
 
@@ -68,4 +106,4 @@ Synthetic fixtures (`example_*` / `EXAMPLE_*`) are **not** real polls.
 
 ## Status
 
-Greenfield. Corpus real de pesquisas só após auditoria de proveniência do source map. Fixtures e `chart.json` com `example: true` / `EXAMPLE_*` **não são pesquisas reais** — o banner EXAMPLE na UI deixa isso explícito. Não commitar dumps legados (`_quarantine/`, `data/polls.json`).
+Verified national `stimulated_1st_round` intake is under `data/national/` (see cohort notes). `site/data/canonical-points.json` is the assemble output for Option B ingest. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).

@@ -21,14 +21,31 @@ module Pebr
   # - Scenario: never mix scenarios in one aggregate.
   # - parsers: parser_id is config/mapping driven — no self-modifying parsers.
   module Identity
-    # TODO: implement candidate grouping from witnesses → poll_id assignment.
-    def self.merge_candidates(_witnesses)
-      raise NotImplementedError, "Pebr::Identity.merge_candidates — stub (see schemas/README.md)"
+    FINGERPRINT_KEYS = %w[
+      institute_id
+      fieldwork_start
+      fieldwork_end
+      geography
+      election_cycle
+      scenario
+    ].freeze
+
+    module_function
+
+    # Stable identity fingerprint string (not a poll_id; for duplicate detection).
+    def fingerprint(attrs)
+      FINGERPRINT_KEYS.map { |k| attrs.fetch(k).to_s }.join("|")
     end
 
-    # TODO: deterministic poll_id from identity tuple after merge.
-    def self.poll_id_for(_attrs)
-      raise NotImplementedError, "Pebr::Identity.poll_id_for — stub"
+    # Full witness→poll merge still deferred (human primary intake).
+    def merge_candidates(_witnesses)
+      raise NotImplementedError,
+            "Pebr::Identity.merge_candidates — deferred; use normalize for fingerprint duplicate report"
+    end
+
+    def poll_id_for(_attrs)
+      raise NotImplementedError,
+            "Pebr::Identity.poll_id_for — deferred; poll_id assigned during verified human intake"
     end
   end
 end

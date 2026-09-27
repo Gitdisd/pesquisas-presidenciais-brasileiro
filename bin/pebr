@@ -26,11 +26,12 @@ module Pebr
         pebr #{Pebr::VERSION} — PEBR pipeline CLI
 
         Usage:
-          bin/pebr validate   Validate fixtures + data/national/** against schemas/
-          bin/pebr discover   Stub (not yet implemented)
-          bin/pebr normalize  Stub (not yet implemented)
-          bin/pebr version    Print version
-          bin/pebr help       This message
+          bin/pebr validate    Validate fixtures + data/national/** against schemas/
+          bin/pebr assemble    Rebuild site/data/canonical-points.json from polls (deterministic)
+          bin/pebr discover    Read-only inventory of source-map + institutes (no fetch)
+          bin/pebr normalize   Report identity fingerprint duplicates (no fetch / no rewrite)
+          bin/pebr version     Print version
+          bin/pebr help        This message
       USAGE
     end
 
@@ -38,8 +39,9 @@ module Pebr
       cmd = argv[0] || "help"
       case cmd
       when "validate" then validate!
-      when "discover" then stub!("discover", "Discover/intake from docs/source-map comes later.")
-      when "normalize" then stub!("normalize", "Normalize/identity merge comes later.")
+      when "assemble" then assemble!
+      when "discover" then discover!
+      when "normalize" then normalize!
       when "version", "-v", "--version"
         puts Pebr::VERSION
       when "help", "-h", "--help"
@@ -50,9 +52,36 @@ module Pebr
       end
     end
 
-    def stub!(name, message)
-      puts "pebr #{name}: no-op — #{message}"
+    def discover!
+      result = Pebr::Discover.run
+      puts result[:lines].join("\n")
       exit 0
+    end
+
+    def normalize!
+      $stdout.sync = true
+      $stderr.sync = true
+      result = Pebr::Normalize.run
+      puts "pebr normalize: fingerprint / duplicate report (no fetch, no rewrite)"
+      puts "  polls: #{result[:poll_count]}  witnesses: #{result[:witness_count]}  fingerprints: #{result[:fingerprint_count]}"
+      result[:warnings].each { |w| puts "  warn: #{w}" }
+      if result[:errors].empty?
+        puts "normalize: OK (no duplicate poll_id / identity fingerprint collisions)"
+        exit 0
+      else
+        warn "normalize: FAILED"
+        result[:errors].each { |e| warn "  - #{e}" }
+        exit 1
+      end
+    end
+
+    def assemble!
+      result = Pebr::Assemble.run
+      puts "assemble: wrote #{result[:count]} point(s) → #{result[:out_path]}"
+      exit 0
+    rescue StandardError => e
+      warn "assemble: FAILED — #{e.message}"
+      exit 1
     end
 
     def validate!

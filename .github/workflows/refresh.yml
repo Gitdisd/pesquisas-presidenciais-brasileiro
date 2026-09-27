@@ -1,11 +1,14 @@
-# PEBR pipeline refresh (skeleton)
-# Future: discover → normalize → validate → (optional) Stats handoff.
-# Pages: site/ is served by GitHub Pages (Lead owns UI). This workflow does not deploy Pages yet.
+# PEBR pipeline refresh — validate + assemble drift check.
+# Does NOT fetch live poll pages, invent numbers, or regenerate Option B chart.json.
+# Pages UI (site/index.html, css/, js/) is Lead-owned. Option B re-export is Lead’s step.
 
 name: pebr-refresh
 
 on:
   workflow_dispatch:
+  schedule:
+    # Daily 06:00 UTC ≈ 03:00 America/Sao_Paulo — cheap consistency check
+    - cron: "0 6 * * *"
   push:
     branches: [main]
     paths:
@@ -15,13 +18,15 @@ on:
       - "bin/**"
       - "Gemfile*"
       - "config/**"
+      - "data/national/**"
+      - "site/data/canonical-points.json"
       - ".github/workflows/refresh.yml"
 
 permissions:
   contents: read
 
 jobs:
-  validate:
+  validate-assemble:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,9 +41,17 @@ jobs:
       - name: Bundle install
         run: bundle install --jobs 4
 
-      - name: Validate EXAMPLE fixtures against schemas
+      - name: Validate fixtures + data/national/**
         run: bin/pebr validate
 
-      # TODO: bin/pebr discover  — intake from docs/source-map (later)
-      # TODO: bin/pebr normalize — identity merge / canonical polls (later)
-      # Note: GitHub Pages for site/ is owned by Lead; do not regenerate bulk chart data here.
+      - name: Identity fingerprint report
+        run: bin/pebr normalize
+
+      - name: Assemble canonical-points.json
+        run: bin/pebr assemble
+
+      - name: Fail if canonical-points.json drifted
+        run: git diff --exit-code -- site/data/canonical-points.json
+
+      # Option B / chart.json: Lead re-runs models CLI separately when canonical-points change.
+      # Do not auto-commit or regenerate chart series here.
