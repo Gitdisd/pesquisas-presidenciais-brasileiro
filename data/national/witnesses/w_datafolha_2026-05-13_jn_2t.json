@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_datafolha_2026-05-13_jn_2t",
+  "poll_id": "datafolha_2026-05-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/jornal-nacional/noticia/2026/05/16/datafolha-2o-turno-lula-e-flavio-tem-45percent-das-intencoes-de-voto.ghtml",
+  "retrieved_at": "2026-09-27T02:35:00Z",
+  "content_hash": "sha256:5fef03840b9cc5382096b4f0e965fbd68b39179db921d0ddad28f9ec0c73f720",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_003_v1",
+  "extractions": {
+    "fieldwork": "2026-05-12..2026-05-13",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-00290/2026",
+    "matchups_extracted": 3,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-00290/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). JN prose (not UL tables) with explicit % for 3 stimulated 2º matchups — entered as text primary, not image. TSE from sibling 1º BR-00290/2026 (JN omits protocol). Fieldwork 12–13 May."
+}

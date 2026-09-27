@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_quaest_2026-05-11_g1_2t",
+  "poll_id": "quaest_2026-05-11_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/05/13/quaest-2o-turno-lula-tem-42percent-e-flavio-bolsonaro-41percent.ghtml",
+  "retrieved_at": "2026-09-27T02:35:00Z",
+  "content_hash": "sha256:e8a3ab0365f70dfbfca76f1e91b33346097ed2a551de1ae371709fc320ea63bd",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_003_v1",
+  "extractions": {
+    "fieldwork": "2026-05-08..2026-05-11",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-03598/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-03598/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). 4 stimulated 2º matchups from content-unordered-list. No Cury 2º. Fieldwork 8–11 May; TSE BR-03598/2026."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-06-19_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-06-17",
+  "fieldwork_end": "2026-06-19",
+  "fieldwork_mid": "2026-06-18",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.48,
+    "romeu_zema": 0.39
+  },
+  "residuals": {
+    "branco_nulo": 0.11,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-09956/2026",
+  "witness_ids": [
+    "w_datafolha_2026-06-19_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-003",
+  "notes": "Verified from G1 2º-turno article (press primary). Scenario stimulated_2nd_round_lula_vs_romeu_zema. Shares as fractions. Residuals: Em branco/nulo/nenhum→branco_nulo; Não sabe(m)/não respondeu→ns_nr. Printed sum may be 0.99–1.01 — left as-found. No Renan/Cury 2º in this wave article."
+}

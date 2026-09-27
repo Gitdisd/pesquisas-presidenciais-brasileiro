@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_datafolha_2026-05-22_g1_2t",
+  "poll_id": "datafolha_2026-05-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/05/22/datafolha-2o-turno-lula-flavio.ghtml",
+  "retrieved_at": "2026-09-27T02:35:00Z",
+  "content_hash": "sha256:4bda5bdc421cd7a34945f6da622bf6a6d620e29babb0005de8183014a6b8c623",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_003_v1",
+  "extractions": {
+    "fieldwork": "2026-05-20..2026-05-22",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-07489/2026",
+    "matchups_extracted": 3,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-07489/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). 3 standard 2º matchups from content-unordered-list. Michelle Bolsonaro 2º present in article but skipped (no candidate_id/alias in config). TSE from sibling 1º same wave BR-07489/2026 (2º article omits protocol)."
+}

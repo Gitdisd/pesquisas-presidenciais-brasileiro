@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_quaest_2026-06-08_g1_2t",
+  "poll_id": "quaest_2026-06-08_stimulated_2nd_round_lula_vs_renan_santos",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/06/10/quaest-2-turno-junho.ghtml",
+  "retrieved_at": "2026-09-27T02:35:00Z",
+  "content_hash": "sha256:ef7be53c333fd8a26533a68a04b411f3a7b10139258f9c965c57e05768eea0e8",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_003_v1",
+  "extractions": {
+    "fieldwork": "2026-06-05..2026-06-08",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-07661/2026",
+    "matchups_extracted": 2,
+    "headline_scenario": "stimulated_2nd_round_lula_vs_renan_santos"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-07661/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Only Renan+Zema 2º entered from content-unordered-list. Flávio×Lula: candidate % in prose (44–38) but residuals Arte-only — skipped (no invent). Caiado UL prints 44% with sum≈1.09 vs Jul retrospective 35% — skipped as inconsistent. Fieldwork 5–8 Jun; TSE BR-07661/2026."
+}

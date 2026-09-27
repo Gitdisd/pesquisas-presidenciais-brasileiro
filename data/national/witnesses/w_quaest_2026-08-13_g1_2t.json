@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_quaest_2026-08-13_g1_2t",
+  "poll_id": "quaest_2026-08-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/08/14/quaest-presidente-2o-turno-14-agosto.ghtml",
+  "retrieved_at": "2026-09-27T02:35:00Z",
+  "content_hash": "sha256:314f3601c72ea846cc812cb8ebc2f257c8efa06c700e276abe86e60434e8e3c0",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_003_v1",
+  "extractions": {
+    "fieldwork": "2026-08-10..2026-08-13",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-06773/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-06773/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). 4 stimulated 2º matchups from content-unordered-list. No Cury 2º. Fieldwork 10–13 Aug; TSE BR-06773/2026."
+}
