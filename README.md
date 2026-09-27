@@ -3,6 +3,7 @@
 Arquivo e agregador de pesquisas presidenciais nacionais — GitHub Pages.
 
 > **AI / agent cold start:** read [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md) (mission, locked architecture, data counts, Option B recipes, pause/resume). Product work is paused until the user explicitly says resume.
+> **Durable conversation decisions:** [`docs/conversation-decisions.md`](docs/conversation-decisions.md) records the user prompts, steering, and rationale behind the locks; it is not a raw chat dump.
 
 ## GitHub Pages
 

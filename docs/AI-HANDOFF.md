@@ -7,6 +7,8 @@
 
 This file is the **single cold-start brief** for another AI (or human) picking up Lead. Prefer this over reconstructing state from chat. Pause snapshots remain authoritative for “what was frozen”; this handoff reconciles corrected facts (especially PR #1 **merged**).
 
+For the durable user prompts and the explanations behind the product locks, read [`conversation-decisions.md`](conversation-decisions.md). It is a curated decision record, not a raw chat dump.
+
 ---
 
 ## 0) Mission (one paragraph)
