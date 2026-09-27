@@ -13,7 +13,7 @@
   "geography": "national",
   "scenario": "stimulated_1st_round",
   "example": false,
-  "note": "cohort 007 / 114 verified",
+  "note": "cohort 008 / 116 verified",
   "candidates": [
     {
       "id": "lula",
@@ -56,38 +56,38 @@
       "color": "#4ECDC4"
     },
     {
+      "id": "ciro_gomes",
+      "label": "ciro_gomes",
+      "color": "#F7B731"
+    },
+    {
       "id": "cabo_daciolo",
       "label": "cabo_daciolo",
-      "color": "#F7B731"
+      "color": "#A78BFA"
     },
     {
       "id": "augusto_cury",
       "label": "augusto_cury",
-      "color": "#A78BFA"
+      "color": "#5B8CFF"
     },
     {
       "id": "samara_martins",
       "label": "samara_martins",
-      "color": "#5B8CFF"
+      "color": "#FF6B6B"
     },
     {
       "id": "edmilson_costa",
       "label": "edmilson_costa",
-      "color": "#FF6B6B"
+      "color": "#4ECDC4"
     },
     {
       "id": "hertz_dias",
       "label": "hertz_dias",
-      "color": "#4ECDC4"
+      "color": "#F7B731"
     },
     {
       "id": "rui_costa_pimenta",
       "label": "rui_costa_pimenta",
-      "color": "#F7B731"
-    },
-    {
-      "id": "ciro_gomes",
-      "label": "ciro_gomes",
       "color": "#A78BFA"
     },
     {
@@ -153,6 +153,10 @@
       "label": "parana_pesquisas"
     },
     {
+      "id": "gerp",
+      "label": "gerp"
+    },
+    {
       "id": "realtime_bigdata",
       "label": "realtime_bigdata"
     },
@@ -167,10 +171,6 @@
     {
       "id": "cnt_mda",
       "label": "cnt_mda"
-    },
-    {
-      "id": "gerp",
-      "label": "gerp"
     },
     {
       "id": "vox_brasil",
@@ -193,7 +193,7 @@
       "label": "palver"
     }
   ],
-  "generated_at": "2026-09-26T21:39:29-03:00",
+  "generated_at": "2026-09-26T21:42:10-03:00",
   "date_range": {
     "start": "2026-01-09",
     "end": "2026-09-22"
@@ -513,6 +513,60 @@
       "institute_id": "parana_pesquisas",
       "poll_id": "parana_pesquisas_2026-01-28_stimulated_1st_round",
       "n": 2080
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "lula",
+      "value": 0.39,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.35,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "ratinho_junior",
+      "value": 0.05,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "romeu_zema",
+      "value": 0.02,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-01-30",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-02-02_stimulated_1st_round",
+      "n": 2000
     },
     {
       "series_kind": "poll",
@@ -1107,6 +1161,78 @@
       "institute_id": "atlasintel",
       "poll_id": "atlasintel_2026-03-23_stimulated_1st_round",
       "n": 5028
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "lula",
+      "value": 0.38,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.36,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "romeu_zema",
+      "value": 0.03,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "renan_santos",
+      "value": 0.01,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-03-22",
+      "candidate_id": "aldo_rebelo",
+      "value": 0.0,
+      "institute_id": "gerp",
+      "poll_id": "gerp_2026-03-25_stimulated_1st_round",
+      "n": 2000
     },
     {
       "series_kind": "poll",
@@ -11700,41 +11826,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-01-30",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-01-30",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-01-30",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3394
+      "value": 0.3418
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-30",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3305,
-      "band_high": 0.3483
+      "band_low": 0.3328,
+      "band_high": 0.3508
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-30",
       "candidate_id": "lula",
-      "value": 0.4269
+      "value": 0.4186
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-30",
       "candidate_id": "lula",
-      "band_low": 0.3747,
-      "band_high": 0.4791
+      "band_low": 0.3701,
+      "band_high": 0.4671
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-30",
       "candidate_id": "ratinho_junior",
-      "value": 0.0435
+      "value": 0.0454
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-30",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.0252,
-      "band_high": 0.0618
+      "band_low": 0.0297,
+      "band_high": 0.061
     },
     {
       "series_kind": "aggregate",
@@ -11753,27 +11892,27 @@
       "series_kind": "aggregate",
       "date": "2026-01-30",
       "candidate_id": "romeu_zema",
-      "value": 0.0274
+      "value": 0.0257
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-30",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0265,
-      "band_high": 0.0283
+      "band_low": 0.0225,
+      "band_high": 0.0289
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-30",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0374
+      "value": 0.0335
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-30",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0321,
-      "band_high": 0.0428
+      "band_low": 0.0248,
+      "band_high": 0.0422
     },
     {
       "series_kind": "aggregate",
@@ -11804,41 +11943,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-01-31",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-01-31",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-01-31",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3305
+      "value": 0.3373
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-31",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.33,
-      "band_high": 0.331
+      "band_low": 0.328,
+      "band_high": 0.3466
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-31",
       "candidate_id": "lula",
-      "value": 0.3966
+      "value": 0.3943
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-31",
       "candidate_id": "lula",
-      "band_low": 0.3951,
-      "band_high": 0.3981
+      "band_low": 0.391,
+      "band_high": 0.3977
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-31",
       "candidate_id": "ratinho_junior",
-      "value": 0.065
+      "value": 0.0576
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-31",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.065,
-      "band_high": 0.065
+      "band_low": 0.0501,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -11857,27 +12009,27 @@
       "series_kind": "aggregate",
       "date": "2026-01-31",
       "candidate_id": "romeu_zema",
-      "value": 0.0427
+      "value": 0.0348
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-31",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0267,
-      "band_high": 0.0586
+      "band_low": 0.018,
+      "band_high": 0.0516
     },
     {
       "series_kind": "aggregate",
       "date": "2026-01-31",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-01-31",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -11895,41 +12047,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-01",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-01",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-01",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3305
+      "value": 0.3373
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-01",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.33,
-      "band_high": 0.331
+      "band_low": 0.328,
+      "band_high": 0.3466
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-01",
       "candidate_id": "lula",
-      "value": 0.3966
+      "value": 0.3943
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-01",
       "candidate_id": "lula",
-      "band_low": 0.3951,
-      "band_high": 0.3981
+      "band_low": 0.391,
+      "band_high": 0.3977
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-01",
       "candidate_id": "ratinho_junior",
-      "value": 0.065
+      "value": 0.0576
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-01",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.065,
-      "band_high": 0.065
+      "band_low": 0.0501,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -11948,27 +12113,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-01",
       "candidate_id": "romeu_zema",
-      "value": 0.0427
+      "value": 0.0348
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-01",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0267,
-      "band_high": 0.0586
+      "band_low": 0.018,
+      "band_high": 0.0516
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-01",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-01",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -11986,41 +12151,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-02",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-02",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-02",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3305
+      "value": 0.3373
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-02",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.33,
-      "band_high": 0.331
+      "band_low": 0.328,
+      "band_high": 0.3466
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-02",
       "candidate_id": "lula",
-      "value": 0.3966
+      "value": 0.3943
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-02",
       "candidate_id": "lula",
-      "band_low": 0.3951,
-      "band_high": 0.3981
+      "band_low": 0.391,
+      "band_high": 0.3977
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-02",
       "candidate_id": "ratinho_junior",
-      "value": 0.065
+      "value": 0.0576
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-02",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.065,
-      "band_high": 0.065
+      "band_low": 0.0501,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12039,27 +12217,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-02",
       "candidate_id": "romeu_zema",
-      "value": 0.0427
+      "value": 0.0348
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-02",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0267,
-      "band_high": 0.0586
+      "band_low": 0.018,
+      "band_high": 0.0516
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-02",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-02",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -12077,41 +12255,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-03",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-03",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-03",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3305
+      "value": 0.3373
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-03",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.33,
-      "band_high": 0.331
+      "band_low": 0.328,
+      "band_high": 0.3466
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-03",
       "candidate_id": "lula",
-      "value": 0.3966
+      "value": 0.3943
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-03",
       "candidate_id": "lula",
-      "band_low": 0.3951,
-      "band_high": 0.3981
+      "band_low": 0.391,
+      "band_high": 0.3977
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-03",
       "candidate_id": "ratinho_junior",
-      "value": 0.065
+      "value": 0.0576
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-03",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.065,
-      "band_high": 0.065
+      "band_low": 0.0501,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12130,27 +12321,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-03",
       "candidate_id": "romeu_zema",
-      "value": 0.0427
+      "value": 0.0348
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-03",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0267,
-      "band_high": 0.0586
+      "band_low": 0.018,
+      "band_high": 0.0516
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-03",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-03",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -12168,41 +12359,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-04",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-04",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-04",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3305
+      "value": 0.3373
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-04",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.33,
-      "band_high": 0.331
+      "band_low": 0.328,
+      "band_high": 0.3466
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-04",
       "candidate_id": "lula",
-      "value": 0.3966
+      "value": 0.3943
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-04",
       "candidate_id": "lula",
-      "band_low": 0.3951,
-      "band_high": 0.3981
+      "band_low": 0.391,
+      "band_high": 0.3977
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-04",
       "candidate_id": "ratinho_junior",
-      "value": 0.065
+      "value": 0.0576
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-04",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.065,
-      "band_high": 0.065
+      "band_low": 0.0501,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12221,27 +12425,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-04",
       "candidate_id": "romeu_zema",
-      "value": 0.0427
+      "value": 0.0348
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-04",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0267,
-      "band_high": 0.0586
+      "band_low": 0.018,
+      "band_high": 0.0516
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-04",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-04",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -12259,41 +12463,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-05",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-05",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-05",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3449
+      "value": 0.3462
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-05",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3252,
-      "band_high": 0.3646
+      "band_low": 0.3291,
+      "band_high": 0.3634
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-05",
       "candidate_id": "lula",
-      "value": 0.3836
+      "value": 0.3852
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-05",
       "candidate_id": "lula",
-      "band_low": 0.3656,
-      "band_high": 0.4015
+      "band_low": 0.3695,
+      "band_high": 0.401
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-05",
       "candidate_id": "ratinho_junior",
-      "value": 0.063
+      "value": 0.0587
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-05",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
-      "band_high": 0.065
+      "band_low": 0.0524,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12312,27 +12529,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-05",
       "candidate_id": "romeu_zema",
-      "value": 0.0449
+      "value": 0.0385
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-05",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0316,
-      "band_high": 0.0581
+      "band_low": 0.0227,
+      "band_high": 0.0542
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-05",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-05",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -12350,41 +12567,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-06",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-06",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-06",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3449
+      "value": 0.3462
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-06",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3252,
-      "band_high": 0.3646
+      "band_low": 0.3291,
+      "band_high": 0.3634
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-06",
       "candidate_id": "lula",
-      "value": 0.3836
+      "value": 0.3852
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-06",
       "candidate_id": "lula",
-      "band_low": 0.3656,
-      "band_high": 0.4015
+      "band_low": 0.3695,
+      "band_high": 0.401
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-06",
       "candidate_id": "ratinho_junior",
-      "value": 0.063
+      "value": 0.0587
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-06",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
-      "band_high": 0.065
+      "band_low": 0.0524,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12403,27 +12633,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-06",
       "candidate_id": "romeu_zema",
-      "value": 0.0449
+      "value": 0.0385
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-06",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0316,
-      "band_high": 0.0581
+      "band_low": 0.0227,
+      "band_high": 0.0542
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-06",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0434
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-06",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0365,
-      "band_high": 0.0504
+      "band_low": 0.0228,
+      "band_high": 0.0478
     },
     {
       "series_kind": "aggregate",
@@ -12441,41 +12671,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-07",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-07",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-07",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3333
+      "value": 0.3368
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-07",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3074,
-      "band_high": 0.3593
+      "band_low": 0.3126,
+      "band_high": 0.3609
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-07",
       "candidate_id": "lula",
-      "value": 0.3827
+      "value": 0.3842
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-07",
       "candidate_id": "lula",
-      "band_low": 0.3671,
-      "band_high": 0.3982
+      "band_low": 0.37,
+      "band_high": 0.3983
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-07",
       "candidate_id": "ratinho_junior",
-      "value": 0.063
+      "value": 0.0587
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-07",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
-      "band_high": 0.065
+      "band_low": 0.0524,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12494,27 +12737,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-07",
       "candidate_id": "romeu_zema",
-      "value": 0.0436
+      "value": 0.0388
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-07",
       "candidate_id": "romeu_zema",
-      "band_low": 0.032,
-      "band_high": 0.0552
+      "band_low": 0.0247,
+      "band_high": 0.0529
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-07",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0422
+      "value": 0.0365
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-07",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0364,
-      "band_high": 0.0481
+      "band_low": 0.0256,
+      "band_high": 0.0475
     },
     {
       "series_kind": "aggregate",
@@ -12532,41 +12775,54 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-08",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-08",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-08",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3333
+      "value": 0.3368
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-08",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3074,
-      "band_high": 0.3593
+      "band_low": 0.3126,
+      "band_high": 0.3609
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-08",
       "candidate_id": "lula",
-      "value": 0.3827
+      "value": 0.3842
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-08",
       "candidate_id": "lula",
-      "band_low": 0.3671,
-      "band_high": 0.3982
+      "band_low": 0.37,
+      "band_high": 0.3983
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-08",
       "candidate_id": "ratinho_junior",
-      "value": 0.063
+      "value": 0.0587
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-08",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
-      "band_high": 0.065
+      "band_low": 0.0524,
+      "band_high": 0.0651
     },
     {
       "series_kind": "aggregate",
@@ -12585,27 +12841,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-08",
       "candidate_id": "romeu_zema",
-      "value": 0.0436
+      "value": 0.0388
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-08",
       "candidate_id": "romeu_zema",
-      "band_low": 0.032,
-      "band_high": 0.0552
+      "band_low": 0.0247,
+      "band_high": 0.0529
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-08",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0422
+      "value": 0.0365
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-08",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0364,
-      "band_high": 0.0481
+      "band_low": 0.0256,
+      "band_high": 0.0475
     },
     {
       "series_kind": "aggregate",
@@ -12623,40 +12879,53 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-09",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-09",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-09",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3342
+      "value": 0.3383
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-09",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.304,
-      "band_high": 0.3644
+      "band_low": 0.3114,
+      "band_high": 0.3652
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-09",
       "candidate_id": "lula",
-      "value": 0.3772
+      "value": 0.3805
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-09",
       "candidate_id": "lula",
-      "band_low": 0.3626,
-      "band_high": 0.3918
+      "band_low": 0.3667,
+      "band_high": 0.3943
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-09",
       "candidate_id": "ratinho_junior",
-      "value": 0.061
+      "value": 0.0555
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-09",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
+      "band_low": 0.05,
       "band_high": 0.061
     },
     {
@@ -12676,27 +12945,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-09",
       "candidate_id": "romeu_zema",
-      "value": 0.0492
+      "value": 0.0416
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-09",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0411,
-      "band_high": 0.0572
+      "band_low": 0.0271,
+      "band_high": 0.0562
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-09",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0451
+      "value": 0.0363
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-09",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0396,
-      "band_high": 0.0506
+      "band_low": 0.0236,
+      "band_high": 0.0491
     },
     {
       "series_kind": "aggregate",
@@ -12714,40 +12983,53 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-10",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-10",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-10",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3342
+      "value": 0.3383
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-10",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.304,
-      "band_high": 0.3644
+      "band_low": 0.3114,
+      "band_high": 0.3652
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-10",
       "candidate_id": "lula",
-      "value": 0.3772
+      "value": 0.3805
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-10",
       "candidate_id": "lula",
-      "band_low": 0.3626,
-      "band_high": 0.3918
+      "band_low": 0.3667,
+      "band_high": 0.3943
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-10",
       "candidate_id": "ratinho_junior",
-      "value": 0.061
+      "value": 0.0555
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-10",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
+      "band_low": 0.05,
       "band_high": 0.061
     },
     {
@@ -12767,27 +13049,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-10",
       "candidate_id": "romeu_zema",
-      "value": 0.0492
+      "value": 0.0416
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-10",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0411,
-      "band_high": 0.0572
+      "band_low": 0.0271,
+      "band_high": 0.0562
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-10",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0451
+      "value": 0.0363
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-10",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0396,
-      "band_high": 0.0506
+      "band_low": 0.0236,
+      "band_high": 0.0491
     },
     {
       "series_kind": "aggregate",
@@ -12805,40 +13087,53 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-11",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-11",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-11",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3342
+      "value": 0.3383
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-11",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.304,
-      "band_high": 0.3644
+      "band_low": 0.3114,
+      "band_high": 0.3652
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-11",
       "candidate_id": "lula",
-      "value": 0.3772
+      "value": 0.3805
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-11",
       "candidate_id": "lula",
-      "band_low": 0.3626,
-      "band_high": 0.3918
+      "band_low": 0.3667,
+      "band_high": 0.3943
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-11",
       "candidate_id": "ratinho_junior",
-      "value": 0.061
+      "value": 0.0555
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-11",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
+      "band_low": 0.05,
       "band_high": 0.061
     },
     {
@@ -12858,27 +13153,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-11",
       "candidate_id": "romeu_zema",
-      "value": 0.0492
+      "value": 0.0416
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-11",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0411,
-      "band_high": 0.0572
+      "band_low": 0.0271,
+      "band_high": 0.0562
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-11",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0451
+      "value": 0.0363
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-11",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0396,
-      "band_high": 0.0506
+      "band_low": 0.0236,
+      "band_high": 0.0491
     },
     {
       "series_kind": "aggregate",
@@ -12896,40 +13191,53 @@
     {
       "series_kind": "aggregate",
       "date": "2026-02-12",
+      "candidate_id": "ciro_gomes",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-02-12",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-02-12",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3342
+      "value": 0.3383
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-12",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.304,
-      "band_high": 0.3644
+      "band_low": 0.3114,
+      "band_high": 0.3652
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-12",
       "candidate_id": "lula",
-      "value": 0.3772
+      "value": 0.3805
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-12",
       "candidate_id": "lula",
-      "band_low": 0.3626,
-      "band_high": 0.3918
+      "band_low": 0.3667,
+      "band_high": 0.3943
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-12",
       "candidate_id": "ratinho_junior",
-      "value": 0.061
+      "value": 0.0555
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-12",
       "candidate_id": "ratinho_junior",
-      "band_low": 0.061,
+      "band_low": 0.05,
       "band_high": 0.061
     },
     {
@@ -12949,27 +13257,27 @@
       "series_kind": "aggregate",
       "date": "2026-02-12",
       "candidate_id": "romeu_zema",
-      "value": 0.0492
+      "value": 0.0416
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-12",
       "candidate_id": "romeu_zema",
-      "band_low": 0.0411,
-      "band_high": 0.0572
+      "band_low": 0.0271,
+      "band_high": 0.0562
     },
     {
       "series_kind": "aggregate",
       "date": "2026-02-12",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0451
+      "value": 0.0363
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-02-12",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0396,
-      "band_high": 0.0506
+      "band_low": 0.0236,
+      "band_high": 0.0491
     },
     {
       "series_kind": "aggregate",
@@ -16160,1093 +16468,1457 @@
       "series_kind": "aggregate",
       "date": "2026-03-22",
       "candidate_id": "aldo_rebelo",
-      "value": 0.006
+      "value": 0.0035
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-22",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.006,
-      "band_high": 0.006
+      "band_low": 0.0006,
+      "band_high": 0.0065
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-22",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-22",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-22",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.401
+      "value": 0.384
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-22",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.401,
-      "band_high": 0.401
+      "band_low": 0.3638,
+      "band_high": 0.4042
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-22",
       "candidate_id": "lula",
-      "value": 0.459
+      "value": 0.4263
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-22",
       "candidate_id": "lula",
-      "band_low": 0.459,
-      "band_high": 0.459
+      "band_low": 0.3874,
+      "band_high": 0.4652
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-22",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-22",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-22",
       "candidate_id": "renan_santos",
-      "value": 0.044
+      "value": 0.0299
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-22",
       "candidate_id": "renan_santos",
-      "band_low": 0.044,
-      "band_high": 0.044
+      "band_low": 0.0132,
+      "band_high": 0.0467
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-22",
-      "candidate_id": "romeu_zema",
-      "value": 0.031
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-22",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.031,
-      "band_high": 0.031
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-22",
-      "candidate_id": "ronaldo_caiado",
-      "value": 0.037
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-22",
-      "candidate_id": "ronaldo_caiado",
-      "band_low": 0.037,
-      "band_high": 0.037
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "aldo_rebelo",
-      "value": 0.006
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "aldo_rebelo",
-      "band_low": 0.006,
-      "band_high": 0.006
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "flavio_bolsonaro",
-      "value": 0.401
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.401,
-      "band_high": 0.401
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "lula",
-      "value": 0.459
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "lula",
-      "band_low": 0.459,
-      "band_high": 0.459
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "renan_santos",
-      "value": 0.044
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "renan_santos",
-      "band_low": 0.044,
-      "band_high": 0.044
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "romeu_zema",
-      "value": 0.031
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.031,
-      "band_high": 0.031
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-23",
-      "candidate_id": "ronaldo_caiado",
-      "value": 0.037
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-23",
-      "candidate_id": "ronaldo_caiado",
-      "band_low": 0.037,
-      "band_high": 0.037
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "aldo_rebelo",
-      "value": 0.006
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "aldo_rebelo",
-      "band_low": 0.006,
-      "band_high": 0.006
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "flavio_bolsonaro",
-      "value": 0.401
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.401,
-      "band_high": 0.401
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "lula",
-      "value": 0.459
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "lula",
-      "band_low": 0.459,
-      "band_high": 0.459
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "renan_santos",
-      "value": 0.044
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "renan_santos",
-      "band_low": 0.044,
-      "band_high": 0.044
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "romeu_zema",
-      "value": 0.031
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.031,
-      "band_high": 0.031
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-24",
-      "candidate_id": "ronaldo_caiado",
-      "value": 0.037
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-24",
-      "candidate_id": "ronaldo_caiado",
-      "band_low": 0.037,
-      "band_high": 0.037
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "aldo_rebelo",
-      "value": 0.006
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "aldo_rebelo",
-      "band_low": 0.006,
-      "band_high": 0.006
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "flavio_bolsonaro",
-      "value": 0.401
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.401,
-      "band_high": 0.401
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "lula",
-      "value": 0.459
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "lula",
-      "band_low": 0.459,
-      "band_high": 0.459
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "renan_santos",
-      "value": 0.044
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "renan_santos",
-      "band_low": 0.044,
-      "band_high": 0.044
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "romeu_zema",
-      "value": 0.031
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.031,
-      "band_high": 0.031
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-25",
-      "candidate_id": "ronaldo_caiado",
-      "value": 0.037
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-25",
-      "candidate_id": "ronaldo_caiado",
-      "band_low": 0.037,
-      "band_high": 0.037
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-26",
-      "candidate_id": "aldo_rebelo",
-      "value": 0.0081
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-26",
-      "candidate_id": "aldo_rebelo",
-      "band_low": 0.0056,
-      "band_high": 0.0106
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-26",
-      "candidate_id": "flavio_bolsonaro",
-      "value": 0.3914
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-26",
-      "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.38,
-      "band_high": 0.4027
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-26",
-      "candidate_id": "lula",
-      "value": 0.4397
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-26",
-      "candidate_id": "lula",
-      "band_low": 0.417,
-      "band_high": 0.4624
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-26",
-      "candidate_id": "renan_santos",
-      "value": 0.0306
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-03-26",
-      "candidate_id": "renan_santos",
-      "band_low": 0.0148,
-      "band_high": 0.0464
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-03-26",
       "candidate_id": "romeu_zema",
       "value": 0.0306
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-26",
+      "date": "2026-03-22",
       "candidate_id": "romeu_zema",
       "band_low": 0.0301,
       "band_high": 0.0311
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-26",
+      "date": "2026-03-22",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0366
+      "value": 0.0341
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-26",
+      "date": "2026-03-22",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0361,
-      "band_high": 0.0371
+      "band_low": 0.0307,
+      "band_high": 0.0375
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0081
+      "value": 0.0035
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0056,
-      "band_high": 0.0106
+      "band_low": 0.0006,
+      "band_high": 0.0065
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-23",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-23",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3914
+      "value": 0.384
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.38,
-      "band_high": 0.4027
+      "band_low": 0.3638,
+      "band_high": 0.4042
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "lula",
-      "value": 0.4397
+      "value": 0.4263
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "lula",
-      "band_low": 0.417,
-      "band_high": 0.4624
+      "band_low": 0.3874,
+      "band_high": 0.4652
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-27",
-      "candidate_id": "renan_santos",
-      "value": 0.0306
+      "date": "2026-03-23",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-27",
-      "candidate_id": "renan_santos",
-      "band_low": 0.0148,
-      "band_high": 0.0464
+      "date": "2026-03-23",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
+      "candidate_id": "renan_santos",
+      "value": 0.0299
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-23",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0132,
+      "band_high": 0.0467
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-23",
       "candidate_id": "romeu_zema",
       "value": 0.0306
     },
     {
       "series_kind": "uncertainty",
-      "date": "2026-03-27",
+      "date": "2026-03-23",
       "candidate_id": "romeu_zema",
       "band_low": 0.0301,
       "band_high": 0.0311
     },
     {
       "series_kind": "aggregate",
+      "date": "2026-03-23",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0341
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-23",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0307,
+      "band_high": 0.0375
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "aldo_rebelo",
+      "value": 0.0035
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "aldo_rebelo",
+      "band_low": 0.0006,
+      "band_high": 0.0065
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.384
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3638,
+      "band_high": 0.4042
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "lula",
+      "value": 0.4263
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "lula",
+      "band_low": 0.3874,
+      "band_high": 0.4652
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "renan_santos",
+      "value": 0.0299
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0132,
+      "band_high": 0.0467
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "romeu_zema",
+      "value": 0.0306
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0301,
+      "band_high": 0.0311
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-24",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0341
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-24",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0307,
+      "band_high": 0.0375
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "aldo_rebelo",
+      "value": 0.0035
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "aldo_rebelo",
+      "band_low": 0.0006,
+      "band_high": 0.0065
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.384
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3638,
+      "band_high": 0.4042
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "lula",
+      "value": 0.4263
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "lula",
+      "band_low": 0.3874,
+      "band_high": 0.4652
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "renan_santos",
+      "value": 0.0299
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0132,
+      "band_high": 0.0467
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "romeu_zema",
+      "value": 0.0306
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0301,
+      "band_high": 0.0311
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-25",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0341
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-25",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0307,
+      "band_high": 0.0375
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "aldo_rebelo",
+      "value": 0.0057
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "aldo_rebelo",
+      "band_low": 0.0015,
+      "band_high": 0.01
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3822
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3651,
+      "band_high": 0.3994
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "lula",
+      "value": 0.4223
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "lula",
+      "band_low": 0.3891,
+      "band_high": 0.4555
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "renan_santos",
+      "value": 0.0246
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0083,
+      "band_high": 0.0409
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "romeu_zema",
+      "value": 0.0304
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0299,
+      "band_high": 0.0309
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-26",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0347
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-26",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0316,
+      "band_high": 0.0377
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "aldo_rebelo",
+      "value": 0.0057
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "aldo_rebelo",
+      "band_low": 0.0015,
+      "band_high": 0.01
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3822
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3651,
+      "band_high": 0.3994
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "lula",
+      "value": 0.4223
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "lula",
+      "band_low": 0.3891,
+      "band_high": 0.4555
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "renan_santos",
+      "value": 0.0246
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0083,
+      "band_high": 0.0409
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-27",
+      "candidate_id": "romeu_zema",
+      "value": 0.0304
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-27",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0299,
+      "band_high": 0.0309
+    },
+    {
+      "series_kind": "aggregate",
       "date": "2026-03-27",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0366
+      "value": 0.0347
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-27",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.0361,
-      "band_high": 0.0371
+      "band_low": 0.0316,
+      "band_high": 0.0377
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-28",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-28",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-28",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-28",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-28",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-28",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-29",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-29",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-29",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-29",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-29",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-29",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-30",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-30",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-30",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-30",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-30",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-30",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-31",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-31",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-03-31",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-03-31",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-03-31",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-03-31",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-01",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-01",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-01",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-01",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-01",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-01",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0057
+      "value": 0.0044
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0015,
-      "band_high": 0.01
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-02",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-02",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.3881
+      "value": 0.3817
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.3772,
-      "band_high": 0.3989
+      "band_low": 0.3666,
+      "band_high": 0.3969
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "lula",
-      "value": 0.4311
+      "value": 0.4195
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "lula",
-      "band_low": 0.4077,
-      "band_high": 0.4545
+      "band_low": 0.3899,
+      "band_high": 0.4492
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-02",
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-02",
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
+      "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "renan_santos",
-      "value": 0.0275
+      "value": 0.0236
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "renan_santos",
-      "band_low": 0.0134,
-      "band_high": 0.0416
+      "band_low": 0.0091,
+      "band_high": 0.038
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "romeu_zema",
-      "value": 0.0333
+      "value": 0.0326
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "romeu_zema",
-      "band_low": 0.029,
-      "band_high": 0.0376
+      "band_low": 0.0285,
+      "band_high": 0.0366
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-02",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.0376
+      "value": 0.0359
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-02",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.0392
+      "band_low": 0.0324,
+      "band_high": 0.0393
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-03",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0055
+      "value": 0.0037
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-03",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0001,
-      "band_high": 0.011
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-03",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-03",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-03",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.379
+      "value": 0.3727
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-03",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.378,
-      "band_high": 0.38
+      "band_low": 0.3637,
+      "band_high": 0.3817
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-03",
       "candidate_id": "lula",
-      "value": 0.4115
+      "value": 0.4011
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-03",
       "candidate_id": "lula",
-      "band_low": 0.41,
-      "band_high": 0.413
+      "band_low": 0.3862,
+      "band_high": 0.416
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-03",
-      "candidate_id": "renan_santos",
-      "value": 0.016
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-03",
-      "candidate_id": "renan_santos",
-      "band_low": 0.012,
-      "band_high": 0.02
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-04-03",
-      "candidate_id": "romeu_zema",
-      "value": 0.035
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-04-03",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.03,
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
       "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-03",
+      "candidate_id": "renan_santos",
+      "value": 0.014
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-03",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0097,
+      "band_high": 0.0183
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-03",
+      "candidate_id": "romeu_zema",
+      "value": 0.0333
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-03",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0286,
+      "band_high": 0.038
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-03",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.038
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-03",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.04
+      "band_low": 0.0312,
+      "band_high": 0.0394
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-04",
       "candidate_id": "aldo_rebelo",
-      "value": 0.0055
+      "value": 0.0037
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-04",
       "candidate_id": "aldo_rebelo",
-      "band_low": 0.0001,
-      "band_high": 0.011
+      "band_low": 0.0,
+      "band_high": 0.0089
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-04",
+      "candidate_id": "ciro_gomes",
+      "value": 0.07
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-04",
+      "candidate_id": "ciro_gomes",
+      "band_low": 0.07,
+      "band_high": 0.07
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-04",
       "candidate_id": "flavio_bolsonaro",
-      "value": 0.379
+      "value": 0.3727
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-04",
       "candidate_id": "flavio_bolsonaro",
-      "band_low": 0.378,
-      "band_high": 0.38
+      "band_low": 0.3637,
+      "band_high": 0.3817
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-04",
       "candidate_id": "lula",
-      "value": 0.4115
+      "value": 0.4011
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-04",
       "candidate_id": "lula",
-      "band_low": 0.41,
-      "band_high": 0.413
+      "band_low": 0.3862,
+      "band_high": 0.416
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-04",
-      "candidate_id": "renan_santos",
-      "value": 0.016
+      "candidate_id": "ratinho_junior",
+      "value": 0.04
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-04",
-      "candidate_id": "renan_santos",
-      "band_low": 0.012,
-      "band_high": 0.02
-    },
-    {
-      "series_kind": "aggregate",
-      "date": "2026-04-04",
-      "candidate_id": "romeu_zema",
-      "value": 0.035
-    },
-    {
-      "series_kind": "uncertainty",
-      "date": "2026-04-04",
-      "candidate_id": "romeu_zema",
-      "band_low": 0.03,
+      "candidate_id": "ratinho_junior",
+      "band_low": 0.04,
       "band_high": 0.04
     },
     {
       "series_kind": "aggregate",
       "date": "2026-04-04",
+      "candidate_id": "renan_santos",
+      "value": 0.014
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-04",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0097,
+      "band_high": 0.0183
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-04",
+      "candidate_id": "romeu_zema",
+      "value": 0.0333
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-04-04",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0286,
+      "band_high": 0.038
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-04-04",
       "candidate_id": "ronaldo_caiado",
-      "value": 0.038
+      "value": 0.0353
     },
     {
       "series_kind": "uncertainty",
       "date": "2026-04-04",
       "candidate_id": "ronaldo_caiado",
-      "band_low": 0.036,
-      "band_high": 0.04
+      "band_low": 0.0312,
+      "band_high": 0.0394
     },
     {
       "series_kind": "aggregate",
