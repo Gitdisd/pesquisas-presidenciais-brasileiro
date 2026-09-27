@@ -1,0 +1,35 @@
+{
+  "poll_id": "datafolha_2026-05-13_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-05-12",
+  "fieldwork_end": "2026-05-13",
+  "fieldwork_mid": "2026-05-12",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.35,
+    "romeu_zema": 0.03,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.02,
+    "samara_martins": 0.02,
+    "augusto_cury": 0.02,
+    "rui_costa_pimenta": 0.01,
+    "cabo_daciolo": 0.01,
+    "aldo_rebelo": 0.0,
+    "hertz_dias": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-00290/2026",
+  "witness_ids": [
+    "w_datafolha_2026-05-13_pdf"
+  ],
+  "dataset_version": "intake-cohort-003",
+  "notes": "Datafolha institute PDF (principal stimulated slate without Ciro). Fieldwork 12–13 May per PDF; Rebelo/Dias published as below 1% → 0."
+}

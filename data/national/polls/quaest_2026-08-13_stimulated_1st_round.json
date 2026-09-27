@@ -1,0 +1,37 @@
+{
+  "poll_id": "quaest_2026-08-13_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-08-10",
+  "fieldwork_end": "2026-08-13",
+  "fieldwork_mid": "2026-08-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.31,
+    "renan_santos": 0.04,
+    "ronaldo_caiado": 0.04,
+    "augusto_cury": 0.02,
+    "romeu_zema": 0.02,
+    "samara_martins": 0.01,
+    "edmilson_costa": 0.0,
+    "clariana_barao": 0.0,
+    "hertz_dias": 0.0,
+    "leonardo_avalanche": 0.0,
+    "rui_costa_pimenta": 0.0,
+    "wilson_grassi": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.1
+  },
+  "tse_registration_id": "BR-06773/2026",
+  "witness_ids": [
+    "w_quaest_2026-08-13_g1"
+  ],
+  "dataset_version": "intake-cohort-003",
+  "notes": "G1 Genial/Quaest (Globo/O Globo commissioned). Full stimulated slate + residuals."
+}

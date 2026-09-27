@@ -1,0 +1,30 @@
+{
+  "poll_id": "ideia_2026-05-27_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-05-23",
+  "fieldwork_end": "2026-05-27",
+  "fieldwork_mid": "2026-05-25",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1500,
+  "moe": 0.025,
+  "results": {
+    "lula": 0.385,
+    "flavio_bolsonaro": 0.315,
+    "ronaldo_caiado": 0.055,
+    "romeu_zema": 0.024,
+    "renan_santos": 0.021
+  },
+  "residuals": {
+    "outros": 0.044,
+    "branco_nulo": 0.051,
+    "ns_nr": 0.105
+  },
+  "tse_registration_id": "BR-02918/2026",
+  "witness_ids": [
+    "w_ideia_2026-05-27_gazeta"
+  ],
+  "dataset_version": "intake-cohort-003",
+  "notes": "Meio/Ideia via Gazeta do Povo. Principal stimulated scenario with Flávio (not Michelle/Tereza/Haddad variants). Outros residual as published."
+}

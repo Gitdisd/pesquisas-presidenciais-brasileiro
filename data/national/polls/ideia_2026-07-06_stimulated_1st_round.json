@@ -1,0 +1,37 @@
+{
+  "poll_id": "ideia_2026-07-06_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-07-03",
+  "fieldwork_end": "2026-07-06",
+  "fieldwork_mid": "2026-07-04",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1500,
+  "moe": 0.025,
+  "results": {
+    "lula": 0.404,
+    "flavio_bolsonaro": 0.32,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.025,
+    "aecio_neves": 0.02,
+    "renan_santos": 0.02,
+    "augusto_cury": 0.015,
+    "joaquim_barbosa": 0.005,
+    "cabo_daciolo": 0.005,
+    "rui_costa_pimenta": 0.004,
+    "samara_martins": 0.004,
+    "hertz_dias": 0.001,
+    "edmilson_costa": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.041,
+    "ns_nr": 0.095
+  },
+  "tse_registration_id": "BR-05628/2026",
+  "witness_ids": [
+    "w_ideia_2026-07-06_gazeta"
+  ],
+  "dataset_version": "intake-cohort-003",
+  "notes": "Meio/Ideia via Gazeta do Povo. Principal stimulated scenario with Flávio (not Michelle variant)."
+}

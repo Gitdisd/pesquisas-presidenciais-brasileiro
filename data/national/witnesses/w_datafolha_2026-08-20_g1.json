@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-08-20_g1",
+  "poll_id": "datafolha_2026-08-20_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/08/21/datafolha-primeiro-turno-21-agosto.ghtml",
+  "retrieved_at": "2026-09-27T00:05:00Z",
+  "content_hash": "sha256:b41fd72cd0d59284ddb7a9beec5a605cb3c3d95a281130f28a227c3e249f990d",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_003_v1",
+  "extractions": {
+    "n": 2058,
+    "moe_pp": 2.0,
+    "tse": "BR-04496/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-04496/2026",
+  "notes": "Fetched HTML. Full stimulated table with residuals."
+}

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_ideia_2026-07-06_gazeta",
+  "poll_id": "ideia_2026-07-06_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/meio-ideia-presidente-julho-2026/",
+  "retrieved_at": "2026-09-27T00:05:00Z",
+  "content_hash": "sha256:6602bcce0d192a82c213d73e372ba43f964ed281d63d20c2bfec0e53c031335f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_003_v1",
+  "extractions": {
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-05628/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-05628/2026",
+  "notes": "Fetched HTML. Institute PDF also retrieved (chart-image heavy); numbers taken from Gazeta table."
+}

@@ -1,0 +1,36 @@
+{
+  "poll_id": "quaest_2026-08-03_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-07-31",
+  "fieldwork_end": "2026-08-03",
+  "fieldwork_mid": "2026-08-01",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.3,
+    "renan_santos": 0.04,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.02,
+    "cabo_daciolo": 0.01,
+    "augusto_cury": 0.01,
+    "samara_martins": 0.01,
+    "clariana_barao": 0.0,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0,
+    "leonardo_avalanche": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.1
+  },
+  "tse_registration_id": "BR-06591/2026",
+  "witness_ids": [
+    "w_quaest_2026-08-03_gazeta"
+  ],
+  "dataset_version": "intake-cohort-003",
+  "notes": "Genial/Quaest via Gazeta do Povo. Full stimulated slate + residuals. CNN corroborates candidate shares; PDF charts image-only."
+}

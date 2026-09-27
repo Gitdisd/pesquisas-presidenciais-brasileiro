@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_quaest_2026-08-13_g1",
+  "poll_id": "quaest_2026-08-13_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/08/14/quaest-presidente-1o-turno-14-agosto.ghtml",
+  "retrieved_at": "2026-09-27T00:05:00Z",
+  "content_hash": "sha256:f861a32a8dcd62c92da5489c7379e9327d9cdab5c593df548615f76e72d29997",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_003_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2.0,
+    "tse": "BR-06773/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-06773/2026",
+  "notes": "Fetched HTML."
+}

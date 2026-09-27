@@ -1,41 +1,7 @@
 [
   {
-    "poll_id": "datafolha_2026-09-23_stimulated_1st_round",
-    "institute_id": "datafolha",
-    "fieldwork_start": "2026-09-22",
-    "fieldwork_end": "2026-09-23",
-    "fieldwork_mid": "2026-09-22",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_1st_round",
-    "sample_size": 2002,
-    "moe": 0.02,
-    "results": {
-      "lula": 0.4,
-      "flavio_bolsonaro": 0.36,
-      "augusto_cury": 0.05,
-      "ronaldo_caiado": 0.04,
-      "renan_santos": 0.03,
-      "romeu_zema": 0.01,
-      "samara_martins": 0.01,
-      "edmilson_costa": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "leonardo_avalanche": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
-    },
-    "residuals": {
-      "branco_nulo": 0.05,
-      "ns_nr": 0.02
-    },
-    "tse_registration_id": "BR-00304/2026",
-    "dataset_version": "intake-cohort-001",
-    "source_path": "data/national/polls/datafolha_2026-09-23_stimulated_1st_round.json"
-  },
-  {
-    "poll_id": "futura_2026-09-23_stimulated_1st_round",
-    "institute_id": "futura",
+    "poll_id": "realtime_bigdata_2026-09-23_stimulated_1st_round",
+    "institute_id": "realtime_bigdata",
     "fieldwork_start": "2026-09-19",
     "fieldwork_end": "2026-09-23",
     "fieldwork_mid": "2026-09-21",
@@ -43,56 +9,23 @@
     "election_cycle": 2026,
     "scenario": "stimulated_1st_round",
     "sample_size": 2000,
-    "moe": 0.022,
+    "moe": 0.02,
     "results": {
-      "flavio_bolsonaro": 0.404,
-      "lula": 0.384,
-      "ronaldo_caiado": 0.057,
-      "augusto_cury": 0.056,
-      "renan_santos": 0.024,
-      "romeu_zema": 0.009,
-      "samara_martins": 0.005,
-      "rui_costa_pimenta": 0.003,
-      "leonardo_avalanche": 0.002,
-      "edmilson_costa": 0.001,
-      "hertz_dias": 0.001,
-      "clariana_barao": 0.0
-    },
-    "residuals": {
-      "branco_nulo": 0.021,
-      "ns_nr": 0.032
-    },
-    "tse_registration_id": "BR-05268/2026",
-    "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/futura_2026-09-23_stimulated_1st_round.json"
-  },
-  {
-    "poll_id": "palver_2026-09-23_stimulated_1st_round",
-    "institute_id": "palver",
-    "fieldwork_start": "2026-09-20",
-    "fieldwork_end": "2026-09-23",
-    "fieldwork_mid": "2026-09-21",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_1st_round",
-    "sample_size": 5000,
-    "moe": 0.03,
-    "results": {
-      "lula": 0.43,
-      "flavio_bolsonaro": 0.43,
-      "renan_santos": 0.08,
-      "augusto_cury": 0.02,
-      "ronaldo_caiado": 0.01,
+      "lula": 0.41,
+      "flavio_bolsonaro": 0.37,
+      "augusto_cury": 0.06,
+      "renan_santos": 0.06,
+      "ronaldo_caiado": 0.02,
       "romeu_zema": 0.01
     },
     "residuals": {
       "outros": 0.01,
-      "branco_nulo": 0.01,
-      "ns_nr": 0.01
+      "branco_nulo": 0.03,
+      "ns_nr": 0.03
     },
-    "tse_registration_id": "BR-09587/2026",
+    "tse_registration_id": "BR-04202/2026",
     "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/palver_2026-09-23_stimulated_1st_round.json"
+    "source_path": "data/national/polls/realtime_bigdata_2026-09-23_stimulated_1st_round.json"
   },
   {
     "poll_id": "poderdata_2026-09-23_stimulated_1st_round",
@@ -129,8 +62,36 @@
     "source_path": "data/national/polls/poderdata_2026-09-23_stimulated_1st_round.json"
   },
   {
-    "poll_id": "realtime_bigdata_2026-09-23_stimulated_1st_round",
-    "institute_id": "realtime_bigdata",
+    "poll_id": "palver_2026-09-23_stimulated_1st_round",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-20",
+    "fieldwork_end": "2026-09-23",
+    "fieldwork_mid": "2026-09-21",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 5000,
+    "moe": 0.03,
+    "results": {
+      "lula": 0.43,
+      "flavio_bolsonaro": 0.43,
+      "renan_santos": 0.08,
+      "augusto_cury": 0.02,
+      "ronaldo_caiado": 0.01,
+      "romeu_zema": 0.01
+    },
+    "residuals": {
+      "outros": 0.01,
+      "branco_nulo": 0.01,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-09587/2026",
+    "dataset_version": "intake-cohort-002",
+    "source_path": "data/national/polls/palver_2026-09-23_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "futura_2026-09-23_stimulated_1st_round",
+    "institute_id": "futura",
     "fieldwork_start": "2026-09-19",
     "fieldwork_end": "2026-09-23",
     "fieldwork_mid": "2026-09-21",
@@ -138,23 +99,62 @@
     "election_cycle": 2026,
     "scenario": "stimulated_1st_round",
     "sample_size": 2000,
-    "moe": 0.02,
+    "moe": 0.022,
     "results": {
-      "lula": 0.41,
-      "flavio_bolsonaro": 0.37,
-      "augusto_cury": 0.06,
-      "renan_santos": 0.06,
-      "ronaldo_caiado": 0.02,
-      "romeu_zema": 0.01
+      "flavio_bolsonaro": 0.404,
+      "lula": 0.384,
+      "ronaldo_caiado": 0.057,
+      "augusto_cury": 0.056,
+      "renan_santos": 0.024,
+      "romeu_zema": 0.009,
+      "samara_martins": 0.005,
+      "rui_costa_pimenta": 0.003,
+      "leonardo_avalanche": 0.002,
+      "edmilson_costa": 0.001,
+      "hertz_dias": 0.001,
+      "clariana_barao": 0.0
     },
     "residuals": {
-      "outros": 0.01,
-      "branco_nulo": 0.03,
-      "ns_nr": 0.03
+      "branco_nulo": 0.021,
+      "ns_nr": 0.032
     },
-    "tse_registration_id": "BR-04202/2026",
+    "tse_registration_id": "BR-05268/2026",
     "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/realtime_bigdata_2026-09-23_stimulated_1st_round.json"
+    "source_path": "data/national/polls/futura_2026-09-23_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "datafolha_2026-09-23_stimulated_1st_round",
+    "institute_id": "datafolha",
+    "fieldwork_start": "2026-09-22",
+    "fieldwork_end": "2026-09-23",
+    "fieldwork_mid": "2026-09-22",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2002,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.4,
+      "flavio_bolsonaro": 0.36,
+      "augusto_cury": 0.05,
+      "ronaldo_caiado": 0.04,
+      "renan_santos": 0.03,
+      "romeu_zema": 0.01,
+      "samara_martins": 0.01,
+      "edmilson_costa": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "leonardo_avalanche": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.05,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-00304/2026",
+    "dataset_version": "intake-cohort-001",
+    "source_path": "data/national/polls/datafolha_2026-09-23_stimulated_1st_round.json"
   },
   {
     "poll_id": "atlasintel_2026-09-22_stimulated_1st_round",
@@ -183,39 +183,6 @@
     "tse_registration_id": "BR-04739/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/atlasintel_2026-09-22_stimulated_1st_round.json"
-  },
-  {
-    "poll_id": "nexus_2026-09-20_stimulated_1st_round",
-    "institute_id": "nexus",
-    "fieldwork_start": "2026-09-18",
-    "fieldwork_end": "2026-09-20",
-    "fieldwork_mid": "2026-09-19",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_1st_round",
-    "sample_size": 2006,
-    "moe": 0.02,
-    "results": {
-      "lula": 0.4,
-      "flavio_bolsonaro": 0.37,
-      "augusto_cury": 0.06,
-      "ronaldo_caiado": 0.05,
-      "renan_santos": 0.03,
-      "romeu_zema": 0.01,
-      "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0
-    },
-    "residuals": {
-      "branco_nulo": 0.04,
-      "ns_nr": 0.02
-    },
-    "tse_registration_id": "BR-00485/2026",
-    "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/nexus_2026-09-20_stimulated_1st_round.json"
   },
   {
     "poll_id": "quaest_2026-09-20_stimulated_1st_round",
@@ -252,33 +219,71 @@
     "source_path": "data/national/polls/quaest_2026-09-20_stimulated_1st_round.json"
   },
   {
-    "poll_id": "atlasintel_2026-09-16_stimulated_1st_round",
-    "institute_id": "atlasintel",
-    "fieldwork_start": "2026-09-11",
-    "fieldwork_end": "2026-09-16",
-    "fieldwork_mid": "2026-09-13",
+    "poll_id": "nexus_2026-09-20_stimulated_1st_round",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-18",
+    "fieldwork_end": "2026-09-20",
+    "fieldwork_mid": "2026-09-19",
     "geography": "national",
     "election_cycle": 2026,
     "scenario": "stimulated_1st_round",
-    "sample_size": 5018,
-    "moe": 0.01,
+    "sample_size": 2006,
+    "moe": 0.02,
     "results": {
-      "lula": 0.441,
-      "flavio_bolsonaro": 0.417,
-      "renan_santos": 0.051,
-      "augusto_cury": 0.035,
-      "ronaldo_caiado": 0.017,
-      "romeu_zema": 0.011,
-      "samara_martins": 0.007
+      "lula": 0.4,
+      "flavio_bolsonaro": 0.37,
+      "augusto_cury": 0.06,
+      "ronaldo_caiado": 0.05,
+      "renan_santos": 0.03,
+      "romeu_zema": 0.01,
+      "samara_martins": 0.01,
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0
     },
     "residuals": {
-      "branco_nulo": 0.016,
-      "ns_nr": 0.005,
-      "outros": 0.008
+      "branco_nulo": 0.04,
+      "ns_nr": 0.02
     },
-    "tse_registration_id": "BR-06221/2026",
+    "tse_registration_id": "BR-00485/2026",
     "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/atlasintel_2026-09-16_stimulated_1st_round.json"
+    "source_path": "data/national/polls/nexus_2026-09-20_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "poderdata_2026-09-16_stimulated_1st_round",
+    "institute_id": "poderdata",
+    "fieldwork_start": "2026-09-13",
+    "fieldwork_end": "2026-09-16",
+    "fieldwork_mid": "2026-09-14",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 3000,
+    "moe": 0.018,
+    "results": {
+      "lula": 0.37,
+      "flavio_bolsonaro": 0.36,
+      "augusto_cury": 0.08,
+      "renan_santos": 0.03,
+      "ronaldo_caiado": 0.03,
+      "hertz_dias": 0.02,
+      "romeu_zema": 0.01,
+      "rui_costa_pimenta": 0.01,
+      "samara_martins": 0.01,
+      "clariana_barao": 0.01,
+      "pablo_marcal": 0.01,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.04,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-00360/2026",
+    "dataset_version": "intake-cohort-002",
+    "source_path": "data/national/polls/poderdata_2026-09-16_stimulated_1st_round.json"
   },
   {
     "poll_id": "datafolha_2026-09-16_stimulated_1st_round",
@@ -314,38 +319,33 @@
     "source_path": "data/national/polls/datafolha_2026-09-16_stimulated_1st_round.json"
   },
   {
-    "poll_id": "poderdata_2026-09-16_stimulated_1st_round",
-    "institute_id": "poderdata",
-    "fieldwork_start": "2026-09-13",
+    "poll_id": "atlasintel_2026-09-16_stimulated_1st_round",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-11",
     "fieldwork_end": "2026-09-16",
-    "fieldwork_mid": "2026-09-14",
+    "fieldwork_mid": "2026-09-13",
     "geography": "national",
     "election_cycle": 2026,
     "scenario": "stimulated_1st_round",
-    "sample_size": 3000,
-    "moe": 0.018,
+    "sample_size": 5018,
+    "moe": 0.01,
     "results": {
-      "lula": 0.37,
-      "flavio_bolsonaro": 0.36,
-      "augusto_cury": 0.08,
-      "renan_santos": 0.03,
-      "ronaldo_caiado": 0.03,
-      "hertz_dias": 0.02,
-      "romeu_zema": 0.01,
-      "rui_costa_pimenta": 0.01,
-      "samara_martins": 0.01,
-      "clariana_barao": 0.01,
-      "pablo_marcal": 0.01,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0
+      "lula": 0.441,
+      "flavio_bolsonaro": 0.417,
+      "renan_santos": 0.051,
+      "augusto_cury": 0.035,
+      "ronaldo_caiado": 0.017,
+      "romeu_zema": 0.011,
+      "samara_martins": 0.007
     },
     "residuals": {
-      "branco_nulo": 0.04,
-      "ns_nr": 0.02
+      "branco_nulo": 0.016,
+      "ns_nr": 0.005,
+      "outros": 0.008
     },
-    "tse_registration_id": "BR-00360/2026",
+    "tse_registration_id": "BR-06221/2026",
     "dataset_version": "intake-cohort-002",
-    "source_path": "data/national/polls/poderdata_2026-09-16_stimulated_1st_round.json"
+    "source_path": "data/national/polls/atlasintel_2026-09-16_stimulated_1st_round.json"
   },
   {
     "poll_id": "quaest_2026-09-13_stimulated_1st_round",
@@ -576,38 +576,6 @@
     "source_path": "data/national/polls/poderdata_2026-09-02_stimulated_1st_round.json"
   },
   {
-    "poll_id": "futura_2026-09-01_stimulated_1st_round",
-    "institute_id": "futura",
-    "fieldwork_start": "2026-08-27",
-    "fieldwork_end": "2026-09-01",
-    "fieldwork_mid": "2026-08-29",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_1st_round",
-    "sample_size": 2000,
-    "moe": 0.022,
-    "results": {
-      "lula": 0.387,
-      "flavio_bolsonaro": 0.336,
-      "augusto_cury": 0.099,
-      "ronaldo_caiado": 0.035,
-      "renan_santos": 0.028,
-      "pablo_marcal": 0.027,
-      "romeu_zema": 0.016,
-      "samara_martins": 0.004,
-      "rui_costa_pimenta": 0.003,
-      "wilson_grassi": 0.003,
-      "hertz_dias": 0.001
-    },
-    "residuals": {
-      "branco_nulo": 0.02,
-      "ns_nr": 0.041
-    },
-    "tse_registration_id": "BR-02793/2026",
-    "dataset_version": "intake-cohort-001",
-    "source_path": "data/national/polls/futura_2026-09-01_stimulated_1st_round.json"
-  },
-  {
     "poll_id": "quaest_2026-09-01_stimulated_1st_round",
     "institute_id": "quaest",
     "fieldwork_start": "2026-08-30",
@@ -641,6 +609,38 @@
     "source_path": "data/national/polls/quaest_2026-09-01_stimulated_1st_round.json"
   },
   {
+    "poll_id": "futura_2026-09-01_stimulated_1st_round",
+    "institute_id": "futura",
+    "fieldwork_start": "2026-08-27",
+    "fieldwork_end": "2026-09-01",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2000,
+    "moe": 0.022,
+    "results": {
+      "lula": 0.387,
+      "flavio_bolsonaro": 0.336,
+      "augusto_cury": 0.099,
+      "ronaldo_caiado": 0.035,
+      "renan_santos": 0.028,
+      "pablo_marcal": 0.027,
+      "romeu_zema": 0.016,
+      "samara_martins": 0.004,
+      "rui_costa_pimenta": 0.003,
+      "wilson_grassi": 0.003,
+      "hertz_dias": 0.001
+    },
+    "residuals": {
+      "branco_nulo": 0.02,
+      "ns_nr": 0.041
+    },
+    "tse_registration_id": "BR-02793/2026",
+    "dataset_version": "intake-cohort-001",
+    "source_path": "data/national/polls/futura_2026-09-01_stimulated_1st_round.json"
+  },
+  {
     "poll_id": "realtime_bigdata_2026-08-31_stimulated_1st_round",
     "institute_id": "realtime_bigdata",
     "fieldwork_start": "2026-08-27",
@@ -667,6 +667,30 @@
     "tse_registration_id": "BR-03490/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "nexus_2026-08-30_stimulated_1st_round",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-08-28",
+    "fieldwork_end": "2026-08-30",
+    "fieldwork_mid": "2026-08-29",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2005,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.39,
+      "flavio_bolsonaro": 0.33,
+      "augusto_cury": 0.11,
+      "ronaldo_caiado": 0.05,
+      "renan_santos": 0.03,
+      "romeu_zema": 0.01
+    },
+    "residuals": {},
+    "tse_registration_id": "BR-08900/2026",
+    "dataset_version": "intake-cohort-001",
+    "source_path": "data/national/polls/nexus_2026-08-30_stimulated_1st_round.json"
   },
   {
     "poll_id": "atlasintel_2026-08-30_stimulated_1st_round",
@@ -698,30 +722,6 @@
     "tse_registration_id": "BR-07972/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/atlasintel_2026-08-30_stimulated_1st_round.json"
-  },
-  {
-    "poll_id": "nexus_2026-08-30_stimulated_1st_round",
-    "institute_id": "nexus",
-    "fieldwork_start": "2026-08-28",
-    "fieldwork_end": "2026-08-30",
-    "fieldwork_mid": "2026-08-29",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_1st_round",
-    "sample_size": 2005,
-    "moe": 0.02,
-    "results": {
-      "lula": 0.39,
-      "flavio_bolsonaro": 0.33,
-      "augusto_cury": 0.11,
-      "ronaldo_caiado": 0.05,
-      "renan_santos": 0.03,
-      "romeu_zema": 0.01
-    },
-    "residuals": {},
-    "tse_registration_id": "BR-08900/2026",
-    "dataset_version": "intake-cohort-001",
-    "source_path": "data/national/polls/nexus_2026-08-30_stimulated_1st_round.json"
   },
   {
     "poll_id": "vox_brasil_2026-08-27_stimulated_1st_round",
@@ -845,6 +845,73 @@
     "source_path": "data/national/polls/indexa_2026-08-23_stimulated_1st_round.json"
   },
   {
+    "poll_id": "datafolha_2026-08-20_stimulated_1st_round",
+    "institute_id": "datafolha",
+    "fieldwork_start": "2026-08-18",
+    "fieldwork_end": "2026-08-20",
+    "fieldwork_mid": "2026-08-19",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2058,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.39,
+      "flavio_bolsonaro": 0.33,
+      "ronaldo_caiado": 0.05,
+      "renan_santos": 0.04,
+      "romeu_zema": 0.03,
+      "augusto_cury": 0.02,
+      "samara_martins": 0.01,
+      "rui_costa_pimenta": 0.01,
+      "wilson_grassi": 0.01,
+      "edmilson_costa": 0.01,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.06,
+      "ns_nr": 0.04
+    },
+    "tse_registration_id": "BR-04496/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/datafolha_2026-08-20_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "quaest_2026-08-13_stimulated_1st_round",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-08-10",
+    "fieldwork_end": "2026-08-13",
+    "fieldwork_mid": "2026-08-11",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.38,
+      "flavio_bolsonaro": 0.31,
+      "renan_santos": 0.04,
+      "ronaldo_caiado": 0.04,
+      "augusto_cury": 0.02,
+      "romeu_zema": 0.02,
+      "samara_martins": 0.01,
+      "edmilson_costa": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0,
+      "leonardo_avalanche": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.08,
+      "ns_nr": 0.1
+    },
+    "tse_registration_id": "BR-06773/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/quaest_2026-08-13_stimulated_1st_round.json"
+  },
+  {
     "poll_id": "poderdata_2026-08-12_stimulated_1st_round",
     "institute_id": "poderdata",
     "fieldwork_start": "2026-08-09",
@@ -907,6 +974,39 @@
     "tse_registration_id": "BR-06935/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "quaest_2026-08-03_stimulated_1st_round",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-07-31",
+    "fieldwork_end": "2026-08-03",
+    "fieldwork_mid": "2026-08-01",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.39,
+      "flavio_bolsonaro": 0.3,
+      "renan_santos": 0.04,
+      "ronaldo_caiado": 0.04,
+      "romeu_zema": 0.02,
+      "cabo_daciolo": 0.01,
+      "augusto_cury": 0.01,
+      "samara_martins": 0.01,
+      "clariana_barao": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "leonardo_avalanche": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.08,
+      "ns_nr": 0.1
+    },
+    "tse_registration_id": "BR-06591/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/quaest_2026-08-03_stimulated_1st_round.json"
   },
   {
     "poll_id": "ideia_2026-08-03_stimulated_1st_round",
@@ -1007,6 +1107,40 @@
     "source_path": "data/national/polls/quaest_2026-07-13_stimulated_1st_round.json"
   },
   {
+    "poll_id": "ideia_2026-07-06_stimulated_1st_round",
+    "institute_id": "ideia",
+    "fieldwork_start": "2026-07-03",
+    "fieldwork_end": "2026-07-06",
+    "fieldwork_mid": "2026-07-04",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 1500,
+    "moe": 0.025,
+    "results": {
+      "lula": 0.404,
+      "flavio_bolsonaro": 0.32,
+      "ronaldo_caiado": 0.04,
+      "romeu_zema": 0.025,
+      "aecio_neves": 0.02,
+      "renan_santos": 0.02,
+      "augusto_cury": 0.015,
+      "joaquim_barbosa": 0.005,
+      "cabo_daciolo": 0.005,
+      "rui_costa_pimenta": 0.004,
+      "samara_martins": 0.004,
+      "hertz_dias": 0.001,
+      "edmilson_costa": 0.001
+    },
+    "residuals": {
+      "branco_nulo": 0.041,
+      "ns_nr": 0.095
+    },
+    "tse_registration_id": "BR-05628/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/ideia_2026-07-06_stimulated_1st_round.json"
+  },
+  {
     "poll_id": "datafolha_2026-06-19_stimulated_1st_round",
     "institute_id": "datafolha",
     "fieldwork_start": "2026-06-17",
@@ -1039,6 +1173,65 @@
     "tse_registration_id": "BR-09956/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-06-19_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "ideia_2026-05-27_stimulated_1st_round",
+    "institute_id": "ideia",
+    "fieldwork_start": "2026-05-23",
+    "fieldwork_end": "2026-05-27",
+    "fieldwork_mid": "2026-05-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 1500,
+    "moe": 0.025,
+    "results": {
+      "lula": 0.385,
+      "flavio_bolsonaro": 0.315,
+      "ronaldo_caiado": 0.055,
+      "romeu_zema": 0.024,
+      "renan_santos": 0.021
+    },
+    "residuals": {
+      "outros": 0.044,
+      "branco_nulo": 0.051,
+      "ns_nr": 0.105
+    },
+    "tse_registration_id": "BR-02918/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/ideia_2026-05-27_stimulated_1st_round.json"
+  },
+  {
+    "poll_id": "datafolha_2026-05-13_stimulated_1st_round",
+    "institute_id": "datafolha",
+    "fieldwork_start": "2026-05-12",
+    "fieldwork_end": "2026-05-13",
+    "fieldwork_mid": "2026-05-12",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_1st_round",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.38,
+      "flavio_bolsonaro": 0.35,
+      "romeu_zema": 0.03,
+      "ronaldo_caiado": 0.03,
+      "renan_santos": 0.02,
+      "samara_martins": 0.02,
+      "augusto_cury": 0.02,
+      "rui_costa_pimenta": 0.01,
+      "cabo_daciolo": 0.01,
+      "aldo_rebelo": 0.0,
+      "hertz_dias": 0.0
+    },
+    "residuals": {
+      "branco_nulo": 0.09,
+      "ns_nr": 0.03
+    },
+    "tse_registration_id": "BR-00290/2026",
+    "dataset_version": "intake-cohort-003",
+    "source_path": "data/national/polls/datafolha_2026-05-13_stimulated_1st_round.json"
   },
   {
     "poll_id": "parana_pesquisas_2026-03-28_stimulated_1st_round",

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_datafolha_2026-05-13_pdf",
+  "poll_id": "datafolha_2026-05-13_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://media.folha.com.br/datafolha/2026/05/25/kuthpcfdgyzkmcn7cl-nqpixyyyldzip6u4sr8nthi4.pdf",
+  "retrieved_at": "2026-09-27T00:05:00Z",
+  "content_hash": "sha256:69385b440957a472985b774ff0fa803622fdc2dfcfda316df276fcbf9a104f75",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_003_v1",
+  "extractions": {
+    "n": 2004,
+    "moe_pp": 2.0,
+    "tse": "BR-00290/2026"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-00290/2026",
+  "notes": "Institute PDF; corroborated by Valor/O Globo/G1 press."
+}
