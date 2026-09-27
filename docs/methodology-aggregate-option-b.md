@@ -18,7 +18,7 @@ Média ponderada por \(\sqrt{N}\) numa janela móvel dos últimos ~14 dias, com 
 | \(n_{\mathrm{ref}}\) | 2000 | Referência interna de escala (os pesos são renormalizados) |
 
 1. **Datação.** Cada pesquisa entra no eixo \(x\) em `fieldwork_mid` (ponto médio calendário de `fieldwork_start`…`fieldwork_end`). Dia de publicação não entra no agregado.
-2. **Cenário.** Só se misturam pesquisas com o **mesmo** `scenario` (ex.: `stimulated_1st_round`). Geografia v1: `national` apenas.
+2. **Cenário.** Só se misturam pesquisas com o **mesmo** `scenario` (ex.: `stimulated_1st_round`). Geografia do agregado Option B: **`national` apenas** — pesquisas estaduais (`data/regional/`, `geography: state`) **nunca** entram neste modelo. Selecionar vários UFs **não** autoriza média misturada fingindo Brasil (regra multi-geo no-blend; ver `docs/regional.md`).
 3. **Peso de tamanho.** \(w_i^{\mathrm{size}} = \sqrt{\min(n_i, n_{\cap}) / n_{\mathrm{ref}}}\). Se \(N\) ausente → peso 1 (fallback igualitário).
 4. **Anti-flood.** Se o instituto \(h\) tem \(m_{h,d}\) pesquisas na janela \(W\), \(w_i^{\mathrm{flood}} = \sqrt{1/m}\). Assim várias liberações da mesma casa compartilham um “orçamento” de influência.
 5. **Peso final.** \(w_i = w_i^{\mathrm{size}} \cdot w_i^{\mathrm{flood}}\). Agregado do candidato \(c\) no dia \(d\):

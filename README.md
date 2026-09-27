@@ -23,7 +23,8 @@ Schemas canônicos: [`schemas/`](schemas/). Fixtures sintéticos: [`fixtures/nat
 
 - Shares e resíduos: frações 0–1
 - Identidade: `poll_id` + witnesses; TSE só proveniência
-- v1: apenas **nacional**
+- Nacional: `data/national/` (`geography: national` locked) → Option B
+- Regional UF: `data/regional/` → `site/data/canonical-points-regional.json` only (nunca mistura no agregado nacional)
 
 Stats (Python) gera `site/data/chart.json` (`series_kind`: `poll` | `aggregate` | `uncertainty`; Option B). A UI multiplica frações ×100 para exibição em pontos percentuais. **Lead owns** `site/index.html`, `site/css/`, `site/js/`.
 
@@ -87,9 +88,9 @@ For **2º turno**, consume `site/data/canonical-points-2nd-round.json` and **fil
 ## Pipeline Ruby CLI
 
 ```bash
-bin/pebr validate                 # fixtures + data/national/polls|witnesses vs schemas/
-bin/pebr assemble                 # rebuild both canonical-points*.json (1º + 2º)
-bin/pebr normalize                # fingerprint duplicate report (no rewrite)
+bin/pebr validate                 # fixtures + national + regional trees vs schemas/
+bin/pebr assemble                 # rebuild 1º + 2º + canonical-points-regional.json
+bin/pebr normalize                # fingerprint + anti-replicate (national + regional)
 bin/pebr discover                 # read-only inventory of sources.json + institutes.yml
 bin/pebr watch --offline          # discovery queue from fixtures (no network)
 bin/pebr watch --fetch            # live listings/RSS/archive-fallback → review queue (no share inventing)
@@ -101,7 +102,7 @@ bin/pebr version
 Discovery queue: [`data/national/discovery/`](data/national/discovery/) · runbook: [`docs/discovery.md`](docs/discovery.md)  
 (Patterns adapted from [pesquisas-eleitorais-br](https://github.com/Gitdisd/pesquisas-eleitorais-br) discover-polls — PEBR never auto-extracts or commits shares.)
 
-CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) — `validate` → `normalize` → `assemble` → loud drift check on **both** canonical JSON files + offline watch smoke/tests. Opt-in `run_discovery_fetch` uploads a queue artifact only. **No auto-push of polls; no chart regenerate; CI never invents shares.**
+CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) — `validate` → `normalize` → `assemble` → loud drift check on **three** canonical JSON files (1º, 2º, regional) + offline watch smoke/tests. Opt-in `run_discovery_fetch` uploads a queue artifact only. **No auto-push of polls; no chart regenerate; CI never invents shares.**
 
 ## Electoral Stats (Option B)
 

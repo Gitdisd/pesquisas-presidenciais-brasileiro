@@ -28,10 +28,14 @@ on:
       - "data/national/polls/**"
       - "data/national/witnesses/**"
       - "data/national/discovery/**"
+      - "data/regional/**"
       - "docs/source-map/**"
       - "docs/discovery.md"
+      - "docs/regional.md"
+      - "docs/cross-reference.md"
       - "site/data/canonical-points.json"
       - "site/data/canonical-points-2nd-round.json"
+      - "site/data/canonical-points-regional.json"
       - ".github/workflows/refresh.yml"
 
 permissions:
@@ -53,13 +57,13 @@ jobs:
       - name: Bundle install
         run: bundle install --jobs 4
 
-      - name: Validate fixtures + data/national/polls|witnesses
+      - name: Validate fixtures + national + regional trees
         run: bin/pebr validate
 
-      - name: Identity fingerprint report
+      - name: Identity fingerprint + anti-replicate report
         run: bin/pebr normalize
 
-      - name: Assemble canonical-points (1º + 2º)
+      - name: Assemble canonical-points (1º + 2º + regional)
         run: bin/pebr assemble
 
       - name: Fail if canonical-points drifted (1º)
@@ -94,6 +98,22 @@ jobs:
             exit 1
           fi
 
+      - name: Fail if canonical-points-regional drifted
+        id: drift_regional
+        run: |
+          if git diff --exit-code -- site/data/canonical-points-regional.json; then
+            echo "drift=no" >> "$GITHUB_OUTPUT"
+            echo "canonical-points-regional.json: OK (byte-stable)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "drift=yes" >> "$GITHUB_OUTPUT"
+            echo "### FAIL: canonical-points-regional.json drifted" >> "$GITHUB_STEP_SUMMARY"
+            echo '```diff' >> "$GITHUB_STEP_SUMMARY"
+            git diff -- site/data/canonical-points-regional.json | head -n 200 >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::site/data/canonical-points-regional.json drifted from assemble — commit refreshed file with regional polls (never merge into national)"
+            exit 1
+          fi
+
       - name: Offline discovery watch smoke (fixtures only)
         run: |
           bin/pebr watch --offline --out /tmp/pebr-discovery-queue.json
@@ -117,7 +137,7 @@ jobs:
           {
             echo "## pebr-refresh"
             echo ""
-            echo "- validate → normalize → assemble → drift check on **both** canonical JSON files"
+            echo "- validate → normalize → assemble → drift check on **three** canonical JSON files (1º, 2º, regional)"
             echo "- offline \`bin/pebr watch\` smoke + unit tests"
             echo "- **CI never invents poll shares**; no auto-commit of polls or chart.json"
             echo "- Option B / chart.json: Lead-owned; not regenerated here"

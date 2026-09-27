@@ -26,15 +26,15 @@ module Pebr
         pebr #{Pebr::VERSION} — PEBR pipeline CLI
 
         Usage:
-          bin/pebr validate              Validate fixtures + data/national/polls|witnesses vs schemas/
-          bin/pebr assemble              Rebuild canonical-points.json (1º) + canonical-points-2nd-round.json (2º)
+          bin/pebr validate              Validate fixtures + national + regional polls|witnesses vs schemas/
+          bin/pebr assemble              Rebuild canonical-points.json (1º) + 2nd-round + canonical-points-regional.json
           bin/pebr discover              Read-only inventory of source-map + institutes (no fetch)
           bin/pebr watch [--offline|--fetch] [--dry-run] [--out PATH]
                                          Human-gated discovery: listing/RSS/sitemap/drop inbox → review queue
                                          (NEVER invents poll shares; default --offline uses fixtures)
           bin/pebr drop FILE [--source-url URL] [--title TITLE] [--source-id ID]
                                          Copy human-saved HTML/PDF into discovery inbox + hash bytes
-          bin/pebr normalize             Report identity fingerprint duplicates (no fetch / no rewrite)
+          bin/pebr normalize             Fingerprint + anti-replicate report (national + regional; no rewrite)
           bin/pebr version               Print version
           bin/pebr help                  This message
       USAGE
@@ -134,11 +134,11 @@ module Pebr
       $stdout.sync = true
       $stderr.sync = true
       result = Pebr::Normalize.run
-      puts "pebr normalize: fingerprint / duplicate report (no fetch, no rewrite)"
+      puts "pebr normalize: fingerprint / anti-replicate report (national + regional; no fetch, no rewrite)"
       puts "  polls: #{result[:poll_count]}  witnesses: #{result[:witness_count]}  fingerprints: #{result[:fingerprint_count]}"
       result[:warnings].each { |w| puts "  warn: #{w}" }
       if result[:errors].empty?
-        puts "normalize: OK (no duplicate poll_id / identity fingerprint collisions)"
+        puts "normalize: OK (no hard replicate / fingerprint collisions)"
         exit 0
       else
         warn "normalize: FAILED"
@@ -151,6 +151,7 @@ module Pebr
       result = Pebr::Assemble.run
       puts "assemble: wrote #{result[:count_1st]} 1st-round point(s) → #{result[:out_path]}"
       puts "assemble: wrote #{result[:count_2nd]} 2nd-round point(s) → #{result[:out_path_2nd]}"
+      puts "assemble: wrote #{result[:count_regional]} regional point(s) → #{result[:out_path_regional]}"
       exit 0
     rescue StandardError => e
       warn "assemble: FAILED — #{e.message}"
@@ -162,7 +163,9 @@ module Pebr
       checked = 0
 
       checked += validate_fixtures!(errors)
+      checked += validate_regional_fixtures!(errors)
       checked += validate_national_tree!(errors)
+      checked += validate_regional_tree!(errors)
 
       if errors.empty?
         puts "validate: #{checked} file(s) passed"
@@ -273,6 +276,113 @@ module Pebr
         next if pid.nil? || pid == ""
         unless poll_ids.key?(pid)
           errors << "witness #{wid}: poll_id references missing poll #{pid.inspect}"
+        end
+      end
+
+      checked
+    end
+
+    def validate_regional_fixtures!(errors)
+      schema_dir = Pathname.new(Pebr::SCHEMA_DIR)
+      fixture_dir = Pathname.new(Pebr::FIXTURE_REGIONAL_DIR)
+      checked = 0
+
+      Pebr::FIXTURE_REGIONAL_SCHEMA_MAP.each do |fixture_name, schema_name|
+        fixture_path = fixture_dir.join(fixture_name)
+        schema_path = schema_dir.join(schema_name)
+
+        unless fixture_path.file?
+          errors << "#{fixture_name}: missing fixture at #{fixture_path}"
+          next
+        end
+        unless schema_path.file?
+          errors << "#{fixture_name}: missing schema at #{schema_path}"
+          next
+        end
+
+        failures = validate_file(fixture_path, schema_path)
+        checked += 1
+        if failures.empty?
+          puts "OK  fixtures/regional/#{fixture_name}  ←  #{schema_name}"
+        else
+          failures.each { |msg| errors << "fixtures/regional/#{fixture_name}: #{msg}" }
+        end
+      end
+
+      extras = Dir.glob(fixture_dir.join("EXAMPLE_*.json").to_s).map { |p| File.basename(p) } -
+               Pebr::FIXTURE_REGIONAL_SCHEMA_MAP.keys
+      extras.each { |name| errors << "fixtures/regional/#{name}: no schema mapping in Pebr::FIXTURE_REGIONAL_SCHEMA_MAP" }
+      checked
+    end
+
+    def validate_regional_tree!(errors)
+      checked = 0
+      poll_dir = Pathname.new(Pebr::REGIONAL_POLL_DIR)
+      wit_dir = Pathname.new(Pebr::REGIONAL_WITNESS_DIR)
+      schema_dir = Pathname.new(Pebr::SCHEMA_DIR)
+      poll_schema = schema_dir.join("poll-regional.schema.json")
+      wit_schema = schema_dir.join("witness.schema.json")
+
+      poll_files = Dir.glob(poll_dir.join("*.json").to_s).sort
+      wit_files = Dir.glob(wit_dir.join("*.json").to_s).sort
+
+      if poll_files.empty? && wit_files.empty?
+        puts "OK  data/regional/** (empty stub — no regional intake yet)"
+        return checked
+      end
+
+      poll_ids = {}
+      wit_ids = {}
+
+      poll_files.each do |path|
+        pn = Pathname.new(path)
+        rel = pn.relative_path_from(Pathname.new(ROOT)).to_s
+        failures = validate_file(pn, poll_schema)
+        checked += 1
+        if failures.empty?
+          data = JSON.parse(pn.read)
+          poll_ids[data["poll_id"]] = data
+          puts "OK  #{rel}  ←  poll-regional.schema.json"
+          if File.basename(path, ".json") != data["poll_id"]
+            errors << "#{rel}: filename stem must match poll_id #{data['poll_id'].inspect}"
+          end
+          if data["geography"] != "state"
+            errors << "#{rel}: geography must be state (got #{data['geography'].inspect})"
+          end
+        else
+          failures.each { |msg| errors << "#{rel}: #{msg}" }
+        end
+      end
+
+      wit_files.each do |path|
+        pn = Pathname.new(path)
+        rel = pn.relative_path_from(Pathname.new(ROOT)).to_s
+        failures = validate_file(pn, wit_schema)
+        checked += 1
+        if failures.empty?
+          data = JSON.parse(pn.read)
+          wit_ids[data["witness_id"]] = data
+          puts "OK  #{rel}  ←  witness.schema.json"
+          if File.basename(path, ".json") != data["witness_id"]
+            errors << "#{rel}: filename stem must match witness_id #{data['witness_id'].inspect}"
+          end
+        else
+          failures.each { |msg| errors << "#{rel}: #{msg}" }
+        end
+      end
+
+      poll_ids.each do |pid, poll|
+        Array(poll["witness_ids"]).each do |wid|
+          unless wit_ids.key?(wid)
+            errors << "regional poll #{pid}: witness_ids references missing witness #{wid.inspect}"
+          end
+        end
+      end
+      wit_ids.each do |wid, wit|
+        pid = wit["poll_id"]
+        next if pid.nil? || pid == ""
+        unless poll_ids.key?(pid)
+          errors << "regional witness #{wid}: poll_id references missing poll #{pid.inspect}"
         end
       end
 

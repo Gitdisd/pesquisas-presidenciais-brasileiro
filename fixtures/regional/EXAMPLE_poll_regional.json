@@ -1,0 +1,26 @@
+{
+  "poll_id": "example_state_sp_2026_stimulated_1st_round_0001",
+  "institute_id": "example_institute",
+  "fieldwork_start": "2026-01-10",
+  "fieldwork_end": "2026-01-12",
+  "fieldwork_mid": "2026-01-11",
+  "geography": "state",
+  "uf": "SP",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 800,
+  "moe": 0.035,
+  "results": {
+    "example_candidate_a": 0.36,
+    "example_candidate_b": 0.31,
+    "example_candidate_c": 0.12
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.12
+  },
+  "tse_registration_id": null,
+  "witness_ids": ["example_witness_regional_0001"],
+  "dataset_version": "0.0.0-example",
+  "notes": "SYNTHETIC EXAMPLE FIXTURE — not a real poll. For regional schema wiring only. Never merge into national Option B."
+}

@@ -514,6 +514,49 @@ targets:
     notes: "Harvested source_url/witness_urls from old-site polls.json (+extras) as review leads. BBC aggregate citation farm excluded. Michelle/Ipec holds applied at harvest. NEVER copy old-site candidate % into PEBR polls."
     fixture: fixtures/discovery/old-site-national-leads.json
 
+  - id: old-site-regional-leads
+    source_id: old-site-harvest-regional
+    label: "Old site (pesquisas-eleitorais-br) — regional UF URL leads only"
+    kind: lead_list
+    url: "https://gitdisd.github.io/pesquisas-eleitorais-br/data/polls-regional.json"
+    enabled: true
+    national_hint: false
+    fetch: false
+    notes: "Harvested source_url from old-site polls-regional.json as REGIONAL review leads (SP/MG/DF/PE/…). NEVER copy shares. NEVER merge into national Option B / canonical-points.json. Dual-enter only with extractable UF presidential primary under data/regional/."
+    fixture: fixtures/discovery/old-site-regional-leads.json
+
+  # Extra primary-oriented RSS / sitemap signals (safe public feeds; no share extraction).
+  - id: gnews-pesquisa-pdf
+    source_id: gnews-presidencial
+    label: "Google News RSS — pesquisa eleitoral PDF OR relatório"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=%22pesquisa+eleitoral%22+(PDF+OR+relat%C3%B3rio+OR+registrada)+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Bias toward primary-document phrasing in titles. Signal only — human primary check."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: gnews-tse-br-id
+    source_id: gnews-tse-registration
+    label: "Google News RSS — Registro TSE BR-####/2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=%22BR-%22+OR+%22registro+TSE%22+pesquisa+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "TSE/BR-id provenance leads only. Never treat registration as horse-race truth."
+    fixture: fixtures/discovery/gnews-tse-registration.rss.xml
+
+  - id: wikipedia-polling-2026-pt-refresh
+    source_id: wikipedia-polling-2026-pt
+    label: "Wikipedia PT — pesquisas eleitorais 2026 (citation farm)"
+    kind: listing_html
+    url: "https://pt.wikipedia.org/wiki/Pesquisas_eleitorais_para_a_elei%C3%A7%C3%A3o_presidencial_de_2026_no_Brasil"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Citation URLs only. Human must open primary. Archive.org fallback if WMF soft-fails."
+    fixture: fixtures/discovery/wikipedia-polling-2026-pt.html
+
   # --- Sitemap (fixture-only example; lastmod used as queue metadata) ---
   - id: example-sitemap
     source_id: g1-pesquisas

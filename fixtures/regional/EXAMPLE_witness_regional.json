@@ -1,0 +1,14 @@
+{
+  "witness_id": "example_witness_regional_0001",
+  "poll_id": "example_state_sp_2026_stimulated_1st_round_0001",
+  "source_type": "press",
+  "source_url": "https://example.invalid/pebr/synthetic-example-regional-poll",
+  "retrieved_at": "2026-01-13T12:00:00Z",
+  "content_hash": "sha256:fedcba9876543210fedcba9876543210",
+  "raw_path": null,
+  "parser_id": "example_manual_v1",
+  "extractions": {},
+  "confidence": 1.0,
+  "tse_registration_id": null,
+  "notes": "SYNTHETIC EXAMPLE FIXTURE — not a real retrieval. Regional witness; same witness.schema.json as national."
+}

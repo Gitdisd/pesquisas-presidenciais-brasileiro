@@ -110,6 +110,18 @@ module Pebr
           if (target["kind"] || "").to_s == "lead_list"
             score_reasons << "old-site-lead"
             score = [score, 40].max
+            if cand[:geography_hint].to_s == "state" || !cand[:old_site_uf].to_s.empty?
+              score_reasons << "regional-lead"
+            end
+          end
+          # Prefer extractable-looking primaries: PDF/HTML docs with sitemap lastmod / RSS pubDate.
+          if /\.(?:pdf)(?:\?|$)/i.match?(url)
+            score += 6
+            score_reasons << "primary-pdf-hint"
+          end
+          if cand[:lastmod] || cand[:published_at]
+            score += 3
+            score_reasons << "freshness-metadata"
           end
           if prev.nil?
             score += 4
@@ -141,6 +153,8 @@ module Pebr
             "listing_content_hash" => listing_hash,
             "listing_via" => ((target["kind"] || "").to_s == "lead_list" ? "old_site_harvest" : source_kind.to_s),
             "national_hint" => target["national_hint"] == true,
+            "geography_hint" => cand[:geography_hint],
+            "old_site_uf" => cand[:old_site_uf],
             "status" => status,
             "kind" => target["kind"],
             "lastmod" => cand[:lastmod],
@@ -407,7 +421,9 @@ module Pebr
           title: row["title"].to_s,
           snippet: row["snippet"].to_s,
           published_at: row["published_at"] || row["published_date"],
-          lastmod: row["lastmod"]
+          lastmod: row["lastmod"],
+          geography_hint: row["geography_hint"],
+          old_site_uf: row["old_site_uf"] || row["uf"]
         }.compact
       end
       results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }

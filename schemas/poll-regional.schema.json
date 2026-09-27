@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro/schemas/poll-regional.schema.json",
+  "title": "PEBR canonical state (UF) presidential poll",
+  "description": "Stable identity for one UF-scoped presidential fieldwork+scenario. Parallel to poll.schema.json but geography=state with required uf. Shares are fractions in [0,1]. NEVER enters national Option B aggregates (canonical-points.json / canonical-points-2nd-round.json / chart.json). Assemble writes site/data/canonical-points-regional.json only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "poll_id",
+    "institute_id",
+    "fieldwork_start",
+    "fieldwork_end",
+    "geography",
+    "uf",
+    "election_cycle",
+    "scenario",
+    "sample_size",
+    "results",
+    "residuals",
+    "witness_ids",
+    "dataset_version"
+  ],
+  "properties": {
+    "poll_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable canonical id after witness merge. Prefer including uf in the stem."
+    },
+    "institute_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Key into config/institutes.yml (not display name)."
+    },
+    "fieldwork_start": { "$ref": "#/$defs/dateYMD" },
+    "fieldwork_end": {
+      "$ref": "#/$defs/dateYMD",
+      "description": "Required for trend ordering; primary fieldwork date."
+    },
+    "fieldwork_mid": {
+      "type": ["string", "null"],
+      "description": "Nullable calendar midpoint of fieldwork_start..fieldwork_end (YYYY-MM-DD).",
+      "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/dateYMD" }]
+    },
+    "geography": {
+      "type": "string",
+      "const": "state",
+      "description": "State-presidential scope. National poll.schema.json stays locked to geography=national — do not widen that enum."
+    },
+    "uf": {
+      "type": "string",
+      "description": "IBGE UF code for the state (or DF) where the presidential poll was fielded.",
+      "enum": [
+        "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
+        "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
+        "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+      ]
+    },
+    "election_cycle": {
+      "type": "integer",
+      "minimum": 2026,
+      "description": "e.g. 2026"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Same scenario keys as national (stimulated_1st_round / stimulated_2nd_round_<a>_vs_<b>). Never mix scenarios in one aggregate. Never mix UFs into a blended Brazil mean."
+    },
+    "sample_size": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "description": "N (sample size)."
+    },
+    "moe": {
+      "type": ["number", "null"],
+      "description": "Margin of error as fraction (e.g. 0.02 for ±2pp). Null if not published.",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "results": {
+      "type": "object",
+      "description": "Map candidate_id → share as fraction in [0,1].",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "residuals": {
+      "type": "object",
+      "description": "Residual category shares as fractions [0,1].",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "tse_registration_id": {
+      "type": ["string", "null"],
+      "description": "Optional TSE protocol (often UF-#####/YYYY for state packages; BR- may appear on national registrations with UF breakouts — treat as provenance only)."
+    },
+    "witness_ids": {
+      "type": "array",
+      "description": "Coverage/publication witnesses merged into this poll.",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "dataset_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes; empty string allowed."
+    }
+  },
+  "$defs": {
+    "dateYMD": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Calendar date YYYY-MM-DD"
+    }
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "disclaimer": "LEADS ONLY from pesquisas-eleitorais-br polls-regional.json. No poll shares. Never ingest unverified old-site cells into PEBR canonical (national OR regional).",
+    "source_repo": "https://github.com/Gitdisd/pesquisas-eleitorais-br",
+    "source_file": "public/data/polls-regional.json",
+    "generated_for": "PEBR bin/pebr watch kind=lead_list (regional)",
+    "holds": [
+      "Michelle out",
+      "Ipec 2026 national stimulated 1º hard-stop (national tree)",
+      "Regional rows NEVER enter national Option B / canonical-points.json",
+      "Multi-geo blended mean forbidden"
+    ],
+    "count": 30
+  },
+  "items": [
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-em-pe-lula-lidera-cenarios-de-1o-e-2o-turno/",
+      "title": "AtlasIntel (PE) (PE) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PE; institute=AtlasIntel (PE); fieldwork_end=2026-09-20; TSE=BR-09256/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-22",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "AtlasIntel (PE)",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-09256/2026",
+      "old_site_uf": "PE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-em-pe-lula-lidera-cenarios-de-1o-e-2o-turno/",
+      "title": "AtlasIntel (PE) (PE) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PE; institute=AtlasIntel (PE); fieldwork_end=2026-09-20; TSE=BR-09256/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-22",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "AtlasIntel (PE)",
+      "old_site_fieldwork_end": "2026-09-20",
+      "old_site_tse": "BR-09256/2026",
+      "old_site_uf": "PE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-caiado-tem-31-flavio-30-e-lula-26-no-1o-turno-em-go/",
+      "title": "Real Time Big Data (GO) (GO) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=GO; institute=Real Time Big Data (GO); fieldwork_end=2026-09-21; TSE=GO-04652/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-22",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (GO)",
+      "old_site_fieldwork_end": "2026-09-21",
+      "old_site_tse": "GO-04652/2026",
+      "old_site_uf": "GO",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-caiado-tem-31-flavio-30-e-lula-26-no-1o-turno-em-go/",
+      "title": "Real Time Big Data (GO) (GO) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=GO; institute=Real Time Big Data (GO); fieldwork_end=2026-09-21; TSE=GO-04652/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-22",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (GO)",
+      "old_site_fieldwork_end": "2026-09-21",
+      "old_site_tse": "GO-04652/2026",
+      "old_site_uf": "GO",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-em-sp/",
+      "title": "Real Time Big Data (SP) (SP) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SP; institute=Real Time Big Data (SP); fieldwork_end=2026-09-19; TSE=BR-09702/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (SP)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "BR-09702/2026",
+      "old_site_uf": "SP",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-em-sp/",
+      "title": "Real Time Big Data (SP) (SP) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SP; institute=Real Time Big Data (SP); fieldwork_end=2026-09-19; TSE=BR-09702/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (SP)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "BR-09702/2026",
+      "old_site_uf": "SP",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-46-no-2o-turno-em-minas-lula-45/",
+      "title": "Real Time Big Data (MG) (MG) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=MG; institute=Real Time Big Data (MG); fieldwork_end=2026-09-19; TSE=BR-01531/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (MG)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "BR-01531/2026",
+      "old_site_uf": "MG",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-46-no-2o-turno-em-minas-lula-45/",
+      "title": "Real Time Big Data (MG) (MG) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=MG; institute=Real Time Big Data (MG); fieldwork_end=2026-09-19; TSE=BR-01531/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (MG)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "BR-01531/2026",
+      "old_site_uf": "MG",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/itatiaia-ver-lula-e-flavio-empatam-com-346-no-1o-turno-em-minas/",
+      "title": "Itatiaia/Ver (MG) (MG) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=MG; institute=Itatiaia/Ver (MG); fieldwork_end=2026-09-19; TSE=MG-07337/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Itatiaia/Ver (MG)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "MG-07337/2026",
+      "old_site_uf": "MG",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/itatiaia-ver-flavio-tem-458-e-lula-41-no-2o-turno-em-mg/",
+      "title": "Itatiaia/Ver (MG) (MG) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=MG; institute=Itatiaia/Ver (MG); fieldwork_end=2026-09-19; TSE=MG-07337/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Itatiaia/Ver (MG)",
+      "old_site_fieldwork_end": "2026-09-19",
+      "old_site_tse": "MG-07337/2026",
+      "old_site_uf": "MG",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-no-parana/",
+      "title": "Real Time Big Data (PR) (PR) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PR; institute=Real Time Big Data (PR); fieldwork_end=2026-09-15; TSE=BR-08843/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PR)",
+      "old_site_fieldwork_end": "2026-09-15",
+      "old_site_tse": "BR-08843/2026",
+      "old_site_uf": "PR",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-no-parana/",
+      "title": "Real Time Big Data (PR) (PR) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PR; institute=Real Time Big Data (PR); fieldwork_end=2026-09-15; TSE=BR-08843/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-21",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PR)",
+      "old_site_fieldwork_end": "2026-09-15",
+      "old_site_tse": "BR-08843/2026",
+      "old_site_uf": "PR",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://diariodoaltoacre.com.br/pesquisa-data-control-aponta-flavio-bolsonaro-com-51-e-lula-com-248-no-acre/",
+      "title": "Data Control (AC) (AC) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=AC; institute=Data Control (AC); fieldwork_end=2026-09-16; TSE=BR-04858/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-18",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Data Control (AC)",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": "BR-04858/2026",
+      "old_site_uf": "AC",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-64-no-2o-turno-no-ceara-flavio-27/",
+      "title": "Real Time Big Data (CE) (CE) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=CE; institute=Real Time Big Data (CE); fieldwork_end=2026-09-17; TSE=BR-03822/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-18",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (CE)",
+      "old_site_fieldwork_end": "2026-09-17",
+      "old_site_tse": "BR-03822/2026",
+      "old_site_uf": "CE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-64-no-2o-turno-no-ceara-flavio-27/",
+      "title": "Real Time Big Data (CE) (CE) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=CE; institute=Real Time Big Data (CE); fieldwork_end=2026-09-17; TSE=BR-03822/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-18",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (CE)",
+      "old_site_fieldwork_end": "2026-09-17",
+      "old_site_tse": "BR-03822/2026",
+      "old_site_uf": "CE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/futura-em-sp-flavio-tem-374-no-1o-turno-lula-333/",
+      "title": "Futura/Apex (SP) (SP) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SP; institute=Futura/Apex (SP); fieldwork_end=2026-09-04; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Futura/Apex (SP)",
+      "old_site_fieldwork_end": "2026-09-04",
+      "old_site_tse": null,
+      "old_site_uf": "SP",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/futura-em-sp-flavio-tem-494-no-2o-turno-lula-403/",
+      "title": "Futura/Apex (SP) (SP) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SP; institute=Futura/Apex (SP); fieldwork_end=2026-09-04; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Futura/Apex (SP)",
+      "old_site_fieldwork_end": "2026-09-04",
+      "old_site_tse": null,
+      "old_site_uf": "SP",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+      "title": "Quaest (SP) (SP) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SP; institute=Quaest (SP); fieldwork_end=2026-09-07; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest (SP)",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null,
+      "old_site_uf": "SP",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+      "title": "Quaest (RJ) (RJ) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=RJ; institute=Quaest (RJ); fieldwork_end=2026-09-07; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest (RJ)",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null,
+      "old_site_uf": "RJ",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+      "title": "Quaest (MG) (MG) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=MG; institute=Quaest (MG); fieldwork_end=2026-09-07; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest (MG)",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null,
+      "old_site_uf": "MG",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+      "title": "Quaest (DF) (DF) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=DF; institute=Quaest (DF); fieldwork_end=2026-09-07; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest (DF)",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null,
+      "old_site_uf": "DF",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/09/quaest-presidente-sp-rj-mg-pe-df-8-setembro.ghtml",
+      "title": "Quaest (PE) (PE) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PE; institute=Quaest (PE); fieldwork_end=2026-09-07; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-08",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Quaest (PE)",
+      "old_site_fieldwork_end": "2026-09-07",
+      "old_site_tse": null,
+      "old_site_uf": "PE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-em-sc/",
+      "title": "Real Time Big Data (SC) (SC) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SC; institute=Real Time Big Data (SC); fieldwork_end=2026-09-16; TSE=BR-09582/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (SC)",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": "BR-09582/2026",
+      "old_site_uf": "SC",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-lidera-cenarios-de-1o-e-2o-turnos-em-sc/",
+      "title": "Real Time Big Data (SC) (SC) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=SC; institute=Real Time Big Data (SC); fieldwork_end=2026-09-16; TSE=BR-09582/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (SC)",
+      "old_site_fieldwork_end": "2026-09-16",
+      "old_site_tse": "BR-09582/2026",
+      "old_site_uf": "SC",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://noticias.r7.com/eleicoes/2026/flavio-tem-38-contra-37-de-lula-no-1-turno-no-tocantins-diz-real-time-17092026/",
+      "title": "Real Time Big Data (TO) (TO) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=TO; institute=Real Time Big Data (TO); fieldwork_end=2026-09-14; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (TO)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": null,
+      "old_site_uf": "TO",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://noticias.r7.com/eleicoes/2026/flavio-tem-38-contra-37-de-lula-no-1-turno-no-tocantins-diz-real-time-17092026/",
+      "title": "Real Time Big Data (TO) (TO) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=TO; institute=Real Time Big Data (TO); fieldwork_end=2026-09-14; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-17",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (TO)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": null,
+      "old_site_uf": "TO",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://noticias.r7.com/eleicoes/2026/real-time-no-para-lula-lidera-com-41-no-1-turno-flavio-bolsonaro-tem-33-15092026/",
+      "title": "Real Time Big Data (PA) (PA) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PA; institute=Real Time Big Data (PA); fieldwork_end=2026-09-14; TSE=BR-08918/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PA)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": "BR-08918/2026",
+      "old_site_uf": "PA",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://noticias.r7.com/eleicoes/2026/real-time-no-para-lula-lidera-com-41-no-1-turno-flavio-bolsonaro-tem-33-15092026/",
+      "title": "Real Time Big Data (PA) (PA) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PA; institute=Real Time Big Data (PA); fieldwork_end=2026-09-14; TSE=BR-08918/2026; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PA)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": "BR-08918/2026",
+      "old_site_uf": "PA",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://tmc.com.br/politica/lula-lidera-corrida-em-pernambuco-com-59-dos-votos-contra-36-de-flavio-no-2o-turno-diz-real-time-big-data/",
+      "title": "Real Time Big Data (PE) (PE) — estimulada 1º turno",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PE; institute=Real Time Big Data (PE); fieldwork_end=2026-09-14; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PE)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": null,
+      "old_site_uf": "PE",
+      "geography_hint": "state"
+    },
+    {
+      "url": "https://tmc.com.br/politica/lula-lidera-corrida-em-pernambuco-com-59-dos-votos-contra-36-de-flavio-no-2o-turno-diz-real-time-big-data/",
+      "title": "Real Time Big Data (PE) (PE) — 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Old-site REGIONAL lead only (pesquisas-eleitorais-br polls-regional.json). UF=PE; institute=Real Time Big Data (PE); fieldwork_end=2026-09-14; TSE=None; verified_flag=True. NEVER copy shares — human primary check required. Never merge into national Option B.",
+      "published_at": "2026-09-15",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "old_site_institute": "Real Time Big Data (PE)",
+      "old_site_fieldwork_end": "2026-09-14",
+      "old_site_tse": null,
+      "old_site_uf": "PE",
+      "geography_hint": "state"
+    }
+  ]
+}
