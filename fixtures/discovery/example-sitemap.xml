@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/futura-pesquisa-presidencial.ghtml</loc></url>
-  <url><loc>https://g1.globo.com/economia/noticia/2026/09/21/pib.ghtml</loc></url>
-  <url><loc>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/19/gerp-1o-turno-presidente.ghtml</loc></url>
+  <url>
+    <loc>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/futura-pesquisa-presidencial.ghtml</loc>
+    <lastmod>2026-09-21T18:00:00Z</lastmod>
+  </url>
+  <url>
+    <loc>https://g1.globo.com/economia/noticia/2026/09/21/pib.ghtml</loc>
+    <lastmod>2026-09-21T10:00:00Z</lastmod>
+  </url>
+  <url>
+    <loc>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/19/gerp-1o-turno-presidente.ghtml</loc>
+    <lastmod>2026-09-19T12:00:00Z</lastmod>
+  </url>
+  <url>
+    <loc>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/01/old-wave.ghtml</loc>
+    <lastmod>2026-08-15T12:00:00Z</lastmod>
+  </url>
 </urlset>

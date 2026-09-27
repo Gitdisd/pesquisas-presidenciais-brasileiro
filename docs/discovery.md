@@ -37,9 +37,21 @@ Queue path: **`data/national/discovery/`** (not under `site/`) so Pages does not
 
 ## Watch targets
 
-[`config/watch_targets.yml`](../config/watch_targets.yml) — high-signal national subset: G1, Poder360, CNN, AtlasIntel, Quaest, TSE dados abertos, sample RSS/sitemap, Google News RSS.
+[`config/watch_targets.yml`](../config/watch_targets.yml) — high-signal national subset: **G1 pesquisas RSS**, G1/Poder360/CNN/Gazeta/Wiki listings, institute homes, TSE dados abertos (often 403), sitemap fixture, **multiple Google News RSS queries**, Poder360 feed. Optional `archive_fallback: true` uses archive.org `wayback/available` when a listing fails.
 
-Queue item fields: `url`, `source_id`, `target_id`, `detected_at`, `title`/`snippet`, `scenario_hints`, `score`/`score_reasons`, `listing_content_hash`, `status` (`needs_human_review` | `already_witnessed` | `inbox_low_score`).
+Queue item fields: `url`, `source_id`, `target_id` / `target_ids`, `detected_at`, `last_seen_at`, `title`/`snippet`, `scenario_hints`, `score`/`score_reasons`, `listing_content_hash`, `listing_via` (`fixture`|`network`|`archive`), optional `published_at` (RSS) / `lastmod` (sitemap), `status` (`needs_human_review` | `already_witnessed` | `inbox_low_score`).
+
+### Queue review UX (operator)
+
+Sort is automatic: `needs_human_review` first → higher score → newer `last_seen_at`.
+
+| Status | Meaning | Operator action |
+|--------|---------|-----------------|
+| `needs_human_review` | Score ≥ min (default 35) or keyword hit; not yet witnessed | Open URL → confirm **national** presidential → dual-enter poll + witness |
+| `already_witnessed` | URL matches a witness `source_url` | Skip (or refresh witness if bytes changed) |
+| `inbox_low_score` | Weak signal | Usually ignore; do not ingest |
+
+CI artifact (opt-in `run_discovery_fetch`): download `pebr-discovery-queue` → inspect `items[]` → **never** copy shares from automation. See also [ADR 0001](adr/0001-discovery-bypass-blockers.md).
 
 ## Operator path after a URL is flagged
 
@@ -65,11 +77,17 @@ Queue item fields: `url`, `source_id`, `target_id`, `detected_at`, `title`/`snip
 
 ## Still blocked / fragile
 
-- Live fetch: robots.txt, bot walls, paywalls, JS-rendered listings, rate limits.
-- No secrets for authenticated institute portals (`POLL_SOURCE_URL`-style remote dumps are Lead/ops only if ever used).
-- TSE = provenance, not horse-race truth.
-- Parsers are dumb regex HTML/RSS/sitemap — no self-modifying parsers.
-- National vs state: policy heuristics; human decides geography.
+| Blocker | Mitigation now | Still needs human / secrets |
+|---------|----------------|-----------------------------|
+| TSE Dados Abertos / CDN **403** (Akamai) | Fixture + `archive_fallback`; provenance notes | Ops egress or mirrored zip URL secret |
+| JS-thin institute homes (Atlas, Futura) | Prefer GNews + outlet RSS mirrors | Occasional manual PDF grab |
+| Paywalls (Estadão, Economist, soft Folha) | Do **not** bypass; use open mirrors (G1, Poder360, Wiki cites) | Human witness upload |
+| robots.txt / rate limits | Polite UA; soft-fail; RSS-first | Escalate if Disallow covers needed path |
+| Google News article redirect URLs | Kept as **signals** (downranked); prefer resolved outlet URL when present in feed | Optional manual resolve |
+
+- Parsers are dumb regex HTML/RSS/sitemap — **no** self-modifying parsers, **no** Go/WASM glue.
+- National vs state: policy rejects wrong-office even inside `/pesquisa-eleitoral-*` hubs; human still decides geography.
+- Full technique ranking: [ADR 0001](adr/0001-discovery-bypass-blockers.md).
 
 ## Holds (do not weaken)
 

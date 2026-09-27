@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Google News — gnews-nexus (fixture)</title>
+    <item>
+      <title>Nexus BTG pesquisa 2º turno 2026</title>
+      <link>https://www.cnnbrasil.com.br/eleicoes/nexus-btg-2o-turno-gnews-fixture/</link>
+      <description>Institute-specific GNews signal fixture.</description>
+    </item>
+    <item>
+      <title>Pesquisa para governador em Minas Gerais</title>
+      <link>https://www.example.com/gnews-nexus-governador-mg</link>
+      <description>Estadual — deve ser rejeitada.</description>
+    </item>
+  </channel>
+</rss>

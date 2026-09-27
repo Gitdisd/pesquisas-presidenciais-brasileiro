@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>g1 &gt; Pesquisa Eleitoral (fixture)</title>
+    <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/</link>
+    <item>
+      <title>Datafolha: Lula e Flávio na disputa pelo 1º turno — pesquisa nacional</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/25/datafolha-presidente-1o-turno-setembro.ghtml</link>
+      <description>Pesquisa Datafolha nacional para presidente 1º turno.</description>
+      <pubDate>Thu, 25 Sep 2026 12:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>Quaest mede 2º turno Lula x Flávio Bolsonaro</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/20/quaest-2o-turno-lula-flavio.ghtml</link>
+      <description>Segundo turno nacional.</description>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>Eleição no Nordeste: números da Quaest para governos dos estados</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/27/eleicao-no-nordeste-quaest-governos.ghtml</link>
+      <description>Estadual — policy should reject wrong-office when no presidential signal...</description>
+      <pubDate>Sun, 27 Sep 2026 12:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>Pesquisa para prefeito de São Paulo</title>
+      <link>https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/pesquisa-prefeito.ghtml</link>
+      <description>Municipal — must be rejected.</description>
+    </item>
+  </channel>
+</rss>

@@ -54,7 +54,9 @@ module Pebr
         reasons << "generic-route"
       end
 
-      if NON_PRESIDENTIAL.match?(hay) && !PRESIDENTIAL_SIGNAL.match?(hay)
+      # Wrong-office always wins: hub paths like /pesquisa-eleitoral-2026/ must not
+      # keep "pesquisa-governador-*" links just because the section slug looks presidential.
+      if NON_PRESIDENTIAL.match?(hay)
         rejected = true
         reasons << "wrong-office"
       end

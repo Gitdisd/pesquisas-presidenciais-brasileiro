@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Google News — gnews-quaest (fixture)</title>
+    <item>
+      <title>Quaest pesquisa Lula presidente 2026 — G1</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/18/quaest-gnews-fixture.ghtml</link>
+      <description>Institute-specific GNews signal fixture.</description>
+    </item>
+    <item>
+      <title>Pesquisa para governador em Minas Gerais</title>
+      <link>https://www.example.com/gnews-quaest-governador-mg</link>
+      <description>Estadual — deve ser rejeitada.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Google News — gnews-atlasintel (fixture)</title>
+    <item>
+      <title>AtlasIntel pesquisa eleitoral 2026 Flávio</title>
+      <link>https://www.poder360.com.br/tag/atlasintel/atlas-gnews-fixture/</link>
+      <description>Institute-specific GNews signal fixture.</description>
+    </item>
+    <item>
+      <title>Pesquisa para governador em Minas Gerais</title>
+      <link>https://www.example.com/gnews-atlasintel-governador-mg</link>
+      <description>Estadual — deve ser rejeitada.</description>
+    </item>
+  </channel>
+</rss>

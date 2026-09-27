@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Poder360 feed (fixture)</title>
+    <item>
+      <title>PoderData: intenção de voto para presidente no 1º turno</title>
+      <link>https://www.poder360.com.br/poderdata/poderdata-presidente-1o-turno-fixture/</link>
+      <description>PoderData national presidential poll coverage.</description>
+      <pubDate>Fri, 26 Sep 2026 15:00:00 -0000</pubDate>
+    </item>
+    <item>
+      <title>AtlasIntel pesquisa eleitoral nacional 2º turno</title>
+      <link>https://www.poder360.com.br/poder-eleicoes-2026/atlasintel-2o-turno-fixture/</link>
+      <description>AtlasIntel second-round national.</description>
+    </item>
+    <item>
+      <title>Casamento de filho de Moraes tem rua fechada</title>
+      <link>https://www.poder360.com.br/poder-gente/casamento-fixture/</link>
+      <description>Noise item — low score.</description>
+    </item>
+  </channel>
+</rss>

@@ -74,10 +74,11 @@ module Pebr
           source_health << health
           next
         end
-        fetched += 1 if source_kind == :network
+        fetched += 1 if source_kind == :network || source_kind == :archive
         listing_hash = "sha256:#{Digest::SHA256.hexdigest(body)}"
         health["listing_content_hash"] = listing_hash
         health["bytes"] = body.bytesize
+        health["via"] = source_kind.to_s
         source_health << health
 
         candidates = extract_candidates(target, body)
@@ -121,9 +122,12 @@ module Pebr
             "score_reasons" => policy[:reasons],
             "listing_url" => target["url"],
             "listing_content_hash" => listing_hash,
+            "listing_via" => source_kind.to_s,
             "national_hint" => target["national_hint"] == true,
             "status" => status,
-            "kind" => target["kind"]
+            "kind" => target["kind"],
+            "lastmod" => cand[:lastmod],
+            "published_at" => cand[:published_at]
           }
           item.compact!
           item["status"] = status
@@ -171,7 +175,7 @@ module Pebr
           "mode" => mode.to_s,
           "config" => relative_to(config_path, root),
           "disclaimer" => QUEUE_SCHEMA_NOTE,
-          "heritage" => "Patterns adapted from Gitdisd/pesquisas-eleitorais-br discover-polls (listings/RSS/policy). PEBR does not auto-extract shares.",
+          "heritage" => "Patterns adapted from Gitdisd/pesquisas-eleitorais-br discover-polls (listings/RSS/policy) + archive.org fallback. PEBR does not auto-extract shares.",
           "watermark_fieldwork_end" => watermark,
           "counts" => counts
         },
@@ -270,6 +274,7 @@ module Pebr
     def load_body(target, mode:, root:, ua:, timeout:)
       fixture_rel = target["fixture"]
       allow_fetch = target.key?("fetch") ? target["fetch"] != false : true
+      max_redirects = Integer(target["max_redirects"] || 5)
 
       if mode == :offline
         return [nil, :none, "no fixture configured for offline mode"] if fixture_rel.nil? || fixture_rel.empty?
@@ -289,35 +294,91 @@ module Pebr
 
       return [nil, :none, "fetch disabled for target"] unless allow_fetch
 
-      body, err = http_get(target["url"], ua: ua, timeout: timeout)
-      return [nil, :none, err] if err
+      body, err = http_get(target["url"], ua: ua, timeout: timeout, max_redirects: max_redirects)
+      return [body, :network, nil] if err.nil?
 
-      [body, :network, nil]
-    end
-
-    def http_get(url, ua:, timeout:)
-      uri = URI.parse(url)
-      unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
-        return [nil, "unsupported URL scheme"]
+      # Optional archive.org fallback for listing_html (public snapshots only — no paywall bypass).
+      if target["archive_fallback"] == true && (target["kind"] || "listing_html").to_s == "listing_html"
+        snap = wayback_snapshot_url(target["url"], ua: ua, timeout: timeout)
+        if snap
+          body2, err2 = http_get(snap, ua: ua, timeout: timeout, max_redirects: max_redirects)
+          return [body2, :archive, nil] if err2.nil?
+          return [nil, :none, "primary: #{err}; archive: #{err2}"]
+        end
+        return [nil, :none, "primary: #{err}; archive: no snapshot"]
       end
 
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.use_ssl = uri.scheme == "https"
-      http.open_timeout = timeout
-      http.read_timeout = timeout
-      path = uri.request_uri
-      path = "/" if path.nil? || path.empty?
-      req = Net::HTTP::Get.new(path)
-      req["User-Agent"] = ua
-      req["Accept"] = "text/html,application/xhtml+xml,application/xml,application/rss+xml,*/*;q=0.8"
-      req["Accept-Language"] = "pt-BR,pt;q=0.9,en;q=0.8"
-      res = http.request(req)
-      return [nil, "HTTP #{res.code}"] unless res.is_a?(Net::HTTPSuccess)
+      [nil, :none, err]
+    end
 
-      body = res.body.to_s.force_encoding("UTF-8").encode("UTF-8", invalid: :replace, undef: :replace)
-      [body, nil]
+    # Follow redirects (Net::HTTP does not by default). Soft-fail on loops / non-HTTP.
+    def http_get(url, ua:, timeout:, max_redirects: 5)
+      current = url.to_s
+      redirects = 0
+      loop do
+        uri = URI.parse(current)
+        unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
+          return [nil, "unsupported URL scheme"]
+        end
+
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = uri.scheme == "https"
+        http.open_timeout = timeout
+        http.read_timeout = timeout
+        path = uri.request_uri
+        path = "/" if path.nil? || path.empty?
+        req = Net::HTTP::Get.new(path)
+        req["User-Agent"] = ua
+        req["Accept"] = "text/html,application/xhtml+xml,application/xml,application/rss+xml,*/*;q=0.8"
+        req["Accept-Language"] = "pt-BR,pt;q=0.9,en;q=0.8"
+        res = http.request(req)
+
+        if res.is_a?(Net::HTTPRedirection)
+          loc = res["location"].to_s
+          return [nil, "redirect without Location (HTTP #{res.code})"] if loc.empty?
+          current = begin
+            URI.join(current, loc).to_s
+          rescue URI::InvalidURIError, ArgumentError
+            loc
+          end
+          redirects += 1
+          return [nil, "too many redirects (>#{max_redirects})"] if redirects > max_redirects
+          next
+        end
+
+        return [nil, "HTTP #{res.code}"] unless res.is_a?(Net::HTTPSuccess)
+
+        body = res.body.to_s.force_encoding("UTF-8").encode("UTF-8", invalid: :replace, undef: :replace)
+        return [body, nil]
+      end
     rescue StandardError => e
       [nil, "#{e.class}: #{e.message}"]
+    end
+
+    # Public Wayback Machine availability API (ToS-safe read of archived public pages).
+    # Returns snapshot URL or nil. Never invents content.
+    def wayback_snapshot_url(original_url, ua:, timeout:)
+      api = "https://archive.org/wayback/available?url=#{URI.encode_www_form_component(original_url)}"
+      body, err = http_get(api, ua: ua, timeout: timeout)
+      return nil if err || body.nil? || body.empty?
+
+      parse_wayback_available(body)
+    rescue StandardError
+      nil
+    end
+
+    # Pure JSON parse of archive.org /wayback/available response (testable offline).
+    def parse_wayback_available(body)
+      data = JSON.parse(body)
+      closest = data.dig("archived_snapshots", "closest")
+      return nil unless closest.is_a?(Hash) && (closest["available"] == true || closest["available"] == "true")
+
+      snap = closest["url"].to_s
+      return nil if snap.empty?
+
+      snap.sub(%r{\Ahttp://}, "https://")
+    rescue JSON::ParserError
+      nil
     end
 
     def extract_candidates(target, body)
@@ -353,10 +414,12 @@ module Pebr
         desc = block[/<description[^>]*>(.*?)<\/description>/im, 1]
         next if link.nil? || link.strip.empty?
 
+        pub = block[/<pubDate[^>]*>(.*?)<\/pubDate>/im, 1]
         results << {
           url: strip_tags(link).strip,
           title: strip_cdata(strip_tags(title.to_s)).strip,
-          snippet: strip_cdata(strip_tags(desc.to_s)).strip
+          snippet: strip_cdata(strip_tags(desc.to_s)).strip,
+          published_at: strip_tags(pub.to_s).strip.empty? ? nil : strip_tags(pub.to_s).strip
         }
       end
       xml.scan(/<entry\b.*?<\/entry>/im) do |block|
@@ -365,12 +428,15 @@ module Pebr
         link ||= block[/<link[^>]*>(.*?)<\/link>/im, 1]
         summary = block[/<summary[^>]*>(.*?)<\/summary>/im, 1] ||
                   block[/<content[^>]*>(.*?)<\/content>/im, 1]
+        updated = block[/<updated[^>]*>(.*?)<\/updated>/im, 1] ||
+                  block[/<published[^>]*>(.*?)<\/published>/im, 1]
         next if link.nil? || link.strip.empty?
 
         results << {
           url: strip_tags(link).strip,
           title: strip_cdata(strip_tags(title.to_s)).strip,
-          snippet: strip_cdata(strip_tags(summary.to_s)).strip
+          snippet: strip_cdata(strip_tags(summary.to_s)).strip,
+          published_at: strip_tags(updated.to_s).strip.empty? ? nil : strip_tags(updated.to_s).strip
         }
       end
       results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
@@ -378,11 +444,30 @@ module Pebr
 
     def extract_sitemap_locs(xml)
       results = []
-      xml.scan(/<loc>\s*([^<]+?)\s*<\/loc>/im) do |loc,|
+      # Prefer <url> blocks so lastmod (if present) attaches to the loc.
+      xml.scan(/<url\b[\s\S]*?<\/url>/im) do |block|
+        loc = block[/<loc>\s*([^<]+?)\s*<\/loc>/im, 1]
+        next if loc.nil?
+
         url = loc.strip
         next if url.empty?
 
-        results << { url: url, title: url.split("/").last.to_s, snippet: nil }
+        lastmod = block[/<lastmod>\s*([^<]+?)\s*<\/lastmod>/im, 1]
+        lastmod = lastmod.strip if lastmod
+        results << {
+          url: url,
+          title: url.split("/").last.to_s,
+          snippet: nil,
+          lastmod: lastmod
+        }
+      end
+      if results.empty?
+        xml.scan(/<loc>\s*([^<]+?)\s*<\/loc>/im) do |loc,|
+          url = loc.strip
+          next if url.empty?
+
+          results << { url: url, title: url.split("/").last.to_s, snippet: nil, lastmod: nil }
+        end
       end
       results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
     end
@@ -409,8 +494,23 @@ module Pebr
         key = normalize_url(it["url"])
         if by_url.key?(key)
           prev = by_url[key]
-          merged = prev.merge(it)
+          # Prefer earlier target_id (first detection source); accumulate all target_ids.
+          merged = it.merge(prev)
+          merged["last_seen_at"] = it["last_seen_at"] || prev["last_seen_at"]
           merged["detected_at"] = prev["detected_at"] if prev["detected_at"]
+          merged["target_id"] = prev["target_id"] || it["target_id"]
+          tids = []
+          tids.concat(Array(prev["target_ids"]))
+          tids << prev["target_id"] if prev["target_id"]
+          tids.concat(Array(it["target_ids"]))
+          tids << it["target_id"] if it["target_id"]
+          merged["target_ids"] = tids.compact.uniq
+          # Keep richer metadata
+          merged["published_at"] = prev["published_at"] || it["published_at"]
+          merged["lastmod"] = prev["lastmod"] || it["lastmod"]
+          merged["score"] = [prev["score"].to_i, it["score"].to_i].max
+          merged["score_reasons"] = (Array(prev["score_reasons"]) + Array(it["score_reasons"])).uniq
+          merged["scenario_hints"] = (Array(prev["scenario_hints"]) + Array(it["scenario_hints"])).uniq
           statuses = [prev["status"], it["status"]]
           merged["status"] =
             if statuses.include?("already_witnessed")
@@ -422,7 +522,9 @@ module Pebr
             end
           by_url[key] = merged
         else
-          by_url[key] = it
+          copy = it.dup
+          copy["target_ids"] = [it["target_id"]].compact
+          by_url[key] = copy
         end
       end
       by_url.values
@@ -466,7 +568,7 @@ module Pebr
       counts = meta["counts"]
       lines = []
       lines << "pebr watch: discovery queue (#{mode}) — #{QUEUE_SCHEMA_NOTE}"
-      lines << "  heritage: listings/RSS/policy adapted from pesquisas-eleitorais-br (no share extraction)"
+      lines << "  heritage: listings/RSS/policy + archive.org fallback from pesquisas-eleitorais-br patterns (no share extraction)"
       lines << "  watermark fieldwork_end: #{meta['watermark_fieldwork_end'] || '(none)'}"
       lines << "  targets: #{counts['targets_enabled']}  live_fetched: #{counts['targets_fetched_live']}  skipped: #{counts['targets_skipped']}"
       lines << "  items: #{counts['items']}  needs_human_review: #{counts['needs_human_review']}  already_witnessed: #{counts['already_witnessed']}  inbox_low_score: #{counts['inbox_low_score']}"

@@ -4,12 +4,15 @@
 #
 # source_id values align with docs/source-map/sources.json ids where possible.
 # Operators: run `bin/pebr watch --offline` (fixtures) or `bin/pebr watch --fetch` (live).
+#
+# See docs/adr/0001-discovery-bypass-blockers.md for ranked techniques + legal/grey notes.
 
 version: 1
 user_agent: "PEBR-discovery/0.2 (+https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro; research; no automated ingest)"
 queue_path: data/national/discovery/queue.json
 request_timeout_sec: 20
 max_links_per_target: 40
+max_redirects: 5
 
 # Keyword fallback (old-site data/sources.json style) when score < min but signal present.
 keywords:
@@ -36,9 +39,7 @@ keywords:
   - "Real Time Big Data"
   - "Paraná Pesquisas"
 
-
 # Keyword filters applied to link text + href (case-insensitive).
-# Keep national/presidential signal; drop obvious state-only noise when safe.
 default_include_patterns:
   - "pesquisa"
   - "eleitoral"
@@ -65,7 +66,7 @@ scenario_hint_rules:
 
 targets:
 
-  # --- Google News RSS (from old-site data/sources.json gnews-presidencial) ---
+  # --- Google News RSS (ported + expanded from old-site data/sources.json) ---
   - id: gnews-presidencial
     source_id: gnews-presidencial
     label: "Google News RSS — pesquisa eleitoral presidente 2026"
@@ -76,6 +77,85 @@ targets:
     notes: "Signal feed only — not a primary witness. Ported from pesquisas-eleitorais-br."
     fixture: fixtures/discovery/gnews-presidencial.rss.xml
 
+  - id: gnews-datafolha
+    source_id: gnews-presidencial
+    label: "Google News RSS — Datafolha presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Datafolha+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Institute-specific GNews query (old-site redundancy pattern)."
+    fixture: fixtures/discovery/gnews-datafolha.rss.xml
+
+  - id: gnews-quaest
+    source_id: gnews-presidencial
+    label: "Google News RSS — Quaest Lula 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Quaest+Lula+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Institute-specific GNews query."
+    fixture: fixtures/discovery/gnews-quaest.rss.xml
+
+  - id: gnews-poderdata
+    source_id: gnews-presidencial
+    label: "Google News RSS — PoderData 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+PoderData+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/gnews-poderdata.rss.xml
+
+  - id: gnews-atlasintel
+    source_id: gnews-presidencial
+    label: "Google News RSS — AtlasIntel 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+AtlasIntel+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/gnews-atlasintel.rss.xml
+
+  - id: gnews-nexus
+    source_id: gnews-presidencial
+    label: "Google News RSS — Nexus/BTG 2º turno 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+Nexus+BTG+2%C2%BA+turno+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/gnews-nexus.rss.xml
+
+  # --- High-signal RSS (live-verified 2026-09-27) ---
+  - id: g1-pesquisas-rss
+    source_id: g1-pesquisas
+    label: "G1 — pesquisas eleitorais 2026 RSS"
+    kind: rss
+    url: "https://g1.globo.com/dynamo/politica/eleicoes/2026/pesquisa-eleitoral/rss2.xml"
+    enabled: true
+    national_hint: true
+    notes: "Best G1 discovery path — dedicated pesquisas feed (redirects to /rss/g1/...). Prefer over HTML listing."
+    fixture: fixtures/discovery/g1-pesquisas.rss.xml
+
+  - id: g1-rss-sample
+    source_id: g1-pesquisas
+    label: "G1 — política RSS (broader; more state noise)"
+    kind: rss
+    url: "https://g1.globo.com/dynamo/politica/rss2.xml"
+    enabled: true
+    national_hint: true
+    notes: "Noisy fallback; policy must reject governador/prefeito."
+    fixture: fixtures/discovery/g1-politica.rss.xml
+
+  - id: poder360-feed
+    source_id: poder360-media
+    label: "Poder360 — WordPress RSS feed"
+    kind: rss
+    url: "https://www.poder360.com.br/feed/"
+    enabled: true
+    national_hint: true
+    notes: "Live-verified 200. Keyword filter keeps poll-ish items."
+    fixture: fixtures/discovery/poder360-feed.rss.xml
+
+  # --- HTML listings (fragile; archive_fallback when primary fails) ---
   - id: g1-pesquisas-listing
     source_id: g1-pesquisas
     label: "G1 — pesquisas eleitorais 2026 (listing)"
@@ -83,6 +163,8 @@ targets:
     url: "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/"
     enabled: true
     national_hint: true
+    archive_fallback: true
+    notes: "Prefer g1-pesquisas-rss. Archive.org wayback available API used if primary fails."
     fixture: fixtures/discovery/g1-pesquisas-listing.html
 
   - id: g1-pesquisas-hub
@@ -92,6 +174,7 @@ targets:
     url: "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/"
     enabled: true
     national_hint: true
+    archive_fallback: true
     fixture: fixtures/discovery/g1-pesquisas-hub.html
 
   - id: poder360-media
@@ -101,6 +184,17 @@ targets:
     url: "https://www.poder360.com.br/"
     enabled: true
     national_hint: true
+    notes: "Prefer poder360-feed RSS."
+    fixture: fixtures/discovery/poder360-listing.html
+
+  - id: poder360-poderdata
+    source_id: poder360-media
+    label: "Poder360 — PoderData hub"
+    kind: listing_html
+    url: "https://www.poder360.com.br/poderdata/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
     fixture: fixtures/discovery/poder360-listing.html
 
   - id: cnn-brasil-eleicoes
@@ -112,6 +206,27 @@ targets:
     national_hint: true
     fixture: fixtures/discovery/cnn-eleicoes-listing.html
 
+  - id: gazeta-pesquisas
+    source_id: gazeta-do-povo
+    label: "Gazeta do Povo — pesquisas 2026"
+    kind: listing_html
+    url: "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Often mirrors Paraná/GERP/Ideia/Futura. Live HTML 200 from research box."
+    fixture: fixtures/discovery/gazeta-pesquisas-listing.html
+
+  - id: wikipedia-polling-2026
+    source_id: wikipedia-polling-2026
+    label: "Wikipedia EN — 2026 BR presidential polling (citation farm)"
+    kind: listing_html
+    url: "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Brazilian_presidential_election"
+    enabled: true
+    national_hint: true
+    notes: "Signal/citation farm only — not a primary witness. Live 200."
+    fixture: fixtures/discovery/wikipedia-polling-2026.html
+
   - id: atlasintel-polls
     source_id: atlasintel
     label: "AtlasIntel — poll index (HTML)"
@@ -119,6 +234,7 @@ targets:
     url: "https://atlasintel.org/"
     enabled: true
     national_hint: true
+    notes: "JS-heavy Nuxt; regex link extract may be thin. Prefer GNews + Poder360 tag."
     fixture: fixtures/discovery/atlasintel-listing.html
 
   - id: quaest-home
@@ -128,27 +244,21 @@ targets:
     url: "https://quaest.com.br/"
     enabled: true
     national_hint: true
+    notes: "WP site; PDFs under /wp-content/uploads/. Prefer GNews + G1 RSS."
     fixture: fixtures/discovery/quaest-listing.html
 
-  - id: tse-dados-abertos-rss
+  - id: tse-dados-abertos
     source_id: tse-dados-abertos-2026
     label: "TSE Dados Abertos — dataset page (HTML listing)"
     kind: listing_html
     url: "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026"
     enabled: true
     national_hint: true
-    notes: "Registration provenance only — not horse-race shares."
+    archive_fallback: true
+    notes: "Registration provenance only. Live fetch often 403/Akamai from Actions/datacenter IPs — escalate egress or manual zip download. Never horse-race shares."
     fixture: fixtures/discovery/tse-dados-abertos.html
 
-  - id: g1-rss-sample
-    source_id: g1-pesquisas
-    label: "G1 — sample RSS (fixture / optional live)"
-    kind: rss
-    url: "https://g1.globo.com/dynamo/politica/rss2.xml"
-    enabled: true
-    national_hint: true
-    fixture: fixtures/discovery/g1-politica.rss.xml
-
+  # --- Sitemap (fixture-only example; lastmod used as queue metadata) ---
   - id: example-sitemap
     source_id: g1-pesquisas
     label: "Example sitemap parser (fixture only)"

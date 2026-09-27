@@ -39,6 +39,15 @@ class WatchPolicyTest < Minitest::Test
     assert_includes c[:reasons], "presidential-signal"
     assert_includes c[:reasons], "institute"
   end
+
+  def test_wrong_office_wins_over_hub_slug
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/pesquisa-governador-pr/",
+      "Pesquisa governador Paraná"
+    )
+    assert c[:rejected]
+    assert_includes c[:reasons], "wrong-office"
+  end
 end
 
 class WatchTest < Minitest::Test
@@ -135,8 +144,53 @@ class WatchTest < Minitest::Test
   def test_rss_sitemap_and_gnews
     result = run_watch
     assert result[:doc]["items"].any? { |i| i["target_id"] == "g1-rss-sample" }, "RSS fixture"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "g1-pesquisas-rss" }, "G1 pesquisas RSS"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "poder360-feed" }, "Poder360 feed"
     assert result[:doc]["items"].any? { |i| i["target_id"] == "example-sitemap" }, "sitemap fixture"
     assert result[:doc]["items"].any? { |i| i["target_id"] == "gnews-presidencial" }, "gnews fixture"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "gnews-datafolha" }, "gnews datafolha"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "wikipedia-polling-2026" }, "wikipedia"
+  end
+
+  def test_sitemap_lastmod_attached
+    result = run_watch
+    futura = result[:doc]["items"].find { |i| i["url"].to_s.include?("futura-pesquisa-presidencial") }
+    assert futura, "expected sitemap futura URL"
+    assert_equal "2026-09-21T18:00:00Z", futura["lastmod"]
+  end
+
+  def test_rss_published_at_when_present
+    result = run_watch
+    hit = result[:doc]["items"].find do |i|
+      i["url"].to_s.include?("datafolha-presidente-1o-turno-setembro") && i["published_at"]
+    end
+    assert hit, "expected datafolha item with RSS pubDate"
+    assert_match(/2026/, hit["published_at"])
+  end
+
+  def test_wayback_available_json_parse
+    payload = {
+      "url" => "https://example.com/x",
+      "archived_snapshots" => {
+        "closest" => {
+          "available" => true,
+          "url" => "http://web.archive.org/web/20260924120000/https://example.com/x",
+          "timestamp" => "20260924120000",
+          "status" => "200"
+        }
+      }
+    }
+    snap = Pebr::Watch.parse_wayback_available(JSON.pretty_generate(payload))
+    assert_match(%r{\Ahttps://web\.archive\.org/web/}, snap)
+    assert_includes snap, "example.com/x"
+    assert_nil Pebr::Watch.parse_wayback_available("{}")
+    assert_nil Pebr::Watch.parse_wayback_available("not-json")
+  end
+
+  def test_http_get_rejects_non_http
+    body, err = Pebr::Watch.http_get("ftp://example.com/x", ua: "test", timeout: 2)
+    assert_nil body
+    assert_match(/unsupported/, err)
   end
 
   def test_dry_run_does_not_write
