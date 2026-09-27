@@ -6,6 +6,7 @@ require_relative "pebr/normalize"
 require_relative "pebr/discover"
 require_relative "pebr/watch_policy"
 require_relative "pebr/watch"
+require_relative "pebr/intake"
 require_relative "pebr/assemble"
 
 module Pebr

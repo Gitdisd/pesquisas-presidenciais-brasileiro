@@ -15,6 +15,7 @@ module Pebr
     NON_PRESIDENTIAL = /(?:governador|governadora|prefeito|prefeita|senado|senador|senadora|deputad[oa]|vereador|vereadora|assembleia|estadual|municipal|capital)/i
     PRESIDENTIAL_SIGNAL = /(?:president(?:e|ial)|presid[eê]ncia|primeiro[-_ ]turno|1[ºo°]?[-_ ]?turno|segundo[-_ ]turno|2[ºo°]?[-_ ]?turno|inten[cç][aã]o[-_ ]de[-_ ]voto|pesquisa[-_ ]eleitoral)/i
     INSTITUTE_SIGNAL = /(?:datafolha|quaest|atlas\s*intel|poder\s*data|poder360|nexus|ideia|futura|gerp|palver|verit[aá]|paran[aá]|indexa|vox\s*brasil|alfa\s*intelig|cnt|mda|realtime|real\s*time\s*big\s*data|ipsos|ipec)/i
+    TSE_REGISTRATION_SIGNAL = /\bBR[- ]?\d{4,6}\/2026\b|registro\s+(?:do\s+)?TSE|pesqele/i
 
     def canonicalize_url(raw)
       u = URI.parse(raw.to_s.strip)
@@ -69,6 +70,11 @@ module Pebr
       if INSTITUTE_SIGNAL.match?(hay)
         score += 35
         reasons << "institute"
+      end
+
+      if TSE_REGISTRATION_SIGNAL.match?(hay)
+        score += 12
+        reasons << "tse-registration-signal"
       end
 
       if /\.(?:pdf|html?)(?:\?|$)/i.match?(canonical)

@@ -29,6 +29,15 @@ class WatchPolicyTest < Minitest::Test
     assert_includes c[:reasons], "wrong-office"
   end
 
+  def test_scores_tse_registration_as_provenance_signal
+    c = Pebr::WatchPolicy.classify_poll_link(
+      "https://example.org/pesquisa-presidente",
+      "Pesquisa presidencial — Registro TSE BR-01739/2026"
+    )
+    refute c[:rejected]
+    assert_includes c[:reasons], "tse-registration-signal"
+  end
+
   def test_scores_presidential_institute
     c = Pebr::WatchPolicy.classify_poll_link(
       "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/datafolha-1o-turno.ghtml",
@@ -150,6 +159,10 @@ class WatchTest < Minitest::Test
     assert result[:doc]["items"].any? { |i| i["target_id"] == "gnews-presidencial" }, "gnews fixture"
     assert result[:doc]["items"].any? { |i| i["target_id"] == "gnews-datafolha" }, "gnews datafolha"
     assert result[:doc]["items"].any? { |i| i["target_id"] == "wikipedia-polling-2026" }, "wikipedia"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "wikipedia-polling-2026-pt" }, "wikipedia PT"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "tse-pesqele-recent" }, "TSE PesqEle provenance"
+    assert result[:doc]["items"].any? { |i| i["target_id"] == "trademap-poll-aggregator" }, "TradeMap provenance"
+    assert result[:doc]["items"].any? { |i| i["target_ids"]&.include?("gnews-tse-registration") }, "TSE-registration GNews"
   end
 
   def test_sitemap_lastmod_attached
@@ -198,6 +211,42 @@ class WatchTest < Minitest::Test
     refute out.exist?
     run_watch(dry_run: true)
     refute out.exist?
+  end
+
+  def test_human_drop_is_indexed_by_hash_without_parsing
+    source = @root.join("saved-report.pdf")
+    source.write("PDF bytes; poll cells must not be parsed")
+    result = Pebr::Intake.drop(
+      source,
+      root: @root,
+      source_url: "https://example.org/report.pdf",
+      title: "Human report",
+      source_id: "manual-source"
+    )
+    assert_match(/^sha256:/, result[:content_hash])
+
+    queue = run_watch[:doc]
+    item = queue["items"].find { |candidate| candidate["kind"] == "human_drop" }
+    assert item, "expected human drop in queue"
+    assert_equal "needs_human_review", item["status"]
+    assert_equal result[:content_hash], item["content_hash"]
+    assert_equal "pdf", item["source_type"]
+    refute item.key?("shares")
+    refute item.key?("poll_id")
+    assert_equal "human_drop", item["listing_via"]
+  end
+
+  def test_metadata_diff_is_explicit
+    diff = Pebr::Watch.metadata_diff(
+      { "published_at" => "2026-09-01T00:00:00Z" },
+      { "published_at" => "2026-09-02T00:00:00Z" }
+    )
+    assert_equal "2026-09-01T00:00:00Z", diff.dig("published_at", "previous")
+    assert_equal "2026-09-02T00:00:00Z", diff.dig("published_at", "current")
+    assert_empty Pebr::Watch.metadata_diff(
+      { "published_at" => "2026-09-01T00:00:00Z" },
+      {}
+    )
   end
 
   def test_queue_never_contains_numeric_share_fields

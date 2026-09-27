@@ -6,7 +6,7 @@
 
 ## Context
 
-Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Abertos, UOL), JS-thin institute homes (AtlasIntel Nuxt, Futura), paywalled outlets (Estadão, Economist), and rate limits. Lead rule: **tighten watch targets + queue UX; never invent poll % in CI; escalate secrets/robots if blocking.**
+Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Abertos, UOL), JS-thin institute homes (AtlasIntel Nuxt, Futura), paywalled outlets (Estadão, Economist), and rate limits. Lead rule: **tighten watch targets + queue UX; never invent poll % in CI; escalate secrets/robots if blocking.** PEBR discovery and CI do not use Playwright.
 
 ## Research notes (what actually works)
 
@@ -21,7 +21,7 @@ Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Aber
 | Soft fetch failures → continue; inbox for unparseable | Never invent cells | Safe |
 | JSON-LD date heuristics + regex extract | Old site *did* stage shares when confident | PEBR **deliberately does not** |
 | No login / paywall bypass (documented) | Hard rule | Safe |
-| Playwright | **E2E only**, not discovery fetch | N/A |
+| Playwright | **Not part of PEBR discovery or CI**; no browser workaround | N/A |
 | TSE registry recovery via GNews protocol search | Provenance | Safe signal |
 
 ### B. Common BR poll pipelines (2026)
@@ -32,6 +32,10 @@ Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Aber
 | **agregR / PollingData / Depois das 17 / TradeMap** | Curated TSE-registered + press tables | Human/editorial ingest; not scrape recipes |
 | **Wikipedia EN/PT polling pages** | Citation farm | Signal only |
 | **Archive.org** `wayback/available` + mementos | Public snapshots of listings | Safe read of already-public archives; **not** a paywall bypass |
+| **TSE portal / PesqEle** public pointers and listing pages | Registration provenance (`BR-#####/2026`) | Session/WAF-sensitive; queue only, no browser workaround |
+| **TradeMap** presidential aggregator + **Palver** public repository | Secondary index / institute-release links that may cite TSE IDs | Lead only; check the primary report and TSE record |
+| News/press RSS and Wikipedia EN/PT citations | Article/report URLs that mention TSE IDs | Lead only; never a source of truth for shares |
+| **UOL**, **Índice CNN**, and **PollingData** | Secondary national indexes / methodology pages | May be blocked or weighted; queue links only and verify primary report |
 
 ### C. Live probe results (2026-09-27, America/Sao_Paulo, research box)
 
@@ -49,11 +53,11 @@ Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Aber
 
 ### D. Legal / ToS-safe vs grey
 
-**Prefer (safe):** public RSS; Google News RSS; Wikipedia; archive.org *availability* + public mementos; TSE open-data **when egress allows**; cached **fixtures** in CI; human dual-enter of shares.
+**Prefer (safe):** public RSS; Google News RSS; Wikipedia EN/PT election and polling pages; archive.org *availability* + public mementos; TSE open-data **when egress allows**; cached **fixtures** in CI; human dual-enter of shares. Wikipedia tables and citations are discovery leads only: a human must check the primary source before any witness or share is recorded.
 
-**Grey / avoid:** ignoring `robots.txt` Disallow; login/cookie jar; CAPTCHA solve; paywall DOM tricks; residential-proxy “stealth” scrapers; self-modifying parsers; Playwright for production discovery (Ruby-glue rule + fragility).
+**Grey / avoid:** ignoring `robots.txt` Disallow; login/cookie jar; CAPTCHA solve; paywall DOM tricks; residential-proxy “stealth” scrapers; self-modifying parsers; Playwright for production discovery (Ruby-glue rule + fragility). JS/WAF/PesqEle listings are manual/human witness work, not automated discovery.
 
-**Hard PEBR holds:** no inventing shares; no auto-write to `data/national/polls`; no chart/UI edits from discovery.
+**Hard PEBR holds:** no inventing shares; no auto-write to `data/national/polls`; no chart/UI edits from discovery; no login, paywall, or TSE-403 browser workaround in the pipeline.
 
 ## Decision — ranked implementable steps
 
@@ -69,16 +73,20 @@ Live `bin/pebr watch --fetch` hits soft failures: Akamai/WAF 403 (TSE Dados Aber
 | 8 | TSE zip via ops egress / secret mirror URL | **Blocked — needs human** |
 | 9 | Optional `POLL_SOURCE_URL` dump of pre-fetched HTML | **Needs Lead secret** |
 | 10 | Institute JSON APIs (if any appear) | None confirmed; revisit |
+| 11 | Alternate TSE provenance: PesqEle pointers + TSE-ID news/aggregator/repository leads | **Shipped** (queue-only) |
+| 12 | Human HTML/PDF drop + SHA-256 inbox handoff | **Shipped** (no body parsing) |
 
 ## Consequences
 
 - Discovery recall rises via RSS redundancy without touching canonical polls.
 - Archive fallback is **evidence of listing links**, not witness bytes for shares.
-- TSE provenance remains blocked from Actions/datacenter until Lead provides egress or a mirrored zip.
+- RSS/GNews, Wikipedia, Wayback, and fixtures are the safe signal path; Wikipedia citations still require a human primary-source check.
+- TSE provenance is no longer limited to the blocked CDN: portal/PesqEle pointers, TSE-ID news, institute releases, TradeMap, Palver/GitHub, and Wikipedia citations provide queueable leads. They remain provenance only and require human primary/TSE verification.
 - Operators still dual-enter percentages after opening queued URLs.
 
 ## Escalations for Lead / secrets
 
 1. **TSE open-data zip** — manual download or GitHub Actions secret pointing at an allowed mirror / egress runner (`cdn.tse.jus.br/.../pesquisa_eleitoral_2026.zip`). Provenance only.
-2. **PesqEle UI** — JS + WAF; browser session only; do not automate login.
-3. **Paywalled witnesses** — human paste / PDF upload into `data/national/witnesses/` with `content_hash`; never CI bypass.
+2. **PesqEle UI** — JS + WAF; human/manual witness path only; do not automate login or add a browser workaround to CI.
+3. **Paywalled witnesses** — human paste / PDF upload via `bin/pebr drop` into `data/national/discovery/inbox/`, then normal witness JSON with `content_hash`; never CI bypass.
+4. **Alternate TSE IDs** — use portal/PesqEle, institute PDFs, TradeMap, Palver/GitHub, news RSS, and Wikipedia only as leads; human-check the official record before recording provenance.

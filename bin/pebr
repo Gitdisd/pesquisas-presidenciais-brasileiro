@@ -30,8 +30,10 @@ module Pebr
           bin/pebr assemble              Rebuild canonical-points.json (1º) + canonical-points-2nd-round.json (2º)
           bin/pebr discover              Read-only inventory of source-map + institutes (no fetch)
           bin/pebr watch [--offline|--fetch] [--dry-run] [--out PATH]
-                                         Human-gated discovery: listing/RSS/sitemap → review queue
+                                         Human-gated discovery: listing/RSS/sitemap/drop inbox → review queue
                                          (NEVER invents poll shares; default --offline uses fixtures)
+          bin/pebr drop FILE [--source-url URL] [--title TITLE] [--source-id ID]
+                                         Copy human-saved HTML/PDF into discovery inbox + hash bytes
           bin/pebr normalize             Report identity fingerprint duplicates (no fetch / no rewrite)
           bin/pebr version               Print version
           bin/pebr help                  This message
@@ -45,6 +47,7 @@ module Pebr
       when "assemble" then assemble!
       when "discover" then discover!
       when "watch" then watch!(argv[1..])
+      when "drop" then drop!(argv[1..])
       when "normalize" then normalize!
       when "version", "-v", "--version"
         puts Pebr::VERSION
@@ -94,6 +97,36 @@ module Pebr
       exit 0
     rescue StandardError => e
       warn "watch: FAILED — #{e.message}"
+      exit 1
+    end
+
+    def drop!(argv)
+      path = argv.shift
+      raise "drop requires an HTML/PDF FILE" if path.nil? || path.start_with?("--")
+
+      source_url = nil
+      title = nil
+      source_id = nil
+      while (arg = argv.shift)
+        case arg
+        when "--source-url" then source_url = argv.shift or raise "--source-url requires a URL"
+        when "--title" then title = argv.shift or raise "--title requires text"
+        when "--source-id" then source_id = argv.shift or raise "--source-id requires an ID"
+        when "--help", "-h"
+          puts usage
+          exit 0
+        else
+          raise "drop: unknown option #{arg.inspect}"
+        end
+      end
+
+      result = Pebr::Intake.drop(path, root: ROOT, source_url: source_url, title: title, source_id: source_id)
+      puts "drop: copied #{result[:path]}"
+      puts "drop: #{result[:content_hash]}"
+      puts "drop: run bin/pebr watch --offline, then create a human witness after primary-source review"
+      exit 0
+    rescue StandardError => e
+      warn "drop: FAILED — #{e.message}"
       exit 1
     end
 

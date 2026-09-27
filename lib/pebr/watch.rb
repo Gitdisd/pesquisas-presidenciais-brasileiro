@@ -32,6 +32,7 @@ module Pebr
 
       config = load_config(config_path)
       queue_rel = config.fetch("queue_path", "data/national/discovery/queue.json")
+      inbox_rel = config.fetch("inbox_path", "data/national/discovery/inbox")
       out_path = Pathname.new(opts.fetch(:out_path, root.join(queue_rel)))
       last_run_path = Pathname.new(
         opts.fetch(:last_run_path, out_path.dirname.join("last-run.json"))
@@ -84,7 +85,7 @@ module Pebr
         candidates = extract_candidates(target, body)
         kept = 0
         candidates.each do |cand|
-          policy = WatchPolicy.classify_poll_link(cand[:url], cand[:title].to_s)
+          policy = WatchPolicy.classify_poll_link(cand[:url], "#{cand[:title]} #{cand[:snippet]}")
           if policy[:rejected]
             rejected_count += 1
             next
@@ -99,16 +100,28 @@ module Pebr
           snippet = cand[:snippet].to_s.strip
           hints = scenario_hints("#{title} #{url} #{snippet}", hint_rules)
 
+          prev = existing[normalize_url(url)]
+          metadata = metadata_diff(
+            { "lastmod" => prev && prev["lastmod"], "published_at" => prev && prev["published_at"] }.compact,
+            { "lastmod" => cand[:lastmod], "published_at" => cand[:published_at] }.compact
+          )
+          score = policy[:score]
+          score_reasons = policy[:reasons].dup
+          if prev.nil?
+            score += 4
+            score_reasons << "new-signal"
+          elsif !metadata.empty?
+            score += 8
+            score_reasons << "metadata-updated"
+          end
           status =
             if witnessed.include?(normalize_url(url))
               "already_witnessed"
-            elsif policy[:score] < min_score
+            elsif score < min_score
               "inbox_low_score" # signal only — human still required; not auto-ingested
             else
               "needs_human_review"
             end
-
-          prev = existing[normalize_url(url)]
           item = {
             "url" => url,
             "source_id" => target["source_id"] || target["id"],
@@ -118,8 +131,8 @@ module Pebr
             "title" => title.empty? ? nil : title,
             "snippet" => snippet.empty? ? nil : truncate(snippet, 280),
             "scenario_hints" => hints,
-            "score" => policy[:score],
-            "score_reasons" => policy[:reasons],
+            "score" => score,
+            "score_reasons" => score_reasons.uniq,
             "listing_url" => target["url"],
             "listing_content_hash" => listing_hash,
             "listing_via" => source_kind.to_s,
@@ -127,18 +140,33 @@ module Pebr
             "status" => status,
             "kind" => target["kind"],
             "lastmod" => cand[:lastmod],
-            "published_at" => cand[:published_at]
+            "published_at" => cand[:published_at],
+            "metadata_changed" => (!metadata.empty? && !prev.nil?),
+            "metadata_diff" => metadata.empty? ? nil : metadata
           }
           item.compact!
           item["status"] = status
           item["scenario_hints"] = hints
-          item["score"] = policy[:score]
-          item["score_reasons"] = policy[:reasons]
+          item["score"] = score
+          item["score_reasons"] = score_reasons.uniq
           items << item
           kept += 1
           break if kept >= max_links
         end
       end
+
+      # Human-saved HTML/PDF files are an evidence handoff, not a parser input.
+      # Index their path/hash and optional sidecar URL so an operator can review
+      # and create a witness without the watcher ever reading poll cells.
+      drop_items, drop_errors = load_inbox_items(
+        root,
+        inbox_rel,
+        detected_at: detected_at,
+        existing: existing,
+        now: now
+      )
+      items.concat(drop_items)
+      errors.concat(drop_errors)
 
       merged = merge_items(existing.values, items)
       merged.sort_by! do |it|
@@ -164,6 +192,7 @@ module Pebr
         "needs_human_review" => merged.count { |i| i["status"] == "needs_human_review" },
         "already_witnessed" => merged.count { |i| i["status"] == "already_witnessed" },
         "inbox_low_score" => merged.count { |i| i["status"] == "inbox_low_score" },
+        "human_drop_files" => merged.count { |i| i["kind"] == "human_drop" },
         "rejected_links" => rejected_count
       }
 
@@ -194,6 +223,8 @@ module Pebr
         "needs_human_review" => counts["needs_human_review"],
         "already_witnessed" => counts["already_witnessed"],
         "inbox_low_score" => counts["inbox_low_score"],
+        "human_drop_files" => counts["human_drop_files"],
+        "inbox_path" => inbox_rel,
         "fetch_errors" => errors,
         "source_health" => source_health,
         "out_path" => relative_to(out_path, root),
@@ -251,6 +282,89 @@ module Pebr
       end
     rescue JSON::ParserError
       {}
+    end
+
+    # Index human-saved evidence without parsing HTML/PDF bodies. A sidecar named
+    # <document>.<ext>.json may provide source_url, title, and source_id.
+    def load_inbox_items(root, inbox_rel, detected_at:, existing:, now:)
+      inbox = root.join(inbox_rel)
+      return [[], []] unless inbox.directory?
+
+      items = []
+      errors = []
+      allowed = %w[.html .htm .pdf]
+      Dir.glob(inbox.join("*").to_s).sort.each do |path_str|
+        path = Pathname.new(path_str)
+        next unless path.file? && allowed.include?(path.extname.downcase)
+
+        sidecar = Pathname.new("#{path}.json")
+        meta = {}
+        if sidecar.file?
+          begin
+            raw = JSON.parse(sidecar.read)
+            meta = raw.select { |k, _| %w[source_url title source_id retrieved_at].include?(k) } if raw.is_a?(Hash)
+          rescue JSON::ParserError => e
+            errors << "human drop #{path.basename}: invalid sidecar JSON (#{e.message})"
+          end
+        end
+
+        relative = path.relative_path_from(root).to_s
+        local_url = "file://#{path.expand_path}"
+        source_url = meta["source_url"].to_s.strip
+        queue_url = source_url.empty? ? local_url : WatchPolicy.canonicalize_url(source_url)
+        title = meta["title"].to_s.strip
+        title = path.basename.to_s if title.empty?
+        source_id = meta["source_id"].to_s.strip
+        source_id = "human-drop" if source_id.empty?
+        digest = "sha256:#{Digest::SHA256.file(path).hexdigest}"
+        prev = existing[normalize_url(queue_url)]
+        policy = WatchPolicy.classify_poll_link(queue_url, title)
+        current_meta = { "lastmod" => nil, "published_at" => meta["retrieved_at"] }.compact
+        previous_meta = {
+          "lastmod" => prev && prev["lastmod"],
+          "published_at" => prev && prev["published_at"]
+        }.compact
+        item = {
+          "url" => queue_url,
+          "source_id" => source_id,
+          "target_id" => "human-drop",
+          "detected_at" => (prev && prev["detected_at"]) || detected_at,
+          "last_seen_at" => detected_at,
+          "title" => title,
+          "snippet" => "Human-saved #{path.extname.downcase} evidence; inspect manually. No share extraction.",
+          "scenario_hints" => [],
+          "score" => [policy[:score], 50].max,
+          "score_reasons" => (policy[:reasons] + ["human-drop", "content-hash"]).uniq,
+          "listing_url" => source_url.empty? ? nil : source_url,
+          "listing_content_hash" => digest,
+          "listing_via" => "human_drop",
+          "national_hint" => true,
+          "status" => "needs_human_review",
+          "kind" => "human_drop",
+          "local_path" => relative,
+          "content_hash" => digest,
+          "source_type" => path.extname.delete_prefix(".").downcase,
+          "retrieved_at" => meta["retrieved_at"],
+          "metadata_changed" => prev && previous_meta != current_meta,
+          "metadata_diff" => metadata_diff(previous_meta, current_meta)
+        }
+        item.compact!
+        items << item
+      rescue Errno::EACCES, Errno::ENOENT => e
+        errors << "human drop #{path_str}: #{e.class}: #{e.message}"
+      end
+      [items, errors]
+    end
+
+    def metadata_diff(previous, current)
+      # A source that lacks a date must not erase a date learned from another
+      # target for the same URL; compare only metadata present in this reading.
+      keys = current.keys
+      keys.each_with_object({}) do |key, diff|
+        old = previous[key]
+        new_value = current[key]
+        diff[key] = { "previous" => old, "current" => new_value } if old != new_value
+      end
     end
 
     # Watermark = max fieldwork_end among national polls (informational; not a hard filter yet).
@@ -506,8 +620,10 @@ module Pebr
           tids << it["target_id"] if it["target_id"]
           merged["target_ids"] = tids.compact.uniq
           # Keep richer metadata
-          merged["published_at"] = prev["published_at"] || it["published_at"]
-          merged["lastmod"] = prev["lastmod"] || it["lastmod"]
+          merged["published_at"] = it["published_at"] || prev["published_at"]
+          merged["lastmod"] = it["lastmod"] || prev["lastmod"]
+          merged["metadata_changed"] = it["metadata_changed"] if it.key?("metadata_changed")
+          merged["metadata_diff"] = it["metadata_diff"] if it.key?("metadata_diff")
           merged["score"] = [prev["score"].to_i, it["score"].to_i].max
           merged["score_reasons"] = (Array(prev["score_reasons"]) + Array(it["score_reasons"])).uniq
           merged["scenario_hints"] = (Array(prev["scenario_hints"]) + Array(it["scenario_hints"])).uniq
@@ -571,7 +687,7 @@ module Pebr
       lines << "  heritage: listings/RSS/policy + archive.org fallback from pesquisas-eleitorais-br patterns (no share extraction)"
       lines << "  watermark fieldwork_end: #{meta['watermark_fieldwork_end'] || '(none)'}"
       lines << "  targets: #{counts['targets_enabled']}  live_fetched: #{counts['targets_fetched_live']}  skipped: #{counts['targets_skipped']}"
-      lines << "  items: #{counts['items']}  needs_human_review: #{counts['needs_human_review']}  already_witnessed: #{counts['already_witnessed']}  inbox_low_score: #{counts['inbox_low_score']}"
+      lines << "  items: #{counts['items']}  needs_human_review: #{counts['needs_human_review']}  already_witnessed: #{counts['already_witnessed']}  inbox_low_score: #{counts['inbox_low_score']}  human_drop_files: #{counts['human_drop_files']}"
       lines << "  wrote: #{out_path}"
       errors.first(10).each { |e| lines << "  warn: #{e}" }
       lines << "  warn: … #{errors.size - 10} more" if errors.size > 10

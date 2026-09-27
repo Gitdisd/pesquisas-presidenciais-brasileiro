@@ -227,6 +227,16 @@ targets:
     notes: "Signal/citation farm only — not a primary witness. Live 200."
     fixture: fixtures/discovery/wikipedia-polling-2026.html
 
+  - id: wikipedia-polling-2026-pt
+    source_id: wikipedia-polling-2026-pt
+    label: "Wikipedia PT — pesquisas de opinião para a eleição presidencial no Brasil em 2026 (citation farm)"
+    kind: listing_html
+    url: "https://pt.wikipedia.org/wiki/Pesquisas_de_opini%C3%A3o_para_a_elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_2026"
+    enabled: true
+    national_hint: true
+    notes: "Signal/citation farm only — citations lead to human primary checks; never a primary witness or share SoT."
+    fixture: fixtures/discovery/wikipedia-polling-2026-pt.html
+
   - id: atlasintel-polls
     source_id: atlasintel
     label: "AtlasIntel — poll index (HTML)"
@@ -257,6 +267,101 @@ targets:
     archive_fallback: true
     notes: "Registration provenance only. Live fetch often 403/Akamai from Actions/datacenter IPs — escalate egress or manual zip download. Never horse-race shares."
     fixture: fixtures/discovery/tse-dados-abertos.html
+
+  # --- Additional outlet/index witnesses (signals only; human primary check) ---
+  - id: uol-poll-aggregator
+    source_id: uol-aggregator
+    label: "UOL — agregador de pesquisas eleitorais"
+    kind: listing_html
+    url: "https://noticias.uol.com.br/eleicoes/agregador-de-pesquisas-eleitorais/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Secondary national index; may return 403. Queue links only; never copy weighted shares."
+    fixture: fixtures/discovery/uol-aggregator.html
+
+  - id: cnn-indice-pesquisas
+    source_id: cnn-indice
+    label: "CNN Brasil — Índice CNN de pesquisas 2026"
+    kind: listing_html
+    url: "https://www.cnnbrasil.com.br/eleicoes/indice-cnn-saiba-como-funciona-o-agregador-de-pesquisas-das-eleicoes-2026/"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Secondary index/method explainer; citations lead to primary reports."
+    fixture: fixtures/discovery/cnn-indice.html
+
+  - id: pollingdata-2026
+    source_id: pollingdata
+    label: "PollingData — pdvoto 2026"
+    kind: listing_html
+    url: "https://flex.pollingdata.com.br/pdvoto/2026"
+    enabled: true
+    national_hint: true
+    notes: "Third-party index used by press trackers; lead only, verify institute/TSE witness."
+    fixture: fixtures/discovery/pollingdata-2026.html
+
+  # --- TSE provenance alternatives (registration leads only; never horse-race truth) ---
+  - id: tse-pesqele-recent
+    source_id: tse-pesqele-divulgacao
+    label: "TSE PesqEle — pesquisas registradas (últimos 30 dias)"
+    kind: listing_html
+    url: "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar30dias.xhtml"
+    enabled: true
+    national_hint: true
+    notes: "Registration provenance only. JS/session-sensitive; no login or browser workaround. Queue links/metadata only."
+    fixture: fixtures/discovery/tse-provenance.html
+
+  - id: tse-pesqele-listing
+    source_id: tse-pesqele-divulgacao
+    label: "TSE PesqEle — listagem pública"
+    kind: listing_html
+    url: "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+    enabled: true
+    national_hint: true
+    notes: "Registration provenance only; human/manual check if session or WAF blocks."
+    fixture: fixtures/discovery/tse-provenance.html
+
+  - id: tse-consulta-portal
+    source_id: tse-consulta-pesquisas
+    label: "TSE — consulta às pesquisas registradas"
+    kind: listing_html
+    url: "https://www.tse.jus.br/eleicoes/pesquisa-eleitorais/consulta-as-pesquisas-registradas"
+    enabled: true
+    national_hint: true
+    notes: "Official pointer to PesqEle; provenance only. Never a share source."
+    fixture: fixtures/discovery/tse-provenance.html
+
+  - id: trademap-poll-aggregator
+    source_id: trademap-aggregator
+    label: "TradeMap — agregador da corrida presidencial 2026 (TSE-ID lead index)"
+    kind: listing_html
+    url: "https://tm.trademap.com.br/agencia/agregador-de-pesquisas-corrida-presidencial-2026-6"
+    enabled: true
+    national_hint: true
+    archive_fallback: true
+    notes: "Secondary index that cites BR-#####/2026 IDs. Leads only; human-check institute report and TSE record."
+    fixture: fixtures/discovery/trademap-aggregator.html
+
+  - id: palver-research-github
+    source_id: palver-research-github
+    label: "Palver — public research repository/releases"
+    kind: listing_html
+    url: "https://github.com/palverdata/pesquisa-palver"
+    enabled: true
+    national_hint: true
+    notes: "Institute release/report lead; TSE IDs are provenance only. Do not copy shares from repository indexes."
+    fixture: fixtures/discovery/palver-github.html
+
+  - id: gnews-tse-registration
+    source_id: gnews-tse-registration
+    label: "Google News RSS — registro TSE + pesquisa presidencial 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=%22Registro+TSE%22+pesquisa+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "News leads that may include BR-#####/2026. TSE ID and article are provenance signals; human-check primary report."
+    fixture: fixtures/discovery/gnews-tse-registration.rss.xml
 
   # --- Sitemap (fixture-only example; lastmod used as queue metadata) ---
   - id: example-sitemap
