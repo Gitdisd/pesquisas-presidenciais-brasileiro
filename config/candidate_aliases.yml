@@ -96,3 +96,9 @@ aliases:
     display_name: "Heró Bezerra"
     aliases: ["Hero Bezerra", "Heró Bezerra (PRTB)"]
     notes: "intake-cohort-002 — Quaest Jul PRTB name"
+
+  michel_temer:
+    display_name: "Michel Temer"
+    aliases: ["Michel Temer (MDB)", "Temer"]
+    notes: "intake-cohort-005 — CNT/MDA Jun 2026 stimulated slate"
+

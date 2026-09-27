@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_indexa_2026-05-24_moneytimes",
+  "poll_id": "indexa_2026-05-24_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.moneytimes.com.br/lula-tem-39-e-flavio-bolsonaro-30-no-1o-turno-presidente-bate-senador-por-46-a-41-no-2o-turno-aponta-indexa-pesquisas-gaep/",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:60cdf64cf585df67c4bf33abf79076cd9b0078842569b35957e3d788b03fae32",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-05-22..2026-05-24",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-02154/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02154/2026",
+  "notes": "Fetched Money Times HTML; full stimulated + residuals."
+}

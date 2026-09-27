@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_cnt_mda_2026-04-12_pdf",
+  "poll_id": "cnt_mda_2026-04-12_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/04/Pesquisa-CNT-de-Opiniao-167a-rodada-1.pdf",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:06e9d348c2954bf79f83a2aff6cff6a6e00fcaa8ae6834a3afe9a1057277d6d0",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-04-08..2026-04-12",
+    "n": 2002,
+    "moe_pp": 2.2,
+    "tse": "BR-02847/2026",
+    "round": "167"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-02847/2026",
+  "notes": "Primary PDF; Cenário 1 stimulated page visual read (charts image-heavy for text extract)."
+}

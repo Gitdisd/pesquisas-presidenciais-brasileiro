@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-03-09_g1",
+  "poll_id": "quaest_2026-03-09_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/03/11/quaest-1o-turno-marco.ghtml",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:5e1383f7d7ada24926b9213d6291438e1f4ef442ae2132fdad8ea2ec7f3ef7c8",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-03-06..2026-03-09",
+    "n": 2004,
+    "moe_pp": 2,
+    "slate": "cenario_2_caiado_zema"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": null,
+  "notes": "Fetched G1 HTML; Cenário 2 block."
+}

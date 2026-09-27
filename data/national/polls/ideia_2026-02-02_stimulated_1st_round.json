@@ -1,0 +1,30 @@
+{
+  "poll_id": "ideia_2026-02-02_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-01-30",
+  "fieldwork_end": "2026-02-02",
+  "fieldwork_mid": "2026-01-31",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1500,
+  "moe": 0.025,
+  "results": {
+    "lula": 0.395,
+    "flavio_bolsonaro": 0.33,
+    "romeu_zema": 0.06,
+    "ronaldo_caiado": 0.051,
+    "renan_santos": 0.007,
+    "aldo_rebelo": 0.005
+  },
+  "residuals": {
+    "branco_nulo": 0.056,
+    "ns_nr": 0.095
+  },
+  "tse_registration_id": "BR-08425/2026",
+  "witness_ids": [
+    "w_ideia_2026-02-02_pdf"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Meio/Ideia primary PDF chart p.9 — preferred Caiado+Zema+Flávio slate (comparable to Mar+ series); Ratinho/Leite duals not dual-entered. confidence=pdf-high."
+}

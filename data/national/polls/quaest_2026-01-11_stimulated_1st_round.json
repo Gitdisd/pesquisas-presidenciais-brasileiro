@@ -1,0 +1,31 @@
+{
+  "poll_id": "quaest_2026-01-11_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-01-08",
+  "fieldwork_end": "2026-01-11",
+  "fieldwork_mid": "2026-01-09",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.35,
+    "flavio_bolsonaro": 0.26,
+    "ratinho_junior": 0.09,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.03,
+    "aldo_rebelo": 0.02,
+    "renan_santos": 0.01
+  },
+  "residuals": {
+    "ns_nr": 0.08,
+    "branco_nulo": 0.12
+  },
+  "tse_registration_id": null,
+  "witness_ids": [
+    "w_quaest_2026-01-11_g1"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "G1 Genial/Quaest. Preferred Cenário 2 (sem Tarcísio; Flávio+Ratinho+Caiado+Zema) as principal early multi-adversary; other Jan duals not dual-entered. TSE id not in G1 article. confidence=press-high."
+}

@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_cnt_mda_2026-06-14_pdf",
+  "poll_id": "cnt_mda_2026-06-14_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.congressoemfoco.com.br/2026/06/16/attachment/2026/06/16/b1cbb2_pesquisa_cnt_de_opiniao___168__rodada.pdf",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:0d84d1553a845fcbf08bcdef10f313791fe4fd14d1e2b72e0f8a1d25261b7c60",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-06-10..2026-06-14",
+    "n": 2002,
+    "moe_pp": 2.2,
+    "tse": "BR-04256/2026",
+    "round": "168"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-04256/2026",
+  "notes": "Primary PDF hosted by Congresso em Foco; Cenário 1 stimulated page visual read."
+}

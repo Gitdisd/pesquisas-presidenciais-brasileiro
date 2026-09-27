@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-02-09_g1",
+  "poll_id": "quaest_2026-02-09_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/02/11/quaest-1o-turno-fevereiro.ghtml",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:0720115f6d4a5f31a5443b4a58b13af60d55c5fad1cae0f9a9b7c18f4dacd885",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-02-05..2026-02-09",
+    "n": 2004,
+    "moe_pp": 2,
+    "slate": "cenario_2_caiado_zema"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": null,
+  "notes": "Fetched G1 HTML; Cenário 2 block."
+}

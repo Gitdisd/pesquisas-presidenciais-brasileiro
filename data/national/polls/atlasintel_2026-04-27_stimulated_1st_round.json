@@ -1,0 +1,31 @@
+{
+  "poll_id": "atlasintel_2026-04-27_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-04-22",
+  "fieldwork_end": "2026-04-27",
+  "fieldwork_mid": "2026-04-24",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5008,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.466,
+    "flavio_bolsonaro": 0.397,
+    "renan_santos": 0.053,
+    "ronaldo_caiado": 0.033,
+    "romeu_zema": 0.031,
+    "augusto_cury": 0.011,
+    "aldo_rebelo": 0.003
+  },
+  "residuals": {
+    "branco_nulo": 0.005,
+    "ns_nr": 0.001
+  },
+  "tse_registration_id": "BR-07992/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-04-27_pdf"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Atlas/Bloomberg Abril primary PDF Cenário 1 (Lula slate). Haddad dual not dual-entered. Sample 5.008. confidence=pdf-high."
+}

@@ -1,0 +1,30 @@
+{
+  "poll_id": "quaest_2026-02-09_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-02-05",
+  "fieldwork_end": "2026-02-09",
+  "fieldwork_mid": "2026-02-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.38,
+    "flavio_bolsonaro": 0.3,
+    "romeu_zema": 0.04,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.01,
+    "aldo_rebelo": 0.01
+  },
+  "residuals": {
+    "ns_nr": 0.07,
+    "branco_nulo": 0.15
+  },
+  "tse_registration_id": null,
+  "witness_ids": [
+    "w_quaest_2026-02-09_g1"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "G1 Genial/Quaest. Preferred Cenário 2 (Caiado+Zema+Flávio) comparable to Mar+; Ratinho/Leite duals not dual-entered. TSE id not in G1 article. confidence=press-high."
+}

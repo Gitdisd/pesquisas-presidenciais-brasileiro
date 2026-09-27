@@ -1,0 +1,31 @@
+{
+  "poll_id": "ideia_2026-01-12_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-01-08",
+  "fieldwork_end": "2026-01-12",
+  "fieldwork_mid": "2026-01-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.397,
+    "flavio_bolsonaro": 0.265,
+    "ratinho_junior": 0.07,
+    "ronaldo_caiado": 0.042,
+    "romeu_zema": 0.036,
+    "renan_santos": 0.004,
+    "aldo_rebelo": 0.002
+  },
+  "residuals": {
+    "branco_nulo": 0.071,
+    "ns_nr": 0.114
+  },
+  "tse_registration_id": "BR-06731/2026",
+  "witness_ids": [
+    "w_ideia_2026-01-12_pdf"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Meio/Ideia primary PDF chart p.5 — Flávio slate with Ratinho+Caiado+Zema (principal early-2026 Flávio-fuller; Tarcísio dual not entered). confidence=pdf-high."
+}

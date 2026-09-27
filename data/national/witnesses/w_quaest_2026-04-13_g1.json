@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-04-13_g1",
+  "poll_id": "quaest_2026-04-13_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/04/15/quaest-1-turno-presidente-abril.ghtml",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:ddd584b9ba8184935eb952ef987ef3b9effbc50b8ed1a6e3facdb8ad5740be57",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-04-09..2026-04-13",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-09285/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-09285/2026",
+  "notes": "Fetched G1 HTML; full stimulated list + methodology."
+}

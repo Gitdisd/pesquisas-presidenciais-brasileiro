@@ -1,0 +1,30 @@
+{
+  "poll_id": "ideia_2026-04-07_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-04-03",
+  "fieldwork_end": "2026-04-07",
+  "fieldwork_mid": "2026-04-05",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 1500,
+  "moe": 0.025,
+  "results": {
+    "lula": 0.404,
+    "flavio_bolsonaro": 0.37,
+    "ronaldo_caiado": 0.065,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.03,
+    "aldo_rebelo": 0.006
+  },
+  "residuals": {
+    "branco_nulo": 0.01,
+    "ns_nr": 0.085
+  },
+  "tse_registration_id": "BR-00605/2026",
+  "witness_ids": [
+    "w_ideia_2026-04-07_pdf"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Meio/Ideia Abril PDF TABELA 5 Cenário 1 estimulada (text-extractable). confidence=pdf-high."
+}

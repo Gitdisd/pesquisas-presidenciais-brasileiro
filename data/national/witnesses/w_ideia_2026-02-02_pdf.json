@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_ideia_2026-02-02_pdf",
+  "poll_id": "ideia_2026-02-02_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://www.canalmeio.com.br/wp-content/uploads/2026/02/Pesquisa-Meio-Ideia-Fevereiro-2026.pdf",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:ad613fd3d84004d6d1ffbd99a2dc7ff4221ccfdf26a792b24a82f940a8305796",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-01-30..2026-02-02",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-08425/2026",
+    "slate": "caiado_zema",
+    "page": 9
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-08425/2026",
+  "notes": "Primary institute PDF; stimulated bar chart page 9 visual read."
+}

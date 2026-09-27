@@ -1,0 +1,32 @@
+{
+  "poll_id": "cnt_mda_2026-06-14_stimulated_1st_round",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-06-10",
+  "fieldwork_end": "2026-06-14",
+  "fieldwork_mid": "2026-06-12",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2002,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.418,
+    "flavio_bolsonaro": 0.282,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.028,
+    "joaquim_barbosa": 0.023,
+    "renan_santos": 0.02,
+    "michel_temer": 0.019,
+    "augusto_cury": 0.018
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.079
+  },
+  "tse_registration_id": "BR-04256/2026",
+  "witness_ids": [
+    "w_cnt_mda_2026-06-14_pdf"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "CNT/MDA 168ª rodada primary PDF Cenário 1 estimulada bar chart (visual). confidence=pdf-high."
+}

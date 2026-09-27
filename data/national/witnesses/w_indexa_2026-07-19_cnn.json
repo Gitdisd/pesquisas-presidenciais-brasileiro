@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_indexa_2026-07-19_cnn",
+  "poll_id": "indexa_2026-07-19_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/indexa-lula-tem-41-das-intencoes-de-voto-no-1o-turno-flavio-30/",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:982adaa78dc80188841104f39b67c20cd647a51882cdf32f0bc57949773e1160",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-07-16..2026-07-19",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-02904/2026"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-02904/2026",
+  "notes": "Fetched CNN HTML; stimulated + residuals."
+}

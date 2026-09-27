@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_ideia_2026-04-07_pdf",
+  "poll_id": "ideia_2026-04-07_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/04/Pesquisa-MeioIdeia-abril-2026.pdf",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:3be23f1b9daef1c626ad067c2f5ba61d13cb58a996c1e7c587c8555b9a69b6f3",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-04-03..2026-04-07",
+    "n": 1500,
+    "moe_pp": 2.5,
+    "tse": "BR-00605/2026",
+    "table": "TABELA 5"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-00605/2026",
+  "notes": "Poder360 CDN mirror of Meio/Ideia Abril report; text table."
+}

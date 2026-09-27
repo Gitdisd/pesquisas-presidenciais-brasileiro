@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_quaest_2026-01-11_g1",
+  "poll_id": "quaest_2026-01-11_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/noticia/2026/01/14/quaest-cenarios-1o-turno-janeiro.ghtml",
+  "retrieved_at": "2026-09-27T00:20:00Z",
+  "content_hash": "sha256:22af10b509b4240c16ea3c25d437e9009eb60b00cdaba0806bd0ab3a85aade91",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_005_v1",
+  "extractions": {
+    "fieldwork": "2026-01-08..2026-01-11",
+    "n": 2004,
+    "moe_pp": 2,
+    "slate": "cenario_2_sem_tarcisio"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": null,
+  "notes": "Fetched G1 HTML; Cenário 2 block."
+}

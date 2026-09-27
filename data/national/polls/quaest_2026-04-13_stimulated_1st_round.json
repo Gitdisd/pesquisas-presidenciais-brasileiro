@@ -1,0 +1,33 @@
+{
+  "poll_id": "quaest_2026-04-13_stimulated_1st_round",
+  "institute_id": "quaest",
+  "fieldwork_start": "2026-04-09",
+  "fieldwork_end": "2026-04-13",
+  "fieldwork_mid": "2026-04-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.32,
+    "ronaldo_caiado": 0.06,
+    "romeu_zema": 0.03,
+    "augusto_cury": 0.02,
+    "renan_santos": 0.02,
+    "cabo_daciolo": 0.01,
+    "samara_martins": 0.01,
+    "aldo_rebelo": 0.0
+  },
+  "residuals": {
+    "ns_nr": 0.05,
+    "branco_nulo": 0.11
+  },
+  "tse_registration_id": "BR-09285/2026",
+  "witness_ids": [
+    "w_quaest_2026-04-13_g1"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "G1 Genial/Quaest single published stimulated slate (sums 100). Aldo «não pontuou» → 0.0. confidence=press-high."
+}
