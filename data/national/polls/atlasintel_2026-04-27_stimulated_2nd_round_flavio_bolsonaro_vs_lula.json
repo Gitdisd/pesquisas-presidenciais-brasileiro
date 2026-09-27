@@ -1,0 +1,25 @@
+{
+  "poll_id": "atlasintel_2026-04-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-04-22",
+  "fieldwork_end": "2026-04-27",
+  "fieldwork_mid": "2026-04-24",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 5008,
+  "moe": 0.01,
+  "tse_registration_id": "BR-07992/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.478,
+    "lula": 0.475
+  },
+  "residuals": {
+    "branco_nulo": 0.047
+  },
+  "witness_ids": [
+    "w_atlasintel_2026-04-27_valor_2t"
+  ],
+  "notes": "Verified from Valor Econômico. Residual indecisos+anular/branco lumped → branco_nulo (Atlas convention). Other 2º matchups not in extractable prose. Sibling 1º BR-07992/2026."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "poderdata_2026-07-29_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-07-26",
+  "fieldwork_end": "2026-07-29",
+  "fieldwork_mid": "2026-07-27",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2400,
+  "moe": 0.02,
+  "tse_registration_id": "BR-07845/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.43,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.02
+  },
+  "witness_ids": [
+    "w_poderdata_2026-07-29_pdf_2t"
+  ],
+  "notes": "Verified from PoderData/Aya institute PDF; Rightmost 29-Jul column. N/TSE/moe from sibling 1º BR-07845/2026. Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula."
+}

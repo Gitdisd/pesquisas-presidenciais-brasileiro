@@ -1,0 +1,26 @@
+{
+  "poll_id": "futura_2026-09-10_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-04",
+  "fieldwork_end": "2026-09-10",
+  "fieldwork_mid": "2026-09-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.022,
+  "tse_registration_id": "BR-02322/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "results": {
+    "lula": 0.461,
+    "renan_santos": 0.376
+  },
+  "residuals": {
+    "branco_nulo": 0.132,
+    "ns_nr": 0.031
+  },
+  "witness_ids": [
+    "w_futura_2026-09-10_pdf_2t"
+  ],
+  "notes": "Verified from Futura/100% Cidades PDF pesquisa-futura-100-cidades-11set. Ninguém/Branco/Nulo→branco_nulo; NS/NR/Indeciso→ns_nr. Scenario stimulated_2nd_round_lula_vs_renan_santos."
+}

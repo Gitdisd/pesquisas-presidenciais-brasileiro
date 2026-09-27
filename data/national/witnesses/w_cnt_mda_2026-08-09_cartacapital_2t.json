@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_cnt_mda_2026-08-09_cartacapital_2t",
+  "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cartacapital.com.br/politica/cnt-mda-lula-tem-13-pontos-de-vantagem-sobre-flavio-bolsonaro-no-1o-turno/",
+  "retrieved_at": "2026-09-27T02:42:35Z",
+  "content_hash": "sha256:15aa350caf3186b467cf10b8200c9374dae581da21f34a2354ab156a47440f3f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_006_v1",
+  "extractions": {
+    "fieldwork": "2026-08-05..2026-08-09",
+    "n": 2002,
+    "moe_pp": 2.2,
+    "tse": "BR-06935/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-06935/2026",
+  "notes": "CartaCapital prose lists only Flávio×Lula 2º with split residuals (48/39.1/10.6/2.3). Other 2º matchups not in extractable prose this pass."
+}

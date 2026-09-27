@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_atlasintel_2026-04-27_valor_2t",
+  "poll_id": "atlasintel_2026-04-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://valor.globo.com/politica/noticia/2026/04/28/atlasintel-flavio-bolsonaro-tem-478percent-e-lula-475percent-em-eventual-2o-turno.ghtml",
+  "retrieved_at": "2026-09-27T02:42:35Z",
+  "content_hash": "sha256:d95e4e21cc2b68dbe7ed46c444182a710d64e95d84147a16e41100395e20eb3f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_006_v1",
+  "extractions": {
+    "fieldwork": "2026-04-22..2026-04-27",
+    "n": 5008,
+    "moe_pp": 1.0,
+    "tse": "BR-07992/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "residual_note": "indecisos + anular/branco lumped 4.7% → branco_nulo"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-07992/2026",
+  "notes": "Valor Econômico prose: Flávio 47.8 / Lula 47.5 / indecisos+anular/branco 4.7. Institute PDF is chart-image for 2º; press used as extractable primary. Michelle/Haddad/Alckmin 2º skipped."
+}

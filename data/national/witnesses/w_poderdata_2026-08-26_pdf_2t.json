@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_poderdata_2026-08-26_pdf_2t",
+  "poll_id": "poderdata_2026-08-26_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/08/Relatorio-PoderData-Eleitoral-26ago26-1.pdf",
+  "retrieved_at": "2026-09-27T02:42:35Z",
+  "content_hash": "sha256:7982a3c72335f82619004623139f04f871828aaf93ac8ecaa84d174c1fb2205c",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_006_v1",
+  "extractions": {
+    "fieldwork": "2026-08-23..2026-08-26",
+    "n": 2400,
+    "moe_pp": 2.0,
+    "tse": "BR-04974/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-04974/2026",
+  "notes": "Fetched PDF bytes 2026-09-26 (America/Sao_Paulo). Rightmost 26-Aug column. Branco/Nulo→branco_nulo; Não sabe→ns_nr. Cohort 2T-006."
+}

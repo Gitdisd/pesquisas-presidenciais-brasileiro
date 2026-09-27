@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_futura_2026-09-10_pdf_2t",
+  "poll_id": "futura_2026-09-10_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/09/pesquisa-futura-100-cidades-11set.pdf",
+  "retrieved_at": "2026-09-27T02:42:35Z",
+  "content_hash": "sha256:0afc444bc80084bd4805426beeb580c5b8cd14f4000b36378d9a269dbd7abe41",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_006_v1",
+  "extractions": {
+    "fieldwork": "2026-09-04..2026-09-10",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-02322/2026",
+    "matchups_extracted": 4,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-02322/2026",
+  "notes": "Futura/100% Cidades PDF (campo 04–10 set). Ninguém/Branco/Nulo→branco_nulo; NS/NR/Indeciso→ns_nr. No sibling 1º yet (distinct from Sep-01 BR-02793). Congresso em Foco corroborates candidates."
+}

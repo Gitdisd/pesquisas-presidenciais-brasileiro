@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-08-09_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-08-05",
+  "fieldwork_end": "2026-08-09",
+  "fieldwork_mid": "2026-08-07",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2002,
+  "moe": 0.022,
+  "tse_registration_id": "BR-06935/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.391,
+    "lula": 0.48
+  },
+  "residuals": {
+    "branco_nulo": 0.106,
+    "ns_nr": 0.023
+  },
+  "witness_ids": [
+    "w_cnt_mda_2026-08-09_cartacapital_2t"
+  ],
+  "notes": "Verified from CartaCapital (Nulo/em branco→branco_nulo; Indecisos→ns_nr). Only Flávio×Lula extractable this pass. Sibling 1º BR-06935/2026."
+}

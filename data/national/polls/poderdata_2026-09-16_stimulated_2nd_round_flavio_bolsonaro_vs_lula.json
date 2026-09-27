@@ -1,0 +1,26 @@
+{
+  "poll_id": "poderdata_2026-09-16_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-09-13",
+  "fieldwork_end": "2026-09-16",
+  "fieldwork_mid": "2026-09-14",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 3000,
+  "moe": 0.018,
+  "tse_registration_id": "BR-00360/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.46,
+    "lula": 0.44
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.02
+  },
+  "witness_ids": [
+    "w_poderdata_2026-09-16_pdf_2t"
+  ],
+  "notes": "Verified from PoderData/Aya institute PDF; F×L from time-series 17/set col; Cury matchups from dedicated pages (17/set). No Zema/Caiado/Renan 2º in this PDF. N/TSE/moe from sibling 1º BR-00360/2026. Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula."
+}

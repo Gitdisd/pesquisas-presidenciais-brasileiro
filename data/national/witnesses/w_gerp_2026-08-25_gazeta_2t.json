@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_gerp_2026-08-25_gazeta_2t",
+  "poll_id": "gerp_2026-08-25_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-agosto-2026-2/",
+  "retrieved_at": "2026-09-27T02:42:35Z",
+  "content_hash": "sha256:4da91597f2f592814cd0a8fdcf77e1ef95c19be08557d7be1a1411b6206da4c0",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_006_v1",
+  "extractions": {
+    "fieldwork": "2026-08-21..2026-08-25",
+    "n": 2400,
+    "moe_pp": 2.0,
+    "tse": "BR-03547/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-03547/2026",
+  "notes": "Gazeta do Povo prose: Flávio 47 / Lula 42 / Nenhum deles 8 / NS/NR 3. Only one 2º scenario published. TMC corroborates 47–42."
+}

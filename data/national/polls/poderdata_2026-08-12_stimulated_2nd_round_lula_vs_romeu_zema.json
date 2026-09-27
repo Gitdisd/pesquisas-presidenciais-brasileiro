@@ -1,0 +1,26 @@
+{
+  "poll_id": "poderdata_2026-08-12_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "poderdata",
+  "fieldwork_start": "2026-08-09",
+  "fieldwork_end": "2026-08-12",
+  "fieldwork_mid": "2026-08-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2400,
+  "moe": 0.02,
+  "tse_registration_id": "BR-06868/2026",
+  "dataset_version": "intake-cohort-2t-006",
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "results": {
+    "lula": 0.45,
+    "romeu_zema": 0.43
+  },
+  "residuals": {
+    "branco_nulo": 0.1,
+    "ns_nr": 0.01
+  },
+  "witness_ids": [
+    "w_poderdata_2026-08-12_pdf_2t"
+  ],
+  "notes": "Verified from PoderData/Aya institute PDF; Rightmost 12-Aug column. N/TSE/moe from sibling 1º BR-06868/2026. Scenario stimulated_2nd_round_lula_vs_romeu_zema."
+}
