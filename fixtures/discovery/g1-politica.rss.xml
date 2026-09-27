@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>G1 Política (fixture)</title>
+    <item>
+      <title>Datafolha: intenção de voto no 1º turno para presidente</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/26/datafolha-1o-turno.ghtml</link>
+      <description>Nova rodada nacional de intenção de voto.</description>
+    </item>
+    <item>
+      <title>Prefeito em disputa municipal</title>
+      <link>https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/prefeito.ghtml</link>
+      <description>Pesquisa municipal.</description>
+    </item>
+    <item>
+      <title>Quaest mede 2º turno nacional</title>
+      <link>https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/26/quaest-2o-turno.ghtml</link>
+      <description>Cenários de segundo turno.</description>
+    </item>
+  </channel>
+</rss>

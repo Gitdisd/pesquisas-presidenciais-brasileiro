@@ -1,11 +1,17 @@
-# PEBR pipeline refresh — validate + assemble drift check.
-# Does NOT fetch live poll pages, invent numbers, or regenerate Option B chart.json.
+# PEBR pipeline refresh — validate + normalize + assemble drift check + offline watch smoke.
+# Does NOT fetch live poll result cells, invent numbers, or regenerate Option B chart.json.
 # Pages UI (site/index.html, css/, js/) is Lead-owned. Option B re-export is Lead’s step.
+# Discovery live fetch is opt-in (workflow_dispatch input) and only uploads a review-queue artifact.
 
 name: pebr-refresh
 
 on:
   workflow_dispatch:
+    inputs:
+      run_discovery_fetch:
+        description: "Run live bin/pebr watch --fetch and upload discovery queue artifact (no poll writes)"
+        type: boolean
+        default: false
   schedule:
     # Daily 06:00 UTC ≈ 03:00 America/Sao_Paulo — cheap consistency check
     - cron: "0 6 * * *"
@@ -16,9 +22,14 @@ on:
       - "fixtures/**"
       - "lib/**"
       - "bin/**"
+      - "test/**"
       - "Gemfile*"
       - "config/**"
-      - "data/national/**"
+      - "data/national/polls/**"
+      - "data/national/witnesses/**"
+      - "data/national/discovery/**"
+      - "docs/source-map/**"
+      - "docs/discovery.md"
       - "site/data/canonical-points.json"
       - "site/data/canonical-points-2nd-round.json"
       - ".github/workflows/refresh.yml"
@@ -42,7 +53,7 @@ jobs:
       - name: Bundle install
         run: bundle install --jobs 4
 
-      - name: Validate fixtures + data/national/**
+      - name: Validate fixtures + data/national/polls|witnesses
         run: bin/pebr validate
 
       - name: Identity fingerprint report
@@ -51,10 +62,114 @@ jobs:
       - name: Assemble canonical-points (1º + 2º)
         run: bin/pebr assemble
 
-      - name: Fail if canonical-points drifted
+      - name: Fail if canonical-points drifted (1º)
+        id: drift_1st
         run: |
-          git diff --exit-code -- site/data/canonical-points.json
-          git diff --exit-code -- site/data/canonical-points-2nd-round.json
+          if git diff --exit-code -- site/data/canonical-points.json; then
+            echo "drift=no" >> "$GITHUB_OUTPUT"
+            echo "canonical-points.json: OK (byte-stable)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "drift=yes" >> "$GITHUB_OUTPUT"
+            echo "### FAIL: canonical-points.json drifted" >> "$GITHUB_STEP_SUMMARY"
+            echo '```diff' >> "$GITHUB_STEP_SUMMARY"
+            git diff -- site/data/canonical-points.json | head -n 200 >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::site/data/canonical-points.json drifted from assemble — commit refreshed file with polls"
+            exit 1
+          fi
+
+      - name: Fail if canonical-points-2nd-round drifted (2º)
+        id: drift_2nd
+        run: |
+          if git diff --exit-code -- site/data/canonical-points-2nd-round.json; then
+            echo "drift=no" >> "$GITHUB_OUTPUT"
+            echo "canonical-points-2nd-round.json: OK (byte-stable)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "drift=yes" >> "$GITHUB_OUTPUT"
+            echo "### FAIL: canonical-points-2nd-round.json drifted" >> "$GITHUB_STEP_SUMMARY"
+            echo '```diff' >> "$GITHUB_STEP_SUMMARY"
+            git diff -- site/data/canonical-points-2nd-round.json | head -n 200 >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::site/data/canonical-points-2nd-round.json drifted from assemble — commit refreshed file with polls"
+            exit 1
+          fi
+
+      - name: Offline discovery watch smoke (fixtures only)
+        run: |
+          bin/pebr watch --offline --out /tmp/pebr-discovery-queue.json
+          python3 - <<'PY'
+          import json, sys
+          doc = json.load(open("/tmp/pebr-discovery-queue.json"))
+          assert "items" in doc and "meta" in doc
+          assert "human review" in doc["meta"].get("disclaimer", "").lower()
+          for it in doc["items"]:
+              assert "shares" not in it and "results" not in it and "poll_id" not in it
+              assert it.get("status") in ("needs_human_review", "already_witnessed", "inbox_low_score")
+          print(f"watch smoke OK — {len(doc['items'])} queue item(s), no share fields")
+          PY
+
+      - name: Watch unit tests (minitest)
+        run: bundle exec ruby -Ilib:test test/watch_test.rb
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## pebr-refresh"
+            echo ""
+            echo "- validate → normalize → assemble → drift check on **both** canonical JSON files"
+            echo "- offline \`bin/pebr watch\` smoke + unit tests"
+            echo "- **CI never invents poll shares**; no auto-commit of polls or chart.json"
+            echo "- Option B / chart.json: Lead-owned; not regenerated here"
+            echo "- Live discovery fetch: opt-in via workflow_dispatch input \`run_discovery_fetch\`"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       # Option B / chart.json: Lead re-runs models CLI separately when canonical-points change.
       # Do not auto-commit or regenerate chart series here.
+
+  discovery-fetch:
+    if: github.event_name == 'workflow_dispatch' && inputs.run_discovery_fetch == true
+    runs-on: ubuntu-latest
+    needs: []
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Bundle install
+        run: bundle install --jobs 4
+
+      - name: Live watch (listings/feeds only — no poll cells)
+        run: |
+          mkdir -p artifacts
+          bin/pebr watch --fetch --out artifacts/discovery-queue.json || true
+          # Always upload whatever was produced; soft network failures are expected (robots/paywalls)
+          test -f artifacts/discovery-queue.json
+          python3 - <<'PY'
+          import json
+          doc = json.load(open("artifacts/discovery-queue.json"))
+          for it in doc.get("items", []):
+              assert "shares" not in it and "results" not in it
+          print("artifact guard OK — no share fields")
+          print(json.dumps(doc.get("meta", {}), indent=2))
+          PY
+
+      - name: Upload discovery queue artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pebr-discovery-queue
+          path: artifacts/discovery-queue.json
+          if-no-files-found: error
+
+      - name: Summary
+        run: |
+          {
+            echo "## discovery-fetch"
+            echo "Uploaded review-queue artifact only. **No** poll JSON writes, **no** auto-commit, **no** invented shares."
+            echo "Operator: download artifact → human primary check → validate/normalize/assemble (see docs/discovery.md)."
+          } >> "$GITHUB_STEP_SUMMARY"

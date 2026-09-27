@@ -26,12 +26,15 @@ module Pebr
         pebr #{Pebr::VERSION} — PEBR pipeline CLI
 
         Usage:
-          bin/pebr validate    Validate fixtures + data/national/** against schemas/
-          bin/pebr assemble    Rebuild canonical-points.json (1º) + canonical-points-2nd-round.json (2º)
-          bin/pebr discover    Read-only inventory of source-map + institutes (no fetch)
-          bin/pebr normalize   Report identity fingerprint duplicates (no fetch / no rewrite)
-          bin/pebr version     Print version
-          bin/pebr help        This message
+          bin/pebr validate              Validate fixtures + data/national/polls|witnesses vs schemas/
+          bin/pebr assemble              Rebuild canonical-points.json (1º) + canonical-points-2nd-round.json (2º)
+          bin/pebr discover              Read-only inventory of source-map + institutes (no fetch)
+          bin/pebr watch [--offline|--fetch] [--dry-run] [--out PATH]
+                                         Human-gated discovery: listing/RSS/sitemap → review queue
+                                         (NEVER invents poll shares; default --offline uses fixtures)
+          bin/pebr normalize             Report identity fingerprint duplicates (no fetch / no rewrite)
+          bin/pebr version               Print version
+          bin/pebr help                  This message
       USAGE
     end
 
@@ -41,6 +44,7 @@ module Pebr
       when "validate" then validate!
       when "assemble" then assemble!
       when "discover" then discover!
+      when "watch" then watch!(argv[1..])
       when "normalize" then normalize!
       when "version", "-v", "--version"
         puts Pebr::VERSION
@@ -56,6 +60,41 @@ module Pebr
       result = Pebr::Discover.run
       puts result[:lines].join("\n")
       exit 0
+    end
+
+    def watch!(argv)
+      mode = :offline
+      dry_run = false
+      out_path = nil
+      argv = Array(argv)
+      while (arg = argv.shift)
+        case arg
+        when "--offline" then mode = :offline
+        when "--fetch" then mode = :fetch
+        when "--dry-run" then dry_run = true
+        when "--out"
+          out_path = argv.shift or raise "--out requires a path"
+        when "--help", "-h"
+          puts usage
+          exit 0
+        else
+          warn "watch: unknown option #{arg.inspect}\n\n#{usage}"
+          exit 1
+        end
+      end
+      opts = { mode: mode, dry_run: dry_run }
+      opts[:out_path] = out_path if out_path
+      result = Pebr::Watch.run(opts)
+      puts result[:lines].join("\n")
+      # Soft-fail only if every target errored and produced zero items
+      if result[:doc]["items"].empty? && !result[:errors].empty?
+        warn "watch: completed with errors and empty queue"
+        exit 1
+      end
+      exit 0
+    rescue StandardError => e
+      warn "watch: FAILED — #{e.message}"
+      exit 1
     end
 
     def normalize!

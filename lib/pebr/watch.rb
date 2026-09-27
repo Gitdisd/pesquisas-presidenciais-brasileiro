@@ -1,0 +1,479 @@
+# frozen_string_literal: true
+
+require "json"
+require "yaml"
+require "pathname"
+require "digest"
+require "uri"
+require "net/http"
+require "time"
+require "set"
+require_relative "watch_policy"
+
+module Pebr
+  # Human-gated discovery watcher.
+  # Patterns ported from pesquisas-eleitorais-br (discover-polls / discover-policy):
+  #   config-driven listings + RSS, URL canonicalize, link score/reject,
+  #   last-run report, soft fetch failures, staging under data/*/discovery/.
+  # PEBR difference: NEVER extracts or invents poll shares — queue = review candidates only.
+  module Watch
+    module_function
+
+    QUEUE_SCHEMA_NOTE =
+      "Candidates for human review only. No poll shares. Do not ingest automatically."
+
+    def run(opts = {})
+      root = Pathname.new(opts.fetch(:root, File.expand_path("../..", __dir__)))
+      config_path = Pathname.new(opts.fetch(:config_path, root.join("config/watch_targets.yml")))
+      mode = (opts[:mode] || :offline).to_sym # :offline | :fetch
+      now = opts[:now] || Time.now.utc
+      detected_at = now.iso8601
+      min_score = Integer(opts[:min_score] || 35)
+
+      config = load_config(config_path)
+      queue_rel = config.fetch("queue_path", "data/national/discovery/queue.json")
+      out_path = Pathname.new(opts.fetch(:out_path, root.join(queue_rel)))
+      last_run_path = Pathname.new(
+        opts.fetch(:last_run_path, out_path.dirname.join("last-run.json"))
+      )
+
+      witnessed = load_witnessed_urls(root)
+      existing = load_existing_queue(out_path)
+      watermark = load_watermark(root)
+
+      targets = Array(config["targets"]).select { |t| t["enabled"] != false }
+      hint_rules = Array(config["scenario_hint_rules"]).map do |rule|
+        { re: Regexp.new(rule.fetch("pattern"), Regexp::IGNORECASE), hint: rule.fetch("hint") }
+      end
+      keywords = Array(config["keywords"]).map { |k| k.to_s.downcase }
+
+      ua = config.fetch("user_agent", "PEBR-discovery")
+      timeout = Integer(opts[:timeout] || config["request_timeout_sec"] || 20)
+      max_links = Integer(config["max_links_per_target"] || 40)
+
+      items = []
+      errors = []
+      fetched = 0
+      skipped = 0
+      rejected_count = 0
+      source_health = []
+
+      targets.each do |target|
+        body, source_kind, err = load_body(target, mode: mode, root: root, ua: ua, timeout: timeout)
+        health = {
+          "target_id" => target["id"],
+          "source_id" => target["source_id"],
+          "url" => target["url"],
+          "mode" => source_kind.to_s,
+          "ok" => err.nil?
+        }
+        if err
+          errors << "#{target['id']}: #{err}"
+          skipped += 1
+          health["error"] = err
+          source_health << health
+          next
+        end
+        fetched += 1 if source_kind == :network
+        listing_hash = "sha256:#{Digest::SHA256.hexdigest(body)}"
+        health["listing_content_hash"] = listing_hash
+        health["bytes"] = body.bytesize
+        source_health << health
+
+        candidates = extract_candidates(target, body)
+        kept = 0
+        candidates.each do |cand|
+          policy = WatchPolicy.classify_poll_link(cand[:url], cand[:title].to_s)
+          if policy[:rejected]
+            rejected_count += 1
+            next
+          end
+          unless keep_with_keywords?(policy, cand, keywords, min_score)
+            rejected_count += 1
+            next
+          end
+
+          url = policy[:url]
+          title = cand[:title].to_s.strip
+          snippet = cand[:snippet].to_s.strip
+          hints = scenario_hints("#{title} #{url} #{snippet}", hint_rules)
+
+          status =
+            if witnessed.include?(normalize_url(url))
+              "already_witnessed"
+            elsif policy[:score] < min_score
+              "inbox_low_score" # signal only — human still required; not auto-ingested
+            else
+              "needs_human_review"
+            end
+
+          prev = existing[normalize_url(url)]
+          item = {
+            "url" => url,
+            "source_id" => target["source_id"] || target["id"],
+            "target_id" => target["id"],
+            "detected_at" => (prev && prev["detected_at"]) || detected_at,
+            "last_seen_at" => detected_at,
+            "title" => title.empty? ? nil : title,
+            "snippet" => snippet.empty? ? nil : truncate(snippet, 280),
+            "scenario_hints" => hints,
+            "score" => policy[:score],
+            "score_reasons" => policy[:reasons],
+            "listing_url" => target["url"],
+            "listing_content_hash" => listing_hash,
+            "national_hint" => target["national_hint"] == true,
+            "status" => status,
+            "kind" => target["kind"]
+          }
+          item.compact!
+          item["status"] = status
+          item["scenario_hints"] = hints
+          item["score"] = policy[:score]
+          item["score_reasons"] = policy[:reasons]
+          items << item
+          kept += 1
+          break if kept >= max_links
+        end
+      end
+
+      merged = merge_items(existing.values, items)
+      merged.sort_by! do |it|
+        status_rank =
+          case it["status"]
+          when "needs_human_review" then 0
+          when "inbox_low_score" then 1
+          else 2
+          end
+        [
+          status_rank,
+          -(it["score"] || 0).to_i,
+          -(Time.parse(it["last_seen_at"] || it["detected_at"] || detected_at).to_i),
+          it["url"].to_s
+        ]
+      end
+
+      counts = {
+        "targets_enabled" => targets.size,
+        "targets_fetched_live" => fetched,
+        "targets_skipped" => skipped,
+        "items" => merged.size,
+        "needs_human_review" => merged.count { |i| i["status"] == "needs_human_review" },
+        "already_witnessed" => merged.count { |i| i["status"] == "already_witnessed" },
+        "inbox_low_score" => merged.count { |i| i["status"] == "inbox_low_score" },
+        "rejected_links" => rejected_count
+      }
+
+      doc = {
+        "meta" => {
+          "generated_at" => detected_at,
+          "generator" => "pebr watch",
+          "pebr_version" => Pebr::VERSION,
+          "mode" => mode.to_s,
+          "config" => relative_to(config_path, root),
+          "disclaimer" => QUEUE_SCHEMA_NOTE,
+          "heritage" => "Patterns adapted from Gitdisd/pesquisas-eleitorais-br discover-polls (listings/RSS/policy). PEBR does not auto-extract shares.",
+          "watermark_fieldwork_end" => watermark,
+          "counts" => counts
+        },
+        "items" => merged
+      }
+
+      report = {
+        "ran_at" => detected_at,
+        "mode" => mode.to_s,
+        "watermark_fieldwork_end" => watermark,
+        "targets" => targets.size,
+        "live_fetched" => fetched,
+        "skipped" => skipped,
+        "rejected_links" => rejected_count,
+        "queue_items" => merged.size,
+        "needs_human_review" => counts["needs_human_review"],
+        "already_witnessed" => counts["already_witnessed"],
+        "inbox_low_score" => counts["inbox_low_score"],
+        "fetch_errors" => errors,
+        "source_health" => source_health,
+        "out_path" => relative_to(out_path, root),
+        "disclaimer" => QUEUE_SCHEMA_NOTE
+      }
+
+      unless opts[:dry_run]
+        out_path.dirname.mkpath
+        out_path.write(JSON.pretty_generate(doc) + "\n")
+        last_run_path.write(JSON.pretty_generate(report) + "\n")
+      end
+
+      {
+        doc: doc,
+        report: report,
+        out_path: out_path.to_s,
+        last_run_path: last_run_path.to_s,
+        errors: errors,
+        lines: summary_lines(doc, errors, mode, out_path)
+      }
+    end
+
+    def load_config(path)
+      raise "watch config missing: #{path}" unless path.file?
+
+      YAML.safe_load(path.read, permitted_classes: [], aliases: true) || {}
+    end
+
+    def load_witnessed_urls(root)
+      wit_dir = root.join("data/national/witnesses")
+      urls = Set.new
+      return urls unless wit_dir.directory?
+
+      Dir.glob(wit_dir.join("*.json").to_s).each do |path|
+        data = JSON.parse(File.read(path))
+        u = data["source_url"]
+        next if u.nil? || u.empty?
+
+        urls << normalize_url(WatchPolicy.canonicalize_url(u))
+      rescue JSON::ParserError
+        next
+      end
+      urls
+    end
+
+    def load_existing_queue(path)
+      return {} unless path.file?
+
+      doc = JSON.parse(path.read)
+      Array(doc["items"]).each_with_object({}) do |item, acc|
+        u = item["url"]
+        next if u.nil? || u.empty?
+
+        acc[normalize_url(u)] = item
+      end
+    rescue JSON::ParserError
+      {}
+    end
+
+    # Watermark = max fieldwork_end among national polls (informational; not a hard filter yet).
+    def load_watermark(root)
+      poll_dir = root.join("data/national/polls")
+      return nil unless poll_dir.directory?
+
+      max = nil
+      Dir.glob(poll_dir.join("*.json").to_s).each do |path|
+        data = JSON.parse(File.read(path))
+        fe = data["fieldwork_end"]
+        next unless fe.is_a?(String) && fe.match?(/\A\d{4}-\d{2}-\d{2}\z/)
+
+        max = fe if max.nil? || fe > max
+      rescue JSON::ParserError
+        next
+      end
+      max
+    end
+
+    def load_body(target, mode:, root:, ua:, timeout:)
+      fixture_rel = target["fixture"]
+      allow_fetch = target.key?("fetch") ? target["fetch"] != false : true
+
+      if mode == :offline
+        return [nil, :none, "no fixture configured for offline mode"] if fixture_rel.nil? || fixture_rel.empty?
+
+        path = root.join(fixture_rel)
+        return [nil, :none, "fixture missing: #{fixture_rel}"] unless path.file?
+
+        return [path.read, :fixture, nil]
+      end
+
+      if !allow_fetch && fixture_rel
+        path = root.join(fixture_rel)
+        return [nil, :none, "fetch disabled and fixture missing"] unless path.file?
+
+        return [path.read, :fixture, nil]
+      end
+
+      return [nil, :none, "fetch disabled for target"] unless allow_fetch
+
+      body, err = http_get(target["url"], ua: ua, timeout: timeout)
+      return [nil, :none, err] if err
+
+      [body, :network, nil]
+    end
+
+    def http_get(url, ua:, timeout:)
+      uri = URI.parse(url)
+      unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
+        return [nil, "unsupported URL scheme"]
+      end
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = uri.scheme == "https"
+      http.open_timeout = timeout
+      http.read_timeout = timeout
+      path = uri.request_uri
+      path = "/" if path.nil? || path.empty?
+      req = Net::HTTP::Get.new(path)
+      req["User-Agent"] = ua
+      req["Accept"] = "text/html,application/xhtml+xml,application/xml,application/rss+xml,*/*;q=0.8"
+      req["Accept-Language"] = "pt-BR,pt;q=0.9,en;q=0.8"
+      res = http.request(req)
+      return [nil, "HTTP #{res.code}"] unless res.is_a?(Net::HTTPSuccess)
+
+      body = res.body.to_s.force_encoding("UTF-8").encode("UTF-8", invalid: :replace, undef: :replace)
+      [body, nil]
+    rescue StandardError => e
+      [nil, "#{e.class}: #{e.message}"]
+    end
+
+    def extract_candidates(target, body)
+      kind = (target["kind"] || "listing_html").to_s
+      base = target["url"].to_s
+      case kind
+      when "listing_html" then extract_html_links(body, base)
+      when "rss" then extract_rss_items(body)
+      when "sitemap" then extract_sitemap_locs(body)
+      else
+        []
+      end
+    end
+
+    def extract_html_links(html, base_url)
+      results = []
+      html.scan(/<a\s+[^>]*href\s*=\s*["']([^"']+)["'][^>]*>(.*?)<\/a>/im) do |href, inner|
+        url = absolutize(href, base_url)
+        next unless url
+
+        title = strip_tags(inner).gsub(/\s+/, " ").strip
+        results << { url: url, title: title, snippet: title }
+      end
+      results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
+    end
+
+    def extract_rss_items(xml)
+      results = []
+      xml.scan(/<item\b.*?<\/item>/im) do |block|
+        title = block[/<title[^>]*>(.*?)<\/title>/im, 1]
+        link = block[/<link[^>]*>(.*?)<\/link>/im, 1]
+        link = block[/<link[^>]*href\s*=\s*["']([^"']+)["']/im, 1] if link.nil? || link.strip.empty?
+        desc = block[/<description[^>]*>(.*?)<\/description>/im, 1]
+        next if link.nil? || link.strip.empty?
+
+        results << {
+          url: strip_tags(link).strip,
+          title: strip_cdata(strip_tags(title.to_s)).strip,
+          snippet: strip_cdata(strip_tags(desc.to_s)).strip
+        }
+      end
+      xml.scan(/<entry\b.*?<\/entry>/im) do |block|
+        title = block[/<title[^>]*>(.*?)<\/title>/im, 1]
+        link = block[/<link[^>]*href\s*=\s*["']([^"']+)["']/im, 1]
+        link ||= block[/<link[^>]*>(.*?)<\/link>/im, 1]
+        summary = block[/<summary[^>]*>(.*?)<\/summary>/im, 1] ||
+                  block[/<content[^>]*>(.*?)<\/content>/im, 1]
+        next if link.nil? || link.strip.empty?
+
+        results << {
+          url: strip_tags(link).strip,
+          title: strip_cdata(strip_tags(title.to_s)).strip,
+          snippet: strip_cdata(strip_tags(summary.to_s)).strip
+        }
+      end
+      results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
+    end
+
+    def extract_sitemap_locs(xml)
+      results = []
+      xml.scan(/<loc>\s*([^<]+?)\s*<\/loc>/im) do |loc,|
+        url = loc.strip
+        next if url.empty?
+
+        results << { url: url, title: url.split("/").last.to_s, snippet: nil }
+      end
+      results.uniq { |r| normalize_url(WatchPolicy.canonicalize_url(r[:url])) }
+    end
+
+    def keep_with_keywords?(policy, cand, keywords, min_score)
+      return true if WatchPolicy.keep_link?(policy[:url], cand[:title].to_s, min_score: min_score)
+
+      hay = "#{policy[:url]} #{cand[:title]} #{cand[:snippet]}".downcase
+      keywords.any? { |k| hay.include?(k) }
+    end
+
+    def scenario_hints(blob, rules)
+      hints = []
+      rules.each do |rule|
+        hints << rule[:hint] if rule[:re].match?(blob)
+      end
+      hints.uniq
+    end
+
+    def merge_items(old_items, new_items)
+      by_url = {}
+      old_items.each { |it| by_url[normalize_url(it["url"])] = it.dup }
+      new_items.each do |it|
+        key = normalize_url(it["url"])
+        if by_url.key?(key)
+          prev = by_url[key]
+          merged = prev.merge(it)
+          merged["detected_at"] = prev["detected_at"] if prev["detected_at"]
+          statuses = [prev["status"], it["status"]]
+          merged["status"] =
+            if statuses.include?("already_witnessed")
+              "already_witnessed"
+            elsif statuses.include?("needs_human_review")
+              "needs_human_review"
+            else
+              it["status"]
+            end
+          by_url[key] = merged
+        else
+          by_url[key] = it
+        end
+      end
+      by_url.values
+    end
+
+    def absolutize(href, base_url)
+      href = href.to_s.strip
+      return nil if href.empty? || href.start_with?("#", "javascript:", "mailto:")
+
+      WatchPolicy.canonicalize_url(URI.join(base_url, href).to_s)
+    rescue URI::InvalidURIError, ArgumentError
+      nil
+    end
+
+    def normalize_url(url)
+      u = url.to_s.strip
+      u = u.split("#", 2).first
+      u
+    end
+
+    def strip_tags(text)
+      text.to_s.gsub(/<[^>]+>/, " ").gsub(/\s+/, " ")
+    end
+
+    def strip_cdata(text)
+      text.to_s.gsub(/<!\[CDATA\[(.*?)\]\]>/m, '\1')
+    end
+
+    def truncate(s, n)
+      s.length > n ? "#{s[0, n - 1]}…" : s
+    end
+
+    def relative_to(path, root)
+      Pathname.new(path).relative_path_from(root).to_s
+    rescue ArgumentError
+      path.to_s
+    end
+
+    def summary_lines(doc, errors, mode, out_path)
+      meta = doc["meta"]
+      counts = meta["counts"]
+      lines = []
+      lines << "pebr watch: discovery queue (#{mode}) — #{QUEUE_SCHEMA_NOTE}"
+      lines << "  heritage: listings/RSS/policy adapted from pesquisas-eleitorais-br (no share extraction)"
+      lines << "  watermark fieldwork_end: #{meta['watermark_fieldwork_end'] || '(none)'}"
+      lines << "  targets: #{counts['targets_enabled']}  live_fetched: #{counts['targets_fetched_live']}  skipped: #{counts['targets_skipped']}"
+      lines << "  items: #{counts['items']}  needs_human_review: #{counts['needs_human_review']}  already_witnessed: #{counts['already_witnessed']}  inbox_low_score: #{counts['inbox_low_score']}"
+      lines << "  wrote: #{out_path}"
+      errors.first(10).each { |e| lines << "  warn: #{e}" }
+      lines << "  warn: … #{errors.size - 10} more" if errors.size > 10
+      lines
+    end
+  end
+end

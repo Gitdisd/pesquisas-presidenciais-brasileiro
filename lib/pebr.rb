@@ -4,6 +4,8 @@ require_relative "pebr/version"
 require_relative "pebr/identity"
 require_relative "pebr/normalize"
 require_relative "pebr/discover"
+require_relative "pebr/watch_policy"
+require_relative "pebr/watch"
 require_relative "pebr/assemble"
 
 module Pebr
@@ -15,6 +17,8 @@ module Pebr
   CANONICAL_POINTS_2ND_PATH = File.expand_path("../site/data/canonical-points-2nd-round.json", __dir__)
   SOURCES_JSON_PATH = File.expand_path("../docs/source-map/sources.json", __dir__)
   INSTITUTES_YML_PATH = File.expand_path("../config/institutes.yml", __dir__)
+  WATCH_TARGETS_PATH = File.expand_path("../config/watch_targets.yml", __dir__)
+  DISCOVERY_QUEUE_PATH = File.expand_path("../data/national/discovery/queue.json", __dir__)
 
   FIXTURE_SCHEMA_MAP = {
     "EXAMPLE_poll.json" => "poll.schema.json",

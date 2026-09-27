@@ -77,7 +77,7 @@ For **2º turno**, consume `site/data/canonical-points-2nd-round.json` and **fil
 
 ### Human primary check (new polls)
 
-`discover` / CI never scrape live pages into cells. Before adding a poll:
+`discover` / `watch` / CI never write poll shares. `bin/pebr watch` only queues URLs for review ([`docs/discovery.md`](docs/discovery.md)). Before adding a poll:
 
 1. Fetch a primary/press witness; record `source_url` + `content_hash` (sha256 of retrieved bytes) on a witness JSON.
 2. Dual-enter shares as fractions 0–1 from that witness — **no invented numbers**.
@@ -87,14 +87,19 @@ For **2º turno**, consume `site/data/canonical-points-2nd-round.json` and **fil
 ## Pipeline Ruby CLI
 
 ```bash
-bin/pebr validate    # fixtures + data/national/** vs schemas/; witness↔poll links
-bin/pebr assemble    # rebuild site/data/canonical-points.json from polls
-bin/pebr normalize   # fingerprint duplicate report (no rewrite)
-bin/pebr discover    # read-only inventory of sources.json + institutes.yml
+bin/pebr validate                 # fixtures + data/national/polls|witnesses vs schemas/
+bin/pebr assemble                 # rebuild both canonical-points*.json (1º + 2º)
+bin/pebr normalize                # fingerprint duplicate report (no rewrite)
+bin/pebr discover                 # read-only inventory of sources.json + institutes.yml
+bin/pebr watch --offline          # discovery queue from fixtures (no network)
+bin/pebr watch --fetch            # live listings/RSS → review queue (no share inventing)
 bin/pebr version
 ```
 
-CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) runs on `workflow_dispatch`, daily schedule, and pushes touching schemas/fixtures/lib/bin/config/`data/national/**`/canonical-points. Steps: `validate` → `normalize` → `assemble` → `git diff --exit-code` on `canonical-points.json` (fail on drift; no auto-push; no chart regenerate).
+Discovery queue: [`data/national/discovery/`](data/national/discovery/) · runbook: [`docs/discovery.md`](docs/discovery.md)  
+(Patterns adapted from [pesquisas-eleitorais-br](https://github.com/Gitdisd/pesquisas-eleitorais-br) discover-polls — PEBR never auto-extracts or commits shares.)
+
+CI: [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) — `validate` → `normalize` → `assemble` → loud drift check on **both** canonical JSON files + offline watch smoke/tests. Opt-in `run_discovery_fetch` uploads a queue artifact only. **No auto-push of polls; no chart regenerate; CI never invents shares.**
 
 ## Electoral Stats (Option B)
 

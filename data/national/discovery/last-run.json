@@ -1,0 +1,110 @@
+{
+  "ran_at": "2026-09-27T03:57:28Z",
+  "mode": "offline",
+  "watermark_fieldwork_end": "2026-09-23",
+  "targets": 10,
+  "live_fetched": 0,
+  "skipped": 0,
+  "rejected_links": 6,
+  "queue_items": 21,
+  "needs_human_review": 19,
+  "already_witnessed": 0,
+  "inbox_low_score": 2,
+  "fetch_errors": [
+
+  ],
+  "source_health": [
+    {
+      "target_id": "gnews-presidencial",
+      "source_id": "gnews-presidencial",
+      "url": "https://news.google.com/rss/search?q=pesquisa+eleitoral+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:6a62a09f23be3509f79cafbfef8be807adf7f30e1204c8dbeaf2e43e1ea9a685",
+      "bytes": 921
+    },
+    {
+      "target_id": "g1-pesquisas-listing",
+      "source_id": "g1-pesquisas",
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:0e77039d41a5b9c4b08c72249f1a242c683a01207018423d5ee15ce9e55789bd",
+      "bytes": 1013
+    },
+    {
+      "target_id": "g1-pesquisas-hub",
+      "source_id": "g1-pesquisas",
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:b4ce8bc6c65ee7a2402e965a0ede846b973dbc2a6b854c922a9878bed967b1c3",
+      "bytes": 443
+    },
+    {
+      "target_id": "poder360-media",
+      "source_id": "poder360-media",
+      "url": "https://www.poder360.com.br/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:97767062ba7132ec95f0fc35b7dc47d83eddda7041038fb4d360e1dff8f206f7",
+      "bytes": 403
+    },
+    {
+      "target_id": "cnn-brasil-eleicoes",
+      "source_id": "cnn-brasil",
+      "url": "https://www.cnnbrasil.com.br/eleicoes/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:3095661023ca409f4b7ad3fde1a1c016dd12f765b11ea9c66b0f1fd8a01b48b9",
+      "bytes": 291
+    },
+    {
+      "target_id": "atlasintel-polls",
+      "source_id": "atlasintel",
+      "url": "https://atlasintel.org/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:2714b2981148b15b7d79c84910379a23de22374a4b62cd0e7a556bdb8fead372",
+      "bytes": 209
+    },
+    {
+      "target_id": "quaest-home",
+      "source_id": "quaest",
+      "url": "https://quaest.com.br/",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:5493263f6ec099a7f86c4b55be57a0e7a318d05b49113aa2ce533a03a012a8c2",
+      "bytes": 273
+    },
+    {
+      "target_id": "tse-dados-abertos-rss",
+      "source_id": "tse-dados-abertos-2026",
+      "url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:71ad15162c22289544159b9c4f649d4382e0c8be2af27414c4304056c546fc15",
+      "bytes": 323
+    },
+    {
+      "target_id": "g1-rss-sample",
+      "source_id": "g1-pesquisas",
+      "url": "https://g1.globo.com/dynamo/politica/rss2.xml",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:0993a404fb9489b6d96fa8efa3ceae798a2a95eb23bffae8a59afa67bae863c2",
+      "bytes": 915
+    },
+    {
+      "target_id": "example-sitemap",
+      "source_id": "g1-pesquisas",
+      "url": "https://example.invalid/sitemap-pesquisas.xml",
+      "mode": "fixture",
+      "ok": true,
+      "listing_content_hash": "sha256:d6b5a19a215bfd8cd6e38861b0d48f23f2ea1ed6f138e3d9a489ec4a8c35c3c4",
+      "bytes": 471
+    }
+  ],
+  "out_path": "data/national/discovery/queue.json",
+  "disclaimer": "Candidates for human review only. No poll shares. Do not ingest automatically."
+}

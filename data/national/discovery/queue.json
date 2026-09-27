@@ -1,0 +1,479 @@
+{
+  "meta": {
+    "generated_at": "2026-09-27T03:57:28Z",
+    "generator": "pebr watch",
+    "pebr_version": "0.2.0",
+    "mode": "offline",
+    "config": "config/watch_targets.yml",
+    "disclaimer": "Candidates for human review only. No poll shares. Do not ingest automatically.",
+    "heritage": "Patterns adapted from Gitdisd/pesquisas-eleitorais-br discover-polls (listings/RSS/policy). PEBR does not auto-extract shares.",
+    "watermark_fieldwork_end": "2026-09-23",
+    "counts": {
+      "targets_enabled": 10,
+      "targets_fetched_live": 0,
+      "targets_skipped": 0,
+      "items": 21,
+      "needs_human_review": 19,
+      "already_witnessed": 0,
+      "inbox_low_score": 2,
+      "rejected_links": 6
+    }
+  },
+  "items": [
+    {
+      "url": "https://quaest.com.br/wp-content/uploads/2026/09/QUAEST-PRESIDENCIAL.pdf",
+      "source_id": "quaest",
+      "target_id": "quaest-home",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "PDF Quaest presidencial",
+      "snippet": "PDF Quaest presidencial",
+      "scenario_hints": [
+
+      ],
+      "score": 83,
+      "score_reasons": [
+        "presidential-signal",
+        "institute",
+        "document"
+      ],
+      "listing_url": "https://quaest.com.br/",
+      "listing_content_hash": "sha256:5493263f6ec099a7f86c4b55be57a0e7a318d05b49113aa2ce533a03a012a8c2",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/18/nexus-pesquisa-eleitoral-presidente.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-pesquisas-hub",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Nexus: pesquisa eleitoral para presidente",
+      "snippet": "Nexus: pesquisa eleitoral para presidente",
+      "scenario_hints": [
+
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/",
+      "listing_content_hash": "sha256:b4ce8bc6c65ee7a2402e965a0ede846b973dbc2a6b854c922a9878bed967b1c3",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/19/gerp-1o-turno-presidente.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "example-sitemap",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "gerp-1o-turno-presidente.ghtml",
+      "scenario_hints": [
+
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://example.invalid/sitemap-pesquisas.xml",
+      "listing_content_hash": "sha256:d6b5a19a215bfd8cd6e38861b0d48f23f2ea1ed6f138e3d9a489ec4a8c35c3c4",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "sitemap"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/futura-pesquisa-presidencial.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "example-sitemap",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "futura-pesquisa-presidencial.ghtml",
+      "scenario_hints": [
+
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://example.invalid/sitemap-pesquisas.xml",
+      "listing_content_hash": "sha256:d6b5a19a215bfd8cd6e38861b0d48f23f2ea1ed6f138e3d9a489ec4a8c35c3c4",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "sitemap"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/22/atlasintel-presidencial.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-pesquisas-listing",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "AtlasIntel divulga nova pesquisa presidencial",
+      "snippet": "AtlasIntel divulga nova pesquisa presidencial",
+      "scenario_hints": [
+
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+      "listing_content_hash": "sha256:0e77039d41a5b9c4b08c72249f1a242c683a01207018423d5ee15ce9e55789bd",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/quaest-2o-turno-lula-flavio.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-pesquisas-listing",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Quaest: 2º turno Lula x Flávio Bolsonaro",
+      "snippet": "Quaest: 2º turno Lula x Flávio Bolsonaro",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+      "listing_content_hash": "sha256:0e77039d41a5b9c4b08c72249f1a242c683a01207018423d5ee15ce9e55789bd",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/25/datafolha-presidente-1o-turno-setembro.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-pesquisas-listing",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Datafolha: intenção de voto para presidente no 1º turno",
+      "snippet": "Datafolha: intenção de voto para presidente no 1º turno",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/",
+      "listing_content_hash": "sha256:0e77039d41a5b9c4b08c72249f1a242c683a01207018423d5ee15ce9e55789bd",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/26/datafolha-1o-turno.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-rss-sample",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Datafolha: intenção de voto no 1º turno para presidente",
+      "snippet": "Nova rodada nacional de intenção de voto.",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/dynamo/politica/rss2.xml",
+      "listing_content_hash": "sha256:0993a404fb9489b6d96fa8efa3ceae798a2a95eb23bffae8a59afa67bae863c2",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "rss"
+    },
+    {
+      "url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/26/quaest-2o-turno.ghtml",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-rss-sample",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Quaest mede 2º turno nacional",
+      "snippet": "Cenários de segundo turno.",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://g1.globo.com/dynamo/politica/rss2.xml",
+      "listing_content_hash": "sha256:0993a404fb9489b6d96fa8efa3ceae798a2a95eb23bffae8a59afa67bae863c2",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "rss"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/pesquisa-eleitoral-indexa-presidente-1o-turno/",
+      "source_id": "cnn-brasil",
+      "target_id": "cnn-brasil-eleicoes",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Indexa: pesquisa eleitoral presidente 1º turno",
+      "snippet": "Indexa: pesquisa eleitoral presidente 1º turno",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://www.cnnbrasil.com.br/eleicoes/",
+      "listing_content_hash": "sha256:3095661023ca409f4b7ad3fde1a1c016dd12f765b11ea9c66b0f1fd8a01b48b9",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://www.cnnbrasil.com.br/eleicoes/quaest-2o-turno-lula-flavio-fixture/",
+      "source_id": "gnews-presidencial",
+      "target_id": "gnews-presidencial",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Quaest mede 2º turno Lula x Flávio Bolsonaro — CNN Brasil",
+      "snippet": "Segundo turno nacional.",
+      "scenario_hints": [
+        "stimulated_2nd_round"
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://news.google.com/rss/search?q=pesquisa+eleitoral+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+      "listing_content_hash": "sha256:6a62a09f23be3509f79cafbfef8be807adf7f30e1204c8dbeaf2e43e1ea9a685",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "rss"
+    },
+    {
+      "url": "https://www.poder360.com.br/eleicoes/poderdata-pesquisa-presidencial-setembro-2026/",
+      "source_id": "poder360-media",
+      "target_id": "poder360-media",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "PoderData: pesquisa presidencial de setembro",
+      "snippet": "PoderData: pesquisa presidencial de setembro",
+      "scenario_hints": [
+
+      ],
+      "score": 75,
+      "score_reasons": [
+        "presidential-signal",
+        "institute"
+      ],
+      "listing_url": "https://www.poder360.com.br/",
+      "listing_content_hash": "sha256:97767062ba7132ec95f0fc35b7dc47d83eddda7041038fb4d360e1dff8f206f7",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://news.google.com/rss/articles/CBMiFixtureDatafolha1T",
+      "source_id": "gnews-presidencial",
+      "target_id": "gnews-presidencial",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Datafolha: Lula lidera intenção de voto no 1º turno — G1",
+      "snippet": "Cobertura nacional de pesquisa Datafolha para presidente.",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "score": 60,
+      "score_reasons": [
+        "presidential-signal",
+        "institute",
+        "aggregator-signal"
+      ],
+      "listing_url": "https://news.google.com/rss/search?q=pesquisa+eleitoral+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419",
+      "listing_content_hash": "sha256:6a62a09f23be3509f79cafbfef8be807adf7f30e1204c8dbeaf2e43e1ea9a685",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "rss"
+    },
+    {
+      "url": "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-23set26.pdf",
+      "source_id": "poder360-media",
+      "target_id": "poder360-media",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "PDF relatório PoderData eleitoral",
+      "snippet": "PDF relatório PoderData eleitoral",
+      "scenario_hints": [
+
+      ],
+      "score": 43,
+      "score_reasons": [
+        "institute",
+        "document"
+      ],
+      "listing_url": "https://www.poder360.com.br/",
+      "listing_content_hash": "sha256:97767062ba7132ec95f0fc35b7dc47d83eddda7041038fb4d360e1dff8f206f7",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://especiaisg1.globo/politica/eleicoes/2026/pesquisas-eleitorais/presidente/1-turno/",
+      "source_id": "g1-pesquisas",
+      "target_id": "g1-pesquisas-hub",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Especial G1 — 1º turno presidente",
+      "snippet": "Especial G1 — 1º turno presidente",
+      "scenario_hints": [
+        "stimulated_1st_round"
+      ],
+      "score": 40,
+      "score_reasons": [
+        "presidential-signal"
+      ],
+      "listing_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/",
+      "listing_content_hash": "sha256:b4ce8bc6c65ee7a2402e965a0ede846b973dbc2a6b854c922a9878bed967b1c3",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://atlasintel.org/about",
+      "source_id": "atlasintel",
+      "target_id": "atlasintel-polls",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "About AtlasIntel",
+      "snippet": "About AtlasIntel",
+      "scenario_hints": [
+
+      ],
+      "score": 35,
+      "score_reasons": [
+        "institute"
+      ],
+      "listing_url": "https://atlasintel.org/",
+      "listing_content_hash": "sha256:2714b2981148b15b7d79c84910379a23de22374a4b62cd0e7a556bdb8fead372",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://atlasintel.org/poll/brazil-national-2026-09-23",
+      "source_id": "atlasintel",
+      "target_id": "atlasintel-polls",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Brazil National 2026-09-23 poll",
+      "snippet": "Brazil National 2026-09-23 poll",
+      "scenario_hints": [
+
+      ],
+      "score": 35,
+      "score_reasons": [
+        "institute"
+      ],
+      "listing_url": "https://atlasintel.org/",
+      "listing_content_hash": "sha256:2714b2981148b15b7d79c84910379a23de22374a4b62cd0e7a556bdb8fead372",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://quaest.com.br/lps/lp-pesquisa-eleicoes-2026-setembro/",
+      "source_id": "quaest",
+      "target_id": "quaest-home",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Pesquisa eleições 2026 — setembro",
+      "snippet": "Pesquisa eleições 2026 — setembro",
+      "scenario_hints": [
+
+      ],
+      "score": 35,
+      "score_reasons": [
+        "institute"
+      ],
+      "listing_url": "https://quaest.com.br/",
+      "listing_content_hash": "sha256:5493263f6ec099a7f86c4b55be57a0e7a318d05b49113aa2ce533a03a012a8c2",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://www.poder360.com.br/economia/selic/",
+      "source_id": "poder360-media",
+      "target_id": "poder360-media",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Selic e juros",
+      "snippet": "Selic e juros",
+      "scenario_hints": [
+
+      ],
+      "score": 35,
+      "score_reasons": [
+        "institute"
+      ],
+      "listing_url": "https://www.poder360.com.br/",
+      "listing_content_hash": "sha256:97767062ba7132ec95f0fc35b7dc47d83eddda7041038fb4d360e1dff8f206f7",
+      "national_hint": true,
+      "status": "needs_human_review",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026/resource/769a663e-12c5-489e-a9c8-04633c2d57a3",
+      "source_id": "tse-dados-abertos-2026",
+      "target_id": "tse-dados-abertos-rss",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "CSV pesquisas eleitorais",
+      "snippet": "CSV pesquisas eleitorais",
+      "scenario_hints": [
+
+      ],
+      "score": 0,
+      "score_reasons": [
+
+      ],
+      "listing_url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+      "listing_content_hash": "sha256:71ad15162c22289544159b9c4f649d4382e0c8be2af27414c4304056c546fc15",
+      "national_hint": true,
+      "status": "inbox_low_score",
+      "kind": "listing_html"
+    },
+    {
+      "url": "https://www.tse.jus.br/eleicoes/pesquisas-eleitorais",
+      "source_id": "tse-dados-abertos-2026",
+      "target_id": "tse-dados-abertos-rss",
+      "detected_at": "2026-09-27T03:57:28Z",
+      "last_seen_at": "2026-09-27T03:57:28Z",
+      "title": "Hub legal pesquisas",
+      "snippet": "Hub legal pesquisas",
+      "scenario_hints": [
+
+      ],
+      "score": 0,
+      "score_reasons": [
+
+      ],
+      "listing_url": "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026",
+      "listing_content_hash": "sha256:71ad15162c22289544159b9c4f649d4382e0c8be2af27414c4304056c546fc15",
+      "national_hint": true,
+      "status": "inbox_low_score",
+      "kind": "listing_html"
+    }
+  ]
+}

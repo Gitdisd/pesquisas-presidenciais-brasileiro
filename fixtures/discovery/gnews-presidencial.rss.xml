@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Google News — pesquisa eleitoral presidente 2026 (fixture)</title>
+    <item>
+      <title>Datafolha: Lula lidera intenção de voto no 1º turno — G1</title>
+      <link>https://news.google.com/rss/articles/CBMiFixtureDatafolha1T</link>
+      <description>Cobertura nacional de pesquisa Datafolha para presidente.</description>
+    </item>
+    <item>
+      <title>Quaest mede 2º turno Lula x Flávio Bolsonaro — CNN Brasil</title>
+      <link>https://www.cnnbrasil.com.br/eleicoes/quaest-2o-turno-lula-flavio-fixture/</link>
+      <description>Segundo turno nacional.</description>
+    </item>
+    <item>
+      <title>Pesquisa para governador em Minas Gerais</title>
+      <link>https://www.example.com/governador-mg-pesquisa</link>
+      <description>Estadual — deve ser rejeitada.</description>
+    </item>
+  </channel>
+</rss>

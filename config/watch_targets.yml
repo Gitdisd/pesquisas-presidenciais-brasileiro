@@ -1,0 +1,160 @@
+# PEBR discovery watch targets (human-gated).
+# Fetch listing pages / feeds / sitemaps READ-ONLY.
+# Emit review-queue candidates only — NEVER invent poll shares or write poll cells.
+#
+# source_id values align with docs/source-map/sources.json ids where possible.
+# Operators: run `bin/pebr watch --offline` (fixtures) or `bin/pebr watch --fetch` (live).
+
+version: 1
+user_agent: "PEBR-discovery/0.2 (+https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro; research; no automated ingest)"
+queue_path: data/national/discovery/queue.json
+request_timeout_sec: 20
+max_links_per_target: 40
+
+# Keyword fallback (old-site data/sources.json style) when score < min but signal present.
+keywords:
+  - "pesquisa eleitoral"
+  - "intenção de voto"
+  - "intencao de voto"
+  - "pesquisa presidencial"
+  - "estimulada"
+  - "1º turno"
+  - "2º turno"
+  - "Datafolha"
+  - "Quaest"
+  - "AtlasIntel"
+  - "PoderData"
+  - "Nexus"
+  - "Futura"
+  - "GERP"
+  - "Indexa"
+  - "CNT"
+  - "MDA"
+  - "Ideia"
+  - "Vox Brasil"
+  - "Alfa"
+  - "Real Time Big Data"
+  - "Paraná Pesquisas"
+
+
+# Keyword filters applied to link text + href (case-insensitive).
+# Keep national/presidential signal; drop obvious state-only noise when safe.
+default_include_patterns:
+  - "pesquisa"
+  - "eleitoral"
+  - "elei"
+  - "intenc"
+  - "presiden"
+  - "1[oº]-?turno"
+  - "2[oº]-?turno"
+  - "primeiro.?turno"
+  - "segundo.?turno"
+
+default_exclude_patterns:
+  - "governador"
+  - "senado"
+  - "prefeito"
+  - "municipal"
+
+# Safe scenario hints from URL/title only (never invents shares).
+scenario_hint_rules:
+  - pattern: "2[oº\\.]?\\s*turno|segundo\\s*turno|2nd.?round"
+    hint: stimulated_2nd_round
+  - pattern: "1[oº\\.]?\\s*turno|primeiro\\s*turno|1st.?round"
+    hint: stimulated_1st_round
+
+targets:
+
+  # --- Google News RSS (from old-site data/sources.json gnews-presidencial) ---
+  - id: gnews-presidencial
+    source_id: gnews-presidencial
+    label: "Google News RSS — pesquisa eleitoral presidente 2026"
+    kind: rss
+    url: "https://news.google.com/rss/search?q=pesquisa+eleitoral+presidente+2026&hl=pt-BR&gl=BR&ceid=BR:pt-419"
+    enabled: true
+    national_hint: true
+    notes: "Signal feed only — not a primary witness. Ported from pesquisas-eleitorais-br."
+    fixture: fixtures/discovery/gnews-presidencial.rss.xml
+
+  - id: g1-pesquisas-listing
+    source_id: g1-pesquisas
+    label: "G1 — pesquisas eleitorais 2026 (listing)"
+    kind: listing_html
+    url: "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/g1-pesquisas-listing.html
+
+  - id: g1-pesquisas-hub
+    source_id: g1-pesquisas
+    label: "G1 — hub pesquisas eleitorais"
+    kind: listing_html
+    url: "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/pesquisas-eleitorais/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/g1-pesquisas-hub.html
+
+  - id: poder360-media
+    source_id: poder360-media
+    label: "Poder360 — home/politics listing"
+    kind: listing_html
+    url: "https://www.poder360.com.br/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/poder360-listing.html
+
+  - id: cnn-brasil-eleicoes
+    source_id: cnn-brasil
+    label: "CNN Brasil — eleições"
+    kind: listing_html
+    url: "https://www.cnnbrasil.com.br/eleicoes/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/cnn-eleicoes-listing.html
+
+  - id: atlasintel-polls
+    source_id: atlasintel
+    label: "AtlasIntel — poll index (HTML)"
+    kind: listing_html
+    url: "https://atlasintel.org/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/atlasintel-listing.html
+
+  - id: quaest-home
+    source_id: quaest
+    label: "Quaest — home"
+    kind: listing_html
+    url: "https://quaest.com.br/"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/quaest-listing.html
+
+  - id: tse-dados-abertos-rss
+    source_id: tse-dados-abertos-2026
+    label: "TSE Dados Abertos — dataset page (HTML listing)"
+    kind: listing_html
+    url: "https://dadosabertos.tse.jus.br/dataset/pesquisas-eleitorais-2026"
+    enabled: true
+    national_hint: true
+    notes: "Registration provenance only — not horse-race shares."
+    fixture: fixtures/discovery/tse-dados-abertos.html
+
+  - id: g1-rss-sample
+    source_id: g1-pesquisas
+    label: "G1 — sample RSS (fixture / optional live)"
+    kind: rss
+    url: "https://g1.globo.com/dynamo/politica/rss2.xml"
+    enabled: true
+    national_hint: true
+    fixture: fixtures/discovery/g1-politica.rss.xml
+
+  - id: example-sitemap
+    source_id: g1-pesquisas
+    label: "Example sitemap parser (fixture only)"
+    kind: sitemap
+    url: "https://example.invalid/sitemap-pesquisas.xml"
+    enabled: true
+    national_hint: true
+    fetch: false
+    fixture: fixtures/discovery/example-sitemap.xml
