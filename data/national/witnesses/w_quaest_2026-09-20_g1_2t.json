@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_quaest_2026-09-20_g1_2t",
+  "poll_id": "quaest_2026-09-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/21/quaest-presidente-2o-turno-21-setembro.ghtml",
+  "retrieved_at": "2026-09-27T02:25:00Z",
+  "content_hash": "sha256:9f612b3e029db0e52470535b7fbb07817c8fab31c70e47f452af1f7f88630eef",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_001_v1",
+  "extractions": {
+    "fieldwork": "2026-09-17..2026-09-20",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-06004/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-06004/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). One article covers five stimulated 2º-turno matchups; sibling polls also list this witness_id. Numbers from content-unordered-list blocks."
+}

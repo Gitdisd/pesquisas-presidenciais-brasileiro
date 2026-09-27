@@ -38,11 +38,18 @@
       "description": "Required for trend ordering; primary fieldwork date."
     },
     "fieldwork_mid": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Nullable computed midpoint of fieldwork_start..fieldwork_end (YYYY-MM-DD). Stats Option B dates polls here; pipeline may leave null until normalize computes it.",
       "oneOf": [
-        { "type": "null" },
-        { "$ref": "#/$defs/dateYMD" }
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/dateYMD"
+        }
       ]
     },
     "geography": {
@@ -58,7 +65,7 @@
     "scenario": {
       "type": "string",
       "minLength": 1,
-      "description": "Stable scenario key, e.g. stimulated_1st_round, unstimulated, runoff_A_vs_B. Never mix scenarios in one aggregate."
+      "description": "Stable scenario key. Families: `stimulated_1st_round` (national stimulated 1º turno); `stimulated_2nd_round_<cand_a>_vs_<cand_b>` (national stimulated runoff pair; cand_a/cand_b are canonical candidate_ids sorted lexicographically ascending); also reserved: unstimulated, runoff_A_vs_B legacy alias. Never mix scenarios in one aggregate. Assemble writes 1º and 2º to separate canonical files."
     },
     "sample_size": {
       "type": "integer",
@@ -66,7 +73,10 @@
       "description": "N (sample size)."
     },
     "moe": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "description": "Margin of error as fraction of the share scale (e.g. 0.02 for ±2pp). Null if not published. Not a percent integer.",
       "minimum": 0,
       "maximum": 1
@@ -91,13 +101,19 @@
       }
     },
     "tse_registration_id": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Optional TSE protocol/registration id for provenance only. Never treat as sole truth for identity or results."
     },
     "witness_ids": {
       "type": "array",
       "description": "Coverage/publication witnesses merged into this poll.",
-      "items": { "type": "string", "minLength": 1 },
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
       "uniqueItems": true
     },
     "dataset_version": {

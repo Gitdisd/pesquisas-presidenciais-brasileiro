@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_datafolha_2026-09-23_g1_2t",
+  "poll_id": "datafolha_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/09/24/datafolha-presidente-segundo-turno-24-setembro.ghtml",
+  "retrieved_at": "2026-09-27T02:25:00Z",
+  "content_hash": "sha256:8546d8037d2794f17b73964c1acfe13256ed68f303300fad1bedef7403a73790",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_001_v1",
+  "extractions": {
+    "fieldwork": "2026-09-22..2026-09-23",
+    "n": 2002,
+    "moe_pp": 2,
+    "tse": "BR-00304/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-00304/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). One article covers five stimulated 2º-turno matchups; sibling polls also list this witness_id. Numbers from content-unordered-list blocks."
+}

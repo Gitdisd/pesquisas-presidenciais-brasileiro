@@ -25,7 +25,10 @@ Electoral Stats ingests polls matching `poll.schema.json`. Research UI does **no
 3. **TSE** (`tse_registration_id`): **provenance only**, not truth for results or sole identity.
 4. **Geography**: v1 is `national` only. State polls never enter national aggregates.
 5. **Trend date**: `fieldwork_end` orders the series. Stats Option B dates at `fieldwork_mid` (calendar midpoint of start/end) when present.
-6. **Scenario**: never mix scenarios in one aggregate (e.g. `stimulated_1st_round` vs runoff pairs).
+6. **Scenario**: never mix scenarios in one aggregate. Binding keys:
+   - `stimulated_1st_round` → assemble → `site/data/canonical-points.json`
+   - `stimulated_2nd_round_<cand_a>_vs_<cand_b>` (candidate_ids lexicographically sorted) → assemble → `site/data/canonical-points-2nd-round.json`
+   See [`docs/scenario-convention.md`](../docs/scenario-convention.md).
 7. **Parsers**: `parser_id` is config/mapping driven — no self-modifying parsers.
 
 ## Witness merge (sketch)
@@ -36,7 +39,7 @@ Electoral Stats ingests polls matching `poll.schema.json`. Research UI does **no
 
 ## EXAMPLE fixtures
 
-See `fixtures/national/`. Files with `example_` ids are **synthetic** and must never be treated as real Brazilian polls.
+See `fixtures/national/` (`EXAMPLE_poll.json`, `EXAMPLE_poll_2nd_round.json`, …). Files with `example_` ids are **synthetic** and must never be treated as real Brazilian polls.
 
 ## Superseded
 

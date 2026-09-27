@@ -1,0 +1,14 @@
+{
+  "witness_id": "example_witness_2nd_round_0001",
+  "poll_id": "example_national_2026_stimulated_2nd_round_example_candidate_a_vs_example_candidate_b_0001",
+  "source_type": "institute_release",
+  "source_url": "https://example.invalid/pebr/synthetic-example-2nd-round-poll",
+  "retrieved_at": "2026-01-13T12:00:00Z",
+  "content_hash": "sha256:fedcba9876543210fedcba9876543210",
+  "raw_path": null,
+  "parser_id": "example_manual_v1",
+  "extractions": {},
+  "confidence": 1.0,
+  "tse_registration_id": null,
+  "notes": "SYNTHETIC EXAMPLE FIXTURE — not a real retrieval. Pair with EXAMPLE_poll_2nd_round.json."
+}

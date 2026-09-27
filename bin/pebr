@@ -27,7 +27,7 @@ module Pebr
 
         Usage:
           bin/pebr validate    Validate fixtures + data/national/** against schemas/
-          bin/pebr assemble    Rebuild site/data/canonical-points.json from polls (deterministic)
+          bin/pebr assemble    Rebuild canonical-points.json (1º) + canonical-points-2nd-round.json (2º)
           bin/pebr discover    Read-only inventory of source-map + institutes (no fetch)
           bin/pebr normalize   Report identity fingerprint duplicates (no fetch / no rewrite)
           bin/pebr version     Print version
@@ -77,7 +77,8 @@ module Pebr
 
     def assemble!
       result = Pebr::Assemble.run
-      puts "assemble: wrote #{result[:count]} point(s) → #{result[:out_path]}"
+      puts "assemble: wrote #{result[:count_1st]} 1st-round point(s) → #{result[:out_path]}"
+      puts "assemble: wrote #{result[:count_2nd]} 2nd-round point(s) → #{result[:out_path_2nd]}"
       exit 0
     rescue StandardError => e
       warn "assemble: FAILED — #{e.message}"

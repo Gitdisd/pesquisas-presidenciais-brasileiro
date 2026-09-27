@@ -3,7 +3,7 @@
 categories:
   branco_nulo:
     display_name: "Branco / Nulo"
-    aliases: ["branco/nulo", "brancos e nulos", "Em branco/nulo/nenhum", "Ninguém/branco/nulo", "Nenhum/Branco/Nulo", "Nenhum deles"]
+    aliases: ["branco/nulo", "brancos e nulos", "Em branco/nulo/nenhum", "Branco/nulo/não vai votar", "Ninguém/branco/nulo", "Nenhum/Branco/Nulo", "Nenhum deles"]
     notes: "Combined blank+null (and sometimes 'nenhum'/'não vai votar') as published; split when institute reports separately."
   ns_nr:
     display_name: "NS/NR"

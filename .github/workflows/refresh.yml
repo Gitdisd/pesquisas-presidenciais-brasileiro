@@ -20,6 +20,7 @@ on:
       - "config/**"
       - "data/national/**"
       - "site/data/canonical-points.json"
+      - "site/data/canonical-points-2nd-round.json"
       - ".github/workflows/refresh.yml"
 
 permissions:
@@ -47,11 +48,13 @@ jobs:
       - name: Identity fingerprint report
         run: bin/pebr normalize
 
-      - name: Assemble canonical-points.json
+      - name: Assemble canonical-points (1º + 2º)
         run: bin/pebr assemble
 
-      - name: Fail if canonical-points.json drifted
-        run: git diff --exit-code -- site/data/canonical-points.json
+      - name: Fail if canonical-points drifted
+        run: |
+          git diff --exit-code -- site/data/canonical-points.json
+          git diff --exit-code -- site/data/canonical-points-2nd-round.json
 
       # Option B / chart.json: Lead re-runs models CLI separately when canonical-points change.
       # Do not auto-commit or regenerate chart series here.

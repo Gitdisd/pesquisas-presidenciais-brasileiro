@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-09-23_stimulated_2nd_round_augusto_cury_vs_lula",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-22",
+  "fieldwork_end": "2026-09-23",
+  "fieldwork_mid": "2026-09-22",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+  "sample_size": 2002,
+  "moe": 0.02,
+  "results": {
+    "augusto_cury": 0.43,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.01
+  },
+  "tse_registration_id": "BR-00304/2026",
+  "witness_ids": [
+    "w_datafolha_2026-09-23_g1_2t"
+  ],
+  "dataset_version": "intake-cohort-2t-001",
+  "notes": "Verified from G1 2º-turno article (press primary channel). Scenario stimulated_2nd_round_augusto_cury_vs_lula. Shares as fractions from content-unordered-list. Residuals: branco/nulo(/nenhum|/não vai votar)→branco_nulo; Indecisos→ns_nr. Printed sum may be 0.99–1.01 — left as-found."
+}

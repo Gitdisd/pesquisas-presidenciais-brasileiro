@@ -45,15 +45,18 @@ bin/pebr validate
 # 2) identity fingerprint / duplicate report (no fetch)
 bin/pebr normalize
 
-# 3) rebuild Stats ingest snapshot from polls (deterministic; no invented fields)
+# 3) rebuild Stats ingest snapshots from polls (deterministic; no invented fields)
 bin/pebr assemble
-# → site/data/canonical-points.json
+# → site/data/canonical-points.json            (stimulated_1st_round only)
+# → site/data/canonical-points-2nd-round.json  (stimulated_2nd_round_* family)
 
 # 4) optional read-only source inventory
 bin/pebr discover
 ```
 
-Commit polls/witnesses **and** the refreshed `canonical-points.json` together so CI’s `git diff --exit-code` stays green.
+Commit polls/witnesses **and** the refreshed `canonical-points.json` + `canonical-points-2nd-round.json` together so CI’s `git diff --exit-code` stays green.
+
+Scenario keys and 1º/2º separation: [`docs/scenario-convention.md`](docs/scenario-convention.md).
 
 ### Lead: re-export Option B after data changes
 
@@ -69,6 +72,8 @@ Actions **does not** regenerate `site/data/chart.json`. When `canonical-points.j
 ```
 
 (Alternatively `--polls data/national/polls`.) Review the chart, then commit `site/data/chart.json` separately. Do not invent series in CI.
+
+For **2º turno**, consume `site/data/canonical-points-2nd-round.json` and **filter by `scenario`** (pairwise keys). Do not feed that file into the 1º chart path unfiltered.
 
 ### Human primary check (new polls)
 
