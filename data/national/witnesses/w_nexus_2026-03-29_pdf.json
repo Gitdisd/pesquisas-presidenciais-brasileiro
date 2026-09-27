@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_nexus_2026-03-29_pdf",
+  "poll_id": "nexus_2026-03-29_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/03/BTG-Nexus-presidente-mar2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:f2aab773c21fe366e01dc74abaa9da6d955dd69c9cb78f77be4c5bbdc9a9dfbf",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-03-27..2026-03-29",
+    "n": 2006,
+    "moe_pp": 2,
+    "tse": "BR-07875/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-07875/2026",
+  "notes": "BTG/Nexus Mar primary PDF Cenário 1 (perfil TOTAL)"
+}

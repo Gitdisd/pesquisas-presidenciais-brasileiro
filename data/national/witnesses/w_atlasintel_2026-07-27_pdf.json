@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_atlasintel_2026-07-27_pdf",
+  "poll_id": "atlasintel_2026-07-27_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/07/AtlasIntel-nacional-29jul2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:c06872cf91ead52fa5d302213ab6187c51667f159acc54e735c90bb210d514dc",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-07-22..2026-07-27",
+    "n": 5021,
+    "moe_pp": 1,
+    "tse": "BR-08602/2026",
+    "slate": "cenario_1_lula"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-08602/2026",
+  "notes": "Atlas/Bloomberg Jul primary PDF Cenário 1 (Lula slate)"
+}

@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_2026-02-07_gazeta",
+  "poll_id": "futura_2026-02-07_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/pesquisa-100-cidades-futura-presidente-da-republica-fevereiro-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:c89fb5d4db77336beda85fc63ce37276019ce57b5c6c670d985a95cf48f5e8c0",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-02-03..2026-02-07",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-02276/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02276/2026",
+  "notes": "Gazeta 100% Cidades/Futura Fev first stimulated. confidence=press-high."
+}

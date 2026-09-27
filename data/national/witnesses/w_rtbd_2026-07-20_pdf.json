@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_2026-07-20_pdf",
+  "poll_id": "realtime_bigdata_2026-07-20_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/07/presidencial-21jul2026-realtimebigdata.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:583aebdbdd6067f861dd976e1d1b3fbc265dfc22db5e13f6ec9e5892fff4009f",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-07-18..2026-07-20",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-05864/2026",
+    "slate": "stimulated"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-05864/2026",
+  "notes": "RTBD Jul primary PDF stimulated (minor candidates summed as outros=1%). TSE from PDF BR-05864/2026. Sample 2.000. confidence=pdf-high."
+}

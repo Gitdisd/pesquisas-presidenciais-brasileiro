@@ -1,0 +1,30 @@
+{
+  "poll_id": "nexus_2026-03-29_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-03-27",
+  "fieldwork_end": "2026-03-29",
+  "fieldwork_mid": "2026-03-28",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2006,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.41,
+    "flavio_bolsonaro": 0.38,
+    "renan_santos": 0.02,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.04,
+    "aldo_rebelo": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.08,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-07875/2026",
+  "witness_ids": [
+    "w_nexus_2026-03-29_pdf"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "BTG/Nexus Mar primary PDF Cenário 1 (perfil TOTAL). Nenhum/Branco/Nulo→branco_nulo. Sample 2.006. confidence=pdf-high."
+}

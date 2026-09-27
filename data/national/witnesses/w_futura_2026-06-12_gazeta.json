@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_2026-06-12_gazeta",
+  "poll_id": "futura_2026-06-12_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/futura-inteligencia-presidente-junho-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:be45ad48ce0116b87f20b77e4c945f47b14708fb8e607e0d69caccee912ebdc3",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-06-08..2026-06-12",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-01461/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-01461/2026",
+  "notes": "Gazeta Futura Jun first stimulated. confidence=press-high."
+}

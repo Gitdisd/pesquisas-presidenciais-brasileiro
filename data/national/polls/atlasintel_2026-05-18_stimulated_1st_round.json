@@ -1,0 +1,31 @@
+{
+  "poll_id": "atlasintel_2026-05-18_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-05-13",
+  "fieldwork_end": "2026-05-18",
+  "fieldwork_mid": "2026-05-15",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5032,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.47,
+    "flavio_bolsonaro": 0.343,
+    "renan_santos": 0.069,
+    "romeu_zema": 0.052,
+    "ronaldo_caiado": 0.027,
+    "augusto_cury": 0.004,
+    "aldo_rebelo": 0.002
+  },
+  "residuals": {
+    "branco_nulo": 0.014,
+    "ns_nr": 0.019
+  },
+  "tse_registration_id": "BR-06939/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-05-18_pdf"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Atlas/Bloomberg Mai primary PDF Cenário 1 (Lula slate). Sample 5.032. confidence=pdf-high."
+}

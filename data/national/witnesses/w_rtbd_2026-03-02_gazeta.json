@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_2026-03-02_gazeta",
+  "poll_id": "realtime_bigdata_2026-03-02_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-marco-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:afbbc5490ff9d574e19be7863411ae4be9c193a7fadfaaf5d2436519d6e236f1",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-02-28..2026-03-02",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-09353/2026",
+    "slate": "cenario_1_ratinho"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-09353/2026",
+  "notes": "Gazeta RTBD Mar first stimulated (Ratinho slate). confidence=press-high."
+}

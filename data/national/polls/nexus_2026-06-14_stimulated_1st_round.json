@@ -1,0 +1,33 @@
+{
+  "poll_id": "nexus_2026-06-14_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-06-12",
+  "fieldwork_end": "2026-06-14",
+  "fieldwork_mid": "2026-06-13",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2017,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.42,
+    "flavio_bolsonaro": 0.33,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.04,
+    "romeu_zema": 0.02,
+    "joaquim_barbosa": 0.02,
+    "augusto_cury": 0.02,
+    "aecio_neves": 0.01,
+    "cabo_daciolo": 0.01
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-06645/2026",
+  "witness_ids": [
+    "w_nexus_2026-06-14_pdf"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "BTG/Nexus mid-Jun primary PDF Cenário 1 (includes Aécio). Sample 2.017. Sum may round 99–101. confidence=pdf-high."
+}

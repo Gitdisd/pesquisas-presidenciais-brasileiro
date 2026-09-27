@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_2026-05-08_gazeta",
+  "poll_id": "futura_2026-05-08_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/futura-inteligencia-presidente-maio-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:ceda61c1fbe63d204c5fc36f2a9a0b912ec46a4bb49ef07506a255e7ee5288a1",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-05-04..2026-05-08",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-03678/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-03678/2026",
+  "notes": "Gazeta Futura early-May first stimulated (includes Ciro). confidence=press-high."
+}

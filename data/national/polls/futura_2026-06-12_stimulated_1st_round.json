@@ -1,0 +1,32 @@
+{
+  "poll_id": "futura_2026-06-12_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-06-08",
+  "fieldwork_end": "2026-06-12",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.416,
+    "flavio_bolsonaro": 0.341,
+    "ronaldo_caiado": 0.045,
+    "romeu_zema": 0.035,
+    "renan_santos": 0.023,
+    "joaquim_barbosa": 0.021,
+    "cabo_daciolo": 0.011,
+    "augusto_cury": 0.009
+  },
+  "residuals": {
+    "branco_nulo": 0.063,
+    "ns_nr": 0.037
+  },
+  "tse_registration_id": "BR-01461/2026",
+  "notes": "Gazeta Futura Jun first stimulated. confidence=press-high.",
+  "fieldwork_mid": "2026-06-10",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "witness_ids": [
+    "w_futura_2026-06-12_gazeta"
+  ],
+  "dataset_version": "intake-cohort-006"
+}

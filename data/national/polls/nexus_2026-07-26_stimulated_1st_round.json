@@ -1,0 +1,31 @@
+{
+  "poll_id": "nexus_2026-07-26_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-07-24",
+  "fieldwork_end": "2026-07-26",
+  "fieldwork_mid": "2026-07-25",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.42,
+    "flavio_bolsonaro": 0.33,
+    "ronaldo_caiado": 0.06,
+    "renan_santos": 0.05,
+    "romeu_zema": 0.03,
+    "augusto_cury": 0.02,
+    "cabo_daciolo": 0.01
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-01489/2026",
+  "witness_ids": [
+    "w_nexus_2026-07-26_pdf"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "BTG/Nexus late-Jul primary PDF (Aécio/Joaquim retirados). Sample 2.004. confidence=pdf-high."
+}

@@ -102,3 +102,11 @@ aliases:
     aliases: ["Michel Temer (MDB)", "Temer"]
     notes: "intake-cohort-005 — CNT/MDA Jun 2026 stimulated slate"
 
+  tarcisio_de_freitas:
+    display_name: "Tarcísio de Freitas"
+    aliases: ["Tarcísio de Freitas (Republicanos)", "Tarcisio de Freitas", "Tarcísio"]
+    notes: "intake-cohort-006 — early-2026 Futura/Atlas stimulated slates"
+  ciro_gomes:
+    display_name: "Ciro Gomes"
+    aliases: ["Ciro Gomes (PSDB)", "Ciro"]
+    notes: "intake-cohort-006 — Futura early-May and Ideia early-May stimulated slates"

@@ -1,0 +1,32 @@
+{
+  "poll_id": "nexus_2026-05-24_stimulated_1st_round",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-05-22",
+  "fieldwork_end": "2026-05-24",
+  "fieldwork_mid": "2026-05-23",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2045,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.35,
+    "ronaldo_caiado": 0.05,
+    "romeu_zema": 0.04,
+    "renan_santos": 0.03,
+    "joaquim_barbosa": 0.02,
+    "augusto_cury": 0.01,
+    "cabo_daciolo": 0.01
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-04193/2026",
+  "witness_ids": [
+    "w_nexus_2026-05-24_pdf"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "BTG/Nexus Mai primary PDF Cenário 1 (perfil TOTAL; Joaquim no lugar de Aldo). Sample 2.045. confidence=pdf-high."
+}

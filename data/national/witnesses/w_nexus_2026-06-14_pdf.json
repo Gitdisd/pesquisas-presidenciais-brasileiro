@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_nexus_2026-06-14_pdf",
+  "poll_id": "nexus_2026-06-14_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/06/BTG-Nexus-nacional-15jun2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:4cb0bcfae6c7f6cdfdc56556e4b864c642100406af4c23774a6d03997aae71f6",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-06-12..2026-06-14",
+    "n": 2017,
+    "moe_pp": 2,
+    "tse": "BR-06645/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-06645/2026",
+  "notes": "BTG/Nexus mid-Jun primary PDF Cenário 1 (includes Aécio)"
+}

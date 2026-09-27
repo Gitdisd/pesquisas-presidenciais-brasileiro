@@ -1,0 +1,30 @@
+{
+  "poll_id": "futura_2026-03-06_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-03-02",
+  "fieldwork_end": "2026-03-06",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "flavio_bolsonaro": 0.376,
+    "lula": 0.37,
+    "ratinho_junior": 0.091,
+    "romeu_zema": 0.027,
+    "renan_santos": 0.021,
+    "aldo_rebelo": 0.007
+  },
+  "residuals": {
+    "branco_nulo": 0.073,
+    "ns_nr": 0.036
+  },
+  "tse_registration_id": "BR-06607/2026",
+  "notes": "Gazeta Futura Mar first stimulated (Ratinho+Zema slate). confidence=press-high.",
+  "fieldwork_mid": "2026-03-04",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "witness_ids": [
+    "w_futura_2026-03-06_gazeta"
+  ],
+  "dataset_version": "intake-cohort-006"
+}

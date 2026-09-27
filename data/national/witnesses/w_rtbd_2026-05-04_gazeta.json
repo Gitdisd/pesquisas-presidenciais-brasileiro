@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_rtbd_2026-05-04_gazeta",
+  "poll_id": "realtime_bigdata_2026-05-04_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-maio-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:2f75a45d772c6d57fedd29793ca0f8b98e3588f8bb801f7d6e2aa6b659d58c70",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-05-02..2026-05-04",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-03627/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-03627/2026",
+  "notes": "Gazeta RTBD early-May first stimulated. confidence=press-high."
+}

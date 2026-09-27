@@ -1,0 +1,31 @@
+{
+  "poll_id": "futura_2026-01-19_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-01-15",
+  "fieldwork_end": "2026-01-19",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.333,
+    "tarcisio_de_freitas": 0.105,
+    "ronaldo_caiado": 0.03,
+    "romeu_zema": 0.026,
+    "renan_santos": 0.012,
+    "aldo_rebelo": 0.005
+  },
+  "residuals": {
+    "branco_nulo": 0.066,
+    "ns_nr": 0.053
+  },
+  "tse_registration_id": "BR-08233/2026",
+  "notes": "Gazeta 100% Cidades/Futura Jan first stimulated (includes Tarcísio). confidence=press-high.",
+  "fieldwork_mid": "2026-01-17",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "witness_ids": [
+    "w_futura_2026-01-19_gazeta"
+  ],
+  "dataset_version": "intake-cohort-006"
+}

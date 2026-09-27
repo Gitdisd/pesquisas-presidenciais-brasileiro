@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_atlasintel_2026-03-23_pdf",
+  "poll_id": "atlasintel_2026-03-23_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/03/Pesquisa-AtlasIntel-Bloomberg-mar2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:f1a89691582197665b5329e9221e990ef0195e472968f60b2a106073a003a0ec",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-03-18..2026-03-23",
+    "n": 5028,
+    "moe_pp": 1,
+    "tse": "BR-04227/2026",
+    "slate": "cenario_1_lula"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-04227/2026",
+  "notes": "Atlas/Bloomberg Mar primary PDF Cenário 1 (Lula slate)"
+}

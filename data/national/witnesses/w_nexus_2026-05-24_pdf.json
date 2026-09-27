@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_nexus_2026-05-24_pdf",
+  "poll_id": "nexus_2026-05-24_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/05/BTG-Nexus-nacional-25mai2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:67b6311b027c74b8796bbd3aa264d6929c600a9d4590d4c8fdc2db8ea5d34fdf",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-05-22..2026-05-24",
+    "n": 2045,
+    "moe_pp": 2,
+    "tse": "BR-04193/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-04193/2026",
+  "notes": "BTG/Nexus Mai primary PDF Cenário 1 (perfil TOTAL; Joaquim no lugar de Aldo)"
+}

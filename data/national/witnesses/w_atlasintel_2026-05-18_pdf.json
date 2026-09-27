@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_atlasintel_2026-05-18_pdf",
+  "poll_id": "atlasintel_2026-05-18_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://cdn.bncamazonas.com.br/wp-content/uploads/2026/05/AtlasIntel-19maio2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:1dd7ee91a47c4483517c7c9e91cc138a73d5d78fdf45bf9e0e98c82cac8186ac",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-05-13..2026-05-18",
+    "n": 5032,
+    "moe_pp": 1,
+    "tse": "BR-06939/2026",
+    "slate": "cenario_1_lula"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-06939/2026",
+  "notes": "Atlas/Bloomberg Mai primary PDF Cenário 1 (Lula slate)"
+}

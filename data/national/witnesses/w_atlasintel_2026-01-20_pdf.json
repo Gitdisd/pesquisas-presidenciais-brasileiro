@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_atlasintel_2026-01-20_pdf",
+  "poll_id": "atlasintel_2026-01-20_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://revistacenarium.com.br/wp-content/uploads/2026/01/Pesquisa-AtlasIntel-Geral-e-Norte.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:4d42e1f8fb82aa9ecf4eb130249f0dc23188882aded659a2ecc23ed700be2381",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-01-15..2026-01-20",
+    "n": 5418,
+    "moe_pp": 1,
+    "tse": "BR-02804/2026",
+    "slate": "cenario_com_flavio"
+  },
+  "confidence": 0.96,
+  "tse_registration_id": "BR-02804/2026",
+  "notes": "Atlas/Bloomberg Jan primary PDF Cenário com Flávio (principal Flávio slate; ampliado+Tarcísio not dual-entered)"
+}

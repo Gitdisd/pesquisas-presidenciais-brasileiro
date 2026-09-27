@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_nexus_2026-07-26_pdf",
+  "poll_id": "nexus_2026-07-26_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/07/BTG-Nexus-Eleicoes2026-27-jul-2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:1b862e5a2e4d6d62dae32c605a31f93043ce5b27191416cb37444f388ab0e410",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-07-24..2026-07-26",
+    "n": 2004,
+    "moe_pp": 2,
+    "tse": "BR-01489/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-01489/2026",
+  "notes": "BTG/Nexus late-Jul primary PDF (Aécio/Joaquim retirados)"
+}

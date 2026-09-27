@@ -1,0 +1,30 @@
+{
+  "poll_id": "realtime_bigdata_2026-03-02_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-02-28",
+  "fieldwork_end": "2026-03-02",
+  "sample_size": 2000,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.39,
+    "flavio_bolsonaro": 0.32,
+    "ratinho_junior": 0.09,
+    "romeu_zema": 0.02,
+    "aldo_rebelo": 0.02,
+    "renan_santos": 0.02
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.07
+  },
+  "tse_registration_id": "BR-09353/2026",
+  "notes": "Gazeta RTBD Mar first stimulated (Ratinho slate). confidence=press-high.",
+  "fieldwork_mid": "2026-03-01",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "witness_ids": [
+    "w_rtbd_2026-03-02_gazeta"
+  ],
+  "dataset_version": "intake-cohort-006"
+}

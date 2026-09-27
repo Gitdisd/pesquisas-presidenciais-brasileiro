@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_2026-05-20_pdf",
+  "poll_id": "futura_2026-05-20_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/05/Pesquisa-Futura-Apex-Maio-2026.pdf",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:ad82636d425c69d2cea2a6e2c25b7a14eb5267c101d08d4f6fd71c1bb570c167",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-05-15..2026-05-20",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-06529/2026",
+    "slate": "cenario_1"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": "BR-06529/2026",
+  "notes": "Futura/Apex mid-May primary PDF Cenário 1 (mai/26-2). Sample 2.000. confidence=pdf-high."
+}

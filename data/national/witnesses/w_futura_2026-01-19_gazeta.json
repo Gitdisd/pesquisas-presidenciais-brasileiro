@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_futura_2026-01-19_gazeta",
+  "poll_id": "futura_2026-01-19_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/pesquisa-100-cidades-futura-presidente-janeiro-2026/",
+  "retrieved_at": "2026-09-27T00:40:00Z",
+  "content_hash": "sha256:a01e396bcf34ff90c6802832fd4612e1047cced1cb7220354d8db0f7634378d4",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_006_v1",
+  "extractions": {
+    "fieldwork": "2026-01-15..2026-01-19",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-08233/2026",
+    "slate": "cenario_1_with_tarcisio"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-08233/2026",
+  "notes": "Gazeta 100% Cidades/Futura Jan first stimulated (includes Tarcísio). confidence=press-high."
+}
