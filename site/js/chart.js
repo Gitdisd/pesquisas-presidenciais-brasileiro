@@ -1,12 +1,13 @@
 /* PEBR Research UI — D3@7 chart (vanilla JS, no bundler).
- * Consumes data/chart.json: series_kind poll | aggregate | uncertainty.
- * Data unit: fraction 0–1; display ×100 (pp).
+ * Consumes data/chart.json (1º) and data/chart-2nd-round.json (2º pairwise scenarios[]).
+ * series_kind poll | aggregate | uncertainty. Data unit: fraction 0–1; display ×100 (pp).
  * Hover: single poll point only (no multi-candidate scoreboard). Zoom/pan kept; no range slider.
- * Filters: institute chips (poll points); round/geo labels from meta; Option B methodology chips. */
+ * Filters: round switch, 2º matchup chips, institute chips; Option B methodology chips. */
 (function () {
   "use strict";
 
-  const DATA_URL = "data/chart.json";
+  const DATA_URL_1ST = "data/chart.json";
+  const DATA_URL_2ND = "data/chart-2nd-round.json";
   const MARGIN = { top: 24, right: 20, bottom: 40, left: 48 };
   const POLL_HIT_PX2 = 16 * 16;
   const SCENARIO_LABELS = {
@@ -45,6 +46,8 @@
     geoChip: document.getElementById("geo-chip"),
     round1: document.getElementById("round-1"),
     round2: document.getElementById("round-2"),
+    matchupRow: document.getElementById("matchup-row"),
+    matchupFilters: document.getElementById("matchup-filters"),
   };
 
   let state = {
@@ -61,6 +64,11 @@
     y0: null,
     zoomBehavior: null,
     layers: {},
+    round: 1,
+    chart1st: null,
+    chart2nd: null,
+    activeScenario: null,
+    has2nd: false,
   };
 
   function pctDisplay(frac) {
@@ -113,7 +121,7 @@
       );
     }
     el.headerMeta.innerHTML = chips.join("");
-    const scen = SCENARIO_LABELS[meta.scenario] || meta.scenario || "—";
+    const scen = scenarioDisplayLabel(meta);
     el.scenario.textContent = `Cenário: ${scen}`;
     if (el.exampleBanner) {
       el.exampleBanner.hidden = !meta.example;
@@ -122,29 +130,115 @@
       el.geoChip.textContent =
         meta.geography === "national" ? "Nacional" : meta.geography || "—";
     }
-    syncRoundControls(meta);
+    syncRoundControls();
+    syncMatchupRow();
   }
 
-  function syncRoundControls(meta) {
-    const scenario = meta?.scenario || "";
-    const is1st = /1st_round|1º|primeiro/i.test(scenario) || scenario.indexOf("1st") >= 0;
-    const is2nd = /2nd_round|2º|segundo/i.test(scenario);
+  function scenarioDisplayLabel(meta) {
+    if (!meta) return "—";
+    if (meta.matchup_label) return meta.matchup_label;
+    const scenario = meta.scenario || "";
+    if (SCENARIO_LABELS[scenario]) return SCENARIO_LABELS[scenario];
+    if (/stimulated_2nd_round_/.test(scenario) && scenario.includes("_vs_")) {
+      const rest = scenario.replace(/^stimulated_2nd_round_/, "");
+      const parts = rest.split("_vs_");
+      if (parts.length === 2) {
+        const pretty = (s) =>
+          String(s)
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (ch) => ch.toUpperCase());
+        return `Estimulada · 2º · ${pretty(parts[0])} × ${pretty(parts[1])}`;
+      }
+    }
+    return scenario || "—";
+  }
+
+  function syncRoundControls() {
+    const is2nd = state.round === 2;
     if (el.round1) {
       el.round1.classList.toggle("active", !is2nd);
       el.round1.setAttribute("aria-pressed", !is2nd ? "true" : "false");
-      el.round1.disabled = is2nd;
-      el.round1.title = is2nd
-        ? "chart.json atual é 2º turno"
-        : "Estimulada · 1º turno (série carregada)";
+      el.round1.disabled = false;
+      el.round1.title = "Estimulada · 1º turno";
     }
     if (el.round2) {
       el.round2.classList.toggle("active", !!is2nd);
       el.round2.setAttribute("aria-pressed", is2nd ? "true" : "false");
-      // Only enable if payload is actually 2nd-round; otherwise keep disabled (no invented series).
-      el.round2.disabled = !is2nd;
-      el.round2.title = is2nd
-        ? "Estimulada · 2º turno (série carregada)"
-        : "Série de 2º turno ainda não está no chart.json";
+      el.round2.disabled = !state.has2nd;
+      el.round2.title = state.has2nd
+        ? "Estimulada · 2º turno (confrontos pairwise)"
+        : "Série de 2º turno ainda não disponível (chart-2nd-round.json)";
+    }
+  }
+
+  function syncMatchupRow() {
+    if (!el.matchupRow) return;
+    const show = state.round === 2 && state.has2nd;
+    el.matchupRow.hidden = !show;
+    if (show) buildMatchupFilters();
+  }
+
+  /** Materialize a single-scenario chart doc from multi-scenario 2º wrapper. */
+  function docFrom2nd(multi, scenarioId) {
+    const blocks = multi?.scenarios || [];
+    if (!blocks.length) throw new Error("chart-2nd-round.json sem scenarios[]");
+    const block =
+      blocks.find((b) => b.scenario === scenarioId) || blocks[0];
+    return {
+      schema_version: multi.schema_version,
+      model_id: multi.model_id,
+      unit: multi.unit,
+      params: multi.params,
+      band_meaning: multi.band_meaning,
+      election_cycle: multi.election_cycle,
+      geography: multi.geography,
+      scenario: block.scenario,
+      matchup_label: block.label || scenarioDisplayLabel({ scenario: block.scenario }),
+      example: multi.example,
+      note: multi.note,
+      candidates: block.candidates,
+      institutes: block.institutes,
+      generated_at: multi.generated_at,
+      date_range: block.date_range,
+      series: block.series,
+    };
+  }
+
+  function buildMatchupFilters() {
+    if (!el.matchupFilters || !state.chart2nd) return;
+    const blocks = state.chart2nd.scenarios || [];
+    el.matchupFilters.innerHTML = "";
+    blocks.forEach((block) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className =
+        "chip-btn" + (state.activeScenario === block.scenario ? " on" : "");
+      btn.textContent = block.label || scenarioDisplayLabel({ scenario: block.scenario });
+      btn.dataset.scenario = block.scenario;
+      btn.title = block.scenario;
+      btn.addEventListener("click", () => {
+        if (state.activeScenario === block.scenario) return;
+        state.activeScenario = block.scenario;
+        const doc = docFrom2nd(state.chart2nd, state.activeScenario);
+        renderChart(doc);
+      });
+      el.matchupFilters.appendChild(btn);
+    });
+  }
+
+  async function switchRound(round) {
+    if (round === state.round) return;
+    if (round === 2 && !state.has2nd) return;
+    state.round = round;
+    state.showAll = false;
+    if (round === 1) {
+      state.activeScenario = null;
+      renderChart(state.chart1st);
+    } else {
+      if (!state.activeScenario && state.chart2nd?.scenarios?.length) {
+        state.activeScenario = state.chart2nd.scenarios[0].scenario;
+      }
+      renderChart(docFrom2nd(state.chart2nd, state.activeScenario));
     }
   }
 
@@ -690,11 +784,39 @@
 
   async function boot() {
     try {
-      const res = await fetch(DATA_URL, { cache: "no-cache" });
-      if (!res.ok) throw new Error(`HTTP ${res.status} ao carregar ${DATA_URL}`);
-      const data = await res.json();
-      if (!data || !Array.isArray(data.series)) throw new Error("chart.json sem series[]");
-      renderChart(data);
+      const res1 = await fetch(DATA_URL_1ST, { cache: "no-cache" });
+      if (!res1.ok) throw new Error(`HTTP ${res1.status} ao carregar ${DATA_URL_1ST}`);
+      const data1 = await res1.json();
+      if (!data1 || !Array.isArray(data1.series)) {
+        throw new Error("chart.json sem series[]");
+      }
+      state.chart1st = data1;
+      state.round = 1;
+
+      try {
+        const res2 = await fetch(DATA_URL_2ND, { cache: "no-cache" });
+        if (res2.ok) {
+          const data2 = await res2.json();
+          if (data2 && Array.isArray(data2.scenarios) && data2.scenarios.length) {
+            state.chart2nd = data2;
+            state.has2nd = true;
+            state.activeScenario = data2.scenarios[0].scenario;
+          }
+        }
+      } catch (err2) {
+        console.warn("2º turno indisponível:", err2);
+        state.has2nd = false;
+      }
+
+      if (el.round1) {
+        el.round1.addEventListener("click", () => switchRound(1));
+      }
+      if (el.round2) {
+        el.round2.addEventListener("click", () => switchRound(2));
+      }
+
+      syncRoundControls();
+      renderChart(state.chart1st);
       window.addEventListener("resize", debounce(onResize, 180));
     } catch (err) {
       console.error(err);

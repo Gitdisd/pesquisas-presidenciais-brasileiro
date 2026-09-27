@@ -52,8 +52,20 @@ Do **not** put state polls here. Do **not** invent scenarios without a primary t
   --no-example \
   --note "verified national stimulated_1st_round"
 
-# 2º: filter the 2nd-round file by scenario before / inside Stats
-# e.g. only flavio_bolsonaro vs lula matchup — Lead wires chart series separately
+# 2º: Option B **per scenario** (pairwise) — never merge matchups
+.venv/bin/python -m pebr_models.cli \
+  --polls site/data/canonical-points-2nd-round.json \
+  --out site/data/chart-2nd-round.json \
+  --multi-scenario \
+  --no-example \
+  --note "cohort 2T-001 / verified pairwise 2º"
+
+# Or one matchup only:
+.venv/bin/python -m pebr_models.cli \
+  --polls site/data/canonical-points-2nd-round.json \
+  --scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula \
+  --out /tmp/chart-flavio-lula.json \
+  --no-example
 ```
 
-Lead owns chart UI. Pipeline will **not** auto-merge 2º into `chart.json`.
+Lead owns chart UI (`chart.json` = 1º, `chart-2nd-round.json` = 2º with matchup chips). Pipeline will **not** auto-merge 2º into `chart.json`.

@@ -27,3 +27,16 @@ See [`../docs/methodology-aggregate-option-b.md`](../docs/methodology-aggregate-
 ```
 
 Synthetic only (`example: true`). Do not invent real Brazilian poll numbers.
+
+## 2º turno (pairwise)
+
+```bash
+.venv/bin/python -m pebr_models.cli \
+  --polls site/data/canonical-points-2nd-round.json \
+  --out site/data/chart-2nd-round.json \
+  --multi-scenario \
+  --no-example
+```
+
+Use `--scenario <id>` for a single matchup. Distinct 2º scenarios are never merged into one Option B run.
+

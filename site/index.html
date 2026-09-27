@@ -48,10 +48,14 @@
           <span class="filter-label">Turno</span>
           <div class="seg" role="group" aria-label="Turno">
             <button type="button" class="seg-btn active" id="round-1" aria-pressed="true" data-round="1">1º turno</button>
-            <button type="button" class="seg-btn" id="round-2" aria-pressed="false" data-round="2" disabled title="Série de 2º turno ainda não está no chart.json">2º turno</button>
+            <button type="button" class="seg-btn" id="round-2" aria-pressed="false" data-round="2" disabled title="Carregando série de 2º turno…">2º turno</button>
           </div>
           <span class="filter-label geo-label">Geografia</span>
           <span class="chip accent" id="geo-chip" title="v1: apenas pesquisas nacionais">Nacional</span>
+        </div>
+        <div class="filter-row filter-matchups" id="matchup-row" hidden>
+          <span class="filter-label">Confrontos</span>
+          <div class="chip-row" id="matchup-filters" role="group" aria-label="Filtrar confronto 2º turno"></div>
         </div>
         <div class="filter-row filter-institutes">
           <span class="filter-label">Institutos</span>

@@ -1,4 +1,9 @@
-"""Export Option B series to Research UI ``site/data/chart.json`` (flat series rows)."""
+"""Export Option B series to Research UI chart JSON (flat series rows).
+
+Single-scenario docs (`chart.json`) keep the existing contract.
+Multi-scenario docs (`chart-2nd-round.json`) wrap pairwise Option B runs under
+``scenarios[]`` — never merge distinct 2º matchups into one aggregate.
+"""
 
 from __future__ import annotations
 
@@ -38,6 +43,8 @@ _DEFAULT_INSTITUTE_LABELS = {
     "example_institute_beta": "Instituto Beta (exemplo)",
     "example_institute_gamma": "Instituto Gamma (exemplo)",
 }
+
+_PALETTE = ["#5B8CFF", "#FF6B6B", "#4ECDC4", "#F7B731", "#A78BFA", "#34D399", "#FB7185"]
 
 
 def _ymd(d: date) -> str:
@@ -100,22 +107,29 @@ def _derive_candidates(
     polls: Sequence[NationalPoll],
     meta_candidates: Sequence[Mapping[str, Any]] | None,
 ) -> list[dict[str, Any]]:
+    by_meta: dict[str, dict[str, Any]] = {}
     if meta_candidates:
-        return [dict(c) for c in meta_candidates]
+        for c in meta_candidates:
+            cid = str(c.get("id") or "")
+            if cid:
+                by_meta[cid] = dict(c)
+
     seen: list[str] = []
     for p in polls:
         for cid in p.results:
             if cid not in seen:
                 seen.append(cid)
-    out = []
+
+    out: list[dict[str, Any]] = []
     for i, cid in enumerate(seen):
+        if cid in by_meta:
+            out.append(dict(by_meta[cid]))
+            continue
         out.append(
             {
                 "id": cid,
                 "label": _DEFAULT_CANDIDATE_LABELS.get(cid, cid),
-                "color": _DEFAULT_CANDIDATE_COLORS.get(
-                    cid, ["#5B8CFF", "#FF6B6B", "#4ECDC4", "#F7B731", "#A78BFA"][i % 5]
-                ),
+                "color": _DEFAULT_CANDIDATE_COLORS.get(cid, _PALETTE[i % len(_PALETTE)]),
             }
         )
     return out
@@ -125,19 +139,51 @@ def _derive_institutes(
     polls: Sequence[NationalPoll],
     meta_institutes: Sequence[Mapping[str, Any]] | None,
 ) -> list[dict[str, Any]]:
+    by_meta: dict[str, dict[str, Any]] = {}
     if meta_institutes:
-        return [dict(i) for i in meta_institutes]
+        for inst in meta_institutes:
+            iid = str(inst.get("id") or "")
+            if iid:
+                by_meta[iid] = dict(inst)
+
     seen: list[str] = []
     for p in polls:
         if p.institute_id not in seen:
             seen.append(p.institute_id)
-    return [
-        {
-            "id": iid,
-            "label": _DEFAULT_INSTITUTE_LABELS.get(iid, iid),
-        }
-        for iid in seen
-    ]
+    out: list[dict[str, Any]] = []
+    for iid in seen:
+        if iid in by_meta:
+            out.append(dict(by_meta[iid]))
+        else:
+            out.append(
+                {
+                    "id": iid,
+                    "label": _DEFAULT_INSTITUTE_LABELS.get(iid, iid),
+                }
+            )
+    return out
+
+
+def _filter_national(polls: Sequence[NationalPoll]) -> list[NationalPoll]:
+    return [p for p in polls if not p.geography or p.geography == "national"]
+
+
+def list_scenarios(polls: Sequence[NationalPoll]) -> list[str]:
+    """Sorted unique scenario ids among national polls."""
+    return sorted({p.scenario for p in _filter_national(polls)})
+
+
+def matchup_label(scenario: str) -> str:
+    """Human-readable pairwise label from stimulated_2nd_round_<a>_vs_<b>."""
+    prefix = "stimulated_2nd_round_"
+    if scenario.startswith(prefix) and "_vs_" in scenario:
+        rest = scenario[len(prefix) :]
+        a, _, b = rest.partition("_vs_")
+        def pretty(cid: str) -> str:
+            return cid.replace("_", " ").strip().title()
+
+        return f"{pretty(a)} × {pretty(b)}"
+    return scenario
 
 
 def build_chart_export(
@@ -148,22 +194,38 @@ def build_chart_export(
     example: bool = True,
     note: str | None = None,
     meta: Mapping[str, Any] | None = None,
+    scenario: str | None = None,
 ) -> dict[str, Any]:
-    """Build the Research UI chart document (flat series, unit=fraction)."""
+    """Build a single-scenario Research UI chart document (flat series, unit=fraction).
+
+    If ``scenario`` is set (or ``meta['scenario']``), only that matchup/scenario is
+    aggregated. Distinct scenarios are never merged into one Option B run.
+    """
     params = params or OptionBParams()
     meta = dict(meta or {})
-    filtered = [p for p in polls if not p.geography or p.geography == "national"]
+    filtered = _filter_national(polls)
     if not filtered:
         raise ValueError("no national polls to aggregate")
 
     scenarios = sorted({p.scenario for p in filtered})
-    # UI currently expects a single top-level scenario; prefer meta or majority.
-    scenario = meta.get("scenario") or scenarios[0]
-    scenario_polls = [p for p in filtered if p.scenario == scenario]
-    if not scenario_polls:
-        scenario_polls = filtered
-        scenario = scenarios[0]
+    chosen = scenario or meta.get("scenario")
+    if chosen is not None:
+        chosen = str(chosen)
+        scenario_polls = [p for p in filtered if p.scenario == chosen]
+        if not scenario_polls:
+            raise ValueError(
+                f"scenario {chosen!r} not found; available: {scenarios}"
+            )
+    else:
+        if len(scenarios) > 1:
+            raise ValueError(
+                "multiple scenarios present; pass scenario=... or use "
+                f"build_multi_scenario_chart_export. available: {scenarios}"
+            )
+        chosen = scenarios[0]
+        scenario_polls = [p for p in filtered if p.scenario == chosen]
 
+    # Aggregate already loops scenarios; input is single-scenario by construction.
     agg_points = aggregate_option_b(scenario_polls, params)
     series: list[dict[str, Any]] = []
     series.extend(polls_as_flat_rows(scenario_polls))
@@ -199,7 +261,7 @@ def build_chart_export(
             meta.get("election_cycle") or scenario_polls[0].election_cycle
         ),
         "geography": meta.get("geography") or "national",
-        "scenario": scenario,
+        "scenario": chosen,
         "example": is_example,
         "note": note or meta.get("note") or default_note,
         "candidates": _derive_candidates(scenario_polls, meta.get("candidates")),
@@ -209,6 +271,88 @@ def build_chart_export(
         "series": series,
     }
     return doc
+
+
+def build_multi_scenario_chart_export(
+    polls: Sequence[NationalPoll],
+    params: OptionBParams | None = None,
+    *,
+    include_uncertainty: bool = True,
+    example: bool = True,
+    note: str | None = None,
+    meta: Mapping[str, Any] | None = None,
+    scenarios: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    """Run Option B **per scenario** and wrap results (no cross-matchup merge).
+
+    Output shape for ``site/data/chart-2nd-round.json``::
+
+        {
+          schema_version, model_id, unit, params, ...,
+          round: "2nd",
+          scenarios: [
+            { scenario, label, candidates, institutes, date_range, series },
+            ...
+          ]
+        }
+    """
+    params = params or OptionBParams()
+    meta = dict(meta or {})
+    filtered = _filter_national(polls)
+    if not filtered:
+        raise ValueError("no national polls to aggregate")
+
+    available = sorted({p.scenario for p in filtered})
+    wanted = list(scenarios) if scenarios is not None else available
+    missing = [s for s in wanted if s not in available]
+    if missing:
+        raise ValueError(f"scenarios not found: {missing}; available: {available}")
+    if not wanted:
+        raise ValueError("no scenarios to export")
+
+    blocks: list[dict[str, Any]] = []
+    for scen in wanted:
+        single = build_chart_export(
+            filtered,
+            params,
+            include_uncertainty=include_uncertainty,
+            example=example,
+            note=note,
+            meta=meta,
+            scenario=scen,
+        )
+        blocks.append(
+            {
+                "scenario": single["scenario"],
+                "label": matchup_label(single["scenario"]),
+                "candidates": single["candidates"],
+                "institutes": single["institutes"],
+                "date_range": single["date_range"],
+                "series": single["series"],
+            }
+        )
+
+    now = datetime.now(SP_TZ)
+    is_example = bool(meta.get("example", example))
+    default_note = (
+        "2º turno pairwise — Option B per matchup (never merged). "
+        "unit=fraction; band_low/band_high = in-window dispersion."
+    )
+    first = filtered[0]
+    return {
+        "schema_version": 1,
+        "model_id": MODEL_ID,
+        "unit": "fraction",
+        "params": params.as_dict(),
+        "band_meaning": BAND_MEANING,
+        "election_cycle": int(meta.get("election_cycle") or first.election_cycle),
+        "geography": meta.get("geography") or "national",
+        "round": "2nd",
+        "example": is_example,
+        "note": note or meta.get("note") or default_note,
+        "generated_at": now.isoformat(timespec="seconds"),
+        "scenarios": blocks,
+    }
 
 
 def write_chart_json(
