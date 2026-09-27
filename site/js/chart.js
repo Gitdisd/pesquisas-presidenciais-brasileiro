@@ -6,8 +6,9 @@
  *   Y stays on data domain (no isotropic lock). NO bottom range brush/slider.
  * Period chips 30d/90d/tudo = optional X domain presets only (not a brush).
  * Filters: round, período, institutes (solo), candidatos, matchups 2º.
- * Borrowed from old site: período presets, denser filter bar, CSV/JSON, shareable URL, Option B PT copy,
- * summary cards + Δ30d, overview metrics, poll table, dark/light theme, focar / scroll-top, cheap shortcuts.
+ * Borrowed from old site: período presets, denser filter bar, shareable URL, Option B PT copy,
+ * summary cards + Δ30d, overview metrics, poll table (+ pagination/search), dark/light theme,
+ * focar / scroll-top / fullscreen, cheap shortcuts, institute bitmask in share URL.
  * Client Option B when institute-filtered (same √N + anti-flood rules). Not borrowed:
  * projection models, multi-hover scoreboard, bottom brush, média-window knobs, party/CRT themes. */
 (function () {
@@ -17,6 +18,7 @@
   const DATA_URL_2ND = "data/chart-2nd-round.json";
   const MARGIN = { top: 24, right: 20, bottom: 40, left: 48 };
   const POLL_HIT_PX2 = 16 * 16;
+  const TABLE_PAGE_SIZE = 25;
   const SCENARIO_LABELS = {
     stimulated_1st_round: "Estimulada · 1º turno",
     spontaneous_1st_round: "Espontânea · 1º turno",
@@ -47,8 +49,6 @@
     refreshBtn: document.getElementById("btn-refresh-data"),
     resetBtn: document.getElementById("btn-reset-zoom"),
     showAllBtn: document.getElementById("btn-show-all"),
-    exportBtn: document.getElementById("btn-export-csv"),
-    exportJsonBtn: document.getElementById("btn-export-json"),
     shareBtn: document.getElementById("btn-share"),
     toast: document.getElementById("toast"),
     matchupHint: document.getElementById("matchup-hint"),
@@ -76,8 +76,15 @@
     pollsCount: document.getElementById("polls-count"),
     themeBtn: document.getElementById("btn-theme"),
     focusBtn: document.getElementById("btn-focus-chart"),
+    fullscreenBtn: document.getElementById("btn-fullscreen"),
     scrollTopBtn: document.getElementById("btn-scroll-top"),
     chartShell: document.getElementById("chart-shell"),
+    chartPanel: document.getElementById("chart-panel"),
+    pollsSearch: document.getElementById("polls-search"),
+    pollsPager: document.getElementById("polls-pager"),
+    pollsPrev: document.getElementById("polls-prev"),
+    pollsNext: document.getElementById("polls-next"),
+    pollsPageLabel: document.getElementById("polls-page-label"),
   };
 
   let state = {
@@ -109,6 +116,8 @@
     clientAggKey: null,
     skipUrlWrite: false,
     refreshing: false,
+    tablePage: 0,
+    tableQuery: "",
   };
 
   function pctDisplay(frac) {
@@ -274,6 +283,7 @@
         buildLegend();
         redrawSeries();
       }
+      resetTablePage();
       refreshExtras();
     }
   }
@@ -552,8 +562,10 @@
       buildInstituteFilters();
       syncFilterNote();
       redrawSeries();
+      resetTablePage();
       refreshExtras();
       clearHover();
+      writeUrlState();
     });
     el.instituteFilters.appendChild(allBtn);
 
@@ -585,8 +597,10 @@
         buildInstituteFilters();
         syncFilterNote();
         redrawSeries();
+        resetTablePage();
         refreshExtras();
         clearHover();
+        writeUrlState();
       });
       el.instituteFilters.appendChild(btn);
     });
@@ -943,6 +957,7 @@
         syncShowAllBtn();
         buildLegend();
         redrawSeries();
+        resetTablePage();
         refreshExtras();
         clearHover();
         writeUrlState();
@@ -1365,12 +1380,64 @@
     });
   }
 
+  function resetTablePage() {
+    state.tablePage = 0;
+  }
+
+  function filteredTableGroups() {
+    const groups = groupedVisiblePolls();
+    const q = String(state.tableQuery || "")
+      .trim()
+      .toLocaleLowerCase("pt-BR");
+    if (!q) return groups;
+    return groups.filter((g) => {
+      const inst = prettyInstituteLabel(
+        state.instById.get(g.institute_id) || { id: g.institute_id }
+      );
+      const hay = [
+        inst,
+        g.institute_id,
+        g.date ? fmtDate(g.date) : "",
+        g.n != null ? String(g.n) : "",
+      ]
+        .join(" ")
+        .toLocaleLowerCase("pt-BR");
+      return hay.includes(q);
+    });
+  }
+
+  function syncPollsPager(totalFiltered) {
+    if (!el.pollsPager) return;
+    const pages = Math.max(1, Math.ceil(totalFiltered / TABLE_PAGE_SIZE) || 1);
+    if (state.tablePage >= pages) state.tablePage = pages - 1;
+    if (state.tablePage < 0) state.tablePage = 0;
+    const show = totalFiltered > TABLE_PAGE_SIZE;
+    el.pollsPager.hidden = !show;
+    if (el.pollsPrev) el.pollsPrev.disabled = state.tablePage <= 0;
+    if (el.pollsNext) el.pollsNext.disabled = state.tablePage >= pages - 1;
+    if (el.pollsPageLabel) {
+      if (!totalFiltered) {
+        el.pollsPageLabel.textContent = "—";
+      } else {
+        const from = state.tablePage * TABLE_PAGE_SIZE + 1;
+        const to = Math.min(totalFiltered, (state.tablePage + 1) * TABLE_PAGE_SIZE);
+        el.pollsPageLabel.textContent = `${from}–${to} de ${totalFiltered.toLocaleString("pt-BR")} · pág. ${state.tablePage + 1}/${pages}`;
+      }
+    }
+  }
+
   function renderPollTable() {
     if (!el.pollsThead || !el.pollsTbody) return;
     const candCols = visibleCandidatesOrdered().map((x) => x.cand);
     // Cap candidate columns for readability when many are visible
     const cols = candCols.slice(0, 10);
-    const groups = groupedVisiblePolls();
+    const allGroups = groupedVisiblePolls();
+    const groups = filteredTableGroups();
+    syncPollsPager(groups.length);
+    const pageRows = groups.slice(
+      state.tablePage * TABLE_PAGE_SIZE,
+      state.tablePage * TABLE_PAGE_SIZE + TABLE_PAGE_SIZE
+    );
 
     el.pollsThead.innerHTML =
       "<tr>" +
@@ -1390,13 +1457,18 @@
         : "") +
       "</tr>";
 
+    const colSpan = 3 + cols.length + (candCols.length > cols.length ? 1 : 0);
     if (!groups.length) {
       el.pollsTbody.innerHTML =
         '<tr><td colspan="' +
-        (3 + cols.length + (candCols.length > cols.length ? 1 : 0)) +
-        '" class="muted">Nenhuma pesquisa visível com os filtros atuais.</td></tr>';
+        colSpan +
+        '" class="muted">' +
+        (allGroups.length && state.tableQuery
+          ? "Nenhuma pesquisa corresponde ao filtro da tabela."
+          : "Nenhuma pesquisa visível com os filtros atuais.") +
+        "</td></tr>";
     } else {
-      el.pollsTbody.innerHTML = groups
+      el.pollsTbody.innerHTML = pageRows
         .map((g) => {
           const inst = prettyInstituteLabel(
             state.instById.get(g.institute_id) || { id: g.institute_id }
@@ -1408,7 +1480,7 @@
             })
             .join("");
           const extra =
-            candCols.length > cols.length ? "<td class=\"muted\">…</td>" : "";
+            candCols.length > cols.length ? '<td class="muted">…</td>' : "";
           return (
             "<tr>" +
             `<td class="sticky-col">${g.date ? fmtDate(g.date) : "—"}</td>` +
@@ -1422,10 +1494,13 @@
         .join("");
     }
     if (el.pollsCount) {
-      el.pollsCount.textContent = groups.length
-        ? `${groups.length.toLocaleString("pt-BR")} pesquisa${
-            groups.length === 1 ? "" : "s"
-          } · filtros atuais`
+      const qNote = state.tableQuery.trim()
+        ? ` · filtro “${state.tableQuery.trim()}”`
+        : "";
+      el.pollsCount.textContent = allGroups.length
+        ? `${allGroups.length.toLocaleString("pt-BR")} pesquisa${
+            allGroups.length === 1 ? "" : "s"
+          } · filtros atuais${qNote}`
         : "0 pesquisas · filtros atuais";
     }
   }
@@ -1485,6 +1560,77 @@
     const target = el.chartShell || document.getElementById("chart-heading");
     if (target && target.scrollIntoView) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function syncFullscreenBtn() {
+    if (!el.fullscreenBtn) return;
+    const on = !!document.fullscreenElement;
+    el.fullscreenBtn.textContent = on ? "Sair tela cheia" : "Tela cheia";
+    el.fullscreenBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    el.fullscreenBtn.title = on
+      ? "Sair da tela cheia (atalho: F ou Esc)"
+      : "Alternar tela cheia do painel do gráfico (atalho: F)";
+  }
+
+  async function toggleFullscreen() {
+    const panel = el.chartPanel || document.querySelector(".chart-panel");
+    if (!panel) return;
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else if (panel.requestFullscreen) {
+        await panel.requestFullscreen();
+      } else {
+        showToast("Tela cheia não disponível neste navegador");
+      }
+    } catch (_) {
+      showToast("Não foi possível alternar tela cheia");
+    }
+  }
+
+  function installFullscreen() {
+    if (el.fullscreenBtn) {
+      el.fullscreenBtn.addEventListener("click", () => {
+        toggleFullscreen();
+      });
+    }
+    document.addEventListener("fullscreenchange", () => {
+      const panel = el.chartPanel || document.querySelector(".chart-panel");
+      if (panel) {
+        panel.classList.toggle(
+          "is-fullscreen",
+          document.fullscreenElement === panel
+        );
+      }
+      syncFullscreenBtn();
+      try {
+        onResize();
+      } catch (_) {}
+    });
+    syncFullscreenBtn();
+  }
+
+  function installPollsTableControls() {
+    if (el.pollsSearch) {
+      el.pollsSearch.addEventListener("input", () => {
+        state.tableQuery = el.pollsSearch.value || "";
+        resetTablePage();
+        renderPollTable();
+      });
+    }
+    if (el.pollsPrev) {
+      el.pollsPrev.addEventListener("click", () => {
+        if (state.tablePage <= 0) return;
+        state.tablePage -= 1;
+        renderPollTable();
+      });
+    }
+    if (el.pollsNext) {
+      el.pollsNext.addEventListener("click", () => {
+        state.tablePage += 1;
+        renderPollTable();
+      });
     }
   }
 
@@ -1553,6 +1699,11 @@
       if (k === "t" || k === "T") {
         event.preventDefault();
         toggleTheme();
+        return;
+      }
+      if (k === "f" || k === "F") {
+        event.preventDefault();
+        toggleFullscreen();
       }
     });
   }
@@ -1573,6 +1724,29 @@
     }, 2400);
   }
 
+  function encodeInstituteBitmask(selectedIds) {
+    const ids = state.allInstituteIds || [];
+    if (!ids.length) return "";
+    let mask = 0;
+    const chosen = selectedIds instanceof Set ? selectedIds : new Set(selectedIds || []);
+    for (let i = 0; i < ids.length && i < 31; i++) {
+      if (chosen.has(ids[i])) mask |= 1 << i;
+    }
+    return mask.toString(36);
+  }
+
+  function decodeInstituteBitmask(token) {
+    if (!token || !/^[0-9a-z]+$/i.test(token)) return null;
+    const mask = parseInt(token, 36);
+    if (!Number.isFinite(mask) || mask < 0) return null;
+    const ids = state.allInstituteIds || [];
+    const out = [];
+    for (let i = 0; i < ids.length && i < 31; i++) {
+      if (mask & (1 << i)) out.push(ids[i]);
+    }
+    return out;
+  }
+
   function buildShareUrl() {
     const url = new URL(location.href);
     const params = new URLSearchParams();
@@ -1583,8 +1757,18 @@
       params.set("scenario", state.activeScenario);
     }
     if (state.showAll) params.set("show", "all");
-    if (!institutesAllOn() && state.institutesOn.size === 1) {
-      params.set("institute", [...state.institutesOn][0]);
+    if (!institutesAllOn() && state.institutesOn.size) {
+      const mask = encodeInstituteBitmask(state.institutesOn);
+      if (mask) params.set("inst", mask);
+      // Human-readable solo id kept for short links / back-compat
+      if (state.institutesOn.size === 1) {
+        params.set("institute", [...state.institutesOn][0]);
+      } else {
+        params.set(
+          "institutes",
+          [...state.institutesOn].sort().join(",")
+        );
+      }
     }
     url.search = params.toString();
     url.hash = "";
@@ -1615,7 +1799,39 @@
     if (scenario) state.activeScenario = scenario;
     if (params.get("show") === "all") state.showAll = true;
     const institute = params.get("institute");
-    return { institute };
+    const institutesCsv = params.get("institutes");
+    const instMask = params.get("inst");
+    return { institute, institutesCsv, instMask };
+  }
+
+  function applyInstitutesFromUrl(bits) {
+    if (!bits || !state.allInstituteIds.length) return false;
+    let selected = null;
+    if (bits.instMask) {
+      const decoded = decodeInstituteBitmask(bits.instMask);
+      if (decoded && decoded.length) selected = decoded;
+    }
+    if (!selected && bits.institutesCsv) {
+      const parts = String(bits.institutesCsv)
+        .split(",")
+        .map((s) => decodeURIComponent(s.trim()))
+        .filter(Boolean);
+      const allowed = new Set(state.allInstituteIds);
+      const hit = parts.filter((id) => allowed.has(id));
+      if (hit.length) selected = hit;
+    }
+    if (!selected && bits.institute && state.allInstituteIds.includes(bits.institute)) {
+      selected = [bits.institute];
+    }
+    if (!selected || !selected.length) return false;
+    state.institutesOn = new Set(selected);
+    invalidateClientAgg();
+    buildInstituteFilters();
+    syncFilterNote();
+    redrawSeries();
+    resetTablePage();
+    refreshExtras();
+    return true;
   }
 
   async function shareView() {
@@ -1641,174 +1857,6 @@
       if (err && err.name === "AbortError") return;
       showToast("Não foi possível compartilhar");
     }
-  }
-
-  function exportVisibleJson() {
-    const rows = visiblePollRows();
-    if (!rows.length) {
-      alert("Nenhum ponto visível para exportar com os filtros atuais.");
-      return;
-    }
-    const usePipeline = institutesAllOn();
-    const client = usePipeline ? null : ensureClientOptionB();
-    const fmt = d3.utcFormat("%Y-%m-%d");
-    const polls = rows
-      .slice()
-      .sort(
-        (a, b) =>
-          a.date - b.date ||
-          String(a.candidate_id).localeCompare(String(b.candidate_id))
-      )
-      .map((d) => ({
-        series_kind: "poll",
-        date: fmt(d.date),
-        candidate_id: d.candidate_id,
-        candidate: prettyCandidateLabel(
-          state.candById.get(d.candidate_id) || { id: d.candidate_id }
-        ),
-        institute_id: d.institute_id,
-        institute: prettyInstituteLabel(
-          state.instById.get(d.institute_id) || { id: d.institute_id }
-        ),
-        value: d.value,
-        value_pct:
-          d.value != null ? Number((d.value * 100).toFixed(4)) : null,
-        n: d.n != null ? d.n : null,
-        poll_id: d.poll_id || null,
-      }));
-    let aggregate = [];
-    let uncertainty = [];
-    const srcAgg = usePipeline
-      ? state.payload?.aggregates || []
-      : client?.aggregates || [];
-    const srcUnc = usePipeline
-      ? state.payload?.uncertainty || []
-      : client?.uncertainty || [];
-    const visibleCands = state.visible;
-    const domain =
-      state.rangeDays && state.x0 ? state.x0.domain() : null;
-    const inRange = (d) =>
-      !domain || (d.date >= domain[0] && d.date <= domain[1]);
-    aggregate = srcAgg
-      .filter((d) => visibleCands.has(d.candidate_id) && inRange(d))
-      .map((d) => ({
-        series_kind: "aggregate",
-        date: d.date_iso || fmt(d.date),
-        candidate_id: d.candidate_id,
-        value: d.value,
-        value_pct:
-          d.value != null ? Number((d.value * 100).toFixed(4)) : null,
-        client_option_b: !!d.client_option_b,
-      }));
-    uncertainty = srcUnc
-      .filter((d) => visibleCands.has(d.candidate_id) && inRange(d))
-      .map((d) => ({
-        series_kind: "uncertainty",
-        date: d.date_iso || fmt(d.date),
-        candidate_id: d.candidate_id,
-        band_low: d.band_low,
-        band_high: d.band_high,
-        client_option_b: !!d.client_option_b,
-      }));
-    const payload = {
-      schema_version: 1,
-      exported_at: new Date().toISOString(),
-      source: "pebr-site",
-      model_id: state.data?.model_id || "option_b_sqrt_n_trailing",
-      unit: "fraction",
-      view: {
-        round: state.round,
-        range_days: state.rangeDays,
-        scenario: state.data?.scenario || null,
-        show_all: state.showAll,
-        institutes: [...state.institutesOn],
-        candidates: [...state.visible],
-        aggregate_source: usePipeline ? "pipeline" : "client_option_b",
-      },
-      record_count: polls.length,
-      polls,
-      aggregate,
-      uncertainty,
-    };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], {
-      type: "application/json;charset=utf-8",
-    });
-    const a = document.createElement("a");
-    const stamp = new Date().toISOString().slice(0, 10);
-    a.href = URL.createObjectURL(blob);
-    a.download = `pebr-visivel-${stamp}-r${state.round}.json`;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => {
-      URL.revokeObjectURL(a.href);
-      a.remove();
-    }, 0);
-    showToast("JSON exportado");
-  }
-
-  function exportVisibleCsv() {
-    const rows = visiblePollRows();
-    if (!rows.length) {
-      alert("Nenhum ponto visível para exportar com os filtros atuais.");
-      return;
-    }
-    const header = [
-      "date",
-      "candidate_id",
-      "candidate",
-      "institute_id",
-      "institute",
-      "value_pct",
-      "n",
-      "poll_id",
-      "round",
-      "scenario",
-    ];
-    const scenario = state.data?.scenario || "";
-    const round = state.round;
-    const lines = [header.join(",")];
-    const esc = (v) => {
-      const s = v == null ? "" : String(v);
-      return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-    };
-    rows
-      .slice()
-      .sort((a, b) => a.date - b.date || String(a.candidate_id).localeCompare(b.candidate_id))
-      .forEach((d) => {
-        const cand = state.candById.get(d.candidate_id);
-        const inst = state.instById.get(d.institute_id);
-        const isoDate = d3.utcFormat("%Y-%m-%d")(d.date);
-        lines.push(
-          [
-            isoDate,
-            d.candidate_id || "",
-            prettyCandidateLabel(cand || { id: d.candidate_id }),
-            d.institute_id || "",
-            prettyInstituteLabel(inst || { id: d.institute_id }),
-            d.value != null ? (d.value * 100).toFixed(2) : "",
-            d.n != null ? d.n : "",
-            d.poll_id || "",
-            round,
-            scenario,
-          ]
-            .map(esc)
-            .join(",")
-        );
-      });
-    // Prefer ISO date from parsed Date
-    const blob = new Blob(["\ufeff" + lines.join("\n")], {
-      type: "text/csv;charset=utf-8",
-    });
-    const a = document.createElement("a");
-    const stamp = new Date().toISOString().slice(0, 10);
-    a.href = URL.createObjectURL(blob);
-    a.download = `pebr-polls-visiveis-${stamp}-r${round}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => {
-      URL.revokeObjectURL(a.href);
-      a.remove();
-    }, 0);
   }
 
   function onResize() {
@@ -2015,12 +2063,6 @@
       if (el.refreshBtn) {
         el.refreshBtn.addEventListener("click", refreshData);
       }
-      if (el.exportBtn) {
-        el.exportBtn.addEventListener("click", exportVisibleCsv);
-      }
-      if (el.exportJsonBtn) {
-        el.exportJsonBtn.addEventListener("click", exportVisibleJson);
-      }
       if (el.shareBtn) {
         el.shareBtn.addEventListener("click", () => {
           shareView();
@@ -2048,15 +2090,8 @@
         renderChart(state.chart1st);
       }
 
-      // Optional solo institute from URL (after institutes built by renderChart)
-      if (urlBits.institute && state.allInstituteIds.includes(urlBits.institute)) {
-        state.institutesOn = new Set([urlBits.institute]);
-        invalidateClientAgg();
-        buildInstituteFilters();
-        syncFilterNote();
-        redrawSeries();
-        refreshExtras();
-      }
+      // Institutes from URL bitmask / list / solo (after institutes built by renderChart)
+      applyInstitutesFromUrl(urlBits);
       if (state.showAll) {
         syncShowAllBtn();
         applyDefaultVisibility();
@@ -2075,6 +2110,8 @@
       if (el.focusBtn) {
         el.focusBtn.addEventListener("click", focusChart);
       }
+      installFullscreen();
+      installPollsTableControls();
       installScrollTop();
       installKeyboardShortcuts();
       window.addEventListener("resize", debounce(onResize, 180));
@@ -2087,14 +2124,7 @@
           state.round = 1;
           renderChart(state.chart1st);
         }
-        if (bits.institute && state.allInstituteIds.includes(bits.institute)) {
-          state.institutesOn = new Set([bits.institute]);
-          invalidateClientAgg();
-          buildInstituteFilters();
-          syncFilterNote();
-          redrawSeries();
-          refreshExtras();
-        } else {
+        if (!applyInstitutesFromUrl(bits)) {
           refreshExtras();
         }
         state.skipUrlWrite = false;

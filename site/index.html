@@ -48,7 +48,7 @@
   </div>
 
   <main class="layout">
-    <section class="chart-panel card" aria-label="Gráfico de tendência">
+    <section class="chart-panel card" id="chart-panel" aria-label="Gráfico de tendência">
       <div class="overview-metrics" id="overview-metrics" aria-label="Métricas da vista atual" aria-live="polite">
         <div class="metric"><span class="metric-label">Pesquisas</span><span class="metric-value" id="metric-polls">—</span><span class="metric-sub">visíveis nos filtros</span></div>
         <div class="metric"><span class="metric-label">Institutos</span><span class="metric-value" id="metric-institutes">—</span><span class="metric-sub">na vista atual</span></div>
@@ -64,10 +64,9 @@
         <div class="toolbar-actions">
           <button type="button" class="btn refresh-btn" id="btn-refresh-data" title="Recarregar os arquivos de dados atuais sem recarregar a página">Verificar agora</button>
           <button type="button" class="btn" id="btn-focus-chart" title="Rolar até o gráfico (atalho: G)">Focar gráfico</button>
+          <button type="button" class="btn" id="btn-fullscreen" title="Alternar tela cheia do painel do gráfico (atalho: F)">Tela cheia</button>
           <button type="button" class="btn" id="btn-show-all" aria-pressed="false" title="Mostrar também candidatos inativos / fora da disputa">mostrar todos</button>
-          <button type="button" class="btn" id="btn-share" title="Copiar link com turno, período e confronto atuais">Compartilhar</button>
-          <button type="button" class="btn" id="btn-export-csv" title="Baixar CSV dos pontos de pesquisa visíveis (filtros atuais)">Exportar CSV</button>
-          <button type="button" class="btn" id="btn-export-json" title="Baixar JSON dos pontos (e agregado) visíveis">Exportar JSON</button>
+          <button type="button" class="btn" id="btn-share" title="Copiar link com turno, período, confronto e institutos atuais">Compartilhar</button>
           <button type="button" class="btn" id="btn-reset-zoom" title="Redefinir zoom / panorâmica (também: duplo clique no gráfico)">Redefinir zoom</button>
         </div>
       </div>
@@ -133,12 +132,25 @@
         <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
       </div>
       <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
-      <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). CSV/JSON = pontos visíveis com os filtros atuais. Link compartilhável guarda turno, período e confronto. Atalhos: <kbd>1</kbd>/<kbd>2</kbd> turno · <kbd>3</kbd>/<kbd>9</kbd>/<kbd>0</kbd> período 30d/90d/tudo · <kbd>G</kbd> focar gráfico · <kbd>T</kbd> tema · <kbd>Esc</kbd> limpar hover.</p>
+      <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover = um ponto (candidato, %, instituto, N, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). Link compartilhável guarda turno, período, confronto e máscara de institutos. Atalhos: <kbd>1</kbd>/<kbd>2</kbd> turno · <kbd>3</kbd>/<kbd>9</kbd>/<kbd>0</kbd> período 30d/90d/tudo · <kbd>G</kbd> focar gráfico · <kbd>F</kbd> tela cheia · <kbd>T</kbd> tema · <kbd>Esc</kbd> limpar hover.</p>
 
       <section class="polls-panel" id="polls-panel" aria-label="Tabela de pesquisas nacionais">
         <div class="polls-head">
-          <h2>Pesquisas nacionais</h2>
-          <p class="muted small" id="polls-count">—</p>
+          <div class="polls-head-main">
+            <h2>Pesquisas nacionais</h2>
+            <p class="muted small" id="polls-count">—</p>
+          </div>
+          <div class="polls-tools">
+            <label class="polls-search-label" for="polls-search">
+              <span class="visually-hidden">Filtrar tabela</span>
+              <input type="search" id="polls-search" class="polls-search" placeholder="Filtrar instituto…" autocomplete="off" />
+            </label>
+            <div class="polls-pager" id="polls-pager" hidden>
+              <button type="button" class="btn pager-btn" id="polls-prev" title="Página anterior">Anterior</button>
+              <span class="polls-page-label muted small" id="polls-page-label" aria-live="polite">—</span>
+              <button type="button" class="btn pager-btn" id="polls-next" title="Próxima página">Próxima</button>
+            </div>
+          </div>
         </div>
         <div class="table-scroll">
           <table class="polls" id="polls-table">

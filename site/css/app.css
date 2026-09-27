@@ -1176,6 +1176,93 @@ html[data-theme="light"] table.polls tbody tr:hover td {
   background: rgba(59, 91, 219, 0.05);
 }
 
+/* —— Feature controls (pagination / search / fullscreen) — layout only, no restyle —— */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.polls-head-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  align-items: baseline;
+}
+
+.polls-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.65rem;
+  align-items: center;
+}
+
+.polls-search {
+  appearance: none;
+  border: 1px solid var(--stroke-strong);
+  background: var(--bg-elev);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.4rem 0.65rem;
+  font: inherit;
+  font-size: 0.85rem;
+  min-width: min(220px, 70vw);
+}
+
+.polls-search:focus {
+  outline: 2px solid rgba(124, 156, 255, 0.45);
+  outline-offset: 1px;
+}
+
+.polls-pager {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  align-items: center;
+}
+
+.pager-btn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.pager-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.polls-page-label {
+  font-variant-numeric: tabular-nums;
+  min-width: 9rem;
+  text-align: center;
+}
+
+.chart-panel:fullscreen,
+.chart-panel.is-fullscreen {
+  padding: 1rem;
+  background: var(--bg);
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.chart-panel:fullscreen .chart-shell,
+.chart-panel.is-fullscreen .chart-shell {
+  min-height: calc(100vh - 280px);
+}
+
+@media (max-width: 720px) {
+  .chart-panel:fullscreen .chart-shell,
+  .chart-panel.is-fullscreen .chart-shell {
+    min-height: calc(100vh - 320px);
+  }
+}
+
 .scroll-top {
   position: fixed;
   right: 1rem;

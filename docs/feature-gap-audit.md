@@ -11,13 +11,16 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 | Methodology static chips | Option B params badges |
 | Period 30d / 90d / tudo | X domain only — not a brush |
 | Candidatos chips + mostrar todos | Active filter via `candidates-config.js` |
-| Export CSV (visible polls) | Filters applied |
+| Export CSV/JSON buttons | **Removed from Pages UI** this pass (Compartilhar kept) |
 | Bigger chart + pan/pinch zoom | ~6a5f30f |
 | Point-only hover detail panel | No scoreboard overlay |
 | Summary cards + overview metrics | P1 |
 | Dark/light theme toggle | P1 · localStorage |
 | National poll table | P1 · filter-aware |
 | Focar / scroll-top + shortcuts | P1 |
+| Fullscreen chart + `F` | P2 · Fullscreen API on `#chart-panel` |
+| Institute share bitmask (`inst`) | P2 · richer URL state |
+| Poll table pagination + search | P2 · 25/page |
 
 ## Intentionally skip (hated / incompatible)
 
@@ -39,7 +42,7 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 ### P0 — port / ship (this pass)
 
 1. **Richer Option B PT methodology copy** — old long “Como este site funciona”; NEW had only 3 bullets. Expand side panel with plain-PT rules (√N, anti-flood, fieldwork mid, what it is not).
-2. **Export JSON** of visible series (polls ± client aggregate) — old had CSV+JSON; NEW had CSV only.
+2. **Export JSON** of visible series — shipped earlier; **Pages CSV/JSON buttons removed** this pass (share URL kept).
 3. **Shareable URL state** — `?round=&range=&scenario=&show=` + Compartilhar (clipboard / Web Share).
 4. **Stronger 2º matchup UX** — prefer Lula×Flávio default, sort primary first, clearer chips + poll counts.
 5. **Client-side Option B when institute-filtered** — keep line/ribbon coherent with solo institute instead of hiding precomputed “all institutes” line.
@@ -53,22 +56,24 @@ Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, s
 | Overview metrics (n pesquisas, n institutos, campo recente) | **Shipped** — current-view counts above chart |
 | Dark/light theme toggle | **Shipped** — `data-theme` + `localStorage pebr-theme` |
 | Focus / scroll-to-chart + scroll-top | **Shipped** — Focar gráfico + ↑ button |
-| Poll data table under chart | **Shipped** — lean national table, filter-aware (no pagination yet) |
-| Keyboard shortcuts (round / period) | **Shipped** — 1/2, 3/9/0, G, T, Esc (hint in UI) |
+| Poll data table under chart | **Shipped** — lean national table, filter-aware + pagination (25) + search |
+| Keyboard shortcuts (round / period) | **Shipped** — 1/2, 3/9/0, G, F, T, Esc (hint in UI) |
 | “Verificar agora” refresh stamp | **Shipped** — in-page no-store chart JSON refresh, PT timestamp, and failure-safe toast/status |
 
 ### P2 — low / niche
 
 | Gap | Notes |
 |-----|--------|
-| Compartilhar with institutes in query | Partial in P0; full multi-institute bitmasks later |
-| Fullscreen chart | Optional |
+| Compartilhar with institutes in query | **Shipped** — `inst` base36 bitmask (+ `institute` solo / `institutes` CSV back-compat) |
+| Fullscreen chart | **Shipped** — Fullscreen API on chart panel + `F` |
 | EN locale toggle | Old site-controls i18n |
 | WASM estimator parity badge | Old rust path |
 
 ## Remaining after this ship
 
-- P1 shipped: summary cards + Δ30d, overview metrics, dark/light theme, national poll table, focar/scroll-top, keyboard shortcuts
+- P1 shipped: summary cards + Δ30d, overview metrics, dark/light theme, national poll table (+ pagination/search), focar/scroll-top, keyboard shortcuts
 - P1 “Verificar agora” refresh stamp shipped: in-page chart JSON check with PT timestamp and failure-safe status
-- P2 items unchanged (institutes in share URL bitmasks, fullscreen, EN locale, WASM badge)
+- P2 shipped this pass: institute bitmask in share URL (`inst`), fullscreen chart toggle, poll-table pagination + search
+- Pages UI: CSV/JSON export buttons removed (Compartilhar / URL state kept)
+- Still skip / later: EN locale, WASM badge, party/CRT themes, Focar load curtains, brush, hover scoreboard
 - Any further visual tuning from live QA
