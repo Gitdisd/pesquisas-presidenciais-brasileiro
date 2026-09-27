@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_vox_brasil_2026-05-19_pdf",
+  "poll_id": "vox_brasil_2026-05-19_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/05/relatorio-vox-brasil-20mai2026.pdf",
+  "confidence": 0.96,
+  "tse_registration_id": "BR-02416/2026",
+  "extractions": {
+    "n": 2100,
+    "tse": "BR-02416/2026",
+    "campo": "2026-05-17..2026-05-19"
+  },
+  "notes": "",
+  "content_hash": "sha256:dc722c9a9fdfdedea73ee83412ed335e79f3747408ecc0d5a50cac68b66af264",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

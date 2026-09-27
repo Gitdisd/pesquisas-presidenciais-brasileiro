@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_alfa_inteligencia_2026-07-28_viva",
+  "poll_id": "alfa_inteligencia_2026-07-28_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://viva.com.br/politica/alfa-inteligencia-lula-tem-vantagem-mas-disputa-mais-apertada-e-contra-caiado.html",
+  "confidence": 0.88,
+  "tse_registration_id": "BR-04488/2026",
+  "extractions": {
+    "n": 2700,
+    "tse": "BR-04488/2026",
+    "campo": "2026-07-23..2026-07-28"
+  },
+  "notes": "",
+  "content_hash": "sha256:dc0c86d7b37b49b486b396575885d27b80e71a1f3b1f63d8724b1cca25bb21c7",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

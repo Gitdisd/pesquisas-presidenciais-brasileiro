@@ -1,0 +1,30 @@
+{
+  "poll_id": "alfa_inteligencia_2026-06-10_stimulated_1st_round",
+  "institute_id": "alfa_inteligencia",
+  "fieldwork_start": "2026-06-05",
+  "fieldwork_end": "2026-06-10",
+  "sample_size": 1400,
+  "moe": 0.026,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.31,
+    "ronaldo_caiado": 0.07,
+    "romeu_zema": 0.07,
+    "joaquim_barbosa": 0.03,
+    "renan_santos": 0.02
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.01
+  },
+  "tse_registration_id": "BR-03496/2026",
+  "notes": "ND Mais named press. Outros candidatos <1% each not dual-entered (published sum ~98 with residuals). confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_alfa_inteligencia_2026-06-10_ndmais"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-06-07"
+}

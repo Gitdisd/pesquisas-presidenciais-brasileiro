@@ -1,0 +1,34 @@
+{
+  "poll_id": "gerp_2026-06-20_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-06-15",
+  "fieldwork_end": "2026-06-20",
+  "sample_size": 2000,
+  "moe": 0.0219,
+  "results": {
+    "lula": 0.37,
+    "flavio_bolsonaro": 0.34,
+    "ronaldo_caiado": 0.04,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.03,
+    "joaquim_barbosa": 0.01,
+    "cabo_daciolo": 0.01,
+    "augusto_cury": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.06,
+    "ns_nr": 0.11
+  },
+  "tse_registration_id": "BR-09657/2026",
+  "notes": "Gazeta stimulated mid-Jun. Published integer pp sum to 102 (institute rounding). confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_gerp_2026-06-20_gazeta"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-06-17"
+}

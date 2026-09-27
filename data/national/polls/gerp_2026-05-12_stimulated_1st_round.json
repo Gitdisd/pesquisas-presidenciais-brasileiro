@@ -1,0 +1,35 @@
+{
+  "poll_id": "gerp_2026-05-12_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-05-08",
+  "fieldwork_end": "2026-05-12",
+  "sample_size": 2000,
+  "moe": 0.0224,
+  "results": {
+    "flavio_bolsonaro": 0.36,
+    "lula": 0.34,
+    "ciro_gomes": 0.06,
+    "romeu_zema": 0.05,
+    "pablo_marcal": 0.02,
+    "augusto_cury": 0.01,
+    "ronaldo_caiado": 0.01,
+    "renan_santos": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "cabo_daciolo": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.08
+  },
+  "tse_registration_id": "BR-03369/2026",
+  "notes": "Gazeta first stimulated Flávio slate (cenário 1). Nenhum→branco_nulo, Não sabe→ns_nr. confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_gerp_2026-05-12_gazeta"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-05-10"
+}

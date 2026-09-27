@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_gerp_2026-05-22_gazeta",
+  "poll_id": "gerp_2026-05-22_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-maio-2026-2/",
+  "confidence": 0.88,
+  "tse_registration_id": "BR-07971/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-07971/2026",
+    "campo": "2026-05-19..2026-05-22"
+  },
+  "notes": "",
+  "content_hash": "sha256:ae6213458c3571384a3aa46ef7e8458313f801a3653957d12cfb671ad1c74d11",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

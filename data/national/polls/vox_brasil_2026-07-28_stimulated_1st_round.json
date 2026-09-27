@@ -1,0 +1,37 @@
+{
+  "poll_id": "vox_brasil_2026-07-28_stimulated_1st_round",
+  "institute_id": "vox_brasil",
+  "fieldwork_start": "2026-07-26",
+  "fieldwork_end": "2026-07-28",
+  "sample_size": 2100,
+  "moe": 0.0215,
+  "results": {
+    "lula": 0.405,
+    "flavio_bolsonaro": 0.312,
+    "ronaldo_caiado": 0.055,
+    "renan_santos": 0.03,
+    "romeu_zema": 0.032,
+    "augusto_cury": 0.011,
+    "cabo_daciolo": 0.009,
+    "clariana_barao": 0.007,
+    "edmilson_costa": 0.006,
+    "leonardo_avalanche": 0.005,
+    "rui_costa_pimenta": 0.004,
+    "hertz_dias": 0.003,
+    "samara_martins": 0.002
+  },
+  "residuals": {
+    "branco_nulo": 0.023,
+    "ns_nr": 0.096
+  },
+  "tse_registration_id": "BR-01084/2026",
+  "notes": "Series table col 31 JULHO 2026 in Aug Vox PDF. Fieldwork 26–28 Jul BR-01084. confidence=high-pdf-series.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_vox_brasil_2026-07-28_pdf_series"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-07-27"
+}

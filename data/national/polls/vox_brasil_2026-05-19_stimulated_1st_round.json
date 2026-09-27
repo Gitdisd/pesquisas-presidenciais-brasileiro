@@ -1,0 +1,32 @@
+{
+  "poll_id": "vox_brasil_2026-05-19_stimulated_1st_round",
+  "institute_id": "vox_brasil",
+  "fieldwork_start": "2026-05-17",
+  "fieldwork_end": "2026-05-19",
+  "sample_size": 2100,
+  "moe": 0.0215,
+  "results": {
+    "lula": 0.415,
+    "flavio_bolsonaro": 0.321,
+    "ronaldo_caiado": 0.059,
+    "romeu_zema": 0.041,
+    "renan_santos": 0.015,
+    "augusto_cury": 0.003,
+    "cabo_daciolo": 0.002,
+    "aldo_rebelo": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.049,
+    "ns_nr": 0.094
+  },
+  "tse_registration_id": "BR-02416/2026",
+  "notes": "Vox PDF stimulated (single 1T table). confidence=high-pdf.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_vox_brasil_2026-05-19_pdf"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-05-18"
+}

@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_rtbd_2026-05-30_pdf",
+  "poll_id": "realtime_bigdata_2026-05-30_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/06/pesquisa-presidencial-real-time-big-data-01-junho-2026.pdf",
+  "confidence": 0.95,
+  "tse_registration_id": "BR-05864/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-05864/2026",
+    "campo": "2026-05-29..2026-05-30",
+    "slate": "cenario_01"
+  },
+  "notes": "",
+  "content_hash": "sha256:2ee2eb81bfe5386a9ad5e6e12370b77a99ee876e99da147b4d15a042c6180808",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

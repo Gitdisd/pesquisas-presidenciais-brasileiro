@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_vox_brasil_2026-07-28_pdf_series",
+  "poll_id": "vox_brasil_2026-07-28_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/08/RELATORIO-VOX-BRASIL-NACIONAL-6-29-08-2026-1.pdf",
+  "content_hash": "sha256:7a7d7e3d0fb5cd6804d32af6c6cfafae96861bf96db42e41d343bc52a4ea1bfc",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null,
+  "confidence": 0.93,
+  "tse_registration_id": "BR-01084/2026",
+  "extractions": {
+    "n": 2100,
+    "tse": "BR-01084/2026",
+    "campo": "2026-07-26..2026-07-28",
+    "series_col": true
+  },
+  "notes": "Institute Aug PDF 1º-turno evolução table republishing prior round."
+}

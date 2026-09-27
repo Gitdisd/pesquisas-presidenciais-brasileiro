@@ -1,0 +1,34 @@
+{
+  "poll_id": "datafolha_2026-05-22_stimulated_1st_round",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-05-20",
+  "fieldwork_end": "2026-05-22",
+  "sample_size": 2004,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.4,
+    "flavio_bolsonaro": 0.31,
+    "ronaldo_caiado": 0.04,
+    "romeu_zema": 0.03,
+    "renan_santos": 0.03,
+    "samara_martins": 0.03,
+    "augusto_cury": 0.02,
+    "rui_costa_pimenta": 0.01,
+    "cabo_daciolo": 0.01,
+    "aldo_rebelo": 0.01
+  },
+  "residuals": {
+    "branco_nulo": 0.09,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-07489/2026",
+  "notes": "G1 table + Folha minors (Samara/Rui/Daciolo/Aldo). Distinct from May 12–13 wave. Published pp sum 101 (rounding). confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_datafolha_2026-05-22_g1"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-05-21"
+}

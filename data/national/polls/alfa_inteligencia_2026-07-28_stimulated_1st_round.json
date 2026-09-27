@@ -1,0 +1,31 @@
+{
+  "poll_id": "alfa_inteligencia_2026-07-28_stimulated_1st_round",
+  "institute_id": "alfa_inteligencia",
+  "fieldwork_start": "2026-07-23",
+  "fieldwork_end": "2026-07-28",
+  "sample_size": 2700,
+  "moe": 0.018,
+  "results": {
+    "lula": 0.43,
+    "flavio_bolsonaro": 0.29,
+    "ronaldo_caiado": 0.07,
+    "romeu_zema": 0.06,
+    "renan_santos": 0.03,
+    "augusto_cury": 0.01
+  },
+  "residuals": {
+    "outros": 0.01,
+    "branco_nulo": 0.08,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-04488/2026",
+  "notes": "Broadcast/viva.com.br named press full 1T table (Alfa/TMC). confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_alfa_inteligencia_2026-07-28_viva"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-07-25"
+}

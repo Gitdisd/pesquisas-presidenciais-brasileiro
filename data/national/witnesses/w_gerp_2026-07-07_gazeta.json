@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_gerp_2026-07-07_gazeta",
+  "poll_id": "gerp_2026-07-07_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-julho-2026/",
+  "confidence": 0.88,
+  "tse_registration_id": "BR-03067/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-03067/2026",
+    "campo": "2026-07-03..2026-07-07"
+  },
+  "notes": "",
+  "content_hash": "sha256:7cfe76bb5639e12c2c33b0fafa134beeb0120701ae3b12eaa6887cfa643f3abd",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

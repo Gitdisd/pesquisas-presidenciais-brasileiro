@@ -1,0 +1,19 @@
+{
+  "witness_id": "w_nexus_2026-08-09_pdf",
+  "poll_id": "nexus_2026-08-09_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/uploads/2026/08/BTG-Nexus-Eleicoes2026-Brasil-10.ago_.2026.pdf",
+  "confidence": 0.95,
+  "tse_registration_id": "BR-08428/2026",
+  "extractions": {
+    "n": 2001,
+    "tse": "BR-08428/2026",
+    "campo": "2026-08-07..2026-08-09",
+    "slate": "cenario_1"
+  },
+  "notes": "",
+  "content_hash": "sha256:294e9d63408e1c288a6dc3e363c3f5379919555f6e94aeff2d13ab38f0182fab",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

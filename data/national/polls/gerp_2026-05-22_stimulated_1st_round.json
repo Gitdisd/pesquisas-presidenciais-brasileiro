@@ -1,0 +1,37 @@
+{
+  "poll_id": "gerp_2026-05-22_stimulated_1st_round",
+  "institute_id": "gerp",
+  "fieldwork_start": "2026-05-19",
+  "fieldwork_end": "2026-05-22",
+  "sample_size": 2000,
+  "moe": 0.0224,
+  "results": {
+    "flavio_bolsonaro": 0.38,
+    "lula": 0.38,
+    "romeu_zema": 0.03,
+    "ciro_gomes": 0.03,
+    "renan_santos": 0.03,
+    "ronaldo_caiado": 0.02,
+    "augusto_cury": 0.01,
+    "cabo_daciolo": 0.01,
+    "samara_martins": 0.01,
+    "rui_costa_pimenta": 0.0,
+    "edmilson_costa": 0.0,
+    "hertz_dias": 0.0,
+    "aldo_rebelo": 0.0
+  },
+  "residuals": {
+    "branco_nulo": 0.04,
+    "ns_nr": 0.06
+  },
+  "tse_registration_id": "BR-07971/2026",
+  "notes": "Gazeta stimulated. Hert Diaz→hertz_dias. Nenhum→branco_nulo. confidence=press-high.",
+  "dataset_version": "intake-cohort-007",
+  "witness_ids": [
+    "w_gerp_2026-05-22_gazeta"
+  ],
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "fieldwork_mid": "2026-05-20"
+}

@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_indexa_2026-06-20_esmael",
+  "poll_id": "indexa_2026-06-20_stimulated_1st_round",
+  "source_type": "press",
+  "source_url": "https://www.esmaelmorais.com.br/indexa-lula-488-validos-flavio-bolsonaro-31/",
+  "confidence": 0.86,
+  "tse_registration_id": "BR-08944/2026",
+  "extractions": {
+    "n": 2000,
+    "tse": "BR-08944/2026",
+    "campo": "2026-06-18..2026-06-20"
+  },
+  "notes": "",
+  "content_hash": "sha256:d7a5b19f42c8961107233df01990eb923c49a23f8ee8fa9ff6eece6ef0ca75d9",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}

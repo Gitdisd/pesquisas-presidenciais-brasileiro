@@ -1,0 +1,18 @@
+{
+  "witness_id": "w_vox_brasil_2026-05-12_pdf",
+  "poll_id": "vox_brasil_2026-05-12_stimulated_1st_round",
+  "source_type": "pdf",
+  "source_url": "https://static.poder360.com.br/2026/05/RELATORIO-VOX-BRASIL-NACIONAL-ELEICOES-2026-1.pdf",
+  "confidence": 0.96,
+  "tse_registration_id": "BR-02423/2026",
+  "extractions": {
+    "n": 2100,
+    "tse": "BR-02423/2026",
+    "campo": "2026-05-09..2026-05-12"
+  },
+  "notes": "",
+  "content_hash": "sha256:ad37ee049bb989a13c1462b4c329f4a1f24c070e4b2be136e61e9cf198f0a616",
+  "retrieved_at": "2026-09-27T01:00:00Z",
+  "parser_id": "manual_intake_cohort_007_v1",
+  "raw_path": null
+}
