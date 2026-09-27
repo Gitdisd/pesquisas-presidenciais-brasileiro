@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_futura_2026-09-23_oeste_2t",
+  "poll_id": "futura_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://revistaoeste.com/politica/futura-flavio-passa-lula-no-1o-e-2o-turno/",
+  "retrieved_at": "2026-09-27T02:34:00Z",
+  "content_hash": "sha256:f160365bef571cd99e7e13bddd32378482405b9ef7a2b476fb91a1340ef2fdbf",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-19..2026-09-23",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-05268/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "residual_source": "oeste_split_bn_5.6_ns_1.3"
+  },
+  "confidence": 0.91,
+  "tse_registration_id": "BR-05268/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Oeste prose: Flávio×Lula with bn 5.6 + ns 1.3 (canonical residuals). Other matchups named without full residual table — entered from GP1 instead."
+}

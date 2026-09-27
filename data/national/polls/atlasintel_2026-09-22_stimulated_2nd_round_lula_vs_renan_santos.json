@@ -1,0 +1,25 @@
+{
+  "poll_id": "atlasintel_2026-09-22_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-17",
+  "fieldwork_end": "2026-09-22",
+  "fieldwork_mid": "2026-09-19",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 5015,
+  "moe": 0.01,
+  "tse_registration_id": "BR-04739/2026",
+  "dataset_version": "intake-cohort-2t-004",
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "results": {
+    "lula": 0.465,
+    "renan_santos": 0.312
+  },
+  "residuals": {
+    "branco_nulo": 0.223
+  },
+  "witness_ids": [
+    "w_atlasintel_2026-09-22_cnn_2t"
+  ],
+  "notes": "Verified from CNN Brasil 2º-turno article (press primary). Scenario stimulated_2nd_round_lula_vs_renan_santos. Shares as fractions. Atlas publishes combined residual 'Branco/nulo/não sabe' — mapped entire published residual to branco_nulo (ns not split). Renan residual 22.3% (CNN/VEJA; Terra 23.3% typo rejected — sum would be 1.01). N/TSE/moe from sibling 1º BR-04739/2026. Printed sum may be 0.99–1.01 — left as-found."
+}

@@ -1,0 +1,22 @@
+{
+  "witness_id": "w_futura_2026-09-23_gp1_2t",
+  "poll_id": "futura_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.gp1.com.br/eleicoes-2026/noticia/2026/9/24/futura-flavio-bolsonaro-tem-494-e-lula-437-em-cenario-de-2o-turno-632279.html",
+  "retrieved_at": "2026-09-27T02:34:00Z",
+  "content_hash": "sha256:997d00c25bca1337e1ce8caf7205d47c4b6066965c3a3275758ea4c078a6d0cb",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-19..2026-09-23",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-05268/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "note": "Flavio×Lula Indecisos 5.6% rejected (sum>1); other 4 matchups residuals used"
+  },
+  "confidence": 0.88,
+  "tse_registration_id": "BR-05268/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). GP1 lists 5 matchups. Flávio×Lula Indecisos 5.6% inconsistent with row sum — residuals for that matchup taken from Oeste. Other four matchup tables sum ≈100%."
+}

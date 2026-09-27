@@ -1,0 +1,26 @@
+{
+  "poll_id": "nexus_2026-09-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "nexus",
+  "fieldwork_start": "2026-09-18",
+  "fieldwork_end": "2026-09-20",
+  "fieldwork_mid": "2026-09-19",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2006,
+  "moe": 0.02,
+  "tse_registration_id": "BR-00485/2026",
+  "dataset_version": "intake-cohort-2t-004",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.45,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.07,
+    "ns_nr": 0.01
+  },
+  "witness_ids": [
+    "w_nexus_2026-09-20_correio_2t"
+  ],
+  "notes": "Verified from Correio da Manhã 2º-turno article (press primary); Nexus institute page corroborates 46–45 candidate % but omits residuals. Residuals from Correio: Brancos/nulos/nenhum→branco_nulo; não soube→ns_nr. TSE/N from sibling 1º BR-00485/2026."
+}

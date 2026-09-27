@@ -1,0 +1,27 @@
+{
+  "poll_id": "futura_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-19",
+  "fieldwork_end": "2026-09-23",
+  "fieldwork_mid": "2026-09-21",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.022,
+  "tse_registration_id": "BR-05268/2026",
+  "dataset_version": "intake-cohort-2t-004",
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "results": {
+    "flavio_bolsonaro": 0.494,
+    "lula": 0.437
+  },
+  "residuals": {
+    "branco_nulo": 0.056,
+    "ns_nr": 0.013
+  },
+  "witness_ids": [
+    "w_futura_2026-09-23_oeste_2t",
+    "w_futura_2026-09-23_gp1_2t"
+  ],
+  "notes": "Verified dual: Revista Oeste (residuals) + GP1 (candidates). Scenario stimulated_2nd_round_flavio_bolsonaro_vs_lula. Oeste: bn/nenhum 5.6% + ns/nr/indeciso 1.3% (sum 100). GP1 prints Indecisos 5.6% for this matchup (sum 104.3) — typo rejected; candidates agree. TSE/N from sibling 1º BR-05268/2026."
+}

@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_rtbd_2026-09-23_gazeta_2t",
+  "poll_id": "realtime_bigdata_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-setembro-2026-2/",
+  "retrieved_at": "2026-09-27T02:34:00Z",
+  "content_hash": "sha256:c23638e8861900614657178ee244ce93a8835fd8aeb5a0d4f31310504999aeac",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-19..2026-09-23",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-04202/2026",
+    "matchups_extracted": 5,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.93,
+  "tse_registration_id": "BR-04202/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). Gazeta lists 5 stimulated 2º matchups with split residuals. Sibling 1º already ingested."
+}

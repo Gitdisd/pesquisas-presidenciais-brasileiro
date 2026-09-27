@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_gerp_2026-09-16_cnn_2t",
+  "poll_id": "gerp_2026-09-16_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-50-no-2o-turno-lula-43/",
+  "retrieved_at": "2026-09-27T02:34:00Z",
+  "content_hash": "sha256:db0f4e2e4cf21b39cdd9ce648e2e137e8390f1dfeefe3c701749a9190ca6037e",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-14..2026-09-16",
+    "n": 2400,
+    "moe_pp": 2,
+    "tse": "BR-00535/2026",
+    "matchups_extracted": 1,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-00535/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). CNN prose: Flávio×Lula only with split residuals."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-09-13_stimulated_2nd_round_augusto_cury_vs_lula",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-09-09",
+  "fieldwork_end": "2026-09-13",
+  "fieldwork_mid": "2026-09-11",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2002,
+  "moe": 0.022,
+  "tse_registration_id": "BR-06902/2026",
+  "dataset_version": "intake-cohort-2t-004",
+  "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+  "results": {
+    "augusto_cury": 0.384,
+    "lula": 0.453
+  },
+  "residuals": {
+    "branco_nulo": 0.127,
+    "ns_nr": 0.036
+  },
+  "witness_ids": [
+    "w_cnt_mda_2026-09-13_estadao_2t"
+  ],
+  "notes": "Verified from Estadão 2º-turno article (press primary). Scenario stimulated_2nd_round_augusto_cury_vs_lula. Shares as fractions. Residuals: Brancos e nulos→branco_nulo; indecisos→ns_nr. TSE/N/moe from sibling 1º BR-06902/2026. Printed sum may be 0.99–1.01 — left as-found."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "futura_2026-09-23_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-19",
+  "fieldwork_end": "2026-09-23",
+  "fieldwork_mid": "2026-09-21",
+  "geography": "national",
+  "election_cycle": 2026,
+  "sample_size": 2000,
+  "moe": 0.022,
+  "tse_registration_id": "BR-05268/2026",
+  "dataset_version": "intake-cohort-2t-004",
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "results": {
+    "lula": 0.438,
+    "renan_santos": 0.417
+  },
+  "residuals": {
+    "branco_nulo": 0.132,
+    "ns_nr": 0.013
+  },
+  "witness_ids": [
+    "w_futura_2026-09-23_gp1_2t"
+  ],
+  "notes": "Verified from GP1 2º-turno article (press primary). Scenario stimulated_2nd_round_lula_vs_renan_santos. Shares as fractions. Residuals: Branco/Nulo→branco_nulo; Indecisos→ns_nr. Row sums ≈1.00. TSE/N from sibling 1º BR-05268/2026."
+}

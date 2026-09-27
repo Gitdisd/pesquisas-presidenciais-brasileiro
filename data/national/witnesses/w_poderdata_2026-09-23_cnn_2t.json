@@ -1,0 +1,21 @@
+{
+  "witness_id": "w_poderdata_2026-09-23_cnn_2t",
+  "poll_id": "poderdata_2026-09-23_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-46-das-intencoes-de-voto-no-2o-turno-lula-45/",
+  "retrieved_at": "2026-09-27T02:34:00Z",
+  "content_hash": "sha256:17a6ed53ca4aeb10f0ec3fc0fde0636678c37c06fc61324789ac83fe230f482d",
+  "raw_path": null,
+  "parser_id": "manual_intake_cohort_2t_004_v1",
+  "extractions": {
+    "fieldwork": "2026-09-20..2026-09-23",
+    "n": 3000,
+    "moe_pp": 1.8,
+    "tse": "BR-01739/2026",
+    "matchups_extracted": 3,
+    "headline_scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+  },
+  "confidence": 0.92,
+  "tse_registration_id": "BR-01739/2026",
+  "notes": "Fetched HTML 2026-09-26 (America/Sao_Paulo). CNN prose: 3 stimulated 2º matchups with split bn/ns. Includes new Option B key augusto_cury_vs_flavio_bolsonaro."
+}
