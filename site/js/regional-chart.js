@@ -213,7 +213,11 @@
   }
 
   function visiblePolls() {
-    const all = local.allPolls || [];
+    const all = (local.allPolls || []).filter((d) =>
+      isActiveCandidate(
+        local.candById.get(d.candidate_id) || { id: d.candidate_id }
+      )
+    );
     if (!local.ufsOn.size || local.ufsOn.size === local.availableUfs.length) {
       return all;
     }
