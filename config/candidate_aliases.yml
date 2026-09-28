@@ -1,6 +1,9 @@
 # Candidate id ↔ display-name / alias map.
 # Synthetic example_* keys retained for fixtures only.
-# Real 2026 aliases below seeded from intake-cohort-001 verified sources only.
+# Real 2026 aliases below are retained for identity normalization.
+# Current 2026 presidential-roster status is maintained by site/js/candidates-config.js
+# from the TSE 12-candidacy list published 2026-09-11. Historical names remain in
+# archived poll records but are hidden from the default current-election UI.
 
 aliases:
   example_candidate_a:
@@ -19,11 +22,11 @@ aliases:
   lula:
     display_name: "Luiz Inácio Lula da Silva"
     aliases: ["Lula", "Lula (PT)", "Luiz Inácio Lula da Silva (PT)"]
-    notes: "intake-cohort-001"
+    notes: "intake-cohort-001 — current 2026 presidential candidate"
   flavio_bolsonaro:
     display_name: "Flávio Bolsonaro"
     aliases: ["Flavio Bolsonaro", "Flávio Bolsonaro (PL)", "Flavio Bolsonaro (PL)"]
-    notes: "intake-cohort-001"
+    notes: "intake-cohort-001 — current 2026 presidential candidate"
   augusto_cury:
     display_name: "Augusto Cury"
     aliases: ["Escritor Augusto Cury", "Augusto Cury (Avante)", "Escritor Augusto Cury (Avante)"]
@@ -59,7 +62,7 @@ aliases:
   leonardo_avalanche:
     display_name: "Leonardo Avalanche"
     aliases: ["Leonardo Avalanche (PRTB)"]
-    notes: "intake-cohort-001"
+    notes: "historical poll label; 2026 PRTB vice-presidential running mate, not a current presidential candidate"
   clariana_barao:
     display_name: "Clariana Barão"
     aliases: ["Clariana Barão (DC)", "Clariana Barão (Democracia Cristã)"]
@@ -71,7 +74,7 @@ aliases:
   pablo_marcal:
     display_name: "Pablo Marçal"
     aliases: ["Pablo Marçal (PRTB)", "Pablo Marcal"]
-    notes: "intake-cohort-001 — appears on some stimulated lists despite ineligibility disputes"
+    notes: "historical poll label; TSE denied the PRTB presidential ticket on 2026-09-11; retained for archive integrity"
   cabo_daciolo:
     display_name: "Cabo Daciolo"
     aliases: ["Cabo Daciolo (Mobiliza)"]
@@ -100,13 +103,13 @@ aliases:
   michel_temer:
     display_name: "Michel Temer"
     aliases: ["Michel Temer (MDB)", "Temer"]
-    notes: "intake-cohort-005 — CNT/MDA Jun 2026 stimulated slate"
+    notes: "historical/non-current 2026 polling slate; intake-cohort-005 — CNT/MDA Jun 2026 stimulated slate"
 
   tarcisio_de_freitas:
     display_name: "Tarcísio de Freitas"
     aliases: ["Tarcísio de Freitas (Republicanos)", "Tarcisio de Freitas", "Tarcísio"]
-    notes: "intake-cohort-006 — early-2026 Futura/Atlas stimulated slates"
+    notes: "historical/non-current 2026 polling slate; intake-cohort-006 — early-2026 Futura/Atlas stimulated slates"
   ciro_gomes:
     display_name: "Ciro Gomes"
     aliases: ["Ciro Gomes (PSDB)", "Ciro"]
-    notes: "intake-cohort-006 — Futura early-May and Ideia early-May stimulated slates"
+    notes: "historical/non-current 2026 polling slate; intake-cohort-006 — Futura early-May and Ideia early-May stimulated slates"
