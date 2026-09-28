@@ -29,6 +29,24 @@
     });
   const fmtDate = d3.utcFormat("%d/%m/%Y");
 
+  const candCfg =
+    (typeof window !== "undefined" && window.PEBR_CANDIDATES_CONFIG) || {
+      displayNameFor: (c) => (c && (c.label || c.display_name || c.id)) || "—",
+    };
+
+  function candidateDisplayName(candidate) {
+    if (candCfg && typeof candCfg.displayNameFor === "function") {
+      return candCfg.displayNameFor(candidate);
+    }
+    return (candidate && (candidate.label || candidate.display_name || candidate.id)) || "—";
+  }
+
+  function normalizeCandidateText(text) {
+    return String(text || "")
+      .replace(/\bflavio_bolsonaro\b/gi, "Flávio Bolsonaro")
+      .replace(/\bflavio\s+bolsonaro\b/gi, "Flávio Bolsonaro");
+  }
+
   let local = {
     doc: null,
     payload: null,
@@ -305,7 +323,7 @@
     if (!el.detail) return;
     const cand = local.candById.get(d.candidate_id);
     const inst = local.instById.get(d.institute_id);
-    const name = cand?.label || cand?.display_name || d.candidate_id;
+    const name = candidateDisplayName(cand || { id: d.candidate_id });
     const instName = inst?.label || inst?.display_name || d.institute_id || "—";
     el.detail.innerHTML =
       "<p><strong>" +
@@ -368,7 +386,7 @@
         '<i class="cand-swatch" style="background:' +
         escapeHtml(c.color || "#888") +
         '"></i>' +
-        escapeHtml(c.label || c.display_name || c.id);
+        escapeHtml(candidateDisplayName(c));
       el.legend.appendChild(span);
     });
   }
@@ -388,7 +406,8 @@
         (doc.scenario === "stimulated_1st_round"
           ? "Estimulada · 1º turno"
           : doc.scenario);
-      el.scenario.textContent = "Cenário: " + label + " · Option B";
+      el.scenario.textContent =
+        "Cenário: " + normalizeCandidateText(label) + " · Option B";
     }
   }
 

@@ -46,6 +46,23 @@
     });
   const fmtDate = d3.utcFormat("%d/%m/%Y");
 
+  const candCfg =
+    (typeof window !== "undefined" && window.PEBR_CANDIDATES_CONFIG) || {
+      isCandidateActive: () => true,
+      displayNameFor: (c) => (c && (c.label || c.display_name || c.id)) || "—",
+    };
+
+  function isActiveCandidate(candidate) {
+    return candCfg.isCandidateActive(candidate || {});
+  }
+
+  function candidateDisplayName(candidate) {
+    if (candCfg && typeof candCfg.displayNameFor === "function") {
+      return candCfg.displayNameFor(candidate);
+    }
+    return (candidate && (candidate.label || candidate.display_name || candidate.id)) || "—";
+  }
+
   let local = {
     source: null, // "chart" | "canonical"
     doc: null,
@@ -196,7 +213,11 @@
   }
 
   function visiblePolls() {
-    const all = local.allPolls || [];
+    const all = (local.allPolls || []).filter((d) =>
+      isActiveCandidate(
+        local.candById.get(d.candidate_id) || { id: d.candidate_id }
+      )
+    );
     if (!local.ufsOn.size || local.ufsOn.size === local.availableUfs.length) {
       return all;
     }
@@ -288,8 +309,10 @@
   }
 
   function redrawSeries() {
-    const polls = visiblePolls();
-    const candidates = local.doc?.candidates || [];
+    const polls = visiblePolls().filter((d) =>
+      isActiveCandidate(local.candById.get(d.candidate_id) || { id: d.candidate_id })
+    );
+    const candidates = (local.doc?.candidates || []).filter(isActiveCandidate);
     const showAgg = mayShowAggregate();
     const aggSrc = showAgg ? local.payload?.aggregates || [] : [];
     const uncSrc = showAgg ? local.payload?.uncertainty || [] : [];
@@ -373,7 +396,7 @@
     if (!el.detail) return;
     const cand = local.candById.get(d.candidate_id);
     const inst = local.instById.get(d.institute_id);
-    const name = cand?.label || cand?.display_name || d.candidate_id;
+    const name = candidateDisplayName(cand || { id: d.candidate_id });
     const instName = inst?.label || inst?.display_name || d.institute_id || "—";
     el.detail.innerHTML =
       "<p><strong>" +
@@ -419,13 +442,13 @@
   function renderLegend() {
     if (!el.legend) return;
     el.legend.innerHTML = "";
-    (local.doc?.candidates || []).forEach((c) => {
+    (local.doc?.candidates || []).filter(isActiveCandidate).forEach((c) => {
       const span = document.createElement("span");
       span.innerHTML =
         '<i class="cand-swatch" style="background:' +
         escapeHtml(c.color || colorFor(c.id)) +
         '"></i>' +
-        escapeHtml(c.label || c.display_name || c.id);
+        escapeHtml(candidateDisplayName(c));
       el.legend.appendChild(span);
     });
   }

@@ -145,10 +145,20 @@
   }
 
   function prettyCandidateLabel(cand) {
+    if (candCfg && typeof candCfg.displayNameFor === "function") {
+      return candCfg.displayNameFor(cand);
+    }
     const raw = (cand && (cand.label || cand.id)) || "—";
     return String(raw)
       .replace(/_/g, " ")
       .replace(/\b\w/g, (ch) => ch.toUpperCase());
+  }
+
+  function normalizeCandidateText(text) {
+    const raw = String(text || "");
+    return raw
+      .replace(/\bflavio_bolsonaro\b/gi, "Flávio Bolsonaro")
+      .replace(/\bflavio\s+bolsonaro\b/gi, "Flávio Bolsonaro");
   }
 
   function institutesAllOn() {
@@ -205,17 +215,22 @@
 
   function scenarioDisplayLabel(meta) {
     if (!meta) return "—";
-    if (meta.matchup_label) return meta.matchup_label;
+    if (meta.matchup_label) return normalizeCandidateText(meta.matchup_label);
     const scenario = meta.scenario || "";
     if (SCENARIO_LABELS[scenario]) return SCENARIO_LABELS[scenario];
     if (/stimulated_2nd_round_/.test(scenario) && scenario.includes("_vs_")) {
       const rest = scenario.replace(/^stimulated_2nd_round_/, "");
       const parts = rest.split("_vs_");
       if (parts.length === 2) {
-        const pretty = (s) =>
-          String(s)
+        const pretty = (s) => {
+          const id = String(s || "");
+          if (candCfg && typeof candCfg.displayNameFor === "function") {
+            return candCfg.displayNameFor({ id });
+          }
+          return id
             .replace(/_/g, " ")
             .replace(/\b\w/g, (ch) => ch.toUpperCase());
+        };
         return `Estimulada · 2º · ${pretty(parts[0])} × ${pretty(parts[1])}`;
       }
     }
