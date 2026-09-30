@@ -154,3 +154,26 @@ def test_build_chart_export_requires_scenario_when_many():
         build_chart_export(polls)
     doc = build_chart_export(polls, scenario="stimulated_2nd_round_a_vs_b")
     assert doc["scenario"] == "stimulated_2nd_round_a_vs_b"
+
+
+def test_regional_export_is_per_uf_and_tags_rows():
+    from datetime import date
+    from pebr_models.export import build_regional_chart_export
+
+    def rp(pid, uf, d, value):
+        return NationalPoll(
+            poll_id=pid, institute_id="inst_r", fieldwork_start=d, fieldwork_end=d,
+            fieldwork_mid=d, scenario="stimulated_1st_round", sample_size=2000,
+            results={"cand_x": value}, residuals={"ns_nr": 0.1}, geography="state", uf=uf,
+            election_cycle=2026, dataset_version="test", witness_ids=(f"w_{pid}",)
+        )
+
+    doc = build_regional_chart_export([
+        rp("r1", "MG", date(2026, 9, 1), 0.4),
+        rp("r2", "MG", date(2026, 9, 3), 0.5),
+        rp("r3", "SP", date(2026, 9, 2), 0.3),
+    ])
+    assert doc["geography"] == "state"
+    assert doc["ufs"] == ["MG", "SP"]
+    assert all(row.get("uf") in {"MG", "SP"} for row in doc["series"])
+    assert {row["uf"] for row in doc["series"] if row["series_kind"] == "aggregate"} == {"MG", "SP"}
