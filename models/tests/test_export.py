@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from pebr_models.export import build_chart_export, write_chart_json
-from pebr_models.types import load_fixture_envelope, load_polls, poll_from_dict
+from pebr_models.types import NationalPoll, load_fixture_envelope, load_polls, poll_from_dict
 
 
 REPO = Path(__file__).resolve().parents[2]
