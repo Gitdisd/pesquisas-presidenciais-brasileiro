@@ -6,6 +6,16 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "data/national/polls/**"
+      - "data/national/witnesses/**"
+      - "data/regional/polls/**"
+      - "data/regional/witnesses/**"
+      - "models/**"
+      - "schemas/**"
+      - "lib/**"
+      - "bin/**"
+      - "config/**"
+      - "Gemfile*"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -30,6 +40,64 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PEBR models
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e models
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Assemble verified data and build chart artifacts
+        run: |
+          bin/pebr validate
+          bin/pebr normalize
+          bin/pebr assemble
+          python -m pebr_models.cli --polls site/data/canonical-points.json --out site/data/chart.json --no-example --note "verified national stimulated_1st_round"
+          python -m pebr_models.cli --polls site/data/canonical-points-2nd-round.json --out site/data/chart-2nd-round.json --multi-scenario --no-example --note "verified pairwise 2º turno"
+          python -m pebr_models.cli --polls site/data/canonical-points-regional.json --out site/data/chart-regional.json --geography state --scenario stimulated_1st_round --no-example --note "verified regional UF stimulated_1st_round; Option B per-UF; never blended into national"
+
+      - name: Validate published chart contracts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          allowed = {"poll", "aggregate", "uncertainty"}
+          c1 = json.loads(Path("site/data/chart.json").read_text())
+          assert c1["geography"] == "national" and isinstance(c1.get("series"), list) and c1["series"]
+          assert c1["example"] is False and all(r.get("series_kind") in allowed for r in c1["series"])
+          c2 = json.loads(Path("site/data/chart-2nd-round.json").read_text())
+          assert isinstance(c2.get("scenarios"), list) and c2["scenarios"]
+          for b in c2["scenarios"]:
+              assert isinstance(b.get("series"), list) and all(r.get("series_kind") in allowed for r in b["series"])
+          cr = json.loads(Path("site/data/chart-regional.json").read_text())
+          assert cr["geography"] == "state" and cr["scenario"] == "stimulated_1st_round"
+          assert isinstance(cr.get("series"), list) and cr["series"] and all(r.get("uf") for r in cr["series"])
+          print("chart contract smoke OK")
+          PY
+
+      - name: Cache-bust static assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("site/index.html")
+          s = p.read_text()
+          sha = "$GITHUB_SHA"[:12]
+          for asset in ("css/app.css", "js/candidates-config.js", "js/option-b.js", "js/chart.js", "js/regional-chart.js", "js/companion-chart.js"):
+              s = s.replace(f'href="{asset}"', f'href="{asset}?v={sha}"')
+              s = s.replace(f'src="{asset}"', f'src="{asset}?v={sha}"')
+          p.write_text(s)
+          print("asset cache bust:", sha)
+          PY
 
       - name: Upload site/ artifact
         uses: actions/upload-pages-artifact@v3
