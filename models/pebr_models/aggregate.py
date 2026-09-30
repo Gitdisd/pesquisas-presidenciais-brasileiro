@@ -62,8 +62,12 @@ class AggregatePoint:
     n_polls: int
 
 
-def _filter_polls(polls: Sequence[NationalPoll]) -> list[NationalPoll]:
-    return [p for p in polls if not p.geography or p.geography == "national"]
+def _filter_polls(
+    polls: Sequence[NationalPoll],
+    *,
+    geography: str = "national",
+) -> list[NationalPoll]:
+    return [p for p in polls if not p.geography or p.geography == geography]
 
 
 def window_polls(
@@ -137,6 +141,8 @@ def aggregate_option_b(
     params: OptionBParams | None = None,
     day_from: date | None = None,
     day_to: date | None = None,
+    *,
+    geography: str = "national",
 ) -> list[AggregatePoint]:
     """Compute Option B aggregate points for all scenarios × candidates × days.
 
@@ -144,7 +150,7 @@ def aggregate_option_b(
     is omitted (no carry-forward). No house-effect adjustments.
     """
     params = params or OptionBParams()
-    filtered = _filter_polls(polls)
+    filtered = _filter_polls(polls, geography=geography)
     if not filtered:
         return []
 
