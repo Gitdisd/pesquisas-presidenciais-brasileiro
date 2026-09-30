@@ -57,6 +57,16 @@ jobs:
       - name: Bundle install
         run: bundle install --jobs 4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PEBR models
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e models
+
       - name: Validate fixtures + national + regional trees
         run: bin/pebr validate
 
@@ -126,6 +136,26 @@ jobs:
               assert "shares" not in it and "results" not in it and "poll_id" not in it
               assert it.get("status") in ("needs_human_review", "already_witnessed", "inbox_low_score")
           print(f"watch smoke OK — {len(doc['items'])} queue item(s), no share fields")
+          PY
+
+      - name: Python Option B unit tests
+        run: python -m pytest models/tests -q
+
+      - name: Chart contract smoke (canonical exports)
+        run: |
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          allowed = {"poll", "aggregate", "uncertainty"}
+          with tempfile.TemporaryDirectory() as td:
+              a = Path(td) / "chart.json"
+              b = Path(td) / "chart2.json"
+              subprocess.run(["python","-m","pebr_models.cli","--polls","site/data/canonical-points.json","--out",str(a),"--no-example"],check=True)
+              subprocess.run(["python","-m","pebr_models.cli","--polls","site/data/canonical-points-2nd-round.json","--out",str(b),"--multi-scenario","--no-example"],check=True)
+              c1=json.loads(a.read_text()); c2=json.loads(b.read_text())
+              assert c1["geography"]=="national" and all(r["series_kind"] in allowed for r in c1["series"])
+              assert c2["scenarios"] and all(all(r["series_kind"] in allowed for r in s["series"]) for s in c2["scenarios"])
+          print("chart contract smoke OK")
           PY
 
       - name: Watch unit tests (minitest)
