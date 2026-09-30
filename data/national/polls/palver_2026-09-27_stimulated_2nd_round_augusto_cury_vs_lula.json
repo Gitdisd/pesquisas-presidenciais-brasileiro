@@ -1,0 +1,26 @@
+{
+  "poll_id": "palver_2026-09-27_stimulated_2nd_round_augusto_cury_vs_lula",
+  "institute_id": "palver",
+  "fieldwork_start": "2026-09-24",
+  "fieldwork_end": "2026-09-27",
+  "fieldwork_mid": "2026-09-25",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+  "sample_size": 5000,
+  "moe": 0.024,
+  "results": {
+    "augusto_cury": 0.34,
+    "lula": 0.44
+  },
+  "residuals": {
+    "branco_nulo": 0.21,
+    "ns_nr": 0.01
+  },
+  "tse_registration_id": "BR-02990/2026",
+  "witness_ids": [
+    "w_palver_2026-09-27_uol"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+}
