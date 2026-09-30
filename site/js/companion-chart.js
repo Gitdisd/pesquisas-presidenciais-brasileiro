@@ -316,7 +316,14 @@
       .merge(pts)
       .attr("cx", (d) => local.xScale(d.date))
       .attr("cy", (d) => local.yScale(d.value))
-      .attr("fill", (d) => local.candById.get(d.candidate_id)?.color || "#94a3b8");
+      .attr("fill", (d) => local.candById.get(d.candidate_id)?.color || "#94a3b8")
+      .attr("tabindex", 0)
+      .attr("role", "button")
+      .attr("aria-label", (d) => `${candidateDisplayName(local.candById.get(d.candidate_id) || { id: d.candidate_id })}, ${fmtPct(d.value)}%, ${d.fieldwork_end || fmtDate(d.date)}`)
+      .on("focus", function (event, d) { showDetail(d); })
+      .on("keydown", function (event, d) {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); showDetail(d); }
+      });
   }
 
   function showDetail(d) {
@@ -369,12 +376,18 @@
     return null;
   }
 
+  let zoomRaf = null;
   function applyTimeZoom(transform) {
     local.xScale = transform.rescaleX(local.x0);
     local.yScale = local.y0.copy();
-    const dims = local.dims || size();
-    redrawSeries();
-    drawAxes(dims);
+    if (zoomRaf != null) return;
+    const frame = () => {
+      zoomRaf = null;
+      const dims = local.dims || size();
+      redrawSeries();
+      drawAxes(dims);
+    };
+    zoomRaf = typeof requestAnimationFrame === "function" ? requestAnimationFrame(frame) : setTimeout(frame, 0);
   }
 
   function renderLegend() {

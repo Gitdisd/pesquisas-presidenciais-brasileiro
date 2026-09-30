@@ -1,14 +1,16 @@
 /* PEBR — 2026 presidential candidate identity/status configuration.
- * The current-roster gate is based on the TSE's 12-candidacy presidential list
- * published 2026-09-11. Historical poll labels remain in the data archive but
+ * The current-roster gate reflects the current TSE presidential candidate/proposals
+ * portal, which now lists 13 first-round candidates including Leonardo Avalanche.
+ * Historical poll labels remain in the data archive but
  * are hidden from the default election UI.
  *
  * Current 2026 presidential candidates:
  * Lula, Flávio Bolsonaro, Samara Martins, Romeu Zema, Hertz Dias,
  * Edmilson Costa, Renan Santos, Wilson Grassi, Clariana Barão,
- * Augusto Cury, Ronaldo Caiado, Rui Costa Pimenta.
+ * Augusto Cury, Ronaldo Caiado, Rui Costa Pimenta, Leonardo Avalanche.
  *
- * Source: https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/eleicoes-2026-tem-12-candidaturas-na-disputa-pela-presidencia
+ * Source: TSE candidate/proposals portal (current 2026 presidential list):
+ * https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/planos-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026
  */
 (function (global) {
   "use strict";
@@ -26,6 +28,7 @@
     augusto_cury: Object.freeze({ displayName: "Augusto Cury", ballotNumber: 70 }),
     ronaldo_caiado: Object.freeze({ displayName: "Ronaldo Caiado", ballotNumber: 55 }),
     rui_costa_pimenta: Object.freeze({ displayName: "Rui Costa Pimenta", ballotNumber: 29 }),
+    leonardo_avalanche: Object.freeze({ displayName: "Leonardo Avalanche", ballotNumber: 28 }),
   });
 
   const CURRENT_PRESIDENTIAL_2026_IDS = new Set(
@@ -60,7 +63,6 @@
     "ciro_gomes",
     "hero_bezerra",
     "joaquim_barbosa",
-    "leonardo_avalanche",
     "michel_temer",
     "pablo_marcal",
     "ratinho_junior",

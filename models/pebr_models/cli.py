@@ -12,6 +12,7 @@ from .aggregate import OptionBParams
 from .export import (
     build_chart_export,
     build_multi_scenario_chart_export,
+    build_regional_chart_export,
     list_scenarios,
     write_chart_json,
 )
@@ -65,6 +66,7 @@ def main(argv: list[str] | None = None) -> int:
         default=root / "site" / "data" / "chart.json",
         help="Output chart JSON path",
     )
+    parser.add_argument("--geography", choices=("national", "state"), default="national", help="Aggregation geography; state builds the per-UF Chart #2 export.")
     parser.add_argument("--k-days", type=int, default=14)
     parser.add_argument("--flood-w-days", type=int, default=14)
     parser.add_argument("--n-cap", type=int, default=4000)
@@ -103,6 +105,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.scenario and args.multi_scenario:
         print("error: use either --scenario or --multi-scenario, not both", file=sys.stderr)
         return 2
+    if args.geography == "state" and args.multi_scenario:
+        print("error: regional export is single-scenario in v1; omit --multi-scenario", file=sys.stderr)
+        return 2
 
     polls, meta = _load_polls_input(args.polls)
     if not polls:
@@ -128,7 +133,16 @@ def main(argv: list[str] | None = None) -> int:
         meta = {**meta, "note": note}
 
     try:
-        if args.multi_scenario:
+        if args.geography == "state":
+            doc = build_regional_chart_export(
+                polls,
+                params,
+                scenario=args.scenario or "stimulated_1st_round",
+                example=example,
+                note=note,
+                meta=meta,
+            )
+        elif args.multi_scenario:
             doc = build_multi_scenario_chart_export(
                 polls, params, example=example, note=note, meta=meta
             )
@@ -147,7 +161,16 @@ def main(argv: list[str] | None = None) -> int:
 
     written = write_chart_json(doc, args.out)
 
-    if args.multi_scenario:
+    if args.geography == "state":
+        n_poll = sum(1 for s in doc["series"] if s["series_kind"] == "poll")
+        n_agg = sum(1 for s in doc["series"] if s["series_kind"] == "aggregate")
+        n_unc = sum(1 for s in doc["series"] if s["series_kind"] == "uncertainty")
+        print(
+            f"wrote {written[0]} (regional scenario={doc['scenario']} "
+            f"poll_rows={n_poll} aggregate={n_agg} uncertainty={n_unc} "
+            f"ufs={len(doc.get('ufs') or [])})"
+        )
+    elif args.multi_scenario:
         n_scen = len(doc.get("scenarios") or [])
         n_poll = sum(
             1

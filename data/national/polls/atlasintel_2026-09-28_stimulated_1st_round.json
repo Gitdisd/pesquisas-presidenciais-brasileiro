@@ -1,0 +1,33 @@
+{
+  "poll_id": "atlasintel_2026-09-28_stimulated_1st_round",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-09-23",
+  "fieldwork_end": "2026-09-28",
+  "fieldwork_mid": "2026-09-25",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 5005,
+  "moe": 0.01,
+  "results": {
+    "lula": 0.453,
+    "flavio_bolsonaro": 0.422,
+    "renan_santos": 0.052,
+    "augusto_cury": 0.02,
+    "ronaldo_caiado": 0.018,
+    "romeu_zema": 0.009,
+    "samara_martins": 0.004,
+    "rui_costa_pimenta": 0.001
+  },
+  "residuals": {
+    "outros": 0.005,
+    "branco_nulo": 0.009,
+    "ns_nr": 0.012
+  },
+  "tse_registration_id": "BR-04391/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-09-28_uol"
+  ],
+  "dataset_version": "intake-cohort-005",
+  "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+}

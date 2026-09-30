@@ -55,22 +55,33 @@ def _round4(x: float) -> float:
     return round(float(x), 4)
 
 
-def polls_as_flat_rows(polls: Sequence[NationalPoll]) -> list[dict[str, Any]]:
+def polls_as_flat_rows(
+    polls: Sequence[NationalPoll],
+    *,
+    include_uf: bool = False,
+) -> list[dict[str, Any]]:
     """Emit flat series_kind=poll rows dated at field_mid (fractions 0–1)."""
     rows: list[dict[str, Any]] = []
     for p in sorted(polls, key=lambda x: (x.field_mid, x.poll_id)):
         for cid, frac in p.results.items():
-            rows.append(
-                {
-                    "series_kind": "poll",
-                    "date": _ymd(p.field_mid),
-                    "candidate_id": cid,
-                    "value": _round4(frac),
-                    "institute_id": p.institute_id,
-                    "poll_id": p.poll_id,
-                    "n": p.sample_size,
-                }
-            )
+            row: dict[str, Any] = {
+                "series_kind": "poll",
+                "date": _ymd(p.field_mid),
+                "fieldwork_start": _ymd(p.fieldwork_start),
+                "fieldwork_end": _ymd(p.fieldwork_end),
+                "candidate_id": cid,
+                "value": _round4(frac),
+                "institute_id": p.institute_id,
+                "poll_id": p.poll_id,
+                "n": p.sample_size,
+            }
+            if p.moe is not None:
+                row["moe"] = _round4(p.moe)
+            if p.tse_registration_id:
+                row["tse_registration_id"] = p.tse_registration_id
+            if include_uf and p.uf:
+                row["uf"] = p.uf
+            rows.append(row)
     return rows
 
 
@@ -271,6 +282,65 @@ def build_chart_export(
         "series": series,
     }
     return doc
+
+
+def build_regional_chart_export(
+    polls: Sequence[NationalPoll],
+    params: OptionBParams | None = None,
+    *,
+    scenario: str = "stimulated_1st_round",
+    include_uncertainty: bool = True,
+    example: bool = False,
+    note: str | None = None,
+    meta: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Build a regional/UF Option B export with an independent aggregate per UF."""
+    params = params or OptionBParams()
+    meta = dict(meta or {})
+    state_polls = [p for p in polls if (not p.geography or p.geography == "state") and p.uf]
+    if not state_polls:
+        raise ValueError("no regional polls to aggregate")
+    scenario = str(scenario)
+    selected = [p for p in state_polls if p.scenario == scenario]
+    if not selected:
+        available = sorted({p.scenario for p in state_polls})
+        raise ValueError(f"scenario {scenario!r} not found; available: {available}")
+
+    series: list[dict[str, Any]] = []
+    all_points: list[AggregatePoint] = []
+    for uf in sorted({p.uf for p in selected if p.uf}):
+        uf_polls = [p for p in selected if p.uf == uf]
+        series.extend(polls_as_flat_rows(uf_polls, include_uf=True))
+        points = aggregate_option_b(uf_polls, params, geography="state")
+        all_points.extend(points)
+        for row in aggregate_as_flat_rows(points, include_uncertainty=include_uncertainty):
+            row["uf"] = uf
+            series.append(row)
+
+    mids = [p.field_mid for p in selected]
+    days = [pt.day for pt in all_points]
+    d_start = min([*mids, *days])
+    d_end = max([*mids, *days])
+    now = datetime.now(SP_TZ)
+    is_example = bool(meta.get("example", example))
+    return {
+        "schema_version": 1,
+        "model_id": MODEL_ID,
+        "unit": "fraction",
+        "params": params.as_dict(),
+        "band_meaning": BAND_MEANING,
+        "election_cycle": int(meta.get("election_cycle") or selected[0].election_cycle),
+        "geography": "state",
+        "scenario": scenario,
+        "example": is_example,
+        "note": note or meta.get("note") or "Regional UF Option B per-state aggregate; never blended across UFs; unit=fraction; band_low/band_high = in-window dispersion.",
+        "candidates": _derive_candidates(selected, meta.get("candidates")),
+        "institutes": _derive_institutes(selected, meta.get("institutes")),
+        "ufs": sorted({p.uf for p in selected if p.uf}),
+        "generated_at": now.isoformat(timespec="seconds"),
+        "date_range": {"start": _ymd(d_start), "end": _ymd(d_end)},
+        "series": series,
+    }
 
 
 def build_multi_scenario_chart_export(

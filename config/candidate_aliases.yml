@@ -2,8 +2,9 @@
 # Synthetic example_* keys retained for fixtures only.
 # Real 2026 aliases below are retained for identity normalization.
 # Current 2026 presidential-roster status is maintained by site/js/candidates-config.js
-# from the TSE 12-candidacy list published 2026-09-11. Historical names remain in
-# archived poll records but are hidden from the default current-election UI.
+# from the current TSE presidential candidate/proposals portal. The portal now
+# lists 13 first-round candidates, including Leonardo Avalanche. Historical labels
+# remain in archived poll records and are never silently rewritten.
 
 aliases:
   example_candidate_a:
@@ -62,7 +63,7 @@ aliases:
   leonardo_avalanche:
     display_name: "Leonardo Avalanche"
     aliases: ["Leonardo Avalanche (PRTB)"]
-    notes: "historical poll label; 2026 PRTB vice-presidential running mate, not a current presidential candidate"
+    notes: "current 2026 presidential candidate, nº 28, per current TSE candidate/proposals portal; earlier records may reflect the prior PRTB ticket state and are retained without silent relabeling"
   clariana_barao:
     display_name: "Clariana Barão"
     aliases: ["Clariana Barão (DC)", "Clariana Barão (Democracia Cristã)"]

@@ -1,12 +1,12 @@
 # Candidate audit — 2026 presidential election
 
-**Audit date:** 2026-09-28 (America/Sao_Paulo)  
-**Authoritative status source:** Tribunal Superior Eleitoral (TSE), **11 Sep 2026**, "Eleições têm 12 candidaturas na disputa pela Presidência da República"  
-**Source:** https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/eleicoes-2026-tem-12-candidaturas-na-disputa-pela-presidencia-da-republica
+**Audit date:** 2026-09-29 (America/Sao_Paulo)  
+**Current status source:** Tribunal Superior Eleitoral (TSE), current 2026 presidential candidate/proposals portal, which currently lists 13 first-round presidential candidates, including Leonardo Avalanche (nº 28).  
+**Historical status source:** TSE, 11 Sep 2026, "Eleições têm 12 candidaturas na disputa pela Presidência da República"; that page predates the later substitution state reflected by the current TSE portal.
 
 ## Current presidential roster used by the UI
 
-The TSE page says that 12 candidacies were in the presidential race after the 11 Sep 2026 decision. The current-roster gate in `site/js/candidates-config.js` therefore uses these 12 candidate IDs:
+The current TSE presidential candidate/proposals portal lists 13 first-round candidates. The current-roster gate in `site/js/candidates-config.js` therefore uses these 13 candidate IDs:
 
 | Candidate ID | Display name | Ballot no. |
 |---|---|---:|
@@ -22,6 +22,7 @@ The TSE page says that 12 candidacies were in the presidential race after the 11
 | `augusto_cury` | Augusto Cury | 70 |
 | `ronaldo_caiado` | Ronaldo Caiado | 55 |
 | `rui_costa_pimenta` | Rui Costa Pimenta | 29 |
+| `leonardo_avalanche` | Leonardo Avalanche | 28 |
 
 ## Audit findings
 
@@ -54,15 +55,11 @@ That left four additional non-current IDs eligible to appear by default:
 
 The fix replaces that partial blacklist with an explicit **current 12-candidate allowlist**. Historical IDs remain available in the archive but are no longer part of the default current-election UI.
 
-### 3. Leonardo Avalanche requires historical treatment
+### 3. Leonardo Avalanche status was superseded by a later TSE portal state
 
-`leonardo_avalanche` appears in 9 national 1st-round canonical poll records, including records with late fieldwork dates. The TSE's 11 Sep page identifies Leonardo Avalanche as the **vice-presidential running mate** on the denied Pablo Marçal ticket, not as a separate presidential candidate.
+The 11 Sep TSE decision page reported the Pablo Marçal/Leonardo Avalanche ticket as denied, which was the correct status used by the 28 Sep audit. The current TSE presidential candidate/proposals portal now lists **Leonardo Avalanche, nº 28** among the first-round presidential candidates. The project therefore treats `leonardo_avalanche` as a current presidential candidate for the current UI.
 
-This audit therefore **does not rewrite those historical poll result cells**. Relabeling the historical values to Pablo Marçal without re-checking each underlying witness would create new unverified data. Instead:
-
-- `leonardo_avalanche` is classified as historical/non-current;
-- it is hidden from the default current-election UI;
-- the archived poll records remain unchanged pending source-level verification.
+The nine archived `leonardo_avalanche` records are **not silently rewritten** to `pablo_marcal`. Some are associated with the earlier PRTB ticket and some are later polling slates; reassigning their historical values without witness-by-witness verification would destroy provenance. The source records remain unchanged while the UI status reflects the current TSE portal.
 
 ### 4. Pablo Marçal is already excluded from the current UI
 
@@ -76,9 +73,9 @@ The regional renderer previously did not apply the main candidate-status gate to
 
 ## Historical candidates intentionally retained in the data archive
 
-These IDs occur in historical 2026 first-round poll records but are not in the current 12-candidate presidential roster used for the UI:
+These IDs occur in historical 2026 first-round poll records but are not in the current presidential roster used for the UI:
 
-`aecio_neves`, `aldo_rebelo`, `cabo_daciolo`, `ciro_gomes`, `hero_bezerra`, `joaquim_barbosa`, `leonardo_avalanche`, `michel_temer`, `pablo_marcal`, `ratinho_junior`, `tarcisio_de_freitas`.
+`aecio_neves`, `aldo_rebelo`, `cabo_daciolo`, `ciro_gomes`, `hero_bezerra`, `joaquim_barbosa`, `michel_temer`, `pablo_marcal`, `ratinho_junior`, `tarcisio_de_freitas`.
 
 They are retained because the project is an archive of what polls actually contained at the time they were fielded. Removing or silently rewriting those historical rows would destroy provenance.
 

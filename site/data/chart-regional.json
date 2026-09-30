@@ -1,17 +1,6717 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": 1,
+  "model_id": "option_b_sqrt_n_trailing",
+  "unit": "fraction",
+  "params": {
+    "k_days": 14,
+    "flood_W_days": 14,
+    "n_cap": 4000,
+    "unit": "fraction"
+  },
+  "band_meaning": "Option B in-window dispersion (not classical CI, not win probability)",
+  "election_cycle": 2026,
   "geography": "state",
   "scenario": "stimulated_1st_round",
-  "model_id": null,
-  "unit": "fraction",
-  "params": null,
-  "band_meaning": null,
-  "election_cycle": 2026,
   "example": false,
-  "note": "Empty stub for UI Chart #2 (regional/UF). Lead Option B regional export not yet available. Never merge into national chart.json. UI also reads canonical-points-regional.json for raw points until this file has series.",
-  "candidates": [],
-  "institutes": [],
-  "generated_at": null,
-  "date_range": null,
-  "series": []
+  "note": "Verified regional UF stimulated_1st_round; Option B per-UF; never blended into national",
+  "candidates": [
+    {
+      "id": "flavio_bolsonaro",
+      "label": "flavio_bolsonaro"
+    },
+    {
+      "id": "lula",
+      "label": "lula"
+    },
+    {
+      "id": "ronaldo_caiado",
+      "label": "ronaldo_caiado"
+    },
+    {
+      "id": "augusto_cury",
+      "label": "augusto_cury"
+    },
+    {
+      "id": "romeu_zema",
+      "label": "romeu_zema"
+    },
+    {
+      "id": "renan_santos",
+      "label": "renan_santos"
+    },
+    {
+      "id": "samara_martins",
+      "label": "samara_martins"
+    },
+    {
+      "id": "edmilson_costa",
+      "label": "edmilson_costa"
+    },
+    {
+      "id": "wilson_grassi",
+      "label": "wilson_grassi"
+    },
+    {
+      "id": "hertz_dias",
+      "label": "hertz_dias"
+    },
+    {
+      "id": "rui_costa_pimenta",
+      "label": "rui_costa_pimenta"
+    },
+    {
+      "id": "pablo_marcal",
+      "label": "pablo_marcal"
+    },
+    {
+      "id": "clariana_barao",
+      "label": "clariana_barao"
+    }
+  ],
+  "institutes": [
+    {
+      "id": "quaest",
+      "label": "quaest"
+    },
+    {
+      "id": "instituto_ver",
+      "label": "instituto_ver"
+    },
+    {
+      "id": "realtime_bigdata",
+      "label": "realtime_bigdata"
+    },
+    {
+      "id": "atlasintel",
+      "label": "atlasintel"
+    },
+    {
+      "id": "futura",
+      "label": "futura"
+    }
+  ],
+  "ufs": [
+    "DF",
+    "MG",
+    "PE",
+    "SP"
+  ],
+  "generated_at": "2026-09-29T21:30:00-03:00",
+  "date_range": {
+    "start": "2026-09-03",
+    "end": "2026-09-18"
+  },
+  "series": [
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.31,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.28,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.12,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "samara_martins",
+      "value": 0.01,
+      "institute_id": "quaest",
+      "poll_id": "quaest_df_2026-09-07_stimulated_1st_round",
+      "n": 1104,
+      "uf": "DF",
+      "moe": 0.03,
+      "tse_registration_id": "DF-01987/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_mg_2026-09-07_stimulated_1st_round",
+      "n": 1506,
+      "uf": "MG",
+      "moe": 0.03,
+      "tse_registration_id": "MG-04716/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.346,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "lula",
+      "value": 0.346,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "augusto_cury",
+      "value": 0.067,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "romeu_zema",
+      "value": 0.046,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.034,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "renan_santos",
+      "value": 0.007,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "edmilson_costa",
+      "value": 0.004,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "samara_martins",
+      "value": 0.003,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "wilson_grassi",
+      "value": 0.002,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-18",
+      "fieldwork_start": "2026-09-17",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0.001,
+      "institute_id": "instituto_ver",
+      "poll_id": "instituto_ver_mg_2026-09-19_stimulated_1st_round",
+      "n": 1197,
+      "uf": "MG",
+      "moe": 0.028,
+      "tse_registration_id": "MG-07337/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "lula",
+      "value": 0.39,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.35,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "romeu_zema",
+      "value": 0.07,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "renan_santos",
+      "value": 0.04,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_mg_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "MG",
+      "moe": 0.02,
+      "tse_registration_id": "BR-01531/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "institute_id": "quaest",
+      "poll_id": "quaest_pe_2026-09-07_stimulated_1st_round",
+      "n": 1302,
+      "uf": "PE",
+      "moe": 0.03,
+      "tse_registration_id": "PE-00285/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "institute_id": "quaest",
+      "poll_id": "quaest_pe_2026-09-07_stimulated_1st_round",
+      "n": 1302,
+      "uf": "PE",
+      "moe": 0.03,
+      "tse_registration_id": "PE-00285/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "institute_id": "quaest",
+      "poll_id": "quaest_pe_2026-09-07_stimulated_1st_round",
+      "n": 1302,
+      "uf": "PE",
+      "moe": 0.03,
+      "tse_registration_id": "PE-00285/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_pe_2026-09-07_stimulated_1st_round",
+      "n": 1302,
+      "uf": "PE",
+      "moe": 0.03,
+      "tse_registration_id": "PE-00285/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_pe_2026-09-07_stimulated_1st_round",
+      "n": 1302,
+      "uf": "PE",
+      "moe": 0.03,
+      "tse_registration_id": "PE-00285/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "lula",
+      "value": 0.56,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.25,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "value": 0.05,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "value": 0.04,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-12",
+      "fieldwork_start": "2026-09-10",
+      "fieldwork_end": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_pe_2026-09-14_stimulated_1st_round",
+      "n": 1600,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-00283/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "lula",
+      "value": 0.583,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.299,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "augusto_cury",
+      "value": 0.032,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "renan_santos",
+      "value": 0.026,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.018,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "hertz_dias",
+      "value": 0.006,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "romeu_zema",
+      "value": 0.003,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "clariana_barao",
+      "value": 0.002,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0.001,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-15",
+      "fieldwork_end": "2026-09-20",
+      "candidate_id": "samara_martins",
+      "value": 0.001,
+      "institute_id": "atlasintel",
+      "poll_id": "atlasintel_pe_2026-09-20_stimulated_1st_round",
+      "n": 1836,
+      "uf": "PE",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09256/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.374,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "lula",
+      "value": 0.333,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "augusto_cury",
+      "value": 0.068,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.046,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "renan_santos",
+      "value": 0.042,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "romeu_zema",
+      "value": 0.019,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "samara_martins",
+      "value": 0.005,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "wilson_grassi",
+      "value": 0.002,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-03",
+      "fieldwork_start": "2026-09-02",
+      "fieldwork_end": "2026-09-04",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "institute_id": "futura",
+      "poll_id": "futura_sp_2026-09-04_stimulated_1st_round",
+      "n": 1600,
+      "uf": "SP",
+      "moe": 0.024,
+      "tse_registration_id": "BR-06720/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.31,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.3,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.04,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "wilson_grassi",
+      "value": 0.01,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-05",
+      "fieldwork_start": "2026-09-04",
+      "fieldwork_end": "2026-09-07",
+      "candidate_id": "samara_martins",
+      "value": 0.01,
+      "institute_id": "quaest",
+      "poll_id": "quaest_sp_2026-09-07_stimulated_1st_round",
+      "n": 1800,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-04705/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.41,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "lula",
+      "value": 0.35,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "renan_santos",
+      "value": 0.06,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "augusto_cury",
+      "value": 0.04,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.04,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "poll",
+      "date": "2026-09-17",
+      "fieldwork_start": "2026-09-16",
+      "fieldwork_end": "2026-09-19",
+      "candidate_id": "romeu_zema",
+      "value": 0.03,
+      "institute_id": "realtime_bigdata",
+      "poll_id": "realtime_bigdata_sp_2026-09-19_stimulated_1st_round",
+      "n": 2000,
+      "uf": "SP",
+      "moe": 0.02,
+      "tse_registration_id": "BR-09702/2026"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.31,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "value": 0.28,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "band_low": 0.28,
+      "band_high": 0.28,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.12,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.12,
+      "band_high": 0.12,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "value": 0.02,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "samara_martins",
+      "value": 0.01,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "samara_martins",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "DF"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.27,
+      "band_high": 0.27,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "value": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "band_low": 0.31,
+      "band_high": 0.31,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.03,
+      "band_high": 0.03,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "value": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3128,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2729,
+      "band_high": 0.3527,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "value": 0.3528,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "band_low": 0.3129,
+      "band_high": 0.3927,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0246,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0197,
+      "band_high": 0.0296,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "value": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.08,
+      "band_high": 0.08,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "value": 0.0654,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0604,
+      "band_high": 0.0703,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0207,
+      "band_high": 0.0407,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3225,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2858,
+      "band_high": 0.3593,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "lula",
+      "value": 0.3508,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "lula",
+      "band_low": 0.3171,
+      "band_high": 0.3845,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0274,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0214,
+      "band_high": 0.0334,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "augusto_cury",
+      "value": 0.0762,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0703,
+      "band_high": 0.0821,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "romeu_zema",
+      "value": 0.0597,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0499,
+      "band_high": 0.0694,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "renan_santos",
+      "value": 0.0238,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0101,
+      "band_high": 0.0374,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "samara_martins",
+      "value": 0.003,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "samara_martins",
+      "band_low": 0.003,
+      "band_high": 0.003,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "edmilson_costa",
+      "value": 0.004,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.004,
+      "band_high": 0.004,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "wilson_grassi",
+      "value": 0.002,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.002,
+      "band_high": 0.002,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-18",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0.001,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-18",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "MG"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.21,
+      "band_high": 0.21,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "value": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "band_low": 0.51,
+      "band_high": 0.51,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "value": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.06,
+      "band_high": 0.06,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.231,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2111,
+      "band_high": 0.251,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "value": 0.5363,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "band_low": 0.5113,
+      "band_high": 0.5613,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "value": 0.0547,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0497,
+      "band_high": 0.0597,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "value": 0.0305,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0405,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.231,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2111,
+      "band_high": 0.251,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "value": 0.5363,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "band_low": 0.5113,
+      "band_high": 0.5613,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "value": 0.0547,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0497,
+      "band_high": 0.0597,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "value": 0.0305,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0405,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.231,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2111,
+      "band_high": 0.251,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "value": 0.5363,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "band_low": 0.5113,
+      "band_high": 0.5613,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "value": 0.0547,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0497,
+      "band_high": 0.0597,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "value": 0.0305,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0405,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.231,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2111,
+      "band_high": 0.251,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "value": 0.5363,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "band_low": 0.5113,
+      "band_high": 0.5613,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "value": 0.0547,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0497,
+      "band_high": 0.0597,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "value": 0.0305,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0405,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.231,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2111,
+      "band_high": 0.251,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "value": 0.5363,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "band_low": 0.5113,
+      "band_high": 0.5613,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "value": 0.0547,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0497,
+      "band_high": 0.0597,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "value": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "value": 0.0305,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0405,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.2555,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.2192,
+      "band_high": 0.2918,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "value": 0.5531,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "band_low": 0.5231,
+      "band_high": 0.5831,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0193,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0183,
+      "band_high": 0.0202,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "value": 0.0465,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0349,
+      "band_high": 0.0582,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "value": 0.0064,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0029,
+      "band_high": 0.0099,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "value": 0.0289,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0206,
+      "band_high": 0.0372,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "samara_martins",
+      "value": 0.001,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "samara_martins",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "hertz_dias",
+      "value": 0.006,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.006,
+      "band_high": 0.006,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0.001,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "pablo_marcal",
+      "value": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.02,
+      "band_high": 0.02,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "clariana_barao",
+      "value": 0.002,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.002,
+      "band_high": 0.002,
+      "uf": "PE"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.374,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.374,
+      "band_high": 0.374,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "lula",
+      "value": 0.333,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "lula",
+      "band_low": 0.333,
+      "band_high": 0.333,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.046,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.046,
+      "band_high": 0.046,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "augusto_cury",
+      "value": 0.068,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.068,
+      "band_high": 0.068,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "romeu_zema",
+      "value": 0.019,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.019,
+      "band_high": 0.019,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "renan_santos",
+      "value": 0.042,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "renan_santos",
+      "band_low": 0.042,
+      "band_high": 0.042,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "samara_martins",
+      "value": 0.005,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "samara_martins",
+      "band_low": 0.005,
+      "band_high": 0.005,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "wilson_grassi",
+      "value": 0.002,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.002,
+      "band_high": 0.002,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-03",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-03",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.374,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.374,
+      "band_high": 0.374,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "lula",
+      "value": 0.333,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "lula",
+      "band_low": 0.333,
+      "band_high": 0.333,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.046,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.046,
+      "band_high": 0.046,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "augusto_cury",
+      "value": 0.068,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.068,
+      "band_high": 0.068,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "romeu_zema",
+      "value": 0.019,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.019,
+      "band_high": 0.019,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "renan_santos",
+      "value": 0.042,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "renan_santos",
+      "band_low": 0.042,
+      "band_high": 0.042,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "samara_martins",
+      "value": 0.005,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "samara_martins",
+      "band_low": 0.005,
+      "band_high": 0.005,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "wilson_grassi",
+      "value": 0.002,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.002,
+      "band_high": 0.002,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-04",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-04",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-05",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-05",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-06",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-06",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-07",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-07",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-08",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-08",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-09",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-09",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-10",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-10",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-11",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-11",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-12",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-12",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-13",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-13",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-14",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-14",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-15",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-15",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3411,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3091,
+      "band_high": 0.373,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "value": 0.316,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "lula",
+      "band_low": 0.2995,
+      "band_high": 0.3325,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.0429,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.0399,
+      "band_high": 0.0459,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "value": 0.0742,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0682,
+      "band_high": 0.0802,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "value": 0.0144,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0099,
+      "band_high": 0.0189,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "value": 0.0307,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0197,
+      "band_high": 0.0417,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "samara_martins",
+      "value": 0.0076,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "samara_martins",
+      "band_low": 0.0051,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "edmilson_costa",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "edmilson_costa",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "wilson_grassi",
+      "value": 0.0061,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.0021,
+      "band_high": 0.0101,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "hertz_dias",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "hertz_dias",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "rui_costa_pimenta",
+      "value": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "rui_costa_pimenta",
+      "band_low": 0,
+      "band_high": 0,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "pablo_marcal",
+      "value": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "pablo_marcal",
+      "band_low": 0.017,
+      "band_high": 0.017,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-16",
+      "candidate_id": "clariana_barao",
+      "value": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-16",
+      "candidate_id": "clariana_barao",
+      "band_low": 0.001,
+      "band_high": 0.001,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "value": 0.3613,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "flavio_bolsonaro",
+      "band_low": 0.3113,
+      "band_high": 0.4113,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "value": 0.3257,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "lula",
+      "band_low": 0.3007,
+      "band_high": 0.3506,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "value": 0.04,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "ronaldo_caiado",
+      "band_low": 0.04,
+      "band_high": 0.04,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "value": 0.0595,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "augusto_cury",
+      "band_low": 0.0395,
+      "band_high": 0.0795,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "value": 0.0203,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "romeu_zema",
+      "band_low": 0.0103,
+      "band_high": 0.0303,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "value": 0.0405,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "renan_santos",
+      "band_low": 0.0205,
+      "band_high": 0.0605,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "samara_martins",
+      "value": 0.01,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "samara_martins",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "aggregate",
+      "date": "2026-09-17",
+      "candidate_id": "wilson_grassi",
+      "value": 0.01,
+      "uf": "SP"
+    },
+    {
+      "series_kind": "uncertainty",
+      "date": "2026-09-17",
+      "candidate_id": "wilson_grassi",
+      "band_low": 0.01,
+      "band_high": 0.01,
+      "uf": "SP"
+    }
+  ]
 }

@@ -4646,5 +4646,520 @@
     "tse_registration_id": "BR-04202/2026",
     "dataset_version": "intake-cohort-2t-004",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-23_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
+  },
+  {
+    "poll_id": "nexus_2026-09-27_stimulated_2nd_round_augusto_cury_vs_lula",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-25",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-26",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "augusto_cury": 0.41,
+      "lula": 0.46
+    },
+    "residuals": {
+      "branco_nulo": 0.11,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-07557/2026",
+    "witness_ids": [
+      "w_nexus_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "nexus_2026-09-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-25",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-26",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "flavio_bolsonaro": 0.44,
+      "lula": 0.46
+    },
+    "residuals": {
+      "branco_nulo": 0.08,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-07557/2026",
+    "witness_ids": [
+      "w_nexus_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "nexus_2026-09-27_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-25",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-26",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.48,
+      "renan_santos": 0.37
+    },
+    "residuals": {
+      "branco_nulo": 0.13,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-07557/2026",
+    "witness_ids": [
+      "w_nexus_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "nexus_2026-09-27_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-25",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-26",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.48,
+      "romeu_zema": 0.39
+    },
+    "residuals": {
+      "branco_nulo": 0.12,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-07557/2026",
+    "witness_ids": [
+      "w_nexus_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "nexus_2026-09-27_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "nexus",
+    "fieldwork_start": "2026-09-25",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-26",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2000,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.46,
+      "ronaldo_caiado": 0.42
+    },
+    "residuals": {
+      "branco_nulo": 0.1,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-07557/2026",
+    "witness_ids": [
+      "w_nexus_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "palver_2026-09-27_stimulated_2nd_round_augusto_cury_vs_lula",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+    "sample_size": 5000,
+    "moe": 0.024,
+    "results": {
+      "augusto_cury": 0.34,
+      "lula": 0.44
+    },
+    "residuals": {
+      "branco_nulo": 0.21,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-02990/2026",
+    "witness_ids": [
+      "w_palver_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "palver_2026-09-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 5000,
+    "moe": 0.024,
+    "results": {
+      "flavio_bolsonaro": 0.47,
+      "lula": 0.45
+    },
+    "residuals": {
+      "branco_nulo": 0.07,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-02990/2026",
+    "witness_ids": [
+      "w_palver_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "palver_2026-09-27_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 5000,
+    "moe": 0.024,
+    "results": {
+      "lula": 0.45,
+      "renan_santos": 0.33
+    },
+    "residuals": {
+      "branco_nulo": 0.21,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-02990/2026",
+    "witness_ids": [
+      "w_palver_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "palver_2026-09-27_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 5000,
+    "moe": 0.024,
+    "results": {
+      "lula": 0.45,
+      "romeu_zema": 0.4
+    },
+    "residuals": {
+      "branco_nulo": 0.13,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-02990/2026",
+    "witness_ids": [
+      "w_palver_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "palver_2026-09-27_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "palver",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 5000,
+    "moe": 0.024,
+    "results": {
+      "lula": 0.45,
+      "ronaldo_caiado": 0.4
+    },
+    "residuals": {
+      "branco_nulo": 0.14,
+      "ns_nr": 0.01
+    },
+    "tse_registration_id": "BR-02990/2026",
+    "witness_ids": [
+      "w_palver_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "quaest_2026-09-27_stimulated_2nd_round_augusto_cury_vs_lula",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "augusto_cury": 0.33,
+      "lula": 0.42
+    },
+    "residuals": {
+      "branco_nulo": 0.2,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-06520/2026",
+    "witness_ids": [
+      "w_quaest_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "quaest_2026-09-27_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "flavio_bolsonaro": 0.42,
+      "lula": 0.42
+    },
+    "residuals": {
+      "branco_nulo": 0.13,
+      "ns_nr": 0.03
+    },
+    "tse_registration_id": "BR-06520/2026",
+    "witness_ids": [
+      "w_quaest_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "quaest_2026-09-27_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.42,
+      "renan_santos": 0.39
+    },
+    "residuals": {
+      "branco_nulo": 0.17,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-06520/2026",
+    "witness_ids": [
+      "w_quaest_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "quaest_2026-09-27_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.46,
+      "romeu_zema": 0.3
+    },
+    "residuals": {
+      "branco_nulo": 0.19,
+      "ns_nr": 0.05
+    },
+    "tse_registration_id": "BR-06520/2026",
+    "witness_ids": [
+      "w_quaest_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "quaest_2026-09-27_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "quaest",
+    "fieldwork_start": "2026-09-24",
+    "fieldwork_end": "2026-09-27",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 2004,
+    "moe": 0.02,
+    "results": {
+      "lula": 0.43,
+      "ronaldo_caiado": 0.4
+    },
+    "residuals": {
+      "branco_nulo": 0.15,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-06520/2026",
+    "witness_ids": [
+      "w_quaest_2026-09-27_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "atlasintel_2026-09-28_stimulated_2nd_round_augusto_cury_vs_lula",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-23",
+    "fieldwork_end": "2026-09-28",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+    "sample_size": 5005,
+    "moe": 0.01,
+    "results": {
+      "augusto_cury": 0.361,
+      "lula": 0.462
+    },
+    "residuals": {
+      "branco_nulo": 0.177
+    },
+    "tse_registration_id": "BR-04391/2026",
+    "witness_ids": [
+      "w_atlasintel_2026-09-28_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "atlasintel_2026-09-28_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-23",
+    "fieldwork_end": "2026-09-28",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 5005,
+    "moe": 0.01,
+    "results": {
+      "flavio_bolsonaro": 0.477,
+      "lula": 0.476
+    },
+    "residuals": {
+      "branco_nulo": 0.048
+    },
+    "tse_registration_id": "BR-04391/2026",
+    "witness_ids": [
+      "w_atlasintel_2026-09-28_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "atlasintel_2026-09-28_stimulated_2nd_round_lula_vs_renan_santos",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-23",
+    "fieldwork_end": "2026-09-28",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+    "sample_size": 5005,
+    "moe": 0.01,
+    "results": {
+      "lula": 0.464,
+      "renan_santos": 0.289
+    },
+    "residuals": {
+      "branco_nulo": 0.247
+    },
+    "tse_registration_id": "BR-04391/2026",
+    "witness_ids": [
+      "w_atlasintel_2026-09-28_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "atlasintel_2026-09-28_stimulated_2nd_round_lula_vs_romeu_zema",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-23",
+    "fieldwork_end": "2026-09-28",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+    "sample_size": 5005,
+    "moe": 0.01,
+    "results": {
+      "lula": 0.474,
+      "romeu_zema": 0.412
+    },
+    "residuals": {
+      "branco_nulo": 0.114
+    },
+    "tse_registration_id": "BR-04391/2026",
+    "witness_ids": [
+      "w_atlasintel_2026-09-28_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
+  },
+  {
+    "poll_id": "atlasintel_2026-09-28_stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-09-23",
+    "fieldwork_end": "2026-09-28",
+    "fieldwork_mid": "2026-09-25",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+    "sample_size": 5005,
+    "moe": 0.01,
+    "results": {
+      "lula": 0.459,
+      "ronaldo_caiado": 0.434
+    },
+    "residuals": {
+      "branco_nulo": 0.108
+    },
+    "tse_registration_id": "BR-04391/2026",
+    "witness_ids": [
+      "w_atlasintel_2026-09-28_uol"
+    ],
+    "dataset_version": "intake-cohort-005",
+    "notes": "Verified current-source intake on 2026-09-29; exact public press figures transcribed and cross-checked."
   }
 ]

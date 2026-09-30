@@ -27,6 +27,7 @@ class NationalPoll:
     results: Mapping[str, float]
     residuals: Mapping[str, float] = field(default_factory=dict)
     geography: str = "national"
+    uf: Optional[str] = None
     election_cycle: int = 2026
     fieldwork_mid: Optional[date] = None
     moe: Optional[float] = None
@@ -60,6 +61,7 @@ def poll_from_dict(d: Mapping[str, Any]) -> NationalPoll:
         fieldwork_end=parse_ymd(d["fieldwork_end"]),
         fieldwork_mid=parse_ymd(mid) if mid else None,
         geography=str(d.get("geography", "national")),
+        uf=(str(d["uf"]).upper() if d.get("uf") else None),
         election_cycle=int(cycle),
         scenario=str(d["scenario"]),
         sample_size=int(ss) if ss is not None else None,

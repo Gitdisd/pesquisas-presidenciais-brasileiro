@@ -122,6 +122,7 @@
     const ufs = new Set();
     for (const p of points || []) {
       if (!p || p.geography !== "state") continue;
+      if (p.scenario !== "stimulated_1st_round") continue;
       const uf = (p.uf || "").toUpperCase();
       if (!uf) continue;
       const dateStr = p.fieldwork_mid || p.fieldwork_end || p.fieldwork_start;
@@ -330,7 +331,7 @@
           color: c.color || colorFor(c.id),
           values: uncSrc
             .filter((d) => d.candidate_id === c.id)
-            .filter((d) => !d.uf || local.ufsOn.has(String(d.uf).toUpperCase()) || !local.ufsOn.size)
+            .filter((d) => d.uf && selectedUfCount() === 1 && local.ufsOn.has(String(d.uf).toUpperCase()))
             .sort((a, b) => a.date - b.date),
         }))
       : [];
@@ -360,7 +361,7 @@
           color: c.color || colorFor(c.id),
           values: aggSrc
             .filter((d) => d.candidate_id === c.id)
-            .filter((d) => !d.uf || local.ufsOn.has(String(d.uf).toUpperCase()) || !local.ufsOn.size)
+            .filter((d) => d.uf && selectedUfCount() === 1 && local.ufsOn.has(String(d.uf).toUpperCase()))
             .sort((a, b) => a.date - b.date),
         }))
       : [];
@@ -389,7 +390,14 @@
       .merge(pts)
       .attr("cx", (d) => local.xScale(d.date))
       .attr("cy", (d) => local.yScale(d.value))
-      .attr("fill", (d) => local.candById.get(d.candidate_id)?.color || colorFor(d.candidate_id));
+      .attr("fill", (d) => local.candById.get(d.candidate_id)?.color || colorFor(d.candidate_id))
+      .attr("tabindex", 0)
+      .attr("role", "button")
+      .attr("aria-label", (d) => `${candidateDisplayName(local.candById.get(d.candidate_id) || { id: d.candidate_id })}, ${fmtPct(d.value)}%, ${d.uf}, ${d.fieldwork_end || fmtDate(d.date)}`)
+      .on("focus", function (event, d) { showDetail(d); })
+      .on("keydown", function (event, d) {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); showDetail(d); }
+      });
   }
 
   function showDetail(d) {
@@ -431,12 +439,18 @@
     return null;
   }
 
+  let zoomRaf = null;
   function applyTimeZoom(transform) {
     local.xScale = transform.rescaleX(local.x0);
     local.yScale = local.y0.copy();
-    const dims = local.dims || size();
-    redrawSeries();
-    drawAxes(dims);
+    if (zoomRaf != null) return;
+    const frame = () => {
+      zoomRaf = null;
+      const dims = local.dims || size();
+      redrawSeries();
+      drawAxes(dims);
+    };
+    zoomRaf = typeof requestAnimationFrame === "function" ? requestAnimationFrame(frame) : setTimeout(frame, 0);
   }
 
   function renderLegend() {
@@ -669,7 +683,7 @@
           ? "Estimulada · 1º turno"
           : doc.scenario || "—";
       el.scenario.textContent =
-        "Cenário: " + label + " · geografia UF (fora do Option B nacional)";
+        "Cenário: " + label + " · geografia UF · agregado separado por UF";
     }
     if (el.status) {
       const n = new Set(local.allPolls.map((d) => d.poll_id)).size;

@@ -4,6 +4,7 @@ from .aggregate import OptionBParams, aggregate_option_b
 from .export import (
     build_chart_export,
     build_multi_scenario_chart_export,
+    build_regional_chart_export,
     list_scenarios,
     write_chart_json,
 )
@@ -16,6 +17,7 @@ __all__ = [
     "aggregate_option_b",
     "build_chart_export",
     "build_multi_scenario_chart_export",
+    "build_regional_chart_export",
     "list_scenarios",
     "write_chart_json",
 ]

@@ -188,6 +188,12 @@
       );
     }
     el.headerMeta.innerHTML = chips.join("");
+    if (el.dataThrough) {
+      const ends = (meta.series || []).filter((r) => r && r.series_kind === "poll").map((r) => r.fieldwork_end).filter(Boolean).sort();
+      const latest = ends.length ? parseDate(ends[ends.length - 1]) : null;
+      el.dataThrough.textContent = latest ? `Último campo ${fmtDate(latest)}` : "Último campo —";
+      el.dataThrough.title = latest ? `Último trabalho de campo representado: ${fmtDate(latest)}` : "Data final do trabalho de campo representado";
+    }
     const scen = scenarioDisplayLabel(meta);
     el.scenario.textContent = `Cenário: ${scen}`;
     if (el.exampleBanner) {
@@ -506,7 +512,8 @@
       <dl>
         <dt>Instituto</dt><dd>${inst ? prettyInstituteLabel(inst) : d.institute_id || "—"}</dd>
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
-        <dt>Data</dt><dd>${fmtDate(d.date)}</dd>
+        ${d.moe != null ? `<dt>MOE declarado</dt><dd>±${fmtPct(d.moe)}</dd>` : ""}
+        <dt>Campo</dt><dd>${d.fieldwork_start && d.fieldwork_end ? `${fmtDate(parseDate(d.fieldwork_start))}–${fmtDate(parseDate(d.fieldwork_end))}` : fmtDate(d.date)}</dd>
       </dl>`;
   }
 
@@ -774,12 +781,18 @@
 
 
   /** TradingView/Polymarket: transform drives time (X) only; Y stays on data domain. */
+  let zoomRaf = null;
   function applyTimeZoom(transform) {
     state.xScale = transform.rescaleX(state.x0);
     state.yScale = state.y0.copy();
-    const dims = state.dims || size();
-    redrawSeries();
-    drawAxes(dims);
+    if (zoomRaf != null) return;
+    const frame = () => {
+      zoomRaf = null;
+      const dims = state.dims || size();
+      redrawSeries();
+      drawAxes(dims);
+    };
+    zoomRaf = typeof requestAnimationFrame === "function" ? requestAnimationFrame(frame) : setTimeout(frame, 0);
   }
 
   function resetZoom() {
@@ -1125,9 +1138,21 @@
       .attr("cx", (d) => state.xScale(d.date))
       .attr("cy", (d) => state.yScale(d.value))
       .attr("fill", (d) => state.candById.get(d.candidate_id)?.color || "#94a3b8")
+      .attr("tabindex", 0)
+      .attr("role", "button")
+      .attr("aria-label", (d) => {
+        const cand = prettyCandidateLabel(state.candById.get(d.candidate_id) || { id: d.candidate_id });
+        const inst = prettyInstituteLabel(state.instById.get(d.institute_id) || { id: d.institute_id });
+        return `${cand}, ${pctDisplay(d.value)}, ${inst}, ${d.fieldwork_end || fmtDate(d.date)}`;
+      })
       .on("mouseenter", function (event, d) {
         d3.select(this).attr("r", 6);
         highlightPoll(d);
+      })
+      .on("focus", function (event, d) { highlightPoll(d); })
+      .on("blur", function () { d3.select(this).attr("r", 4); })
+      .on("keydown", function (event, d) {
+        if (event.key === "Enter" || event.key === " ") { event.preventDefault(); highlightPoll(d); }
       })
       .on("mouseleave", function () {
         d3.select(this).attr("r", 4);
@@ -1594,13 +1619,6 @@
     applyTheme(currentTheme() === "dark" ? "light" : "dark");
   }
 
-  function focusChart() {
-    const target = el.chartShell || document.getElementById("chart-heading");
-    if (target && target.scrollIntoView) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  }
-
   function syncFullscreenBtn() {
     if (!el.fullscreenBtn) return;
     const on = !!document.fullscreenElement;
@@ -1727,11 +1745,6 @@
       if (k === "0") {
         event.preventDefault();
         setRangeDays("all");
-        return;
-      }
-      if (k === "g" || k === "G") {
-        event.preventDefault();
-        focusChart();
         return;
       }
       if (k === "t" || k === "T") {
