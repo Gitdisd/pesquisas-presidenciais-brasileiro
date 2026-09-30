@@ -23,6 +23,7 @@ on:
       - "lib/**"
       - "bin/**"
       - "test/**"
+      - "models/**"
       - "Gemfile*"
       - "config/**"
       - "data/national/polls/**"
