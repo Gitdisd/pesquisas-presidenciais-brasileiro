@@ -74,6 +74,10 @@
       "type": ["string", "null"],
       "description": "If this witness is/carries a TSE registration reference — provenance only."
     },
+    "content_hash_basis": {
+      "type": "string",
+      "enum": ["retrieved_bytes", "manual_extraction"]
+    },
     "notes": {
       "type": "string"
     }
