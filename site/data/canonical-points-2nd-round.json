@@ -4646,8 +4646,7 @@
     "tse_registration_id": "BR-04202/2026",
     "dataset_version": "intake-cohort-2t-004",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-23_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
-  }
-,
+  },
   {
     "poll_id": "nexus_2026-09-27_stimulated_2nd_round_augusto_cury_vs_lula",
     "institute_id": "nexus",
