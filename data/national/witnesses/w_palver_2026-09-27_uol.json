@@ -1,0 +1,20 @@
+{
+  "witness_id": "w_palver_2026-09-27_uol",
+  "poll_id": "palver_2026-09-27_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://noticias.uol.com.br/eleicoes/2026/09/29/palver-lula-flavio-bolsonaro-pesquisa-1-2-turno.ghtm",
+  "retrieved_at": "2026-09-29T21:30:00-03:00",
+  "content_hash": "sha256:a7a0385f1b8c92b3d39bc6a818e61f1158b3a0f92cb77db918bba20cdfccba68",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-09-29_v1",
+  "extractions": {
+    "fieldwork": "2026-09-24..2026-09-27",
+    "n": 5000,
+    "moe_pp": 2.4,
+    "tse": "BR-02990/2026"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02990/2026",
+  "notes": "Manual transcription of cited public press table; cross-checked against the published report. Hash fingerprints the normalized manual extraction record; raw source bytes are not stored in-repo."
+}
