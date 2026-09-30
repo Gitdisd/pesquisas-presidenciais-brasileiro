@@ -8,3 +8,12 @@
 - `chart-regional.json` — **Lead** Option B regional export when available (same flat series contract, may carry `uf` on poll rows). Empty stub until regional intake + Lead re-export. UI Chart #2 lights up from this file or falls back to raw `canonical-points-regional.json` points (no invented aggregate).
 - Series: `poll` | `aggregate` | `uncertainty`; `unit: fraction`; `band_low`/`band_high` = in-window dispersion.
 - Do not commit unverified bulk poll corpora here. EXAMPLE / `example: true` files are synthetic only.
+
+
+## Build freshness contract
+
+GitHub Pages rebuilds the national 1st-turn chart, pairwise national 2nd-turn chart, and regional Chart #2 artifact from canonical poll files during deployment. This prevents the public charts from silently lagging behind the canonical dataset.
+
+The checked-in chart files remain publication snapshots. The deployment build is authoritative for the served artifact.
+
+Regional Chart #2 v1 is intentionally single-scenario (stimulated_1st_round) and computes aggregates independently per UF. Regional runoff rows remain archived in canonical-points-regional.json but are not mixed into the 1st-turn regional chart.
