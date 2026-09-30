@@ -65,7 +65,7 @@ jobs:
       - name: Install PEBR models
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e models
+          python -m pip install -e 'models[dev]'
 
       - name: Validate fixtures + national + regional trees
         run: bin/pebr validate
