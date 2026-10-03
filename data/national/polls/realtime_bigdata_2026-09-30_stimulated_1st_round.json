@@ -1,0 +1,31 @@
+{
+  "poll_id": "realtime_bigdata_2026-09-30_stimulated_1st_round",
+  "institute_id": "realtime_bigdata",
+  "fieldwork_start": "2026-09-26",
+  "fieldwork_end": "2026-09-30",
+  "fieldwork_mid": "2026-09-28",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.43,
+    "flavio_bolsonaro": 0.39,
+    "renan_santos": 0.04,
+    "augusto_cury": 0.03,
+    "ronaldo_caiado": 0.03,
+    "romeu_zema": 0.01
+  },
+  "residuals": {
+    "outros": 0.01,
+    "branco_nulo": 0.03,
+    "ns_nr": 0.03
+  },
+  "tse_registration_id": "BR-09503/2026",
+  "witness_ids": [
+    "w_realtime_bigdata_2026-09-30_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}
