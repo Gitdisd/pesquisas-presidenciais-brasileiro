@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_ideia_2026-09-28_current",
+  "poll_id": "ideia_2026-09-28_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-394-no-1o-turno-flavio-384/",
+  "retrieved_at": "2026-10-02T23:45:00-03:00",
+  "content_hash": "sha256:a2696494d07f6c03e9a45b55af5732494c2b6999ef8fba811be309b7e1b1f889",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-02_v1",
+  "extractions": {
+    "fieldwork": "2026-09-25..2026-09-28",
+    "n": 2000,
+    "moe_pp": 2.1999999999999997,
+    "tse": "BR-08706/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+      "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+      "stimulated_2nd_round_lula_vs_romeu_zema",
+      "stimulated_2nd_round_lula_vs_renan_santos",
+      "stimulated_2nd_round_augusto_cury_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-08706/2026",
+  "notes": "Manual transcription of a cited public poll report. Hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

@@ -1,0 +1,26 @@
+{
+  "poll_id": "futura_2026-09-29_stimulated_2nd_round_augusto_cury_vs_lula",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-25",
+  "fieldwork_end": "2026-09-29",
+  "fieldwork_mid": "2026-09-27",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_augusto_cury_vs_lula",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "augusto_cury": 0.451,
+    "lula": 0.42
+  },
+  "residuals": {
+    "branco_nulo": 0.109,
+    "ns_nr": 0.019
+  },
+  "tse_registration_id": "BR-01122/2026",
+  "witness_ids": [
+    "w_futura_2026-09-29_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}

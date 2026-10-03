@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_realtime_bigdata_2026-09-30_current",
+  "poll_id": "realtime_bigdata_2026-09-30_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/10/01/real-time-big-data-lula-e-flavio-bolsonaro-estao-em-empate-tecnico-nos-dois-turnos-da-eleicao.htm",
+  "retrieved_at": "2026-10-02T23:45:00-03:00",
+  "content_hash": "sha256:aa39a5480e733d957f5ea9de7eace5b94e7b86b58cc82f315f0e46525d36e359",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-02_v1",
+  "extractions": {
+    "fieldwork": "2026-09-26..2026-09-30",
+    "n": 2000,
+    "moe_pp": 2,
+    "tse": "BR-09503/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+      "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+      "stimulated_2nd_round_lula_vs_romeu_zema",
+      "stimulated_2nd_round_lula_vs_renan_santos",
+      "stimulated_2nd_round_augusto_cury_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-09503/2026",
+  "notes": "Manual transcription of a cited public poll report. Hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

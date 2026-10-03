@@ -1,0 +1,37 @@
+{
+  "poll_id": "ideia_2026-09-28_stimulated_1st_round",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-09-25",
+  "fieldwork_end": "2026-09-28",
+  "fieldwork_mid": "2026-09-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.394,
+    "flavio_bolsonaro": 0.384,
+    "augusto_cury": 0.067,
+    "renan_santos": 0.045,
+    "ronaldo_caiado": 0.044,
+    "romeu_zema": 0.035,
+    "samara_martins": 0.004,
+    "clariana_barao": 0.003,
+    "hertz_dias": 0.003,
+    "wilson_grassi": 0.001,
+    "leonardo_avalanche": 0.001,
+    "rui_costa_pimenta": 0.001,
+    "edmilson_costa": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.007,
+    "ns_nr": 0.015
+  },
+  "tse_registration_id": "BR-08706/2026",
+  "witness_ids": [
+    "w_ideia_2026-09-28_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}

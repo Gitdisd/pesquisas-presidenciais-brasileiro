@@ -1,0 +1,36 @@
+{
+  "poll_id": "futura_2026-09-29_stimulated_1st_round",
+  "institute_id": "futura",
+  "fieldwork_start": "2026-09-25",
+  "fieldwork_end": "2026-09-29",
+  "fieldwork_mid": "2026-09-27",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "flavio_bolsonaro": 0.422,
+    "lula": 0.394,
+    "ronaldo_caiado": 0.04,
+    "augusto_cury": 0.038,
+    "renan_santos": 0.032,
+    "romeu_zema": 0.016,
+    "edmilson_costa": 0.002,
+    "samara_martins": 0.002,
+    "leonardo_avalanche": 0.001,
+    "rui_costa_pimenta": 0.001,
+    "wilson_grassi": 0.001,
+    "hertz_dias": 0.001
+  },
+  "residuals": {
+    "branco_nulo": 0.024,
+    "ns_nr": 0.026
+  },
+  "tse_registration_id": "BR-01122/2026",
+  "witness_ids": [
+    "w_futura_2026-09-29_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}

@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_futura_2026-09-29_current",
+  "poll_id": "futura_2026-09-29_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-49-contra-435-de-lula-no-2o-turno-diz-futura/",
+  "retrieved_at": "2026-10-02T23:45:00-03:00",
+  "content_hash": "sha256:cb98712c9d05ff381d381d8e0d299d36b0d5bbd9cac358e58299ac7a5517e77d",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-02_v1",
+  "extractions": {
+    "fieldwork": "2026-09-25..2026-09-29",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-01122/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+      "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+      "stimulated_2nd_round_lula_vs_romeu_zema",
+      "stimulated_2nd_round_lula_vs_renan_santos",
+      "stimulated_2nd_round_augusto_cury_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-01122/2026",
+  "notes": "Manual transcription of a cited public poll report. Hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

@@ -1,0 +1,24 @@
+{
+  "witness_id": "w_indexa_2026-09-29_current",
+  "poll_id": "indexa_2026-09-29_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://www.cnnbrasil.com.br/eleicoes/indexa-broadcast-lula-tem-39-no-1o-turno-flavio-34/",
+  "retrieved_at": "2026-10-02T23:45:00-03:00",
+  "content_hash": "sha256:a13c7911296082ed8d3917ca47f682730e120ab6c30a7fea0cf5f40fce9b2ccd",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-02_v1",
+  "extractions": {
+    "fieldwork": "2026-09-27..2026-09-29",
+    "n": 2000,
+    "moe_pp": 2.2,
+    "tse": "BR-00698/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-00698/2026",
+  "notes": "Manual transcription of a cited public poll report. Hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}
