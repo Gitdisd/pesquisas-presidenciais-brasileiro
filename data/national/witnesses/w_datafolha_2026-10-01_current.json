@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_datafolha_2026-10-01_current",
+  "poll_id": "datafolha_2026-10-01_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://datafolha.folha.uol.com.br/eleicoes/2026/10/no-1o-turno-lula-pt-lidera-com-45-dos-validos-e-flavio-bolsonaro-pl-tem-40.shtml",
+  "retrieved_at": "2026-10-02T23:45:00-03:00",
+  "content_hash": "sha256:b6938a2c7cf25465561e9e86cf834508df37fdc393ff0a10bffb2ea2582fa9c0",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-02_v1",
+  "extractions": {
+    "fieldwork": "2026-09-29..2026-10-01",
+    "n": 2506,
+    "moe_pp": 2,
+    "tse": "BR-08039/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+      "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+      "stimulated_2nd_round_lula_vs_romeu_zema",
+      "stimulated_2nd_round_lula_vs_renan_santos",
+      "stimulated_2nd_round_augusto_cury_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-08039/2026",
+  "notes": "Manual transcription of a cited public poll report. Hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}
