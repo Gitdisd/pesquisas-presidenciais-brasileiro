@@ -1,0 +1,26 @@
+{
+  "poll_id": "ideia_2026-09-28_stimulated_2nd_round_lula_vs_romeu_zema",
+  "institute_id": "ideia",
+  "fieldwork_start": "2026-09-25",
+  "fieldwork_end": "2026-09-28",
+  "fieldwork_mid": "2026-09-26",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_romeu_zema",
+  "sample_size": 2000,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.485,
+    "romeu_zema": 0.44
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.026
+  },
+  "tse_registration_id": "BR-08706/2026",
+  "witness_ids": [
+    "w_ideia_2026-09-28_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}
