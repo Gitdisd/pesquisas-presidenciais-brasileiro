@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-10-01_stimulated_2nd_round_lula_vs_renan_santos",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-09-29",
+  "fieldwork_end": "2026-10-01",
+  "fieldwork_mid": "2026-09-30",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_lula_vs_renan_santos",
+  "sample_size": 2506,
+  "moe": 0.02,
+  "results": {
+    "lula": 0.48,
+    "renan_santos": 0.39
+  },
+  "residuals": {
+    "branco_nulo": 0.1,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-08039/2026",
+  "witness_ids": [
+    "w_datafolha_2026-10-01_current"
+  ],
+  "dataset_version": "intake-cohort-006",
+  "notes": "Verified current-source intake on 2026-10-02; exact publicly reported figures transcribed and cross-checked. Historical poll records are retained unchanged."
+}
