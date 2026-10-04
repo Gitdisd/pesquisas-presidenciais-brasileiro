@@ -1,0 +1,31 @@
+{
+  "poll_id": "cnt_mda_2026-10-03_stimulated_1st_round",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-09-30",
+  "fieldwork_end": "2026-10-02",
+  "fieldwork_mid": "2026-10-01",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_1st_round",
+  "sample_size": 2007,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.431,
+    "flavio_bolsonaro": 0.38,
+    "augusto_cury": 0.032,
+    "ronaldo_caiado": 0.03,
+    "renan_santos": 0.015,
+    "romeu_zema": 0.008
+  },
+  "residuals": {
+    "outros": 0.005,
+    "branco_nulo": 0.05,
+    "ns_nr": 0.047
+  },
+  "tse_registration_id": "BR-04756/2026",
+  "witness_ids": [
+    "w_cnt_mda_2026-10-03_current"
+  ],
+  "dataset_version": "intake-cohort-007",
+  "notes": "Verified current-source intake on 2026-10-04. Publicly reported figures transcribed from the cited report; hash basis is manual extraction, not raw source bytes."
+}
