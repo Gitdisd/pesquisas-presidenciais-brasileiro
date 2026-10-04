@@ -2,7 +2,8 @@
 
 **Started:** 2026-10-04 00:22 BRT (America/Sao_Paulo)  
 **Requested by user:** update the live site, repair anything broken/incomplete, read the project documentation, and mark/write what is being completed.  
-**Base:** `main` at `2d0f75676d211718f3b3b71ada12072bf70fb5ef`  
+**Base:** `main` at `2d0f75676d211718f3b3b71ada12072bf70fb5ef`
+**Maintenance merge:** `0b3a0f79ad1885ae0f491a45e4d216612354faa3` (PR #11)  
 **Working branch:** `maintenance/2026-10-04-site-repair`
 
 ## Documentation reconciliation
@@ -63,9 +64,9 @@
 ## Validation / deployment
 
 - [x] Prior main refresh validation run `36653397669` passed `validate-assemble`.
-- [ ] Run the full refresh + Pages deployment for this maintenance branch after merge.
-- [ ] Confirm the served Pages asset/data responses after deployment.
-- [ ] Confirm cache-busted JS/CSS are the current build.
+- [x] Maintenance PR #11 merged to main; its main push triggered the Refresh and Pages workflows.
+- [ ] Confirm served Pages asset/data responses after deployment — the available GitHub connector exposes PR-triggered workflow runs but not the push-triggered Pages run; do not treat this as externally confirmed.
+- [x] Pages workflow contains cache-busting for CSS and all shipped JS assets; runtime response confirmation remains an external check.
 
 ## Research-backed items intentionally still open
 
