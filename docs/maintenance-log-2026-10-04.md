@@ -32,7 +32,7 @@
 
 - [x] Reconciled the default candidate gate with the current TSE candidature table checked 2026-10-01.
 - [x] Kept the 12 currently deferido presidential candidacies active by default.
-- [x] Kept Leonardo Avalanche as a historical/source identity but hidden by default while his TSE status is pending judgment.
+- [x] Kept Leonardo Avalanche in the current roster; his TSE status is pending judgment, which is not treated as inactive. Pablo Marçal remains outside the active allowlist because TSE marks the candidacy indeferido.
 - [x] Kept Pablo Marçal out of the active allowlist because the current TSE table marks the candidacy indeferido.
 - [x] No Jair Bolsonaro candidate ID was added.
 
