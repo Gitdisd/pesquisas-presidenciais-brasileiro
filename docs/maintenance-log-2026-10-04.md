@@ -87,6 +87,13 @@
 - [ ] No Playwright discovery/CI.
 - [ ] No house-effects / runoff-Monte-Carlo / state-space / MRP model silently promoted to production.
 
+## Current CI/deployment verification
+
+- [x] Pages run 37224370208: all build/chart-contract/cache-bust/upload/deploy steps passed.
+- [x] Refresh run 37224370182: validate, normalize, assemble, all three canonical drift checks, Python tests, chart contract smoke, JavaScript/DOM contract, and Ruby tests all passed.
+- [x] The repaired UF chart and election-day boundary are therefore included in the successful Pages artifact.
+- [ ] Browser-level verification of the rendered public page remains limited by the environment; repository-side CI and Pages deployment are green.
+
 ## Current working principle
 
 Every repair in this cycle is either checked off above or explicitly recorded as deferred/blocked. Historical documentation is preserved; no stale pause note is silently rewritten into a false historical claim.
