@@ -22,7 +22,7 @@ The TSE states that presidential results are released from 17:00 Brasília time 
 
 ## Remaining / next pass
 
-- [ ] Verify the deployed Pages build after merge and confirm the browser can read the TSE endpoint from GitHub Pages once the official result file is available.
+- [x] Verify the deployed Pages build after merge: Pages run 49 completed successfully, and refresh run 47 completed all validation, drift, Option B, chart-contract, JavaScript/DOM, and Ruby test steps.
 - [ ] Add a small automated smoke test for the election-results parser against a checked-in synthetic TSE-shaped fixture, without storing real live vote totals.
 - [ ] After the first official update, inspect the live rendering and repair any schema/name/status edge cases exposed by the production payload.
 - [ ] Continue polling-intake updates only from verified primary witnesses; never backfill election results as poll records.
@@ -31,3 +31,12 @@ The TSE states that presidential results are released from 17:00 Brasília time 
 ## 2026-10-04 checkpoint
 
 The latest national polling refresh is already on `main` from the previous maintenance pass. This pass focuses on the broken regional line and the separation/readiness of official election-night results.
+
+
+## CI repair checkpoint — 2026-10-04 14:52 BRT
+
+- [x] Reconciled first-round canonical drift (missing verified `samara_martins: 0` cell).
+- [x] Reconciled second-round canonical drift (added verified Datafolha 2026-10-03 pairwise record and matched deterministic key ordering).
+- [x] Final `pebr-refresh` run passed all three canonical drift checks, discovery smoke, Python tests, chart contract, JavaScript syntax/DOM contract, and Ruby tests.
+- [x] Final Pages deployment completed successfully from `main`.
+- [ ] Election-result runtime check remains pending until the TSE's 17:00 BRT release window; the TSE documents that presidential result JSON becomes available from 17:00 and updates during totalization.
