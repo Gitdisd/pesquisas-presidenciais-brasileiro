@@ -5122,7 +5122,7 @@
       "ns_nr": 0.031
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_2nd_round_augusto_cury_vs_lula.json"
   },
   {
@@ -5145,7 +5145,7 @@
       "ns_nr": 0.015
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
@@ -5168,7 +5168,7 @@
       "ns_nr": 0.028
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_2nd_round_lula_vs_renan_santos.json"
   },
   {
@@ -5191,7 +5191,7 @@
       "ns_nr": 0.026
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_2nd_round_lula_vs_romeu_zema.json"
   },
   {
@@ -5214,7 +5214,7 @@
       "ns_nr": 0.039
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
@@ -5237,7 +5237,7 @@
       "ns_nr": 0.019
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_2nd_round_augusto_cury_vs_lula.json"
   },
   {
@@ -5260,7 +5260,7 @@
       "ns_nr": 0.013
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
@@ -5283,7 +5283,7 @@
       "ns_nr": 0.025
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_2nd_round_lula_vs_renan_santos.json"
   },
   {
@@ -5306,7 +5306,7 @@
       "ns_nr": 0.023
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_2nd_round_lula_vs_romeu_zema.json"
   },
   {
@@ -5329,7 +5329,7 @@
       "ns_nr": 0.015
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
@@ -5352,7 +5352,7 @@
       "ns_nr": 0.05
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_2nd_round_augusto_cury_vs_lula.json"
   },
   {
@@ -5375,7 +5375,7 @@
       "ns_nr": 0.04
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
@@ -5398,7 +5398,7 @@
       "ns_nr": 0.08
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_2nd_round_lula_vs_renan_santos.json"
   },
   {
@@ -5421,7 +5421,7 @@
       "ns_nr": 0.06
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_2nd_round_lula_vs_romeu_zema.json"
   },
   {
@@ -5444,7 +5444,7 @@
       "ns_nr": 0.04
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
@@ -5467,7 +5467,7 @@
       "ns_nr": 0.02
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_2nd_round_augusto_cury_vs_lula.json"
   },
   {
@@ -5490,7 +5490,7 @@
       "ns_nr": 0.01
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
@@ -5513,7 +5513,7 @@
       "ns_nr": 0.02
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_2nd_round_lula_vs_renan_santos.json"
   },
   {
@@ -5536,7 +5536,7 @@
       "ns_nr": 0.02
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_2nd_round_lula_vs_romeu_zema.json"
   },
   {
@@ -5559,7 +5559,7 @@
       "ns_nr": 0.01
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
   },
   {
