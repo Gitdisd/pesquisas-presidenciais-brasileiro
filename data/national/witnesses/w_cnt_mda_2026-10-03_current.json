@@ -1,0 +1,24 @@
+{
+  "witness_id": "w_cnt_mda_2026-10-03_current",
+  "poll_id": "cnt_mda_2026-10-03_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://www.bol.uol.com.br/noticias/2026/10/03/pesquisa-cntmda-hoje-veja-resultados-do-ultimo-levantamento.ghtm",
+  "retrieved_at": "2026-10-04T00:30:00-03:00",
+  "content_hash": "sha256:2c2bd6d8d78620ca43b07ef0b7fc8c89c6945b58214787ab68c29c0f12b5ce64",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-04_v1",
+  "extractions": {
+    "fieldwork": "2026-09-30..2026-10-02",
+    "n": 2007,
+    "moe_pp": 2.1999999999999997,
+    "tse": "BR-04756/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-04756/2026",
+  "notes": "Manual transcription from an openly published current poll report. content_hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

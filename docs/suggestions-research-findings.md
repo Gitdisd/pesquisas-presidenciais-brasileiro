@@ -1,5 +1,27 @@
 # Suggestions research findings (#1–21 + BR polling background)
 
+## 2026-10-04 maintenance status override
+
+The prior research memo was written under the 2026-09-27 product pause. The user's explicit 2026-10-04 instruction resumes maintenance. The implementation status below is the current execution record; the research findings and locked constraints remain unchanged.
+
+- [x] #1 Dense D3 performance: RAF zoom coalescing shipped; further device-matrix profiling remains open.
+- [x] #2 Accessibility: chart points are keyboard-focusable/activatable; full screen-reader/axe audit remains open.
+- [ ] #3 Cross-visit change strip remains unbuilt.
+- [x] #4 Chart #2 regional per-UF Option B export shipped and is non-empty.
+- [ ] #5 Linked domain sync remains unbuilt (without a brush).
+- [ ] #6 Ribbon readability study remains open.
+- [ ] #7 Option B sensitivity memo remains open; v1 defaults unchanged.
+- [ ] #8 House-effects overlay remains intentionally off.
+- [x] #9 Anti-replicate/fingerprint checks remain enforced and canonical snapshots are duplicate-free.
+- [x] #12 MOE + exact fieldwork details are passed through for published values.
+- [x] #14 Contract smoke tests are gated in Actions.
+- [x] #15 Pages cache-busting is shipped.
+- [ ] #16 Public pipeline health surface remains optional/not yet implemented.
+- [ ] #20 Additional UF intake remains primary-evidence gated.
+
+See [maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md) for the full current checklist and exact data refresh.
+
+
 **Written:** 2026-09-27 ~02:45 BRT (America/Sao_Paulo)  
 **Lane:** Research only (product paused). No feature code.  
 **Sources:** local PEBR + old-site trees, live Pages/GitHub, and public web (TSE, Poder360, Folha, 538/ABC, Depois das 17, Gazeta, O Povo, etc.).  

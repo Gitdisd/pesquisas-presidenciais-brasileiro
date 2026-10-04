@@ -1,9 +1,11 @@
 # AI HANDOFF — PEBR Lead (cold start)
 
 **Written:** 2026-09-27 ~02:30 BRT (America/Sao_Paulo)  
-**Repo tip at write:** `8c79e15` (`docs: pipeline pause status log`) — verify with `git rev-parse HEAD` on resume  
+**Repo tip at write:** `8c79e15` (`docs: pipeline pause status log`) — verify with `git rev-parse HEAD` on resume
+
+> **Current override — 2026-10-04:** The user explicitly ordered a live-site update and repair pass, including documentation reconciliation and a running checklist. The 2026-09-27 pause instructions below are historical snapshots; current execution is tracked in [`maintenance-log-2026-10-04.md`](maintenance-log-2026-10-04.md).  
 **Lane:** PEBR Lead (product / Option B / static UI)  
-**Status:** **PRODUCT WORK PAUSED** — documentation-only until the user explicitly says **resume**
+**Status:** **ACTIVE MAINTENANCE — RESUMED 2026-10-04 by explicit user order**
 
 This file is the **single cold-start brief** for another AI (or human) picking up Lead. Prefer this over reconstructing state from chat. Pause snapshots remain authoritative for “what was frozen”; this handoff reconciles corrected facts (especially PR #1 **merged**).
 
@@ -102,14 +104,14 @@ Verify on resume with the snippets below — do not trust chat memory.
 
 | Artifact | Count / state | Path |
 |----------|--------------:|------|
-| National 1º canonical | **117** | `site/data/canonical-points.json` |
-| National 2º canonical | **203** | `site/data/canonical-points-2nd-round.json` |
+| National 1º canonical | **130** | `site/data/canonical-points.json` |
+| National 2º canonical | **250** | `site/data/canonical-points-2nd-round.json` |
 | Regional canonical | **24** | `site/data/canonical-points-regional.json` |
 | National `chart.json` | populated (Option B 1º) | `site/data/chart.json` |
 | National `chart-2nd-round.json` | populated (`scenarios[]`) | `site/data/chart-2nd-round.json` |
-| `chart-regional.json` **on HEAD** | **empty stub** `series: []` | `site/data/chart-regional.json` |
-| National poll JSON files | 320 | `data/national/polls/*.json` |
-| National witnesses | 178 | `data/national/witnesses/*.json` |
+| `chart-regional.json` **on HEAD** | **populated per-UF Option B** | `site/data/chart-regional.json` |
+| National poll JSON files | **357** | `data/national/polls/*.json` |
+| National witnesses | **187** | `data/national/witnesses/*.json` |
 | Regional poll JSON files | 24 | `data/regional/polls/*.json` |
 | Regional witnesses | 14 | `data/regional/witnesses/*.json` |
 

@@ -1,0 +1,28 @@
+{
+  "witness_id": "w_palver_2026-10-03_current",
+  "poll_id": "palver_2026-10-03_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/03/pesquisa-palver-lula-e-flavio-tem-empate-tecnico-no-1-turno.ghtm",
+  "retrieved_at": "2026-10-04T00:30:00-03:00",
+  "content_hash": "sha256:e2f1b7bf60ea8db0022580ac8fd8f459fcabe3c491d1a907addda282d4ecf4c3",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-04_v1",
+  "extractions": {
+    "fieldwork": "2026-09-30..2026-10-03",
+    "n": 5000,
+    "moe_pp": 2.4,
+    "tse": "BR-00198/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+      "stimulated_2nd_round_augusto_cury_vs_lula",
+      "stimulated_2nd_round_lula_vs_renan_santos",
+      "stimulated_2nd_round_lula_vs_ronaldo_caiado",
+      "stimulated_2nd_round_lula_vs_romeu_zema"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-00198/2026",
+  "notes": "Manual transcription from an openly published current poll report. content_hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

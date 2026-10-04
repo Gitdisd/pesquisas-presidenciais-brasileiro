@@ -1,6 +1,7 @@
 /* PEBR — 2026 presidential candidate identity/status configuration.
- * The current-roster gate reflects the current TSE presidential candidate/proposals
- * portal, which now lists 13 first-round candidates including Leonardo Avalanche.
+ * The current-roster gate reflects the current TSE presidential candidature table:
+ * Leonardo Avalanche is retained for historical/source identity but hidden by default
+ * while his candidacy is pending judgment; Pablo Marçal is not in the active allowlist.
  * Historical poll labels remain in the data archive but
  * are hidden from the default election UI.
  *
@@ -9,8 +10,8 @@
  * Edmilson Costa, Renan Santos, Wilson Grassi, Clariana Barão,
  * Augusto Cury, Ronaldo Caiado, Rui Costa Pimenta, Leonardo Avalanche.
  *
- * Source: TSE candidate/proposals portal (current 2026 presidential list):
- * https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/planos-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026
+ * Source: TSE current candidature table (status checked 2026-10-01):
+ * https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitoral/consulta-candidatos-eleicao
  */
 (function (global) {
   "use strict";
@@ -28,7 +29,7 @@
     augusto_cury: Object.freeze({ displayName: "Augusto Cury", ballotNumber: 70 }),
     ronaldo_caiado: Object.freeze({ displayName: "Ronaldo Caiado", ballotNumber: 55 }),
     rui_costa_pimenta: Object.freeze({ displayName: "Rui Costa Pimenta", ballotNumber: 29 }),
-    leonardo_avalanche: Object.freeze({ displayName: "Leonardo Avalanche", ballotNumber: 28 }),
+    leonardo_avalanche: Object.freeze({ displayName: "Leonardo Avalanche", ballotNumber: 28, rosterStatus: "pending_judgment" }),
   });
 
   const CURRENT_PRESIDENTIAL_2026_IDS = new Set(
@@ -77,6 +78,8 @@
     "out",
     "dropped",
     "ineligible",
+    "pending_judgment",
+    "pending",
   ]);
 
   /**
@@ -121,6 +124,9 @@
     }
 
     if (typeof c.status === "string" && INACTIVE_STATUS.has(c.status.toLowerCase())) {
+      return false;
+    }
+    if (CURRENT_PRESIDENTIAL_2026[id]?.rosterStatus === "pending_judgment") {
       return false;
     }
 

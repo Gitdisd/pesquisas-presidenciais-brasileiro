@@ -1,3 +1,5 @@
+> **Superseded for current execution (2026-10-04):** This file is a frozen historical pause snapshot. The user's explicit update/repair order resumes work. See [docs/maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md) for the current checklist and status.
+
 # TASK LOG — USER PAUSE (frozen checklist)
 
 **Frozen at:** 2026-09-27 02:22 BRT (America/Sao_Paulo)  

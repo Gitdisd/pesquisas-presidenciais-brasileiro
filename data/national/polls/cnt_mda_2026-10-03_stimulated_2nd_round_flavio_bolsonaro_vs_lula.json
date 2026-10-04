@@ -1,0 +1,26 @@
+{
+  "poll_id": "cnt_mda_2026-10-03_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "cnt_mda",
+  "fieldwork_start": "2026-09-30",
+  "fieldwork_end": "2026-10-02",
+  "fieldwork_mid": "2026-10-01",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 2007,
+  "moe": 0.022,
+  "results": {
+    "lula": 0.473,
+    "flavio_bolsonaro": 0.431
+  },
+  "residuals": {
+    "branco_nulo": 0.076,
+    "ns_nr": 0.019
+  },
+  "tse_registration_id": "BR-04756/2026",
+  "witness_ids": [
+    "w_cnt_mda_2026-10-03_current"
+  ],
+  "dataset_version": "intake-cohort-007",
+  "notes": "Verified current-source intake on 2026-10-04. Publicly reported figures transcribed from the cited report; hash basis is manual extraction, not raw source bytes."
+}

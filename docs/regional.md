@@ -1,3 +1,7 @@
+## 2026-10-04 current status
+
+Chart #2 regional/UF Option B is now populated on main for the verified regional tree and is rebuilt by Pages deployment. It remains single-scenario (`stimulated_1st_round`) and per-UF; runoff regional rows stay archived and are not blended into the national chart. Current maintenance is tracked in [maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md).
+
 # Regional (UF) presidential polls — data plane
 
 **Status:** foundation stub (2026-09-27 America/Sao_Paulo)  

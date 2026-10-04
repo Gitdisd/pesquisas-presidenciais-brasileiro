@@ -1,3 +1,7 @@
+## 2026-10-04 resume override
+
+The user explicitly resumed maintenance on 2026-10-04. The former pause is historical; this cycle is tracked in [maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md). Research locks remain binding: no brush/scoreboard, no Go/WASM/SPA, no Playwright discovery/CI, no invented shares, no silent house effects, and no national/regional blending.
+
 # Suggestions and research
 
 Durable copy of Lead replies from chat (BRT 2026-09-27), for handoff. Product work remains paused unless the user unpauses.

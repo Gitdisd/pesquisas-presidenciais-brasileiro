@@ -4,7 +4,7 @@
 
 **Time zone:** Entries use BRT (America/Sao_Paulo), approximately 2026-09-26–27. Where a precise prompt is not preserved verbatim, the wording below is a faithful durable summary of the user steering recorded in Lead memory, status logs, and implementation notes.
 
-**Current gate:** Product work is **PAUSED**. This document records why the project is shaped as it is; it does not authorize feature work, intake, chart regeneration, merges, or restyling. Resume only on an explicit user instruction.
+**Historical gate:** Product work was **PAUSED** on 2026-09-27. The user's explicit 2026-10-04 instruction to update and repair the site supersedes that pause for the current maintenance cycle. Locked architecture, no-inventing, candidate, discovery, and no-restyle rules remain binding. Current execution is tracked in [`maintenance-log-2026-10-04.md`](maintenance-log-2026-10-04.md).
 
 ## 2026-09-26 — Greenfield, architecture, and defaults
 

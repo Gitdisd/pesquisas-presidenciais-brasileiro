@@ -5,7 +5,7 @@
 - `canonical-points-regional.json` — **Pipeline assemble** for `data/regional/polls` only (`geography: state` + `uf`). Parallel to national; **never** merged into national Option B / `chart.json`. Lead Chart #2 Option B export when non-empty.
 - `chart.json` — **Electoral Stats / Lead** Option B export for **1º** (`python -m pebr_models.cli --polls site/data/canonical-points.json`). UI: `data/chart.json`. Actions does **not** regenerate this.
 - `chart-2nd-round.json` — **Lead** Option B **per matchup** (`--multi-scenario`). Wrapper with `scenarios[]` (each block = same flat series contract as `chart.json`). Never merges distinct 2º confrontos. UI loads this when the user selects 2º turno.
-- `chart-regional.json` — **Lead** Option B regional export when available (same flat series contract, may carry `uf` on poll rows). Empty stub until regional intake + Lead re-export. UI Chart #2 lights up from this file or falls back to raw `canonical-points-regional.json` points (no invented aggregate).
+- `chart-regional.json` — **Lead** Option B regional export (same flat series contract, with `uf` on rows). Current checked-in snapshot is populated for the verified regional set; UI Chart #2 falls back to raw `canonical-points-regional.json` only when this artifact is unavailable (no invented aggregate).
 - Series: `poll` | `aggregate` | `uncertainty`; `unit: fraction`; `band_low`/`band_high` = in-window dispersion.
 - Do not commit unverified bulk poll corpora here. EXAMPLE / `example: true` files are synthetic only.
 
@@ -14,6 +14,6 @@
 
 GitHub Pages rebuilds the national 1st-turn chart, pairwise national 2nd-turn chart, and regional Chart #2 artifact from canonical poll files during deployment. This prevents the public charts from silently lagging behind the canonical dataset.
 
-The checked-in chart files remain publication snapshots. The deployment build is authoritative for the served artifact.
+The checked-in chart files remain publication snapshots. The deployment build is authoritative for the served artifact and rebuilds all three chart families from canonical data on Pages deployment.
 
 Regional Chart #2 v1 is intentionally single-scenario (stimulated_1st_round) and computes aggregates independently per UF. Regional runoff rows remain archived in canonical-points-regional.json but are not mixed into the 1st-turn regional chart.

@@ -1,0 +1,24 @@
+{
+  "witness_id": "w_quaest_2026-10-03_current",
+  "poll_id": "quaest_2026-10-03_stimulated_1st_round",
+  "source_type": "manual_overlay",
+  "source_url": "https://www.poder360.com.br/poder-eleicoes-2026/lula-tem-46-e-flavio-45-dos-votos-validos-no-1o-turno-diz-quaest/",
+  "retrieved_at": "2026-10-04T00:30:00-03:00",
+  "content_hash": "sha256:7e0b0c910ea40c77a749037a8ec67a90f693fd96b9586a0861f3d44f2512ee78",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_current_2026-10-04_v1",
+  "extractions": {
+    "fieldwork": "2026-10-02..2026-10-03",
+    "n": 3702,
+    "moe_pp": 2,
+    "tse": "BR-02197/2026",
+    "scenarios": [
+      "stimulated_1st_round",
+      "stimulated_2nd_round_flavio_bolsonaro_vs_lula"
+    ]
+  },
+  "confidence": 0.9,
+  "tse_registration_id": "BR-02197/2026",
+  "notes": "Manual transcription from an openly published current poll report. content_hash fingerprints the normalized manual extraction descriptor; raw source bytes are not stored in-repo."
+}

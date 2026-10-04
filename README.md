@@ -2,7 +2,7 @@
 
 Arquivo e agregador de pesquisas presidenciais nacionais — GitHub Pages.
 
-> **AI / agent cold start:** read [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md) (mission, locked architecture, data counts, Option B recipes, pause/resume). Product work is paused until the user explicitly says resume.
+> **AI / agent cold start:** read [`docs/AI-HANDOFF.md`](docs/AI-HANDOFF.md) (mission, locked architecture, data counts, Option B recipes, pause/resume). The 2026-09-27 pause is historical; the user's explicit 2026-10-04 update/repair order supersedes it for the current maintenance cycle. See [`docs/maintenance-log-2026-10-04.md`](docs/maintenance-log-2026-10-04.md).
 > **Durable conversation decisions:** [`docs/conversation-decisions.md`](docs/conversation-decisions.md) records the user prompts, steering, and rationale behind the locks; it is not a raw chat dump.
 > **Conversation transcripts (RAW-style):** index [`docs/conversation-transcript.md`](docs/conversation-transcript.md) · Lead [`docs/lead-conversation-transcript.md`](docs/lead-conversation-transcript.md) · Pipeline [`docs/pipeline-conversation-transcript.md`](docs/pipeline-conversation-transcript.md) · note [`docs/conversation-transcript-README.md`](docs/conversation-transcript-README.md).
 
@@ -63,9 +63,9 @@ Commit polls/witnesses **and** the refreshed `canonical-points.json` + `canonica
 
 Scenario keys and 1º/2º separation: [`docs/scenario-convention.md`](docs/scenario-convention.md).
 
-### Lead: re-export Option B after data changes
+### Publication build: Option B artifacts after data changes
 
-Actions **does not** regenerate `site/data/chart.json`. When `canonical-points.json` (or `data/national/polls`) changes, Lead re-runs Stats locally:
+GitHub Pages now rebuilds `site/data/chart.json`, `chart-2nd-round.json`, and `chart-regional.json` from the canonical snapshots during deployment. The refresh workflow validates canonical drift; it does not invent or commit chart data. Lead may still run Stats locally for inspection:
 
 ```bash
 .venv/bin/pip install -e 'models/[dev]'
@@ -124,4 +124,4 @@ Synthetic fixtures (`example_*` / `EXAMPLE_*`) are **not** real polls.
 
 ## Status
 
-Verified national `stimulated_1st_round` intake is under `data/national/` (see cohort notes). `site/data/canonical-points.json` is the assemble output for Option B ingest. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).
+Current maintenance state is tracked in [`docs/maintenance-log-2026-10-04.md`](docs/maintenance-log-2026-10-04.md). The canonical national snapshots now contain 130 first-round points and 250 second-round points; regional canonical remains a separate 24-point tree. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).
