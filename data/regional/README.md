@@ -1,3 +1,7 @@
+## 2026-10-04 current status
+
+The regional canonical tree remains separate from national data. Chart #2 Option B is populated per UF on the current main ancestry and Pages rebuilds it from the canonical regional snapshot. New regional intake remains extractable-primary-only.
+
 # `data/regional/` — state (UF) presidential polls
 
 Parallel tree to [`data/national/`](../national/). **State presidential** fieldwork only (cargo Presidente scoped to one UF/DF).
