@@ -38,6 +38,7 @@ on:
       - "site/data/canonical-points-2nd-round.json"
       - "site/data/canonical-points-regional.json"
       - ".github/workflows/refresh.yml"
+      - "site/**"
 
 permissions:
   contents: read
@@ -157,6 +158,28 @@ jobs:
               assert c1["geography"]=="national" and all(r["series_kind"] in allowed for r in c1["series"])
               assert c2["scenarios"] and all(all(r["series_kind"] in allowed for r in s["series"]) for s in c2["scenarios"])
           print("chart contract smoke OK")
+          PY
+
+      - name: Static site contract — JavaScript syntax + DOM ids
+        run: |
+          node --check site/js/candidates-config.js
+          node --check site/js/option-b.js
+          node --check site/js/chart.js
+          node --check site/js/regional-chart.js
+          node --check site/js/companion-chart.js
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          html = Path("site/index.html").read_text()
+          ids = set(re.findall(r'\\bid="([^"]+)"', html))
+          missing = []
+          for path in Path("site/js").glob("*.js"):
+              text = path.read_text()
+              for value in re.findall(r'getElementById\\("([^"]+)"\\)', text):
+                  if value not in ids:
+                      missing.append(f"{path}: {value}")
+          assert not missing, "Missing DOM ids:\\n" + "\\n".join(missing)
+          print(f"site DOM contract OK — {len(ids)} HTML ids checked")
           PY
 
       - name: Watch unit tests (minitest)
