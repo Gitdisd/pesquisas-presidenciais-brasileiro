@@ -6,6 +6,7 @@
 **Maintenance merge:** `0b3a0f79ad1885ae0f491a45e4d216612354faa3` (PR #11)  
 **Final accessibility merge:** `86d00b4f17bb5d6193779bd836461366d9f4475d` (PR #12)  
 **Final candidate-status merge:** `372aa5b49fe657887a6ca70941f8428d018eaecb` (PR #13)  
+**Post-merge canonical metadata correction:** pending PR merge after final cohort alignment check.  
 **Working branches:** maintenance branches used for this cycle are closed/merged.
 
 ## Documentation reconciliation
@@ -59,6 +60,7 @@
 - [x] 1º canonical: **130** points; duplicate-free; deterministically sorted.
 - [x] 2º canonical: **250** points; duplicate-free; deterministically sorted.
 - [x] Canonical dataset-version metadata aligned with the corresponding intake cohorts.
+- [x] Final integrity audit caught and corrected a cohort-label mismatch before validation/deployment: Sep 28–Oct 1 intake remains cohort 006; Oct 3 intake is cohort 007.
 - [x] National and regional data planes remain separate.
 - [x] No national multi-UF blend introduced.
 - [x] `site/data/chart-regional.json` verified non-empty on current main ancestry (per-UF Option B snapshot).
