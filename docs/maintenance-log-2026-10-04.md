@@ -7,6 +7,7 @@
 **Final accessibility merge:** `86d00b4f17bb5d6193779bd836461366d9f4475d` (PR #12)  
 **Final candidate-status merge:** `372aa5b49fe657887a6ca70941f8428d018eaecb` (PR #13)  
 **Post-merge canonical metadata correction:** `b12fdba6b2428e37daaca001de88576060cc8f07` (PR #14) — merged.  
+**Preventive site-CI merge:** `9f17923aba5b2e1fc86eead22340c25cceceb697` (PR #15) — merged.  
 **Working branches:** maintenance branches used for this cycle are closed/merged.
 
 ## Documentation reconciliation
@@ -72,7 +73,8 @@
 - [x] PR #12 accessibility cleanup and PR #13 candidate-status correction were merged to main; both also trigger the Pages/Refresh paths where their changed files match workflow triggers.
 - [ ] Confirm served Pages asset/data responses after deployment — the repository-side merge and Pages trigger are confirmed, but this session cannot fetch the public Pages endpoint or the push-triggered workflow result.
 - [x] Pages workflow contains cache-busting for CSS and all shipped JS assets; runtime response confirmation remains an external check.
-- [x] Preventive site contract is merged into the refresh validation path; its first post-merge execution will be the authoritative CI run for this safeguard.
+- [x] Preventive site contract is merged into the refresh validation path; its post-merge run is the authoritative CI gate for future site edits.
+
 
 ## Research-backed items intentionally still open
 
