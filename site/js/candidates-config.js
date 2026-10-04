@@ -1,6 +1,6 @@
 /* PEBR — 2026 presidential candidate identity/status configuration.
  * The current-roster gate reflects the current TSE presidential candidature table:
- * Leonardo Avalanche remains in the current roster while his TSE status is pending judgment;
+ * Leonardo Avalanche is excluded from the active roster after his 2026-09-30 renunciation;
  * Pablo Marçal is not in the active allowlist.
  * Historical poll labels remain in the data archive but
  * are hidden from the default election UI.
@@ -8,7 +8,7 @@
  * Current 2026 presidential candidates:
  * Lula, Flávio Bolsonaro, Samara Martins, Romeu Zema, Hertz Dias,
  * Edmilson Costa, Renan Santos, Wilson Grassi, Clariana Barão,
- * Augusto Cury, Ronaldo Caiado, Rui Costa Pimenta, Leonardo Avalanche.
+ * Augusto Cury, Ronaldo Caiado, Rui Costa Pimenta.
  *
  * Source: TSE current candidature table (status checked 2026-10-01):
  * https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitoral/consulta-candidatos-eleicao
@@ -29,7 +29,6 @@
     augusto_cury: Object.freeze({ displayName: "Augusto Cury", ballotNumber: 70 }),
     ronaldo_caiado: Object.freeze({ displayName: "Ronaldo Caiado", ballotNumber: 55 }),
     rui_costa_pimenta: Object.freeze({ displayName: "Rui Costa Pimenta", ballotNumber: 29 }),
-    leonardo_avalanche: Object.freeze({ displayName: "Leonardo Avalanche", ballotNumber: 28, rosterStatus: "pending_judgment" }),
   });
 
   const CURRENT_PRESIDENTIAL_2026_IDS = new Set(
