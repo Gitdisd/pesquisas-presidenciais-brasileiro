@@ -99,3 +99,15 @@ Every repair in this cycle is either checked off above or explicitly recorded as
 - CNT/MDA current report, 2026-10-03: https://www.bol.uol.com.br/noticias/2026/10/03/pesquisa-cntmda-hoje-veja-resultados-do-ultimo-levantamento.ghtm
 - Palver current report, 2026-10-03: https://noticias.uol.com.br/eleicoes/2026/10/03/pesquisa-palver-lula-e-flavio-tem-empate-tecnico-no-1-turno.ghtm
 - TSE candidature status table checked 2026-10-01: https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitoral/consulta-candidatos-eleicao
+
+
+## Election-day follow-up — 2026-10-04
+
+- [x] Confirmed with the TSE that today is the 1º turno (4 Oct) and presidential result disclosure starts at 17:00 Brasília.
+- [x] Confirmed the production result distribution uses public JSON files and the presidential federal election code is 6257.
+- [x] Repaired Chart #2 so multi-UF selection shows separate per-UF Option B lines instead of hiding the aggregate layer entirely. No blended multi-UF mean is introduced.
+- [x] Removed Leonardo Avalanche from the active current-candidate allowlist after his 2026-09-30 renunciation; historical poll observations remain archived.
+- [x] Added an explicit election-day boundary banner: polling data is historical and official results are a separate data plane.
+- [x] Kept the existing TSE official-results panel separate from polls and Option B; it begins polling only at/after 17:00 BRT.
+- [ ] Verify the production TSE payload after 17:00 and adjust only the parser if the live JSON shape differs.
+- [ ] Verify the public Pages deployment and browser-rendered UF lines after CI completes.

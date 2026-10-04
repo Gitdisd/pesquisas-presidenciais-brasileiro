@@ -25,6 +25,11 @@
 <body>
   <div class="bg-glow" aria-hidden="true"></div>
 
+  <div class="election-day-banner" id="election-day-banner" role="status">
+    <strong>4 de outubro · dia da eleição</strong>
+    <span>Pesquisas são dados históricos; a apuração presidencial oficial do TSE começa às 17h (Brasília).</span>
+  </div>
+
   <header class="site-header">
     <div class="brand">
       <span class="brand-mark" aria-hidden="true"></span>
@@ -142,7 +147,7 @@
             <p class="muted small" id="regional-scenario">Geografia: UF · aguardando dados</p>
             <p class="muted small" id="regional-status" aria-live="polite">—</p>
           </div>
-          <p class="muted small companion-note" id="regional-note">Inspect por estado — fora do agregado nacional Option&nbsp;B. Nunca mistura UF no gráfico de cima. Agregado só com ≤1 UF quando houver export Option&nbsp;B regional.</p>
+          <p class="muted small companion-note" id="regional-note">Inspect por estado — fora do agregado nacional Option&nbsp;B. Nunca mistura UF no gráfico de cima. Linhas Option&nbsp;B são independentes por UF; faixa só com 1 UF selecionada; nunca há média multi-UF.</p>
         </div>
         <div class="filter-row regional-uf-row" id="regional-uf-row">
           <span class="filter-label">UF</span>
@@ -155,7 +160,7 @@
           <svg id="regional-chart" role="img" aria-label="Scatter de pesquisas presidenciais regionais por UF"></svg>
         </div>
         <div class="companion-legend" id="regional-legend" aria-label="Legenda regional"></div>
-        <p class="hint muted small">Pontos = pesquisas estaduais verificadas · pan/zoom como o gráfico nacional · hover/foco = um ponto. Sem brush. Sem média inventada entre UFs.</p>
+        <p class="hint muted small">Pontos = pesquisas estaduais verificadas · pan/zoom como o gráfico nacional · hover/foco = um ponto. Sem brush. UFs podem aparecer juntas em linhas separadas; nunca há média inventada entre UFs.</p>
       </section>
 
       <section class="results-panel" id="official-results-panel" aria-label="Resultados oficiais da eleição presidencial de 2026">
