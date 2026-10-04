@@ -4,7 +4,8 @@
 **Requested by user:** update the live site, repair anything broken/incomplete, read the project documentation, and mark/write what is being completed.  
 **Base:** `main` at `2d0f75676d211718f3b3b71ada12072bf70fb5ef`
 **Maintenance merge:** `0b3a0f79ad1885ae0f491a45e4d216612354faa3` (PR #11)  
-**Working branch:** `maintenance/2026-10-04-site-repair`
+**Final accessibility merge:** `86d00b4f17bb5d6193779bd836461366d9f4475d` (PR #12)  
+**Working branches:** maintenance branches used for this cycle are closed/merged.
 
 ## Documentation reconciliation
 
