@@ -45,6 +45,7 @@
     legend: document.getElementById("legend"),
     detail: document.getElementById("detail-body"),
     headerMeta: document.getElementById("header-meta"),
+    dataThrough: document.getElementById("data-through"),
     scenario: document.getElementById("scenario-label"),
     dataStatus: document.getElementById("data-status"),
     refreshBtn: document.getElementById("btn-refresh-data"),
