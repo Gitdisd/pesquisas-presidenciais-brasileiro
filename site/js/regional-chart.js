@@ -233,10 +233,11 @@
     return local.ufsOn.size;
   }
 
-  /** Aggregate/ribbon only when Option B chart export exists AND ≤1 UF selected. */
-  function mayShowAggregate() {
-    if (local.source !== "chart") return false;
-    return selectedUfCount() <= 1;
+  /** Option B lines are per-UF and may coexist; only a single-UF selection gets a ribbon.
+   * Never compute or display a blended multi-UF mean.
+   */
+  function hasRegionalAggregate() {
+    return local.source === "chart" && (local.payload?.aggregates || []).length > 0;
   }
 
   function size() {
@@ -252,8 +253,8 @@
   }
 
   function initScales(polls, dims) {
-    const agg = mayShowAggregate() ? local.payload?.aggregates || [] : [];
-    const unc = mayShowAggregate() ? local.payload?.uncertainty || [] : [];
+    const agg = hasRegionalAggregate() ? local.payload?.aggregates || [] : [];
+    const unc = hasRegionalAggregate() ? local.payload?.uncertainty || [] : [];
     const allDates = []
       .concat(polls.map((d) => d.date))
       .concat(agg.map((d) => d.date))
@@ -314,9 +315,19 @@
       isActiveCandidate(local.candById.get(d.candidate_id) || { id: d.candidate_id })
     );
     const candidates = (local.doc?.candidates || []).filter(isActiveCandidate);
-    const showAgg = mayShowAggregate();
-    const aggSrc = showAgg ? local.payload?.aggregates || [] : [];
-    const uncSrc = showAgg ? local.payload?.uncertainty || [] : [];
+    const showAgg = hasRegionalAggregate();
+    const aggSrc = showAgg
+      ? (local.payload?.aggregates || []).filter((d) => {
+          const uf = String(d.uf || "").toUpperCase();
+          return uf && (!local.ufsOn.size || local.ufsOn.has(uf));
+        })
+      : [];
+    const uncSrc = showAgg
+      ? (local.payload?.uncertainty || []).filter((d) => {
+          const uf = String(d.uf || "").toUpperCase();
+          return uf && (!local.ufsOn.size || local.ufsOn.has(uf));
+        })
+      : [];
 
     const area = d3
       .area()
@@ -325,16 +336,16 @@
       .y1((d) => local.yScale(d.band_high))
       .curve(d3.curveMonotoneX);
 
-    const ribbonData = showAgg
-      ? candidates.map((c) => ({
-          id: c.id,
-          color: c.color || colorFor(c.id),
-          values: uncSrc
-            .filter((d) => d.candidate_id === c.id)
-            .filter((d) => d.uf && selectedUfCount() === 1 && local.ufsOn.has(String(d.uf).toUpperCase()))
-            .sort((a, b) => a.date - b.date),
-        }))
-      : [];
+    const ribbonData =
+      showAgg && selectedUfCount() === 1
+        ? candidates.map((c) => ({
+            id: c.id,
+            color: c.color || colorFor(c.id),
+            values: uncSrc
+              .filter((d) => d.candidate_id === c.id)
+              .sort((a, b) => a.date - b.date),
+          }))
+        : [];
 
     const ribbons = local.layers.ribbons
       .selectAll("path.unc-ribbon")
@@ -355,16 +366,29 @@
       .curve(d3.curveMonotoneX)
       .defined((d) => d.value != null);
 
-    const lineData = showAgg
-      ? candidates.map((c) => ({
-          id: c.id,
-          color: c.color || colorFor(c.id),
-          values: aggSrc
-            .filter((d) => d.candidate_id === c.id)
-            .filter((d) => d.uf && selectedUfCount() === 1 && local.ufsOn.has(String(d.uf).toUpperCase()))
-            .sort((a, b) => a.date - b.date),
-        }))
-      : [];
+    const lineGroups = new Map();
+    if (showAgg) {
+      for (const d of aggSrc) {
+        const uf = String(d.uf || "").toUpperCase();
+        const key = uf + ":" + d.candidate_id;
+        if (!lineGroups.has(key)) {
+          lineGroups.set(key, {
+            id: key,
+            uf,
+            candidate_id: d.candidate_id,
+            color: local.candById.get(d.candidate_id)?.color || colorFor(d.candidate_id),
+            values: [],
+          });
+        }
+        lineGroups.get(key).values.push(d);
+      }
+    }
+    const lineData = [...lineGroups.values()]
+      .filter((d) => candidates.some((c) => c.id === d.candidate_id))
+      .map((d) => ({
+        ...d,
+        values: d.values.sort((a, b) => a.date - b.date),
+      }));
 
     const lines = local.layers.lines
       .selectAll("path.agg-line")
@@ -376,7 +400,10 @@
       .attr("class", "agg-line")
       .merge(lines)
       .attr("stroke", (d) => d.color)
-      .attr("d", (d) => (d.values.length ? line(d.values) : null));
+      .attr("stroke-width", (d) => (selectedUfCount() > 1 ? 1.8 : 2.25))
+      .attr("opacity", (d) => (selectedUfCount() > 1 ? 0.78 : 1))
+      .attr("d", (d) => (d.values.length ? line(d.values) : null))
+      .attr("aria-label", (d) => `${d.uf} · ${candidateDisplayName(local.candById.get(d.candidate_id) || { id: d.candidate_id })}`);
 
     const pts = local.layers.points
       .selectAll("circle.poll-point")
@@ -527,8 +554,10 @@
         local.source === "chart"
           ? "chart-regional.json"
           : "canonical-points-regional.json (pontos brutos)";
-      const aggNote = mayShowAggregate()
-        ? " · linha Option B da UF selecionada"
+      const aggNote = hasRegionalAggregate()
+        ? (selectedUfCount() === 1
+          ? " · linha Option B + faixa da UF selecionada"
+          : " · linhas Option B separadas por UF; sem média multi-UF")
         : local.source === "chart"
           ? " · pontos apenas; sem média multi-UF"
           : " · sem agregado Option B";
