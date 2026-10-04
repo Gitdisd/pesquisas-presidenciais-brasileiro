@@ -48,6 +48,7 @@
     dataThrough: document.getElementById("data-through"),
     scenario: document.getElementById("scenario-label"),
     dataStatus: document.getElementById("data-status"),
+    dataThrough: document.getElementById("data-through"),
     refreshBtn: document.getElementById("btn-refresh-data"),
     resetBtn: document.getElementById("btn-reset-zoom"),
     showAllBtn: document.getElementById("btn-show-all"),
