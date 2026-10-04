@@ -158,6 +158,28 @@
         <p class="hint muted small">Pontos = pesquisas estaduais verificadas · pan/zoom como o gráfico nacional · hover/foco = um ponto. Sem brush. Sem média inventada entre UFs.</p>
       </section>
 
+      <section class="results-panel" id="official-results-panel" aria-label="Resultados oficiais da eleição presidencial de 2026">
+        <div class="results-head">
+          <div>
+            <p class="chapter-kicker">Eleição · apuração oficial</p>
+            <h2>Resultados oficiais — Presidente</h2>
+            <p class="muted small" id="official-results-status" aria-live="polite">A divulgação oficial começa às 17h (Brasília). Este painel não altera nem mistura as séries de pesquisas.</p>
+          </div>
+          <div class="toolbar-actions">
+            <span class="chip" id="official-results-progress">Aguardando 17h</span>
+            <button type="button" class="btn" id="btn-refresh-results">Atualizar</button>
+          </div>
+        </div>
+        <div class="results-summary" id="official-results-summary" hidden></div>
+        <div class="results-table-wrap" id="official-results-table-wrap" hidden>
+          <table class="official-results" aria-describedby="official-results-status">
+            <thead><tr><th scope="col">Candidatura</th><th scope="col">Votos</th><th scope="col">Percentual</th><th scope="col">Situação</th></tr></thead>
+            <tbody id="official-results-body"></tbody>
+          </table>
+        </div>
+        <p class="muted small results-source">Fonte: Tribunal Superior Eleitoral (TSE), arquivos oficiais de divulgação. Atualização automática após 17h BRT; os dados de votação permanecem separados das pesquisas e do Option B.</p>
+      </section>
+
       <section class="polls-panel" id="polls-panel" aria-label="Tabela de pesquisas nacionais">
         <div class="polls-head">
           <div class="polls-head-main">
@@ -249,5 +271,6 @@
   <script src="js/chart.js" defer></script>
   <script src="js/regional-chart.js" defer></script>
   <script src="js/companion-chart.js" defer></script>
+  <script src="js/election-results.js" defer></script>
 </body>
 </html>
