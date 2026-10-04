@@ -5574,8 +5574,8 @@
     "sample_size": 2007,
     "moe": 0.022,
     "results": {
-      "flavio_bolsonaro": 0.431,
-      "lula": 0.473
+      "lula": 0.473,
+      "flavio_bolsonaro": 0.431
     },
     "residuals": {
       "branco_nulo": 0.076,
