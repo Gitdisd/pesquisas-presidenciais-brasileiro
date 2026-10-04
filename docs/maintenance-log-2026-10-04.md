@@ -6,7 +6,7 @@
 **Maintenance merge:** `0b3a0f79ad1885ae0f491a45e4d216612354faa3` (PR #11)  
 **Final accessibility merge:** `86d00b4f17bb5d6193779bd836461366d9f4475d` (PR #12)  
 **Final candidate-status merge:** `372aa5b49fe657887a6ca70941f8428d018eaecb` (PR #13)  
-**Post-merge canonical metadata correction:** pending PR merge after final cohort alignment check.  
+**Post-merge canonical metadata correction:** `b12fdba6b2428e37daaca001de88576060cc8f07` (PR #14) — merged.  
 **Working branches:** maintenance branches used for this cycle are closed/merged.
 
 ## Documentation reconciliation
@@ -70,7 +70,7 @@
 - [x] Prior main refresh validation run `36653397669` passed `validate-assemble`.
 - [x] Maintenance PR #11 merged to main; its main push triggered the Refresh and Pages workflows.
 - [x] PR #12 accessibility cleanup and PR #13 candidate-status correction were merged to main; both also trigger the Pages/Refresh paths where their changed files match workflow triggers.
-- [ ] Confirm served Pages asset/data responses after deployment — the available GitHub connector exposes PR-triggered workflow runs but not the push-triggered Pages run; do not treat this as externally confirmed.
+- [ ] Confirm served Pages asset/data responses after deployment — the repository-side merge and Pages trigger are confirmed, but this session cannot fetch the public Pages endpoint or the push-triggered workflow result.
 - [x] Pages workflow contains cache-busting for CSS and all shipped JS assets; runtime response confirmation remains an external check.
 
 ## Research-backed items intentionally still open
