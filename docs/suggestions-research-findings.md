@@ -2,7 +2,7 @@
 
 ## 2026-10-04 maintenance status override
 
-The prior research memo was written under the 2026-09-27 product pause. The user's explicit 2026-10-04 instruction resumes maintenance. The implementation status below is the current execution record; the research findings and locked constraints remain unchanged.
+The prior research memo was written under the 2026-09-27 product pause. The user's explicit 2026-10-04 instruction resumes maintenance. The implementation status below is the current execution record; the research findings and locked constraints remain unchanged. Pending TSE candidature status is not treated as withdrawal or inactivity.
 
 - [x] #1 Dense D3 performance: RAF zoom coalescing shipped; further device-matrix profiling remains open.
 - [x] #2 Accessibility: chart points are keyboard-focusable/activatable; full screen-reader/axe audit remains open.
