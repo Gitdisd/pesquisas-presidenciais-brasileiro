@@ -398,3 +398,8 @@ Earlier Lead pause text said regional 24 points were “not confirmed on main”
 ---
 
 *End of AI handoff. Product lanes stay paused until explicit user resume.*
+
+
+## Resume checkpoint — 2026-10-04
+
+The user explicitly resumed product work for election-day maintenance. The prior pause gate is superseded for this maintenance cycle. See election-day-maintenance-2026-10-04.md for the live checklist. Existing architecture and integrity locks remain binding: no invented poll shares, no national/regional blending, no Playwright, and official election results remain separate from polling/Option B.

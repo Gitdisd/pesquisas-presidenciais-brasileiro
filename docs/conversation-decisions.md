@@ -123,3 +123,8 @@ The continuous loop is now **stopped by the user pause**. “Continuously tasked
 This record consolidates the durable direction in [`docs/AI-HANDOFF.md`](AI-HANDOFF.md), [`docs/lead-status-log.md`](lead-status-log.md), [`docs/pipeline-status-log.md`](pipeline-status-log.md), [`docs/TASK-LOG-PAUSE.md`](TASK-LOG-PAUSE.md), [`docs/old-site-deep-port.md`](old-site-deep-port.md), [`docs/feature-gap-audit.md`](feature-gap-audit.md), and the corresponding implementation history from 2026-09-26–27. It intentionally omits transient chat turns, intermediate working-tree details, and product tasks that were not durable decisions.
 
 For a RAW-style chronological dump of known USER / LEAD / PIPELINE turns reconstructed from those sources, see [`conversation-transcript.md`](conversation-transcript.md) (index), [`lead-conversation-transcript.md`](lead-conversation-transcript.md), and [`pipeline-conversation-transcript.md`](pipeline-conversation-transcript.md).
+
+
+## 2026-10-04 — explicit resume
+
+The user explicitly resumed product work for election-day maintenance. The previous pause gate is superseded for this work cycle. The architecture and data-integrity locks remain unchanged. Current work is tracked in election-day-maintenance-2026-10-04.md.

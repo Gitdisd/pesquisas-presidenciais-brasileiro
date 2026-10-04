@@ -1427,3 +1427,17 @@ html[data-theme="light"] table.polls tbody tr:hover td {
     min-height: 220px;
   }
 }
+
+
+/* Election-day official results — separate from polling/Option B data. */
+.results-panel { margin-top: 1rem; }
+.results-head { display:flex; gap:1rem; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; }
+.results-head h2 { margin:.15rem 0 .25rem; }
+.results-summary { display:flex; flex-wrap:wrap; gap:.55rem; margin:.85rem 0; }
+.results-table-wrap { overflow:auto; border:1px solid var(--stroke); border-radius:12px; }
+.official-results { width:100%; border-collapse:collapse; min-width:640px; }
+.official-results th, .official-results td { padding:.65rem .75rem; border-bottom:1px solid var(--stroke); text-align:left; font-variant-numeric:tabular-nums; }
+.official-results th { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; background:var(--table-sticky-bg); position:sticky; top:0; }
+.official-results tr:last-child td { border-bottom:0; }
+.official-results td:nth-child(2), .official-results td:nth-child(3) { text-align:right; }
+.results-source { margin:.75rem 0 0; }

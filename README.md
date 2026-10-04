@@ -125,3 +125,8 @@ Synthetic fixtures (`example_*` / `EXAMPLE_*`) are **not** real polls.
 ## Status
 
 Current maintenance state is tracked in [`docs/maintenance-log-2026-10-04.md`](docs/maintenance-log-2026-10-04.md). The canonical national snapshots now contain 130 first-round points and 250 second-round points; regional canonical remains a separate 24-point tree. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).
+
+
+## Current maintenance state — 2026-10-04
+
+Product work has been explicitly resumed for election-day maintenance. The active checklist is docs/election-day-maintenance-2026-10-04.md. The project remains on the locked Ruby → Python Option B → static HTML/CSS + vanilla JS + D3 architecture. Official TSE vote results are kept in a separate UI path and are never inserted into polling aggregates.

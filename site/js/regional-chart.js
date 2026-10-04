@@ -528,9 +528,9 @@
           ? "chart-regional.json"
           : "canonical-points-regional.json (pontos brutos)";
       const aggNote = mayShowAggregate()
-        ? " · agregado ≤1 UF"
+        ? " · linha Option B da UF selecionada"
         : local.source === "chart"
-          ? " · sem média multi-UF"
+          ? " · pontos apenas; sem média multi-UF"
           : " · sem agregado Option B";
       el.status.textContent =
         nPolls +
@@ -675,7 +675,22 @@
         ...new Set(prepared.polls.map((d) => d.uf).filter(Boolean)),
       ].sort();
     }
-    local.ufsOn = new Set(local.availableUfs);
+    // Default to one objectively selected UF so the per-UF Option B line is visible.
+    // Selection uses only distinct verified poll count; ties resolve alphabetically.
+    // "Todas UFs" remains available and intentionally shows points without a blended line.
+    const pollCounts = new Map();
+    for (const poll of prepared.polls || []) {
+      if (!poll.uf || !poll.poll_id) continue;
+      const uf = String(poll.uf).toUpperCase();
+      if (!pollCounts.has(uf)) pollCounts.set(uf, new Set());
+      pollCounts.get(uf).add(poll.poll_id);
+    }
+    const defaultUf = local.availableUfs.slice().sort((a, b) => {
+      const countA = pollCounts.get(a)?.size || 0;
+      const countB = pollCounts.get(b)?.size || 0;
+      return countB - countA || a.localeCompare(b);
+    })[0];
+    local.ufsOn = defaultUf ? new Set([defaultUf]) : new Set();
 
     if (el.scenario) {
       const label =
