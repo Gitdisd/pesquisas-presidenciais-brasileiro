@@ -3681,7 +3681,7 @@
       "ns_nr": 0.015
     },
     "tse_registration_id": "BR-08706/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_1st_round.json"
   },
   {
@@ -3714,7 +3714,7 @@
       "ns_nr": 0.026
     },
     "tse_registration_id": "BR-01122/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_1st_round.json"
   },
   {
@@ -3742,7 +3742,7 @@
       "ns_nr": 0.07
     },
     "tse_registration_id": "BR-00698/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/indexa_2026-09-29_stimulated_1st_round.json"
   },
   {
@@ -3770,7 +3770,7 @@
       "ns_nr": 0.03
     },
     "tse_registration_id": "BR-09503/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_1st_round.json"
   },
   {
@@ -3799,7 +3799,7 @@
       "ns_nr": 0.02
     },
     "tse_registration_id": "BR-08039/2026",
-    "dataset_version": "intake-cohort-005",
+    "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_1st_round.json"
   },
   {
@@ -3827,7 +3827,7 @@
       "ns_nr": 0.047
     },
     "tse_registration_id": "BR-04756/2026",
-    "dataset_version": "intake-cohort-006",
+    "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/cnt_mda_2026-10-03_stimulated_1st_round.json"
   },
   {
@@ -3854,7 +3854,7 @@
       "ns_nr": 0.03
     },
     "tse_registration_id": "BR-01708/2026",
-    "dataset_version": "intake-cohort-006",
+    "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/datafolha_2026-10-03_stimulated_1st_round.json"
   },
   {
@@ -3882,7 +3882,7 @@
       "ns_nr": 0
     },
     "tse_registration_id": "BR-00198/2026",
-    "dataset_version": "intake-cohort-006",
+    "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/palver_2026-10-03_stimulated_1st_round.json"
   },
   {
@@ -3910,8 +3910,7 @@
       "ns_nr": 0.03
     },
     "tse_registration_id": "BR-02197/2026",
-    "dataset_version": "intake-cohort-006",
+    "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/quaest_2026-10-03_stimulated_1st_round.json"
   }
-
 ]
