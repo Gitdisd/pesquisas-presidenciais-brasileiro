@@ -499,7 +499,7 @@
 
   function clearDetail() {
     el.detail.innerHTML =
-      '<p class="muted">Passe o mouse sobre um ponto de pesquisa.</p>';
+      '<p class="muted">Passe o mouse ou selecione um ponto de pesquisa.</p>';
   }
 
   /** Lean hover card: candidate, %, institute, N, date only. */
