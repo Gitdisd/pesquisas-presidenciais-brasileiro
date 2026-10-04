@@ -1430,6 +1430,22 @@ html[data-theme="light"] table.polls tbody tr:hover td {
 
 
 /* Election-day official results — separate from polling/Option B data. */
+
+.election-day-banner {
+  margin: .7rem clamp(1rem, 3vw, 2rem) 0;
+  padding: .8rem 1rem;
+  border: 1px solid var(--stroke-strong);
+  border-radius: 12px;
+  background: var(--bg-elev);
+  color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .7rem;
+  align-items: baseline;
+}
+.election-day-banner strong { color: var(--accent); }
+.election-day-banner span { color: var(--muted); font-size: .88rem; }
+
 .results-panel { margin-top: 1rem; }
 .results-head { display:flex; gap:1rem; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; }
 .results-head h2 { margin:.15rem 0 .25rem; }
