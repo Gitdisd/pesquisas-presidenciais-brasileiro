@@ -9,7 +9,7 @@
 - [x] Static asset cache-busting is applied during Pages deployment.
 - [x] Poll points have keyboard focus/activation equivalents; zoom redraws are coalesced with requestAnimationFrame.
 - [x] Latest-fieldwork header status is repaired and now survives header metadata rendering.
-- [x] Current TSE candidature status is represented: 12 deferido candidates active by default; Leonardo Avalanche pending judgment is hidden by default; Pablo Marçal is not in the active allowlist.
+- [x] Current TSE candidature status is represented: 12 deferido candidates plus Leonardo Avalanche (pending judgment) are in the current roster; Pablo Marçal is not in the active allowlist.
 - [x] Latest verified national polling data through 2026-10-03 is incorporated into canonical snapshots.
 - [x] Unsupported Indexa runoff data was removed instead of being silently retained.
 - [ ] Cross-visit “what changed since last visit” strip remains unbuilt.

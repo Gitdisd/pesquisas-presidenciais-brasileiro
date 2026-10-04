@@ -1,7 +1,7 @@
 /* PEBR — 2026 presidential candidate identity/status configuration.
  * The current-roster gate reflects the current TSE presidential candidature table:
- * Leonardo Avalanche is retained for historical/source identity but hidden by default
- * while his candidacy is pending judgment; Pablo Marçal is not in the active allowlist.
+ * Leonardo Avalanche remains in the current roster while his TSE status is pending judgment;
+ * Pablo Marçal is not in the active allowlist.
  * Historical poll labels remain in the data archive but
  * are hidden from the default election UI.
  *
@@ -78,8 +78,6 @@
     "out",
     "dropped",
     "ineligible",
-    "pending_judgment",
-    "pending",
   ]);
 
   /**
@@ -126,10 +124,6 @@
     if (typeof c.status === "string" && INACTIVE_STATUS.has(c.status.toLowerCase())) {
       return false;
     }
-    if (CURRENT_PRESIDENTIAL_2026[id]?.rosterStatus === "pending_judgment") {
-      return false;
-    }
-
     return true;
   }
 
