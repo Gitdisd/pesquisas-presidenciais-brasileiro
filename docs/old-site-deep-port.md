@@ -1,3 +1,7 @@
+## 2026-10-04 current status
+
+Selective feature porting is active again by explicit user instruction. Regional Chart #2 Option B, current candidate/data gates, CI contracts, cache-busting, and latest-fieldwork UI fixes are being maintained without restyling the product. See [maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md).
+
 # Old-site deep port — design memo
 
 **Date:** 2026-09-27 (America/Sao_Paulo)  
