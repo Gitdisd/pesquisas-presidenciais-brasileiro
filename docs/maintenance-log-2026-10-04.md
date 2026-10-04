@@ -72,6 +72,7 @@
 - [x] PR #12 accessibility cleanup and PR #13 candidate-status correction were merged to main; both also trigger the Pages/Refresh paths where their changed files match workflow triggers.
 - [ ] Confirm served Pages asset/data responses after deployment — the repository-side merge and Pages trigger are confirmed, but this session cannot fetch the public Pages endpoint or the push-triggered workflow result.
 - [x] Pages workflow contains cache-busting for CSS and all shipped JS assets; runtime response confirmation remains an external check.
+- [x] Preventive site contract is merged into the refresh validation path; its first post-merge execution will be the authoritative CI run for this safeguard.
 
 ## Research-backed items intentionally still open
 
