@@ -1,3 +1,22 @@
+
+> **2026-10-04 maintenance reconciliation:** This audit's 2026-09-27 table is historical. Current execution and checkboxes are tracked in [docs/maintenance-log-2026-10-04.md](maintenance-log-2026-10-04.md). Chart #2 regional Option B, contract smoke tests, cache-busting, keyboard points, RAF zoom coalescing, MOE/fieldwork detail, and current candidate/data gates are now shipped. The remaining gaps are explicitly marked rather than implied complete.
+
+### Current gap status — 2026-10-04
+
+- [x] Chart #2 regional Option B snapshot is populated per UF; no multi-UF Brazil blend.
+- [x] Pages rebuilds national 1º, pairwise 2º and regional chart artifacts from canonical data.
+- [x] CI contract coverage includes Python Option B tests and chart-shape smoke checks.
+- [x] Static asset cache-busting is applied during Pages deployment.
+- [x] Poll points have keyboard focus/activation equivalents; zoom redraws are coalesced with requestAnimationFrame.
+- [x] Latest-fieldwork header status is repaired and now survives header metadata rendering.
+- [x] Current TSE candidature status is represented: 12 deferido candidates active by default; Leonardo Avalanche pending judgment is hidden by default; Pablo Marçal is not in the active allowlist.
+- [x] Latest verified national polling data through 2026-10-03 is incorporated into canonical snapshots.
+- [x] Unsupported Indexa runoff data was removed instead of being silently retained.
+- [ ] Cross-visit “what changed since last visit” strip remains unbuilt.
+- [ ] Linked time-domain synchronization remains unbuilt; no brush/slider will be introduced.
+- [ ] Broader UF intake remains evidence-gated.
+- [ ] TSE live-dump freshness remains subject to documented egress/403 constraints; no bypass is authorized.
+
 # Feature gap audit — OLD (`pesquisas-eleitorais-br`) → NEW (`pesquisas-presidenciais-brasileiro`)
 
 Audit date: 2026-09-27 (America/Sao_Paulo). Stack locked: vanilla JS + D3 SVG, static HTML/CSS, Ruby pipeline, Python Option B. No TypeScript/SPA. Locked UX: point-only hover, no brush slider, TV-style pan/zoom, hide withdrawn by default, Michelle skipped.
