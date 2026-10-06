@@ -40,3 +40,32 @@ The latest national polling refresh is already on `main` from the previous maint
 - [x] Final `pebr-refresh` run passed all three canonical drift checks, discovery smoke, Python tests, chart contract, JavaScript syntax/DOM contract, and Ruby tests.
 - [x] Final Pages deployment completed successfully from `main`.
 - [ ] Election-result runtime check remains pending until the TSE's 17:00 BRT release window; the TSE documents that presidential result JSON becomes available from 17:00 and updates during totalization.
+
+## Post-election maintenance — 2026-10-06 12:54 BRT
+
+The 1º turno is now closed. The product has moved from election-night readiness to a permanent 2º-turno polling/archive state.
+
+- [x] Confirmed the official TSE result phase is complete and the site now treats the 1º turno as historical.
+- [x] Added a local permanent archive at `site/data/official-results-1st-round.json`; official vote totals are never ingested as polling observations.
+- [x] Added `site/js/election-results-core.js` with a synthetic TSE-shaped fixture and Node contract test.
+- [x] Replaced the 30-second live-result loop with the checked-in final archive so the public site does not depend on a live TSE JSON endpoint after the election.
+- [x] Made the 2º turno the default view on a bare URL while preserving explicit `?round=1` share links as historical first-round views.
+- [x] Added an explicit post-first-round phase note to distinguish pre-result polling from evidence collected after 04/10.
+- [x] Reconciled the newly published Instituto Veritá national 2º-turno synthesis: 51.56% Flávio Bolsonaro / 48.44% Lula, N=40,500, fieldwork 26/09–02/10. This is included as a **pre-result-fieldwork** observation, not mislabeled as a post-first-round poll.
+- [x] Activated Veritá in the institute registry and attached primary-index + press witnesses.
+- [x] Updated the 2º-turno canonical snapshot so Pages regeneration will incorporate Veritá into `chart-2nd-round.json`.
+- [x] No scheduled-but-not-yet-published polls were fabricated: current reporting indicates the first post-first-round fieldwork releases from Datafolha and PoderData are expected from 08/10, with AtlasIntel expected 09/10.
+
+### Current evidence boundary
+
+The post-04/10 polling series should only gain a new observation when its fieldwork has actually occurred and the published result has a verified primary witness. Scheduled fieldwork is not treated as a poll.
+
+Veritá's 2026-10-05/06 publication is intentionally retained because it is a real published national 2º-turno synthesis, but its interviews ended before the 04/10 vote. The UI and documentation explicitly distinguish this from the next generation of post-result polls.
+
+### Sources checked on 2026-10-06
+
+- TSE official result publication / first-round completion: https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/flavio-bolsonaro-e-lula-vao-disputar-o-2o-turno-para-a-presidencia-da-republica
+- TSE official results portal documentation: https://www.tse.jus.br/eleicoes/informacoes-tecnicas-sobre-a-divulgacao-de-resultados
+- Instituto Veritá publication index: https://eleicoes26.institutoverita.com.br/
+- Veritá national synthesis cross-check: https://folhadepatrocinio.com/noticias/pesquisa-verita-nacional/
+- Current second-round polling schedule: UOL reporting published 2026-10-05
