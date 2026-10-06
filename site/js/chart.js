@@ -48,6 +48,7 @@
     dataThrough: document.getElementById("data-through"),
     scenario: document.getElementById("scenario-label"),
     dataStatus: document.getElementById("data-status"),
+    phaseNote: document.getElementById("phase-note"),
     dataThrough: document.getElementById("data-through"),
     refreshBtn: document.getElementById("btn-refresh-data"),
     resetBtn: document.getElementById("btn-reset-zoom"),
@@ -106,7 +107,7 @@
     zoomBehavior: null,
     zoomRect: null,
     layers: {},
-    round: 1,
+    round: 2,
     chart1st: null,
     chart2nd: null,
     activeScenario: null,
@@ -198,6 +199,12 @@
     }
     const scen = scenarioDisplayLabel(meta);
     el.scenario.textContent = `Cenário: ${scen}`;
+    if (el.phaseNote) {
+      el.phaseNote.textContent =
+        state.round === 2
+          ? "1º turno encerrado em 04/10/2026 · 2º turno definido: Flávio Bolsonaro × Lula. Leituras com campo iniciado após a eleição terão prioridade como evidência pós-resultado."
+          : "1º turno encerrado em 04/10/2026 · esta série é histórica e deve ser lida ao lado do resultado oficial final.";
+    }
     if (el.exampleBanner) {
       el.exampleBanner.hidden = !meta.example;
     }
@@ -2100,7 +2107,7 @@
       state.chart1st = bundle.chart1st;
       state.chart2nd = bundle.chart2nd;
       state.has2nd = bundle.has2nd;
-      state.round = 1;
+      state.round = state.has2nd ? 2 : 1;
 
       if (el.round1) {
         el.round1.addEventListener("click", () => switchRound(1));
