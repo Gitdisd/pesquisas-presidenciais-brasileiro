@@ -97,8 +97,8 @@ institutes:
   - institute_id: verita
     display_name: "Instituto Veritá"
     aliases: ["Veritá", "Verita"]
-    active: false
-    notes: "from docs/source-map — not yet verified for intake"
+    active: true
+    notes: "Activated 2026-10-06 for verified national 2nd-round Veritá synthesis; underlying release index/state studies cross-checked."
   - institute_id: alfa_inteligencia
     display_name: "Alfa Inteligência"
     aliases: ["Alfa", "Alfa/TMC", "alfa-inteligencia"]
