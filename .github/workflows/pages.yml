@@ -92,7 +92,7 @@ jobs:
           p = Path("site/index.html")
           s = p.read_text()
           sha = "$GITHUB_SHA"[:12]
-          for asset in ("css/app.css", "js/candidates-config.js", "js/option-b.js", "js/chart.js", "js/regional-chart.js", "js/companion-chart.js", "js/election-results.js"):
+          for asset in ("css/app.css", "js/candidates-config.js", "js/option-b.js", "js/chart.js", "js/regional-chart.js", "js/companion-chart.js", "js/election-results-core.js", "js/election-results.js"):
               s = s.replace(f'href="{asset}"', f'href="{asset}?v={sha}"')
               s = s.replace(f'src="{asset}"', f'src="{asset}?v={sha}"')
           p.write_text(s)
