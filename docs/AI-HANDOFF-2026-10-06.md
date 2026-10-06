@@ -4,7 +4,7 @@
 
 **Repository:** https://github.com/Gitdisd/pesquisas-presidenciais-brasileiro  
 **Pages:** https://gitdisd.github.io/pesquisas-presidenciais-brasileiro/  
-**Main tip at save:** `5bd36bbf0194e8b7b128167db9730ec87f5e7127`  
+**Main tip at save:** `7cba99d3497a9995f84d13fb77329469835defd4`  
 **Last maintenance window recorded:** 2026-10-04 (election day), with the final documentation checkpoint committed after CI/Pages verification.
 
 ---
@@ -273,6 +273,15 @@ The present state already includes:
 ## 9. Save-state principle
 
 This file is intentionally operational rather than conversational. On the next chat, use it as the starting state, then confirm live repository/Actions state before making new changes.
+
+## 11. Final verification checkpoint — 2026-10-06
+
+- [x] Post-first-round maintenance merged to `main`: `9a11c535b7a9d50946daf352c99d9b52c94933a8`.
+- [x] Parser/fixture CI hardening followed on `main`.
+- [x] Final `pebr-refresh` run `37493427640` passed all validation, canonical drift, discovery, Option B, chart, JavaScript/DOM, and Ruby tests.
+- [x] Pages run `37493030398` for the merged product commit completed successfully.
+- [x] The published Pages artifact therefore contains the archived 1º-turn result path and the regenerated 2º-turn chart based on the verified canonical set.
+- [ ] Direct browser rendering verification remains unavailable from this environment; repository-side deployment is verified.
 
 **Last saved:** 2026-10-06
 
