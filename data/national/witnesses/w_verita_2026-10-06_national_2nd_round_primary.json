@@ -1,0 +1,27 @@
+{
+  "witness_id": "w_verita_2026-10-06_national_2nd_round_primary",
+  "poll_id": "verita_2026-10-02_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "institute_release",
+  "source_url": "https://eleicoes26.institutoverita.com.br/",
+  "retrieved_at": "2026-10-06T12:54:00-03:00",
+  "content_hash": "sha256:c610c58436f2cf56490606beb2dc960ad75d36d70ca822a97840ebab10ba2bbd",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_post_first_round_2026-10-06_v1",
+  "extractions": {
+    "publication_index": "Instituto Veritá election publications",
+    "fieldwork": "2026-09-26..2026-10-02",
+    "sample_size": 40500,
+    "geography": "27 UFs",
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "valid_results": {
+      "flavio_bolsonaro": 51.56,
+      "lula": 48.44
+    },
+    "confidence_percent": 95,
+    "margin_of_error_pp": "2.0 to 3.5 by recut"
+  },
+  "confidence": 0.9,
+  "tse_registration_id": null,
+  "notes": "Primary institute publication index was checked on 2026-10-06. It exposes the newly published presidential studies by UF; the national 51.56/48.44 synthesis was cross-checked against current press reports because the index does not expose the national synthesis as a separate text record."
+}
