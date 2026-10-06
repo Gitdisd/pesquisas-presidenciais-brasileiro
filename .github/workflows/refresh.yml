@@ -167,7 +167,10 @@ jobs:
           node --check site/js/chart.js
           node --check site/js/regional-chart.js
           node --check site/js/companion-chart.js
-          python3 - <<'PY'
+          node --check site/js/election-results-core.js
+          node --check site/js/election-results.js
+          node test/election_results_core_test.js
+          python3 - <<'PY
           import re
           from pathlib import Path
           html = Path("site/index.html").read_text()
