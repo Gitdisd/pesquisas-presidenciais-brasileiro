@@ -1,0 +1,24 @@
+{
+  "poll_id": "verita_2026-10-02_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "verita",
+  "fieldwork_start": "2026-09-26",
+  "fieldwork_end": "2026-10-02",
+  "fieldwork_mid": "2026-09-29",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 40500,
+  "moe": null,
+  "results": {
+    "flavio_bolsonaro": 0.5156,
+    "lula": 0.4844
+  },
+  "residuals": {},
+  "tse_registration_id": null,
+  "witness_ids": [
+    "w_verita_2026-10-06_national_2nd_round_primary",
+    "w_verita_2026-10-06_national_2nd_round_press"
+  ],
+  "dataset_version": "intake-cohort-008",
+  "notes": "National second-round synthesis publicly reported after the 2026-10-04 first round. Fieldwork ran 2026-09-26..2026-10-02, so this is a pre-result-fieldwork scenario, not a post-first-round poll. The published headline reports valid votes only: Flávio Bolsonaro 51.56%, Lula 48.44%. The institute published the underlying state presidential studies across the 27 UFs; no single national TSE registration is assigned here."
+}
