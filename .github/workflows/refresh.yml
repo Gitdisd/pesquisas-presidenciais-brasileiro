@@ -170,20 +170,7 @@ jobs:
           node --check site/js/election-results-core.js
           node --check site/js/election-results.js
           node test/election_results_core_test.js
-          python3 - <<'PY
-          import re
-          from pathlib import Path
-          html = Path("site/index.html").read_text()
-          ids = set(re.findall(r'\\bid="([^"]+)"', html))
-          missing = []
-          for path in Path("site/js").glob("*.js"):
-              text = path.read_text()
-              for value in re.findall(r'getElementById\\("([^"]+)"\\)', text):
-                  if value not in ids:
-                      missing.append(f"{path}: {value}")
-          assert not missing, "Missing DOM ids:\\n" + "\\n".join(missing)
-          print(f"site DOM contract OK — {len(ids)} HTML ids checked")
-          PY
+          python3 test/site_dom_contract.py
 
       - name: Watch unit tests (minitest)
         run: bundle exec ruby -Ilib:test test/watch_test.rb
