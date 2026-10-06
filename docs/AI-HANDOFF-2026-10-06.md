@@ -275,3 +275,37 @@ The present state already includes:
 This file is intentionally operational rather than conversational. On the next chat, use it as the starting state, then confirm live repository/Actions state before making new changes.
 
 **Last saved:** 2026-10-06
+
+## 10. Post-first-round update — 2026-10-06
+
+This save-state was opened on 2026-10-06 after the first round had concluded.
+
+### Completed in this maintenance pass
+
+- [x] First round is treated as historical; second round is now the bare-URL default.
+- [x] Explicit `?round=1` URLs remain valid for archived first-round views.
+- [x] Final TSE first-round result is archived locally in `site/data/official-results-1st-round.json`.
+- [x] Official-result parsing is isolated in `site/js/election-results-core.js`.
+- [x] Synthetic TSE-shaped fixture + Node contract test added.
+- [x] Election-night 30-second remote polling loop removed from production UI.
+- [x] Veritá's newly published national 2º-turno synthesis added with witnesses and canonical reconciliation:
+  - N=40,500
+  - fieldwork 2026-09-26..2026-10-02
+  - Flávio Bolsonaro 51.56% valid
+  - Lula 48.44% valid
+  - explicitly marked pre-result-fieldwork; never described as a post-04/10 poll.
+- [x] Veritá activated in `config/institutes.yml`.
+- [x] Pages cache-busting extended to the election-result parser core.
+
+### Polling boundary as of 2026-10-06
+
+Do not add future scheduled surveys as if they are already observations. Current reporting shows Datafolha fieldwork 06–08/10 (release expected 08/10), PoderData fieldwork 05–07/10 (release expected 08/10), and AtlasIntel fieldwork 03–08/10 (release expected 09/10). Once published and verified, these should enter the 2º-turno series with their real field dates.
+
+### Next work
+
+- [ ] Run repository CI on this branch/PR and repair any contract failures.
+- [ ] Merge only after validation is green.
+- [ ] Verify the deployed Pages artifact on real browser/mobile if available.
+- [ ] Add each newly published post-result poll through the primary-witness gate; regenerate the 2º-turno Option B chart from canonical data.
+- [ ] Revisit regional UF intake after new verified regional primaries appear.
+- [ ] Keep the first-round archive and official-result panel read-only and separate from polling.

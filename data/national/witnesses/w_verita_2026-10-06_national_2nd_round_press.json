@@ -1,0 +1,23 @@
+{
+  "witness_id": "w_verita_2026-10-06_national_2nd_round_press",
+  "poll_id": "verita_2026-10-02_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://folhadepatrocinio.com/noticias/pesquisa-verita-nacional/",
+  "retrieved_at": "2026-10-06T12:54:00-03:00",
+  "content_hash": "sha256:1bbc365998a55fed871363fd9c24928c0eb874de82807f4c85dbc65edb1c7622",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_post_first_round_2026-10-06_v1",
+  "extractions": {
+    "fieldwork": "2026-09-26..2026-10-02",
+    "sample_size": 40500,
+    "valid_results": {
+      "flavio_bolsonaro": 51.56,
+      "lula": 48.44
+    },
+    "first_round_status": "fieldwork ended before voting"
+  },
+  "confidence": 0.95,
+  "tse_registration_id": null,
+  "notes": "Current report states the Veritá national synthesis was published after the first round but its interviews ended before the vote; reported margins are recut-specific."
+}

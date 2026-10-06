@@ -26,8 +26,8 @@
   <div class="bg-glow" aria-hidden="true"></div>
 
   <div class="election-day-banner" id="election-day-banner" role="status">
-    <strong>4 de outubro · dia da eleição</strong>
-    <span>Pesquisas são dados históricos; a apuração presidencial oficial do TSE começa às 17h (Brasília).</span>
+    <strong>1º turno encerrado · 4 de outubro</strong>
+    <span>O 1º turno está encerrado. Flávio Bolsonaro e Lula avançaram ao 2º turno em 25 de outubro; resultados oficiais ficam arquivados abaixo e pesquisas continuam separadas da apuração.</span>
   </div>
 
   <header class="site-header">
@@ -65,6 +65,7 @@
         <div>
           <h2 id="chart-heading">Tendência nacional</h2>
           <p class="muted" id="scenario-label">Cenário: —</p>
+          <p class="muted small phase-note" id="phase-note">1º turno encerrado em 04/10/2026.</p>
           <p class="data-status muted small" id="data-status" aria-live="polite">Carregando dados…</p>
         </div>
         <div class="toolbar-actions">
@@ -83,8 +84,8 @@
         <div class="filter-row filter-row-primary">
           <span class="filter-label">Turno</span>
           <div class="seg" role="group" aria-label="Turno">
-            <button type="button" class="seg-btn active" id="round-1" aria-pressed="true" data-round="1">1º turno</button>
-            <button type="button" class="seg-btn" id="round-2" aria-pressed="false" data-round="2" disabled title="Carregando série de 2º turno…">2º turno</button>
+            <button type="button" class="seg-btn" id="round-1" aria-pressed="false" data-round="1">1º turno</button>
+            <button type="button" class="seg-btn active" id="round-2" aria-pressed="true" data-round="2" disabled title="Carregando série de 2º turno…">2º turno</button>
           </div>
           <span class="filter-label">Período</span>
           <div class="seg range-seg" role="group" aria-label="Período visível">
@@ -167,12 +168,12 @@
         <div class="results-head">
           <div>
             <p class="chapter-kicker">Eleição · apuração oficial</p>
-            <h2>Resultados oficiais — Presidente</h2>
-            <p class="muted small" id="official-results-status" aria-live="polite">A divulgação oficial começa às 17h (Brasília). Este painel não altera nem mistura as séries de pesquisas.</p>
+            <h2>Resultados oficiais — 1º turno · final</h2>
+            <p class="muted small" id="official-results-status" aria-live="polite">Carregando o resultado final arquivado do TSE. Este painel não altera nem mistura as séries de pesquisas.</p>
           </div>
           <div class="toolbar-actions">
-            <span class="chip" id="official-results-progress">Aguardando 17h</span>
-            <button type="button" class="btn" id="btn-refresh-results">Atualizar</button>
+            <span class="chip" id="official-results-progress">Resultado final</span>
+            <button type="button" class="btn" id="btn-refresh-results">Recarregar arquivo</button>
           </div>
         </div>
         <div class="results-summary" id="official-results-summary" hidden></div>
@@ -182,7 +183,7 @@
             <tbody id="official-results-body"></tbody>
           </table>
         </div>
-        <p class="muted small results-source">Fonte: Tribunal Superior Eleitoral (TSE), arquivos oficiais de divulgação. Atualização automática após 17h BRT; os dados de votação permanecem separados das pesquisas e do Option B.</p>
+        <p class="muted small results-source">Fonte: Tribunal Superior Eleitoral (TSE), resultado final do 1º turno arquivado em PEBR após a totalização. Os dados de votação permanecem separados das pesquisas e do Option B.</p>
       </section>
 
       <section class="polls-panel" id="polls-panel" aria-label="Tabela de pesquisas nacionais">
@@ -276,6 +277,7 @@
   <script src="js/chart.js" defer></script>
   <script src="js/regional-chart.js" defer></script>
   <script src="js/companion-chart.js" defer></script>
+  <script src="js/election-results-core.js" defer></script>
   <script src="js/election-results.js" defer></script>
 </body>
 </html>

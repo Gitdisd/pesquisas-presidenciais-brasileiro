@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "election_cycle": 2026,
+  "round": "1st",
+  "official_final": true,
+  "status": "final",
+  "source_name": "Tribunal Superior Eleitoral (TSE)",
+  "source_url": "https://resultados.tse.jus.br/",
+  "archived_at": "2026-10-06T12:54:00-03:00",
+  "final_totalization_date": "2026-10-05",
+  "note": "Final nationwide presidential first-round result, archived locally after the TSE totalization reached 100%. This file is official-result data, not polling data and is never fed into canonical poll or Option B artifacts.",
+  "candidates": [
+    {
+      "number": "22",
+      "name": "Flávio Bolsonaro",
+      "candidate_id": "flavio_bolsonaro",
+      "votes": 56104503,
+      "percent": 47.03,
+      "status": "2º turno",
+      "elected": false
+    },
+    {
+      "number": "13",
+      "name": "Luiz Inácio Lula da Silva",
+      "candidate_id": "lula",
+      "votes": 53879538,
+      "percent": 45.16,
+      "status": "2º turno",
+      "elected": false
+    },
+    {
+      "number": "70",
+      "name": "Augusto Cury",
+      "candidate_id": "augusto_cury",
+      "votes": 3448569,
+      "percent": 2.89,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "30",
+      "name": "Renan Santos",
+      "candidate_id": "renan_santos",
+      "votes": 2675887,
+      "percent": 2.24,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "55",
+      "name": "Ronaldo Caiado",
+      "candidate_id": "ronaldo_caiado",
+      "votes": 2605148,
+      "percent": 2.18,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "30",
+      "name": "Romeu Zema",
+      "candidate_id": "romeu_zema",
+      "votes": 326488,
+      "percent": 0.27,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "80",
+      "name": "Samara Martins",
+      "candidate_id": "samara_martins",
+      "votes": 122911,
+      "percent": 0.1,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "18",
+      "name": "Hertz Dias",
+      "candidate_id": "hertz_dias",
+      "votes": 43103,
+      "percent": 0.04,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "33",
+      "name": "Clariana Barão",
+      "candidate_id": "clariana_barao",
+      "votes": 40043,
+      "percent": 0.03,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "31",
+      "name": "Edmilson Costa",
+      "candidate_id": "edmilson_costa",
+      "votes": 22693,
+      "percent": 0.02,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "12",
+      "name": "Wilson Grassi",
+      "candidate_id": "wilson_grassi",
+      "votes": 16881,
+      "percent": 0.01,
+      "status": "Não eleito",
+      "elected": false
+    },
+    {
+      "number": "21",
+      "name": "Rui Costa Pimenta",
+      "candidate_id": "rui_costa_pimenta",
+      "votes": 15024,
+      "percent": 0.01,
+      "status": "Não eleito",
+      "elected": false
+    }
+  ],
+  "summary": {
+    "valid_votes": 119300788,
+    "turnout": 125275835,
+    "blank_votes": 2300798,
+    "null_votes": 3674249,
+    "abstentions": 33469244,
+    "sections_totalized": 499248,
+    "sections_expected": 499248,
+    "percent_totalized": 100
+  }
+}
