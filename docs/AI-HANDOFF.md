@@ -2,7 +2,7 @@
 
 > **Read `docs/AI-HANDOFF-2026-10-06.md` before using this September 27 handoff.** The September pause snapshot below is historical and is superseded by the election-day maintenance and repair work now on `main`.
 >
-> Current `main`: `98768df78a27f2d883c537e8f7ffc27b86c85828`.
+> Current `main`: `7cba99d3497a9995f84d13fb77329469835defd4`.
 >
 > The current save-state records the repaired regional Option B line, official TSE results panel, election-day boundary, candidate-roster update, canonical reconciliation, CI/Pages verification, and the remaining post-election tasks.
 
