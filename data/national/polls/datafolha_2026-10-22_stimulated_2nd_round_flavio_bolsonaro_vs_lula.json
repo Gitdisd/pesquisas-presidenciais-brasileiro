@@ -1,0 +1,26 @@
+{
+  "poll_id": "datafolha_2026-10-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "datafolha",
+  "fieldwork_start": "2026-10-20",
+  "fieldwork_end": "2026-10-22",
+  "fieldwork_mid": "2026-10-21",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 2520,
+  "moe": 0.02,
+  "results": {
+    "flavio_bolsonaro": 0.47,
+    "lula": 0.46
+  },
+  "residuals": {
+    "branco_nulo": 0.05,
+    "ns_nr": 0.02
+  },
+  "tse_registration_id": "BR-09709/2026",
+  "witness_ids": [
+    "w_datafolha_2026-10-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol"
+  ],
+  "dataset_version": "intake-cohort-009",
+  "notes": "Total-vote shares transcribed from press report. Fieldwork 2026-10-20 to 2026-10-22; after first-round voting on 2026-10-04. Valid-vote shares are not used in this record."
+}

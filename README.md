@@ -124,9 +124,14 @@ Synthetic fixtures (`example_*` / `EXAMPLE_*`) are **not** real polls.
 
 ## Status
 
-Current maintenance state is tracked in [`docs/maintenance-log-2026-10-04.md`](docs/maintenance-log-2026-10-04.md). The canonical national snapshots now contain 130 first-round points and 250 second-round points; regional canonical remains a separate 24-point tree. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).
+Current maintenance state is tracked in [`docs/maintenance-log-2026-10-04.md`](docs/maintenance-log-2026-10-04.md). The canonical national snapshots now contain 130 first-round points and 266 second-round points; regional canonical remains a separate 24-point tree. EXAMPLE fixtures remain synthetic only. Do not commit dumps legados (`_quarantine/`, bulk `data/polls.json`).
 
 
 ## Current maintenance state — 2026-10-04
 
 Product work has been explicitly resumed for election-day maintenance. The active checklist is docs/election-day-maintenance-2026-10-04.md. The project remains on the locked Ruby → Python Option B → static HTML/CSS + vanilla JS + D3 architecture. Official TSE vote results are kept in a separate UI path and are never inserted into polling aggregates.
+
+
+## Second-round polling refresh — 2026-10-22
+
+The national Lula–Flávio second-round snapshot now contains 266 canonical points, including 14 newly recorded post-first-round total-vote observations. Each has a raw poll JSON and a linked press-witness JSON. Source and fieldwork details are documented in [docs/polling-refresh-2026-10-22.md](docs/polling-refresh-2026-10-22.md). The Pages workflow regenerates the second-round chart from canonical data.

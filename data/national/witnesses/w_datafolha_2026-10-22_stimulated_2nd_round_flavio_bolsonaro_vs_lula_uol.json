@@ -1,0 +1,32 @@
+{
+  "witness_id": "w_datafolha_2026-10-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol",
+  "poll_id": "datafolha_2026-10-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/22/nova-pesquisa-datafolha-presidente-segundo-turno-2026-veja-numeros-de-lula-e-flavio.ghtm",
+  "retrieved_at": "2026-10-22T20:35:00-03:00",
+  "content_hash": "sha256:4e1957ef874b17c6bb3bfd7129d09ce27119d5ec098705ee9d2581ac94d368ab",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_second_round_2026-10-22_v1",
+  "extractions": {
+    "source_title": "Datafolha second-round poll, UOL, 22 October 2026",
+    "fieldwork": "2026-10-20..2026-10-22",
+    "sample_size": 2520,
+    "geography": "national",
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "basis": "total_votes",
+    "results_percent": {
+      "flavio_bolsonaro": 47,
+      "lula": 46
+    },
+    "residuals_percent": {
+      "branco_nulo": 5,
+      "ns_nr": 2
+    },
+    "margin_of_error_pp": 2,
+    "tse_registration_id": "BR-09709/2026"
+  },
+  "confidence": 0.98,
+  "tse_registration_id": "BR-09709/2026",
+  "notes": "Manually transcribed from the linked press report. These are total-vote percentages; valid-vote percentages are not substituted."
+}

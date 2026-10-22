@@ -1,0 +1,32 @@
+{
+  "witness_id": "w_poderdata_2026-10-21_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol",
+  "poll_id": "poderdata_2026-10-21_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm",
+  "retrieved_at": "2026-10-22T20:35:00-03:00",
+  "content_hash": "sha256:62a9306275fd6cfe59a6a4a6cc8f488c8ef037692f63f246affb20b359fc2357",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_second_round_2026-10-22_v1",
+  "extractions": {
+    "source_title": "PoderData/Aya second-round poll, UOL, 22 October 2026",
+    "fieldwork": "2026-10-19..2026-10-21",
+    "sample_size": 4000,
+    "geography": "national",
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "basis": "total_votes",
+    "results_percent": {
+      "flavio_bolsonaro": 49,
+      "lula": 48
+    },
+    "residuals_percent": {
+      "branco_nulo": 3,
+      "ns_nr": 1
+    },
+    "margin_of_error_pp": 1.6,
+    "tse_registration_id": "BR-07926/2026"
+  },
+  "confidence": 0.98,
+  "tse_registration_id": "BR-07926/2026",
+  "notes": "Manually transcribed from the linked press report. These are total-vote percentages; valid-vote percentages are not substituted."
+}

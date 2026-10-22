@@ -1,0 +1,32 @@
+{
+  "witness_id": "w_ideia_2026-10-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol",
+  "poll_id": "ideia_2026-10-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm",
+  "retrieved_at": "2026-10-22T20:35:00-03:00",
+  "content_hash": "sha256:954d9a17c1da3e51be9648047066054974a05b0d31728c81d65b1631e4fdae39",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_second_round_2026-10-22_v1",
+  "extractions": {
+    "source_title": "Meio/Ideia second-round poll, UOL, 22 October 2026",
+    "fieldwork": "2026-10-15..2026-10-19",
+    "sample_size": 1500,
+    "geography": "national",
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "basis": "total_votes",
+    "results_percent": {
+      "flavio_bolsonaro": 48,
+      "lula": 46
+    },
+    "residuals_percent": {
+      "branco_nulo": 3.4,
+      "ns_nr": 2.6
+    },
+    "margin_of_error_pp": 2.5,
+    "tse_registration_id": "BR-08251/2026"
+  },
+  "confidence": 0.98,
+  "tse_registration_id": "BR-08251/2026",
+  "notes": "Manually transcribed from the linked press report. These are total-vote percentages; valid-vote percentages are not substituted."
+}
