@@ -4,6 +4,7 @@ const assert = require("node:assert/strict");
 require("../site/js/vote-basis.js");
 const api = globalThis.PEBR_VOTE_BASIS;
 assert.ok(api && typeof api.normalizeRows === "function");
+assert.ok(typeof api.filterDatafolhaRows === "function");
 
 const rows = [
   { series_kind: "poll", poll_id: "p1", candidate_id: "flavio", value: 0.46, vote_basis: "total_votes" },
@@ -33,4 +34,13 @@ assert.ok(Math.abs(valueOf("p1", "flavio").value + valueOf("p1", "lula").value -
 assert.equal(api.normalizeRows(rows, ["flavio"]).length, 0);
 assert.equal(api.isResidualCandidate({ id: "branco_nulo", category: "residual" }), true);
 
-console.log("vote-basis tests OK — candidate-only normalization retains complete polls and preserves published values");
+const aggregateSource = [
+  { series_kind: "poll", poll_id: "df1", institute_id: "datafolha", candidate_id: "flavio", value: 0.47 },
+  { series_kind: "poll", poll_id: "q1", institute_id: "quaest", candidate_id: "flavio", value: 0.46 }
+];
+const aggregateDefault = api.filterDatafolhaRows(aggregateSource, false);
+assert.deepEqual(aggregateDefault.map((row) => row.institute_id), ["quaest"]);
+assert.equal(aggregateSource.length, 2, "filtering the aggregate copy must not delete raw observations");
+assert.equal(api.filterDatafolhaRows(aggregateSource, true).length, 2, "explicit include restores Datafolha to the aggregate");
+
+console.log("vote-basis tests OK — normalization and aggregation-only Datafolha exclusion");
