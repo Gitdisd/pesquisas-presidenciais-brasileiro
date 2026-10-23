@@ -112,19 +112,23 @@
         </div>
         <div class="filter-row filter-collapsible filter-candidates" id="candidate-filter-row" data-collapse-section="candidatos">
           <button type="button" class="filter-toggle" id="toggle-candidatos" aria-expanded="true" aria-controls="candidate-filters" aria-label="Candidatos — recolher filtros" title="Clique no título para recolher/expandir os chips (os chips filtram; só o título recolhe)">
-            <span class="filter-label">Candidatos</span>
+            <span class="filter-label">Séries</span>
             <span class="collapse-chevron" aria-hidden="true">▾</span>
           </button>
-          <div class="chip-row" id="candidate-filters" role="group" aria-label="Alternar candidatos no gráfico"></div>
+          <div class="chip-row" id="candidate-filters" role="group" aria-label="Ativar/desativar candidatos e resíduos no gráfico"></div>
         </div>
         <div class="filter-row filter-collapsible filter-method" data-collapse-section="modelo">
-          <button type="button" class="filter-toggle" id="toggle-modelo" aria-expanded="true" aria-controls="model-filter-content" aria-label="Modelo — recolher detalhes" title="Clique no título para recolher/expandir (só o título recolhe)">
-            <span class="filter-label">Modelo</span>
+          <button type="button" class="filter-toggle" id="toggle-modelo" aria-expanded="true" aria-controls="model-filter-content" aria-label="Métodos e projeções — recolher detalhes" title="Clique no título para recolher/expandir os controles de método e projeção">
+            <span class="filter-label">Métodos e projeções</span>
             <span class="collapse-chevron" aria-hidden="true">▾</span>
           </button>
           <div class="filter-section-body" id="model-filter-content">
-            <div class="chip-row method-chips" id="method-chips" aria-label="Metodologia Option B"></div>
+            <p class="muted small">Agregação descritiva · selecione uma por vez; os pontos das pesquisas permanecem visíveis.</p>
+            <div class="chip-row method-chips" id="method-chips" role="group" aria-label="Método de agregação"></div>
             <p class="method-disclaimer muted small" id="method-disclaimer"></p>
+            <p class="muted small">Projeção demonstrativa · disponível para o 2º turno e desativada por padrão.</p>
+            <div class="chip-row method-chips" id="forecast-chips" role="group" aria-label="Método de projeção"></div>
+            <p class="method-disclaimer muted small" id="forecast-disclaimer"></p>
           </div>
         </div>
         <p class="filter-note muted small" id="filter-note" hidden></p>
@@ -172,7 +176,7 @@
           <div class="skeleton-plot"></div>
           <p class="muted">Montando gráfico D3…</p>
         </div>
-        <svg id="chart" role="img" aria-label="Scatter de pesquisas, linhas agregadas e faixas de dispersão"></svg>
+        <svg id="chart" role="img" aria-label="Pesquisas individuais, agregações, branco/nulo e projeção opcional"></svg>
       </div>
       <div class="legend" id="legend" aria-label="Legenda de candidatos" hidden></div>
       <p class="hint muted">Arraste para panorâmica · scroll/pinch para zoom no tempo · duplo clique (ou Redefinir zoom) restaura · hover/foco = um ponto (candidato, %, instituto, N, MOE quando publicado, data). Faixas = dispersão na janela (não IC clássico). Por padrão ocultamos quem saiu da disputa — use “mostrar todos”. Período 30d/90d/tudo só define o domínio X (sem brush/slider). Link compartilhável guarda turno, período, confronto e máscara de institutos. Atalhos: <kbd>1</kbd>/<kbd>2</kbd> turno · <kbd>3</kbd>/<kbd>9</kbd>/<kbd>0</kbd> período 30d/90d/tudo · <kbd>F</kbd> tela cheia · <kbd>T</kbd> tema · <kbd>Esc</kbd> limpar hover.</p>
@@ -283,6 +287,8 @@
           <li><span class="swatch dot"></span> Pontos = pesquisas individuais (instituto)</li>
           <li><span class="swatch line"></span> Linha = agregado Option&nbsp;B (√N, janela ~14d)</li>
           <li><span class="swatch ribbon"></span> Faixa = dispersão na janela (não IC / não probabilidade de vitória)</li>
+          <li>Linha cinza pontilhada = Branco/Nulo conforme publicado pela pesquisa; não é conversão para votos válidos.</li>
+          <li>Linha tracejada após o agregado = projeção demonstrativa, não previsão calibrada.</li>
         </ul>
         <div class="method-prose" id="method-prose">
           <p>Pense em várias casas medindo a mesma intenção de voto. A gente <strong>não</strong> escolhe a casa mais alta de voz — junta as medidas com regras fixas.</p>
