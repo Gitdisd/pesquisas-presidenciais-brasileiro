@@ -66,6 +66,8 @@
     forecastDisclaimer: document.getElementById("forecast-disclaimer"),
     voteBasisMode: document.getElementById("vote-basis-mode"),
     voteBasisNote: document.getElementById("vote-basis-note"),
+    includeDatafolhaAggregate: document.getElementById("include-datafolha-aggregate"),
+    datafolhaAggregateNote: document.getElementById("datafolha-aggregate-note"),
     filterNote: document.getElementById("filter-note"),
     geoChip: document.getElementById("geo-chip"),
     promptChip: document.getElementById("prompt-chip"),
@@ -130,6 +132,7 @@
     modelMethod: "option_b",
     forecastMethod: "off",
     voteBasisMode: "published",
+    includeDatafolhaInAggregate: false,
     has2nd: false,
     rangeDays: null, // null = tudo; 30 | 90 (view cut only — not a brush slider)
     axisXStart: null,
@@ -196,6 +199,17 @@
       } else {
         el.voteBasisNote.textContent = "Mantém os percentuais como publicados, incluindo a linha Branco/Nulo quando a fonte informa essa categoria. As bases da série histórica nem sempre estão identificadas; compare com cautela e use a visualização normalizada para colocar os dois candidatos na mesma escala.";
       }
+    }
+  }
+
+  function syncDatafolhaAggregateControl() {
+    if (el.includeDatafolhaAggregate) {
+      el.includeDatafolhaAggregate.checked = state.includeDatafolhaInAggregate;
+    }
+    if (el.datafolhaAggregateNote) {
+      el.datafolhaAggregateNote.textContent = state.includeDatafolhaInAggregate
+        ? "Datafolha está incluído no agregado. Seus pontos individuais permanecem visíveis em ambos os modos."
+        : "Configuração padrão de sensibilidade: Datafolha permanece visível como pontos individuais e na tabela, mas não contribui para a linha agregada nem para os cartões-resumo. Esta é uma escolha metodológica reversível, não uma conclusão de má conduta intencional.";
     }
   }
 
@@ -651,6 +665,7 @@
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
         ${d.moe != null ? `<dt>MOE declarado</dt><dd>±${fmtPct(d.moe)}</dd>` : ""}
         <dt>Campo</dt><dd>${d.fieldwork_start && d.fieldwork_end ? `${fmtDate(parseDate(d.fieldwork_start))}–${fmtDate(parseDate(d.fieldwork_end))}` : fmtDate(d.date)}</dd>
+        ${d.institute_id === "datafolha" && !state.includeDatafolhaInAggregate ? '<dt>Linha agregada</dt><dd>Excluído por configuração; ponto preservado</dd>' : ""}
         ${d.normalization_mode === "candidate_only" ? `<dt>Valor publicado</dt><dd>${pctDisplay(d.published_value)}</dd>` : ""}
         <dt>Base %</dt><dd>${d.normalization_mode === "candidate_only" ? `candidatos = 100% (original: ${d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"})` : d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"}</dd>
       </dl>`;
@@ -1045,6 +1060,7 @@
     setHeader(data);
     renderMethodChips(data);
     syncVoteBasisControl();
+    syncDatafolhaAggregateControl();
     applyDefaultVisibility();
     syncShowAllBtn();
     buildLegend();
@@ -1251,11 +1267,11 @@
     const ids = [...state.institutesOn].sort().join(",");
     const cids = [...state.visible].sort().join(",");
     const scen = state.data?.scenario || "";
-    return `${scen}|${ids}|${cids}|${state.modelMethod}|${state.voteBasisMode}`;
+    return `${scen}|${ids}|${cids}|${state.modelMethod}|${state.voteBasisMode}|df:${state.includeDatafolhaInAggregate ? "on" : "off"}`;
   }
 
   function ensureClientOptionB() {
-    if (!isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b") {
+    if (state.includeDatafolhaInAggregate && !isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b") {
       invalidateClientAgg();
       return null;
     }
@@ -1267,7 +1283,11 @@
     if (typeof aggregateMethod !== "function") return null;
     const key = clientAggKey();
     if (state.clientAgg && state.clientAggKey === key) return state.clientAgg;
-    const pollRows = displayedPollRows().filter((d) => pollPassesInstitute(d));
+    const inScopeRows = displayedPollRows().filter((d) => pollPassesInstitute(d));
+    const basisApi = typeof window !== "undefined" ? window.PEBR_VOTE_BASIS : null;
+    const pollRows = basisApi && typeof basisApi.filterDatafolhaRows === "function"
+      ? basisApi.filterDatafolhaRows(inScopeRows, state.includeDatafolhaInAggregate)
+      : inScopeRows.filter((d) => state.includeDatafolhaInAggregate || d.institute_id !== "datafolha");
     const params = Object.assign({}, api.DEFAULTS, state.data?.params || {});
     const candIds = (state.data?.candidates || [])
       .filter((c) => state.visible.has(c.id))
@@ -1312,7 +1332,7 @@
     const { aggregates, uncertainty } = state.payload;
     const polls = displayedPollRows();
     const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id) && (!isCandidateOnlyMode() || !isResidualCandidate(c)));
-    const usePipeline = !isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b";
+    const usePipeline = state.includeDatafolhaInAggregate && !isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b";
     const client = usePipeline ? null : ensureClientOptionB();
     const aggSrc = usePipeline ? aggregates : client ? client.aggregates : [];
     const uncSrc = usePipeline ? uncertainty : client ? client.uncertainty : [];
@@ -1320,7 +1340,7 @@
 
     if (state.axisYAuto && state.y0 && state.payload && state.dims) {
       const xDomain = state.xScale ? state.xScale.domain() : state.x0.domain();
-      const boundsPayload = isCandidateOnlyMode()
+      const boundsPayload = isCandidateOnlyMode() || !state.includeDatafolhaInAggregate
         ? { ...state.payload, polls, aggregates: aggSrc, uncertainty: uncSrc }
         : state.payload;
       const bounds = autoYBounds(boundsPayload, xDomain);
@@ -1870,6 +1890,7 @@
       chart1st: state.chart1st,
       chart2nd: state.chart2nd,
       showAll: state.showAll,
+      includeDatafolhaInAggregate: state.includeDatafolhaInAggregate,
     };
     window.__pebrView = view;
     try {
@@ -2099,6 +2120,7 @@
     if (state.modelMethod !== "option_b") params.set("method", state.modelMethod);
     if (state.forecastMethod !== "off") params.set("forecast", state.forecastMethod);
     if (state.voteBasisMode === "candidate_only") params.set("basis", "candidate_only");
+    if (state.includeDatafolhaInAggregate) params.set("datafolha", "include");
     if (state.rangeDays == null) params.set("range", "all");
     else params.set("range", String(state.rangeDays));
     if (state.round === 2 && state.activeScenario) {
@@ -2149,6 +2171,7 @@
     if (["off", "last_value", "linear"].includes(forecast)) state.forecastMethod = forecast;
     state.voteBasisMode = params.get("basis") === "candidate_only" ? "candidate_only" : "published";
     if (state.round !== 2) state.voteBasisMode = "published";
+    state.includeDatafolhaInAggregate = params.get("datafolha") === "include";
     const range = params.get("range");
     if (range === "all") state.rangeDays = null;
     else if (/^\d+$/.test(range || "")) {
@@ -2473,6 +2496,18 @@
         buildLegend();
         redrawSeries();
         refreshExtras();
+      }
+
+      if (el.includeDatafolhaAggregate) {
+        el.includeDatafolhaAggregate.addEventListener("change", () => {
+          state.includeDatafolhaInAggregate = el.includeDatafolhaAggregate.checked;
+          invalidateClientAgg();
+          syncDatafolhaAggregateControl();
+          clearHover();
+          redrawSeries();
+          refreshExtras();
+          writeUrlState();
+        });
       }
 
       if (el.voteBasisMode) {
