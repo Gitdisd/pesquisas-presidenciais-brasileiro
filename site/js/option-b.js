@@ -206,9 +206,98 @@
     return { aggregates, uncertainty };
   }
 
+  function median(values) {
+    if (!values.length) return 0;
+    const sorted = values.slice().sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+  }
+
+  /**
+   * Alternative descriptive aggregates for side-by-side exploration.
+   * These do not correct house effects, model turnout or transfer undecideds.
+   */
+  function aggregateWithMethod(flatPollRows, paramsIn, candidateIds, method) {
+    if (!method || method === "option_b") {
+      return aggregateFromFlatPolls(flatPollRows, paramsIn, candidateIds);
+    }
+    const params = Object.assign({}, DEFAULTS, paramsIn || {});
+    const polls = groupPolls(flatPollRows);
+    if (!polls.length) return { aggregates: [], uncertainty: [] };
+    let cands = candidateIds && candidateIds.length ? candidateIds.slice() : [];
+    if (!cands.length) {
+      const seen = new Set();
+      for (const poll of polls) {
+        for (const cid of Object.keys(poll.results)) {
+          if (!seen.has(cid)) { seen.add(cid); cands.push(cid); }
+        }
+      }
+    }
+    const dates = polls.map((poll) => poll.date);
+    const d0 = dates.reduce((a, b) => a < b ? a : b);
+    const d1 = dates.reduce((a, b) => a > b ? a : b);
+    const aggregates = [];
+    const uncertainty = [];
+    for (const day of eachDayUTC(d0, d1)) {
+      const window = windowPolls(polls, day, params.k_days);
+      if (!window.length) continue;
+      for (const cid of cands) {
+        const usable = window.filter((poll) => poll.results[cid] != null);
+        if (!usable.length) continue;
+        let values = usable.map((poll) => poll.results[cid]);
+        let mean = 0;
+        let sd = 0;
+        if (method === "median") {
+          mean = median(values);
+          const mad = median(values.map((value) => Math.abs(value - mean)));
+          sd = values.length >= 3 ? 1.4826 * mad : weightedSd(values, values.map(() => 1));
+        } else if (method === "equal_house") {
+          const grouped = new Map();
+          for (const poll of usable) {
+            if (!grouped.has(poll.institute_id)) grouped.set(poll.institute_id, []);
+            grouped.get(poll.institute_id).push(poll.results[cid]);
+          }
+          values = Array.from(grouped.values()).map((houseValues) =>
+            houseValues.reduce((sum, value) => sum + value, 0) / houseValues.length
+          );
+          mean = values.reduce((sum, value) => sum + value, 0) / values.length;
+          sd = weightedSd(values, values.map(() => 1));
+        } else {
+          const weights = usable.map((poll) => {
+            if (method === "equal_poll") return 1;
+            const ageDays = Math.max(0, (dayMs(day) - dayMs(poll.date)) / 86400000);
+            return pollWeight(poll, window, day, params) *
+              (method === "recency" ? Math.pow(0.5, ageDays / 7) : 1);
+          });
+          const totalW = weights.reduce((sum, weight) => sum + weight, 0);
+          if (totalW <= 0) continue;
+          mean = values.reduce((sum, value, i) => sum + weights[i] * value, 0) / totalW;
+          sd = weightedSd(values, weights);
+        }
+        const [lo, hi] = dispersionBand(mean, sd);
+        const iso = [
+          day.getUTCFullYear(),
+          String(day.getUTCMonth() + 1).padStart(2, "0"),
+          String(day.getUTCDate()).padStart(2, "0"),
+        ].join("-");
+        aggregates.push({
+          series_kind: "aggregate", date: day, date_iso: iso,
+          candidate_id: cid, value: mean, client_option_b: true, model_method: method,
+        });
+        uncertainty.push({
+          series_kind: "uncertainty", date: day, date_iso: iso,
+          candidate_id: cid, band_low: lo, band_high: hi,
+          client_option_b: true, model_method: method,
+        });
+      }
+    }
+    return { aggregates, uncertainty };
+  }
+
   global.PEBR_OPTION_B = {
     DEFAULTS,
     aggregateFromFlatPolls,
+    aggregateWithMethod,
     groupPolls,
   };
 })(typeof window !== "undefined" ? window : globalThis);
