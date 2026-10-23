@@ -23,6 +23,7 @@
       "ns_nr": 0.08,
       "branco_nulo": 0.12
     },
+    "vote_basis": "unknown",
     "tse_registration_id": null,
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/quaest_2026-01-11_stimulated_1st_round.json"
@@ -51,6 +52,7 @@
       "branco_nulo": 0.071,
       "ns_nr": 0.114
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06731/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/ideia_2026-01-12_stimulated_1st_round.json"
@@ -79,6 +81,7 @@
       "branco_nulo": 0.066,
       "ns_nr": 0.053
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08233/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-01-19_stimulated_1st_round.json"
@@ -107,6 +110,7 @@
       "branco_nulo": 0.015,
       "ns_nr": 0.004
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02804/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-01-20_stimulated_1st_round.json"
@@ -135,6 +139,7 @@
       "branco_nulo": 0.068,
       "ns_nr": 0.047
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08254/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/parana_pesquisas_2026-01-28_stimulated_1st_round.json"
@@ -162,6 +167,7 @@
       "branco_nulo": 0.04,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04519/2026",
     "dataset_version": "intake-cohort-008",
     "source_path": "data/national/polls/gerp_2026-02-02_stimulated_1st_round.json"
@@ -189,6 +195,7 @@
       "branco_nulo": 0.056,
       "ns_nr": 0.095
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08425/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/ideia_2026-02-02_stimulated_1st_round.json"
@@ -216,6 +223,7 @@
       "branco_nulo": 0.077,
       "ns_nr": 0.051
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02276/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-02-07_stimulated_1st_round.json"
@@ -243,6 +251,7 @@
       "ns_nr": 0.07,
       "branco_nulo": 0.15
     },
+    "vote_basis": "unknown",
     "tse_registration_id": null,
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/quaest_2026-02-09_stimulated_1st_round.json"
@@ -270,6 +279,7 @@
       "branco_nulo": 0.038,
       "ns_nr": 0.005
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07600/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-02-24_stimulated_1st_round.json"
@@ -297,6 +307,7 @@
       "branco_nulo": 0.078,
       "ns_nr": 0.052
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07974/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/parana_pesquisas_2026-02-25_stimulated_1st_round.json"
@@ -324,6 +335,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09353/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-03-02_stimulated_1st_round.json"
@@ -351,6 +363,7 @@
       "branco_nulo": 0.12,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": null,
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-03-05_stimulated_1st_round.json"
@@ -378,6 +391,7 @@
       "branco_nulo": 0.073,
       "ns_nr": 0.036
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06607/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-03-06_stimulated_1st_round.json"
@@ -405,6 +419,7 @@
       "ns_nr": 0.05,
       "branco_nulo": 0.16
     },
+    "vote_basis": "unknown",
     "tse_registration_id": null,
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/quaest_2026-03-09_stimulated_1st_round.json"
@@ -432,6 +447,7 @@
       "branco_nulo": 0.047,
       "ns_nr": 0.072
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00386/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/ideia_2026-03-10_stimulated_1st_round.json"
@@ -459,6 +475,7 @@
       "branco_nulo": 0.019,
       "ns_nr": 0.003
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04227/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-03-23_stimulated_1st_round.json"
@@ -482,12 +499,13 @@
       "romeu_zema": 0.03,
       "ronaldo_caiado": 0.03,
       "renan_santos": 0.01,
-      "aldo_rebelo": 0.0
+      "aldo_rebelo": 0
     },
     "residuals": {
       "branco_nulo": 0.03,
       "ns_nr": 0.06
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02846/2026",
     "dataset_version": "intake-cohort-008",
     "source_path": "data/national/polls/gerp_2026-03-25_stimulated_1st_round.json"
@@ -515,6 +533,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.005
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00873/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/parana_pesquisas_2026-03-28_stimulated_1st_round.json"
@@ -536,12 +555,13 @@
       "renan_santos": 0.02,
       "ronaldo_caiado": 0.04,
       "romeu_zema": 0.04,
-      "aldo_rebelo": 0.0
+      "aldo_rebelo": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07875/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-03-29_stimulated_1st_round.json"
@@ -569,6 +589,7 @@
       "branco_nulo": 0.01,
       "ns_nr": 0.085
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00605/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/ideia_2026-04-07_stimulated_1st_round.json"
@@ -597,6 +618,7 @@
       "branco_nulo": 0.1,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03770/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/datafolha_2026-04-09_stimulated_1st_round.json"
@@ -626,6 +648,7 @@
       "ns_nr": 0.045,
       "branco_nulo": 0.071
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08282/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-04-11_stimulated_1st_round.json"
@@ -653,6 +676,7 @@
       "branco_nulo": 0.104,
       "ns_nr": 0.089
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02847/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/cnt_mda_2026-04-12_stimulated_1st_round.json"
@@ -677,12 +701,13 @@
       "renan_santos": 0.02,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "aldo_rebelo": 0.0
+      "aldo_rebelo": 0
     },
     "residuals": {
       "ns_nr": 0.05,
       "branco_nulo": 0.11
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09285/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/quaest_2026-04-13_stimulated_1st_round.json"
@@ -712,6 +737,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01075/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-04-26_stimulated_1st_round.json"
@@ -740,6 +766,7 @@
       "branco_nulo": 0.005,
       "ns_nr": 0.001
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07992/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/atlasintel_2026-04-27_stimulated_1st_round.json"
@@ -764,15 +791,16 @@
       "augusto_cury": 0.01,
       "aldo_rebelo": 0.01,
       "cabo_daciolo": 0.01,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "samara_martins": 0.0
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "rui_costa_pimenta": 0,
+      "samara_martins": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.05
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03627/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-05-04_stimulated_1st_round.json"
@@ -798,15 +826,16 @@
       "renan_santos": 0.014,
       "aldo_rebelo": 0.008,
       "cabo_daciolo": 0.003,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "samara_martins": 0.0
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "rui_costa_pimenta": 0,
+      "samara_martins": 0
     },
     "residuals": {
       "branco_nulo": 0.037,
       "ns_nr": 0.054
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05356/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-05-05_stimulated_1st_round.json"
@@ -837,6 +866,7 @@
       "branco_nulo": 0.055,
       "ns_nr": 0.041
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03678/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-05-08_stimulated_1st_round.json"
@@ -861,13 +891,14 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "aldo_rebelo": 0.0,
-      "hertz_dias": 0.0
+      "aldo_rebelo": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "ns_nr": 0.05,
       "branco_nulo": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03598/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/quaest_2026-05-11_stimulated_1st_round.json"
@@ -893,13 +924,14 @@
       "ronaldo_caiado": 0.01,
       "renan_santos": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "cabo_daciolo": 0.0
+      "rui_costa_pimenta": 0,
+      "cabo_daciolo": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03369/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-05-12_stimulated_1st_round.json"
@@ -930,6 +962,7 @@
       "branco_nulo": 0.055,
       "ns_nr": 0.085
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02423/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/vox_brasil_2026-05-12_stimulated_1st_round.json"
@@ -955,13 +988,14 @@
       "augusto_cury": 0.02,
       "rui_costa_pimenta": 0.01,
       "cabo_daciolo": 0.01,
-      "aldo_rebelo": 0.0,
-      "hertz_dias": 0.0
+      "aldo_rebelo": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.09,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00290/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/datafolha_2026-05-13_stimulated_1st_round.json"
@@ -990,6 +1024,7 @@
       "branco_nulo": 0.014,
       "ns_nr": 0.019
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06939/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-05-18_stimulated_1st_round.json"
@@ -1019,6 +1054,7 @@
       "branco_nulo": 0.049,
       "ns_nr": 0.094
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02416/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/vox_brasil_2026-05-19_stimulated_1st_round.json"
@@ -1048,6 +1084,7 @@
       "branco_nulo": 0.078,
       "ns_nr": 0.028
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06529/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-05-20_stimulated_1st_round.json"
@@ -1079,6 +1116,7 @@
       "branco_nulo": 0.09,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07489/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/datafolha_2026-05-22_stimulated_1st_round.json"
@@ -1104,15 +1142,16 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "aldo_rebelo": 0.0
+      "rui_costa_pimenta": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "aldo_rebelo": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.06
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07971/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-05-22_stimulated_1st_round.json"
@@ -1140,6 +1179,7 @@
       "ns_nr": 0.1,
       "branco_nulo": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02154/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/indexa_2026-05-24_stimulated_1st_round.json"
@@ -1169,6 +1209,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04193/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-05-24_stimulated_1st_round.json"
@@ -1196,6 +1237,7 @@
       "branco_nulo": 0.051,
       "ns_nr": 0.105
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02918/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/ideia_2026-05-27_stimulated_1st_round.json"
@@ -1224,6 +1266,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04882/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/poderdata_2026-05-28_stimulated_1st_round.json"
@@ -1254,6 +1297,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05864/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/realtime_bigdata_2026-05-30_stimulated_1st_round.json"
@@ -1284,6 +1328,7 @@
       "branco_nulo": 0.029,
       "ns_nr": 0.023
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08016/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/vox_brasil_2026-06-03_stimulated_1st_round.json"
@@ -1307,16 +1352,17 @@
       "ronaldo_caiado": 0.02,
       "joaquim_barbosa": 0.02,
       "augusto_cury": 0.01,
-      "cabo_daciolo": 0.0,
-      "samara_martins": 0.0,
-      "aldo_rebelo": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "edmilson_costa": 0.0
+      "cabo_daciolo": 0,
+      "samara_martins": 0,
+      "aldo_rebelo": 0,
+      "rui_costa_pimenta": 0,
+      "edmilson_costa": 0
     },
     "residuals": {
       "branco_nulo": 0.07,
       "ns_nr": 0.12
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01792/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-06-05_stimulated_1st_round.json"
@@ -1342,14 +1388,15 @@
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
       "samara_martins": 0.01,
-      "cabo_daciolo": 0.0,
-      "edmilson_costa": 0.0,
-      "hero_bezerra": 0.0
+      "cabo_daciolo": 0,
+      "edmilson_costa": 0,
+      "hero_bezerra": 0
     },
     "residuals": {
       "branco_nulo": 0.09,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07661/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/quaest_2026-06-08_stimulated_1st_round.json"
@@ -1377,6 +1424,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.01
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03496/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/alfa_inteligencia_2026-06-10_stimulated_1st_round.json"
@@ -1406,6 +1454,7 @@
       "branco_nulo": 0.063,
       "ns_nr": 0.037
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01461/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-06-12_stimulated_1st_round.json"
@@ -1435,6 +1484,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.079
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04256/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/cnt_mda_2026-06-14_stimulated_1st_round.json"
@@ -1465,6 +1515,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06645/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-06-14_stimulated_1st_round.json"
@@ -1492,13 +1543,14 @@
       "cabo_daciolo": 0.01,
       "joaquim_barbosa": 0.01,
       "rui_costa_pimenta": 0.01,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0
+      "hertz_dias": 0,
+      "edmilson_costa": 0
     },
     "residuals": {
       "branco_nulo": 0.07,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09956/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-06-19_stimulated_1st_round.json"
@@ -1524,12 +1576,13 @@
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0
+      "rui_costa_pimenta": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.11
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09657/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-06-20_stimulated_1st_round.json"
@@ -1553,13 +1606,14 @@
       "renan_santos": 0.03,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0.0,
-      "cabo_daciolo": 0.0
+      "samara_martins": 0,
+      "cabo_daciolo": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.06
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08944/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/indexa_2026-06-20_stimulated_1st_round.json"
@@ -1588,6 +1642,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05722/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/poderdata_2026-06-24_stimulated_1st_round.json"
@@ -1618,6 +1673,7 @@
       "branco_nulo": 0.035,
       "ns_nr": 0.108
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06630/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/vox_brasil_2026-06-25_stimulated_1st_round.json"
@@ -1648,6 +1704,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08521/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-06-28_stimulated_1st_round.json"
@@ -1675,13 +1732,14 @@
       "augusto_cury": 0.005,
       "cabo_daciolo": 0.003,
       "rui_costa_pimenta": 0.001,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0
+      "edmilson_costa": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.011,
       "ns_nr": 0.001
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04582/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/atlasintel_2026-06-30_stimulated_1st_round.json"
@@ -1716,6 +1774,7 @@
       "branco_nulo": 0.041,
       "ns_nr": 0.095
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05628/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/ideia_2026-07-06_stimulated_1st_round.json"
@@ -1739,15 +1798,16 @@
       "romeu_zema": 0.02,
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
-      "aecio_neves": 0.0,
-      "cabo_daciolo": 0.0,
-      "samara_martins": 0.0,
-      "rui_costa_pimenta": 0.0
+      "aecio_neves": 0,
+      "cabo_daciolo": 0,
+      "samara_martins": 0,
+      "rui_costa_pimenta": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.11
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03067/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-07-07_stimulated_1st_round.json"
@@ -1777,6 +1837,7 @@
       "branco_nulo": 0.051,
       "ns_nr": 0.036
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07294/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/futura_2026-07-11_stimulated_1st_round.json"
@@ -1801,12 +1862,13 @@
       "joaquim_barbosa": 0.02,
       "augusto_cury": 0.02,
       "aecio_neves": 0.01,
-      "cabo_daciolo": 0.0
+      "cabo_daciolo": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07981/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-07-12_stimulated_1st_round.json"
@@ -1832,14 +1894,15 @@
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
       "samara_martins": 0.01,
-      "edmilson_costa": 0.0,
-      "hero_bezerra": 0.0,
-      "hertz_dias": 0.0
+      "edmilson_costa": 0,
+      "hero_bezerra": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "ns_nr": 0.11,
       "branco_nulo": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07181/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/quaest_2026-07-13_stimulated_1st_round.json"
@@ -1867,6 +1930,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.05
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00059/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/poderdata_2026-07-15_stimulated_1st_round.json"
@@ -1892,12 +1956,13 @@
       "cabo_daciolo": 0.01,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "rui_costa_pimenta": 0.0
+      "rui_costa_pimenta": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05026/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-07-17_stimulated_1st_round.json"
@@ -1921,14 +1986,15 @@
       "renan_santos": 0.03,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0.0,
-      "cabo_daciolo": 0.0,
-      "hertz_dias": 0.0
+      "samara_martins": 0,
+      "cabo_daciolo": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02904/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/indexa_2026-07-19_stimulated_1st_round.json"
@@ -1958,6 +2024,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05864/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-07-20_stimulated_1st_round.json"
@@ -1983,14 +2050,15 @@
       "samara_martins": 0.01,
       "cabo_daciolo": 0.01,
       "rui_costa_pimenta": 0.01,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0,
-      "leonardo_avalanche": 0.0
+      "hertz_dias": 0,
+      "edmilson_costa": 0,
+      "leonardo_avalanche": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01166/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-07-24_stimulated_1st_round.json"
@@ -2019,6 +2087,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01489/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/nexus_2026-07-26_stimulated_1st_round.json"
@@ -2044,13 +2113,14 @@
       "augusto_cury": 0.016,
       "cabo_daciolo": 0.001,
       "hertz_dias": 0.001,
-      "rui_costa_pimenta": 0.0,
-      "edmilson_costa": 0.0
+      "rui_costa_pimenta": 0,
+      "edmilson_costa": 0
     },
     "residuals": {
       "branco_nulo": 0.006,
       "ns_nr": 0.01
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08602/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/atlasintel_2026-07-27_stimulated_1st_round.json"
@@ -2079,6 +2149,7 @@
       "branco_nulo": 0.08,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04488/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/alfa_inteligencia_2026-07-28_stimulated_1st_round.json"
@@ -2113,6 +2184,7 @@
       "branco_nulo": 0.023,
       "ns_nr": 0.096
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01084/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/vox_brasil_2026-07-28_stimulated_1st_round.json"
@@ -2140,6 +2212,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07845/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/poderdata_2026-07-29_stimulated_1st_round.json"
@@ -2164,15 +2237,16 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "hero_bezerra": 0.0,
-      "edmilson_costa": 0.0
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0,
+      "hero_bezerra": 0,
+      "edmilson_costa": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02874/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/nexus_2026-08-02_stimulated_1st_round.json"
@@ -2205,6 +2279,7 @@
       "branco_nulo": 0.02,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04579/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/ideia_2026-08-03_stimulated_1st_round.json"
@@ -2229,15 +2304,16 @@
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "clariana_barao": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "leonardo_avalanche": 0.0
+      "clariana_barao": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "leonardo_avalanche": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06591/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/quaest_2026-08-03_stimulated_1st_round.json"
@@ -2264,12 +2340,13 @@
       "samara_martins": 0.007,
       "cabo_daciolo": 0.004,
       "edmilson_costa": 0.001,
-      "hertz_dias": 0.0
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.062,
       "ns_nr": 0.048
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08109/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/futura_2026-08-07_stimulated_1st_round.json"
@@ -2300,6 +2377,7 @@
       "branco_nulo": 0.068,
       "ns_nr": 0.072
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06935/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/cnt_mda_2026-08-09_stimulated_1st_round.json"
@@ -2324,16 +2402,17 @@
       "samara_martins": 0.02,
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "hero_bezerra": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0,
+      "hero_bezerra": 0,
+      "edmilson_costa": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08428/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/nexus_2026-08-09_stimulated_1st_round.json"
@@ -2357,14 +2436,15 @@
       "romeu_zema": 0.02,
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0
+      "samara_martins": 0,
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08045/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/gerp_2026-08-10_stimulated_1st_round.json"
@@ -2390,15 +2470,16 @@
       "leonardo_avalanche": 0.01,
       "rui_costa_pimenta": 0.01,
       "clariana_barao": 0.01,
-      "samara_martins": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "wilson_grassi": 0.0
+      "samara_martins": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06868/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/poderdata_2026-08-12_stimulated_1st_round.json"
@@ -2422,17 +2503,18 @@
       "augusto_cury": 0.02,
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
-      "edmilson_costa": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0,
-      "leonardo_avalanche": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0
+      "edmilson_costa": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0,
+      "leonardo_avalanche": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06773/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/quaest_2026-08-13_stimulated_1st_round.json"
@@ -2456,17 +2538,18 @@
       "romeu_zema": 0.04,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "hero_bezerra": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0,
+      "hero_bezerra": 0,
+      "edmilson_costa": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03317/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/nexus_2026-08-16_stimulated_1st_round.json"
@@ -2493,13 +2576,14 @@
       "rui_costa_pimenta": 0.01,
       "wilson_grassi": 0.01,
       "edmilson_costa": 0.01,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
+      "clariana_barao": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04496/2026",
     "dataset_version": "intake-cohort-003",
     "source_path": "data/national/polls/datafolha_2026-08-20_stimulated_1st_round.json"
@@ -2527,6 +2611,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.06
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06366/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/indexa_2026-08-23_stimulated_1st_round.json"
@@ -2550,16 +2635,17 @@
       "romeu_zema": 0.03,
       "augusto_cury": 0.02,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0,
+      "edmilson_costa": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09028/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/nexus_2026-08-23_stimulated_1st_round.json"
@@ -2583,16 +2669,17 @@
       "ronaldo_caiado": 0.03,
       "augusto_cury": 0.01,
       "romeu_zema": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0,
-      "samara_martins": 0.0,
-      "edmilson_costa": 0.0
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0,
+      "samara_martins": 0,
+      "edmilson_costa": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03547/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/gerp_2026-08-25_stimulated_1st_round.json"
@@ -2619,14 +2706,15 @@
       "romeu_zema": 0.02,
       "edmilson_costa": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "clariana_barao": 0.0,
-      "wilson_grassi": 0.0
+      "rui_costa_pimenta": 0,
+      "clariana_barao": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04974/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/poderdata_2026-08-26_stimulated_1st_round.json"
@@ -2654,6 +2742,7 @@
       "branco_nulo": 0.035,
       "ns_nr": 0.068
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05519/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/vox_brasil_2026-08-27_stimulated_1st_round.json"
@@ -2685,6 +2774,7 @@
       "branco_nulo": 0.001,
       "ns_nr": 0.002
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07972/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/atlasintel_2026-08-30_stimulated_1st_round.json"
@@ -2709,6 +2799,7 @@
       "romeu_zema": 0.01
     },
     "residuals": {},
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08900/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/nexus_2026-08-30_stimulated_1st_round.json"
@@ -2737,6 +2828,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03490/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/realtime_bigdata_2026-08-31_stimulated_1st_round.json"
@@ -2769,6 +2861,7 @@
       "branco_nulo": 0.02,
       "ns_nr": 0.041
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02793/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/futura_2026-09-01_stimulated_1st_round.json"
@@ -2792,16 +2885,17 @@
       "ronaldo_caiado": 0.01,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "ns_nr": 0.11,
       "branco_nulo": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07065/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/quaest_2026-09-01_stimulated_1st_round.json"
@@ -2830,12 +2924,13 @@
       "samara_martins": 0.01,
       "clariana_barao": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0.0
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07561/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/poderdata_2026-09-02_stimulated_1st_round.json"
@@ -2861,14 +2956,15 @@
       "samara_martins": 0.01,
       "edmilson_costa": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
+      "wilson_grassi": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03669/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/datafolha_2026-09-03_stimulated_1st_round.json"
@@ -2892,16 +2988,17 @@
       "ronaldo_caiado": 0.03,
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
-      "edmilson_costa": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
+      "edmilson_costa": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.08,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01720/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/quaest_2026-09-06_stimulated_1st_round.json"
@@ -2936,6 +3033,7 @@
       "branco_nulo": 0.025,
       "ns_nr": 0.028
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07935/2026",
     "dataset_version": "intake-cohort-2t-008",
     "source_path": "data/national/polls/ideia_2026-09-07_stimulated_1st_round.json"
@@ -2964,6 +3062,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.11
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06790/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/nexus_2026-09-07_stimulated_1st_round.json"
@@ -2990,14 +3089,15 @@
       "romeu_zema": 0.01,
       "rui_costa_pimenta": 0.01,
       "edmilson_costa": 0.01,
-      "clariana_barao": 0.0,
-      "samara_martins": 0.0,
-      "wilson_grassi": 0.0
+      "clariana_barao": 0,
+      "samara_martins": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.03,
       "ns_nr": 0.01
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04914/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/poderdata_2026-09-09_stimulated_1st_round.json"
@@ -3024,13 +3124,14 @@
       "edmilson_costa": 0.01,
       "clariana_barao": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0.0,
-      "hertz_dias": 0.0
+      "wilson_grassi": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01833/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-09-10_stimulated_1st_round.json"
@@ -3060,6 +3161,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.075
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06902/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/cnt_mda_2026-09-13_stimulated_1st_round.json"
@@ -3082,17 +3184,18 @@
       "ronaldo_caiado": 0.04,
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
-      "samara_martins": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "edmilson_costa": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
+      "samara_martins": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "edmilson_costa": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03482/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/indexa_2026-09-13_stimulated_1st_round.json"
@@ -3115,17 +3218,18 @@
       "renan_santos": 0.04,
       "ronaldo_caiado": 0.04,
       "romeu_zema": 0.01,
-      "samara_martins": 0.0,
-      "clariana_barao": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0
+      "samara_martins": 0,
+      "clariana_barao": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.07,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-03607/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/quaest_2026-09-13_stimulated_1st_round.json"
@@ -3155,6 +3259,7 @@
       "ns_nr": 0.005,
       "outros": 0.008
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06221/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/atlasintel_2026-09-16_stimulated_1st_round.json"
@@ -3179,15 +3284,16 @@
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
       "rui_costa_pimenta": 0.01,
-      "edmilson_costa": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0,
-      "wilson_grassi": 0.0
+      "edmilson_costa": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.06,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04029/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/datafolha_2026-09-16_stimulated_1st_round.json"
@@ -3211,15 +3317,16 @@
       "renan_santos": 0.02,
       "romeu_zema": 0.01,
       "pablo_marcal": 0.01,
-      "wilson_grassi": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "samara_martins": 0.0,
-      "hertz_dias": 0.0
+      "wilson_grassi": 0,
+      "rui_costa_pimenta": 0,
+      "samara_martins": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00535/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/gerp_2026-09-16_stimulated_1st_round.json"
@@ -3247,13 +3354,14 @@
       "samara_martins": 0.01,
       "clariana_barao": 0.01,
       "pablo_marcal": 0.01,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0
+      "edmilson_costa": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00360/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/poderdata_2026-09-16_stimulated_1st_round.json"
@@ -3277,16 +3385,17 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0.0,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0,
-      "clariana_barao": 0.0
+      "rui_costa_pimenta": 0,
+      "hertz_dias": 0,
+      "edmilson_costa": 0,
+      "wilson_grassi": 0,
+      "clariana_barao": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00485/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/nexus_2026-09-20_stimulated_1st_round.json"
@@ -3310,17 +3419,18 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "clariana_barao": 0.0,
-      "edmilson_costa": 0.0,
-      "hertz_dias": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "leonardo_avalanche": 0.0
+      "clariana_barao": 0,
+      "edmilson_costa": 0,
+      "hertz_dias": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "leonardo_avalanche": 0
     },
     "residuals": {
       "branco_nulo": 0.07,
       "ns_nr": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06004/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/quaest_2026-09-20_stimulated_1st_round.json"
@@ -3349,6 +3459,7 @@
       "branco_nulo": 0.007,
       "ns_nr": 0.005
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04739/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/atlasintel_2026-09-22_stimulated_1st_round.json"
@@ -3377,6 +3488,7 @@
       "branco_nulo": 0.06,
       "ns_nr": 0.05
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02512/2026",
     "dataset_version": "intake-cohort-004",
     "source_path": "data/national/polls/alfa_inteligencia_2026-09-23_stimulated_1st_round.json"
@@ -3400,17 +3512,18 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "edmilson_costa": 0.0,
-      "rui_costa_pimenta": 0.0,
-      "wilson_grassi": 0.0,
-      "leonardo_avalanche": 0.0,
-      "clariana_barao": 0.0,
-      "hertz_dias": 0.0
+      "edmilson_costa": 0,
+      "rui_costa_pimenta": 0,
+      "wilson_grassi": 0,
+      "leonardo_avalanche": 0,
+      "clariana_barao": 0,
+      "hertz_dias": 0
     },
     "residuals": {
       "branco_nulo": 0.05,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00304/2026",
     "dataset_version": "intake-cohort-001",
     "source_path": "data/national/polls/datafolha_2026-09-23_stimulated_1st_round.json"
@@ -3438,12 +3551,13 @@
       "leonardo_avalanche": 0.002,
       "edmilson_costa": 0.001,
       "hertz_dias": 0.001,
-      "clariana_barao": 0.0
+      "clariana_barao": 0
     },
     "residuals": {
       "branco_nulo": 0.021,
       "ns_nr": 0.032
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-05268/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/futura_2026-09-23_stimulated_1st_round.json"
@@ -3472,6 +3586,7 @@
       "branco_nulo": 0.01,
       "ns_nr": 0.01
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09587/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/palver_2026-09-23_stimulated_1st_round.json"
@@ -3497,15 +3612,16 @@
       "samara_martins": 0.01,
       "rui_costa_pimenta": 0.01,
       "clariana_barao": 0.01,
-      "leonardo_avalanche": 0.0,
-      "hertz_dias": 0.0,
-      "edmilson_costa": 0.0,
-      "wilson_grassi": 0.0
+      "leonardo_avalanche": 0,
+      "hertz_dias": 0,
+      "edmilson_costa": 0,
+      "wilson_grassi": 0
     },
     "residuals": {
       "branco_nulo": 0.04,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01739/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/poderdata_2026-09-23_stimulated_1st_round.json"
@@ -3534,6 +3650,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04202/2026",
     "dataset_version": "intake-cohort-002",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-23_stimulated_1st_round.json"
@@ -3562,6 +3679,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-07557/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/nexus_2026-09-27_stimulated_1st_round.json"
@@ -3589,6 +3707,7 @@
       "branco_nulo": 0.01,
       "ns_nr": 0.01
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02990/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/palver_2026-09-27_stimulated_1st_round.json"
@@ -3616,6 +3735,7 @@
       "branco_nulo": 0.1,
       "ns_nr": 0.05
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06520/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/quaest_2026-09-27_stimulated_1st_round.json"
@@ -3646,6 +3766,7 @@
       "branco_nulo": 0.009,
       "ns_nr": 0.012
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04391/2026",
     "dataset_version": "intake-cohort-005",
     "source_path": "data/national/polls/atlasintel_2026-09-28_stimulated_1st_round.json"
@@ -3680,6 +3801,7 @@
       "branco_nulo": 0.007,
       "ns_nr": 0.015
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08706/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/ideia_2026-09-28_stimulated_1st_round.json"
@@ -3713,6 +3835,7 @@
       "branco_nulo": 0.024,
       "ns_nr": 0.026
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01122/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/futura_2026-09-29_stimulated_1st_round.json"
@@ -3741,6 +3864,7 @@
       "branco_nulo": 0.04,
       "ns_nr": 0.07
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00698/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/indexa_2026-09-29_stimulated_1st_round.json"
@@ -3769,6 +3893,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09503/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/realtime_bigdata_2026-09-30_stimulated_1st_round.json"
@@ -3798,6 +3923,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-08039/2026",
     "dataset_version": "intake-cohort-006",
     "source_path": "data/national/polls/datafolha_2026-10-01_stimulated_1st_round.json"
@@ -3826,6 +3952,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.047
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04756/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/cnt_mda_2026-10-03_stimulated_1st_round.json"
@@ -3854,6 +3981,7 @@
       "branco_nulo": 0.04,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01708/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/datafolha_2026-10-03_stimulated_1st_round.json"
@@ -3882,6 +4010,7 @@
       "branco_nulo": 0,
       "ns_nr": 0
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00198/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/palver_2026-10-03_stimulated_1st_round.json"
@@ -3910,6 +4039,7 @@
       "branco_nulo": 0.1,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-02197/2026",
     "dataset_version": "intake-cohort-007",
     "source_path": "data/national/polls/quaest_2026-10-03_stimulated_1st_round.json"
