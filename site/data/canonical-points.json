@@ -499,7 +499,7 @@
       "romeu_zema": 0.03,
       "ronaldo_caiado": 0.03,
       "renan_santos": 0.01,
-      "aldo_rebelo": 0
+      "aldo_rebelo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.03,
@@ -555,7 +555,7 @@
       "renan_santos": 0.02,
       "ronaldo_caiado": 0.04,
       "romeu_zema": 0.04,
-      "aldo_rebelo": 0
+      "aldo_rebelo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -701,7 +701,7 @@
       "renan_santos": 0.02,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "aldo_rebelo": 0
+      "aldo_rebelo": 0.0
     },
     "residuals": {
       "ns_nr": 0.05,
@@ -791,10 +791,10 @@
       "augusto_cury": 0.01,
       "aldo_rebelo": 0.01,
       "cabo_daciolo": 0.01,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "rui_costa_pimenta": 0,
-      "samara_martins": 0
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "samara_martins": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -826,10 +826,10 @@
       "renan_santos": 0.014,
       "aldo_rebelo": 0.008,
       "cabo_daciolo": 0.003,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "rui_costa_pimenta": 0,
-      "samara_martins": 0
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "samara_martins": 0.0
     },
     "residuals": {
       "branco_nulo": 0.037,
@@ -891,8 +891,8 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "aldo_rebelo": 0,
-      "hertz_dias": 0
+      "aldo_rebelo": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "ns_nr": 0.05,
@@ -924,8 +924,8 @@
       "ronaldo_caiado": 0.01,
       "renan_santos": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "cabo_daciolo": 0
+      "rui_costa_pimenta": 0.0,
+      "cabo_daciolo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -988,8 +988,8 @@
       "augusto_cury": 0.02,
       "rui_costa_pimenta": 0.01,
       "cabo_daciolo": 0.01,
-      "aldo_rebelo": 0,
-      "hertz_dias": 0
+      "aldo_rebelo": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.09,
@@ -1142,10 +1142,10 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "aldo_rebelo": 0
+      "rui_costa_pimenta": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "aldo_rebelo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -1352,11 +1352,11 @@
       "ronaldo_caiado": 0.02,
       "joaquim_barbosa": 0.02,
       "augusto_cury": 0.01,
-      "cabo_daciolo": 0,
-      "samara_martins": 0,
-      "aldo_rebelo": 0,
-      "rui_costa_pimenta": 0,
-      "edmilson_costa": 0
+      "cabo_daciolo": 0.0,
+      "samara_martins": 0.0,
+      "aldo_rebelo": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "edmilson_costa": 0.0
     },
     "residuals": {
       "branco_nulo": 0.07,
@@ -1388,9 +1388,9 @@
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
       "samara_martins": 0.01,
-      "cabo_daciolo": 0,
-      "edmilson_costa": 0,
-      "hero_bezerra": 0
+      "cabo_daciolo": 0.0,
+      "edmilson_costa": 0.0,
+      "hero_bezerra": 0.0
     },
     "residuals": {
       "branco_nulo": 0.09,
@@ -1543,8 +1543,8 @@
       "cabo_daciolo": 0.01,
       "joaquim_barbosa": 0.01,
       "rui_costa_pimenta": 0.01,
-      "hertz_dias": 0,
-      "edmilson_costa": 0
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0
     },
     "residuals": {
       "branco_nulo": 0.07,
@@ -1576,7 +1576,7 @@
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0
+      "rui_costa_pimenta": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -1606,8 +1606,8 @@
       "renan_santos": 0.03,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0,
-      "cabo_daciolo": 0
+      "samara_martins": 0.0,
+      "cabo_daciolo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -1732,8 +1732,8 @@
       "augusto_cury": 0.005,
       "cabo_daciolo": 0.003,
       "rui_costa_pimenta": 0.001,
-      "edmilson_costa": 0,
-      "hertz_dias": 0
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.011,
@@ -1798,10 +1798,10 @@
       "romeu_zema": 0.02,
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
-      "aecio_neves": 0,
-      "cabo_daciolo": 0,
-      "samara_martins": 0,
-      "rui_costa_pimenta": 0
+      "aecio_neves": 0.0,
+      "cabo_daciolo": 0.0,
+      "samara_martins": 0.0,
+      "rui_costa_pimenta": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -1862,7 +1862,7 @@
       "joaquim_barbosa": 0.02,
       "augusto_cury": 0.02,
       "aecio_neves": 0.01,
-      "cabo_daciolo": 0
+      "cabo_daciolo": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -1894,9 +1894,9 @@
       "augusto_cury": 0.01,
       "joaquim_barbosa": 0.01,
       "samara_martins": 0.01,
-      "edmilson_costa": 0,
-      "hero_bezerra": 0,
-      "hertz_dias": 0
+      "edmilson_costa": 0.0,
+      "hero_bezerra": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "ns_nr": 0.11,
@@ -1956,7 +1956,7 @@
       "cabo_daciolo": 0.01,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "rui_costa_pimenta": 0
+      "rui_costa_pimenta": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -1986,9 +1986,9 @@
       "renan_santos": 0.03,
       "joaquim_barbosa": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0,
-      "cabo_daciolo": 0,
-      "hertz_dias": 0
+      "samara_martins": 0.0,
+      "cabo_daciolo": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -2050,9 +2050,9 @@
       "samara_martins": 0.01,
       "cabo_daciolo": 0.01,
       "rui_costa_pimenta": 0.01,
-      "hertz_dias": 0,
-      "edmilson_costa": 0,
-      "leonardo_avalanche": 0
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0,
+      "leonardo_avalanche": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -2113,8 +2113,8 @@
       "augusto_cury": 0.016,
       "cabo_daciolo": 0.001,
       "hertz_dias": 0.001,
-      "rui_costa_pimenta": 0,
-      "edmilson_costa": 0
+      "rui_costa_pimenta": 0.0,
+      "edmilson_costa": 0.0
     },
     "residuals": {
       "branco_nulo": 0.006,
@@ -2237,10 +2237,10 @@
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0,
-      "hero_bezerra": 0,
-      "edmilson_costa": 0
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "hero_bezerra": 0.0,
+      "edmilson_costa": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -2304,10 +2304,10 @@
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "clariana_barao": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "leonardo_avalanche": 0
+      "clariana_barao": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "leonardo_avalanche": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -2340,7 +2340,7 @@
       "samara_martins": 0.007,
       "cabo_daciolo": 0.004,
       "edmilson_costa": 0.001,
-      "hertz_dias": 0
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.062,
@@ -2402,11 +2402,11 @@
       "samara_martins": 0.02,
       "augusto_cury": 0.01,
       "cabo_daciolo": 0.01,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0,
-      "hero_bezerra": 0,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "hero_bezerra": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -2436,9 +2436,9 @@
       "romeu_zema": 0.02,
       "cabo_daciolo": 0.01,
       "augusto_cury": 0.01,
-      "samara_martins": 0,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0
+      "samara_martins": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -2470,10 +2470,10 @@
       "leonardo_avalanche": 0.01,
       "rui_costa_pimenta": 0.01,
       "clariana_barao": 0.01,
-      "samara_martins": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "wilson_grassi": 0
+      "samara_martins": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -2503,12 +2503,12 @@
       "augusto_cury": 0.02,
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
-      "edmilson_costa": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0,
-      "leonardo_avalanche": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0
+      "edmilson_costa": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0,
+      "leonardo_avalanche": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -2538,12 +2538,12 @@
       "romeu_zema": 0.04,
       "augusto_cury": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0,
-      "hero_bezerra": 0,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "hero_bezerra": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -2576,8 +2576,8 @@
       "rui_costa_pimenta": 0.01,
       "wilson_grassi": 0.01,
       "edmilson_costa": 0.01,
-      "clariana_barao": 0,
-      "hertz_dias": 0
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -2635,11 +2635,11 @@
       "romeu_zema": 0.03,
       "augusto_cury": 0.02,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -2669,11 +2669,11 @@
       "ronaldo_caiado": 0.03,
       "augusto_cury": 0.01,
       "romeu_zema": 0.01,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0,
-      "samara_martins": 0,
-      "edmilson_costa": 0
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0,
+      "samara_martins": 0.0,
+      "edmilson_costa": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -2706,9 +2706,9 @@
       "romeu_zema": 0.02,
       "edmilson_costa": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "clariana_barao": 0,
-      "wilson_grassi": 0
+      "rui_costa_pimenta": 0.0,
+      "clariana_barao": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -2885,11 +2885,11 @@
       "ronaldo_caiado": 0.01,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "ns_nr": 0.11,
@@ -2924,7 +2924,7 @@
       "samara_martins": 0.01,
       "clariana_barao": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -2956,9 +2956,9 @@
       "samara_martins": 0.01,
       "edmilson_costa": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -2988,11 +2988,11 @@
       "ronaldo_caiado": 0.03,
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
-      "edmilson_costa": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0
+      "edmilson_costa": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.08,
@@ -3089,9 +3089,9 @@
       "romeu_zema": 0.01,
       "rui_costa_pimenta": 0.01,
       "edmilson_costa": 0.01,
-      "clariana_barao": 0,
-      "samara_martins": 0,
-      "wilson_grassi": 0
+      "clariana_barao": 0.0,
+      "samara_martins": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.03,
@@ -3124,8 +3124,8 @@
       "edmilson_costa": 0.01,
       "clariana_barao": 0.01,
       "rui_costa_pimenta": 0.01,
-      "wilson_grassi": 0,
-      "hertz_dias": 0
+      "wilson_grassi": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -3184,12 +3184,12 @@
       "ronaldo_caiado": 0.04,
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
-      "samara_martins": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "edmilson_costa": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0
+      "samara_martins": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "edmilson_costa": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -3218,12 +3218,12 @@
       "renan_santos": 0.04,
       "ronaldo_caiado": 0.04,
       "romeu_zema": 0.01,
-      "samara_martins": 0,
-      "clariana_barao": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0
+      "samara_martins": 0.0,
+      "clariana_barao": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.07,
@@ -3284,10 +3284,10 @@
       "romeu_zema": 0.02,
       "samara_martins": 0.01,
       "rui_costa_pimenta": 0.01,
-      "edmilson_costa": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0,
-      "wilson_grassi": 0
+      "edmilson_costa": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.06,
@@ -3317,10 +3317,10 @@
       "renan_santos": 0.02,
       "romeu_zema": 0.01,
       "pablo_marcal": 0.01,
-      "wilson_grassi": 0,
-      "rui_costa_pimenta": 0,
-      "samara_martins": 0,
-      "hertz_dias": 0
+      "wilson_grassi": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "samara_martins": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -3354,8 +3354,8 @@
       "samara_martins": 0.01,
       "clariana_barao": 0.01,
       "pablo_marcal": 0.01,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -3385,11 +3385,11 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "rui_costa_pimenta": 0,
-      "hertz_dias": 0,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0,
-      "clariana_barao": 0
+      "rui_costa_pimenta": 0.0,
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0,
+      "clariana_barao": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
@@ -3419,12 +3419,12 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "clariana_barao": 0,
-      "edmilson_costa": 0,
-      "hertz_dias": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "leonardo_avalanche": 0
+      "clariana_barao": 0.0,
+      "edmilson_costa": 0.0,
+      "hertz_dias": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "leonardo_avalanche": 0.0
     },
     "residuals": {
       "branco_nulo": 0.07,
@@ -3512,12 +3512,12 @@
       "renan_santos": 0.03,
       "romeu_zema": 0.01,
       "samara_martins": 0.01,
-      "edmilson_costa": 0,
-      "rui_costa_pimenta": 0,
-      "wilson_grassi": 0,
-      "leonardo_avalanche": 0,
-      "clariana_barao": 0,
-      "hertz_dias": 0
+      "edmilson_costa": 0.0,
+      "rui_costa_pimenta": 0.0,
+      "wilson_grassi": 0.0,
+      "leonardo_avalanche": 0.0,
+      "clariana_barao": 0.0,
+      "hertz_dias": 0.0
     },
     "residuals": {
       "branco_nulo": 0.05,
@@ -3551,7 +3551,7 @@
       "leonardo_avalanche": 0.002,
       "edmilson_costa": 0.001,
       "hertz_dias": 0.001,
-      "clariana_barao": 0
+      "clariana_barao": 0.0
     },
     "residuals": {
       "branco_nulo": 0.021,
@@ -3612,10 +3612,10 @@
       "samara_martins": 0.01,
       "rui_costa_pimenta": 0.01,
       "clariana_barao": 0.01,
-      "leonardo_avalanche": 0,
-      "hertz_dias": 0,
-      "edmilson_costa": 0,
-      "wilson_grassi": 0
+      "leonardo_avalanche": 0.0,
+      "hertz_dias": 0.0,
+      "edmilson_costa": 0.0,
+      "wilson_grassi": 0.0
     },
     "residuals": {
       "branco_nulo": 0.04,
