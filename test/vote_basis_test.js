@@ -30,7 +30,7 @@ assert.ok(Math.abs(valueOf("p2", "lula").value - (47 / 96)) < 1e-12);
 assert.equal(valueOf("p1", "flavio").published_value, 0.46);
 assert.equal(valueOf("p1", "flavio").vote_basis, "total_votes");
 assert.ok(Math.abs(valueOf("p1", "flavio").value + valueOf("p1", "lula").value - 1) < 1e-12);
-assert.equal(api.normalizeRows(rows, ["flavio"]), []);
+assert.equal(api.normalizeRows(rows, ["flavio"]).length, 0);
 assert.equal(api.isResidualCandidate({ id: "branco_nulo", category: "residual" }), true);
 
 console.log("vote-basis tests OK — candidate-only normalization retains complete polls and preserves published values");
