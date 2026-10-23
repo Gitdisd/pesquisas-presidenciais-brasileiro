@@ -63,6 +63,37 @@ class NormalizeAssembleTest < Minitest::Test
     end
   end
 
+  def test_assemble_preserves_explicit_vote_basis_and_defaults_to_unknown
+    Dir.mktmpdir do |dir|
+      poll_dir = Pathname.new(dir).join("polls")
+      poll_dir.mkpath
+      base = {
+        "poll_id" => "poll_basis",
+        "institute_id" => "inst",
+        "fieldwork_start" => "2026-10-20",
+        "fieldwork_end" => "2026-10-22",
+        "fieldwork_mid" => "2026-10-21",
+        "geography" => "national",
+        "election_cycle" => 2026,
+        "scenario" => "stimulated_1st_round",
+        "sample_size" => 1000,
+        "moe" => nil,
+        "results" => { "cand_a" => 0.4 },
+        "residuals" => { "branco_nulo" => 0.1 },
+        "witness_ids" => [],
+        "dataset_version" => "test"
+      }
+      poll_dir.join("poll_basis.json").write(JSON.pretty_generate(base.merge("vote_basis" => "valid_votes")))
+      result = Pebr::Assemble.run_national(
+        poll_dir: poll_dir.to_s,
+        out_path: Pathname.new(dir).join("1st.json").to_s,
+        out_path_2nd: Pathname.new(dir).join("2nd.json").to_s,
+        dry_run: true
+      )
+      assert_equal "valid_votes", JSON.parse(result[:text_1st]).first["vote_basis"]
+    end
+  end
+
   def test_assemble_regional_empty_stub_and_never_reads_national
     Dir.mktmpdir do |dir|
       regional_dir = Pathname.new(dir).join("regional_polls")
