@@ -790,7 +790,8 @@
       item.innerHTML = `<span class="cand-swatch" style="background:${c.color}"></span>${prettyCandidateLabel(c)}`;
       item.addEventListener("click", () => {
         if (state.visible.has(c.id)) {
-          if (state.visible.size <= 1) return;
+          const visibleSeriesCount = candidatesForLegend().filter((candidate) => state.visible.has(candidate.id)).length;
+          if (visibleSeriesCount <= 1) return;
           state.visible.delete(c.id);
         } else {
           state.visible.add(c.id);
@@ -1547,7 +1548,7 @@
   }
 
   function currentAggSource() {
-    const usePipeline = institutesAllOn() && state.modelMethod === "option_b";
+    const usePipeline = !isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b";
     const client = usePipeline ? null : ensureClientOptionB();
     return {
       usePipeline,
