@@ -32,6 +32,7 @@ module Pebr
       moe
       results
       residuals
+      vote_basis
       tse_registration_id
       dataset_version
       source_path
@@ -209,6 +210,9 @@ module Pebr
           point[key] = source_path
         when "fieldwork_mid", "moe", "tse_registration_id"
           point[key] = poll.key?(key) ? poll[key] : nil
+        when "vote_basis"
+          basis = poll.fetch("vote_basis", "unknown").to_s
+          point[key] = %w[total_votes valid_votes unknown].include?(basis) ? basis : "unknown"
         when "results", "residuals"
           point[key] = poll.fetch(key)
         else
