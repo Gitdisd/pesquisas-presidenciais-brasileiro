@@ -121,6 +121,11 @@
       "minLength": 1,
       "description": "Pipeline/dataset version stamp for this record."
     },
+    "vote_basis": {
+      "type": "string",
+      "enum": ["total_votes", "valid_votes", "unknown"],
+      "description": "Published share denominator. Use unknown unless the source explicitly supports total-vote or valid-vote basis; never infer it from candidate percentages alone."
+    },
     "notes": {
       "type": "string",
       "description": "Free-text notes; empty string allowed."
