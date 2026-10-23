@@ -322,9 +322,17 @@ Do not add future scheduled surveys as if they are already observations. Current
 
 ## Addendum — national second-round polling refresh (2026-10-22)
 
-- Added 14 national Lula–Flávio polls with fieldwork after the 2026-10-04 first round, plus one individual press witness per poll.
-- Canonical national second-round point count after refresh: 266.
+- Corrected two Datafolha fieldwork-end identities and added the AtlasIntel release; the refreshed national Lula–Flávio cohort has 15 source-linked records with fieldwork after the 2026-10-04 first round, plus one individual press witness per poll.
+- Canonical national second-round point count after refresh: 267.
 - All newly entered candidate results use **total-vote shares**, not valid-vote shares. Published valid-vote results were not substituted into these records.
 - The cohort includes the Datafolha fieldwork ending 2026-10-22 and source-backed PoderData, Quaest, Meio/Ideia, Palver, Real Time Big Data, CNT/MDA and BTG/Nexus readings from October 6–22.
 - Source details and per-poll metadata: [docs/polling-refresh-2026-10-22.md](polling-refresh-2026-10-22.md).
 - The Pages workflow regenerates the Option B chart from the new canonical snapshot; generated chart JSON was not hand-edited.
+
+
+## Addendum — axes and forecasting research (2026-10-22)
+
+- Added exact X-date limits, automatic/manual Y ranges, optional zero baseline, grid toggle and X-only or X+Y pan/zoom to the national chart. Axis settings persist in shared URLs.
+- Default Y autoscale fits currently visible observations and the active aggregate with padding instead of anchoring at zero; users can restore a zero baseline. This clarifies trend changes while displaying actual axis limits.
+- Cross-country research and model comparison/backtest design: [docs/forecast-methodology-research-2026-10-22.md](forecast-methodology-research-2026-10-22.md).
+- Do not publish a calibrated second-round win probability until vote basis is a structured field and models pass whole-election held-out backtests with calibration and interval-coverage results.

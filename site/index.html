@@ -130,6 +130,43 @@
         <p class="filter-note muted small" id="filter-note" hidden></p>
       </div>
 
+      <section class="axis-control-panel" aria-label="Controles dos eixos do gráfico nacional">
+        <details id="axis-details">
+          <summary>Controles dos eixos (X e Y)</summary>
+          <div class="axis-controls-grid">
+            <div class="axis-control-group">
+              <h3>Eixo X · período exato</h3>
+              <label for="axis-x-start">Data inicial<input type="date" id="axis-x-start" /></label>
+              <label for="axis-x-end">Data final<input type="date" id="axis-x-end" /></label>
+              <p class="muted small">Datas vazias usam o período 30d/90d/tudo. Informar datas define o intervalo exato do eixo do tempo.</p>
+            </div>
+            <div class="axis-control-group">
+              <h3>Eixo Y · percentual</h3>
+              <label class="axis-check"><input type="checkbox" id="axis-y-auto" checked /> Ajustar automaticamente aos dados visíveis</label>
+              <div class="axis-number-row">
+                <label for="axis-y-min">Mínimo (%)<input type="number" id="axis-y-min" min="0" max="100" step="0.5" value="35" disabled /></label>
+                <label for="axis-y-max">Máximo (%)<input type="number" id="axis-y-max" min="0" max="100" step="0.5" value="60" disabled /></label>
+              </div>
+              <label class="axis-check"><input type="checkbox" id="axis-zero-baseline" /> Incluir zero no eixo Y</label>
+              <p class="muted small">O ajuste automático amplia a faixa para deixar visíveis pequenas variações. Os limites ficam explícitos no eixo.</p>
+            </div>
+            <div class="axis-control-group">
+              <h3>Navegação e leitura</h3>
+              <label class="axis-check"><input type="checkbox" id="axis-grid-toggle" checked /> Mostrar linhas de grade</label>
+              <label for="axis-zoom-mode">Arrastar / zoom
+                <select id="axis-zoom-mode"><option value="x">Só eixo X · tempo</option><option value="both">Eixos X e Y</option></select>
+              </label>
+              <div class="axis-control-actions">
+                <button type="button" class="btn" id="btn-apply-axes">Aplicar eixos</button>
+                <button type="button" class="btn" id="btn-auto-y">Y automático</button>
+                <button type="button" class="btn" id="btn-reset-axes">Redefinir eixos</button>
+              </div>
+              <p class="muted small" id="axis-status" aria-live="polite">As configurações dos eixos ficam guardadas no link compartilhável.</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
       <div class="chart-shell" id="chart-shell">
         <div class="chart-placeholder" id="chart-placeholder">
           <div class="skeleton-plot"></div>

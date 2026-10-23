@@ -1,0 +1,31 @@
+{
+  "witness_id": "w_atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol",
+  "poll_id": "atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "source_type": "press",
+  "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/09/pesquisa-presidente-2026-veja-numeros-do-segundo-turno-de-lula-e-flavio.ghtm",
+  "retrieved_at": "2026-10-22T22:30:00-03:00",
+  "content_hash": "sha256:9c9bbe97b6c4968ecb27be19b8d3de1d39c90b04c083a14471fb49c09c8b174d",
+  "content_hash_basis": "manual_extraction",
+  "raw_path": null,
+  "parser_id": "manual_intake_second_round_2026-10-22_v1",
+  "extractions": {
+    "source_title": "AtlasIntel/Bloomberg second-round poll, UOL, 9 October 2026",
+    "fieldwork": "2026-10-03..2026-10-08",
+    "sample_size": 5026,
+    "geography": "national",
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "basis": "total_votes",
+    "results_percent": {
+      "flavio_bolsonaro": 51.1,
+      "lula": 45.7
+    },
+    "residuals_percent": {
+      "combined_blank_null_undecided": 3.2
+    },
+    "margin_of_error_pp": 1,
+    "tse_registration_id": "BR-03663/2026"
+  },
+  "confidence": 0.98,
+  "tse_registration_id": "BR-03663/2026",
+  "notes": "Transcribed from linked press coverage. The 3.2% residual is combined blank/null/undecided and is intentionally not relabelled as blank/null alone; fieldwork straddles first-round election day."
+}

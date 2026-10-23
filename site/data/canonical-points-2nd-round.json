@@ -5767,11 +5767,31 @@
     "source_path": "data/national/polls/quaest_2026-10-03_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
-    "poll_id": "datafolha_2026-10-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "poll_id": "atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "atlasintel",
+    "fieldwork_start": "2026-10-03",
+    "fieldwork_end": "2026-10-08",
+    "fieldwork_mid": "2026-10-05",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 5026,
+    "moe": 0.01,
+    "results": {
+      "flavio_bolsonaro": 0.511,
+      "lula": 0.457
+    },
+    "residuals": {},
+    "tse_registration_id": "BR-03663/2026",
+    "dataset_version": "intake-cohort-009",
+    "source_path": "data/national/polls/atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "datafolha_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
     "institute_id": "datafolha",
     "fieldwork_start": "2026-10-06",
-    "fieldwork_end": "2026-10-07",
-    "fieldwork_mid": "2026-10-06",
+    "fieldwork_end": "2026-10-08",
+    "fieldwork_mid": "2026-10-07",
     "geography": "national",
     "election_cycle": 2026,
     "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
@@ -5787,7 +5807,7 @@
     },
     "tse_registration_id": "BR-02949/2026",
     "dataset_version": "intake-cohort-009",
-    "source_path": "data/national/polls/datafolha_2026-10-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+    "source_path": "data/national/polls/datafolha_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
     "poll_id": "nexus_2026-10-12_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
@@ -5882,29 +5902,6 @@
     "source_path": "data/national/polls/quaest_2026-10-13_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
-    "poll_id": "datafolha_2026-10-14_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
-    "institute_id": "datafolha",
-    "fieldwork_start": "2026-10-13",
-    "fieldwork_end": "2026-10-14",
-    "fieldwork_mid": "2026-10-13",
-    "geography": "national",
-    "election_cycle": 2026,
-    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
-    "sample_size": 2520,
-    "moe": 0.02,
-    "results": {
-      "flavio_bolsonaro": 0.47,
-      "lula": 0.45
-    },
-    "residuals": {
-      "branco_nulo": 0.06,
-      "ns_nr": 0.02
-    },
-    "tse_registration_id": "BR-00466/2026",
-    "dataset_version": "intake-cohort-009",
-    "source_path": "data/national/polls/datafolha_2026-10-14_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
-  },
-  {
     "poll_id": "cnt_mda_2026-10-15_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
     "institute_id": "cnt_mda",
     "fieldwork_start": "2026-10-13",
@@ -5926,6 +5923,29 @@
     "tse_registration_id": "BR-00652/2026",
     "dataset_version": "intake-cohort-009",
     "source_path": "data/national/polls/cnt_mda_2026-10-15_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
+  },
+  {
+    "poll_id": "datafolha_2026-10-15_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "institute_id": "datafolha",
+    "fieldwork_start": "2026-10-13",
+    "fieldwork_end": "2026-10-15",
+    "fieldwork_mid": "2026-10-14",
+    "geography": "national",
+    "election_cycle": 2026,
+    "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+    "sample_size": 2520,
+    "moe": 0.02,
+    "results": {
+      "flavio_bolsonaro": 0.47,
+      "lula": 0.45
+    },
+    "residuals": {
+      "branco_nulo": 0.06,
+      "ns_nr": 0.02
+    },
+    "tse_registration_id": "BR-00466/2026",
+    "dataset_version": "intake-cohort-009",
+    "source_path": "data/national/polls/datafolha_2026-10-15_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
   },
   {
     "poll_id": "poderdata_2026-10-15_stimulated_2nd_round_flavio_bolsonaro_vs_lula",

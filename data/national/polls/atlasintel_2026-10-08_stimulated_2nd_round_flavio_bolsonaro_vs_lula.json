@@ -1,0 +1,23 @@
+{
+  "poll_id": "atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "institute_id": "atlasintel",
+  "fieldwork_start": "2026-10-03",
+  "fieldwork_end": "2026-10-08",
+  "fieldwork_mid": "2026-10-05",
+  "geography": "national",
+  "election_cycle": 2026,
+  "scenario": "stimulated_2nd_round_flavio_bolsonaro_vs_lula",
+  "sample_size": 5026,
+  "moe": 0.01,
+  "results": {
+    "flavio_bolsonaro": 0.511,
+    "lula": 0.457
+  },
+  "residuals": {},
+  "tse_registration_id": "BR-03663/2026",
+  "witness_ids": [
+    "w_atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol"
+  ],
+  "dataset_version": "intake-cohort-009",
+  "notes": "Total-vote shares. Source reports combined blank/null/undecided residual of 3.2%; it is not split into separate categories. Fieldwork 2026-10-03..2026-10-08 straddled first-round election day on 2026-10-04, so this is not a clean post-first-round fieldwork wave."
+}

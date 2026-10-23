@@ -1,38 +1,39 @@
 # National second-round polling refresh — 2026-10-22
 
-## Scope and rule
+## Scope and vote basis
 
-This refresh adds 14 national, stimulated Lula × Flávio Bolsonaro observations with interviews conducted after first-round election day (2026-10-04). All candidate shares below are the source's **total-vote basis**. Published valid-vote calculations are not substituted into this trend. Percentages are stored as fractions in PEBR JSON. TSE registrations are provenance, not proof of the reported percentages. Each observation links to an individual press witness JSON record.
+This table covers 15 source-linked national stimulated Lula × Flávio Bolsonaro poll identities for the second-round scenario, including corrected Datafolha fieldwork end dates and the October AtlasIntel release. Candidate shares below are the source's total-vote shares. The AtlasIntel/Bloomberg fieldwork from 3–8 October straddled first-round election day on 4 October; it is not a clean post-first-round wave. Percentages are stored as fractions. Published rounded figures are preserved rather than normalized. TSE registration numbers are provenance, not proof of accuracy.
 
-The reports round shares; for a few rows the displayed percentages add to 101. The data preserve the source's published rounded figures instead of normalizing them.
-
-## Added observations
-
-| Institute | Fieldwork | N | Flávio total | Lula total | Margin | TSE registration | Evidence |
+| Institute | Fieldwork | N | Flávio total | Lula total | MOE | TSE registration | Evidence |
 |---|---|---:|---:|---:|---:|---|---|
-| datafolha | 2026-10-06–2026-10-07 | 2,520 | 49% | 45% | ±2 pp | BR-02949/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/08/pesquisa-lula-e-flavio-no-segundo-turno-o-que-diz-datafolha-em-levantamento.ghtm) |
-| poderdata | 2026-10-10–2026-10-12 | 3,000 | 48% | 46% | ±1.8 pp | BR-01209/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
-| palver | 2026-10-10–2026-10-13 | 5,000 | 50% | 49% | ±2.3 pp | BR-08028/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
-| quaest | 2026-10-10–2026-10-13 | 2,154 | 46% | 44% | ±2 pp | BR-08729/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
-| nexus | 2026-10-10–2026-10-12 | 2,002 | 48% | 45% | ±2 pp | BR-07997/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
-| datafolha | 2026-10-13–2026-10-14 | 2,520 | 47% | 45% | ±2 pp | BR-00466/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/15/lula-na-pesquisa-de-segundo-turno-para-presidente-veja-numeros-do-datafolha.ghtm) |
-| poderdata | 2026-10-13–2026-10-15 | 3,000 | 47% | 47% | ±1.8 pp | BR-04258/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm) |
-| cnt_mda | 2026-10-13–2026-10-15 | 2,014 | 46.8% | 45.9% | ±2.2 pp | BR-00652/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm) |
-| poderdata | 2026-10-19–2026-10-21 | 4,000 | 49% | 48% | ±1.6 pp | BR-07926/2026 | [Press report](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
-| palver | 2026-10-18–2026-10-20 | 5,000 | 50% | 48% | ±2.4 pp | BR-04612/2026 | [Press report](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
-| quaest | 2026-10-17–2026-10-20 | 2,154 | 45% | 44% | ±2 pp | BR-08535/2026 | [Press report](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
-| ideia | 2026-10-15–2026-10-19 | 1,500 | 48% | 46% | ±2.5 pp | BR-08251/2026 | [Press report](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
-| realtime_bigdata | 2026-10-15–2026-10-19 | 2,000 | 48% | 45% | ±2 pp | BR-02952/2026 | [Press report](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
-| datafolha | 2026-10-20–2026-10-22 | 2,520 | 47% | 46% | ±2 pp | BR-09709/2026 | [Press report](https://noticias.uol.com.br/eleicoes/2026/10/22/nova-pesquisa-datafolha-presidente-segundo-turno-2026-veja-numeros-de-lula-e-flavio.ghtm) |
+| datafolha | 6–8 Oct | 2,520 | 49% | 45% | ±2.0 pp | BR-02949/2026 | [UOL, 9 Oct](https://noticias.uol.com.br/eleicoes/2026/10/09/pesquisa-segundo-turno-o-que-dizem-os-levantamentos-presidenciais-de-lula-e-flavio.ghtm) |
+| atlasintel | 3–8 Oct* | 5,026 | 51.1% | 45.7% | ±1.0 pp | BR-03663/2026 | [UOL, 9 Oct](https://noticias.uol.com.br/eleicoes/2026/10/09/pesquisa-presidente-2026-veja-numeros-do-segundo-turno-de-lula-e-flavio.ghtm) |
+| poderdata | 10–12 Oct | 3,000 | 48% | 46% | ±1.8 pp | BR-01209/2026 | [UOL, 15 Oct](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
+| palver | 10–13 Oct | 5,000 | 50% | 49% | ±2.3 pp | BR-08028/2026 | [UOL, 15 Oct](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
+| quaest | 10–13 Oct | 2,154 | 46% | 44% | ±2.0 pp | BR-08729/2026 | [UOL, 15 Oct](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
+| BTG/Nexus | 10–12 Oct | 2,002 | 48% | 45% | ±2.0 pp | BR-07997/2026 | [UOL, 15 Oct](https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm) |
+| datafolha | 13–15 Oct | 2,520 | 47% | 45% | ±2.0 pp | BR-00466/2026 | [UOL, 16 Oct](https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm) |
+| poderdata | 13–15 Oct | 3,000 | 47% | 47% | ±1.8 pp | BR-04258/2026 | [UOL, 16 Oct](https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm) |
+| CNT/MDA | 13–15 Oct | 2,014 | 46.8% | 45.9% | ±2.2 pp | BR-00652/2026 | [UOL, 16 Oct](https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm) |
+| Meio/Ideia | 15–19 Oct | 1,500 | 48% | 46% | ±2.5 pp | BR-08251/2026 | [UOL, 22 Oct](https://noticias.uol.com.br/eleicoes/2026/10/22/pesquisa-presidente-2026-segundo-turno-veja-lula-e-flavio-nos-institutos.ghtm) |
+| Real Time Big Data | 15–19 Oct | 2,000 | 48% | 45% | ±2.0 pp | BR-02952/2026 | [UOL, 22 Oct](https://noticias.uol.com.br/eleicoes/2026/10/22/pesquisa-presidente-2026-segundo-turno-veja-lula-e-flavio-nos-institutos.ghtm) |
+| quaest | 17–20 Oct | 2,154 | 45% | 44% | ±2.0 pp | BR-08535/2026 | [UOL, 22 Oct](https://noticias.uol.com.br/eleicoes/2026/10/22/pesquisa-presidente-2026-segundo-turno-veja-lula-e-flavio-nos-institutos.ghtm) |
+| palver | 18–20 Oct | 5,000 | 50% | 48% | ±2.4 pp | BR-04612/2026 | [UOL, 22 Oct](https://noticias.uol.com.br/eleicoes/2026/10/22/pesquisa-presidente-2026-segundo-turno-veja-lula-e-flavio-nos-institutos.ghtm) |
+| poderdata | 19–21 Oct | 4,000 | 49% | 48% | ±1.6 pp | BR-07926/2026 | [UOL, 22 Oct](https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm) |
+| datafolha | 20–22 Oct | 2,520 | 47% | 46% | ±2.0 pp | BR-09709/2026 | [Jornal do Comércio, 22 Oct](https://www.jornaldocomercio.com/politica/2026/10/1267936-datafolha-lula-e-flavio-bolsonaro-empatam-com-50-dos-votos-validos.html) |
+
+*AtlasIntel interviews straddled first-round election day. Its source reports the remaining 3.2% as a combined blank/null/undecided group; PEBR intentionally does not force that group into a fabricated split.
+
+## Important model limitation
+
+The current canonical schema does not yet carry vote basis as a structured field through raw intake, canonical points and chart rows. Historically entered valid-vote-only records can therefore be mixed with total-vote records unless classified. The forecast methodology note requires vote-basis tagging and a historical held-out validation before the site labels any output as a calibrated election-day prediction.
 
 ## Source groupings
 
-- Datafolha first post-first-round wave (6–7 October): https://noticias.uol.com.br/eleicoes/2026/10/08/pesquisa-lula-e-flavio-no-segundo-turno-o-que-diz-datafolha-em-levantamento.ghtm
-- 10–13 October releases (PowerData, Palver, Quaest, BTG/Nexus): https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm
-- 13–15 October releases (PowerData and CNT/MDA): https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm
-- Recent releases (PowerData, Quaest, Meio/Ideia, Palver, Real Time Big Data): https://www.bol.uol.com.br/noticias/2026/10/22/nova-pesquisa-poderdata-para-presidente-2026-veja-resultados-do-2-turno.ghtm
-- Latest Datafolha poll, fieldwork 20–22 October: https://noticias.uol.com.br/eleicoes/2026/10/22/nova-pesquisa-datafolha-presidente-segundo-turno-2026-veja-numeros-de-lula-e-flavio.ghtm
+- Datafolha and AtlasIntel, 8–9 October: https://noticias.uol.com.br/eleicoes/2026/10/09/pesquisa-segundo-turno-o-que-dizem-os-levantamentos-presidenciais-de-lula-e-flavio.ghtm
+- 10–13 October releases (PoderData, Palver, Quaest, BTG/Nexus): https://noticias.uol.com.br/eleicoes/2026/10/15/ultimas-pesquisas-para-presidente-em-2026-veja-numeros-do-segundo-turno.ghtm
+- 13–15 October releases (Datafolha, PoderData, CNT/MDA): https://noticias.uol.com.br/eleicoes/2026/10/16/pesquisa-lula-e-flavio-veja-resultados-de-levantamentos-para-o-segundo-turno.ghtm
+- Recent reports (PoderData, Quaest, Meio/Ideia, Palver, Real Time Big Data): https://noticias.uol.com.br/eleicoes/2026/10/22/pesquisa-presidente-2026-segundo-turno-veja-lula-e-flavio-nos-institutos.ghtm
+- Latest Datafolha poll, fieldwork 20–22 October: https://www.jornaldocomercio.com/politica/2026/10/1267936-datafolha-lula-e-flavio-bolsonaro-empatam-com-50-dos-votos-validos.html
 
-## Build behavior
-
-The raw poll and witness files are committed together with `site/data/canonical-points-2nd-round.json`. The Pages workflow regenerates the Option B chart from this canonical file, so the deployed chart can include the new observations without hand-editing generated chart output. The separate regional series and first-round archive remain untouched.
+The Pages workflow regenerates the chart from canonical data. The historical first-round archive and regional data remain separate.

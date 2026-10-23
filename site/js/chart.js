@@ -89,6 +89,18 @@
     pollsPrev: document.getElementById("polls-prev"),
     pollsNext: document.getElementById("polls-next"),
     pollsPageLabel: document.getElementById("polls-page-label"),
+    axisXStart: document.getElementById("axis-x-start"),
+    axisXEnd: document.getElementById("axis-x-end"),
+    axisYAuto: document.getElementById("axis-y-auto"),
+    axisYMin: document.getElementById("axis-y-min"),
+    axisYMax: document.getElementById("axis-y-max"),
+    axisZeroBaseline: document.getElementById("axis-zero-baseline"),
+    axisGridToggle: document.getElementById("axis-grid-toggle"),
+    axisZoomMode: document.getElementById("axis-zoom-mode"),
+    axisApplyBtn: document.getElementById("btn-apply-axes"),
+    axisAutoYBtn: document.getElementById("btn-auto-y"),
+    axisResetBtn: document.getElementById("btn-reset-axes"),
+    axisStatus: document.getElementById("axis-status"),
   };
 
   let state = {
@@ -113,6 +125,15 @@
     activeScenario: null,
     has2nd: false,
     rangeDays: null, // null = tudo; 30 | 90 (view cut only — not a brush slider)
+    axisXStart: null,
+    axisXEnd: null,
+    axisYAuto: true,
+    axisYMinPct: 35,
+    axisYMaxPct: 60,
+    axisZeroBaseline: false,
+    axisGrid: true,
+    axisZoomMode: "x",
+    zoomTransform: d3.zoomIdentity,
     lastTapAt: 0,
     lastTapX: 0,
     lastTapY: 0,
@@ -283,12 +304,11 @@
 
   function setRangeDays(v) {
     const next = v === "all" || v == null ? null : Number(v);
-    if (next === state.rangeDays || (next == null && state.rangeDays == null)) {
-      return;
-    }
+    const hasCustomX = !!(state.axisXStart || state.axisXEnd);
+    if ((next === state.rangeDays || (next == null && state.rangeDays == null)) && !hasCustomX) return;
     if (next != null && !Number.isFinite(next)) return;
-    state.rangeDays = next;
-    syncRangeControls();
+    state.rangeDays = next; state.axisXStart = null; state.axisXEnd = null;
+    syncRangeControls(); syncAxisControls();
     writeUrlState();
     if (state.data) {
       // Re-render with same visibility / institutes
@@ -704,35 +724,51 @@
 
   function initScales(payload, dims) {
     const { polls, aggregates, uncertainty } = payload;
-    const allDates = [
-      ...polls.map((d) => d.date),
-      ...aggregates.map((d) => d.date),
-      ...uncertainty.map((d) => d.date),
-    ];
-    let xMin = d3.min(allDates);
-    let xMax = d3.max(allDates);
+    const allDates = [...polls, ...aggregates, ...uncertainty].map((d) => d.date).filter(Boolean);
+    let xMin = d3.min(allDates), xMax = d3.max(allDates);
     if (rawDateRange(state.data)) {
       const dr = rawDateRange(state.data);
       if (dr[0]) xMin = dr[0];
       if (dr[1]) xMax = dr[1];
     }
-    // Período view cut (old-site 30d/90d/tudo) — not a bottom brush slider
     if (state.rangeDays && xMax) {
       const cut = new Date(xMax.getTime() - state.rangeDays * 86400000);
       if (xMin == null || cut > xMin) xMin = cut;
     }
-    const yVals = [
-      ...polls.map((d) => d.value),
-      ...aggregates.map((d) => d.value),
-      ...uncertainty.map((d) => d.band_low),
-      ...uncertainty.map((d) => d.band_high),
-    ].filter((v) => v != null && !Number.isNaN(v));
-    const yMax = Math.min(1, Math.max(0.45, (d3.max(yVals) || 0.4) * 1.12));
-
+    if (state.axisXStart) xMin = parseDate(state.axisXStart) || xMin;
+    if (state.axisXEnd) xMax = parseDate(state.axisXEnd) || xMax;
+    if (!xMin || !xMax) { xMin = d3.min(allDates); xMax = d3.max(allDates); }
+    if (xMin >= xMax) {
+      if (state.axisXStart && !state.axisXEnd) xMax = new Date(xMin.getTime() + 86400000);
+      else if (state.axisXEnd && !state.axisXStart) xMin = new Date(xMax.getTime() - 86400000);
+      else { xMin = d3.min(allDates); xMax = d3.max(allDates); }
+    }
     state.x0 = d3.scaleUtc().domain([xMin, xMax]).range([0, dims.innerW]);
-    state.y0 = d3.scaleLinear().domain([0, yMax]).nice().range([dims.innerH, 0]);
-    state.xScale = state.x0.copy();
-    state.yScale = state.y0.copy();
+    const yDomain = state.axisYAuto
+      ? autoYBounds(payload, [xMin, xMax])
+      : [state.axisZeroBaseline ? 0 : Math.max(0, Number(state.axisYMinPct) / 100), Math.min(1, Number(state.axisYMaxPct) / 100)];
+    state.y0 = d3.scaleLinear().domain(yDomain).range([dims.innerH, 0]);
+    state.xScale = state.x0.copy(); state.yScale = state.y0.copy();
+    state.zoomTransform = d3.zoomIdentity;
+  }
+
+  function autoYBounds(payload, xDomain) {
+    const xMin = xDomain && xDomain[0], xMax = xDomain && xDomain[1];
+    const inDateRange = (d) => (!xMin || d.date >= xMin) && (!xMax || d.date <= xMax);
+    const candidateVisible = (d) => !state.visible.size || state.visible.has(d.candidate_id);
+    const polls = (payload.polls || []).filter((d) => candidateVisible(d) && pollPassesInstitute(d) && inDateRange(d));
+    const yVals = polls.map((d) => d.value);
+    if (institutesAllOn()) {
+      (payload.aggregates || []).filter((d) => candidateVisible(d) && inDateRange(d)).forEach((d) => yVals.push(d.value));
+      (payload.uncertainty || []).filter((d) => candidateVisible(d) && inDateRange(d)).forEach((d) => yVals.push(d.band_low, d.band_high));
+    }
+    let lo = d3.min(yVals), hi = d3.max(yVals);
+    if (!Number.isFinite(lo) || !Number.isFinite(hi)) { lo = 0.4; hi = 0.55; }
+    if (Math.abs(hi - lo) < 0.005) { lo -= 0.01; hi += 0.01; }
+    const pad = Math.max(0.02, (hi - lo) * 0.14);
+    const bottom = state.axisZeroBaseline ? 0 : Math.max(0, lo - pad);
+    const top = Math.min(1, hi + pad);
+    return bottom < top ? [bottom, top] : [0, 1];
   }
 
   function rawDateRange(data) {
@@ -789,11 +825,12 @@
   }
 
 
-  /** TradingView/Polymarket: transform drives time (X) only; Y stays on data domain. */
+  /** Users may zoom/pan the time axis only or both axes. */
   let zoomRaf = null;
   function applyTimeZoom(transform) {
+    state.zoomTransform = transform;
     state.xScale = transform.rescaleX(state.x0);
-    state.yScale = state.y0.copy();
+    state.yScale = state.axisZoomMode === "both" ? transform.rescaleY(state.y0) : state.y0.copy();
     if (zoomRaf != null) return;
     const frame = () => {
       zoomRaf = null;
@@ -812,6 +849,69 @@
       .duration(280)
       .ease(d3.easeCubicOut)
       .call(state.zoomBehavior.transform, d3.zoomIdentity);
+  }
+
+  function syncAxisControls() {
+    if (!el.axisXStart) return;
+    el.axisXStart.value = state.axisXStart || ""; el.axisXEnd.value = state.axisXEnd || "";
+    if (el.axisYAuto) el.axisYAuto.checked = state.axisYAuto;
+    if (el.axisYMin) { el.axisYMin.value = String(state.axisYMinPct); el.axisYMin.disabled = state.axisYAuto; }
+    if (el.axisYMax) { el.axisYMax.value = String(state.axisYMaxPct); el.axisYMax.disabled = state.axisYAuto; }
+    if (el.axisZeroBaseline) el.axisZeroBaseline.checked = state.axisZeroBaseline;
+    if (el.axisGridToggle) el.axisGridToggle.checked = state.axisGrid;
+    if (el.axisZoomMode) el.axisZoomMode.value = state.axisZoomMode;
+    if (el.axisStatus) {
+      if (state.xScale && state.yScale) {
+        const xd = state.xScale.domain(), yd = state.yScale.domain();
+        el.axisStatus.textContent = "X: " + fmtDate(xd[0]) + "–" + fmtDate(xd[1]) + " · Y: " +
+          (yd[0] * 100).toFixed(1) + "–" + (yd[1] * 100).toFixed(1) + "%. Os limites ficam no link compartilhável.";
+      } else el.axisStatus.textContent = "As configurações dos eixos ficam guardadas no link compartilhável.";
+    }
+  }
+
+  function applyAxisControls() {
+    if (!state.data || !state.payload || !state.dims) return;
+    const xStart = el.axisXStart && el.axisXStart.value ? el.axisXStart.value : null;
+    const xEnd = el.axisXEnd && el.axisXEnd.value ? el.axisXEnd.value : null;
+    const parsedStart = xStart ? parseDate(xStart) : null, parsedEnd = xEnd ? parseDate(xEnd) : null;
+    if ((xStart && !parsedStart) || (xEnd && !parsedEnd) || (parsedStart && parsedEnd && parsedStart >= parsedEnd)) {
+      if (el.axisStatus) el.axisStatus.textContent = "Intervalo X inválido: a data inicial deve preceder a data final.";
+      return;
+    }
+    const yAuto = !!(el.axisYAuto && el.axisYAuto.checked), zero = !!(el.axisZeroBaseline && el.axisZeroBaseline.checked);
+    const yMin = Number(el.axisYMin && el.axisYMin.value), yMax = Number(el.axisYMax && el.axisYMax.value);
+    if (!yAuto && (!Number.isFinite(yMin) || !Number.isFinite(yMax) || yMin < 0 || yMax > 100 || yMin >= yMax)) {
+      if (el.axisStatus) el.axisStatus.textContent = "Intervalo Y inválido: use 0–100% e mínimo menor que máximo.";
+      return;
+    }
+    state.axisXStart = xStart; state.axisXEnd = xEnd; state.axisYAuto = yAuto;
+    if (!yAuto) { state.axisYMinPct = yMin; state.axisYMaxPct = yMax; }
+    state.axisZeroBaseline = zero; state.axisGrid = !!(el.axisGridToggle && el.axisGridToggle.checked);
+    state.axisZoomMode = el.axisZoomMode && el.axisZoomMode.value === "both" ? "both" : "x";
+    initScales(state.payload, state.dims); state.zoomTransform = d3.zoomIdentity;
+    if (state.zoomRect && state.zoomBehavior) state.zoomRect.call(state.zoomBehavior.transform, d3.zoomIdentity);
+    else { state.xScale = state.x0.copy(); state.yScale = state.y0.copy(); drawAxes(state.dims); redrawSeries(); }
+    syncAxisControls(); writeUrlState();
+  }
+
+  function installAxisControls() {
+    if (el.axisYAuto) el.axisYAuto.addEventListener("change", () => {
+      if (el.axisYMin) el.axisYMin.disabled = el.axisYAuto.checked;
+      if (el.axisYMax) el.axisYMax.disabled = el.axisYAuto.checked;
+    });
+    if (el.axisApplyBtn) el.axisApplyBtn.addEventListener("click", applyAxisControls);
+    if (el.axisAutoYBtn) el.axisAutoYBtn.addEventListener("click", () => {
+      if (el.axisYAuto) el.axisYAuto.checked = true;
+      applyAxisControls();
+    });
+    if (el.axisResetBtn) el.axisResetBtn.addEventListener("click", () => {
+      if (el.axisXStart) el.axisXStart.value = ""; if (el.axisXEnd) el.axisXEnd.value = "";
+      if (el.axisYAuto) el.axisYAuto.checked = true;
+      if (el.axisYMin) el.axisYMin.value = "35"; if (el.axisYMax) el.axisYMax.value = "60";
+      if (el.axisZeroBaseline) el.axisZeroBaseline.checked = false;
+      if (el.axisGridToggle) el.axisGridToggle.checked = true; if (el.axisZoomMode) el.axisZoomMode.value = "x";
+      applyAxisControls();
+    });
   }
 
   function setPanning(on) {
@@ -1007,29 +1107,20 @@
     refreshExtras();
 
     if (el.placeholder) el.placeholder.classList.add("hidden");
+    syncAxisControls();
   }
 
   function drawAxes(dims) {
-    state.layers.xAxis.call(
-      d3
-        .axisBottom(state.xScale)
-        .ticks(Math.min(8, Math.floor(dims.innerW / 80)))
-        .tickFormat(d3.utcFormat("%d/%m"))
+    const xTicks = Math.max(2, Math.min(8, Math.floor(dims.innerW / 80)));
+    state.layers.xAxis.call(d3.axisBottom(state.xScale).ticks(xTicks).tickFormat(d3.utcFormat("%d/%m")));
+    state.layers.yAxis.call(d3.axisLeft(state.yScale).ticks(6).tickFormat((d) => {
+      const label = (d * 100).toFixed(1);
+      return label.endsWith(".0") ? label.slice(0, -2) : label;
+    }));
+    state.layers.xGrid.style("display", state.axisGrid ? null : "none").call(
+      d3.axisBottom(state.xScale).ticks(xTicks).tickSize(-dims.innerH).tickFormat("")
     );
-    state.layers.yAxis.call(
-      d3
-        .axisLeft(state.yScale)
-        .ticks(6)
-        .tickFormat((d) => (d * 100).toFixed(0))
-    );
-    state.layers.xGrid.call(
-      d3
-        .axisBottom(state.xScale)
-        .ticks(Math.min(8, Math.floor(dims.innerW / 80)))
-        .tickSize(-dims.innerH)
-        .tickFormat("")
-    );
-    state.layers.yGrid.call(
+    state.layers.yGrid.style("display", state.axisGrid ? null : "none").call(
       d3.axisLeft(state.yScale).ticks(6).tickSize(-dims.innerW).tickFormat("")
     );
   }
@@ -1069,6 +1160,12 @@
   }
 
   function redrawSeries() {
+    if (state.axisYAuto && state.y0 && state.payload && state.dims) {
+      const xDomain = state.xScale ? state.xScale.domain() : state.x0.domain();
+      state.y0.domain(autoYBounds(state.payload, xDomain)).range([state.dims.innerH, 0]);
+      state.yScale = state.axisZoomMode === "both" ? state.zoomTransform.rescaleY(state.y0) : state.y0.copy();
+      if (state.layers.yAxis) drawAxes(state.dims);
+    }
     const { polls, aggregates, uncertainty } = state.payload;
     const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
     const usePipeline = institutesAllOn();
@@ -1817,6 +1914,12 @@
       params.set("scenario", state.activeScenario);
     }
     if (state.showAll) params.set("show", "all");
+    if (state.axisXStart) params.set("xfrom", state.axisXStart);
+    if (state.axisXEnd) params.set("xto", state.axisXEnd);
+    if (!state.axisYAuto) { params.set("yauto", "0"); params.set("ymin", String(state.axisYMinPct)); params.set("ymax", String(state.axisYMaxPct)); }
+    if (state.axisZeroBaseline) params.set("zero", "1");
+    if (!state.axisGrid) params.set("grid", "0");
+    if (state.axisZoomMode === "both") params.set("zoom", "both");
     if (!institutesAllOn() && state.institutesOn.size) {
       const mask = encodeInstituteBitmask(state.institutesOn);
       if (mask) params.set("inst", mask);
@@ -1855,6 +1958,20 @@
       const n = Number(range);
       if (n === 30 || n === 90) state.rangeDays = n;
     }
+    const xFrom = params.get("xfrom"), xTo = params.get("xto");
+    if (xFrom && /^\d{4}-\d{2}-\d{2}$/.test(xFrom) && parseDate(xFrom)) state.axisXStart = xFrom;
+    if (xTo && /^\d{4}-\d{2}-\d{2}$/.test(xTo) && parseDate(xTo)) state.axisXEnd = xTo;
+    if (state.axisXStart && state.axisXEnd && parseDate(state.axisXStart) >= parseDate(state.axisXEnd)) { state.axisXStart = null; state.axisXEnd = null; }
+    const yAutoParam = params.get("yauto");
+    if (yAutoParam === "0") state.axisYAuto = false;
+    if (yAutoParam === "1") state.axisYAuto = true;
+    const yMinParam = params.get("ymin"), yMaxParam = params.get("ymax");
+    if (yMinParam !== null && Number.isFinite(Number(yMinParam)) && Number(yMinParam) >= 0 && Number(yMinParam) <= 100) state.axisYMinPct = Number(yMinParam);
+    if (yMaxParam !== null && Number.isFinite(Number(yMaxParam)) && Number(yMaxParam) >= 0 && Number(yMaxParam) <= 100) state.axisYMaxPct = Number(yMaxParam);
+    if (state.axisYMinPct >= state.axisYMaxPct) state.axisYAuto = true;
+    state.axisZeroBaseline = params.get("zero") === "1";
+    state.axisGrid = params.get("grid") !== "0";
+    state.axisZoomMode = params.get("zoom") === "both" ? "both" : "x";
     const scenario = params.get("scenario");
     if (scenario) state.activeScenario = scenario;
     if (params.get("show") === "all") state.showAll = true;
@@ -2128,6 +2245,7 @@
           shareView();
         });
       }
+      installAxisControls();
 
       const urlBits = readUrlState();
       state.skipUrlWrite = true;
