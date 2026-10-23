@@ -8,6 +8,7 @@ Multi-scenario docs (`chart-2nd-round.json`) wrap pairwise Option B runs under
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import date, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -55,35 +56,72 @@ def _round4(x: float) -> float:
     return round(float(x), 4)
 
 
+def _branco_nulo_value(poll: NationalPoll) -> float | None:
+    """Return only the source-published combined branco/nulo share, or sum both if separately reported."""
+    residuals = dict(poll.residuals or {})
+    if residuals.get("branco_nulo") is not None:
+        return float(residuals["branco_nulo"])
+    if residuals.get("branco") is not None and residuals.get("nulo") is not None:
+        return float(residuals["branco"]) + float(residuals["nulo"])
+    return None
+
+
+def _polls_with_branco_nulo(polls: Sequence[NationalPoll]) -> list[NationalPoll]:
+    """Add reported branco/nulo to a plotting copy used for aggregation only."""
+    out: list[NationalPoll] = []
+    for poll in polls:
+        value = _branco_nulo_value(poll)
+        results = dict(poll.results)
+        if value is not None and "branco_nulo" not in results:
+            results["branco_nulo"] = value
+        out.append(replace(poll, results=results))
+    return out
+
+
 def polls_as_flat_rows(
     polls: Sequence[NationalPoll],
     *,
     include_uf: bool = False,
+    include_residuals: bool = True,
 ) -> list[dict[str, Any]]:
-    """Emit flat series_kind=poll rows dated at field_mid (fractions 0–1)."""
+    """Emit observed poll shares as flat rows; blank/null is emitted only when reported."""
     rows: list[dict[str, Any]] = []
     for p in sorted(polls, key=lambda x: (x.field_mid, x.poll_id)):
+        base = {
+            "date": _ymd(p.field_mid),
+            "fieldwork_start": _ymd(p.fieldwork_start),
+            "fieldwork_end": _ymd(p.fieldwork_end),
+            "institute_id": p.institute_id,
+            "poll_id": p.poll_id,
+            "n": p.sample_size,
+            "vote_basis": getattr(p, "vote_basis", "unknown"),
+        }
+        if p.moe is not None:
+            base["moe"] = _round4(p.moe)
+        if p.tse_registration_id:
+            base["tse_registration_id"] = p.tse_registration_id
+        if include_uf and p.uf:
+            base["uf"] = p.uf
         for cid, frac in p.results.items():
-            row: dict[str, Any] = {
+            row = dict(base)
+            row.update({
                 "series_kind": "poll",
-                "date": _ymd(p.field_mid),
-                "fieldwork_start": _ymd(p.fieldwork_start),
-                "fieldwork_end": _ymd(p.fieldwork_end),
                 "candidate_id": cid,
                 "value": _round4(frac),
-                "institute_id": p.institute_id,
-                "poll_id": p.poll_id,
-                "n": p.sample_size,
-            }
-            if p.moe is not None:
-                row["moe"] = _round4(p.moe)
-            if p.tse_registration_id:
-                row["tse_registration_id"] = p.tse_registration_id
-            if include_uf and p.uf:
-                row["uf"] = p.uf
+            })
             rows.append(row)
+        if include_residuals and "branco_nulo" not in p.results:
+            blank_null = _branco_nulo_value(p)
+            if blank_null is not None:
+                row = dict(base)
+                row.update({
+                    "series_kind": "poll",
+                    "candidate_id": "branco_nulo",
+                    "value": _round4(blank_null),
+                    "residual_category": "branco_nulo",
+                })
+                rows.append(row)
     return rows
-
 
 def aggregate_as_flat_rows(
     points: Sequence[AggregatePoint],
@@ -130,9 +168,14 @@ def _derive_candidates(
         for cid in p.results:
             if cid not in seen:
                 seen.append(cid)
+        if _branco_nulo_value(p) is not None and "branco_nulo" not in seen:
+            seen.append("branco_nulo")
 
     out: list[dict[str, Any]] = []
     for i, cid in enumerate(seen):
+        if cid == "branco_nulo":
+            out.append({"id": cid, "label": "Branco / Nulo (conforme publicado)", "color": "#9AA3AF", "category": "residual"})
+            continue
         if cid in by_meta:
             out.append(dict(by_meta[cid]))
             continue
@@ -236,10 +279,11 @@ def build_chart_export(
         chosen = scenarios[0]
         scenario_polls = [p for p in filtered if p.scenario == chosen]
 
-    # Aggregate already loops scenarios; input is single-scenario by construction.
-    agg_points = aggregate_option_b(scenario_polls, params)
+    # Blank/null is a separate published category; no value is synthesized when the source omits it.
+    plotting_polls = _polls_with_branco_nulo(scenario_polls)
+    agg_points = aggregate_option_b(plotting_polls, params)
     series: list[dict[str, Any]] = []
-    series.extend(polls_as_flat_rows(scenario_polls))
+    series.extend(polls_as_flat_rows(scenario_polls, include_residuals=True))
     series.extend(
         aggregate_as_flat_rows(agg_points, include_uncertainty=include_uncertainty)
     )
@@ -268,6 +312,7 @@ def build_chart_export(
         "unit": "fraction",
         "params": params.as_dict(),
         "band_meaning": BAND_MEANING,
+        "vote_basis_coverage": {basis: sum(1 for poll in scenario_polls if getattr(poll, "vote_basis", "unknown") == basis) for basis in ("total_votes", "valid_votes", "unknown")},
         "election_cycle": int(
             meta.get("election_cycle") or scenario_polls[0].election_cycle
         ),
@@ -310,7 +355,7 @@ def build_regional_chart_export(
     all_points: list[AggregatePoint] = []
     for uf in sorted({p.uf for p in selected if p.uf}):
         uf_polls = [p for p in selected if p.uf == uf]
-        series.extend(polls_as_flat_rows(uf_polls, include_uf=True))
+        series.extend(polls_as_flat_rows(uf_polls, include_uf=True, include_residuals=False))
         points = aggregate_option_b(uf_polls, params, geography="state")
         all_points.extend(points)
         for row in aggregate_as_flat_rows(points, include_uncertainty=include_uncertainty):
@@ -398,6 +443,7 @@ def build_multi_scenario_chart_export(
                 "candidates": single["candidates"],
                 "institutes": single["institutes"],
                 "date_range": single["date_range"],
+                "vote_basis_coverage": single.get("vote_basis_coverage", {}),
                 "series": single["series"],
             }
         )
