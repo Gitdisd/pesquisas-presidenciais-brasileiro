@@ -164,6 +164,7 @@ jobs:
         run: |
           node --check site/js/candidates-config.js
           node --check site/js/option-b.js
+          node --check site/js/vote-basis.js
           node --check site/js/chart.js
           node --check site/js/regional-chart.js
           node --check site/js/companion-chart.js
@@ -171,6 +172,7 @@ jobs:
           node --check site/js/election-results.js
           node test/election_results_core_test.js
           node test/option_b_methods_test.js
+          node test/vote_basis_test.js
           python3 test/site_dom_contract.py
 
       - name: Watch unit tests (minitest)
