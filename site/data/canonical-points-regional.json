@@ -24,6 +24,7 @@
       "branco_nulo": 0.07,
       "ns_nr": 0.09
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "DF-01987/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_df_2026-09-07_stimulated_1st_round.json"
@@ -48,6 +49,7 @@
       "branco_nulo": 0.13,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "DF-01987/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_df_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -76,6 +78,7 @@
       "branco_nulo": 0.08,
       "ns_nr": 0.15
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "MG-04716/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_mg_2026-09-07_stimulated_1st_round.json"
@@ -100,6 +103,7 @@
       "branco_nulo": 0.15,
       "ns_nr": 0.08
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "MG-04716/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_mg_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -133,6 +137,7 @@
       "branco_nulo": 0.061,
       "ns_nr": 0.081
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "MG-07337/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/instituto_ver_mg_2026-09-19_stimulated_1st_round.json"
@@ -157,6 +162,7 @@
       "branco_nulo": 0.096,
       "ns_nr": 0.036
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "MG-07337/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/instituto_ver_mg_2026-09-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -186,6 +192,7 @@
       "branco_nulo": 0.02,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01531/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_mg_2026-09-19_stimulated_1st_round.json"
@@ -210,6 +217,7 @@
       "branco_nulo": 0.05,
       "ns_nr": 0.04
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-01531/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_mg_2026-09-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -237,6 +245,7 @@
       "branco_nulo": 0.08,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "PE-00285/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_pe_2026-09-07_stimulated_1st_round.json"
@@ -261,6 +270,7 @@
       "branco_nulo": 0.11,
       "ns_nr": 0.06
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "PE-00285/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_pe_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -291,6 +301,7 @@
       "branco_nulo": 0.02,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00283/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_pe_2026-09-14_stimulated_1st_round.json"
@@ -315,6 +326,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-00283/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_pe_2026-09-14_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -347,6 +359,7 @@
       "branco_nulo": 0.023,
       "ns_nr": 0.007
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_1st_round.json"
@@ -370,6 +383,7 @@
     "residuals": {
       "branco_nulo": 0.135
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_2nd_round_augusto_cury_vs_lula.json"
@@ -393,6 +407,7 @@
     "residuals": {
       "branco_nulo": 0.069
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -416,6 +431,7 @@
     "residuals": {
       "branco_nulo": 0.175
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_2nd_round_lula_vs_renan_santos.json"
@@ -439,6 +455,7 @@
     "residuals": {
       "branco_nulo": 0.125
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_2nd_round_lula_vs_romeu_zema.json"
@@ -462,6 +479,7 @@
     "residuals": {
       "branco_nulo": 0.114
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09256/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/atlasintel_pe_2026-09-20_stimulated_2nd_round_lula_vs_ronaldo_caiado.json"
@@ -491,12 +509,13 @@
       "edmilson_costa": 0.001,
       "clariana_barao": 0.001,
       "hertz_dias": 0.001,
-      "rui_costa_pimenta": 0.0
+      "rui_costa_pimenta": 0
     },
     "residuals": {
       "branco_nulo": 0.039,
       "ns_nr": 0.051
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06720/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/futura_sp_2026-09-04_stimulated_1st_round.json"
@@ -521,6 +540,7 @@
       "branco_nulo": 0.088,
       "ns_nr": 0.016
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-06720/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/futura_sp_2026-09-04_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -551,6 +571,7 @@
       "branco_nulo": 0.1,
       "ns_nr": 0.12
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04705/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_sp_2026-09-07_stimulated_1st_round.json"
@@ -575,6 +596,7 @@
       "branco_nulo": 0.16,
       "ns_nr": 0.1
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-04705/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/quaest_sp_2026-09-07_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
@@ -604,6 +626,7 @@
       "branco_nulo": 0.03,
       "ns_nr": 0.03
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09702/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_sp_2026-09-19_stimulated_1st_round.json"
@@ -628,6 +651,7 @@
       "branco_nulo": 0.02,
       "ns_nr": 0.02
     },
+    "vote_basis": "unknown",
     "tse_registration_id": "BR-09702/2026",
     "dataset_version": "intake-regional-001",
     "source_path": "data/regional/polls/realtime_bigdata_sp_2026-09-19_stimulated_2nd_round_flavio_bolsonaro_vs_lula.json"
