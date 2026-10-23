@@ -62,6 +62,8 @@
     candidateFilters: document.getElementById("candidate-filters"),
     methodChips: document.getElementById("method-chips"),
     methodDisclaimer: document.getElementById("method-disclaimer"),
+    forecastChips: document.getElementById("forecast-chips"),
+    forecastDisclaimer: document.getElementById("forecast-disclaimer"),
     filterNote: document.getElementById("filter-note"),
     geoChip: document.getElementById("geo-chip"),
     promptChip: document.getElementById("prompt-chip"),
@@ -123,6 +125,8 @@
     chart1st: null,
     chart2nd: null,
     activeScenario: null,
+    modelMethod: "option_b",
+    forecastMethod: "off",
     has2nd: false,
     rangeDays: null, // null = tudo; 30 | 90 (view cut only — not a brush slider)
     axisXStart: null,
@@ -493,29 +497,87 @@
   }
 
   function renderMethodChips(meta) {
-    if (!el.methodChips) return;
-    const params = meta.params || {};
-    const k = params.k_days != null ? params.k_days : "—";
-    const w = params.flood_W_days != null ? params.flood_W_days : "—";
-    const nCap = params.n_cap != null ? params.n_cap : "—";
-    const chips = [
-      { html: "<strong>Option B</strong> · √N trailing" },
-      { html: `janela <strong>${k}d</strong>` },
-      { html: `anti-flood <strong>${w}d</strong>` },
-      { html: `N cap <strong>${nCap}</strong>` },
-      { html: "sem house effects" },
-      { html: "não é previsão" },
+    const modelOptions = [
+      { id: "option_b", label: "Option B · √N", detail: "Média ponderada por √N, janela de 14 dias e controle anti-enchente por instituto." },
+      { id: "equal_poll", label: "Média simples", detail: "Cada pesquisa tem peso igual; institutos com mais publicações podem contribuir mais." },
+      { id: "equal_house", label: "Igual por instituto", detail: "Calcula a média por instituto e depois dá peso igual a cada casa." },
+      { id: "median", label: "Mediana robusta", detail: "Usa a mediana na janela para reduzir a influência de pontos isolados." },
+      { id: "recency", label: "Recência · 7d", detail: "Option B com peso temporal adicional de meia-vida de sete dias." },
     ];
-    el.methodChips.innerHTML = chips
-      .map((c) => `<span class="chip-static">${c.html}</span>`)
-      .join("");
-    if (el.methodDisclaimer) {
-      const band =
-        meta.band_meaning ||
-        "dispersão na janela (não IC clássico, não probabilidade de vitória)";
-      el.methodDisclaimer.textContent =
-        `Agregado Option B: média ponderada por √N nos últimos ~${k} dias, freio anti-enchente por instituto, datada no meio do campo. Faixa = ${band}. Sem correção de viés de casa.`;
+    const forecastOptions = [
+      { id: "off", label: "Sem projeção" },
+      { id: "last_value", label: "Persistência" },
+      { id: "linear", label: "Tendência linear · 7d" },
+    ];
+    if (el.methodChips) {
+      el.methodChips.innerHTML = "";
+      for (const option of modelOptions) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chip-btn" + (state.modelMethod === option.id ? " on" : " off");
+        btn.textContent = option.label;
+        btn.title = option.detail;
+        btn.setAttribute("aria-pressed", state.modelMethod === option.id ? "true" : "false");
+        btn.dataset.modelMethod = option.id;
+        btn.addEventListener("click", () => {
+          if (state.modelMethod === option.id) return;
+          state.modelMethod = option.id;
+          renderMethodChips(state.data || meta);
+          rebuildChartForSelection();
+        });
+        el.methodChips.appendChild(btn);
+      }
     }
+    if (el.methodDisclaimer) {
+      const params = meta.params || {};
+      const coverage = meta.vote_basis_coverage || {};
+      const basis = `Base explícita: ${coverage.total_votes || 0} total-voto(s), ${coverage.valid_votes || 0} voto(s) válido(s), ${coverage.unknown || 0} desconhecida(s).`;
+      const method = modelOptions.find((option) => option.id === state.modelMethod) || modelOptions[0];
+      el.methodDisclaimer.textContent = `${method.detail} Janela: ${params.k_days || 14} dias. ${basis} Bases desconhecidas permanecem desconhecidas; não há normalização automática entre votos totais e válidos. Faixas = dispersão entre pesquisas, não intervalo de confiança nem probabilidade de vitória.`;
+    }
+    if (el.forecastChips) {
+      el.forecastChips.innerHTML = "";
+      for (const option of forecastOptions) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chip-btn" + (state.forecastMethod === option.id ? " on" : " off");
+        btn.textContent = option.label;
+        btn.title = option.id === "off" ? "Não desenha uma extensão depois do agregado observado." :
+          option.id === "last_value" ? "Estende o último agregado até 25/10/2026, mantendo o valor fixo." :
+          "Extrapola uma regressão linear calculada nos últimos sete dias disponíveis até 25/10/2026.";
+        btn.disabled = state.round !== 2 && option.id !== "off";
+        btn.setAttribute("aria-pressed", state.forecastMethod === option.id ? "true" : "false");
+        btn.dataset.forecastMethod = option.id;
+        btn.addEventListener("click", () => {
+          if (state.forecastMethod === option.id) return;
+          state.forecastMethod = option.id;
+          renderMethodChips(state.data || meta);
+          rebuildChartForSelection();
+        });
+        el.forecastChips.appendChild(btn);
+      }
+    }
+    if (el.forecastDisclaimer) {
+      el.forecastDisclaimer.textContent = "Projeções demonstrativas, somente no 2º turno: sem modelo de comparecimento, situação cadastral individual, transferência de indecisos, efeito de casa ou calibração histórica. As séries são extrapoladas separadamente; não somam necessariamente 100% e não são probabilidades de vitória.";
+    }
+  }
+
+  function rebuildChartForSelection() {
+    invalidateClientAgg();
+    if (state.data && state.payload && state.dims) {
+      initScales(state.payload, state.dims);
+      if (state.zoomRect && state.zoomBehavior) {
+        state.zoomRect.call(state.zoomBehavior.transform, d3.zoomIdentity);
+      } else {
+        state.xScale = state.x0.copy();
+        state.yScale = state.y0.copy();
+        drawAxes(state.dims);
+        redrawSeries();
+      }
+      syncAxisControls();
+      refreshExtras();
+    }
+    writeUrlState();
   }
 
   function escapeHtml(s) {
@@ -543,6 +605,7 @@
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
         ${d.moe != null ? `<dt>MOE declarado</dt><dd>±${fmtPct(d.moe)}</dd>` : ""}
         <dt>Campo</dt><dd>${d.fieldwork_start && d.fieldwork_end ? `${fmtDate(parseDate(d.fieldwork_start))}–${fmtDate(parseDate(d.fieldwork_end))}` : fmtDate(d.date)}</dd>
+        <dt>Base %</dt><dd>${d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"}</dd>
       </dl>`;
   }
 
@@ -730,6 +793,10 @@
       const dr = rawDateRange(state.data);
       if (dr[0]) xMin = dr[0];
       if (dr[1]) xMax = dr[1];
+    }
+    if (state.round === 2 && state.forecastMethod !== "off" && !state.axisXEnd) {
+      const target = parseDate("2026-10-25");
+      if (target && (!xMax || target > xMax)) xMax = target;
     }
     if (state.rangeDays && xMax) {
       const cut = new Date(xMax.getTime() - state.rangeDays * 86400000);
@@ -965,6 +1032,7 @@
     const plot = root.append("g").attr("clip-path", `url(#${clipId})`);
     state.layers.ribbons = plot.append("g").attr("class", "ribbons");
     state.layers.lines = plot.append("g").attr("class", "lines");
+    state.layers.forecasts = plot.append("g").attr("class", "forecasts");
     state.layers.points = plot.append("g").attr("class", "points");
 
     state.layers.crosshair = plot
@@ -1134,45 +1202,91 @@
     const ids = [...state.institutesOn].sort().join(",");
     const cids = [...state.visible].sort().join(",");
     const scen = state.data?.scenario || "";
-    return `${scen}|${ids}|${cids}`;
+    return `${scen}|${ids}|${cids}|${state.modelMethod}`;
   }
 
   function ensureClientOptionB() {
-    if (institutesAllOn()) {
+    if (institutesAllOn() && state.modelMethod === "option_b") {
       invalidateClientAgg();
       return null;
     }
     const api = typeof window !== "undefined" ? window.PEBR_OPTION_B : null;
-    if (!api || typeof api.aggregateFromFlatPolls !== "function") return null;
+    if (!api) return null;
+    const aggregateMethod = typeof api.aggregateWithMethod === "function"
+      ? api.aggregateWithMethod
+      : api.aggregateFromFlatPolls;
+    if (typeof aggregateMethod !== "function") return null;
     const key = clientAggKey();
     if (state.clientAgg && state.clientAggKey === key) return state.clientAgg;
-    const polls = (state.payload?.polls || []).filter((d) =>
-      pollPassesInstitute(d)
-    );
+    const pollRows = (state.payload?.polls || []).filter((d) => pollPassesInstitute(d));
     const params = Object.assign({}, api.DEFAULTS, state.data?.params || {});
     const candIds = (state.data?.candidates || [])
       .filter((c) => state.visible.has(c.id))
       .map((c) => c.id);
-    const result = api.aggregateFromFlatPolls(polls, params, candIds);
+    const result = state.modelMethod === "option_b"
+      ? api.aggregateFromFlatPolls(pollRows, params, candIds)
+      : aggregateMethod(pollRows, params, candIds, state.modelMethod);
     state.clientAgg = result;
     state.clientAggKey = key;
     return result;
   }
 
-  function redrawSeries() {
-    if (state.axisYAuto && state.y0 && state.payload && state.dims) {
-      const xDomain = state.xScale ? state.xScale.domain() : state.x0.domain();
-      state.y0.domain(autoYBounds(state.payload, xDomain)).range([state.dims.innerH, 0]);
-      state.yScale = state.axisZoomMode === "both" ? state.zoomTransform.rescaleY(state.y0) : state.y0.copy();
-      if (state.layers.yAxis) drawAxes(state.dims);
+  function projectForecastPoints(values, method) {
+    const target = parseDate("2026-10-25");
+    const series = (values || []).filter((point) => point && point.date && point.value != null)
+      .slice().sort((a, b) => a.date - b.date);
+    if (!target || !series.length) return [];
+    const last = series[series.length - 1];
+    if (last.date >= target) return [];
+    if (method === "last_value" || method === "off") {
+      return [{ date: last.date, value: last.value }, { date: target, value: last.value }];
     }
+    const cutoff = new Date(last.date.getTime() - 7 * 86400000);
+    const training = series.filter((point) => point.date >= cutoff);
+    if (training.length < 2) {
+      return [{ date: last.date, value: last.value }, { date: target, value: last.value }];
+    }
+    const origin = training[0].date.getTime();
+    const xs = training.map((point) => (point.date.getTime() - origin) / 86400000);
+    const ys = training.map((point) => point.value);
+    const xMean = xs.reduce((sum, value) => sum + value, 0) / xs.length;
+    const yMean = ys.reduce((sum, value) => sum + value, 0) / ys.length;
+    const numerator = xs.reduce((sum, x, i) => sum + (x - xMean) * (ys[i] - yMean), 0);
+    const denominator = xs.reduce((sum, x) => sum + (x - xMean) ** 2, 0);
+    const slope = denominator > 0 ? numerator / denominator : 0;
+    const targetX = (target.getTime() - origin) / 86400000;
+    const predicted = Math.max(0, Math.min(1, yMean + slope * (targetX - xMean)));
+    return [{ date: last.date, value: last.value }, { date: target, value: predicted }];
+  }
+
+  function redrawSeries() {
     const { polls, aggregates, uncertainty } = state.payload;
     const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
-    const usePipeline = institutesAllOn();
+    const usePipeline = institutesAllOn() && state.modelMethod === "option_b";
     const client = usePipeline ? null : ensureClientOptionB();
     const aggSrc = usePipeline ? aggregates : client ? client.aggregates : [];
     const uncSrc = usePipeline ? uncertainty : client ? client.uncertainty : [];
     const showAgg = usePipeline || (client && client.aggregates.length > 0);
+
+    if (state.axisYAuto && state.y0 && state.payload && state.dims) {
+      const xDomain = state.xScale ? state.xScale.domain() : state.x0.domain();
+      const bounds = autoYBounds(state.payload, xDomain);
+      const forecastValues = state.round === 2 && state.forecastMethod !== "off" && showAgg
+        ? candidates.flatMap((candidate) => {
+            const values = aggSrc.filter((point) => point.candidate_id === candidate.id)
+              .sort((a, b) => a.date - b.date);
+            const projected = projectForecastPoints(values, state.forecastMethod);
+            return projected.length ? [projected[projected.length - 1].value] : [];
+          })
+        : [];
+      const low = forecastValues.length ? Math.min(bounds[0], ...forecastValues) : bounds[0];
+      const high = forecastValues.length ? Math.max(bounds[1], ...forecastValues) : bounds[1];
+      const bottom = state.axisZeroBaseline ? 0 : Math.max(0, low - (forecastValues.length ? 0.015 : 0));
+      const top = Math.min(1, high + (forecastValues.length ? 0.015 : 0));
+      state.y0.domain(bottom < top ? [bottom, top] : bounds).range([state.dims.innerH, 0]);
+      state.yScale = state.axisZoomMode === "both" ? state.zoomTransform.rescaleY(state.y0) : state.y0.copy();
+      if (state.layers.yAxis) drawAxes(state.dims);
+    }
 
     const area = d3
       .area()
@@ -1226,7 +1340,28 @@
       .attr("class", "agg-line")
       .merge(lines)
       .attr("stroke", (d) => d.color)
+      .attr("stroke-dasharray", (d) => d.id === "branco_nulo" ? "2 4" : null)
       .attr("d", (d) => (d.values.length ? line(d.values) : null));
+
+    const forecastData = state.round === 2 && state.forecastMethod !== "off" && showAgg
+      ? candidates.map((candidate) => ({
+          id: candidate.id,
+          color: candidate.color || "#9AA3AF",
+          values: projectForecastPoints(
+            aggSrc.filter((point) => point.candidate_id === candidate.id),
+            state.forecastMethod
+          ),
+        })).filter((series) => series.values.length > 1)
+      : [];
+    const forecastPaths = state.layers.forecasts.selectAll("path.forecast-line").data(forecastData, (d) => d.id);
+    forecastPaths.exit().remove();
+    forecastPaths.enter().append("path").attr("class", "forecast-line").attr("fill", "none")
+      .merge(forecastPaths)
+      .attr("stroke", (d) => d.color)
+      .attr("stroke-width", 2.5)
+      .attr("stroke-dasharray", "7 5")
+      .attr("opacity", 0.95)
+      .attr("d", (d) => line(d.values));
 
     const visPolls = polls.filter(
       (d) => state.visible.has(d.candidate_id) && pollPassesInstitute(d)
@@ -1360,7 +1495,7 @@
   }
 
   function currentAggSource() {
-    const usePipeline = institutesAllOn();
+    const usePipeline = institutesAllOn() && state.modelMethod === "option_b";
     const client = usePipeline ? null : ensureClientOptionB();
     return {
       usePipeline,
@@ -1908,6 +2043,8 @@
     const url = new URL(location.href);
     const params = new URLSearchParams();
     params.set("round", String(state.round || 1));
+    if (state.modelMethod !== "option_b") params.set("method", state.modelMethod);
+    if (state.forecastMethod !== "off") params.set("forecast", state.forecastMethod);
     if (state.rangeDays == null) params.set("range", "all");
     else params.set("range", String(state.rangeDays));
     if (state.round === 2 && state.activeScenario) {
@@ -1952,6 +2089,10 @@
     const params = new URLSearchParams(location.search);
     const round = Number(params.get("round"));
     if (round === 1 || round === 2) state.round = round;
+    const method = params.get("method");
+    if (["option_b", "equal_poll", "equal_house", "median", "recency"].includes(method)) state.modelMethod = method;
+    const forecast = params.get("forecast");
+    if (["off", "last_value", "linear"].includes(forecast)) state.forecastMethod = forecast;
     const range = params.get("range");
     if (range === "all") state.rangeDays = null;
     else if (/^\d+$/.test(range || "")) {
