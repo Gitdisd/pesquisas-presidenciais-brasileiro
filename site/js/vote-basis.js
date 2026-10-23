@@ -59,5 +59,12 @@
     return output;
   }
 
-  root.PEBR_VOTE_BASIS = { isResidualCandidate, normalizeRows };
+  /** Filter an aggregation-only copy; raw display data stays untouched. */
+  function filterDatafolhaRows(rows, includeDatafolha) {
+    if (!Array.isArray(rows)) return [];
+    if (includeDatafolha) return rows.slice();
+    return rows.filter((row) => row && row.institute_id !== "datafolha");
+  }
+
+  root.PEBR_VOTE_BASIS = { isResidualCandidate, normalizeRows, filterDatafolhaRows };
 })(typeof window !== "undefined" ? window : globalThis);
