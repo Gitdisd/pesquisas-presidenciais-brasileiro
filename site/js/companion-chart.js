@@ -64,6 +64,7 @@
     zoomRect: null,
     clientAgg: null,
     clientAggKey: null,
+    includeDatafolhaInAggregate: false,
   };
 
   function docFrom2nd(multi, scenarioId) {
@@ -185,7 +186,7 @@
   }
 
   function ensureClientOptionB() {
-    if (institutesAllOn()) {
+    if (local.includeDatafolhaInAggregate && institutesAllOn()) {
       local.clientAgg = null;
       local.clientAggKey = null;
       return null;
@@ -195,11 +196,14 @@
     const key =
       (local.doc?.scenario || "") +
       "|" +
-      [...local.institutesOn].sort().join(",");
+      [...local.institutesOn].sort().join(",") +
+      "|df:" + (local.includeDatafolhaInAggregate ? "on" : "off");
     if (local.clientAgg && local.clientAggKey === key) return local.clientAgg;
-    const polls = (local.payload?.polls || []).filter((d) =>
-      local.institutesOn.has(d.institute_id)
-    );
+    const inScopeRows = (local.payload?.polls || []).filter((d) => local.institutesOn.has(d.institute_id));
+    const basisApi = window.PEBR_VOTE_BASIS;
+    const polls = basisApi && typeof basisApi.filterDatafolhaRows === "function"
+      ? basisApi.filterDatafolhaRows(inScopeRows, local.includeDatafolhaInAggregate)
+      : inScopeRows.filter((d) => local.includeDatafolhaInAggregate || d.institute_id !== "datafolha");
     const params = Object.assign({}, api.DEFAULTS, local.doc?.params || {});
     const candIds = (local.doc?.candidates || []).map((c) => c.id);
     const result = api.aggregateFromFlatPolls(polls, params, candIds);
@@ -237,7 +241,7 @@
     const payload = local.payload;
     if (!payload) return;
     const candidates = local.doc.candidates || [];
-    const usePipeline = institutesAllOn();
+    const usePipeline = local.includeDatafolhaInAggregate && institutesAllOn();
     const client = usePipeline ? null : ensureClientOptionB();
     const aggSrc = usePipeline ? payload.aggregates : client ? client.aggregates : [];
     const uncSrc = usePipeline ? payload.uncertainty : client ? client.uncertainty : [];
@@ -427,6 +431,7 @@
   function render(doc, view) {
     local.doc = doc;
     local.rangeDays = view.rangeDays == null ? null : view.rangeDays;
+    local.includeDatafolhaInAggregate = view.includeDatafolhaInAggregate === true;
     local.candById = new Map((doc.candidates || []).map((c) => [c.id, c]));
     local.instById = new Map((doc.institutes || []).map((i) => [i.id, i]));
     local.payload = prepareSeries(doc);
