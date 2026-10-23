@@ -22,5 +22,6 @@
     "w_datafolha_2026-10-22_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol"
   ],
   "dataset_version": "intake-cohort-009",
-  "notes": "Total-vote shares transcribed from press report. Fieldwork 2026-10-20 to 2026-10-22; after first-round voting on 2026-10-04. Valid-vote shares are not used in this record."
+  "notes": "Total-vote shares transcribed from press report. Fieldwork 2026-10-20 to 2026-10-22; after first-round voting on 2026-10-04. Valid-vote shares are not used in this record.",
+  "vote_basis": "total_votes"
 }
