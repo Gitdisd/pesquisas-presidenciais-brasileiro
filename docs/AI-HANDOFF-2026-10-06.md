@@ -336,3 +336,13 @@ Do not add future scheduled surveys as if they are already observations. Current
 - Default Y autoscale fits currently visible observations and the active aggregate with padding instead of anchoring at zero; users can restore a zero baseline. This clarifies trend changes while displaying actual axis limits.
 - Cross-country research and model comparison/backtest design: [docs/forecast-methodology-research-2026-10-22.md](forecast-methodology-research-2026-10-22.md).
 - Do not publish a calibrated second-round win probability until vote basis is a structured field and models pass whole-election held-out backtests with calibration and interval-coverage results.
+
+
+## Addendum — Brazilian tally and selectable methods (2026-10-23)
+
+- The chart still prioritizes published poll dots. Added a source-published Branco/Nulo residual series; absent values are not imputed as zero.
+- Added `vote_basis` (`total_votes` / `valid_votes` / `unknown`) to poll schemas, national/regional canonical points, the Python dataclass/export, and hover metadata. Basis defaults to unknown; only three recent second-round records with documentary support are tagged total-vote. The corpus remains partly unaudited and is not yet denominator-harmonized.
+- Added live aggregation switches: Option B √N, equal poll, equal institute, robust median, and seven-day recency weighting. Added optional second-round persistence and linear-trend extensions to 25 October 2026, off by default, not calibrated and not probabilities.
+- Tally references: [Law 9,504/1997 art. 2](https://www.planalto.gov.br/ccivil_03/leis/l9504compilado.htm), [TSE blank/null explanation](https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/faltam-17-dias-votos-nulos-e-brancos-nao-anulam-a-eleicao).
+- Full notes and remaining work: [Brazilian tally/model controls](brazilian-tally-and-model-switches-2026-10-23.md) and [forecast methodology research](forecast-methodology-research-2026-10-22.md).
+- Before presenting probabilities: audit denominator for the entire archive; separate undecided, abstention, blank/null and eligibility effects; build whole-election 30/14/7/1-day holdout backtests with signed error, MAE/RMSE, margin error and interval coverage. Never infer voting behavior from unpaid fines or assume automatic first-to-second-round transfers.
