@@ -114,6 +114,7 @@
     if (String(c.id).startsWith("example_")) return true;
 
     const id = String(c.id);
+    if (id === "branco_nulo") return true;
     if (!CURRENT_PRESIDENTIAL_2026_IDS.has(id)) return false;
 
     if (c.active === false || c.running === false || c.withdrawn === true) {
