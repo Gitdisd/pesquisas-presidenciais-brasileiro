@@ -64,6 +64,8 @@
     methodDisclaimer: document.getElementById("method-disclaimer"),
     forecastChips: document.getElementById("forecast-chips"),
     forecastDisclaimer: document.getElementById("forecast-disclaimer"),
+    voteBasisMode: document.getElementById("vote-basis-mode"),
+    voteBasisNote: document.getElementById("vote-basis-note"),
     filterNote: document.getElementById("filter-note"),
     geoChip: document.getElementById("geo-chip"),
     promptChip: document.getElementById("prompt-chip"),
@@ -127,6 +129,7 @@
     activeScenario: null,
     modelMethod: "option_b",
     forecastMethod: "off",
+    voteBasisMode: "published",
     has2nd: false,
     rangeDays: null, // null = tudo; 30 | 90 (view cut only — not a brush slider)
     axisXStart: null,
@@ -158,10 +161,48 @@
     return candCfg.isCandidateActive(c);
   }
 
+  function isCandidateOnlyMode() {
+    return state.round === 2 && state.voteBasisMode === "candidate_only";
+  }
+
+  function isResidualCandidate(candidate) {
+    const api = typeof window !== "undefined" ? window.PEBR_VOTE_BASIS : null;
+    if (api && typeof api.isResidualCandidate === "function") return api.isResidualCandidate(candidate);
+    return !!candidate && (candidate.id === "branco_nulo" || candidate.category === "residual");
+  }
+
+  function normalizationCandidateIds() {
+    return (state.data?.candidates || []).filter((candidate) => !isResidualCandidate(candidate)).map((candidate) => candidate.id);
+  }
+
+  function displayedPollRows() {
+    const rows = state.payload?.polls || [];
+    if (!isCandidateOnlyMode()) return rows;
+    const api = typeof window !== "undefined" ? window.PEBR_VOTE_BASIS : null;
+    if (!api || typeof api.normalizeRows !== "function") return rows;
+    return api.normalizeRows(rows, normalizationCandidateIds());
+  }
+
+  function syncVoteBasisControl() {
+    if (el.voteBasisMode) {
+      el.voteBasisMode.value = state.voteBasisMode;
+      el.voteBasisMode.disabled = state.round !== 2;
+    }
+    if (el.voteBasisNote) {
+      if (state.round !== 2) {
+        el.voteBasisNote.textContent = "A normalização candidato = 100% está disponível somente no painel do 2º turno.";
+      } else if (isCandidateOnlyMode()) {
+        el.voteBasisNote.textContent = "Cada pesquisa completa é recalculada como candidato ÷ soma dos dois candidatos. Branco/nulo, indecisos e abstenção não são transferidos nem distribuídos; a base original pode ser desconhecida. Esta é uma transformação descritiva, não uma previsão de votos válidos ou de resultado.";
+      } else {
+        el.voteBasisNote.textContent = "Mantém os percentuais como publicados, incluindo a linha Branco/Nulo quando a fonte informa essa categoria. As bases da série histórica nem sempre estão identificadas; compare com cautela e use a visualização normalizada para colocar os dois candidatos na mesma escala.";
+      }
+    }
+  }
+
   function candidatesForLegend() {
     const all = state.data?.candidates || [];
-    if (state.showAll) return all;
-    return all.filter(isActive);
+    const eligible = state.showAll ? all : all.filter(isActive);
+    return isCandidateOnlyMode() ? eligible.filter((candidate) => !isResidualCandidate(candidate)) : eligible;
   }
 
   /** Display polish only — does not invent poll numbers. */
@@ -481,6 +522,7 @@
     if (round === state.round) return;
     if (round === 2 && !state.has2nd) return;
     state.round = round;
+    if (round !== 2) state.voteBasisMode = "published";
     state.showAll = false;
     state.clientAgg = null;
     state.clientAggKey = null;
@@ -534,7 +576,10 @@
       const coverage = meta.vote_basis_coverage || {};
       const basis = `Base explícita: ${coverage.total_votes || 0} total-voto(s), ${coverage.valid_votes || 0} voto(s) válido(s), ${coverage.unknown || 0} desconhecida(s).`;
       const method = modelOptions.find((option) => option.id === state.modelMethod) || modelOptions[0];
-      el.methodDisclaimer.textContent = `${method.detail} Janela: ${params.k_days || 14} dias. ${basis} Bases desconhecidas permanecem desconhecidas; não há normalização automática entre votos totais e válidos. Faixas = dispersão entre pesquisas, não intervalo de confiança nem probabilidade de vitória.`;
+      const denominatorNote = isCandidateOnlyMode()
+        ? "Visualização normalizada por pesquisa para que os candidatos somem 100%; categorias residuais ficam fora da conta, sem transferência implícita. A base original desconhecida continua sem validação."
+        : "Percentuais publicados são preservados. Como parte do arquivo tem base desconhecida, o agregado nessa visualização não deve ser lido como estimativa calibrada de votos válidos. Use a opção de candidatos = 100% para comparar os dois finalistas numa base aritmética comum.";
+      el.methodDisclaimer.textContent = `${method.detail} Janela: ${params.k_days || 14} dias. ${basis} ${denominatorNote} Faixas = dispersão entre pesquisas, não intervalo de confiança nem probabilidade de vitória.`;
     }
     if (el.forecastChips) {
       el.forecastChips.innerHTML = "";
@@ -606,7 +651,8 @@
         <dt>N</dt><dd>${d.n != null ? d.n.toLocaleString("pt-BR") : "—"}</dd>
         ${d.moe != null ? `<dt>MOE declarado</dt><dd>±${fmtPct(d.moe)}</dd>` : ""}
         <dt>Campo</dt><dd>${d.fieldwork_start && d.fieldwork_end ? `${fmtDate(parseDate(d.fieldwork_start))}–${fmtDate(parseDate(d.fieldwork_end))}` : fmtDate(d.date)}</dd>
-        <dt>Base %</dt><dd>${d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"}</dd>
+        ${d.normalization_mode === "candidate_only" ? `<dt>Valor publicado</dt><dd>${pctDisplay(d.published_value)}</dd>` : ""}
+        <dt>Base %</dt><dd>${d.normalization_mode === "candidate_only" ? `candidatos = 100% (original: ${d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"})` : d.vote_basis === "total_votes" ? "votos totais" : d.vote_basis === "valid_votes" ? "votos válidos" : "desconhecida"}</dd>
       </dl>`;
   }
 
@@ -997,6 +1043,7 @@
     state.instById = new Map((data.institutes || []).map((i) => [i.id, i]));
     setHeader(data);
     renderMethodChips(data);
+    syncVoteBasisControl();
     applyDefaultVisibility();
     syncShowAllBtn();
     buildLegend();
@@ -1143,7 +1190,7 @@
     zoomRect.on("mousemove", function (event) {
       if (el.svg && el.svg.classList.contains("is-panning")) return;
       const [mx, my] = d3.pointer(event, this);
-      const hit = nearestVisiblePoll(mx, my, payload.polls);
+      const hit = nearestVisiblePoll(mx, my, displayedPollRows());
       if (hit) highlightPoll(hit);
       else clearHover();
     });
@@ -1203,11 +1250,11 @@
     const ids = [...state.institutesOn].sort().join(",");
     const cids = [...state.visible].sort().join(",");
     const scen = state.data?.scenario || "";
-    return `${scen}|${ids}|${cids}|${state.modelMethod}`;
+    return `${scen}|${ids}|${cids}|${state.modelMethod}|${state.voteBasisMode}`;
   }
 
   function ensureClientOptionB() {
-    if (institutesAllOn() && state.modelMethod === "option_b") {
+    if (!isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b") {
       invalidateClientAgg();
       return null;
     }
@@ -1219,7 +1266,7 @@
     if (typeof aggregateMethod !== "function") return null;
     const key = clientAggKey();
     if (state.clientAgg && state.clientAggKey === key) return state.clientAgg;
-    const pollRows = (state.payload?.polls || []).filter((d) => pollPassesInstitute(d));
+    const pollRows = displayedPollRows().filter((d) => pollPassesInstitute(d));
     const params = Object.assign({}, api.DEFAULTS, state.data?.params || {});
     const candIds = (state.data?.candidates || [])
       .filter((c) => state.visible.has(c.id))
@@ -1261,9 +1308,10 @@
   }
 
   function redrawSeries() {
-    const { polls, aggregates, uncertainty } = state.payload;
-    const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id));
-    const usePipeline = institutesAllOn() && state.modelMethod === "option_b";
+    const { aggregates, uncertainty } = state.payload;
+    const polls = displayedPollRows();
+    const candidates = (state.data.candidates || []).filter((c) => state.visible.has(c.id) && (!isCandidateOnlyMode() || !isResidualCandidate(c)));
+    const usePipeline = !isCandidateOnlyMode() && institutesAllOn() && state.modelMethod === "option_b";
     const client = usePipeline ? null : ensureClientOptionB();
     const aggSrc = usePipeline ? aggregates : client ? client.aggregates : [];
     const uncSrc = usePipeline ? uncertainty : client ? client.uncertainty : [];
@@ -1271,7 +1319,10 @@
 
     if (state.axisYAuto && state.y0 && state.payload && state.dims) {
       const xDomain = state.xScale ? state.xScale.domain() : state.x0.domain();
-      const bounds = autoYBounds(state.payload, xDomain);
+      const boundsPayload = isCandidateOnlyMode()
+        ? { ...state.payload, polls, aggregates: aggSrc, uncertainty: uncSrc }
+        : state.payload;
+      const bounds = autoYBounds(boundsPayload, xDomain);
       const forecastValues = state.round === 2 && state.forecastMethod !== "off" && showAgg
         ? candidates.flatMap((candidate) => {
             const values = aggSrc.filter((point) => point.candidate_id === candidate.id)
@@ -1402,7 +1453,7 @@
   }
 
   function visiblePollRows() {
-    const polls = state.payload?.polls || [];
+    const polls = displayedPollRows();
     let rows = polls.filter(
       (d) => state.visible.has(d.candidate_id) && pollPassesInstitute(d)
     );
@@ -2046,6 +2097,7 @@
     params.set("round", String(state.round || 1));
     if (state.modelMethod !== "option_b") params.set("method", state.modelMethod);
     if (state.forecastMethod !== "off") params.set("forecast", state.forecastMethod);
+    if (state.voteBasisMode === "candidate_only") params.set("basis", "candidate_only");
     if (state.rangeDays == null) params.set("range", "all");
     else params.set("range", String(state.rangeDays));
     if (state.round === 2 && state.activeScenario) {
@@ -2094,6 +2146,8 @@
     if (["option_b", "equal_poll", "equal_house", "median", "recency"].includes(method)) state.modelMethod = method;
     const forecast = params.get("forecast");
     if (["off", "last_value", "linear"].includes(forecast)) state.forecastMethod = forecast;
+    state.voteBasisMode = params.get("basis") === "candidate_only" ? "candidate_only" : "published";
+    if (state.round !== 2) state.voteBasisMode = "published";
     const range = params.get("range");
     if (range === "all") state.rangeDays = null;
     else if (/^\d+$/.test(range || "")) {
@@ -2418,6 +2472,21 @@
         buildLegend();
         redrawSeries();
         refreshExtras();
+      }
+
+      if (el.voteBasisMode) {
+        el.voteBasisMode.addEventListener("change", () => {
+          const next = el.voteBasisMode.value === "candidate_only" ? "candidate_only" : "published";
+          if (next === state.voteBasisMode) return;
+          state.voteBasisMode = next;
+          invalidateClientAgg();
+          syncVoteBasisControl();
+          buildLegend();
+          clearHover();
+          redrawSeries();
+          refreshExtras();
+          writeUrlState();
+        });
       }
 
       state.skipUrlWrite = false;
