@@ -362,6 +362,7 @@
       unit: multi.unit,
       params: multi.params,
       band_meaning: multi.band_meaning,
+      vote_basis_coverage: block.vote_basis_coverage,
       election_cycle: multi.election_cycle,
       geography: multi.geography,
       scenario: block.scenario,
