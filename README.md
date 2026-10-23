@@ -134,9 +134,14 @@ Product work has been explicitly resumed for election-day maintenance. The activ
 
 ## Second-round polling refresh — 2026-10-22
 
-The national Lula–Flávio second-round snapshot now contains 266 canonical points, including 14 newly recorded post-first-round total-vote observations. Each has a raw poll JSON and a linked press-witness JSON. Source and fieldwork details are documented in [docs/polling-refresh-2026-10-22.md](docs/polling-refresh-2026-10-22.md). The Pages workflow regenerates the second-round chart from canonical data.
+The national Lula–Flávio second-round snapshot now contains 267 canonical points, including 14 newly recorded post-first-round total-vote observations. Each has a raw poll JSON and a linked press-witness JSON. Source and fieldwork details are documented in [docs/polling-refresh-2026-10-22.md](docs/polling-refresh-2026-10-22.md). The Pages workflow regenerates the second-round chart from canonical data.
 
 
 ## Forecasting methodology and axis controls — 2026-10-22
 
 See [the research and implementation plan](docs/forecast-methodology-research-2026-10-22.md) for cross-country polling-accuracy research, model comparisons and the required out-of-sample test protocol. The national chart supports adjustable X/Y axes with shareable settings.
+
+
+## Brazilian tally and model switches — 2026-10-23
+
+The live national chart has a reported Branco/Nulo series, a structured vote-basis field and selectable descriptive aggregation methods plus optional second-round extrapolations. Historical vote bases not independently verified remain `unknown`; projections are not calibrated probabilities. See [the Brazilian tally and model-switch documentation](docs/brazilian-tally-and-model-switches-2026-10-23.md).
