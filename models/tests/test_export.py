@@ -46,6 +46,48 @@ def test_chart_export_flat_series_kinds(synthetic_polls):
             assert "band_low" in s and "band_high" in s
 
 
+def test_branco_nulo_is_a_separate_reported_series_and_aggregate():
+    from datetime import date
+    from pebr_models.export import build_chart_export
+    from pebr_models.types import NationalPoll
+
+    def poll(pid, day, blank_null, basis):
+        return NationalPoll(
+            poll_id=pid,
+            institute_id="institute_a",
+            fieldwork_start=day,
+            fieldwork_end=day,
+            fieldwork_mid=day,
+            scenario="stimulated_2nd_round_cand_a_vs_cand_b",
+            sample_size=1000,
+            results={"cand_a": 0.45, "cand_b": 0.40},
+            residuals={"branco_nulo": blank_null, "ns_nr": 0.05},
+            vote_basis=basis,
+            geography="national",
+            election_cycle=2026,
+        )
+
+    doc = build_chart_export([
+        poll("p1", date(2026, 10, 1), 0.10, "total_votes"),
+        poll("p2", date(2026, 10, 2), 0.10, "total_votes"),
+    ], scenario="stimulated_2nd_round_cand_a_vs_cand_b", example=False)
+
+    observed = [row for row in doc["series"] if row["series_kind"] == "poll" and row["candidate_id"] == "branco_nulo"]
+    aggregate = [row for row in doc["series"] if row["series_kind"] == "aggregate" and row["candidate_id"] == "branco_nulo"]
+    assert len(observed) == 2
+    assert len(aggregate) >= 1
+    assert all(row["vote_basis"] == "total_votes" for row in observed)
+    residual = next(candidate for candidate in doc["candidates"] if candidate["id"] == "branco_nulo")
+    assert residual["category"] == "residual"
+    assert doc["vote_basis_coverage"]["total_votes"] == 2
+
+
+def test_missing_branco_nulo_is_not_imputed(synthetic_polls):
+    doc = build_chart_export(synthetic_polls, example=True)
+    if not any(("branco_nulo" in p.residuals) or ("branco" in p.residuals and "nulo" in p.residuals) for p in synthetic_polls):
+        assert not any(row.get("candidate_id") == "branco_nulo" for row in doc["series"])
+
+
 def test_write_chart_from_synthetic_fixture(tmp_path):
     polls, meta = load_fixture_envelope(str(FIXTURE))
     doc = build_chart_export(polls, example=True, meta=meta)
