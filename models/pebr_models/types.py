@@ -35,6 +35,7 @@ class NationalPoll:
     witness_ids: tuple[str, ...] = ()
     dataset_version: str = "1"
     notes: str = ""
+    vote_basis: str = "unknown"  # total_votes | valid_votes | unknown; never inferred from candidate percentages alone
 
     @property
     def field_mid(self) -> date:
@@ -72,6 +73,7 @@ def poll_from_dict(d: Mapping[str, Any]) -> NationalPoll:
         witness_ids=tuple(d.get("witness_ids") or ()),
         dataset_version=str(d.get("dataset_version", "1")),
         notes=str(d.get("notes") or ""),
+        vote_basis=(str(d.get("vote_basis") or "unknown") if str(d.get("vote_basis") or "unknown") in {"total_votes", "valid_votes", "unknown"} else "unknown"),
     )
 
 
