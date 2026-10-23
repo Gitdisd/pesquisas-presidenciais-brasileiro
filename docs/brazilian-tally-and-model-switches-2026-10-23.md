@@ -27,9 +27,11 @@ The raw poll schema, regional schema, canonical assembler, canonical point data 
 - `valid_votes`
 - `unknown`
 
-Basis defaults to unknown and is not inferred by checking whether rounded shares sum to approximately 100%. Three recently reviewed second-round records (Datafolha 22 October, Quaest 20 October and AtlasIntel 3–8 October) have been marked total-vote basis. Other historic observations remain unknown until the original source's table or methodological note is audited.
+Basis defaults to unknown and is not inferred by checking whether rounded shares sum to approximately 100%. Three recently reviewed second-round records (Datafolha 22 October, Quaest 20 October and AtlasIntel 3–8 October) have been marked total-vote basis. Other historic observations remain unknown until the original source's table or methodological note is audited. In the 267 second-round records currently in the canonical archive, 3 are explicitly marked `total_votes` and 264 remain `unknown`; none should be silently promoted to a known basis.
 
-**Current limitation:** Option B and the descriptive alternatives do not automatically convert all polls onto a common valid-vote denominator. The mixed/unknown-basis corpus is not yet suitable for a calibrated outcome forecast. No candidate-specific penalty is inferred from unpaid fines, and no first-round vote is automatically transferred to a second-round candidate.
+**Implemented denominator control:** the live second-round chart now offers `Percentuais publicados` and `Candidatos = 100% (normalizado)`. The latter recalculates each complete poll as each finalist's reported share divided by the sum of the two finalists' reported shares. It retains the published value in the point detail, omits Branco/Nulo from the normalized chart view rather than reallocating it, and excludes polls without both finalist values. This is an arithmetic visualization, not evidence that blank/null voters will transfer, not a turnout adjustment, and not a calibrated valid-vote forecast.
+
+**Remaining limitation:** the default published-percentage view intentionally leaves values as published, and the historical aggregate should not be read as a common valid-vote denominator while most source bases are unknown. No candidate-specific penalty is inferred from unpaid fines, and no first-round vote is automatically transferred to a second-round candidate.
 
 ## Methods now selectable in the live UI
 
@@ -43,7 +45,7 @@ Basis defaults to unknown and is not inferred by checking whether rounded shares
 | Persistência | Extends the last available aggregate through 25 October 2026 | Assumes no further aggregate movement |
 | Tendência linear · 7d | Fits a short trend over the recent seven days and extrapolates through 25 October 2026 | Short-term trends can reverse and are not probabilistic |
 
-Option B remains the default. Raw polling points remain present when selecting other summaries. The two forward extensions apply only to the second-round view and are disabled by default. Candidate/residual series are projected independently; the UI does not force all lines to sum to 100%, because doing so without a validated transition model would invent transfer behavior. Forecast controls do not yet estimate turnout, eligibility, blank/null turnout, undecided transfers, pollster house effects or correlated election-level errors.
+Option B remains the default aggregation. Raw polling points remain present when selecting other summaries. The denominator selector is separate from the aggregation selector: the published view preserves source values (and the reported Branco/Nulo series), while the optional candidate-only view recalculates candidate shares within each complete poll. The chart also includes dated survey context for runoff intentions among the combined first-round absent/blank/null cohort and motivations among respondents intending blank/null/none in the runoff; these are different questions and populations and are not pooled into a synthetic transfer rate. The two forward extensions apply only to the second-round view and are disabled by default. They remain exploratory, not calibrated probabilities, and do not estimate turnout, eligibility, undecided transfers, pollster house effects or correlated election-level errors.
 
 ## International methodology findings
 
