@@ -19,5 +19,6 @@
     "w_atlasintel_2026-10-08_stimulated_2nd_round_flavio_bolsonaro_vs_lula_uol"
   ],
   "dataset_version": "intake-cohort-009",
-  "notes": "Total-vote shares. Source reports combined blank/null/undecided residual of 3.2%; it is not split into separate categories. Fieldwork 2026-10-03..2026-10-08 straddled first-round election day on 2026-10-04, so this is not a clean post-first-round fieldwork wave."
+  "notes": "Total-vote shares. Source reports combined blank/null/undecided residual of 3.2%; it is not split into separate categories. Fieldwork 2026-10-03..2026-10-08 straddled first-round election day on 2026-10-04, so this is not a clean post-first-round fieldwork wave.",
+  "vote_basis": "total_votes"
 }
