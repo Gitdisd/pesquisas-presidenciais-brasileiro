@@ -48,11 +48,32 @@ The current Option B ribbon represents in-window poll dispersion. It is not a co
 
 ## Immediate improvements in this release
 
-- Added exact X-axis start/end dates, manual or automatic Y-axis bounds, an optional zero baseline, grid toggle and choice of X-only or X+Y zoom/pan.
-- The default Y axis now fits visible points and aggregate values with padding instead of anchoring at zero, reducing the flattened-trend problem. The user can restore zero; truncated axes must always show actual limits because they magnify small movements.
-- Axis settings are encoded in shareable URLs.
-- Option B remains the reference model. No unvalidated winner probability was added.
+- Added exact X-axis start/end dates, manual or automatic Y ranges, an optional zero baseline, grid visibility, and X-only or X+Y zoom/pan; settings persist in shareable URLs.
+- Default Y autoscale fits visible observations and aggregates with padding instead of anchoring at zero.
+- The chart now offers separately selectable Option B √N, equal-poll mean, equal-institute mean, robust median and seven-day recency-weighted summaries. Raw polling dots remain visible.
+- Added optional, second-round-only persistence and seven-day linear-trend extensions through 25 October 2026. They are disabled by default and are explicitly uncalibrated illustrative extrapolations, not winner probabilities.
 
-## Material limitation and next step
+## Brazil-specific vote tally and denominator handling (2026-10-23)
 
-The canonical schema currently lacks a structured vote-basis field carried through raw intake, canonical points and chart rows. Some historical records are valid-vote estimates while others are total-vote estimates. Until records are tagged and series separated, the current aggregate must not be described as an outcome-calibrated prediction. Implement vote basis through schema, intake, assembler, Python model and UI first, then run the historical holdout plan above.
+Under [Law 9,504/1997, Article 2](https://www.planalto.gov.br/ccivil_03/leis/l9504compilado.htm), the presidential result uses valid candidate votes; blank and null votes are excluded from that denominator and do not transfer to candidates. The [TSE explains that blank/null votes do not cancel an election](https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/faltam-17-dias-votos-nulos-e-brancos-nao-anulam-a-eleicao). A first round and runoff are distinct elections. Voter-roll cancellation/suspension and unpaid fines are not equivalent: see the [TSE voting-status guidance](https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral#/).
+
+- National and regional poll schemas and canonical point records now have a `vote_basis` field with `total_votes`, `valid_votes`, or `unknown`.
+- The basis defaults to unknown; it is not inferred from rounded values summing to 100%. Three recent second-round source records with documented total-vote basis have been tagged explicitly. Historical unverified records remain unknown.
+- A separately plotted **Branco / Nulo (conforme publicado)** series is emitted only if the poll reports combined `branco_nulo`, or both `branco` and `nulo`. Missing residual values are not filled with zero. The line represents the poll's published response category; it is not necessarily identical to the eventual official TSE blank/null tally.
+- The current descriptive aggregate does not automatically convert every survey to valid-vote shares. Unknown denominators are disclosed, not silently normalized. A complete historical denominator audit is still required before claiming outcome calibration.
+- NS/NR / undecided, abstention, blank/null, voter-roll ineligibility and unpaid fines remain separate concepts. No candidate-specific fine penalty, inferred voting preference among non-voters, proportional undecided redistribution or automatic runoff transfer is applied.
+
+## Research and model-selection rationale
+
+Brazil evidence: Meireles & Russo reviewed over 2,000 pre-election polls across five elections (2012–2020); within that sample, larger samples and fieldwork closer to election day tended to be associated with lower errors ([Estudos Avançados / USP](https://revistas.usp.br/eav/en/article/view/205985)). This supports transparent sample/recency rules, not a guarantee that the largest or latest poll is right.
+
+International evidence:
+- UK 2024 polling evaluations documented a common-direction miss across pollsters, showing correlated polling error can remain even when pollsters largely agree ([British Polling Council](https://www.britishpollingcouncil.org/the-performance-of-the-polls-in-the-2024-general-election/)).
+- A leave-one-election-out evaluation of an Australian historical error correction found that it improved on the plain polling baseline in only two of seven elections, cautioning against assuming past directional corrections will generalize ([Polling Forecast Australia](https://www.pollingforecast.com/au/accuracy?tab=summary)).
+- The US AAPOR 2024 review emphasizes survey-level interpretation and methodological evaluation rather than treating a poll or average as a guaranteed result ([AAPOR](https://aapor.org/announcements/2024-pre-election-polling-report/)).
+
+## Required calibration gate
+
+Before publishing an outcome-calibrated forecast or win probability, perform whole-election holdouts using only data available at each historical forecast date: 30, 14, 7 and 1 days before election day. Report candidate-share MAE/RMSE, signed error, vote-margin error and empirical interval coverage. For any probabilistic model, additionally report Brier/log scores and reliability calibration. Preserve election-level common error and pollster/house effects only where historical data support estimation. Avoid MRP without suitable individual/area-level inputs. Do not treat the first-round result as a second-round voter-transfer matrix.
+
+Implementation details, UI controls and the remaining denominator/backtest work are documented in [docs/brazilian-tally-and-model-switches-2026-10-23.md](brazilian-tally-and-model-switches-2026-10-23.md).
