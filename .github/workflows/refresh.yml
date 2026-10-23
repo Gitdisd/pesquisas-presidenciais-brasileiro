@@ -170,6 +170,7 @@ jobs:
           node --check site/js/election-results-core.js
           node --check site/js/election-results.js
           node test/election_results_core_test.js
+          node test/option_b_methods_test.js
           python3 test/site_dom_contract.py
 
       - name: Watch unit tests (minitest)
