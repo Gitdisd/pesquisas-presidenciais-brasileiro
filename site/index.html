@@ -124,6 +124,19 @@
           </button>
           <div class="filter-section-body" id="model-filter-content">
             <p class="muted small">Agregação descritiva · selecione uma por vez; os pontos das pesquisas permanecem visíveis.</p>
+            <label class="basis-mode-label" for="vote-basis-mode">Base da porcentagem
+              <select id="vote-basis-mode">
+                <option value="published">Percentuais publicados</option>
+                <option value="candidate_only">Candidatos = 100% (normalizado)</option>
+              </select>
+            </label>
+            <p class="method-disclaimer muted small" id="vote-basis-note"></p>
+            <details class="transition-evidence">
+              <summary>O que as pesquisas dizem sobre branco, nulo e abstenção?</summary>
+              <p class="muted small"><strong>Quaest · campo de 17 a 20/10/2026 · 2.154 entrevistas.</strong> No grupo combinado de pessoas que se abstiveram ou votaram branco/nulo no 1º turno, 40% declararam intenção de votar em Lula no 2º turno, 36% em Flávio Bolsonaro, 21% disseram que repetiriam o comportamento e 3% estavam indecisos. O recorte mistura abstenção e branco/nulo e mede intenção declarada, não votos efetivamente transferidos. <a href="https://www.bol.uol.com.br/noticias/2026/10/21/quaest-entre-ausentesbrancosnulos-no-1-turno-40-votam-em-lula-e-36-em-flavio.htm" target="_blank" rel="noopener noreferrer">Fonte: BOL, 21/10/2026</a>.</p>
+              <p class="muted small"><strong>Datafolha · campo de 13 a 14/10/2026.</strong> Entre os entrevistados que pretendiam votar branco/nulo/nenhum no 2º turno, a razão mais citada foi rejeição a ambos os candidatos (37%), seguida por descrença/desinteresse (19%) e desconfiança, promessas não cumpridas ou corrupção (18%). Esse é outro grupo e outra pergunta, portanto os percentuais não devem ser combinados com o recorte da Quaest. <a href="https://datafolha.folha.uol.com.br/eleicoes/2026/10/eleitores-de-flavio-votam-por-mudanca-41-e-rejeicao-ao-adversario-31-e-os-de-lula-por-protecao-social-48.shtml" target="_blank" rel="noopener noreferrer">Fonte: Datafolha, 19/10/2026</a>.</p>
+              <p class="muted small">Lula ser o presidente em exercício é contexto, não uma regra para atribuir automaticamente votos em branco/nulos a continuidade ou mudança.</p>
+            </details>
             <div class="chip-row method-chips" id="method-chips" role="group" aria-label="Método de agregação"></div>
             <p class="method-disclaimer muted small" id="method-disclaimer"></p>
             <p class="muted small">Projeção demonstrativa · disponível para o 2º turno e desativada por padrão.</p>
@@ -317,6 +330,7 @@
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="js/candidates-config.js" defer></script>
   <script src="js/option-b.js" defer></script>
+  <script src="js/vote-basis.js" defer></script>
   <script src="js/chart.js" defer></script>
   <script src="js/regional-chart.js" defer></script>
   <script src="js/companion-chart.js" defer></script>
